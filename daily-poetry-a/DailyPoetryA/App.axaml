@@ -1,0 +1,22 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DailyPoetryA.App"
+             xmlns:local="using:DailyPoetryA"
+             xmlns:u-semi="https://irihi.tech/ursa/themes/semi"
+             RequestedThemeVariant="Default">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:ServiceLocator x:Key="ServiceLocator"></local:ServiceLocator>
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+        <u-semi:SemiTheme Locale="zh-CN" />
+        <StyleInclude Source="avares://AvaloniaInfiniteScrolling.Control/AvaloniaInfiniteScrollControlStyle.axaml" />
+    </Application.Styles>
+</Application>
