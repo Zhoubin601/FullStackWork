@@ -1,0 +1,6 @@
+
+(dotnet:4509): Gtk-CRITICAL **: 08:09:00.835: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed
+
+(dotnet:4509): Gtk-CRITICAL **: 08:10:08.237: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed
+
+(dotnet:4509): Gtk-CRITICAL **: 08:10:25.418: _gtk_file_system_model_get_info: assertion 'GTK_IS_FILE_SYSTEM_MODEL (model)' failed

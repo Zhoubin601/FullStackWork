@@ -1,0 +1,188 @@
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans CJK SC}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{xurl}
+\usepackage{graphicx,booktabs,longtable,array,caption,float,fancyhdr,hyperref,fvextra,tikz}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,pdftitle={阅记项目报告草稿},pdfauthor={资料未提供}}
+\graphicspath{{../evidence/}}
+\pagestyle{fancy}\fancyhf{}\lhead{阅记 · 阅读与书摘管理}\rhead{报告草稿}\cfoot{\thepage}
+\ctexset{section={number=\arabic{section},name={}},subsection={number=\arabic{section}.\arabic{subsection}}}
+\setlength{\parindent}{2em}\setlength{\parskip}{4pt}
+\renewcommand{\arraystretch}{1.3}
+\newcommand{\screen}[2]{\begin{figure}[H]\centering\includegraphics[width=.98\linewidth,height=90mm,keepaspectratio]{#1}\caption{#2}\end{figure}}
+\begin{document}
+\begin{titlepage}\centering
+\vspace*{22mm}{\LARGE 全栈开发技术期末项目报告\par}
+\vspace{22mm}{\Huge\bfseries 阅记\par}\vspace{5mm}{\Large 阅读与书摘管理应用\par}
+\vspace{24mm}\begin{tabular}{rl}项目名称：&阅记阅读与书摘管理应用\\姓名：&资料未提供\\学号：&资料未提供\\班级：&资料未提供\end{tabular}
+\vfill{\large 2026年10月20日\par}\vspace{12mm}
+\begin{minipage}{.85\linewidth}\small
+文档状态：报告草稿。正文依据实际源码、40项自动化测试及Linux桌面实测编写。姓名、学号、班级等待补充；默认Windows桌面验收未执行，不记为通过。该文档供复核，不作为全部课程验收完成的声明。
+\end{minipage}
+\end{titlepage}
+\tableofcontents\newpage
+\section*{项目背景与意义}\addcontentsline{toc}{section}{项目背景与意义}
+个人阅读中，书籍资料、阅读活动与摘录通常分散记录。阅记以本地离线应用统一管理这三类信息，并由阅读记录推导当前进度、计划状态和统计结果，使用户能够追踪阅读活动、整理感想及恢复自己的数据。
+
+项目不提供电子书阅读器、账号登录、联网检索或云同步。其业务边界是“记录阅读”，用户录入的阅读记录表示自身活动声明，不能据此推断所有未记录页段均已读过。演示数据中的书名、作者、摘录和感想均明确标注为虚构资料。
+\section{需求分析}
+\subsection{功能需求}
+应用实现录入书籍、制定计划、记录阅读、整理书摘和查看统计的完整闭环。十个独立业务页面及主要能力如下。
+\begin{longtable}{p{27mm}p{112mm}}\toprule 页面 & 已实现能力\\\midrule
+阅读概览 & 在读书籍、近期记录、待完成计划、全量累计指标、书库与详情入口。\\
+我的书库 & 书名或作者搜索、未开始/在读/已完成筛选、每页10本分页、新增及详情入口。\\
+书籍详情 & 资料、当前进度、累计活动、记录增改删弹窗、关联书摘与计划、级联删除确认。\\
+书籍编辑 & 书名、作者、分类、总页数与简介编辑，校验已有最大引用页码。\\
+书摘列表 & 正文或书名搜索、收藏筛选、编辑、收藏切换和删除。\\
+书摘编辑 & 选择书籍、编辑摘录与感想、可选页码和收藏状态。\\
+阅读计划 & 查看进行中、已完成与已逾期计划，编辑和删除。\\
+计划编辑 & 选择书籍、设定目标日期、根据剩余页数和天数展示建议。\\
+阅读统计 & 累计页数、分钟数、完成书籍数与近七日阅读趋势。\\
+设置与数据 & 浅深主题、空库载入虚构演示数据、JSON导出与带自动备份的恢复。\\\bottomrule
+\end{longtable}
+
+初始化页、主窗口、主容器和阅读记录弹窗不用于补足十个业务页面。编辑未保存时，返回、切换菜单与关闭窗口共用保存、放弃、取消离开语义；保存失败保留草稿。列表返回刷新数据，保留当前搜索条件。
+\subsection{非功能需求}
+业务数据保存在用户本地应用数据目录，断网后核心业务可用。首次依赖还原需要NuGet来源；“运行离线”不等于“首次还原离线”。数据库写入串行，跨表修改采用事务。异步命令处理IO、忙碌状态和错误重试。
+
+界面使用中文标签、侧边导航、统一表单及浅深主题。原生文件选择器使用系统语言，因此测试环境的GTK选择器部分文字为英文。代码采用UI与Library职责分离，业务服务通过接口注入，便于替换依赖测试。本文不提供未经测量的性能指标，也不宣称已完成大规模数据压力测试。
+\section{系统设计}
+\subsection{架构设计}
+解决方案包含ReadJournal、ReadJournal.Library及ReadJournal.UnitTest三个工程。UI负责视图、应用资源、定位器、导航实现、文件选择和提示；Library负责模型、规则、存储、统计、备份及ViewModel，不引用Avalonia控件；测试工程使用xUnit、Moq和临时真实SQLite数据库。
+\begin{figure}[H]\centering
+\begin{tikzpicture}[node distance=9mm,box/.style={draw,rounded corners,align=center,text width=125mm,minimum height=12mm},>=Stealth]
+\node[box](ui){UI：App资源、ViewLocator、Views、平台提示与文件选择};
+\node[box,below=of ui](vm){Library ViewModels：构造注入、公开命令、统一参数入口};
+\node[box,below=of vm](svc){Library Services：14项接口职责、阅读规则、存储、统计、备份};
+\node[box,below=of svc](db){SQLite：四类业务表、外键、版本、串行写入与事务};
+\draw[->](ui)--(vm);\draw[->](vm)--(svc);\draw[->](svc)--(db);
+\end{tikzpicture}\caption{依据实际工程组织绘制的架构图}\end{figure}
+
+保留DailyPoetryA的完整组装机制：ServiceLocator构造内局部ServiceCollection注册、BuildServiceProvider构建、只读IServiceProvider保存、属性GetService解析；Current通过Application资源读取并缓存。全部服务和ViewModel为单例，构造函数只保存依赖并建立命令，不启动导航或加载。
+
+根导航替换MainWindowViewModel.Content；菜单导航通过SetMenuAndContent清空返回栈并设置菜单；内容导航调用PushContent压栈。返回栈及菜单状态属于MainViewModel，未增加导航宿主或页面工厂。ViewLocator实现IDataTemplate，以命名替换、反射和Activator创建视图，按类型缓存并设置DataContext。
+\subsection{功能模块设计}
+菜单提供概览、书库、书摘、计划、统计及设置六个入口。书库进入详情或书籍编辑；详情进入书籍编辑、书摘编辑、计划编辑及记录弹窗；书摘和计划列表进入相应编辑页。内容返回保留上一级业务上下文，菜单切换清空历史栈。
+
+导航顺序为定位目标单例、SetParameter、切换内容或压栈、Loaded公开异步命令加载。加载失败保留目标页面，呈现错误及重试入口。重复同一单例内容目标在SetParameter之前拦截，避免覆盖栈中原参数；不同书籍经返回书库再打开，不构造同类型详情的多份历史快照。
+\subsection{数据/数据库设计}
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Stealth,box/.style={draw,rounded corners,align=center,text width=40mm,minimum height=17mm}]
+\node[box](book) at(0,0){Book\\书籍与总页数};
+\node[box](rec) at(-5,-2.3){ReadingRecord\\实际页段、日期、分钟};
+\node[box](quote) at(0,-2.3){Quote\\正文、感想、收藏、页码};
+\node[box](plan) at(5,-2.3){ReadingPlan\\开始日与目标日};
+\draw[->](book)--node[left]{1:N}(rec);\draw[->](book)--node[right]{1:N}(quote);\draw[->](book)--node[right]{1:N}(plan);
+\end{tikzpicture}\caption{实际四表实体关系；子表BookId外键级联删除}\end{figure}
+
+Book含Id、Title、Author、Category、TotalPages、Description、CreatedAt和UpdatedAt。ReadingRecord含Id、BookId、ReadingDate、StartPage、EndPage和Minutes。Quote含Id、BookId、Text、Thoughts、可空Page、IsFavorite及创建/修改时间。ReadingPlan含Id、BookId、StartDate和TargetDate。数据库user\_version为1，初始化事务创建表并启用外键。
+
+记录约束为1 ≤ 起始页 ≤ 结束页 ≤ 总页数、分钟数为正整数、日期不晚于本地当天。当前页取最大结束页，无记录为0；累计页数对每条记录求闭区间长度之和，包含重读。完成日期为读至末页记录的最早日期。修改记录或总页数后由有效数据重新推导状态。
+
+每本书最多一个未完成计划；普通新计划不能关联已完成书籍。未逾期的建议每日页数为剩余页数除以包含当天的剩余天数后向上取整；完成为0；逾期单列状态与剩余页数。删除计划不删除记录。
+\subsection{接口与类设计}
+最终采用与参考相同的语法树口径：只扫描UI与Library手写class/interface，包括默认访问级别；partial按工程及完整类型名去重；排除测试和生成代码，不计枚举、结构体或record。实际为65类、14接口、76个C\#源文件、14个视图文件，其中业务视图10个。参考为63类、10接口、9视图；最低45类、7接口，实际数量已满足。
+
+14项接口职责为数据库初始化、书籍存储、阅读记录存储、书摘存储、计划存储、偏好、阅读业务、统计、备份、提示、文件选择及三层导航。职责与实现逐一对应，未通过空接口或人为拆分补足数量。主要类还包括四类实体、进度/计划/统计投影、共享编辑基类、各页ViewModel、平台视图和定位器。
+
+完整逐类型名称、路径、行号及源文件哈希见\path{docs/application-type-inventory.json}和同名Markdown。参考复核结果保留于\path{docs/reference-baseline-cloud.json}，可用\path{docs/tools/TypeInventory}重跑；原PowerShell脚本仍保留。
+\subsection{技术选型说明}
+\begin{longtable}{p{52mm}p{87mm}}\toprule 技术 & 实际版本和用途\\\midrule
+.NET / C\# & net8.0，SDK 8.0.424固定，跨平台桌面业务。\\
+Avalonia & 11.0.10；Desktop、Fluent、Inter同版本；行为包11.0.10.9。\\
+CommunityToolkit.Mvvm & 8.2.2；通知属性、RelayCommand及AsyncRelayCommand。\\
+sqlite-net-pcl & 1.8.116；本地SQLite及事务。\\
+Microsoft.Extensions.\newline DependencyInjection & 8.0.0；真实IoC容器和构造注入。\\
+xUnit / Moq & 2.4.2 / 4.20.70；测试SDK17.6.0，Runner2.4.5。\\
+Avalonia.Headless & 11.0.10，仅用于自动化中的真实应用资源和视图机制测试。\\\bottomrule
+\end{longtable}
+
+版本遵循参考项目，不以升级替代原有架构。真实桌面验证另在Xvfb上启动Avalonia应用，未将Headless断言冒充桌面操作。首次完整构建有3条NETSDK1206提示，源于固定SQLite原生依赖含旧Alpine RID；Linux x64实测正常，不据此宣称支持Alpine。
+\section{系统实现}
+\subsection{关键模块的核心实现}
+以下摘录直接来自交付源码。定位器构造中的注册均使用AddSingleton；末尾构建真实容器，属性由容器解析。
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=21,lastline=36]{../../Code/ReadJournal/ServiceLocator.cs}
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=49,lastline=58]{../../Code/ReadJournal/ServiceLocator.cs}
+
+内容导航保留常量switch映射与定位器调用。在阅记新增的重复单例保护之后统一注入参数并压栈，未引入其他导航机制。
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=6,lastline=21]{../../Code/ReadJournal/Services/ContentNavigationService.cs}
+
+阅读业务通过有效记录计算当前进度、累计活动和完成日期，重读不会叠加当前进度。
+\VerbatimInput[fontsize=\scriptsize,breaklines=true,firstline=23,lastline=37]{../../Code/ReadJournal.Library/Services/ReadingService.cs}
+
+备份由格式版本和四类集合组成，每个持久化字段要求显式存在。恢复先验证完整文档，在串行事务边界捕获原快照并成功写出自动备份，再删除并恢复业务表。自动备份失败不替换，写入失败事务回滚，成功后用户再进入页面会重新加载；主题在独立偏好文件中。
+\clearpage
+\subsection{核心功能与UI截图}
+以下十图均为最终Release应用在Linux真实X11窗口中的直接截屏，显示的是用户主动载入的虚构演示资料。非全部内容都能在同一窗口高度内展示时，页面提供滚动；截图不拼接或补画隐藏内容。
+\screen{final-overview.png}{阅读概览：全量指标、在读书籍和近期记录}
+\screen{final-library.png}{我的书库：搜索、状态筛选、分页与详情入口}
+\clearpage
+\screen{final-detail.png}{书籍详情：进度、阅读活动与计划关联}
+\screen{final-book-edit.png}{书籍编辑：独立业务表单}
+\clearpage
+\screen{final-quotes.png}{书摘列表：虚构摘录、感想和收藏入口}
+\screen{final-quote-edit.png}{书摘编辑：正文、感想、页码和收藏}
+\clearpage
+\screen{final-plans.png}{计划列表：派生状态与建议页数}
+\screen{final-plan-edit.png}{计划编辑：实际关联书籍与目标日期}
+\clearpage
+\screen{final-statistics.png}{统计：191页、210分钟、完成1本及近七日趋势}
+\screen{final-settings.png}{设置与数据：主题、导出、恢复和演示入口}
+\clearpage
+\subsection{难点和解决方案}
+\begin{longtable}{p{34mm}p{105mm}}\toprule 实际问题 & 已执行处理及验证\\\midrule
+参考源码最初不可用 & Gitee代理CONNECT403，本地无参考目录；用户上传后同步副本，64文件哈希及语法树类型清单与原基线完全一致，才进入骨架开发。\\
+命令绑定和目标错误 & 实际参考InitializationViewModel.cs:25命令为private，视图通过公开绑定访问；TodayViewModel.cs:76用内容服务传菜单目标。阅记公开命令、按层使用服务与常量，参考副本保持只读。\\
+XAML与SQLite首轮失败 & 内部xmlns导致AXN0002，移至根节点；busy\_timeout查询返回行，改用ExecuteScalar。修复后重跑当前阶段构建及测试。\\
+单例异步旧数据 & 引入参数版本校验，旧请求不发布到新参数页面；加载命令发现版本变化继续加载新参数。延迟任务用例验证A不会覆盖B。\\
+多次离开确认 & 主ViewModel共用防重入保护；返回、菜单、关闭不会并发打开多个确认窗口。保存失败保留草稿。\\
+绑定诊断 & 事件命令显式绑定同一资源定位器中的单例，解决构造时DataContext未就绪；进度条使用静态模板，避免固定Fluent版本动画绑定。最终遍历十页绑定诊断为0。\\
+原生选择器驱动 & GTK路径自动补全曾干扰测试输入，应用正确提示文件不存在。通过真实列表选择同一文件后恢复成功，未用后台写库代替UI恢复。\\\bottomrule
+\end{longtable}
+
+重复目标拦截、参数版本、草稿保护、串行写入和事务均为阅记新增业务正确性措施。参考README明确未解决线程与原子性，不能把这些新增设计称为参考项目原有机制。
+\section{系统测试}
+\subsection{测试环境}
+实测为Debian13 / Linux x64，.NET SDK8.0.424、运行时8.0.30、MSBuild17.11.48，Xvfb21.1.7、1440×1000显示环境。自动化运行Release构建；业务测试使用独立临时SQLite库，架构测试使用真实容器和应用资源。Windows桌面验收未执行。
+
+真实图形环境中的窗口无需联网即可使用业务功能。图形日志包含X11会话管理器缺失及GLX llvmpipe回退提示，应用实际继续运行并完成操作；该记录不代表已测GPU硬件加速。最终十页面运行的绑定诊断为0，完整日志保留。
+
+最终源码归档按显式白名单生成，共110个文件、93138字节，无bin、obj、TestResults、运行数据库或工作过程目录。解压到新临时目录，使用全新的NuGet包及HTTP缓存目录执行：
+\begin{Verbatim}[fontsize=\small,breaklines=true]
+dotnet restore ReadJournal.sln --locked-mode --no-cache
+dotnet build ReadJournal.sln -c Release --no-restore
+dotnet test ReadJournal.sln -c Release --no-build --no-restore
+\end{Verbatim}
+
+还原、构建、测试均退出0；40项测试通过。依赖还原实际使用网络，未宣称离线首次还原。解压后的实际应用分别首次、再次启动成功，并在独立运行目录创建版本1数据库。构建结果不回填源码包。
+\subsection{测试用例}
+\begin{longtable}{p{38mm}p{86mm}p{15mm}}\toprule 用例组与数量 & 实际覆盖与结果 & 结果\\\midrule
+架构5 & 容器类型与全部14接口单例、构造注入、资源Current、三层参数与返回栈、反射视图缓存、失败重试、A/B详情更新。 & 通过\\
+数据库3 & 初始化幂等与重启持久化、真实外键失败回滚、目录创建失败移除原因后重试。 & 通过\\
+阅读业务12 & 第一页/单页/末页/整本；10～20计11页及重复22页；0页、逆序、超限、非正分钟、未来日期拒绝；进度重算、搜索分页、收藏、级联。 & 通过\\
+编辑2 & 取消、放弃、保存并离开；模拟保存失败保留草稿和原页面；成功保存后不再脏。 & 通过\\
+扩展业务16 & 计划当天/逾期/完成分母边界；唯一未完成计划；统计及演示；非连续ID往返；无效备份九类；自动备份失败和事务替换失败回滚；偏好保留。 & 通过\\
+时序2 & 延迟旧详情加载不能发布到新参数；返回、菜单与关闭不会同时发起两次确认。 & 通过\\\bottomrule
+\end{longtable}
+
+单条用例名称、参数、耗时和结果见\path{docs/test-results.md}，来源为真实release.trx。源码包解压目录同一测试集再次40项通过。UI另行实际验证书籍录入、阅读记录与书摘、未保存取消/放弃、重启持久化、主题、演示、计划状态与建议、原生备份恢复；这些证据不是由自动化结果推定。补充一致性实测在隔离演示库副本中仅用UI修改末页记录至240页，统计更新为371页、210分钟、完成2本，关联计划完成；删除该完成记录后统计为161页、175分钟、完成1本，进度与计划退回在读；再通过书籍编辑把总页数改为30页，完成书数回到2本且累计活动仍为161页、175分钟。
+\subsection{测试截图}
+\screen{final-test-terminal.png}{真实终端执行Release测试：40通过、0失败、0跳过}
+\screen{stage3-restart-persistence.png}{重启后真实详情：20/100进度、11页累计及关联书摘}
+\clearpage
+\screen{stage3-unsaved-confirmation.png}{真实未保存确认：取消、放弃、保存并离开}
+\screen{final-clean-first-launch.png}{最终源码包解压、还原、构建后在独立数据目录实际首次启动}
+
+\clearpage
+\section{总结与展望}
+阅记完成十个业务页面及阅读管理闭环，保留参考项目真实IoC、单例定位器、三层导航、统一参数入口、主ViewModel返回栈和反射视图缓存。40项自动化测试及Linux实际桌面流程通过；源码包满足白名单和大小约束，解压后可还原、构建、测试及启动。
+
+仍待补齐：姓名、学号、班级；规划默认的Windows桌面实际验收。当前不能宣布全部课程交付已验收。初次构建存在固定SQLite依赖的Alpine RID提示，未执行Alpine兼容、大数据压力或多设备同步测试。未来可在不破坏现有调用机制的前提下补充更多输入可用性与更大数据集测量；电子书阅读、联网检索和云同步属于第一版边界之外。
+
+本报告依据原始指导书模板、唯一开发规划、实际参考副本和最终实现编写。相关证据分别保留于来源记录、参考架构核对、开发执行记录、类型清单、测试结果和真实截图目录；参考源码及raw原始资料未改写。
+\end{document}

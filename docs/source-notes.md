@@ -2,6 +2,8 @@
 
 记录日期：2026-10-20。本文记录事实来源，不表示项目已经实现或验收。
 
+本文件保留前期 Windows 工作区的核对历史。当前云环境执行情况见文末“本轮开发执行核对”；历史中的“本次不实施应用代码”已由当前用户开发指令取代，历史中的生命周期调整已被 v4 的全部单例约束取代。
+
 ## 1. 原始作业要求
 
 - 来源文件：`D:/2026Autumn Semester File/FullStack/期末大作业/raw/期末项目与报告要求.docx`。
@@ -65,3 +67,22 @@
 ## 5. 资料保护
 
 原始要求、审议文件及参考项目均只读。此次只在 Code 外维护过程文档、统计清单和只读复核脚本，不生成正式报告或源码交付包。
+
+## 6. 本轮开发执行核对
+
+- 来源名称：当前项目配置的 GitHub origin；链接：`https://github.com/Zhoubin601/FullStackWork`；获取日期：2026-10-20；提交：`c8e3c71ca7847e5c26f1238f0ab6a954b7209ae1`。云环境初始工作分支没有提交及文件，已 fetch 并检出该提交到 work，未推送远端。
+- 来源名称：课程原始指导书；文件：`raw/期末项目与报告要求.docx`；核对日期：2026-10-20。通过 Python 标准库 ZipFile 和 XML 解析完整读取正文及表格；SHA256 为 `352E94BC9126CC0EF9B5E9F0D293AD8B562BB07B7E17E85AACD7972F918D4D1D`，与已有记录一致，原文件未修改。
+- 已实际读取：AGENTS.md、完整 plan.md v4、课程指导书、已有来源/分析/问题/报告清单、参考统计 JSON 和 Markdown、PowerShell 统计脚本、长期背景及 Git 同步记录。
+- 用户当前已要求实际开发，按五阶段顺序逐段验收；不需再确认选题或架构。已按要求仅替换 plan.md 中一行的推定错误表述。
+- 参考项目来源：`https://gitee.com/zhangyin-gitee/daily-poetry-a`；访问日期：2026-10-20。实际执行 `git ls-remote https://gitee.com/zhangyin-gitee/daily-poetry-a.git HEAD` 返回 `CONNECT tunnel failed, response 403`。当前网络策略为 restricted，gitee.com 不在允许域名中；未尝试绕过代理或访问限制。
+- 云环境未附带 Windows 原目录 `D:/2026Autumn Semester File/FullStack/Finish/daily-poetry-a`，GitHub 项目资料也不包含参考源码。因此本轮没有读取参考实际源码，没有验证原有源码哈希，没有重跑参考类型统计；旧统计结果只作为保留的历史证据。
+- 已检查旧 JSON 清单的内部一致性：63 个 class 条目、10 个 interface 条目、55 个源文件条目、9 个视图条目，类型键无重复。此检查不能代替真实源码统计，也不证明本轮参考源码核验通过。
+- 云环境原无 dotnet；已从 Microsoft 官方安装脚本安装 .NET SDK 8.0.424 到 `/workspace/scratch/dotnet`，执行 `dotnet --info` 确认成功。工具安装在 Code 外，不进入交付物。
+- 当前状态：需求追溯、页面流转、实体关系和职责设计写入 `docs/stage-1-design.md`；参考源码核对阻塞，阶段 1 尚未验收，不进入阶段 2。详细复现、命令和继续条件见 `docs/development-log.md`。
+
+### 本轮续行与新增来源
+
+- 用户推送参考副本后，当前 Git origin 提交 0dc2d02 已同步；真实 55 源文件和 9 视图哈希、Roslyn 类型与行号清单均与原记录一致，参考不可用阻塞解除。架构逐文件证据见 reference-architecture-audit.md。
+- 应用与测试来源为本轮实际 Code 源码、Release TRX、真实 X11 截图及干净解压目录日志；最终清单为 65 类、14 接口、10 业务页面。
+- 额外排障源码来源：AvaloniaUI/Avalonia 11.0.10 的 ProgressBar.cs，链接 https://raw.githubusercontent.com/AvaloniaUI/Avalonia/11.0.10/src/Avalonia.Controls/ProgressBar.cs ，读取日期 2026-10-20。只核对 PART_Indicator 静态模板契约，用于修复固定 Fluent 进度条动画绑定诊断；未改写或升级参考项目。
+- 报告依据实际结果编写，当前身份字段未提供，Windows 未执行；不把草稿作为完整验收交付。

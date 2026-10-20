@@ -16,3 +16,11 @@
 node_modules/
 __pycache__/
 *.pyc
+
+# Generated LaTeX intermediates; keep the named report draft and its sources
+/docs/report/*.aux
+/docs/report/*.log
+/docs/report/*.out
+/docs/report/*.toc
+/docs/report/report.pdf
+/docs/report/report-text.txt

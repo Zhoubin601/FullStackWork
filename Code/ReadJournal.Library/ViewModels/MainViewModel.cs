@@ -1,0 +1,43 @@
+using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.Input;
+using ReadJournal.Library.Services;
+namespace ReadJournal.Library.ViewModels;
+public class MainViewModel : ViewModelBase
+{
+    private readonly IMenuNavigationService _menu;
+    private bool _navigating;
+    private ViewModelBase? _content; private MenuItem? _selected; private string _title = "阅记";
+    public ViewModelBase? Content { get => _content; private set => SetProperty(ref _content, value); }
+    public MenuItem? SelectedMenuItem { get => _selected; private set => SetProperty(ref _selected, value); }
+    public string Title { get => _title; private set => SetProperty(ref _title, value); }
+    public ObservableCollection<ViewModelBase> ContentStack { get; } = [];
+    public IAsyncRelayCommand GoBackCommand { get; }
+    public IAsyncRelayCommand<MenuItem> OnMenuTappedCommand { get; }
+    public MainViewModel(IMenuNavigationService menu)
+    {
+        _menu = menu;
+        GoBackCommand = new AsyncRelayCommand(() => NavigateAsync(GoBack));
+        OnMenuTappedCommand = new AsyncRelayCommand<MenuItem>(item => item is null ? Task.CompletedTask : NavigateAsync(() => _menu.NavigateTo(item.View)));
+    }
+    public async Task<bool> CanCloseAsync()
+    {
+        if (_navigating) return false; _navigating = true;
+        try { return Content is null || await Content.CanLeaveAsync(); } finally { _navigating = false; }
+    }
+    private async Task NavigateAsync(Action navigate)
+    {
+        if (_navigating) return; _navigating = true;
+        try { if (Content is null || await Content.CanLeaveAsync()) navigate(); } finally { _navigating = false; }
+    }
+    public void PushContent(ViewModelBase content)
+    {
+        if (ContentStack.Contains(content)) return;
+        ContentStack.Insert(0, Content = content);
+    }
+    public void SetMenuAndContent(string view, ViewModelBase content)
+    {
+        ContentStack.Clear(); PushContent(content);
+        SelectedMenuItem = MenuItem.MenuItems.First(x => x.View == view); Title = SelectedMenuItem.Name;
+    }
+    public void GoBack() { if (ContentStack.Count <= 1) return; ContentStack.RemoveAt(0); Content = ContentStack[0]; if (!Content.OnLoadedCommand.IsRunning) Content.OnLoadedCommand.Execute(null); }
+}

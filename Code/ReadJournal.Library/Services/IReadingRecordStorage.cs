@@ -1,0 +1,8 @@
+using ReadJournal.Library.Models;
+namespace ReadJournal.Library.Services;
+public interface IReadingRecordStorage
+{
+    Task<IReadOnlyList<ReadingRecord>> GetForBookAsync(int bookId);
+    Task<int> SaveAsync(ReadingRecord record);
+    Task DeleteAsync(int id);
+}
