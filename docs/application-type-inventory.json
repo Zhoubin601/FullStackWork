@@ -4,10 +4,12 @@
   "Exclusions": "UI/Library only; exclude tests, bin, obj, generated source",
   "Deduplication": "Project + kind + namespace + containing types + name with generic arity",
   "Summary": {
-    "Classes": 65,
+    "Classes": 66,
     "Interfaces": 14,
     "ViewFiles": 14,
-    "CSharpFiles": 76
+    "MinimumClasses": 47,
+    "MinimumInterfaces": 10,
+    "CSharpFiles": 77
   },
   "SourceFiles": [
     {
@@ -183,12 +185,12 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/BackupService.cs",
-      "Sha256": "04523B21D6C69BDE2E1B249D44FFF2DC59859985D9704B562EA69BC77BB6ED5C"
+      "Sha256": "5E44E2C3A5B399B5D7D426DEE7D55602B81C45B4C2A4E00DFAFEF0C1D1704257"
     },
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/BookStorage.cs",
-      "Sha256": "392E6CFD2D7326A97D0435C38B505D6A10701F90F94EE8631CAFA3D90FC768CC"
+      "Sha256": "B12666463056318C734AD88ED246BE93E4D10A6F7E573E3BC167E342A2EDB73C"
     },
     {
       "Project": "ReadJournal.Library",
@@ -287,13 +289,18 @@
     },
     {
       "Project": "ReadJournal.Library",
+      "Path": "ReadJournal.Library/Services/ReadingPlanConsistency.cs",
+      "Sha256": "8921FC09535E77C324CEB9C8EF4AD9B798C55B4B8C0AD89F983ACE71161B7952"
+    },
+    {
+      "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/ReadingPlanStorage.cs",
-      "Sha256": "847FA7FB3E5D5120A7B23EC033CED8E721A89A70A693F8C171C9303BE926AFE6"
+      "Sha256": "97B45A05AF3F7A3BB072E038206E0C955E40C94CCB956B6171726F1F208805BF"
     },
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/ReadingRecordStorage.cs",
-      "Sha256": "4B0BF341F4CAB6BFB3EBE1FACE027CAA3DAFD652BC8743C6A10B1B1E3021683F"
+      "Sha256": "ACC4A65A489EFA0888183F93A72B4CA12524A7ABC5F4A8FACFA96421801AFFA5"
     },
     {
       "Project": "ReadJournal.Library",
@@ -313,7 +320,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/BookEditViewModel.cs",
-      "Sha256": "F326F80CAC45560B768B0C98C0CBCE82D27D5752E4D2640323284D4F4F013B8E"
+      "Sha256": "44C06C196482892A953306B0B76E09D0658C22F9D36429FB946E5197B84CB2D2"
     },
     {
       "Project": "ReadJournal.Library",
@@ -323,7 +330,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/EditViewModelBase.cs",
-      "Sha256": "025D7DFBBBF369AE066471E44614D98DBF01935F9C8F96A80D2DA7CF25B3A123"
+      "Sha256": "A57FF9520C10624B9A7CDB0857EC3E271CD87ED0CDEAC742EC4F9240B14A8BB5"
     },
     {
       "Project": "ReadJournal.Library",
@@ -353,7 +360,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/QuoteEditViewModel.cs",
-      "Sha256": "D1B333D6EE7A6173B5D89413E4C2BB9D2BBE935C499E69FF4608ECEE75283868"
+      "Sha256": "B2A93C2E7E6608CF72652B348BBE92C013C5F7EDA0AF1091C1AD8F7506506592"
     },
     {
       "Project": "ReadJournal.Library",
@@ -363,7 +370,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/ReadingPlanEditViewModel.cs",
-      "Sha256": "7DE76AE1D79792C9A49698AE57386CBE63047723A7AD4A58CA4E951B86B3B861"
+      "Sha256": "9572ED008E9233E68E07479D09D667EEA0571BED03A69D59C3135EB6E90EC20D"
     },
     {
       "Project": "ReadJournal.Library",
@@ -373,7 +380,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs",
-      "Sha256": "01A7C980B89FDAC803C236E0CB0F5966894D25A1FADC2E749CC8491D89D0910C"
+      "Sha256": "A2DD8A94B4642CF5EDC401A7E931099FF473E60F1964CD105BD2AEB1230CC782"
     },
     {
       "Project": "ReadJournal.Library",
@@ -619,6 +626,17 @@
       "Declarations": [
         {
           "Path": "ReadJournal.Library/Services/QuoteStorage.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "ReadJournal.Library",
+      "Kind": "class",
+      "FullName": "ReadJournal.Library.Services.ReadingPlanConsistency",
+      "Declarations": [
+        {
+          "Path": "ReadJournal.Library/Services/ReadingPlanConsistency.cs",
           "Line": 3
         }
       ]
@@ -1269,7 +1287,7 @@
     },
     {
       "Path": "ReadJournal/Views/BookEditView.axaml",
-      "Sha256": "12D60E56CEA9BF555E5A6AB7F7160000A9110E0FE0F05C516738C2E3D8F84C29"
+      "Sha256": "EFD3F0548FD19887C03B13234A84C0FBEB5BDBBD1CF075B1D48E2F3A811D86A1"
     },
     {
       "Path": "ReadJournal/Views/BookListView.axaml",
@@ -1293,7 +1311,7 @@
     },
     {
       "Path": "ReadJournal/Views/QuoteEditView.axaml",
-      "Sha256": "12CD82311B2B03C5972FBA03B47691868A11C052F5346D768141D8DEE69022CC"
+      "Sha256": "12861D31417B1A78B2D42D14FB27E769DE8B18C4CEADCC397C3412A32DF35AA5"
     },
     {
       "Path": "ReadJournal/Views/QuoteListView.axaml",
@@ -1301,7 +1319,7 @@
     },
     {
       "Path": "ReadJournal/Views/ReadingPlanEditView.axaml",
-      "Sha256": "4B62F9894F70559576AD3C3C0650F648499B49EF46E197F1AE6723AEDD734547"
+      "Sha256": "AF803343400CE5ADC6F740F6E856FB507762BB71B8B8F8C181874D9E0B9E4E94"
     },
     {
       "Path": "ReadJournal/Views/ReadingPlanListView.axaml",
@@ -1309,7 +1327,7 @@
     },
     {
       "Path": "ReadJournal/Views/ReadingRecordEditView.axaml",
-      "Sha256": "C5B74C897AE91B9DC6DEDF650C0B812F5E010FAAA109CDC22093C2DF135967FF"
+      "Sha256": "AA980FBFF74369022874468599C4F057F7DC45ABB65220CB6699EEF82A010C33"
     },
     {
       "Path": "ReadJournal/Views/SettingsView.axaml",
@@ -1323,8 +1341,10 @@
   "CourseMinimums": {
     "ReferenceClasses": 63,
     "ReferenceInterfaces": 10,
-    "Classes": 45,
-    "Interfaces": 7,
-    "BusinessViews": 10
-  }
+    "ReferenceViews": 9,
+    "MinimumClasses": 45,
+    "MinimumInterfaces": 7,
+    "MinimumViews": 9
+  },
+  "MinimumFieldsMeaning": "Summary.MinimumClasses/MinimumInterfaces为工具按本项目数量计算的70%，不是课程门槛；课程最低要求使用CourseMinimums（45类、7接口、9视图）。"
 }

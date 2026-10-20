@@ -48,6 +48,6 @@ public class BackupService : IBackupService
         foreach (var r in doc.ReadingRecords) _reading.ValidateRecord(r, Parent(r.BookId));
         foreach (var q in doc.Quotes) { _reading.ValidateQuote(q, Parent(q.BookId)); if (q.Thoughts is null || q.CreatedAt == default || q.UpdatedAt < q.CreatedAt) throw new ArgumentException("书摘字段或时间无效。"); }
         foreach (var p in doc.ReadingPlans) { Parent(p.BookId); if (p.StartDate == default || p.StartDate.Date > DateTime.Today || p.TargetDate.Date < p.StartDate.Date) throw new ArgumentException("计划日期无效。"); }
-        foreach (var group in doc.ReadingPlans.GroupBy(x => x.BookId)) if (group.Count() > 1 && _reading.Calculate(Parent(group.Key), doc.ReadingRecords).State != "已完成") throw new ArgumentException("同一本书有多个未完成计划。");
+        foreach (var group in doc.ReadingPlans.GroupBy(x => x.BookId)) ReadingPlanConsistency.Validate(_reading, Parent(group.Key), doc.ReadingRecords, group);
     }
 }

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ab6c7a86-7de7-4f5c-bf1d-4fa37ff26fc0" name="@5060f0b458f2 2026-10-20 15:45:35" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T15:45:35.0233138+00:00" queuing="2026-10-20T15:45:35.0233139+00:00" start="2026-10-20T15:45:32.8939275+00:00" finish="2026-10-20T15:45:35.0427650+00:00" />
+  <TestSettings name="default" id="280c65e2-3082-40c2-935b-aa1539c3fe8d">
+    <Deployment runDeploymentRoot="_5060f0b458f2_2026-10-20_15_45_35" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7a3c9d42-f07e-4563-ad43-a63a6614932f" testId="4d4ff802-cc32-e1c0-e4ee-43e3d97049a6" testName="ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans" computerName="5060f0b458f2" duration="00:00:00.0076070" startTime="2026-10-20T15:45:34.8588969+00:00" endTime="2026-10-20T15:45:34.8588969+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a3c9d42-f07e-4563-ad43-a63a6614932f">
+      <Output>
+        <ErrorInfo>
+          <Message>A 出现 2 个未完成计划
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 89
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b539255d-02e8-4e2c-b192-b6e9cc097fe1" testId="64d522a2-2aed-91de-8056-f8eb846ecd7b" testName="ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait" computerName="5060f0b458f2" duration="00:00:00.0071063" startTime="2026-10-20T15:45:34.8403330+00:00" endTime="2026-10-20T15:45:34.8403331+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b539255d-02e8-4e2c-b192-b6e9cc097fe1">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: 加载时已输入的新书名
+Actual:   数据库旧书名
+          ↑ (pos 0)</Message>
+          <StackTrace>   at ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 26
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="315aa10b-6271-49b7-8eca-c982922ce22b" testId="dcdb91fe-e496-d410-2633-b7071040da23" testName="ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation" computerName="5060f0b458f2" duration="00:00:00.1939457" startTime="2026-10-20T15:45:34.8003854+00:00" endTime="2026-10-20T15:45:34.8003987+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="315aa10b-6271-49b7-8eca-c982922ce22b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : 同一本书有多个未完成计划。</Message>
+          <StackTrace>   at ReadJournal.Library.Services.BackupService.Validate(BackupDocument doc) in /tmp/readjournal-audit/package/ReadJournal.Library/Services/BackupService.cs:line 51
+   at ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 117
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="095e2bcf-dc3a-4a88-968f-6cda2a08a827" testId="670f4fc8-d47e-f5b3-4691-2ee1249131d0" testName="ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped" computerName="5060f0b458f2" duration="00:00:00.0082886" startTime="2026-10-20T15:45:34.8501719+00:00" endTime="2026-10-20T15:45:34.8501720+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="095e2bcf-dc3a-4a88-968f-6cda2a08a827">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: 加载中输入的摘录
+Actual:   
+          ↑ (pos 0)</Message>
+          <StackTrace>   at ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 43
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3c5858c3-33e2-4fd9-ae20-720e8a32cdc3" testId="af1ea7d1-da16-1121-55da-274b79f3d44a" testName="ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded" computerName="5060f0b458f2" duration="00:00:00.0345061" startTime="2026-10-20T15:45:34.8346841+00:00" endTime="2026-10-20T15:45:34.8346842+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3c5858c3-33e2-4fd9-ae20-720e8a32cdc3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 66
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation" storage="/tmp/readjournal-audit/package/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="dcdb91fe-e496-d410-2633-b7071040da23">
+      <Execution id="315aa10b-6271-49b7-8eca-c982922ce22b" />
+      <TestMethod codeBase="/tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.AuditRegressionTests" name="BackupExportedAfterLegalUiOperationsMustPassOwnValidation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait" storage="/tmp/readjournal-audit/package/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="64d522a2-2aed-91de-8056-f8eb846ecd7b">
+      <Execution id="b539255d-02e8-4e2c-b192-b6e9cc097fe1" />
+      <TestMethod codeBase="/tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.AuditRegressionTests" name="LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded" storage="/tmp/readjournal-audit/package/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="af1ea7d1-da16-1121-55da-274b79f3d44a">
+      <Execution id="3c5858c3-33e2-4fd9-ae20-720e8a32cdc3" />
+      <TestMethod codeBase="/tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.AuditRegressionTests" name="ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped" storage="/tmp/readjournal-audit/package/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="670f4fc8-d47e-f5b3-4691-2ee1249131d0">
+      <Execution id="095e2bcf-dc3a-4a88-968f-6cda2a08a827" />
+      <TestMethod codeBase="/tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.AuditRegressionTests" name="LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans" storage="/tmp/readjournal-audit/package/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="4d4ff802-cc32-e1c0-e4ee-43e3d97049a6">
+      <Execution id="7a3c9d42-f07e-4563-ad43-a63a6614932f" />
+      <TestMethod codeBase="/tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.AuditRegressionTests" name="RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="4d4ff802-cc32-e1c0-e4ee-43e3d97049a6" executionId="7a3c9d42-f07e-4563-ad43-a63a6614932f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64d522a2-2aed-91de-8056-f8eb846ecd7b" executionId="b539255d-02e8-4e2c-b192-b6e9cc097fe1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcdb91fe-e496-d410-2633-b7071040da23" executionId="315aa10b-6271-49b7-8eca-c982922ce22b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="670f4fc8-d47e-f5b3-4691-2ee1249131d0" executionId="095e2bcf-dc3a-4a88-968f-6cda2a08a827" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af1ea7d1-da16-1121-55da-274b79f3d44a" executionId="3c5858c3-33e2-4fd9-ae20-720e8a32cdc3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="0" failed="5" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:00.84]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:00.89]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:00.89]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:01.13]       System.ArgumentException : 同一本书有多个未完成计划。
+[xUnit.net 00:00:01.14]       Stack Trace:
+[xUnit.net 00:00:01.14]         /tmp/readjournal-audit/package/ReadJournal.Library/Services/BackupService.cs(51,0): at ReadJournal.Library.Services.BackupService.Validate(BackupDocument doc)
+[xUnit.net 00:00:01.14]         /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs(117,0): at ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation()
+[xUnit.net 00:00:01.14]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.17]       Assert.True() Failure
+[xUnit.net 00:00:01.17]       Expected: True
+[xUnit.net 00:00:01.17]       Actual:   False
+[xUnit.net 00:00:01.17]       Stack Trace:
+[xUnit.net 00:00:01.17]         /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs(66,0): at ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded()
+[xUnit.net 00:00:01.17]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.18]       Assert.Equal() Failure
+[xUnit.net 00:00:01.18]                 ↓ (pos 0)
+[xUnit.net 00:00:01.18]       Expected: 加载时已输入的新书名
+[xUnit.net 00:00:01.18]       Actual:   数据库旧书名
+[xUnit.net 00:00:01.18]                 ↑ (pos 0)
+[xUnit.net 00:00:01.18]       Stack Trace:
+[xUnit.net 00:00:01.18]         /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs(26,0): at ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait()
+[xUnit.net 00:00:01.18]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.19]       Assert.Equal() Failure
+[xUnit.net 00:00:01.19]                 ↓ (pos 0)
+[xUnit.net 00:00:01.19]       Expected: 加载中输入的摘录
+[xUnit.net 00:00:01.19]       Actual:   
+[xUnit.net 00:00:01.19]                 ↑ (pos 0)
+[xUnit.net 00:00:01.19]       Stack Trace:
+[xUnit.net 00:00:01.19]         /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs(43,0): at ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped()
+[xUnit.net 00:00:01.19]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.20]       A 出现 2 个未完成计划
+[xUnit.net 00:00:01.20]       Expected: True
+[xUnit.net 00:00:01.20]       Actual:   False
+[xUnit.net 00:00:01.20]       Stack Trace:
+[xUnit.net 00:00:01.20]         /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs(89,0): at ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans()
+[xUnit.net 00:00:01.20]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.20]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="5060f0b458f2" outcome="Error" timestamp="2026-10-20T15:45:34.7938082+00:00">
+        <Text>[xUnit.net 00:00:01.13]     ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="5060f0b458f2" outcome="Error" timestamp="2026-10-20T15:45:34.8346332+00:00">
+        <Text>[xUnit.net 00:00:01.17]     ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="5060f0b458f2" outcome="Error" timestamp="2026-10-20T15:45:34.8403257+00:00">
+        <Text>[xUnit.net 00:00:01.18]     ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="5060f0b458f2" outcome="Error" timestamp="2026-10-20T15:45:34.8498572+00:00">
+        <Text>[xUnit.net 00:00:01.19]     ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="5060f0b458f2" outcome="Error" timestamp="2026-10-20T15:45:34.8619189+00:00">
+        <Text>[xUnit.net 00:00:01.20]     ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

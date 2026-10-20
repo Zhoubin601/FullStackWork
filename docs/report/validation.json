@@ -1,11 +1,12 @@
 {
-  "DraftPath": "/workspace/FullStackWork/docs/report/20261020-阅记-报告草稿-v1.pdf",
-  "Pages": 18,
-  "Bytes": 1028672,
-  "Sha256": "d55f087491528b6b93c8fb41d318f7a279032fbf1f2168a8e60190e2979ace0c",
+  "Path": "/workspace/FullStackWork/output/20261020-阅记-项目报告-v1.pdf",
+  "Pages": 19,
+  "Bytes": 1046510,
+  "Sha256": "2ef350f2e76dcd88c4afbb24429d7d096a6a697617e1b9ff5976327df9569034",
   "RequiredSectionsPresent": true,
+  "IdentityPresent": true,
   "MissingGlyphWarnings": 0,
   "OverfullWarnings": 0,
-  "VisualReview": "All 18 pages rendered; page montage inspected; detailed checks of Chinese text, ER diagram, screenshots, tables and closing page.",
-  "Status": "Draft: identity fields and Windows desktop acceptance outstanding."
+  "VisualReview": "All 19 pages rendered; montage and cover/test/closing pages inspected.",
+  "Status": "Formal PDF; Linux verified, Windows desktop not executed."
 }

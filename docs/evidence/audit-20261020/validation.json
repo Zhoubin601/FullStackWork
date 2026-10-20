@@ -1,0 +1,69 @@
+{
+  "environment": {
+    "os": "Debian 13",
+    "sdk": "8.0.424",
+    "runtime": "8.0.30",
+    "display": "Xvfb real X11",
+    "configuration": "Release"
+  },
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "archive_sha256": "ae11c13d96614e8b127a0db2e5735fcbbf1a002bc9710e2064068f57c411dee4",
+  "baseline": {
+    "passed": 40,
+    "failed": 0,
+    "skipped": 0
+  },
+  "diagnostic_regressions": {
+    "passed": 0,
+    "failed": 5,
+    "note": "预期正确行为断言失败，证实缺陷；不属于原有40例"
+  },
+  "ui_data": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Audit Book A",
+        "Author": "Audit Author",
+        "Category": "Test",
+        "TotalPages": 100,
+        "Description": "Independent end-to-end audit",
+        "CreatedAt": 639281078832086483,
+        "UpdatedAt": 639281078832086483
+      }
+    ],
+    "ReadingRecord": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "ReadingDate": 639280512000000000,
+        "StartPage": 10,
+        "EndPage": 20,
+        "Minutes": 15
+      }
+    ],
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "Audit quote entered through live UI",
+        "Thoughts": "Audit notes",
+        "Page": 20,
+        "IsFavorite": 1,
+        "CreatedAt": 639281079288790721,
+        "UpdatedAt": 639281079288790721
+      }
+    ],
+    "ReadingPlan": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "StartDate": 639280512000000000,
+        "TargetDate": 639280512000000000
+      }
+    ]
+  },
+  "sqlite_user_version": 1,
+  "automatic_backup_count": 1,
+  "binding_diagnostic_count": 0,
+  "formal_pdf_in_output": []
+}

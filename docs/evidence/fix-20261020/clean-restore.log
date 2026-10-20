@@ -1,0 +1,4 @@
+  Determining projects to restore...
+  Restored /tmp/readjournal-fix/clean-package/ReadJournal/ReadJournal.csproj (in 12.18 sec).
+  Restored /tmp/readjournal-fix/clean-package/ReadJournal.Library/ReadJournal.Library.csproj (in 4 ms).
+  Restored /tmp/readjournal-fix/clean-package/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj (in 13.3 sec).

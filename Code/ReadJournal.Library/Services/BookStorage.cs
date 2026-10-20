@@ -27,7 +27,9 @@ public class BookStorage : IBookStorage
         var old = book.Id == 0 ? null : c.Find<Book>(book.Id);
         if (book.Id != 0 && old is null) throw new InvalidOperationException("书籍已被删除。");
         var maximum = book.Id == 0 ? 0 : Math.Max(c.Table<ReadingRecord>().Where(x => x.BookId == book.Id).Select(x => x.EndPage).DefaultIfEmpty(0).Max(), c.Table<Quote>().Where(x => x.BookId == book.Id).Select(x => x.Page ?? 0).DefaultIfEmpty(0).Max());
-        _reading.ValidateBook(book, maximum); book.Title = book.Title.Trim(); book.UpdatedAt = DateTime.Now; book.CreatedAt = old?.CreatedAt ?? book.UpdatedAt;
+        _reading.ValidateBook(book, maximum);
+        ReadingPlanConsistency.Validate(_reading, book, c.Table<ReadingRecord>().Where(x => x.BookId == book.Id), c.Table<ReadingPlan>().Where(x => x.BookId == book.Id));
+        book.Title = book.Title.Trim(); book.UpdatedAt = DateTime.Now; book.CreatedAt = old?.CreatedAt ?? book.UpdatedAt;
         if (old is null) c.Insert(book); else c.Update(book); return book.Id;
     });
     public Task<string> GetDeleteImpactAsync(int id) => _database.ReadAsync(c => $"将同时删除 {c.Table<ReadingRecord>().Count(x => x.BookId == id)} 条阅读记录、{c.Table<Quote>().Count(x => x.BookId == id)} 条书摘和 {c.Table<ReadingPlan>().Count(x => x.BookId == id)} 个计划。此操作不能撤销。");

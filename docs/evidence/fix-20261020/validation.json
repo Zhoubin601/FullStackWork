@@ -1,0 +1,49 @@
+{
+  "Archive": {
+    "Path": "/workspace/FullStackWork/output/20261020-阅记-源码-v2.zip",
+    "Bytes": 102816,
+    "Files": 114,
+    "Sha256": "2f723f261c640fc59621ed5736ae86c7bad500da006fd04ad1f86e2760f76dd5",
+    "CleanRestoreBuildTest": "passed: 68/68",
+    "CleanFirstSecondLaunch": "passed",
+    "WindowsDesktopValidation": "not executed",
+    "ReportPath": "/workspace/FullStackWork/output/20261020-阅记-项目报告-v1.pdf",
+    "ReportPages": 19
+  },
+  "Report": {
+    "Path": "/workspace/FullStackWork/output/20261020-阅记-项目报告-v1.pdf",
+    "Pages": 19,
+    "Bytes": 1046510,
+    "Sha256": "2ef350f2e76dcd88c4afbb24429d7d096a6a697617e1b9ff5976327df9569034",
+    "RequiredSectionsPresent": true,
+    "IdentityPresent": true,
+    "MissingGlyphWarnings": 0,
+    "OverfullWarnings": 0,
+    "VisualReview": "All 19 pages rendered; montage and cover/test/closing pages inspected.",
+    "Status": "Formal PDF; Linux verified, Windows desktop not executed."
+  },
+  "ReleaseTests": {
+    "Passed": 68,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "CleanPackageTests": {
+    "Passed": 68,
+    "Failed": 0,
+    "Skipped": 0
+  },
+  "Application": {
+    "Classes": 66,
+    "Interfaces": 14,
+    "BusinessPages": 10
+  },
+  "WindowsDesktop": "not executed",
+  "UiBindings": 0,
+  "UIBackupEntityCounts": [
+    3,
+    4,
+    2,
+    3
+  ],
+  "RawSha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d"
+}

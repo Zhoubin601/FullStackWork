@@ -1,8 +1,8 @@
 # 阅记最终手写类型与页面清单
 
-统计日期：2026-10-20。以 SDK Roslyn 语法树扫描 UI/Library 全部访问级别的 class/interface；partial 按工程、完整类型名和泛型元数去重，排除测试、bin/obj、生成代码，不计 enum/record/struct。完整哈希见 application-type-inventory.json。
+统计日期：2026-10-20。以SDK Roslyn语法树扫描UI/Library手写class/interface；partial按工程及完整类型名去重，排除测试、bin/obj和生成代码。完整源文件哈希见同名JSON。
 
-实测 **65 类、14 接口、76 个 C# 文件、14 个视图文件**。课程参考为 63 类、10 接口、9 视图，最低线 45 类、7 接口。14 视图中业务页面 10 个，其余为主窗口、主容器、初始化、阅读记录弹窗。
+实测 **66 类、14 接口、77 个 C# 文件、14 个视图文件**；其中10个业务页面。参考为63类、10接口、9视图，最低45类、7接口。
 
 | 类型 | 工程 | 完整类型名 | 手写声明位置 |
 |---|---|---|---|
@@ -27,6 +27,7 @@
 | class | ReadJournal.Library | ReadJournal.Library.Services.FilePreferenceStorage | ReadJournal.Library/Services/FilePreferenceStorage.cs:3 |
 | class | ReadJournal.Library | ReadJournal.Library.Services.MenuNavigationConstant | ReadJournal.Library/Services/IMenuNavigationService.cs:3 |
 | class | ReadJournal.Library | ReadJournal.Library.Services.QuoteStorage | ReadJournal.Library/Services/QuoteStorage.cs:3 |
+| class | ReadJournal.Library | ReadJournal.Library.Services.ReadingPlanConsistency | ReadJournal.Library/Services/ReadingPlanConsistency.cs:3 |
 | class | ReadJournal.Library | ReadJournal.Library.Services.ReadingPlanStorage | ReadJournal.Library/Services/ReadingPlanStorage.cs:3 |
 | class | ReadJournal.Library | ReadJournal.Library.Services.ReadingRecordStorage | ReadJournal.Library/Services/ReadingRecordStorage.cs:3 |
 | class | ReadJournal.Library | ReadJournal.Library.Services.ReadingService | ReadJournal.Library/Services/ReadingService.cs:3 |

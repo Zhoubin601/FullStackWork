@@ -19,7 +19,7 @@ public class ReadingPlanStorage : IReadingPlanStorage
         if (plan.TargetDate < DateTime.Today || plan.TargetDate < plan.StartDate) throw new ArgumentException("目标日期不得早于今天或计划开始日期。");
         var progress = _reading.Calculate(book, c.Table<ReadingRecord>().Where(x => x.BookId == book.Id));
         if (old is null && progress.State == "已完成") throw new ArgumentException("已读完的书籍不能新建普通阅读计划。");
-        if (progress.State != "已完成" && c.Table<ReadingPlan>().Any(x => x.BookId == book.Id && x.Id != plan.Id)) throw new ArgumentException("每本书最多一个未完成计划。");
+        if (c.Table<ReadingPlan>().Any(x => x.BookId == book.Id && x.Id != plan.Id)) throw new ArgumentException("该书籍已有阅读计划，请编辑已有计划或先删除多余计划，不能关联第二个计划。");
         if (old is null) c.Insert(plan); else c.Update(plan); return plan.Id;
     });
     public Task DeleteAsync(int id) => _database.WriteAsync(c => c.Delete<ReadingPlan>(id));

@@ -8,9 +8,9 @@
 \usepackage{xurl}
 \usepackage{graphicx,booktabs,longtable,array,caption,float,fancyhdr,hyperref,fvextra,tikz}
 \usetikzlibrary{arrows.meta,positioning,fit}
-\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,pdftitle={阅记项目报告草稿},pdfauthor={资料未提供}}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,pdftitle={阅记阅读与书摘管理应用项目报告},pdfauthor={周宇斌}}
 \graphicspath{{../evidence/}}
-\pagestyle{fancy}\fancyhf{}\lhead{阅记 · 阅读与书摘管理}\rhead{报告草稿}\cfoot{\thepage}
+\pagestyle{fancy}\fancyhf{}\lhead{阅记 · 阅读与书摘管理}\rhead{项目报告}\cfoot{\thepage}
 \ctexset{section={number=\arabic{section},name={}},subsection={number=\arabic{section}.\arabic{subsection}}}
 \setlength{\parindent}{2em}\setlength{\parskip}{4pt}
 \renewcommand{\arraystretch}{1.3}
@@ -19,10 +19,10 @@
 \begin{titlepage}\centering
 \vspace*{22mm}{\LARGE 全栈开发技术期末项目报告\par}
 \vspace{22mm}{\Huge\bfseries 阅记\par}\vspace{5mm}{\Large 阅读与书摘管理应用\par}
-\vspace{24mm}\begin{tabular}{rl}项目名称：&阅记阅读与书摘管理应用\\姓名：&资料未提供\\学号：&资料未提供\\班级：&资料未提供\end{tabular}
+\vspace{24mm}\begin{tabular}{rl}项目名称：&阅记阅读与书摘管理应用\\姓名：&周宇斌\\学号：&20246085\\班级：&软件2401\end{tabular}
 \vfill{\large 2026年10月20日\par}\vspace{12mm}
 \begin{minipage}{.85\linewidth}\small
-文档状态：报告草稿。正文依据实际源码、40项自动化测试及Linux桌面实测编写。姓名、学号、班级等待补充；默认Windows桌面验收未执行，不记为通过。该文档供复核，不作为全部课程验收完成的声明。
+本文依据实际源码、自动化测试及Linux桌面实测编写，包含本轮缺陷修复与回归验证。测试环境和结果均如实记录；Windows桌面尚未实测，不记为已通过。
 \end{minipage}
 \end{titlepage}
 \tableofcontents\newpage
@@ -84,11 +84,11 @@ Book含Id、Title、Author、Category、TotalPages、Description、CreatedAt和U
 
 记录约束为1 ≤ 起始页 ≤ 结束页 ≤ 总页数、分钟数为正整数、日期不晚于本地当天。当前页取最大结束页，无记录为0；累计页数对每条记录求闭区间长度之和，包含重读。完成日期为读至末页记录的最早日期。修改记录或总页数后由有效数据重新推导状态。
 
-每本书最多一个未完成计划；普通新计划不能关联已完成书籍。未逾期的建议每日页数为剩余页数除以包含当天的剩余天数后向上取整；完成为0；逾期单列状态与剩余页数。删除计划不删除记录。
+新建或编辑计划时，同一本书不能再关联第二个计划；普通新计划不能关联已完成书籍。旧备份中的多个完成计划可保留，但修改记录或总页数会使其同时变为未完成时，整个操作拒绝并提示先清理多余计划。未逾期的建议每日页数为剩余页数除以包含当天的剩余天数后向上取整；完成为0；逾期单列状态与剩余页数。删除计划不删除记录。
 \subsection{接口与类设计}
-最终采用与参考相同的语法树口径：只扫描UI与Library手写class/interface，包括默认访问级别；partial按工程及完整类型名去重；排除测试和生成代码，不计枚举、结构体或record。实际为65类、14接口、76个C\#源文件、14个视图文件，其中业务视图10个。参考为63类、10接口、9视图；最低45类、7接口，实际数量已满足。
+最终采用与参考相同的语法树口径：只扫描UI与Library手写class/interface，包括默认访问级别；partial按工程及完整类型名去重；排除测试和生成代码，不计枚举、结构体或record。实际为66类、14接口、77个C\#源文件、14个视图文件，其中业务视图10个。参考为63类、10接口、9视图；最低45类、7接口，实际数量已满足。
 
-14项接口职责为数据库初始化、书籍存储、阅读记录存储、书摘存储、计划存储、偏好、阅读业务、统计、备份、提示、文件选择及三层导航。职责与实现逐一对应，未通过空接口或人为拆分补足数量。主要类还包括四类实体、进度/计划/统计投影、共享编辑基类、各页ViewModel、平台视图和定位器。
+14项接口职责为数据库初始化、书籍存储、阅读记录存储、书摘存储、计划存储、偏好、阅读业务、统计、备份、提示、文件选择及三层导航。职责与实现逐一对应，未通过空接口或人为拆分补足数量。主要类还包括四类实体、进度/计划/统计投影、共享编辑基类、各页ViewModel、平台视图和定位器。新增计划一致性规则类在事务中复用业务状态校验，避免不同写入路径与备份规则分歧。
 
 完整逐类型名称、路径、行号及源文件哈希见\path{docs/application-type-inventory.json}和同名Markdown。参考复核结果保留于\path{docs/reference-baseline-cloud.json}，可用\path{docs/tools/TypeInventory}重跑；原PowerShell脚本仍保留。
 \subsection{技术选型说明}
@@ -119,20 +119,20 @@ Avalonia.Headless & 11.0.10，仅用于自动化中的真实应用资源和视�
 \clearpage
 \subsection{核心功能与UI截图}
 以下十图均为最终Release应用在Linux真实X11窗口中的直接截屏，显示的是用户主动载入的虚构演示资料。非全部内容都能在同一窗口高度内展示时，页面提供滚动；截图不拼接或补画隐藏内容。
-\screen{final-overview.png}{阅读概览：全量指标、在读书籍和近期记录}
-\screen{final-library.png}{我的书库：搜索、状态筛选、分页与详情入口}
+\screen{fix-20261020/overview.png}{阅读概览：全量指标、在读书籍和近期记录}
+\screen{fix-20261020/library.png}{我的书库：搜索、状态筛选、分页与详情入口}
 \clearpage
-\screen{final-detail.png}{书籍详情：进度、阅读活动与计划关联}
-\screen{final-book-edit.png}{书籍编辑：独立业务表单}
+\screen{fix-20261020/detail.png}{书籍详情：进度、阅读活动与计划关联}
+\screen{fix-20261020/book-edit.png}{书籍编辑：独立业务表单}
 \clearpage
-\screen{final-quotes.png}{书摘列表：虚构摘录、感想和收藏入口}
-\screen{final-quote-edit.png}{书摘编辑：正文、感想、页码和收藏}
+\screen{fix-20261020/quotes.png}{书摘列表：虚构摘录、感想和收藏入口}
+\screen{fix-20261020/quote-edit.png}{书摘编辑：正文、感想、页码和收藏}
 \clearpage
-\screen{final-plans.png}{计划列表：派生状态与建议页数}
-\screen{final-plan-edit.png}{计划编辑：实际关联书籍与目标日期}
+\screen{fix-20261020/plans.png}{计划列表：派生状态与建议页数}
+\screen{fix-20261020/plan-edit.png}{计划编辑：实际关联书籍与目标日期}
 \clearpage
-\screen{final-statistics.png}{统计：191页、210分钟、完成1本及近七日趋势}
-\screen{final-settings.png}{设置与数据：主题、导出、恢复和演示入口}
+\screen{fix-20261020/statistics.png}{统计：191页、210分钟、完成1本及近七日趋势}
+\screen{fix-20261020/settings.png}{设置与数据：主题、导出、恢复和演示入口}
 \clearpage
 \subsection{难点和解决方案}
 \begin{longtable}{p{34mm}p{105mm}}\toprule 实际问题 & 已执行处理及验证\\\midrule
@@ -145,21 +145,23 @@ XAML与SQLite首轮失败 & 内部xmlns导致AXN0002，移至根节点；busy\_t
 原生选择器驱动 & GTK路径自动补全曾干扰测试输入，应用正确提示文件不存在。通过真实列表选择同一文件后恢复成功，未用后台写库代替UI恢复。\\\bottomrule
 \end{longtable}
 
+本轮复核还发现加载与保存期间输入保护不足，以及计划状态变化与备份校验不一致。修复后，表单按字段合并未改值并保留用户修改，保存仅确认实际提交的快照；保存中新增修改保留在编辑页，新建成功回填主键避免重复插入。加载失败后可在编辑页重新加载。计划变更、记录修改与总页数修改在同一数据库事务中维护约束，拒绝不安全操作且不删除原数据。
+
 重复目标拦截、参数版本、草稿保护、串行写入和事务均为阅记新增业务正确性措施。参考README明确未解决线程与原子性，不能把这些新增设计称为参考项目原有机制。
 \section{系统测试}
 \subsection{测试环境}
-实测为Debian13 / Linux x64，.NET SDK8.0.424、运行时8.0.30、MSBuild17.11.48，Xvfb21.1.7、1440×1000显示环境。自动化运行Release构建；业务测试使用独立临时SQLite库，架构测试使用真实容器和应用资源。Windows桌面验收未执行。
+实测为Debian13 / Linux x64，.NET SDK8.0.424、运行时8.0.30、MSBuild17.11.48，Xvfb21.1.16、1440×1000显示环境。自动化运行Release构建；业务测试使用独立临时SQLite库，架构测试使用真实容器和应用资源。Windows桌面验收未执行。
 
 真实图形环境中的窗口无需联网即可使用业务功能。图形日志包含X11会话管理器缺失及GLX llvmpipe回退提示，应用实际继续运行并完成操作；该记录不代表已测GPU硬件加速。最终十页面运行的绑定诊断为0，完整日志保留。
 
-最终源码归档按显式白名单生成，共110个文件、93138字节，无bin、obj、TestResults、运行数据库或工作过程目录。解压到新临时目录，使用全新的NuGet包及HTTP缓存目录执行：
+最终源码归档按显式白名单生成，共114个文件、102816字节，无bin、obj、TestResults、运行数据库或工作过程目录。解压到新临时目录，使用全新的NuGet包及HTTP缓存目录执行：
 \begin{Verbatim}[fontsize=\small,breaklines=true]
 dotnet restore ReadJournal.sln --locked-mode --no-cache
 dotnet build ReadJournal.sln -c Release --no-restore
 dotnet test ReadJournal.sln -c Release --no-build --no-restore
 \end{Verbatim}
 
-还原、构建、测试均退出0；40项测试通过。依赖还原实际使用网络，未宣称离线首次还原。解压后的实际应用分别首次、再次启动成功，并在独立运行目录创建版本1数据库。构建结果不回填源码包。
+还原、构建、测试均退出0；68项测试通过。依赖还原实际使用网络，未宣称离线首次还原。解压后的实际应用分别首次、再次启动成功，并在独立运行目录创建版本1数据库。构建结果不回填源码包。
 \subsection{测试用例}
 \begin{longtable}{p{38mm}p{86mm}p{15mm}}\toprule 用例组与数量 & 实际覆盖与结果 & 结果\\\midrule
 架构5 & 容器类型与全部14接口单例、构造注入、资源Current、三层参数与返回栈、反射视图缓存、失败重试、A/B详情更新。 & 通过\\
@@ -167,22 +169,26 @@ dotnet test ReadJournal.sln -c Release --no-build --no-restore
 阅读业务12 & 第一页/单页/末页/整本；10～20计11页及重复22页；0页、逆序、超限、非正分钟、未来日期拒绝；进度重算、搜索分页、收藏、级联。 & 通过\\
 编辑2 & 取消、放弃、保存并离开；模拟保存失败保留草稿和原页面；成功保存后不再脏。 & 通过\\
 扩展业务16 & 计划当天/逾期/完成分母边界；唯一未完成计划；统计及演示；非连续ID往返；无效备份九类；自动备份失败和事务替换失败回滚；偏好保留。 & 通过\\
-时序2 & 延迟旧详情加载不能发布到新参数；返回、菜单与关闭不会同时发起两次确认。 & 通过\\\bottomrule
+时序2 & 延迟旧详情加载不能发布到新参数；返回、菜单与关闭不会同时发起两次确认。 & 通过\\
+编辑回归20 & 首次加载前和加载中逐字段草稿保留、失败后保存门禁与重试；四种编辑器保存及保存离开期间新输入留页、新建ID回填。 & 通过\\
+计划回归8 & 重复关联提前拒绝、历史多完成计划的删除/改页/换书/增总页安全拒绝、无部分写入、清理后正常操作、安全编辑及并发唯一性、JSON往返。 & 通过\\\bottomrule
 \end{longtable}
 
-单条用例名称、参数、耗时和结果见\path{docs/test-results.md}，来源为真实release.trx。源码包解压目录同一测试集再次40项通过。UI另行实际验证书籍录入、阅读记录与书摘、未保存取消/放弃、重启持久化、主题、演示、计划状态与建议、原生备份恢复；这些证据不是由自动化结果推定。补充一致性实测在隔离演示库副本中仅用UI修改末页记录至240页，统计更新为371页、210分钟、完成2本，关联计划完成；删除该完成记录后统计为161页、175分钟、完成1本，进度与计划退回在读；再通过书籍编辑把总页数改为30页，完成书数回到2本且累计活动仍为161页、175分钟。
+本轮真实UI复验中，对隔离测试库施加独占锁触发读取失败；界面禁止将未水合的空表单保存回库，解除锁并重新加载后资料完整恢复。编辑计划关联到已有计划的完成书籍时，错误明确提示且原关联保持不变；随后通过原生文件选择器导出和恢复3本书、4条记录、2条书摘、3个计划，自动备份存在。
+
+单条用例名称、参数、耗时和结果见\path{docs/test-results.md}，来源为真实fix-release.trx。源码包解压目录同一测试集再次68项通过。UI另行实际验证书籍录入、阅读记录与书摘、未保存取消/放弃、重启持久化、主题、演示、计划状态与建议、原生备份恢复；这些证据不是由自动化结果推定。补充一致性实测在隔离演示库副本中仅用UI修改末页记录至240页，统计更新为371页、210分钟、完成2本，关联计划完成；删除该完成记录后统计为161页、175分钟、完成1本，进度与计划退回在读；再通过书籍编辑把总页数改为30页，完成书数回到2本且累计活动仍为161页、175分钟。
 \subsection{测试截图}
-\screen{final-test-terminal.png}{真实终端执行Release测试：40通过、0失败、0跳过}
-\screen{stage3-restart-persistence.png}{重启后真实详情：20/100进度、11页累计及关联书摘}
+\screen{fix-20261020/tests-68-terminal.png}{真实终端执行Release测试：68通过、0失败、0跳过}
+\screen{fix-20261020/retry-book-success.png}{编辑页读取失败后，通过重新加载恢复原资料}
 \clearpage
-\screen{stage3-unsaved-confirmation.png}{真实未保存确认：取消、放弃、保存并离开}
-\screen{final-clean-first-launch.png}{最终源码包解压、还原、构建后在独立数据目录实际首次启动}
+\screen{fix-20261020/duplicate-plan-rejected.png}{重复关联至已有计划的书籍时拒绝保存，原关联保持不变}
+\screen{fix-20261020/clean-first-launch.png}{最终源码包解压、还原、构建后在独立数据目录实际首次启动}
 
 \clearpage
 \section{总结与展望}
-阅记完成十个业务页面及阅读管理闭环，保留参考项目真实IoC、单例定位器、三层导航、统一参数入口、主ViewModel返回栈和反射视图缓存。40项自动化测试及Linux实际桌面流程通过；源码包满足白名单和大小约束，解压后可还原、构建、测试及启动。
+阅记完成十个业务页面及阅读管理闭环，保留参考项目真实IoC、单例定位器、三层导航、统一参数入口、主ViewModel返回栈和反射视图缓存。68项自动化测试及Linux实际桌面流程通过；源码包满足白名单和大小约束，解压后可还原、构建、测试及启动。
 
-仍待补齐：姓名、学号、班级；规划默认的Windows桌面实际验收。当前不能宣布全部课程交付已验收。初次构建存在固定SQLite依赖的Alpine RID提示，未执行Alpine兼容、大数据压力或多设备同步测试。未来可在不破坏现有调用机制的前提下补充更多输入可用性与更大数据集测量；电子书阅读、联网检索和云同步属于第一版边界之外。
+报告身份资料已补齐，当前交付包含修复后的源码与正式PDF。规划默认的Windows桌面尚未实际验收，不能以Linux结果推定Windows通过。初次构建存在固定SQLite依赖的Alpine RID提示，未执行Alpine兼容、大数据压力或多设备同步测试。未来可在不破坏现有调用机制的前提下补充更多输入可用性与更大数据集测量；电子书阅读、联网检索和云同步属于第一版边界之外。
 
 本报告依据原始指导书模板、唯一开发规划、实际参考副本和最终实现编写。相关证据分别保留于来源记录、参考架构核对、开发执行记录、类型清单、测试结果和真实截图目录；参考源码及raw原始资料未改写。
 \end{document}

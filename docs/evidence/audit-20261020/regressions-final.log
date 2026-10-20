@@ -1,0 +1,59 @@
+  ReadJournal.Library -> /tmp/readjournal-audit/package/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /tmp/readjournal-audit/package/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /tmp/readjournal-audit/package/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.13]     ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation [FAIL]
+[xUnit.net 00:00:01.17]     ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded [FAIL]
+[xUnit.net 00:00:01.18]     ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait [FAIL]
+[xUnit.net 00:00:01.19]     ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped [FAIL]
+[xUnit.net 00:00:01.20]     ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans [FAIL]
+  Failed ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation [193 ms]
+  Error Message:
+   System.ArgumentException : 同一本书有多个未完成计划。
+  Stack Trace:
+     at ReadJournal.Library.Services.BackupService.Validate(BackupDocument doc) in /tmp/readjournal-audit/package/ReadJournal.Library/Services/BackupService.cs:line 51
+   at ReadJournal.UnitTest.AuditRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 117
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded [34 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.AuditRegressionTests.ChangesTypedDuringSaveMustNotBeMarkedSavedAndDiscarded() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 66
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait [7 ms]
+  Error Message:
+   Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: 加载时已输入的新书名
+Actual:   数据库旧书名
+          ↑ (pos 0)
+  Stack Trace:
+     at ReadJournal.UnitTest.AuditRegressionTests.LoadingExistingBookMustNotOverwriteDraftTypedDuringAwait() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 26
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped [8 ms]
+  Error Message:
+   Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: 加载中输入的摘录
+Actual:   
+          ↑ (pos 0)
+  Stack Trace:
+     at ReadJournal.UnitTest.AuditRegressionTests.LoadingQuoteBookChoicesMustNotEraseTextAlreadyTyped() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 43
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans [7 ms]
+  Error Message:
+   A 出现 2 个未完成计划
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.AuditRegressionTests.RemovingCompletionRecordMustNotProduceTwoUnfinishedPlans() in /tmp/readjournal-audit/package/ReadJournal.UnitTest/AuditRegressionTests.cs:line 89
+--- End of stack trace from previous location ---
+Results File: /tmp/readjournal-audit/package/ReadJournal.UnitTest/TestResults/audit-regressions-final.trx
+
+Failed!  - Failed:     5, Passed:     0, Skipped:     0, Total:     5, Duration: 58 ms - ReadJournal.UnitTest.dll (net8.0)
