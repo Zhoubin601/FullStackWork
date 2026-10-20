@@ -21,4 +21,5 @@ public partial class SettingsViewModel : ViewModelBase
         RestoreCommand = new AsyncRelayCommand(() => RunAsync(async () => { var path = await files.ChooseOpenPathAsync(); if (path != null && await alert.ConfirmAsync("恢复备份", "将替换全部业务数据。校验通过后会先自动备份当前数据；主题偏好会保留。是否继续？")) { var auto = await backup.RestoreAsync(path); Status = "恢复成功。原数据已自动备份至：" + auto; } }));
     }
     protected override async Task LoadAsync() { SelectedTheme = await _preferences.GetThemeAsync(); }
+    public override Task<bool> CanLeaveAsync() => Task.FromResult(!IsBusy);
 }

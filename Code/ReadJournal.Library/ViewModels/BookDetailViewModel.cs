@@ -28,7 +28,20 @@ public partial class BookDetailViewModel : ViewModelBase
         EditBookCommand = new RelayCommand(() => content.NavigateTo(ContentNavigationConstant.BookEditView, _id));
         AddQuoteCommand = new RelayCommand(() => content.NavigateTo(ContentNavigationConstant.QuoteEditView, new Quote { BookId = _id }));
         EditQuoteCommand = new RelayCommand<QuoteItem>(q => { if (q != null) content.NavigateTo(ContentNavigationConstant.QuoteEditView, q.Quote); });
-        DeleteBookCommand = new AsyncRelayCommand(() => RunAsync(async () => { var impact = await _books.GetDeleteImpactAsync(_id); if (await alert.ConfirmAsync("删除书籍", impact)) { await _books.DeleteAsync(_id); main.GoBack(); } }));
+        DeleteBookCommand = new AsyncRelayCommand(() => RunAsync(async () =>
+        {
+            var id = _id;
+            var version = ParameterVersion;
+            bool IsCurrentDetail() => version == ParameterVersion && ReferenceEquals(main.Content, this);
+            if (!IsCurrentDetail()) return;
+            var impact = await _books.GetDeleteImpactAsync(id);
+            if (!IsCurrentDetail()) return;
+            var confirmed = await alert.ConfirmAsync("删除书籍", impact);
+            if (!confirmed || !IsCurrentDetail()) return;
+            await _books.DeleteAsync(id);
+            // A completed operation must not navigate away from a newer page or draft.
+            if (IsCurrentDetail()) main.GoBack();
+        }));
         AddRecordCommand = new AsyncRelayCommand(() => RunAsync(async () =>
         {
             if (Progress == null) return; var complete = Progress.State == "已完成";

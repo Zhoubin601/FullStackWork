@@ -1,0 +1,21 @@
+{
+  "OriginalRequirementSha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "ReferenceFilesChecked": 64,
+  "ReferenceHashMismatches": [],
+  "ApplicationSummary": {
+    "Classes": 66,
+    "Interfaces": 14,
+    "ViewFiles": 14,
+    "MinimumClasses": 47,
+    "MinimumInterfaces": 10,
+    "CSharpFiles": 77
+  },
+  "ReferenceSummary": {
+    "Classes": 63,
+    "Interfaces": 10,
+    "ViewFiles": 9,
+    "MinimumClasses": 45,
+    "MinimumInterfaces": 7,
+    "CSharpFiles": 55
+  }
+}

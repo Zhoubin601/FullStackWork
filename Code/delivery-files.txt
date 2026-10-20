@@ -106,6 +106,10 @@ ReadJournal.UnitTest/DatabaseTests.cs
 ReadJournal.UnitTest/EditingTests.cs
 ReadJournal.UnitTest/ExtendedBusinessTests.cs
 ReadJournal.UnitTest/NavigationRaceTests.cs
+ReadJournal.UnitTest/DeleteNavigationRaceTests.cs
+ReadJournal.UnitTest/BusyLoadRegressionTests.cs
+ReadJournal.UnitTest/SettingsNavigationTests.cs
+ReadJournal.UnitTest/OverviewArchitectureTests.cs
 ReadJournal.UnitTest/ReadJournal.UnitTest.csproj
 ReadJournal.UnitTest/ReadingBusinessTests.cs
 ReadJournal.UnitTest/packages.lock.json

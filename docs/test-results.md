@@ -1,5 +1,33 @@
 # 实际自动化测试结果
 
+## 最新架构与功能贯通复核（2026-10-20）
+
+最终 Release **83通过、0失败、0跳过**。原有68项加本轮15项；源码v3独立解包、locked-mode还原、Release构建和同一83项全部通过。解包还原使用本轮已填充的共享NuGet缓存，未复制bin/obj，没有另建空NuGet缓存。
+
+本轮实际来源：`docs/evidence/architecture-flow-20261020/final.trx`、`clean.trx`。独立运行时架构探针另有71项全部通过，覆盖完整容器和视图/导航映射。修复前失败证据单独保留，汇总见`docs/architecture-flow-review-20261020.md`。
+
+以下是本轮15项新增永久回归的实际结果；后续旧68项表保留历史日志和耗时，不冒称为本轮耗时。
+
+| 实际新增用例 | 结果 | 耗时 |
+|---|---|---|
+| ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: False) | Passed | 00:00:00.1957399 |
+| ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: True) | Passed | 00:00:00.0424900 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.CommittedDeletionCannotPopReopenedDetailUsingSameSingleton | Passed | 00:00:00.0119316 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.CompletionOfOldDeletionCannotDiscardDraftOnNewPage | Passed | 00:00:00.0185828 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.ConfirmedDeletionOnCurrentDetailStillReturnsToLibrary | Passed | 00:00:00.0038885 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingConfirmationCannotDeleteAfterDetailParameterChanges | Passed | 00:00:00.0108730 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingImpactReadCannotDeleteBookOpenedByLaterNavigation | Passed | 00:00:00.0057179 |
+| ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes | Passed | 00:00:00.0344447 |
+| ReadJournal.UnitTest.OverviewArchitectureTests.OverviewLoadsThroughBusinessInterfacesWithoutDatabaseDependency | Passed | 00:00:00.0129821 |
+| ReadJournal.UnitTest.OverviewArchitectureTests.RecentSummariesJoinBooksSortDatesAndIdsAndApplyLimitInActualSqlite | Passed | 00:00:00.0208462 |
+| ReadJournal.UnitTest.OverviewArchitectureTests.RecentSummariesReturnEmptyForActualEmptySqlite | Passed | 00:00:00.0078511 |
+| ReadJournal.UnitTest.SettingsNavigationTests.FailedRestoreReleasesNavigationAndCloseProtection | Passed | 00:00:00.0221720 |
+| ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation | Passed | 00:00:00.0076742 |
+| ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose | Passed | 00:00:00.0075971 |
+| ReadJournal.UnitTest.SettingsNavigationTests.SuccessfulRestoreReleasesNavigationAndCloseProtection | Passed | 00:00:00.0042293 |
+
+## 前轮68项历史结果
+
 2026-10-20 修复后复验：Debian 13 x64，.NET SDK 8.0.424，Release。**68通过、0失败、0跳过**；包括原有40项、编辑回归20项、计划一致性回归8项。新版ZIP独立解包后使用全新NuGet目录还原、构建并运行同一68项，全部通过。
 
 来源：`docs/evidence/fix-20261020/fix-release.trx` 和 `fix-clean.trx`。此前审计的5项历史失败复现保留在audit目录；已将正确行为纳入永久回归，后两项改为验证重复关联被提前拒绝、数据保持完整及备份往返。

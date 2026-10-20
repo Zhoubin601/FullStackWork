@@ -98,3 +98,10 @@
 用户在本轮明确提供报告身份：周宇斌，学号20246085，班级软件2401，并授权修复全部已发现缺陷。上述身份仅用于项目报告与当前任务记录。修复依据为本轮项目审查及其5项定向复现；保留历史失败证据，修复后重新测试，不沿用通过数字。
 
 本轮修复来源与验证：新增永久测试和实际Code、fix-release.trx/fix-clean.trx、真实窗口截图及正式PDF构成本轮证据，保存在 docs/evidence/fix-20261020。原始指导书哈希未变；依赖未升级，未修改参考源码。
+
+## 2026-10-20 最新架构与功能贯通复核来源
+
+- 远端来源：`https://github.com/Zhoubin601/FullStackWork`，本轮执行 `git fetch origin --prune`；本地与 `origin/main` 同为 `20d9c67`，没有新增提交需要合并。
+- 原始来源：`raw/期末项目与报告要求.docx`，使用 Python ZipFile/XML 直接重读全部段落与表格；参考源码 `daily-poetry-a/` 和实现 `Code/` 均直接读取。
+- 新验证证据保存在 `docs/evidence/architecture-flow-20261020/`；本轮结果单独记录，不用历史截图或测试数字代替。
+- 核对计划及最终汇总：`docs/architecture-flow-review-20261020.md`；细分为架构、业务和真实 UI 三部分独立复核。

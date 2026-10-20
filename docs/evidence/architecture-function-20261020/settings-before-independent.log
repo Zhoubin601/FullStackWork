@@ -1,0 +1,29 @@
+  BusinessAudit -> /workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll
+Test run for /workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.68]     ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation [FAIL]
+[xUnit.net 00:00:01.68]     ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose [FAIL]
+  Failed ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation [23 ms]
+  Error Message:
+   Assert.Same() Failure
+Expected: SettingsViewModel { ApplyThemeCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, Error = "", ExportCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, IsBusy = True, LoadDemoCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, ... }
+Actual:   BookListViewModel { AddBookCommand = RelayCommand { }, BooksPage = [], Error = "", IsBusy = False, IsEmpty = False, ... }
+  Stack Trace:
+     at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 20
+   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 23
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose [5 ms]
+  Error Message:
+   Assert.False() Failure
+Expected: False
+Actual:   True
+  Stack Trace:
+     at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 33
+   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 34
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/architecture-function-20261020/settings-before-independent.trx
+
+Failed!  - Failed:     2, Passed:     2, Skipped:     0, Total:     4, Duration: 43 ms - BusinessAudit.dll (net8.0)

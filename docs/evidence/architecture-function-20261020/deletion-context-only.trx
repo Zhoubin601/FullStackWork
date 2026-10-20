@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b53602e2-a3c5-475b-8011-64cfad7a1eda" name="@8384b6f16018 2026-10-20 16:43:28" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T16:43:28.0220471+00:00" queuing="2026-10-20T16:43:28.0220471+00:00" start="2026-10-20T16:43:25.8250949+00:00" finish="2026-10-20T16:43:28.0752680+00:00" />
+  <TestSettings name="default" id="8bcaa82c-6f09-4ade-80d9-b0182cc2ea70">
+    <Deployment runDeploymentRoot="_8384b6f16018_2026-10-20_16_43_28" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="70afa6fc-b8b7-4f49-8b4f-50e797e1c1e9" testId="dde67e3c-2d04-3aae-d167-81f5cb38b66b" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.ConfirmedDeletionOnCurrentDetailStillReturnsToLibrary" computerName="8384b6f16018" duration="00:00:00.0046674" startTime="2026-10-20T16:43:27.9154394+00:00" endTime="2026-10-20T16:43:27.9154395+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70afa6fc-b8b7-4f49-8b4f-50e797e1c1e9" />
+    <UnitTestResult executionId="efc9a01e-7c13-4d42-ae91-5b158edc478f" testId="ed561dc9-de70-c588-fec5-0357aeeb49e6" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes" computerName="8384b6f16018" duration="00:00:00.1076828" startTime="2026-10-20T16:43:27.8699256+00:00" endTime="2026-10-20T16:43:27.8699470+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efc9a01e-7c13-4d42-ae91-5b158edc478f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure
+Expected: 2
+Actual:   (null)</Message>
+          <StackTrace>   at ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/DeleteNavigationRaceTests.cs:line 96
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="52faefc2-efe1-4f14-98c0-b7345cd8a0a2" testId="aeae003d-a67e-bacf-0ff2-0e6dfe690239" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.CommittedDeletionCannotPopReopenedDetailUsingSameSingleton" computerName="8384b6f16018" duration="00:00:00.0065950" startTime="2026-10-20T16:43:27.9116408+00:00" endTime="2026-10-20T16:43:27.9116410+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52faefc2-efe1-4f14-98c0-b7345cd8a0a2" />
+    <UnitTestResult executionId="7d3da13b-6e6a-4b7b-9910-59337724a795" testId="280bd270-1b13-c963-0161-d426ff4301c9" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.CompletionOfOldDeletionCannotDiscardDraftOnNewPage" computerName="8384b6f16018" duration="00:00:00.0376278" startTime="2026-10-20T16:43:27.9040311+00:00" endTime="2026-10-20T16:43:27.9040312+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d3da13b-6e6a-4b7b-9910-59337724a795" />
+    <UnitTestResult executionId="dce7944f-b57d-4321-824f-71bd82a22cda" testId="b38ae3bc-34f3-7ad8-1e1d-bca8ceaad28e" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingImpactReadCannotDeleteBookOpenedByLaterNavigation" computerName="8384b6f16018" duration="00:00:00.0027964" startTime="2026-10-20T16:43:27.9239730+00:00" endTime="2026-10-20T16:43:27.9239731+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dce7944f-b57d-4321-824f-71bd82a22cda" />
+    <UnitTestResult executionId="11520afa-4317-4acb-b953-0bf9031f7218" testId="ec5d19a6-980d-dab4-0dbf-a491bfeea481" testName="ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingConfirmationCannotDeleteAfterDetailParameterChanges" computerName="8384b6f16018" duration="00:00:00.0047013" startTime="2026-10-20T16:43:27.9234732+00:00" endTime="2026-10-20T16:43:27.9234734+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11520afa-4317-4acb-b953-0bf9031f7218" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="ed561dc9-de70-c588-fec5-0357aeeb49e6">
+      <Execution id="efc9a01e-7c13-4d42-ae91-5b158edc478f" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="ReopenedDetailLoadsNewBookAfterOlderOperationCompletes" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.ConfirmedDeletionOnCurrentDetailStillReturnsToLibrary" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="dde67e3c-2d04-3aae-d167-81f5cb38b66b">
+      <Execution id="70afa6fc-b8b7-4f49-8b4f-50e797e1c1e9" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="ConfirmedDeletionOnCurrentDetailStillReturnsToLibrary" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.CommittedDeletionCannotPopReopenedDetailUsingSameSingleton" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="aeae003d-a67e-bacf-0ff2-0e6dfe690239">
+      <Execution id="52faefc2-efe1-4f14-98c0-b7345cd8a0a2" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="CommittedDeletionCannotPopReopenedDetailUsingSameSingleton" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingImpactReadCannotDeleteBookOpenedByLaterNavigation" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="b38ae3bc-34f3-7ad8-1e1d-bca8ceaad28e">
+      <Execution id="dce7944f-b57d-4321-824f-71bd82a22cda" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="PendingImpactReadCannotDeleteBookOpenedByLaterNavigation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.PendingConfirmationCannotDeleteAfterDetailParameterChanges" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="ec5d19a6-980d-dab4-0dbf-a491bfeea481">
+      <Execution id="11520afa-4317-4acb-b953-0bf9031f7218" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="PendingConfirmationCannotDeleteAfterDetailParameterChanges" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.DeleteNavigationRaceTests.CompletionOfOldDeletionCannotDiscardDraftOnNewPage" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="280bd270-1b13-c963-0161-d426ff4301c9">
+      <Execution id="7d3da13b-6e6a-4b7b-9910-59337724a795" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.DeleteNavigationRaceTests" name="CompletionOfOldDeletionCannotDiscardDraftOnNewPage" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="dde67e3c-2d04-3aae-d167-81f5cb38b66b" executionId="70afa6fc-b8b7-4f49-8b4f-50e797e1c1e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ed561dc9-de70-c588-fec5-0357aeeb49e6" executionId="efc9a01e-7c13-4d42-ae91-5b158edc478f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aeae003d-a67e-bacf-0ff2-0e6dfe690239" executionId="52faefc2-efe1-4f14-98c0-b7345cd8a0a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="280bd270-1b13-c963-0161-d426ff4301c9" executionId="7d3da13b-6e6a-4b7b-9910-59337724a795" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b38ae3bc-34f3-7ad8-1e1d-bca8ceaad28e" executionId="dce7944f-b57d-4321-824f-71bd82a22cda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ec5d19a6-980d-dab4-0dbf-a491bfeea481" executionId="11520afa-4317-4acb-b953-0bf9031f7218" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="5" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:01.01]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:01.10]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:01.11]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:01.31]       Assert.Equal() Failure
+[xUnit.net 00:00:01.31]       Expected: 2
+[xUnit.net 00:00:01.31]       Actual:   (null)
+[xUnit.net 00:00:01.31]       Stack Trace:
+[xUnit.net 00:00:01.31]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/DeleteNavigationRaceTests.cs(96,0): at ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes()
+[xUnit.net 00:00:01.31]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.37]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="8384b6f16018" outcome="Error" timestamp="2026-10-20T16:43:27.8687213+00:00">
+        <Text>[xUnit.net 00:00:01.31]     ReadJournal.UnitTest.DeleteNavigationRaceTests.ReopenedDetailLoadsNewBookAfterOlderOperationCompletes [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

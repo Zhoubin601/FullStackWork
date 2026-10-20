@@ -1,0 +1,115 @@
+{
+  "BaselineCommit": "20d9c67",
+  "Package": "output/20261020-阅记-源码-v3.zip",
+  "PackageBytes": 109424,
+  "PackageSha256": "089ca8f42b4777cb290cd0ee119214ac365b015d2e92ebc01a1d36a2faf6e8a0",
+  "PackageFiles": 118,
+  "CurrentCodeHashMismatches": [],
+  "ExtraFiles": [],
+  "ForbiddenFiles": [],
+  "TrxCounters": {
+    "baseline": {
+      "total": "68",
+      "executed": "68",
+      "passed": "68",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "delete-load": {
+      "total": "76",
+      "executed": "76",
+      "passed": "76",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "final": {
+      "total": "83",
+      "executed": "83",
+      "passed": "83",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "clean": {
+      "total": "83",
+      "executed": "83",
+      "passed": "83",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "CleanRestoreCache": "shared NuGet cache populated by this round baseline restore; no bin/obj copied",
+  "CleanStage": "/workspace/scratch/readjournal-v3-Gfqhgm",
+  "RuntimeArchitectureAssertions": {
+    "passed": 71,
+    "failed": 0,
+    "evidence": "docs/evidence/strict-architecture-20261020/runtime-checks.json"
+  },
+  "DesktopUiValidation": {
+    "passed": true,
+    "evidence": "docs/evidence/architecture-flow-20261020/ui/validation.json",
+    "final_assembly_hashes_match": true,
+    "binding_diagnostic_count": 0,
+    "after_delete_counts": {
+      "Book": 0,
+      "ReadingRecord": 0,
+      "Quote": 0,
+      "ReadingPlan": 0
+    },
+    "after_restore_counts": {
+      "Book": 1,
+      "ReadingRecord": 1,
+      "Quote": 1,
+      "ReadingPlan": 1
+    },
+    "screenshots": 45,
+    "limits": [
+      "Windows not tested",
+      "GPU rendering not tested; software renderer used",
+      "busy navigation race behavior verified by permanent automated regressions by root, not timing-dependent manual UI injection"
+    ]
+  }
+}

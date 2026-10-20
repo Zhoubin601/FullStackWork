@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-20",
+  "platform": "Debian 13 Linux x64, Xvfb :118 1280x960",
+  "readjournal_data_dir": "/workspace/scratch/ui-audit/data",
+  "baseline_commit": "20d9c67",
+  "final_source": "working tree after architecture/async fixes",
+  "screenshots": [
+    "01-initialization.png",
+    "02-empty-library.png",
+    "03-book-editor.png",
+    "04-ready.png",
+    "05-library.png",
+    "06-book-editor.png",
+    "07-book-filled.png",
+    "08-book-created.png",
+    "09-book-detail.png",
+    "10-record-dialog.png",
+    "11-record-filled.png",
+    "12-record-saved.png",
+    "13-quote-editor.png",
+    "14-quote-filled.png",
+    "15-quote-saved.png",
+    "16-plan-editor.png",
+    "17-plan-date-picker.png",
+    "18-plan-suggestion.png",
+    "19-plan-saved.png",
+    "20-quotes.png",
+    "21-plans.png",
+    "22-statistics.png",
+    "23-overview.png",
+    "24-settings.png",
+    "25-export-picker.png",
+    "26-export-success.png",
+    "27-restore-picker.png",
+    "28-restore-confirm.png",
+    "29-restore-confirmation.png",
+    "30-restore-success.png",
+    "31-final-restart-overview.png",
+    "32-final-detail.png",
+    "33-final-book-editor.png",
+    "34-final-record-editor.png",
+    "35-final-record-updated.png",
+    "36-final-record-delete-confirm.png",
+    "37-final-record-deleted.png",
+    "38-final-book-delete-confirm.png",
+    "39-final-book-deleted.png",
+    "40-final-restore-confirm.png",
+    "41-final-restore-success.png",
+    "42-final-restore-navigate.png",
+    "43-final-quotes.png",
+    "44-final-plans.png",
+    "45-final-statistics.png"
+  ],
+  "assemblies": {
+    "Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll": "df76a22443d5b55f63d27ba97e69bf6953ca043723ca553fef1a4cd7165caec1",
+    "Code/ReadJournal/bin/Release/net8.0/ReadJournal.Library.dll": "5fe1b6e3038fb60bb7f192763628ac7d0e3d7758f3dd282dc4e8918d82f946a0"
+  },
+  "final_tables": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Architecture Flow Book",
+        "Author": "UI Audit Author",
+        "Category": "Architecture",
+        "TotalPages": 120,
+        "Description": "Fresh UI audit created entirely through Avalonia controls.",
+        "CreatedAt": 639281113867978325,
+        "UpdatedAt": 639281113867978325
+      }
+    ],
+    "ReadingRecord": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "ReadingDate": 639280512000000000,
+        "StartPage": 10,
+        "EndPage": 20,
+        "Minutes": 15
+      }
+    ],
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "Architecture should map to working user flows.",
+        "Thoughts": "Verified through a fresh desktop session.",
+        "Page": 12,
+        "IsFavorite": 1,
+        "CreatedAt": 639281114183925865,
+        "UpdatedAt": 639281114183925865
+      }
+    ],
+    "ReadingPlan": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "StartDate": 639280512000000000,
+        "TargetDate": 639283968000000000
+      }
+    ]
+  },
+  "after_delete_counts": {
+    "Book": 0,
+    "ReadingRecord": 0,
+    "Quote": 0,
+    "ReadingPlan": 0
+  },
+  "auto_backups": [
+    "auto-backup-20261020-165635-e515cca292504914bec1673279004855.json",
+    "auto-backup-20261020-164457-6698fa3d1b90478a9830d099873750a7.json"
+  ],
+  "log_checks": {
+    "app-run.log": {
+      "binding_diagnostic_count": 0,
+      "known_environment_messages": [
+        "DBus/libX11 shared library discovery",
+        "SESSION_MANAGER missing",
+        "software GLX fallback"
+      ]
+    },
+    "final-app.log": {
+      "binding_diagnostic_count": 0,
+      "known_environment_messages": [
+        "DBus/libX11 shared library discovery",
+        "SESSION_MANAGER missing",
+        "software GLX fallback"
+      ]
+    }
+  },
+  "passed_flows": [
+    "fresh empty database automatic initialization",
+    "create book through UI",
+    "create reading record 10..20 pages / 15 minutes",
+    "create favorite quote on page 12",
+    "create plan ending 2026-10-24 with 20 pages/day suggestion",
+    "all 10 business pages reachable on baseline",
+    "statistics 11 pages / 15 minutes",
+    "native GTK export JSON / restore with auto backup",
+    "final binary restart preserves all data and overview recent records",
+    "final binary edit author and save/back",
+    "final binary edit record to 10..30 / 25 minutes, yields 21 pages and 25% progress",
+    "final binary delete record and book, four tables become empty",
+    "final binary restore original JSON into empty database, leave settings and overview refreshes",
+    "final binary quotes/plans/statistics menu navigation"
+  ],
+  "limitations": [
+    "Windows not tested",
+    "GPU rendering not tested; software renderer used",
+    "busy navigation race behavior verified by permanent automated regressions by root, not timing-dependent manual UI injection"
+  ]
+}

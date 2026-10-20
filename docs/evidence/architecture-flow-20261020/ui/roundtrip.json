@@ -1,0 +1,45 @@
+{
+  "FormatVersion": 1,
+  "Books": [
+    {
+      "Id": 1,
+      "Title": "Architecture Flow Book",
+      "Author": "UI Audit Author",
+      "Category": "Architecture",
+      "TotalPages": 120,
+      "Description": "Fresh UI audit created entirely through Avalonia controls.",
+      "CreatedAt": "2026-10-20T16:43:06.7978325",
+      "UpdatedAt": "2026-10-20T16:43:06.7978325"
+    }
+  ],
+  "ReadingRecords": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": "2026-10-20T00:00:00",
+      "StartPage": 10,
+      "EndPage": 20,
+      "Minutes": 15
+    }
+  ],
+  "Quotes": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "Architecture should map to working user flows.",
+      "Thoughts": "Verified through a fresh desktop session.",
+      "Page": 12,
+      "IsFavorite": true,
+      "CreatedAt": "2026-10-20T16:43:38.3925865",
+      "UpdatedAt": "2026-10-20T16:43:38.3925865"
+    }
+  ],
+  "ReadingPlans": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": "2026-10-20T00:00:00",
+      "TargetDate": "2026-10-24T00:00:00"
+    }
+  ]
+}

@@ -5,6 +5,12 @@ public class ReadingRecordStorage : IReadingRecordStorage
     private readonly IDatabaseService _database; private readonly IReadingService _reading;
     public ReadingRecordStorage(IDatabaseService database, IReadingService reading) { _database = database; _reading = reading; }
     public Task<IReadOnlyList<ReadingRecord>> GetForBookAsync(int bookId) => _database.ReadAsync(c => (IReadOnlyList<ReadingRecord>)c.Table<ReadingRecord>().Where(x => x.BookId == bookId).OrderByDescending(x => x.ReadingDate).ThenByDescending(x => x.Id).ToList());
+    public Task<IReadOnlyList<string>> GetRecentSummariesAsync(int limit) => _database.ReadAsync(c =>
+    {
+        var books = c.Table<Book>().ToDictionary(x => x.Id);
+        return (IReadOnlyList<string>)c.Table<ReadingRecord>().OrderByDescending(x => x.ReadingDate).ThenByDescending(x => x.Id).Take(limit).ToList()
+            .Select(x => $"{x.ReadingDate:MM-dd} · 《{books[x.BookId].Title}》 · {x.Pages} 页 / {x.Minutes} 分钟").ToArray();
+    });
     public Task<int> SaveAsync(ReadingRecord record) => _database.WriteAsync(c =>
     {
         var book = c.Find<Book>(record.BookId) ?? throw new ArgumentException("请先选择有效的书籍。");

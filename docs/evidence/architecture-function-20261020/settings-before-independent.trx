@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="fc6c0b69-ca9e-4a11-846c-7fd05dcbbf03" name="@8384b6f16018 2026-10-20 16:45:50" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T16:45:50.5709005+00:00" queuing="2026-10-20T16:45:50.5709005+00:00" start="2026-10-20T16:45:47.3390676+00:00" finish="2026-10-20T16:45:50.5849424+00:00" />
+  <TestSettings name="default" id="0a4080c4-a950-4125-adb2-3f4f143c9780">
+    <Deployment runDeploymentRoot="_8384b6f16018_2026-10-20_16_45_50" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="e91df79e-5868-4868-aae4-60b94225eb6c" testId="c8396244-5863-ff21-636c-2a8b4fdd7baf" testName="ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation" computerName="8384b6f16018" duration="00:00:00.0233188" startTime="2026-10-20T16:45:50.4524961+00:00" endTime="2026-10-20T16:45:50.4524961+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e91df79e-5868-4868-aae4-60b94225eb6c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Same() Failure
+Expected: SettingsViewModel { ApplyThemeCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, Error = "", ExportCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, IsBusy = True, LoadDemoCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, ... }
+Actual:   BookListViewModel { AddBookCommand = RelayCommand { }, BooksPage = [], Error = "", IsBusy = False, IsEmpty = False, ... }</Message>
+          <StackTrace>   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 20
+   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 23
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb63f981-bc06-4857-8dc0-35bdc451a137" testId="2157a447-a934-c652-7be8-b1f0071f1785" testName="ReadJournal.UnitTest.SettingsNavigationTests.SuccessfulRestoreReleasesNavigationAndCloseProtection" computerName="8384b6f16018" duration="00:00:00.0019073" startTime="2026-10-20T16:45:50.4535796+00:00" endTime="2026-10-20T16:45:50.4535796+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb63f981-bc06-4857-8dc0-35bdc451a137" />
+    <UnitTestResult executionId="1e939b95-578f-49a4-b16f-127107c4bc52" testId="6e35381f-4150-90a9-38f7-a121691692fa" testName="ReadJournal.UnitTest.SettingsNavigationTests.FailedRestoreReleasesNavigationAndCloseProtection" computerName="8384b6f16018" duration="00:00:00.1733836" startTime="2026-10-20T16:45:50.4102374+00:00" endTime="2026-10-20T16:45:50.4104531+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e939b95-578f-49a4-b16f-127107c4bc52" />
+    <UnitTestResult executionId="971b73c8-122e-4406-b2fa-a84465c4115a" testId="6945e9a5-0be1-6113-640f-8da0261132e8" testName="ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose" computerName="8384b6f16018" duration="00:00:00.0058524" startTime="2026-10-20T16:45:50.4531756+00:00" endTime="2026-10-20T16:45:50.4531757+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="971b73c8-122e-4406-b2fa-a84465c4115a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 33
+   at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs:line 34
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.SettingsNavigationTests.FailedRestoreReleasesNavigationAndCloseProtection" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="6e35381f-4150-90a9-38f7-a121691692fa">
+      <Execution id="1e939b95-578f-49a4-b16f-127107c4bc52" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.SettingsNavigationTests" name="FailedRestoreReleasesNavigationAndCloseProtection" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.SettingsNavigationTests.SuccessfulRestoreReleasesNavigationAndCloseProtection" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="2157a447-a934-c652-7be8-b1f0071f1785">
+      <Execution id="cb63f981-bc06-4857-8dc0-35bdc451a137" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.SettingsNavigationTests" name="SuccessfulRestoreReleasesNavigationAndCloseProtection" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="6945e9a5-0be1-6113-640f-8da0261132e8">
+      <Execution id="971b73c8-122e-4406-b2fa-a84465c4115a" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.SettingsNavigationTests" name="PendingRestorePreventsWindowClose" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="c8396244-5863-ff21-636c-2a8b4fdd7baf">
+      <Execution id="e91df79e-5868-4868-aae4-60b94225eb6c" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.SettingsNavigationTests" name="PendingRestorePreventsMenuNavigation" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c8396244-5863-ff21-636c-2a8b4fdd7baf" executionId="e91df79e-5868-4868-aae4-60b94225eb6c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2157a447-a934-c652-7be8-b1f0071f1785" executionId="cb63f981-bc06-4857-8dc0-35bdc451a137" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e35381f-4150-90a9-38f7-a121691692fa" executionId="1e939b95-578f-49a4-b16f-127107c4bc52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6945e9a5-0be1-6113-640f-8da0261132e8" executionId="971b73c8-122e-4406-b2fa-a84465c4115a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="2" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:01.32]   Discovering: BusinessAudit
+[xUnit.net 00:00:01.37]   Discovered:  BusinessAudit
+[xUnit.net 00:00:01.38]   Starting:    BusinessAudit
+[xUnit.net 00:00:01.68]       Assert.Same() Failure
+[xUnit.net 00:00:01.68]       Expected: SettingsViewModel { ApplyThemeCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, Error = "", ExportCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, IsBusy = True, LoadDemoCommand = AsyncRelayCommand { CanBeCanceled = False, ExecutionTask = null, IsCancellationRequested = False, IsRunning = False }, ... }
+[xUnit.net 00:00:01.68]       Actual:   BookListViewModel { AddBookCommand = RelayCommand { }, BooksPage = [], Error = "", IsBusy = False, IsEmpty = False, ... }
+[xUnit.net 00:00:01.68]       Stack Trace:
+[xUnit.net 00:00:01.68]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs(20,0): at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation()
+[xUnit.net 00:00:01.68]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs(23,0): at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation()
+[xUnit.net 00:00:01.68]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.68]       Assert.False() Failure
+[xUnit.net 00:00:01.68]       Expected: False
+[xUnit.net 00:00:01.68]       Actual:   True
+[xUnit.net 00:00:01.68]       Stack Trace:
+[xUnit.net 00:00:01.68]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs(33,0): at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose()
+[xUnit.net 00:00:01.68]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/SettingsNavigationTests.cs(34,0): at ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose()
+[xUnit.net 00:00:01.68]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.69]   Finished:    BusinessAudit
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="8384b6f16018" outcome="Error" timestamp="2026-10-20T16:45:50.4480577+00:00">
+        <Text>[xUnit.net 00:00:01.68]     ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsMenuNavigation [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="8384b6f16018" outcome="Error" timestamp="2026-10-20T16:45:50.4559270+00:00">
+        <Text>[xUnit.net 00:00:01.68]     ReadJournal.UnitTest.SettingsNavigationTests.PendingRestorePreventsWindowClose [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

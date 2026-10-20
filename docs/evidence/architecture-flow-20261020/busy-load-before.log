@@ -1,0 +1,30 @@
+  Determining projects to restore...
+  Restored /workspace/scratch/async-load-review/BusyLoadProbe.csproj (in 616 ms).
+/workspace/scratch/dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/scratch/async-load-review/BusyLoadProbe.csproj]
+  BusyLoadProbe -> /workspace/scratch/async-load-review/bin/Release/net8.0/BusyLoadProbe.dll
+Test run for /workspace/scratch/async-load-review/bin/Release/net8.0/BusyLoadProbe.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.30]     ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: True) [FAIL]
+[xUnit.net 00:00:01.32]     ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: False) [FAIL]
+  Failed ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: True) [107 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(Boolean oldOperationFails) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/BusyLoadRegressionTests.cs:line 39
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(oldOperationFails: False) [2 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.BusyLoadRegressionTests.ReturningToBusyListWaitsAndRefreshesLatestQueryEvenAfterFailure(Boolean oldOperationFails) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/BusyLoadRegressionTests.cs:line 39
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/architecture-flow-20261020/busy-load-before.trx
+
+Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 9 ms - BusyLoadProbe.dll (net8.0)

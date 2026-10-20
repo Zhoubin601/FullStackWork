@@ -1,11 +1,15 @@
 {
-  "Path": "/workspace/FullStackWork/output/20261020-阅记-源码-v2.zip",
-  "Bytes": 102816,
-  "Files": 114,
-  "Sha256": "2f723f261c640fc59621ed5736ae86c7bad500da006fd04ad1f86e2760f76dd5",
-  "CleanRestoreBuildTest": "passed: 68/68",
-  "CleanFirstSecondLaunch": "passed",
+  "Path": "/workspace/FullStackWork/output/20261020-阅记-源码-v3.zip",
+  "Bytes": 109424,
+  "Files": 118,
+  "Sha256": "089ca8f42b4777cb290cd0ee119214ac365b015d2e92ebc01a1d36a2faf6e8a0",
+  "CleanRestoreBuildTest": "passed: 83/83",
+  "CleanRestoreCache": "shared NuGet cache populated this round; no bin/obj copied",
+  "FinalDesktopFlows": "passed; final DLL hashes match; 45 screenshots across baseline/final sessions",
+  "ArchitectureAssertions": "passed: 71/71",
   "WindowsDesktopValidation": "not executed",
+  "Evidence": "docs/evidence/architecture-flow-20261020/validation.json",
   "ReportPath": "/workspace/FullStackWork/output/20261020-阅记-项目报告-v1.pdf",
-  "ReportPages": 19
+  "ReportPages": 19,
+  "ReportScope": "previous v2 / 68 tests; this round review did not regenerate PDF"
 }

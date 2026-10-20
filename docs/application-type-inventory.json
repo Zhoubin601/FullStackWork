@@ -2,7 +2,7 @@
   "ReferenceRoot": "/workspace/FullStackWork/Code",
   "Parser": "Roslyn C# syntax tree; class/interface only; all accessibilities",
   "Exclusions": "UI/Library only; exclude tests, bin, obj, generated source",
-  "Deduplication": "Project + kind + namespace + containing types + name with generic arity",
+  "Deduplication": "Project \u002B kind \u002B namespace \u002B containing types \u002B name with generic arity",
   "Summary": {
     "Classes": 66,
     "Interfaces": 14,
@@ -265,7 +265,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/IReadingRecordStorage.cs",
-      "Sha256": "70EAF1A04B6289A21A48F7BDA364BB6A4E6DB77AD1359BA0FB589B2DE1F90375"
+      "Sha256": "FA0466BF5EB30C633D81EE8193F97286526DE48448CF6733A9220FC83A296032"
     },
     {
       "Project": "ReadJournal.Library",
@@ -300,7 +300,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/Services/ReadingRecordStorage.cs",
-      "Sha256": "ACC4A65A489EFA0888183F93A72B4CA12524A7ABC5F4A8FACFA96421801AFFA5"
+      "Sha256": "C91E5F7EA210EB1002E3EF265B5DA7A4CA25764FB09F8EA75CE2169E18230693"
     },
     {
       "Project": "ReadJournal.Library",
@@ -315,7 +315,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/BookDetailViewModel.cs",
-      "Sha256": "328F47A1AF5F360A44CA08CE3CFC2478C2107D20307C43194A0F108FFDDA2E06"
+      "Sha256": "896E1D542954BC315186823450A1BF7B4FB8CE1EB5CB707D0AF669C9E35D3E1A"
     },
     {
       "Project": "ReadJournal.Library",
@@ -355,7 +355,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/OverviewViewModel.cs",
-      "Sha256": "6F593176E67CF2F697A9DA015A5CDE2EBF2D0065DC55F93B54DD5C8420F09F55"
+      "Sha256": "36A13F8AA8BD859B61CFE149604DFD218490D0B77583F2E5EF050795DAE9BC67"
     },
     {
       "Project": "ReadJournal.Library",
@@ -385,7 +385,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/SettingsViewModel.cs",
-      "Sha256": "AB708FD828B2F891548DF3B5C4DDBA3D24ED4C86B296C2AF0E80CF8521858954"
+      "Sha256": "F0FB499C33D0C79ED64C599C2377646EF29DCF0BF80B48BC2FFAB6277ED35C8E"
     },
     {
       "Project": "ReadJournal.Library",
@@ -395,7 +395,7 @@
     {
       "Project": "ReadJournal.Library",
       "Path": "ReadJournal.Library/ViewModels/ViewModelBase.cs",
-      "Sha256": "F8D429E281B1E84137484F63D1853EC2A80BB99002E6EE9F8D3FADCB451B67BF"
+      "Sha256": "11B8A815CA6D5A9A60EDCACB8365285D886C8A32D82806012E888C986AE8A8BF"
     }
   ],
   "Types": [
@@ -457,7 +457,7 @@
     {
       "Project": "ReadJournal.Library",
       "Kind": "class",
-      "FullName": "ReadJournal.Library.Models.PageResult`1",
+      "FullName": "ReadJournal.Library.Models.PageResult\u00601",
       "Declarations": [
         {
           "Path": "ReadJournal.Library/Models/PageResult.cs",
@@ -1337,14 +1337,5 @@
       "Path": "ReadJournal/Views/StatisticsView.axaml",
       "Sha256": "3DA9C3048804602FC45D6B95792E0F7F18C88B248B430C127DCD6D55D1253EDB"
     }
-  ],
-  "CourseMinimums": {
-    "ReferenceClasses": 63,
-    "ReferenceInterfaces": 10,
-    "ReferenceViews": 9,
-    "MinimumClasses": 45,
-    "MinimumInterfaces": 7,
-    "MinimumViews": 9
-  },
-  "MinimumFieldsMeaning": "Summary.MinimumClasses/MinimumInterfaces为工具按本项目数量计算的70%，不是课程门槛；课程最低要求使用CourseMinimums（45类、7接口、9视图）。"
+  ]
 }

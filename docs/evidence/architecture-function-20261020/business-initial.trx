@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="84f9ae58-f7c1-4f97-92e6-e96c04d1d568" name="@8384b6f16018 2026-10-20 16:42:11" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-20T16:42:11.2953936+00:00" queuing="2026-10-20T16:42:11.2953937+00:00" start="2026-10-20T16:42:07.5162855+00:00" finish="2026-10-20T16:42:11.3319322+00:00" />
+  <TestSettings name="default" id="f97247ea-6b13-4498-981f-47efd58d8d91">
+    <Deployment runDeploymentRoot="_8384b6f16018_2026-10-20_16_42_11" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="24d04812-b8e7-47f0-8f07-549470b34250" testId="6aff3153-2939-416a-db66-97a05ac619a0" testName="BusinessAudit.BusinessAuditTests.DefaultRecordDateShouldBeRejectedOnBackupImport" computerName="8384b6f16018" duration="00:00:00.1204384" startTime="2026-10-20T16:42:10.7609931+00:00" endTime="2026-10-20T16:42:10.7610096+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="24d04812-b8e7-47f0-8f07-549470b34250" />
+    <UnitTestResult executionId="57cbc9b6-73ff-4ad7-a06b-bc14e94bb76c" testId="a2db1a79-30de-6799-e698-fa375c405797" testName="BusinessAudit.BusinessAuditTests.CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage" computerName="8384b6f16018" duration="00:00:00.0301558" startTime="2026-10-20T16:42:10.9867381+00:00" endTime="2026-10-20T16:42:10.9867383+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57cbc9b6-73ff-4ad7-a06b-bc14e94bb76c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Same() Failure
+Expected: BookEditViewModel { Author = "", Category = "", Description = "", Error = "", IsBusy = False, ... }
+Actual:   BookListViewModel { AddBookCommand = RelayCommand { }, BooksPage = [], Error = "Object reference not set to an instance of an obje"..., IsBusy = False, IsEmpty = False, ... }</Message>
+          <StackTrace>   at BusinessAudit.BusinessAuditTests.CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage() in /workspace/scratch/business-audit/BusinessAuditTests.cs:line 43
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="76fbf386-69ee-4ddb-99f8-aa57b5e36c8b" testId="00848013-6fc9-267b-aec6-c62b155a999e" testName="BusinessAudit.BusinessAuditTests.ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook" computerName="8384b6f16018" duration="00:00:00.1817948" startTime="2026-10-20T16:42:10.9638830+00:00" endTime="2026-10-20T16:42:10.9638832+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76fbf386-69ee-4ddb-99f8-aa57b5e36c8b">
+      <Output>
+        <ErrorInfo>
+          <Message>Moq.MockException : 
+Expected invocation on the mock should never have been performed, but was 1 times: x =&gt; x.DeleteAsync(2)
+
+Performed invocations:
+
+   Mock&lt;IBookStorage:1&gt; (x):
+
+      IBookStorage.GetDeleteImpactAsync(1)
+      IBookStorage.DeleteAsync(2)
+      IBookStorage.SearchAsync("", "全部", 1, 10)
+</Message>
+          <StackTrace>   at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage) in /_/src/Moq/Mock.cs:line 331
+   at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times) in /_/src/Moq/Mock`1.cs:line 1033
+   at BusinessAudit.BusinessAuditTests.ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook() in /workspace/scratch/business-audit/BusinessAuditTests.cs:line 30
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="BusinessAudit.BusinessAuditTests.CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="a2db1a79-30de-6799-e698-fa375c405797">
+      <Execution id="57cbc9b6-73ff-4ad7-a06b-bc14e94bb76c" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="BusinessAudit.BusinessAuditTests" name="CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage" />
+    </UnitTest>
+    <UnitTest name="BusinessAudit.BusinessAuditTests.DefaultRecordDateShouldBeRejectedOnBackupImport" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="6aff3153-2939-416a-db66-97a05ac619a0">
+      <Execution id="24d04812-b8e7-47f0-8f07-549470b34250" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="BusinessAudit.BusinessAuditTests" name="DefaultRecordDateShouldBeRejectedOnBackupImport" />
+    </UnitTest>
+    <UnitTest name="BusinessAudit.BusinessAuditTests.ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook" storage="/workspace/scratch/business-audit/bin/release/net8.0/businessaudit.dll" id="00848013-6fc9-267b-aec6-c62b155a999e">
+      <Execution id="76fbf386-69ee-4ddb-99f8-aa57b5e36c8b" />
+      <TestMethod codeBase="/workspace/scratch/business-audit/bin/Release/net8.0/BusinessAudit.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="BusinessAudit.BusinessAuditTests" name="ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="6aff3153-2939-416a-db66-97a05ac619a0" executionId="24d04812-b8e7-47f0-8f07-549470b34250" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2db1a79-30de-6799-e698-fa375c405797" executionId="57cbc9b6-73ff-4ad7-a06b-bc14e94bb76c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00848013-6fc9-267b-aec6-c62b155a999e" executionId="76fbf386-69ee-4ddb-99f8-aa57b5e36c8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="1" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:01.70]   Discovering: BusinessAudit
+[xUnit.net 00:00:01.78]   Discovered:  BusinessAudit
+[xUnit.net 00:00:01.78]   Starting:    BusinessAudit
+[xUnit.net 00:00:02.20]       Moq.MockException : 
+[xUnit.net 00:00:02.20]       Expected invocation on the mock should never have been performed, but was 1 times: x =&gt; x.DeleteAsync(2)
+[xUnit.net 00:00:02.20]       
+[xUnit.net 00:00:02.20]       Performed invocations:
+[xUnit.net 00:00:02.20]       
+[xUnit.net 00:00:02.20]          Mock&lt;IBookStorage:1&gt; (x):
+[xUnit.net 00:00:02.20]       
+[xUnit.net 00:00:02.20]             IBookStorage.GetDeleteImpactAsync(1)
+[xUnit.net 00:00:02.20]             IBookStorage.DeleteAsync(2)
+[xUnit.net 00:00:02.20]             IBookStorage.SearchAsync("", "全部", 1, 10)
+[xUnit.net 00:00:02.20]       
+[xUnit.net 00:00:02.20]       Stack Trace:
+[xUnit.net 00:00:02.20]         /_/src/Moq/Mock.cs(331,0): at Moq.Mock.Verify(Mock mock, LambdaExpression expression, Times times, String failMessage)
+[xUnit.net 00:00:02.20]         /_/src/Moq/Mock`1.cs(1033,0): at Moq.Mock`1.Verify[TResult](Expression`1 expression, Func`1 times)
+[xUnit.net 00:00:02.20]         /workspace/scratch/business-audit/BusinessAuditTests.cs(30,0): at BusinessAudit.BusinessAuditTests.ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook()
+[xUnit.net 00:00:02.20]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.23]       Assert.Same() Failure
+[xUnit.net 00:00:02.23]       Expected: BookEditViewModel { Author = "", Category = "", Description = "", Error = "", IsBusy = False, ... }
+[xUnit.net 00:00:02.23]       Actual:   BookListViewModel { AddBookCommand = RelayCommand { }, BooksPage = [], Error = "Object reference not set to an instance of an obje"..., IsBusy = False, IsEmpty = False, ... }
+[xUnit.net 00:00:02.23]       Stack Trace:
+[xUnit.net 00:00:02.23]         /workspace/scratch/business-audit/BusinessAuditTests.cs(43,0): at BusinessAudit.BusinessAuditTests.CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage()
+[xUnit.net 00:00:02.23]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.27]   Finished:    BusinessAudit
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="8384b6f16018" outcome="Error" timestamp="2026-10-20T16:42:10.9618708+00:00">
+        <Text>[xUnit.net 00:00:02.20]     BusinessAudit.BusinessAuditTests.ChangingDetailWhileImpactReadWaitsMustNotDeleteTheNewBook [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="8384b6f16018" outcome="Error" timestamp="2026-10-20T16:42:11.0162874+00:00">
+        <Text>[xUnit.net 00:00:02.22]     BusinessAudit.BusinessAuditTests.CompletionOfOldDeleteMustNotPopANewEditorOrDetailPage [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
