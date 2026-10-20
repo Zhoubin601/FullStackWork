@@ -1,0 +1,18 @@
+# Credentials and local environment settings
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local build, IDE and test output
+**/bin/
+**/obj/
+.vs/
+**/TestResults/
+node_modules/
+__pycache__/
+*.pyc
