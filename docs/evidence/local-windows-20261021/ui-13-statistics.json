@@ -1,0 +1,240 @@
+﻿[
+    {
+        "Name":  "阅记 · 阅读与书摘",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "201,235,1710,1200"
+    },
+    {
+        "Name":  "阅 记",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,277,255,60"
+    },
+    {
+        "Name":  "让每一页，留下回响",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,364,255,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,455,255,444"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,461,255,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,535,255,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,609,255,62"
+    },
+    {
+        "Name":  "阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,683,255,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,757,255,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,831,255,62"
+    },
+    {
+        "Name":  "← 返回",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "558,259,122,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "704,272,1165,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,383,1305,1016"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,383,1305,56"
+    },
+    {
+        "Name":  "统计覆盖全部书籍和有效记录，累计页数包含重读。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,472,1305,28"
+    },
+    {
+        "Name":  "累计阅读页数 11 页 · 累计 25 分钟 · 完成 0 本书",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "599,571,1229,36"
+    },
+    {
+        "Name":  "近七日阅读趋势",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,678,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,747,1305,364"
+    },
+    {
+        "Name":  "10-15 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,759,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,764,960,18"
+    },
+    {
+        "Name":  "10-16 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,811,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,816,960,18"
+    },
+    {
+        "Name":  "10-17 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,863,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,868,960,18"
+    },
+    {
+        "Name":  "10-18 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,915,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,920,960,18"
+    },
+    {
+        "Name":  "10-19 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,967,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,972,960,18"
+    },
+    {
+        "Name":  "10-20 · 0 页 / 0 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1019,345,27"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,1024,960,18"
+    },
+    {
+        "Name":  "10-21 · 11 页 / 25 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1070,345,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "906,1076,960,18"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1144,1305,28"
+    },
+    {
+        "Name":  "刷新 / 重试",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1205,161,62"
+    }
+]

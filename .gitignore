@@ -17,6 +17,11 @@ node_modules/
 __pycache__/
 *.pyc
 
+# Local databases and process identifiers from desktop verification
+/docs/evidence/**/ui-data/
+/docs/evidence/**/clean-ui-data/
+/docs/evidence/**/ui-pid.txt
+
 # Generated LaTeX intermediates; keep the named report draft and its sources
 /docs/report/*.aux
 /docs/report/*.log

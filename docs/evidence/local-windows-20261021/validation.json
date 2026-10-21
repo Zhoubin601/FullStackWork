@@ -1,0 +1,96 @@
+{
+  "after_restart_counts": {
+    "Book": 1,
+    "ReadingRecord": 1,
+    "Quote": 1,
+    "ReadingPlan": 1
+  },
+  "before_restored_restart_identical": true,
+  "foreign_key_violations": [],
+  "integrity_check": "ok",
+  "automatic_backups": [
+    {
+      "file": "auto-backup-20261021-121545-410041fe5d764da598473289fb688a14.json",
+      "counts": {
+        "Books": 1,
+        "ReadingRecords": 1,
+        "Quotes": 1,
+        "ReadingPlans": 1
+      }
+    },
+    {
+      "file": "auto-backup-20261021-121829-9a8bf10499224122ba947eec4b8ac390.json",
+      "counts": {
+        "Books": 0,
+        "ReadingRecords": 0,
+        "Quotes": 0,
+        "ReadingPlans": 0
+      }
+    }
+  ],
+  "newest_auto_backup_is_deleted_state": true,
+  "favorite_preserved": true,
+  "reading_total_pages": 11,
+  "reading_minutes": 25,
+  "preferences": {
+    "Theme": "深色"
+  },
+  "binding_diagnostic_log_sizes": {
+    "ui-final.log": 0,
+    "ui-first.log": 0,
+    "ui-restart.log": 0
+  },
+  "windows-full.trx": {
+    "total": "93",
+    "executed": "93",
+    "passed": "93",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "windows-clean.trx": {
+    "total": "93",
+    "executed": "93",
+    "passed": "93",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "clean_package_started_and_closed": true,
+  "clean_package_database_version": 1,
+  "clean_package_empty_tables": {
+    "Book": 0,
+    "ReadingRecord": 0,
+    "Quote": 0,
+    "ReadingPlan": 0
+  },
+  "raw_before_after_identical": true,
+  "application_source_changed": false,
+  "independent_package_launch_log_bytes": 0,
+  "assembly_hashes": {
+    "Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.dll": "fec4d99dd3226e01a7a43e8bb94caf84eae4acac9865ea2c37cc4720b9e6bb86",
+    "Code\\ReadJournal.UnitTest\\bin\\Release\\net8.0\\ReadJournal.dll": "fec4d99dd3226e01a7a43e8bb94caf84eae4acac9865ea2c37cc4720b9e6bb86",
+    "Code\\ReadJournal.Library\\bin\\Release\\net8.0\\ReadJournal.Library.dll": "64ec5d7c4f71225f8ca1dc16fe929de64470eea04f6bd4390cbe8f377691b374",
+    "Code\\ReadJournal.UnitTest\\bin\\Release\\net8.0\\ReadJournal.Library.dll": "64ec5d7c4f71225f8ca1dc16fe929de64470eea04f6bd4390cbe8f377691b374"
+  }
+}

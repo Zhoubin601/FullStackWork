@@ -1,0 +1,9 @@
+[190, 190, 1922, 1446]
+[190, 190, 1922, 1446]
+Element missing: 切换收藏 index 0
+At D:\2026Autumn Semester File\FullStack\期末大作业\docs\evidence\local-windows-20261021\uia.ps1:19 char:37
++ ... hes.Count -le $Index) { throw "Element missing: $Name index $Index" }
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Element missing: 切换收藏 index 0:String) [], RuntimeException
+    + FullyQualifiedErrorId : Element missing: 切换收藏 index 0
+ 

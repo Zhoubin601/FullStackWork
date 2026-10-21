@@ -1,0 +1,149 @@
+[
+    {
+        "Name":  "阅记 · 阅读与书摘",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-32000,-32000,1710,1200"
+    },
+    {
+        "Name":  "阅 记",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31958,255,60"
+    },
+    {
+        "Name":  "让每一页，留下回响",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31871,255,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31780,255,444"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31774,255,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31700,255,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31626,255,62"
+    },
+    {
+        "Name":  "阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31552,255,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31478,255,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31970,-31404,255,62"
+    },
+    {
+        "Name":  "← 返回",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31643,-31976,122,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31497,-31963,1165,36"
+    },
+    {
+        "Name":  "＋ 添加书摘",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-30500,-31852,165,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31640,-31852,1140,62"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31640,-31763,450,62"
+    },
+    {
+        "Name":  "仅收藏",
+        "Type":  "ControlType.CheckBox",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31172,-31756,108,48"
+    },
+    {
+        "Name":  "搜索 / 刷新",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31046,-31763,161,62"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31640,-31674,1305,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31640,-31646,1305,810"
+    },
+    {
+        "Name":  "没有匹配的书摘。记录一句打动你的话吧。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "-31640,-31616,1305,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "Empty"
+    }
+]

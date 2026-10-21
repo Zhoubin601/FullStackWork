@@ -1,0 +1,625 @@
+[
+    {
+        "Name":  "阅记 · 阅读与书摘",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "201,235,1710,1200"
+    },
+    {
+        "Name":  "选择阅记备份",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "201,235,1280,798"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "212,353,1258,539"
+    },
+    {
+        "Name":  "命令模块",
+        "Type":  "ControlType.ToolBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "212,353,1258,48"
+    },
+    {
+        "Name":  "帮助(\u0026H)",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1414,356,42,40"
+    },
+    {
+        "Name":  "预览窗格",
+        "Type":  "ControlType.CheckBox",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1360,356,42,40"
+    },
+    {
+        "Name":  "详细信息",
+        "Type":  "ControlType.SplitButton",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1283,356,77,40"
+    },
+    {
+        "Name":  "视图滑块",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1324,356,21,40"
+    },
+    {
+        "Name":  "组织​​",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "217,356,97,40"
+    },
+    {
+        "Name":  "新建​​文件夹​​",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "314,356,136,40"
+    },
+    {
+        "Name":  "控制项宿主",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "215,401,231,491"
+    },
+    {
+        "Name":  "导航窗格",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "215,401,231,491"
+    },
+    {
+        "Name":  "Shell 文件夹视图",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "452,401,1018,491"
+    },
+    {
+        "Name":  "项目视图",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "452,401,1018,491"
+    },
+    {
+        "Name":  "水平",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "452,866,1018,26"
+    },
+    {
+        "Name":  "标题",
+        "Type":  "ControlType.Header",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "452,401,1055,40"
+    },
+    {
+        "Name":  "名称",
+        "Type":  "ControlType.SplitButton",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "452,401,459,40"
+    },
+    {
+        "Name":  "筛选器下拉列表",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "886,401,23,40"
+    },
+    {
+        "Name":  "修改日期",
+        "Type":  "ControlType.SplitButton",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "911,401,243,40"
+    },
+    {
+        "Name":  "筛选器下拉列表",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1129,401,23,40"
+    },
+    {
+        "Name":  "类型",
+        "Type":  "ControlType.SplitButton",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1154,401,203,40"
+    },
+    {
+        "Name":  "筛选器下拉列表",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1332,401,23,40"
+    },
+    {
+        "Name":  "大小",
+        "Type":  "ControlType.SplitButton",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1357,401,135,40"
+    },
+    {
+        "Name":  "筛选器下拉列表",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1467,401,23,40"
+    },
+    {
+        "Name":  "录音",
+        "Type":  "ControlType.ListItem",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "473,450,1013,37"
+    },
+    {
+        "Name":  "名称",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "506,455,405,29"
+    },
+    {
+        "Name":  "修改日期",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "911,455,243,29"
+    },
+    {
+        "Name":  "类型",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1154,455,203,29"
+    },
+    {
+        "Name":  "大小",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1357,455,135,29"
+    },
+    {
+        "Name":  "阅记备份-20261021-121307.json",
+        "Type":  "ControlType.ListItem",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "473,493,1013,37"
+    },
+    {
+        "Name":  "名称",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "506,498,405,29"
+    },
+    {
+        "Name":  "修改日期",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "911,498,243,29"
+    },
+    {
+        "Name":  "类型",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1154,498,203,29"
+    },
+    {
+        "Name":  "大小",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1357,498,135,29"
+    },
+    {
+        "Name":  "应用程序控件",
+        "Type":  "ControlType.Tree",
+        "Enabled":  true,
+        "Offscreen":  true,
+        "Rect":  "Empty"
+    },
+    {
+        "Name":  "文件名(N):",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "416,920,85,24"
+    },
+    {
+        "Name":  "阅记备份-20261021-121307.json",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "509,916,634,33"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "509,916,634,33"
+    },
+    {
+        "Name":  "阅记备份-20261021-121307.json",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "513,920,601,24"
+    },
+    {
+        "Name":  "JSON 备份 (*.json)",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1161,916,282,32"
+    },
+    {
+        "Name":  "打开(O)",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1161,957,132,39"
+    },
+    {
+        "Name":  "取消",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1311,957,132,39"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1444,996,26,26"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "212,280,1258,73"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "212,280,1258,73"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "212,289,152,51"
+    },
+    {
+        "Name":  "导航按钮",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "218,292,146,48"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "364,287,55,55"
+    },
+    {
+        "Name":  "上区段",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "364,292,55,55"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "419,280,724,70"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "421,290,720,52"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "421,290,620,52"
+    },
+    {
+        "Name":  "地址: D:\\a3185\\Documents",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "430,290,611,52"
+    },
+    {
+        "Name":  "地址区段",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1041,290,100,52"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1147,314,6,1"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1153,286,306,58"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1153,289,306,54"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1158,289,296,54"
+    },
+    {
+        "Name":  "搜索框",
+        "Type":  "ControlType.Edit",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1160,304,242,24"
+    },
+    {
+        "Name":  "搜索",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1406,289,45,54"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1463,314,7,1"
+    },
+    {
+        "Name":  "阅 记",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,277,255,60"
+    },
+    {
+        "Name":  "让每一页，留下回响",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,364,255,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,455,255,444"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,461,255,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,535,255,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,609,255,62"
+    },
+    {
+        "Name":  "阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,683,255,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,757,255,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,831,255,62"
+    },
+    {
+        "Name":  "← 返回",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "558,259,122,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "704,272,1165,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,383,1305,1016"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,383,1170,56"
+    },
+    {
+        "Name":  "外观",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,466,1170,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ComboBox",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,529,270,48"
+    },
+    {
+        "Name":  "浅色",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "647,538,204,28"
+    },
+    {
+        "Name":  "应用主题",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "917,529,139,62"
+    },
+    {
+        "Name":  "业务数据备份",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,683,1170,36"
+    },
+    {
+        "Name":  "备份包括书籍、阅读记录、书摘和计划。恢复前会校验并自动备份原数据，主题偏好保留。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,746,1170,28"
+    },
+    {
+        "Name":  "导出 JSON 备份",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,801,207,62"
+    },
+    {
+        "Name":  "从 JSON 恢复",
+        "Type":  "ControlType.Button",
+        "Enabled":  false,
+        "Offscreen":  false,
+        "Rect":  "854,801,186,62"
+    },
+    {
+        "Name":  "试用演示",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,955,1170,36"
+    },
+    {
+        "Name":  "仅在空业务库可载入。所有书籍、作者及摘录均为虚构演示资料。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1018,1170,28"
+    },
+    {
+        "Name":  "载入虚构演示数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1073,222,62"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1162,1170,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1217,1170,27"
+    },
+    {
+        "Name":  "正在处理…",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1272,1170,27"
+    },
+    {
+        "Name":  "刷新 / 重试",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "629,1327,161,62"
+    }
+]

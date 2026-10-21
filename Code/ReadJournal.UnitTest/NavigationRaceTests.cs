@@ -33,6 +33,7 @@ public class NavigationRaceTests
         var alerts = new Mock<IAlertService>(); alerts.Setup(x => x.ConfirmLeaveAsync()).Returns(confirmation.Task);
         var menu = new Mock<IMenuNavigationService>(); var main = new MainViewModel(menu.Object);
         var editor = new BookEditViewModel(Mock.Of<IBookStorage>(), alerts.Object, main); editor.SetParameter(null!); editor.Title = "草稿";
+        main.SetMenuAndContent(MenuNavigationConstant.BookListView, new BookListViewModel(Mock.Of<IBookStorage>(), Mock.Of<IContentNavigationService>()));
         main.PushContent(editor);
         var back = main.GoBackCommand.ExecuteAsync(null);
         await main.OnMenuTappedCommand.ExecuteAsync(MenuItem.MenuItems.First()); Assert.False(await main.CanCloseAsync());

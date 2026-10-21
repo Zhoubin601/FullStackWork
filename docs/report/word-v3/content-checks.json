@@ -1,0 +1,19 @@
+{
+  "source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\20261021-阅记-项目报告-v2.docx",
+  "baseline_sha256": {
+    "source_v2": "faecd66dadee75f1fb605ff449d88fcc4a689c2e4a44d55c39db7e9572ff63d1",
+    "raw": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d"
+  },
+  "diagrams_replaced": [
+    "architecture",
+    "entities"
+  ],
+  "native_tables_remaining": 5,
+  "inline_pictures": 21,
+  "all_original_body_paragraphs_preserved": true,
+  "all_original_media_preserved": true,
+  "explicit_version_nodes_updated": 3,
+  "code_paragraphs_kept_together": 4,
+  "svg_with_png_fallback": true,
+  "no_new_external_sources": true
+}

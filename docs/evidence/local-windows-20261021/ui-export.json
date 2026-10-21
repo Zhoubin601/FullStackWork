@@ -1,0 +1,45 @@
+{
+  "FormatVersion": 1,
+  "Books": [
+    {
+      "Id": 1,
+      "Title": "Windows\u672C\u673A\u9A8C\u6536\u4E66\u7C4D\uFF08\u865A\u6784\u6D4B\u8BD5\u6570\u636E\uFF09",
+      "Author": "\u865A\u6784\u6D4B\u8BD5\u4F5C\u8005",
+      "Category": "\u672C\u673A\u9A8C\u6536",
+      "TotalPages": 120,
+      "Description": "\u4EC5\u7528\u4E8E\u672C\u673A\u6D4B\u8BD5\uFF0C\u4E0D\u662F\u5B9E\u9645\u7528\u6237\u8D44\u6599\u3002",
+      "CreatedAt": "2026-10-21T12:08:43.4804108",
+      "UpdatedAt": "2026-10-21T12:08:43.4804108"
+    }
+  ],
+  "ReadingRecords": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": "2026-10-21T00:00:00",
+      "StartPage": 10,
+      "EndPage": 20,
+      "Minutes": 25
+    }
+  ],
+  "Quotes": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "\u672C\u673A\u9A8C\u6536\u7528\u865A\u6784\u6458\u5F55\uFF1A\u6BCF\u4E00\u9875\u90FD\u53EF\u4EE5\u7559\u4E0B\u8BB0\u5F55\u3002",
+      "Thoughts": "Windows\u771F\u5B9E\u754C\u9762\u6D4B\u8BD5\u3002",
+      "Page": 15,
+      "IsFavorite": true,
+      "CreatedAt": "2026-10-21T12:10:52.8749837",
+      "UpdatedAt": "2026-10-21T12:12:32.1823535"
+    }
+  ],
+  "ReadingPlans": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": "2026-10-21T00:00:00",
+      "TargetDate": "2026-10-21T00:00:00"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "archive": "20261021-阅记-源码-v5.zip",
+  "bytes": 113557,
+  "files": 119,
+  "sha256": "1fceab54b0774c4fe8b7a24bed70725356df59d59d0c88af88908088b475880b",
+  "differences_from_v4": [
+    "README.md"
+  ],
+  "matches_current_code": true,
+  "crc_ok": true,
+  "application_and_test_sources_unchanged": true
+}

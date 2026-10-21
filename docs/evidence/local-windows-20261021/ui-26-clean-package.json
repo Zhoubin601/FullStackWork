@@ -1,0 +1,177 @@
+[
+    {
+        "Name":  "阅记 · 阅读与书摘",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "49,83,1710,1200"
+    },
+    {
+        "Name":  "阅 记",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,125,255,60"
+    },
+    {
+        "Name":  "让每一页，留下回响",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,212,255,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,303,255,444"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,309,255,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,383,255,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,457,255,62"
+    },
+    {
+        "Name":  "阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,531,255,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,605,255,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "79,679,255,62"
+    },
+    {
+        "Name":  "← 返回",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "406,107,122,62"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "552,120,1165,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,231,1305,1016"
+    },
+    {
+        "Name":  "今天，也读一会儿",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,231,1305,56"
+    },
+    {
+        "Name":  "从一本书开始，积累你的阅读轨迹。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,317,1305,28"
+    },
+    {
+        "Name":  "累计阅读页数 0 页 · 累计 0 分钟 · 完成 0 本书",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "447,413,1229,36"
+    },
+    {
+        "Name":  "前往我的书库 →",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "447,473,206,62"
+    },
+    {
+        "Name":  "正在阅读",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,603,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "Empty"
+    },
+    {
+        "Name":  "近期记录",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,699,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "Empty"
+    },
+    {
+        "Name":  "待完成计划",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,795,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "Empty"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,891,1305,27"
+    },
+    {
+        "Name":  "刷新 / 重试",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "409,949,161,62"
+    }
+]

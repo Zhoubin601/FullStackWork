@@ -1,0 +1,258 @@
+[
+  {
+    "path": "DailyPoetryA/App.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Converters/ByteArrayToBitmapConverter.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Converters/CountToBoolConverter.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Converters/NegativeConverter.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Converters/PoetryToStringConverter.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/DesignViewModels/ResultDesignViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Program.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/ServiceLocator.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Services/AlertService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Services/ContentNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Services/MenuNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Services/RootNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/ViewLocator.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/DetailView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/FavoriteView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/InitializationView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/MainView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/MainWindow.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/QueryView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/ResultView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/TodayDetailView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/TodayView.axaml.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Helpers/ErrorMessageHelper.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Helpers/PathHelper.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Models/Favorite.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Models/Poetry.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Models/PoetryQuery.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Models/TodayImage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Models/TodayPoetry.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/BingImageService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/FavoriteStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/FilePreferenceStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IAlertService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IContentNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IFavoriteStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IMenuNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IPoetryStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IPreferenceStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/IRootNavigationService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/ITodayImageService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/ITodayImageStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/ITodayPoetryService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/PoetryStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/Services/TodayImageStorage.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/DetailViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/FavoriteViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/InitializationViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/MainViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/MainWindowViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/ResultViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/TodayDetailViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/TodayViewModel.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA.Library/ViewModels/ViewModelBase.cs",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/DetailView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/FavoriteView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/InitializationView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/MainView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/MainWindow.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/QueryView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/ResultView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/TodayDetailView.axaml",
+    "exact_hash_match": true
+  },
+  {
+    "path": "DailyPoetryA/Views/TodayView.axaml",
+    "exact_hash_match": true
+  }
+]

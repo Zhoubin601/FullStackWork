@@ -11,13 +11,19 @@ public class MainViewModel : ViewModelBase
     public MenuItem? SelectedMenuItem { get => _selected; private set => SetProperty(ref _selected, value); }
     public string Title { get => _title; private set => SetProperty(ref _title, value); }
     public ObservableCollection<ViewModelBase> ContentStack { get; } = [];
+    public bool CanGoBack => ContentStack.Count > 1;
     public IAsyncRelayCommand GoBackCommand { get; }
     public IAsyncRelayCommand<MenuItem> OnMenuTappedCommand { get; }
     public MainViewModel(IMenuNavigationService menu)
     {
         _menu = menu;
-        GoBackCommand = new AsyncRelayCommand(() => NavigateAsync(GoBack));
+        GoBackCommand = new AsyncRelayCommand(() => CanGoBack ? NavigateAsync(GoBack) : Task.CompletedTask, () => CanGoBack);
         OnMenuTappedCommand = new AsyncRelayCommand<MenuItem>(item => item is null ? Task.CompletedTask : NavigateAsync(() => _menu.NavigateTo(item.View)));
+        ContentStack.CollectionChanged += (_, _) =>
+        {
+            OnPropertyChanged(nameof(CanGoBack));
+            GoBackCommand.NotifyCanExecuteChanged();
+        };
     }
     public async Task<bool> CanCloseAsync()
     {

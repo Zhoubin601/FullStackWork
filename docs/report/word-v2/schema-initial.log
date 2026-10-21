@@ -1,0 +1,22 @@
+Found 7 validation error(s):
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:pgNumType'.
+    Path: /w:document[1]/w:body[1]/w:sectPr[1]
+    Part: /word/document.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:shd'.
+    Path: /w:document[1]/w:body[1]/w:tbl[3]/w:tr[1]/w:tc[1]/w:tcPr[1]
+    Part: /word/document.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:pgNumType'.
+    Path: /w:document[1]/w:body[1]/w:p[11]/w:pPr[1]/w:sectPr[1]
+    Part: /word/document.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:updateFields'.
+    Path: /w:settings[1]
+    Part: /word/settings.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:outlineLvl'.
+    Path: /w:styles[1]/w:style[5]/w:pPr[1]
+    Part: /word/styles.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:outlineLvl'.
+    Path: /w:styles[1]/w:style[4]/w:pPr[1]
+    Part: /word/styles.xml
+  [Schema] The element has unexpected child element 'http://schemas.openxmlformats.org/wordprocessingml/2006/main:outlineLvl'.
+    Path: /w:styles[1]/w:style[3]/w:pPr[1]
+    Part: /word/styles.xml

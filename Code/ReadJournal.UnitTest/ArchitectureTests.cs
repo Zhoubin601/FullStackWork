@@ -1,6 +1,9 @@
 using System.Reflection;
 using Avalonia;
 using Avalonia.Headless;
+using Avalonia.Controls;
+using Avalonia.LogicalTree;
+using Avalonia.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using ReadJournal.Library.Models;
@@ -70,6 +73,46 @@ public class ArchitectureTests
         var locator = new ViewLocator(); var vm = ServiceLocator.Current.OverviewViewModel;
         Assert.True(locator.Match(vm)); var first = locator.Build(vm); Assert.IsType<ReadJournal.Views.OverviewView>(first);
         Assert.Same(vm, first!.DataContext); Assert.Same(first, locator.Build(vm)); Assert.False(locator.Match(new object()));
+    });
+
+    [Fact]
+    public Task BackButtonOnlyOffersAnExistingPreviousPageAndTracksMenuReset() => OnUiThread(async () =>
+    {
+        var locator = ServiceLocator.Current;
+        var main = locator.MainViewModel;
+        var menu = new MenuNavigationService();
+        menu.NavigateTo(MenuNavigationConstant.BookListView);
+        var view = Assert.IsType<ReadJournal.Views.MainView>(new ViewLocator().Build(main));
+        var back = view.GetLogicalDescendants().OfType<Button>().Single(x => Equals(x.Content, "← 返回"));
+        Dispatcher.UIThread.RunJobs();
+        Assert.False(main.GoBackCommand.CanExecute(null));
+        Assert.False(back.IsVisible);
+
+        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookEditView);
+        await locator.BookEditViewModel.OnLoadedCommand.ExecuteAsync(null);
+        Dispatcher.UIThread.RunJobs();
+        Assert.True(main.GoBackCommand.CanExecute(null));
+        Assert.True(back.IsVisible);
+        Assert.True(back.IsEnabled);
+        Assert.Equal(2, main.ContentStack.Count);
+
+        // Invoke the command actually bound to the rendered button.
+        await ((CommunityToolkit.Mvvm.Input.IAsyncRelayCommand)back.Command!).ExecuteAsync(back.CommandParameter);
+        if (main.Content!.OnLoadedCommand.ExecutionTask is { } reload) await reload;
+        Dispatcher.UIThread.RunJobs();
+        Assert.Same(locator.BookListViewModel, main.Content);
+        Assert.Single(main.ContentStack);
+        Assert.False(main.GoBackCommand.CanExecute(null));
+        Assert.False(back.IsVisible);
+
+        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookEditView);
+        Assert.True(main.GoBackCommand.CanExecute(null));
+        menu.NavigateTo(MenuNavigationConstant.StatisticsView);
+        Dispatcher.UIThread.RunJobs();
+        Assert.Single(main.ContentStack);
+        Assert.Same(locator.StatisticsViewModel, main.Content);
+        Assert.False(main.GoBackCommand.CanExecute(null));
+        Assert.False(back.IsVisible);
     });
     [Fact]
     public Task InitializationFailureStaysAndPublicRetrySucceeds() => OnUiThread(async () =>

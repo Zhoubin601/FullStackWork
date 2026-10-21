@@ -1,5 +1,43 @@
 # 资料来源与核对记录
 
+## 2026-10-21 统一v1交付完成
+
+本轮依据原指导书、用户实际保存的Word v3及当前源码，生成`output/v1/`中的23页DOCX/PDF及119文件114395字节源码ZIP。未修改的用户正文、封面和两张SVG图保留；返回说明、94项测试与包元数据同步，图21更新、图22/23新增。独立源码94项通过、当前程序集71项探针通过、独立包空库实际启动正常；全部23页已渲染检查。
+
+旧output内3个交付文件的永久删除被自动审批以“blocked by policy”拒绝，已改为验证路径/哈希后移至`docs/report/release-v1/previous-deliveries/`。output只保留v1，旧文件没有永久删除。完整结果与限制见`release-v1-20261021.md`及`docs/report/release-v1/{validation,cleanup}.json`。原始指导书哈希不变，无外部资料。
+
+## 2026-10-21 统一v1交付授权与来源
+
+用户明确要求修改报告、新源码包、清除旧交付并统一放入v1目录。本轮报告来源为用户当前保存的`output/20261021-阅记-项目报告-v3.docx`，保留微调、图1/图2实际绘图及原图；原始要求仍为`raw/期末项目与报告要求.docx`。事实依据为当前Code、返回修复94项TRX、原Windows验收证据及本轮独立解包验证。执行顺序与删除边界见`release-v1-20261021-plan.md`；仅清理output现有3个旧交付，raw和用户数据不动。
+
+## 2026-10-21 当前是否全部完成的状态核对
+
+用户询问指导书要求是否全部完成。实际列出output：仅v2/v3 Word和源码v5，无正式PDF。重新统计当前Code为66类/14接口/14视图；v5 ZIP为119文件113557字节，CRC与白名单正常、无编译结果，但与Code的MainView、MainViewModel及两份测试共4个文件不同。officecli只读查看当前v3.docx，模板章节存在，正文仍为93项并引用v5，尚未包含当前94项与返回入口修复。
+
+故结论为应用主要要求已实现，源码入包、报告同步和最终PDF交付尚需收尾。完整依据与准确路径见`requirements-status-20261021.md`。本次不以状态问题擅自修改用户已微调的正式Word或恢复旧PDF，未更改raw、参考和源码。
+
+## 2026-10-21 左上角返回按钮反馈与修复
+
+用户报告“返回按钮一点用没有”，补充指左上角按钮。直接读MainView、MainViewModel和三层导航后确认已有模块内页面栈；缺陷为菜单首页仍展示可执行返回入口，实际栈底GoBack无操作。已按既有参考机制隐藏无上一页时入口并同步命令可执行状态，不改变菜单清栈约定。
+
+原始要求上下文来自`raw/期末项目与报告要求.docx`；具体业务约束来自已确认`docs/plan.md`及本地参考导航。新增真实MainView绑定回归在旧版失败，修复后94项全通过；Windows隔离库实际点击通过空编辑返回、详情返回、多级编辑返回及菜单首页状态。证据、准确修改清单和边界见`back-navigation-20261021.md`。正式报告/源码包未更新，原始资料与参考不变。
+
+## 2026-10-21 与参考项目架构直接比较
+
+- 用户进一步要求直接比较架构设计。本轮补读本地参考的REFERENCE、两个工程文件、启动/初始化/详情/查询结果/收藏VM，以及PoetryStorage、FavoriteStorage、FilePreferenceStorage和提示接口/实现；与当前数据库服务、业务校验、编辑基类、分页及模态交互逐项比较。
+- 本地参考版本依据`daily-poetry-a/REFERENCE.md`的提交记录，不访问上游或用本地附加分析文档替代真实源码。
+- 核心事实：参考两个存储各自持有SQLiteAsyncConnection并使用不同数据库；当前共享IDatabaseService管理四表、事务和门禁。参考结果页用无限滚动集合，当前书库用页码/PageResult。参考IAlertService仅AlertAsync，当前加入确认/离开/特定编辑VM参数，职责和耦合范围扩大。
+- 完整证据清单与设计取舍见`architecture-comparison-20261021.md`。同一源码上一轮12项架构测试结果沿用，不宣称本轮重新测试；不修改原始资料、参考或应用代码。
+
+## 2026-10-21 当前架构对应说明检查
+
+- 原始来源：`raw/期末项目与报告要求.docx`，使用officecli-docx技能及`officecli view ... text`只读提取八项架构要求。原文允许“只需要反映对应的思想，但无需采用一模一样的技术”；现有已确认规划另要求保留参考具体机制。本轮不混淆两种要求。
+- 参考来源：本地`daily-poetry-a/DailyPoetryA/{ServiceLocator.cs,ViewLocator.cs,Services/*NavigationService.cs}`和Library的MainViewModel/ViewModelBase；重新计算55个C#文件及9个视图哈希，共64项与`reference-baseline.json`一致。
+- 实现来源：当前`Code/ReadJournal`与`ReadJournal.Library`的相应实现、两个工程文件、应用资源、主窗口和主视图XAML、书库/详情VM、数据库/存储/文件/提示服务及已有架构测试。逐项依据和调用链见`architecture-mapping-20261021.md`。
+- 本轮重跑Roslyn统计：应用66类、14接口、14视图；参考63类、10接口、9视图。统计排除测试和生成代码，分部类去重。证据为`docs/evidence/architecture-mapping-20261021-{application,reference}-inventory.json`。
+- 本轮当前源码重新构建并筛选运行ArchitectureTests及OverviewArchitectureTests，共12项全通过。TRX和日志分别在`docs/evidence/architecture-mapping-20261021/`及同级测试日志。历史93项/71项不冒充本轮执行结果。
+- 原指导书SHA256前后不变：`352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d`。无外部来源，未修改原始资料、参考或业务代码；保留本轮开始时已存在的用户修改和删除。
+
 ## 2026-10-21 P1修复来源与授权
 
 - 用户本轮追问为何不修复P1，结合此前明确缺陷与当前指示直接实施修复，没有再次询问许可。依据为`raw/期末项目与报告要求.docx`、只读`daily-poetry-a/`、`0313917`及前轮真实VM/SQLite失败证据；原始指导书和参考副本保持不变。
@@ -14,6 +52,19 @@
 - 本轮独立 SDK 8.0.424 locked-mode 还原、Release构建及83项现有测试通过；真实App/DI/反射视图/导航运行时探针71项通过。不能用83项现有测试覆盖全部新边界。基础/架构/真实UI证据位于 `docs/evidence/recheck-20261020/`；新业务竞态的可重跑源码、失败断言和实际SQLite结果位于 `docs/evidence/business-recheck-20261020/`。
 - Roslyn重新统计：应用66类/14接口/14视图，参考63类/10接口/9视图。v3源码包118文件与最新Code白名单逐字节一致；原报告和交付包未为本轮检查改写。
 - 本轮完整结论以 `docs/latest-recheck-20261020.md` 及独立架构、业务、真实UI复核记录为准，旧记录保留历史用途。
+
+## Codex 云端开发可行性查询（2026-10-20）
+
+- 来源名称：OpenAI 官方文档 — Codex Cloud。
+- 链接：https://learn.chatgpt.com/docs/cloud
+- 引用日期：2026-10-20。
+- 核对事实：可选择 GitHub 仓库建立云端环境，安装依赖和工具、测试并发布环境；任务可编辑代码、运行命令与检查，结果需审阅后提交或创建 PR。
+- 来源名称：OpenAI 官方文档 — Cloud environments。
+- 链接：https://learn.chatgpt.com/docs/environments/cloud-environments
+- 引用日期：2026-10-20。
+- 核对事实：支持配置安装及启动流程、指定工具版本、网络访问和多个仓库；每个新任务有独立工作区，环境保存状态不能替代版本控制。
+- 结合本地规划的判断：可采用云端实现与测试、本机 Windows 验收的工作方式；需先准备 .NET 8、NuGet 访问及老师参考源码。当前仓库未包含项目目录外的 DailyPoetryA；本地绝对路径不能直接作为云端资料路径。
+- 待确认：具体云端环境的 SDK、桌面显示能力、原生依赖及账户权限尚未实测；本次仅回答可行性，未创建环境或启动开发，未更改 v4 规划。
 
 记录日期：2026-10-20。本文记录事实来源，不表示项目已经实现或验收。
 
@@ -120,3 +171,34 @@
 - 原始来源：`raw/期末项目与报告要求.docx`，使用 Python ZipFile/XML 直接重读全部段落与表格；参考源码 `daily-poetry-a/` 和实现 `Code/` 均直接读取。
 - 新验证证据保存在 `docs/evidence/architecture-flow-20261020/`；本轮结果单独记录，不用历史截图或测试数字代替。
 - 核对计划及最终汇总：`docs/architecture-flow-review-20261020.md`；细分为架构、业务和真实 UI 三部分独立复核。
+
+## 2026-10-21 Windows 本机验收来源
+
+- 来源名称：课程指导书；文件：`raw/期末项目与报告要求.docx`；读取日期：2026-10-21。使用 officecli-docx / officecli view text 直接读取，要求为页面不少于参考、类/接口各不少于参考70%、纯源码压缩包≤10MB、八项架构思想、指定模板PDF。
+- 对照来源：本机 `daily-poetry-a/` 实际源码、`Code/` 实际源码、`output/20261021-阅记-源码-v4.zip` 与 `output/20261020-阅记-项目报告-v1.pdf`。
+- 历史 docs 和 memory-bank 仅提供检查线索；本轮 Windows 结果另存 docs/evidence/local-windows-20261021，不用 Linux 结果代替本机实测。
+- 本轮初始 git HEAD：d6c3f8a。已有 docs/source-notes.md 未提交改动保留，不覆盖。没有联网查阅外部资料。
+
+## 2026-10-21 报告和README修订来源
+
+- 用户当前明确授权“修改报告和readme”，沿用既有模板和已确认身份资料，不新增选题或大纲决策。
+- 原始指导书：raw/期末项目与报告要求.docx；核对日期2026-10-21；SHA256仍为352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d，原件未改。
+- 内容来源：docs/report/report.tex及真实Linux历史截图；docs/local-audit-20261021.md；docs/evidence/local-windows-20261021中的两份93项TRX、71项架构探针、UI截图及只读SQLite核对结果。
+- 配套源码来源：当前Code；源码v5逐文件匹配当前白名单，与实际测试v4相比仅README变化。新报告不假称v5又重跑过应用测试。
+- 使用pdf技能与ReportLab/Poppler生成和检查21页正式PDF v2，最新可编辑来源report-v2.tex。未新增外部研究资料，未覆盖旧交付。
+
+## 2026-10-21 Word可编辑版来源
+
+- 用户要求“输出word即可，我进行微调”，沿用已确认最新报告结构及事实，不再调整业务内容或源码包。
+- 正文来源docs/report/report-v2.tex，参照output/20261021-阅记-项目报告-v2.pdf；截图仍来自docs/evidence既有真实Linux/Windows证据。原始模板依据raw/期末项目与报告要求.docx，未改原件。
+- 使用officecli-docx流程、python-docx生成原生文本/表格/代码，并用本机Microsoft Word 16.0独立隐藏实例更新TOC及PAGE字段、原生渲染21页检查；过程PDF/PNG/HTML仅存docs/report/word-v2。
+- 正式交付output/20261021-阅记-项目报告-v2.docx，1587008字节；19张截图、7个可编辑表格、19个正文层级标题，正文/代码可编辑，2张结构图用可编辑表格表达，文档无保护。Word原生渲染及OOXML验证通过。用户微调后以该Word为继续编辑来源，不从tex覆盖用户改动。
+
+## 2026-10-21 Word v3 架构与实体图修订来源
+
+- 用户当前消息及截图：要求架构图、实体类图改用绘图，生成 v3。
+- 原始指导书：raw/期末项目与报告要求.docx，只读，SHA256 352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d。
+- 编辑底稿：output/20261021-阅记-项目报告-v2.docx，按当前已保存文件继续，不用旧生成脚本覆盖用户修改；基线 SHA256 faecd66dadee75f1fb605ff449d88fcc4a689c2e4a44d55c39db7e9572ff63d1。
+- 架构依据：Code/ReadJournal/ServiceLocator.cs、ViewLocator.cs、App.axaml.cs，Library 的 Models/Services/ViewModels 及原报告架构说明。
+- 四实体字段依据：Code/ReadJournal.Library/Models/Book.cs、ReadingRecord.cs、Quote.cs、ReadingPlan.cs；外键和级联依据 Services/DatabaseService.cs 的建表 SQL。Book 到每种子表均为 1 对 0..*，子表 BookId 指向 Book.Id；ReadingRecord.Pages 为计算属性，不列为数据库持久化字段。
+- 未新增外部资料。过程与计划：docs/report-v3-diagrams-plan.md。

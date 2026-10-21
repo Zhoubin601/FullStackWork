@@ -1,0 +1,20 @@
+﻿$ErrorActionPreference='Stop'
+$helper=Join-Path $PSScriptRoot 'uia.ps1'
+function Invoke-Button([string]$label) { & $helper -Action invoke -Name $label; Start-Sleep -Milliseconds 400 }
+function Set-Field([int]$index,[string]$text) { & $helper -Action set -Index $index -Value $text; Start-Sleep -Milliseconds 100 }
+function Dump-State([string]$file) { & $helper -Action dump | Out-File -LiteralPath (Join-Path $PSScriptRoot $file) -Encoding utf8 }
+Invoke-Button '我的书库'
+Invoke-Button '＋ 添加书籍'
+Invoke-Button '保存并返回'
+Dump-State 'ui-03-book-validation.json'
+Set-Field 0 'Windows本机验收书籍（虚构测试数据）'
+Set-Field 1 '虚构测试作者'
+Set-Field 2 '本机验收'
+Set-Field 3 '120'
+Set-Field 4 '仅用于本机测试，不是实际用户资料。'
+Invoke-Button '保存并返回'
+Dump-State 'ui-04-book-created.json'
+Invoke-Button '打开 →'
+Dump-State 'ui-05-detail.json'
+Invoke-Button '＋ 阅读记录'
+Dump-State 'ui-06-record-editor.json'

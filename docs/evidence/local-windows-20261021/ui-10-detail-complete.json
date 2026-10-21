@@ -1,0 +1,317 @@
+﻿[
+    {
+        "Name":  "阅记 · 阅读与书摘",
+        "Type":  "ControlType.Window",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "201,235,1710,1200"
+    },
+    {
+        "Name":  "阅 记",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,277,255,60"
+    },
+    {
+        "Name":  "让每一页，留下回响",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,364,255,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,455,255,444"
+    },
+    {
+        "Name":  "阅读概览",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,461,255,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,535,255,62"
+    },
+    {
+        "Name":  "书摘收藏",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,609,255,62"
+    },
+    {
+        "Name":  "阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,683,255,62"
+    },
+    {
+        "Name":  "阅读统计",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,757,255,62"
+    },
+    {
+        "Name":  "设置与数据",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "231,831,255,62"
+    },
+    {
+        "Name":  "← 返回",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "558,259,122,62"
+    },
+    {
+        "Name":  "我的书库",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "704,272,1165,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,383,1305,1016"
+    },
+    {
+        "Name":  "Windows本机验收书籍（虚构测试数据）",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,383,1305,56"
+    },
+    {
+        "Name":  "虚构测试作者",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,460,1305,28"
+    },
+    {
+        "Name":  "仅用于本机测试，不是实际用户资料。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,509,1305,28"
+    },
+    {
+        "Name":  "在读 · 当前阅读进度 20/120 页（16.7%）",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,558,1305,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ProgressBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,607,1305,9"
+    },
+    {
+        "Name":  "累计阅读页数 11 页 · 累计 25 分钟（含重读）",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,637,1305,28"
+    },
+    {
+        "Name":  "编辑资料",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,686,139,62"
+    },
+    {
+        "Name":  "＋ 阅读记录",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "715,686,165,62"
+    },
+    {
+        "Name":  "＋ 书摘",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "895,686,123,62"
+    },
+    {
+        "Name":  "＋ 阅读计划",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1033,686,164,62"
+    },
+    {
+        "Name":  "删除书籍",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1212,686,138,62"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,784,1305,28"
+    },
+    {
+        "Name":  "刷新 / 重试",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,833,161,62"
+    },
+    {
+        "Name":  "阅读记录",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,916,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,973,1305,100"
+    },
+    {
+        "Name":  "2026-10-21 · 第 10～20 页 · 25 分钟",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1007,1087,28"
+    },
+    {
+        "Name":  "修改",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1660,991,97,62"
+    },
+    {
+        "Name":  "删除",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1769,991,97,62"
+    },
+    {
+        "Name":  "关联计划",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1094,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1151,1305,80"
+    },
+    {
+        "Name":  "目标日期 2026-10-21",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1159,1305,28"
+    },
+    {
+        "Name":  "建议每日 100 页 · 剩余 100 页",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1195,1305,28"
+    },
+    {
+        "Name":  "关联书摘",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1270,1305,36"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.List",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1327,1305,78"
+    },
+    {
+        "Name":  "本机验收用虚构摘录：每一页都可以留下记录。",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "561,1335,1305,62"
+    },
+    {
+        "Name":  "本机验收用虚构摘录：每一页都可以留下记录。",
+        "Type":  "ControlType.Text",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "587,1352,1253,28"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.ScrollBar",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1842,383,24,1016"
+    },
+    {
+        "Name":  "Avalonia.Controls.PathIcon",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1842,383,24,24"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "Empty"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1842,1369,24,6"
+    },
+    {
+        "Name":  "",
+        "Type":  "ControlType.Thumb",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1860,407,3,963"
+    },
+    {
+        "Name":  "Avalonia.Controls.PathIcon",
+        "Type":  "ControlType.Button",
+        "Enabled":  true,
+        "Offscreen":  false,
+        "Rect":  "1842,1375,24,24"
+    }
+]

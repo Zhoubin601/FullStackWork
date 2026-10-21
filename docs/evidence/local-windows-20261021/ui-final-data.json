@@ -1,0 +1,44 @@
+{
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "Windows本机验收书籍（虚构测试数据）",
+      "Author": "虚构测试作者",
+      "Category": "本机验收",
+      "TotalPages": 120,
+      "Description": "仅用于本机测试，不是实际用户资料。",
+      "CreatedAt": 639281813234804108,
+      "UpdatedAt": 639281813234804108
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": 639281376000000000,
+      "StartPage": 10,
+      "EndPage": 20,
+      "Minutes": 25
+    }
+  ],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "本机验收用虚构摘录：每一页都可以留下记录。",
+      "Thoughts": "Windows真实界面测试。",
+      "Page": 15,
+      "IsFavorite": 1,
+      "CreatedAt": 639281814528749837,
+      "UpdatedAt": 639281815521823535
+    }
+  ],
+  "ReadingPlan": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639281376000000000,
+      "TargetDate": 639281376000000000
+    }
+  ]
+}

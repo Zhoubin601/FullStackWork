@@ -1,0 +1,26 @@
+{
+  "Method": "Reversible archive after permanent deletion was blocked by automatic approval policy",
+  "Archived": [
+    {
+      "Source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\20261021-阅记-项目报告-v2.docx",
+      "Target": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\release-v1\\previous-deliveries\\20261021-阅记-项目报告-v2.docx",
+      "Sha256": "faecd66dadee75f1fb605ff449d88fcc4a689c2e4a44d55c39db7e9572ff63d1"
+    },
+    {
+      "Source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\20261021-阅记-项目报告-v3.docx",
+      "Target": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\release-v1\\previous-deliveries\\20261021-阅记-项目报告-v3.docx",
+      "Sha256": "f835bf8ca2599702c4a755581ef391f67685cd3d797f2f9e4812d3f5a5622fab"
+    },
+    {
+      "Source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\20261021-阅记-源码-v5.zip",
+      "Target": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\release-v1\\previous-deliveries\\20261021-阅记-源码-v5.zip",
+      "Sha256": "1fceab54b0774c4fe8b7a24bed70725356df59d59d0c88af88908088b475880b"
+    }
+  ],
+  "RemainingRootFiles": [],
+  "NewVersionFiles": [
+    "20261021-阅记-项目报告-v1.docx",
+    "20261021-阅记-项目报告-v1.pdf",
+    "20261021-阅记-源码-v1.zip"
+  ]
+}

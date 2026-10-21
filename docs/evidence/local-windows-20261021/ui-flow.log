@@ -1,0 +1,7 @@
+At D:\2026Autumn Semester File\FullStack\期末大作业\docs\evidence\local-windows-20261021\ui-flow.ps1:20 char:37
++ Dump-State 'ui-06-record-editor.json'
++                                     ~
+The string is missing the terminator: '.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 

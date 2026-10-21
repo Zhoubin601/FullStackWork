@@ -1,0 +1,62 @@
+{
+  "path": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\20261021-阅记-项目报告-v2.pdf",
+  "pages": 21,
+  "bytes": 1791055,
+  "sha256": "6f827243874176cda6569473e35ed3e15ca680963e6008b3562c2d9b52030187",
+  "paired_source": "20261021-阅记-源码-v5.zip",
+  "source_files": 119,
+  "source_bytes": 113557,
+  "source_sha256": "1fceab54b0774c4fe8b7a24bed70725356df59d59d0c88af88908088b475880b",
+  "source_matches_current_code": true,
+  "differences_from_tested_v4": [
+    "README.md"
+  ],
+  "required_sections_present": true,
+  "identity_present": true,
+  "missing_glyphs": [],
+  "text_outside_page": [],
+  "bookmark_count": 19,
+  "rendered_pages": 21,
+  "visual_review": "All 21 final pages rendered using Poppler; both contact sheets and cover, environment, cases, closing pages checked.",
+  "test_counts": {
+    "windows-full.trx": {
+      "total": "93",
+      "executed": "93",
+      "passed": "93",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "windows-clean.trx": {
+      "total": "93",
+      "executed": "93",
+      "passed": "93",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "application_tests_rerun_for_readme_only_change": false,
+  "old_pdf_and_raw_unchanged": true,
+  "status": "Formal PDF v2 paired with source v5; Windows validation included."
+}

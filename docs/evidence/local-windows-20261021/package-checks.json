@@ -1,0 +1,13 @@
+{
+  "archive": "20261021-阅记-源码-v4.zip",
+  "bytes": 113136,
+  "sha256": "de47a514929f6e9ac9e0d6115b69f762dd968987f9bfec227c31de20331d51b7",
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "under_10MB": true,
+  "files": 119,
+  "manifest_matches": true,
+  "crc_ok": true,
+  "forbidden_entries": [],
+  "byte_differences": [],
+  "content_differences_after_newline_normalization": []
+}
