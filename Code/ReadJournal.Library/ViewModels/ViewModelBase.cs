@@ -26,7 +26,7 @@ public abstract class ViewModelBase : ObservableObject
     }
     public virtual void SetParameter(object parameter) { ParameterVersion++; Error = ""; }
     protected virtual Task LoadAsync() => Task.CompletedTask;
-    public virtual Task<bool> CanLeaveAsync() => Task.FromResult(true);
+    public virtual Task<bool> CanLeaveAsync() => Task.FromResult(!IsBusy);
     protected async Task RunAsync(Func<Task> action)
     {
         if (IsBusy) return;

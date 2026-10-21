@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8b05d1ad-3357-432c-beab-44f4a237f05c" name="@012ee0d4d6ab 2026-10-21 03:30:52" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-21T03:30:52.3465552+00:00" queuing="2026-10-21T03:30:52.3465553+00:00" start="2026-10-21T03:30:48.1728807+00:00" finish="2026-10-21T03:30:52.3813162+00:00" />
+  <TestSettings name="default" id="9b0683a1-a45f-430b-bebc-e20c7c6b28c6">
+    <Deployment runDeploymentRoot="_012ee0d4d6ab_2026-10-21_03_30_52" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d0c6ab4b-5120-4610-9a84-04fc44bfe6e8" testId="fba03132-fe53-ecfd-4142-da865bed8c57" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" computerName="012ee0d4d6ab" duration="00:00:01.0096236" startTime="2026-10-21T03:30:52.1995076+00:00" endTime="2026-10-21T03:30:52.1995079+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0c6ab4b-5120-4610-9a84-04fc44bfe6e8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 141
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f60e9a62-f6f8-4245-9c40-b9c59e4e5b42" testId="8db79a5d-986c-1f29-4cd5-52c5505e4e13" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;add-quote&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.3622647" startTime="2026-10-21T03:30:51.1146893+00:00" endTime="2026-10-21T03:30:51.1147059+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f60e9a62-f6f8-4245-9c40-b9c59e4e5b42">
+      <Output>
+        <ErrorInfo>
+          <Message>Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="721fd646-6165-4aba-9f97-eafd71f252e2" testId="4125ede0-aa6c-a6ea-caa2-081644c94f7f" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;menu&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0042515" startTime="2026-10-21T03:30:51.1883415+00:00" endTime="2026-10-21T03:30:51.1883416+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="721fd646-6165-4aba-9f97-eafd71f252e2">
+      <Output>
+        <ErrorInfo>
+          <Message>A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ed48487b-646b-45c0-bb66-890009b71ecb" testId="ffb00c55-02da-eb70-5ae7-f3920845e066" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-content&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0004013" startTime="2026-10-21T03:30:51.1352703+00:00" endTime="2026-10-21T03:30:51.1352704+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed48487b-646b-45c0-bb66-890009b71ecb">
+      <Output>
+        <ErrorInfo>
+          <Message>Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="69583991-802c-4aac-bf3e-4b8009640787" testId="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-menu&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0027004" startTime="2026-10-21T03:30:51.1356918+00:00" endTime="2026-10-21T03:30:51.1356919+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="69583991-802c-4aac-bf3e-4b8009640787">
+      <Output>
+        <ErrorInfo>
+          <Message>Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="43812a4a-4854-4245-a5c3-53243cece996" testId="708e237e-d4bb-7fa7-02dd-2e2d47b98a73" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;back&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0695484" startTime="2026-10-21T03:30:51.1813573+00:00" endTime="2026-10-21T03:30:51.1813574+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43812a4a-4854-4245-a5c3-53243cece996">
+      <Output>
+        <ErrorInfo>
+          <Message>A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2362b107-7ba3-4567-9a01-2677a6865718" testId="bb764ede-f620-6045-a548-a6448dd31817" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;close&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0017233" startTime="2026-10-21T03:30:51.1832312+00:00" endTime="2026-10-21T03:30:51.1832313+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2362b107-7ba3-4567-9a01-2677a6865718">
+      <Output>
+        <ErrorInfo>
+          <Message>A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2c77a0b6-db1b-49bb-a6b8-39c772554683" testId="aece9e8d-10e9-0a0c-12ed-b8e8109e123f" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;edit-quote&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0041449" startTime="2026-10-21T03:30:51.1344765+00:00" endTime="2026-10-21T03:30:51.1344766+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c77a0b6-db1b-49bb-a6b8-39c772554683">
+      <Output>
+        <ErrorInfo>
+          <Message>Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;close&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="bb764ede-f620-6045-a548-a6448dd31817">
+      <Execution id="2362b107-7ba3-4567-9a01-2677a6865718" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;add-quote&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="8db79a5d-986c-1f29-4cd5-52c5505e4e13">
+      <Execution id="f60e9a62-f6f8-4245-9c40-b9c59e4e5b42" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;edit-quote&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="aece9e8d-10e9-0a0c-12ed-b8e8109e123f">
+      <Execution id="2c77a0b6-db1b-49bb-a6b8-39c772554683" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-menu&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d">
+      <Execution id="69583991-802c-4aac-bf3e-4b8009640787" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="fba03132-fe53-ecfd-4142-da865bed8c57">
+      <Execution id="d0c6ab4b-5120-4610-9a84-04fc44bfe6e8" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;back&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="708e237e-d4bb-7fa7-02dd-2e2d47b98a73">
+      <Execution id="43812a4a-4854-4245-a5c3-53243cece996" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-content&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="ffb00c55-02da-eb70-5ae7-f3920845e066">
+      <Execution id="ed48487b-646b-45c0-bb66-890009b71ecb" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;menu&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="4125ede0-aa6c-a6ea-caa2-081644c94f7f">
+      <Execution id="721fd646-6165-4aba-9f97-eafd71f252e2" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fba03132-fe53-ecfd-4142-da865bed8c57" executionId="d0c6ab4b-5120-4610-9a84-04fc44bfe6e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8db79a5d-986c-1f29-4cd5-52c5505e4e13" executionId="f60e9a62-f6f8-4245-9c40-b9c59e4e5b42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4125ede0-aa6c-a6ea-caa2-081644c94f7f" executionId="721fd646-6165-4aba-9f97-eafd71f252e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffb00c55-02da-eb70-5ae7-f3920845e066" executionId="ed48487b-646b-45c0-bb66-890009b71ecb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d" executionId="69583991-802c-4aac-bf3e-4b8009640787" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="708e237e-d4bb-7fa7-02dd-2e2d47b98a73" executionId="43812a4a-4854-4245-a5c3-53243cece996" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb764ede-f620-6045-a548-a6448dd31817" executionId="2362b107-7ba3-4567-9a01-2677a6865718" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aece9e8d-10e9-0a0c-12ed-b8e8109e123f" executionId="2c77a0b6-db1b-49bb-a6b8-39c772554683" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="0" failed="8" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:00.78]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:00.97]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:00.98]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:01.46]       Direct navigation must not bypass the pending-operation guard.
+[xUnit.net 00:00:01.46]       Expected: True
+[xUnit.net 00:00:01.46]       Actual:   False
+[xUnit.net 00:00:01.47]       Stack Trace:
+[xUnit.net 00:00:01.47]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(87,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route)
+[xUnit.net 00:00:01.47]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.49]       Direct navigation must not bypass the pending-operation guard.
+[xUnit.net 00:00:01.49]       Expected: True
+[xUnit.net 00:00:01.49]       Actual:   False
+[xUnit.net 00:00:01.49]       Stack Trace:
+[xUnit.net 00:00:01.49]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(87,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route)
+[xUnit.net 00:00:01.49]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.49]       Direct navigation must not bypass the pending-operation guard.
+[xUnit.net 00:00:01.49]       Expected: True
+[xUnit.net 00:00:01.49]       Actual:   False
+[xUnit.net 00:00:01.49]       Stack Trace:
+[xUnit.net 00:00:01.49]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(87,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route)
+[xUnit.net 00:00:01.49]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.49]       Direct navigation must not bypass the pending-operation guard.
+[xUnit.net 00:00:01.49]       Expected: True
+[xUnit.net 00:00:01.49]       Actual:   False
+[xUnit.net 00:00:01.49]       Stack Trace:
+[xUnit.net 00:00:01.49]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(87,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route)
+[xUnit.net 00:00:01.49]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.54]       A pending operation must finish before leaving its page.
+[xUnit.net 00:00:01.54]       Expected: True
+[xUnit.net 00:00:01.54]       Actual:   False
+[xUnit.net 00:00:01.54]       Stack Trace:
+[xUnit.net 00:00:01.54]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(49,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action)
+[xUnit.net 00:00:01.54]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.54]       A pending operation must finish before leaving its page.
+[xUnit.net 00:00:01.54]       Expected: True
+[xUnit.net 00:00:01.54]       Actual:   False
+[xUnit.net 00:00:01.54]       Stack Trace:
+[xUnit.net 00:00:01.54]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(49,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action)
+[xUnit.net 00:00:01.54]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.55]       A pending operation must finish before leaving its page.
+[xUnit.net 00:00:01.55]       Expected: True
+[xUnit.net 00:00:01.55]       Actual:   False
+[xUnit.net 00:00:01.55]       Stack Trace:
+[xUnit.net 00:00:01.55]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(49,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action)
+[xUnit.net 00:00:01.55]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.56]       Assert.True() Failure
+[xUnit.net 00:00:02.56]       Expected: True
+[xUnit.net 00:00:02.56]       Actual:   False
+[xUnit.net 00:00:02.56]       Stack Trace:
+[xUnit.net 00:00:02.56]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs(141,0): at ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact()
+[xUnit.net 00:00:02.56]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.56]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1073343+00:00">
+        <Text>[xUnit.net 00:00:01.46]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "add-quote") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1601229+00:00">
+        <Text>[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "edit-quote") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1605140+00:00">
+        <Text>[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-content") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1608836+00:00">
+        <Text>[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-menu") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1823237+00:00">
+        <Text>[xUnit.net 00:00:01.54]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "back") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1833003+00:00">
+        <Text>[xUnit.net 00:00:01.54]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "close") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:51.1902861+00:00">
+        <Text>[xUnit.net 00:00:01.55]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "menu") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="012ee0d4d6ab" outcome="Error" timestamp="2026-10-21T03:30:52.2002062+00:00">
+        <Text>[xUnit.net 00:00:02.56]     ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

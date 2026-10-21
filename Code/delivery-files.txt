@@ -116,3 +116,4 @@ ReadJournal.UnitTest/packages.lock.json
 ReadJournal.Library/Services/ReadingPlanConsistency.cs
 ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs
 ReadJournal.UnitTest/EditingRegressionTests.cs
+ReadJournal.UnitTest/RestoreConcurrencyTests.cs

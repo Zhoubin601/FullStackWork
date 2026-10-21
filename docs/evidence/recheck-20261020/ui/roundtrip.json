@@ -1,0 +1,45 @@
+{
+  "FormatVersion": 1,
+  "Books": [
+    {
+      "Id": 1,
+      "Title": "Recheck Architecture Journey",
+      "Author": "Independent UI Recheck",
+      "Category": "Verification",
+      "TotalPages": 120,
+      "Description": "Fresh UI evidence for commit 0313917.",
+      "CreatedAt": "2026-10-20T17:05:28.7787298",
+      "UpdatedAt": "2026-10-20T17:05:28.7787298"
+    }
+  ],
+  "ReadingRecords": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": "2026-10-20T00:00:00",
+      "StartPage": 10,
+      "EndPage": 30,
+      "Minutes": 25
+    }
+  ],
+  "Quotes": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "Architecture is verified through real execution.",
+      "Thoughts": "Independent recheck across page boundaries.",
+      "Page": 12,
+      "IsFavorite": true,
+      "CreatedAt": "2026-10-20T17:06:12.3365243",
+      "UpdatedAt": "2026-10-20T17:06:12.3365243"
+    }
+  ],
+  "ReadingPlans": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": "2026-10-20T00:00:00",
+      "TargetDate": "2026-10-24T00:00:00"
+    }
+  ]
+}

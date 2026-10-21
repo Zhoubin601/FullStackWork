@@ -1,0 +1,18 @@
+{
+  "ReadJournal.dll": {
+    "sha256": {
+      "/workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll": "ae437aad9f957a4c3779aaf6812e18ffe641760376477b6f44e83edba7e4982f",
+      "/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.dll": "ae437aad9f957a4c3779aaf6812e18ffe641760376477b6f44e83edba7e4982f",
+      "/workspace/scratch/recheck-architecture-bin/ReadJournal.dll": "ae437aad9f957a4c3779aaf6812e18ffe641760376477b6f44e83edba7e4982f"
+    },
+    "all_equal": true
+  },
+  "ReadJournal.Library.dll": {
+    "sha256": {
+      "/workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.Library.dll": "0c31a5bd11056d7c3ebd43b8a774fb60f2fa1b6684315a7bada2662c63b0329f",
+      "/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.Library.dll": "0c31a5bd11056d7c3ebd43b8a774fb60f2fa1b6684315a7bada2662c63b0329f",
+      "/workspace/scratch/recheck-architecture-bin/ReadJournal.Library.dll": "0c31a5bd11056d7c3ebd43b8a774fb60f2fa1b6684315a7bada2662c63b0329f"
+    },
+    "all_equal": true
+  }
+}

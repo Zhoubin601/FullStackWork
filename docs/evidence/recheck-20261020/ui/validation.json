@@ -1,0 +1,101 @@
+{
+  "commit": "0313917",
+  "platform": "Debian 13 Linux x64; Xvfb :119 1280x960; software rendering",
+  "assemblies": {
+    "Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll": "ae437aad9f957a4c3779aaf6812e18ffe641760376477b6f44e83edba7e4982f",
+    "Code/ReadJournal/bin/Release/net8.0/ReadJournal.Library.dll": "0c31a5bd11056d7c3ebd43b8a774fb60f2fa1b6684315a7bada2662c63b0329f"
+  },
+  "after_restart": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Recheck Architecture Journey",
+        "Author": "Independent UI Recheck",
+        "Category": "Verification",
+        "TotalPages": 120,
+        "Description": "Fresh UI evidence for commit 0313917.",
+        "CreatedAt": 639281127287787298,
+        "UpdatedAt": 639281127287787298
+      }
+    ],
+    "ReadingRecord": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "ReadingDate": 639280512000000000,
+        "StartPage": 10,
+        "EndPage": 30,
+        "Minutes": 25
+      }
+    ],
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "Architecture is verified through real execution.",
+        "Thoughts": "Independent recheck across page boundaries.",
+        "Page": 12,
+        "IsFavorite": 1,
+        "CreatedAt": 639281127723365243,
+        "UpdatedAt": 639281127723365243
+      }
+    ],
+    "ReadingPlan": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "StartDate": 639280512000000000,
+        "TargetDate": 639283968000000000
+      }
+    ]
+  },
+  "logs": {
+    "app.log": {
+      "binding_diagnostics": 0,
+      "bytes": 2867
+    },
+    "restart.log": {
+      "binding_diagnostics": 0,
+      "bytes": 2867
+    }
+  },
+  "auto_backups": [
+    "/workspace/scratch/recheck-ui/data/auto-backup-20261020-171314-ddc203135ad44ec8b1fe0d9095bb0b07.json"
+  ],
+  "screenshots": [
+    "00-display.png",
+    "01-first-start.png",
+    "02-empty-library.png",
+    "03-book-editor.png",
+    "04-book-filled.png",
+    "05-book-created.png",
+    "06-book-detail.png",
+    "07-record-editor.png",
+    "08-record-filled.png",
+    "09-record-saved.png",
+    "10-quote-editor.png",
+    "11-quote-editor.png",
+    "12-quote-filled.png",
+    "13-plan-editor.png",
+    "14-plan-date-picker.png",
+    "15-plan-suggestion.png",
+    "16-complete-detail.png",
+    "17-quotes-list.png",
+    "18-plans-list.png",
+    "19-statistics.png",
+    "20-overview.png",
+    "21-settings.png",
+    "22-export-picker.png",
+    "23-export-success.png",
+    "24-delete-confirm.png",
+    "25-cascade-deleted.png",
+    "26-restore-picker.png",
+    "27-restore-confirm.png",
+    "28-restore-success.png",
+    "29-restored-overview.png",
+    "30-restart-overview.png",
+    "31-restart-detail.png",
+    "32-restart-statistics.png"
+  ],
+  "restart_method": "Isolated app process stopped with SIGTERM then relaunched; no window manager available for Alt+F4."
+}

@@ -27,6 +27,8 @@ Windows 可执行 `powershell -ExecutionPolicy Bypass -File build.ps1`，Linux �
 
 设置页的数据操作进行期间会阻止切页和关闭窗口，完成或失败后恢复正常导航。概览最近阅读记录由 IReadingRecordStorage 提供，ViewModel 不直接编写数据库查询。
 
+2026-10-21修复收藏与恢复之间的竞态：收藏由存储服务在单次事务内更新收藏位和时间，不再保存整条旧书摘；所有页面忙碌时禁止菜单、返回、关闭和直接内容跳转，操作完成或失败后可正常离开。请等待当前操作完成后再进入设置恢复备份。
+
 ## 验证和打包
 
 本版在 Debian 13 / Linux x64 验证。Windows 桌面尚未实测。固定 SQLite 依赖的旧 Alpine RID 会产生 NETSDK1206 警告；未验证 Alpine。

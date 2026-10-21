@@ -1,0 +1,346 @@
+{
+  "date": "2026-10-21",
+  "base_commit": "031391711512bec26d36c0b53963bcc57898e8ce",
+  "scope": "2026-10-21 P1修复后的源码",
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "concrete_view_model_count": 14,
+  "singleton_registration_count": 29,
+  "interface_count": 14,
+  "reflection_view_mapping_count": 13,
+  "view_models": [
+    {
+      "view_model": "BookDetailViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/BookDetailViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/BookDetailView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "BookEditViewModel",
+      "base": "EditViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/BookEditViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/BookEditView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "BookListViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/BookListViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/BookListView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "InitializationViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/InitializationViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/InitializationView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "MainViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/MainViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/MainView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "MainWindowViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/MainWindowViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/MainWindow.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "App直接创建MainWindow并从资源绑定VM"
+    },
+    {
+      "view_model": "OverviewViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/OverviewViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/OverviewView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "QuoteEditViewModel",
+      "base": "EditViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/QuoteEditViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/QuoteEditView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "QuoteListViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/QuoteListViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/QuoteListView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "ReadingPlanEditViewModel",
+      "base": "EditViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/ReadingPlanEditViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/ReadingPlanEditView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "ReadingPlanListViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/ReadingPlanListViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/ReadingPlanListView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "ReadingRecordEditViewModel",
+      "base": "EditViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/ReadingRecordEditView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "SettingsViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/SettingsViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/SettingsView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    },
+    {
+      "view_model": "StatisticsViewModel",
+      "base": "ViewModelBase",
+      "source": "Code/ReadJournal.Library/ViewModels/StatisticsViewModel.cs",
+      "singleton_registered": true,
+      "locator_property": true,
+      "view": "Code/ReadJournal/Views/StatisticsView.axaml",
+      "view_exists": true,
+      "x_class_matches": true,
+      "rendering": "ViewLocator按类型命名约定映射"
+    }
+  ],
+  "interfaces": [
+    {
+      "interface": "IAlertService",
+      "singleton_mapping": [
+        "IAlertService, AlertService"
+      ]
+    },
+    {
+      "interface": "IBackupService",
+      "singleton_mapping": [
+        "IBackupService, BackupService"
+      ]
+    },
+    {
+      "interface": "IBookStorage",
+      "singleton_mapping": [
+        "IBookStorage, BookStorage"
+      ]
+    },
+    {
+      "interface": "IContentNavigationService",
+      "singleton_mapping": [
+        "IContentNavigationService, ContentNavigationService"
+      ]
+    },
+    {
+      "interface": "IDatabaseService",
+      "singleton_mapping": [
+        "IDatabaseService, DatabaseService"
+      ]
+    },
+    {
+      "interface": "IFileService",
+      "singleton_mapping": [
+        "IFileService, FileService"
+      ]
+    },
+    {
+      "interface": "IMenuNavigationService",
+      "singleton_mapping": [
+        "IMenuNavigationService, MenuNavigationService"
+      ]
+    },
+    {
+      "interface": "IPreferenceStorage",
+      "singleton_mapping": [
+        "IPreferenceStorage, FilePreferenceStorage"
+      ]
+    },
+    {
+      "interface": "IQuoteStorage",
+      "singleton_mapping": [
+        "IQuoteStorage, QuoteStorage"
+      ]
+    },
+    {
+      "interface": "IReadingPlanStorage",
+      "singleton_mapping": [
+        "IReadingPlanStorage, ReadingPlanStorage"
+      ]
+    },
+    {
+      "interface": "IReadingRecordStorage",
+      "singleton_mapping": [
+        "IReadingRecordStorage, ReadingRecordStorage"
+      ]
+    },
+    {
+      "interface": "IReadingService",
+      "singleton_mapping": [
+        "IReadingService, ReadingService"
+      ]
+    },
+    {
+      "interface": "IRootNavigationService",
+      "singleton_mapping": [
+        "IRootNavigationService, RootNavigationService"
+      ]
+    },
+    {
+      "interface": "IStatisticsService",
+      "singleton_mapping": [
+        "IStatisticsService, StatisticsService"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "layer": "Root",
+      "interface_file": "Code/ReadJournal.Library/Services/IRootNavigationService.cs",
+      "implementation_file": "Code/ReadJournal/Services/RootNavigationService.cs",
+      "constants": [
+        "InitializationView",
+        "MainView"
+      ],
+      "mappings": {
+        "InitializationView": "InitializationViewModel",
+        "MainView": "MainViewModel"
+      },
+      "complete": true
+    },
+    {
+      "layer": "Menu",
+      "interface_file": "Code/ReadJournal.Library/Services/IMenuNavigationService.cs",
+      "implementation_file": "Code/ReadJournal/Services/MenuNavigationService.cs",
+      "constants": [
+        "OverviewView",
+        "BookListView",
+        "QuoteListView",
+        "ReadingPlanListView",
+        "StatisticsView",
+        "SettingsView"
+      ],
+      "mappings": {
+        "OverviewView": "OverviewViewModel",
+        "BookListView": "BookListViewModel",
+        "QuoteListView": "QuoteListViewModel",
+        "ReadingPlanListView": "ReadingPlanListViewModel",
+        "StatisticsView": "StatisticsViewModel",
+        "SettingsView": "SettingsViewModel"
+      },
+      "complete": true
+    },
+    {
+      "layer": "Content",
+      "interface_file": "Code/ReadJournal.Library/Services/IContentNavigationService.cs",
+      "implementation_file": "Code/ReadJournal/Services/ContentNavigationService.cs",
+      "constants": [
+        "BookDetailView",
+        "BookEditView",
+        "QuoteEditView",
+        "ReadingPlanEditView"
+      ],
+      "mappings": {
+        "BookDetailView": "BookDetailViewModel",
+        "BookEditView": "BookEditViewModel",
+        "QuoteEditView": "QuoteEditViewModel",
+        "ReadingPlanEditView": "ReadingPlanEditViewModel"
+      },
+      "complete": true
+    }
+  ],
+  "all_concrete_view_models_registered_and_mapped": true,
+  "all_interfaces_singleton_registered": true,
+  "all_route_constants_mapped": true,
+  "vm_query_or_direct_io_hits": [],
+  "no_vm_query_or_direct_io_hits": true,
+  "remaining_database_service_dependencies": [
+    {
+      "source": "Code/ReadJournal.Library/ViewModels/InitializationViewModel.cs",
+      "line": 5,
+      "text": "private readonly IDatabaseService _database; private readonly IRootNavigationService _root; private readonly IMenuNavigationService _menu;"
+    },
+    {
+      "source": "Code/ReadJournal.Library/ViewModels/InitializationViewModel.cs",
+      "line": 6,
+      "text": "public InitializationViewModel(IDatabaseService database, IRootNavigationService root, IMenuNavigationService menu) { _database = database; _root = root; _menu = menu; }"
+    },
+    {
+      "source": "Code/ReadJournal.Library/ViewModels/MainWindowViewModel.cs",
+      "line": 6,
+      "text": "private readonly IRootNavigationService _root; private readonly IMenuNavigationService _menu; private readonly IDatabaseService _database;"
+    },
+    {
+      "source": "Code/ReadJournal.Library/ViewModels/MainWindowViewModel.cs",
+      "line": 10,
+      "text": "public MainWindowViewModel(IDatabaseService database, IRootNavigationService root, IMenuNavigationService menu)"
+    }
+  ],
+  "database_dependencies_only_bootstrap": true,
+  "inspected_source_sha256": {
+    "Code/ReadJournal.Library/ViewModels/OverviewViewModel.cs": "36a13f8aa8bd859b61cfe149604dfd218490d0b77583f2e5ef050795dae9bc67",
+    "Code/ReadJournal.Library/ViewModels/ViewModelBase.cs": "614db88010af272fc09bdd0eaddeda12e43d87ea0069c66c3d2796a17805aa75",
+    "Code/ReadJournal.Library/ViewModels/BookDetailViewModel.cs": "896e1d542954bc315186823450a1bf7b4fb8ce1eb5cb707d0af669c9e35d3e1a",
+    "Code/ReadJournal.Library/ViewModels/SettingsViewModel.cs": "f0fb499c33d0c79ed64c599c2377646ef29dcf0bf80b48bc2ffab6277ed35c8e",
+    "Code/ReadJournal.Library/Services/IReadingRecordStorage.cs": "fa0466bf5eb30c633d81ee8193f97286526de48448cf6733a9220fc83a296032",
+    "Code/ReadJournal.Library/Services/ReadingRecordStorage.cs": "c91e5f7ea210eb1002e3ef265b5da7a4ca25764fb09f8ea75ce2169e18230693",
+    "Code/ReadJournal/ServiceLocator.cs": "f5d215137b115e596b195f3757bdd697d655c1df97cc7085a08558ce791f31cd",
+    "Code/ReadJournal/ViewLocator.cs": "2d44106bf66e461feae97239180bdf8d9709283a23562b004e1f59ec46a479b9"
+  }
+}

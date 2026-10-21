@@ -17,9 +17,10 @@ public class DeleteNavigationRaceTests
         var deleting = scenario.Detail.DeleteBookCommand.ExecuteAsync(null);
         Assert.True(scenario.Detail.IsBusy);
 
-        // The menu remains usable while a non-editor detail page is reading its deletion impact.
+        // User navigation is blocked while busy; a forced context reset must still be safe.
         await scenario.Main.OnMenuTappedCommand.ExecuteAsync(MenuItem.MenuItems.Single(x => x.View == MenuNavigationConstant.BookListView));
-        Assert.Same(scenario.List, scenario.Main.Content);
+        Assert.Same(scenario.Detail, scenario.Main.Content);
+        scenario.Main.SetMenuAndContent(MenuNavigationConstant.BookListView, scenario.List);
         scenario.Detail.SetParameter(2); scenario.Main.PushContent(scenario.Detail);
         pending.SetResult("书籍 A 的关联统计"); await deleting;
 

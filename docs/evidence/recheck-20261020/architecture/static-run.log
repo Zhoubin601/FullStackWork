@@ -1,0 +1,11 @@
+{
+  "concrete_view_model_count": 14,
+  "singleton_registration_count": 29,
+  "interface_count": 14,
+  "reflection_view_mapping_count": 13,
+  "all_concrete_view_models_registered_and_mapped": true,
+  "all_interfaces_singleton_registered": true,
+  "all_route_constants_mapped": true,
+  "no_vm_query_or_direct_io_hits": true,
+  "database_dependencies_only_bootstrap": true
+}

@@ -1,0 +1,11 @@
+{
+  "commit": "031391711512bec26d36c0b53963bcc57898e8ce",
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "package_sha256": "089ca8f42b4777cb290cd0ee119214ac365b015d2e92ebc01a1d36a2faf6e8a0",
+  "package_bytes": 109424,
+  "package_files": 118,
+  "mismatches": [],
+  "invalid_paths": [],
+  "whitelist_missing": [],
+  "whitelist_extra": []
+}

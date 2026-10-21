@@ -13,9 +13,11 @@ public class ContentNavigationService : IContentNavigationService
             ContentNavigationConstant.ReadingPlanEditView => ServiceLocator.Current.ReadingPlanEditViewModel,
             _ => throw new ArgumentException("未知或尚未实现的内容目标。", nameof(view))
         };
-        // 阅记新增保护：必须在 SetParameter 之前拦截重复单例，避免覆盖原参数。
-        if (ServiceLocator.Current.MainViewModel.ContentStack.Contains(target)) return;
+        var main = ServiceLocator.Current.MainViewModel;
+        // Direct Add/Edit commands must obey the same busy-page boundary as menu/back/close.
+        // Check before SetParameter so a rejected navigation cannot erase a cached editor's draft.
+        if (main.Content?.IsBusy == true || main.ContentStack.Contains(target)) return;
         target.SetParameter(parameter!);
-        ServiceLocator.Current.MainViewModel.PushContent(target);
+        main.PushContent(target);
     }
 }

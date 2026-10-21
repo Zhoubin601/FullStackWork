@@ -1,0 +1,8 @@
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/FullStackWork/docs/evidence/recheck-20261020/recheck.trx
+
+Passed!  - Failed:     0, Passed:    83, Skipped:     0, Total:    83, Duration: 1 s - ReadJournal.UnitTest.dll (net8.0)

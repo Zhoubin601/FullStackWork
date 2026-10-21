@@ -1,0 +1,24 @@
+{
+  "lock_seconds": 3.2632898110000497,
+  "before": {
+    "Id": 1,
+    "BookId": 1,
+    "Text": "Architecture is verified through real execution.",
+    "Thoughts": "Independent recheck across page boundaries.",
+    "Page": 12,
+    "IsFavorite": 1,
+    "CreatedAt": 639281127723365243,
+    "UpdatedAt": 639281127723365243
+  },
+  "after": {
+    "Id": 1,
+    "BookId": 1,
+    "Text": "Architecture is verified through real execution.",
+    "Thoughts": "Independent recheck across page boundaries.",
+    "Page": 12,
+    "IsFavorite": 0,
+    "CreatedAt": 639281127723365243,
+    "UpdatedAt": 639281507812142465
+  },
+  "favorite_changed_only": true
+}

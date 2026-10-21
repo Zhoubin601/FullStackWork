@@ -1,0 +1,82 @@
+{
+  "commit": "031391711512bec26d36c0b53963bcc57898e8ce",
+  "head_vs_origin_main": "0\t0",
+  "test_counters": {
+    "total": "83",
+    "executed": "83",
+    "passed": "83",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "architecture_checks": 71,
+  "architecture_mechanisms_correspond": true,
+  "normal_ui_flow_complete": true,
+  "normal_ui_restored_counts": {
+    "Book": 1,
+    "ReadingRecord": 1,
+    "Quote": 1,
+    "ReadingPlan": 1
+  },
+  "normal_ui_nondate_fields_match_backup": true,
+  "normal_ui_deleted_counts": {
+    "Book": 0,
+    "ReadingRecord": 0,
+    "Quote": 0,
+    "ReadingPlan": 0
+  },
+  "ui_logs": {
+    "app.log": {
+      "binding_diagnostics": 0
+    },
+    "restart.log": {
+      "binding_diagnostics": 0
+    }
+  },
+  "source_package": {
+    "commit": "031391711512bec26d36c0b53963bcc57898e8ce",
+    "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+    "package_sha256": "089ca8f42b4777cb290cd0ee119214ac365b015d2e92ebc01a1d36a2faf6e8a0",
+    "package_bytes": 109424,
+    "package_files": 118,
+    "mismatches": [],
+    "invalid_paths": [],
+    "whitelist_missing": [],
+    "whitelist_extra": []
+  },
+  "open_p1_defects": 1,
+  "functional_acceptance_complete": false,
+  "p1_evidence": "docs/evidence/business-recheck-20261020/",
+  "p1_primary_confirmation": {
+    "NavigatedWhileOldOperationBusy": true,
+    "CanLeaveWhileBusy": true,
+    "RestoreStatus": "恢复成功。原数据已自动备份至：/workspace/scratch/recheck-business/db-0eab01c99b2b40f38ad82ac911ec441d/auto-backup-20261020-170953-4591477a720d4afeb41f0452d53cbb60.json",
+    "RestoreError": "",
+    "ToggleError": "",
+    "ExpectedQuoteText": "RESTORED quote text",
+    "ActualQuoteText": "OLD quote text",
+    "ActualThoughts": "OLD thoughts",
+    "ActualPage": 1,
+    "ActualFavorite": true,
+    "ActualBookTitle": "RESTORED book",
+    "AutoBackupCount": 1,
+    "DataFolder": "/workspace/scratch/recheck-business/db-0eab01c99b2b40f38ad82ac911ec441d",
+    "DefectConfirmed": true
+  },
+  "application_raw_reference_delivery_changes": [],
+  "windows_tested": false,
+  "application_fixed_this_turn": false,
+  "normal_ui_all_fields_including_dates_match_backup": true,
+  "normal_ui_restored_data_equals_after_restart": true,
+  "restart_method": "Isolated app process stopped with SIGTERM then relaunched; no window manager available for Alt+F4."
+}

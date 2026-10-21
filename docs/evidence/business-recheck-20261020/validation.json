@@ -1,0 +1,26 @@
+{
+  "Commit": "0313917",
+  "SourceHashes": {
+    "Code/ReadJournal.Library/ViewModels/QuoteListViewModel.cs": "1d073932c6d4bc2a65dec92c3646328be082d2dde8ab6d589a5f4ab45561e3af",
+    "Code/ReadJournal.Library/ViewModels/ViewModelBase.cs": "11b8a815ca6d5a9a60edcacb8365285d886c8a32d82806012e888c986ae8a8bf",
+    "Code/ReadJournal.Library/ViewModels/MainViewModel.cs": "f411202e90c702f2548adb9c2a914d2ff586468e54929ce44a5024be45a7893b",
+    "Code/ReadJournal.Library/ViewModels/SettingsViewModel.cs": "f0fb499c33d0c79ed64c599c2377646ef29dcf0bf80b48bc2ffab6277ed35c8e",
+    "Code/ReadJournal.Library/Services/DatabaseService.cs": "cff9c6d16fed0c2b1f650d5bb9c5e0578f983bb4c98efce9ed879f5c24b5d9a7",
+    "Code/ReadJournal.Library/Services/QuoteStorage.cs": "43847860d0c55ad45bb63ddf81836dec1d2e0875e78e7f0f9c12f51311961881",
+    "Code/ReadJournal.Library/Services/BackupService.cs": "5e44e2c3a5b399b5d7d426dee7d55602b81c45b4c2a4e00dfafef0c1d1704257"
+  },
+  "Runs": 5,
+  "DefectsConfirmed": 5,
+  "ExpectedBehaviorAssertionExitCode": 1,
+  "CodeModified": false,
+  "ReferenceCodeModified": false,
+  "RealGuiRaceReproduced": false,
+  "Implementation": "actual application Release library, real SQLite and Main/QuoteList/Settings VMs",
+  "TestAdapters": [
+    "single-thread SynchronizationContext",
+    "menu adapter matches SetParameter + SetMenuAndContent",
+    "in-memory file service",
+    "confirmation accepted immediately",
+    "IDatabaseService decorator only pauses one unrelated no-change read inside actual database gate"
+  ]
+}

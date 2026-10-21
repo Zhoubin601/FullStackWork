@@ -21,5 +21,11 @@ public class QuoteStorage : IQuoteStorage
         _reading.ValidateQuote(quote, book); quote.UpdatedAt = DateTime.Now; quote.CreatedAt = old?.CreatedAt ?? quote.UpdatedAt;
         if (old is null) c.Insert(quote); else c.Update(quote); return quote.Id;
     });
+    public Task ToggleFavoriteAsync(int id) => _database.WriteAsync(c =>
+    {
+        // Read and change the current row in one transaction; never write a detached quote snapshot.
+        var quote = c.Find<Quote>(id) ?? throw new InvalidOperationException("书摘已不存在。");
+        return c.Execute("UPDATE Quote SET IsFavorite = ?, UpdatedAt = ? WHERE Id = ?", !quote.IsFavorite, DateTime.Now, id);
+    });
     public Task DeleteAsync(int id) => _database.WriteAsync(c => c.Delete<Quote>(id));
 }

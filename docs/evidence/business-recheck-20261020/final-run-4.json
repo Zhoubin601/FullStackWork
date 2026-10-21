@@ -1,0 +1,16 @@
+{
+  "NavigatedWhileOldOperationBusy": true,
+  "CanLeaveWhileBusy": true,
+  "RestoreStatus": "\u6062\u590D\u6210\u529F\u3002\u539F\u6570\u636E\u5DF2\u81EA\u52A8\u5907\u4EFD\u81F3\uFF1A/workspace/scratch/recheck-business/db-4e379c5b95be469fbd3c6ee21f4d5ec5/auto-backup-20261020-170728-6c9bebaee83a474296a8c181682de15f.json",
+  "RestoreError": "",
+  "ToggleError": "",
+  "ExpectedQuoteText": "RESTORED quote text",
+  "ActualQuoteText": "OLD quote text",
+  "ActualThoughts": "OLD thoughts",
+  "ActualPage": 1,
+  "ActualFavorite": true,
+  "ActualBookTitle": "RESTORED book",
+  "AutoBackupCount": 1,
+  "DataFolder": "/workspace/scratch/recheck-business/db-4e379c5b95be469fbd3c6ee21f4d5ec5",
+  "DefectConfirmed": true
+}

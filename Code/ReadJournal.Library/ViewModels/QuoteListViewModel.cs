@@ -19,7 +19,7 @@ public partial class QuoteListViewModel : ViewModelBase
         _quotes = quotes; AddQuoteCommand = new RelayCommand(() => content.NavigateTo(ContentNavigationConstant.QuoteEditView));
         EditQuoteCommand = new RelayCommand<QuoteItem>(q => { if (q != null) content.NavigateTo(ContentNavigationConstant.QuoteEditView, q.Quote); });
         DeleteQuoteCommand = new AsyncRelayCommand<QuoteItem>(q => RunAsync(async () => { if (q != null && await alert.ConfirmAsync("删除书摘", "确定删除这条书摘吗？")) { await quotes.DeleteAsync(q.Quote.Id); await LoadAsync(); } }));
-        ToggleFavoriteCommand = new AsyncRelayCommand<QuoteItem>(q => RunAsync(async () => { if (q == null) return; var item = await quotes.GetAsync(q.Quote.Id) ?? throw new InvalidOperationException("书摘已不存在。"); item.IsFavorite = !item.IsFavorite; await quotes.SaveAsync(item); await LoadAsync(); }));
+        ToggleFavoriteCommand = new AsyncRelayCommand<QuoteItem>(q => RunAsync(async () => { if (q == null) return; await quotes.ToggleFavoriteAsync(q.Quote.Id); await LoadAsync(); }));
     }
     protected override async Task LoadAsync() { QuotesList = await _quotes.SearchAsync(Query, FavoritesOnly); IsEmpty = QuotesList.Count == 0; }
 }

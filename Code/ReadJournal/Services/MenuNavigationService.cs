@@ -15,7 +15,9 @@ public class MenuNavigationService : IMenuNavigationService
             MenuNavigationConstant.SettingsView => ServiceLocator.Current.SettingsViewModel,
             _ => throw new ArgumentException("未知或尚未实现的菜单目标。", nameof(view))
         };
+        var main = ServiceLocator.Current.MainViewModel;
+        if (main.Content?.IsBusy == true) return;
         target.SetParameter(parameter!);
-        ServiceLocator.Current.MainViewModel.SetMenuAndContent(view, target);
+        main.SetMenuAndContent(view, target);
     }
 }

@@ -1,0 +1,326 @@
+{
+  "checked_files": 64,
+  "all_matches": true,
+  "files": [
+    {
+      "path": "daily-poetry-a/DailyPoetryA/App.axaml.cs",
+      "sha256": "39e5230a30f54f17f0a8fff153d9bda15adf509a1b586b3edcc9963ea2faaa29",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Converters/ByteArrayToBitmapConverter.cs",
+      "sha256": "b960ed60dd463bdc0cf7d0c0c151bd587ffcd2ef8952672390c8923e56110e53",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Converters/CountToBoolConverter.cs",
+      "sha256": "6285472348daafe5f404df8794bcae02607f243dba91e2d4a421b604b8d5188d",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Converters/NegativeConverter.cs",
+      "sha256": "4def9692b7a0d2b7dde3034be0116965ddeaa4b25eadd7a5d8c344dfdaf81c8b",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Converters/PoetryToStringConverter.cs",
+      "sha256": "0527fd64a378eca171d8b45df3a9562d0475aeedcb75acf78715e49b2313e156",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/DesignViewModels/ResultDesignViewModel.cs",
+      "sha256": "0bf353a08e28a0cfc50a7619c58834801018300cd2c20217b9defbd809947050",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Program.cs",
+      "sha256": "03727ec97b7a3cea19926f75fddcb033bec4af35743d5c7a8c0e45d6a08e09e2",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/ServiceLocator.cs",
+      "sha256": "a5157035366a6ee5cd1deecc0b089fc3fdfed4f557a58af3fc187e52986c65f6",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Services/AlertService.cs",
+      "sha256": "52de72ea0c6abc930c2ef6ec2f279acd45144f16ff85ef889890633f86b27224",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Services/ContentNavigationService.cs",
+      "sha256": "ff6481c83ae571db84fbd9f73b9e7c3eea325fc3fe6626bacc408e75f666acd3",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Services/MenuNavigationService.cs",
+      "sha256": "139db7424adb00f695eb494cc992ea93d4b7a55510c5ca07585a4ae5e7dbcb50",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Services/RootNavigationService.cs",
+      "sha256": "7a368385a623e877d5c0c6a5b0d7f28f5d7255ffffcc26d80c46209a4d7653b7",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/ViewLocator.cs",
+      "sha256": "5cf0fcc16c7544df15a7187eb866c2f89b808c288fdfbe43d2a8881ae424efd0",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/DetailView.axaml.cs",
+      "sha256": "7738e72c7d8a9f769e6c147806a35d7f6b1d7713fca69ff635d1013c40bac88b",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/FavoriteView.axaml.cs",
+      "sha256": "f2cf53d86bc94c19f6bc4005e80879ba91818fb869ae69ada8c302d00c2f2b9c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/InitializationView.axaml.cs",
+      "sha256": "10dc639f89f2298bf0de931c0bb6353d76f789e30e0c0cd7721dd69be5e97ed8",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/MainView.axaml.cs",
+      "sha256": "d443959cdcd4a06b58a1e02721630fef8d8c400e0ae3d9812cd79362ae0bd92c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/MainWindow.axaml.cs",
+      "sha256": "0b7cb915cb2aa813565c880357ce0267cb7890b4fe7b86c886cd2af9b38f66e2",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/QueryView.axaml.cs",
+      "sha256": "af84fcbbdaf5aa80abf8fd7d7052b081e211ff9bb242dd9ab98e9c4696b89ddd",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/ResultView.axaml.cs",
+      "sha256": "74a6a8094b311d5705cebfca6aeb4eeeda7840bd11dfad3d5d5fd7e71c6ff936",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/TodayDetailView.axaml.cs",
+      "sha256": "13cced1a260573d6bf8b457be5d963bd871d91d68ff33e50174bcc12ab4d542a",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/TodayView.axaml.cs",
+      "sha256": "8aacf6b331931f396687eaee9ada9cf155fc02e31d8cd6411846c44f5a634d7b",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Helpers/ErrorMessageHelper.cs",
+      "sha256": "176e39b0c3922f6c3f6a62bdc72cb88e5b13f55ade7cccfd6da30fdccdc70d07",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Helpers/PathHelper.cs",
+      "sha256": "6fa01a14baf02c8bd1601ffe3c5cfd557b5226148746e7587d8507ce1969cb9c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Models/Favorite.cs",
+      "sha256": "6ad2243e629e8277d55feb60625a60967423387d3ab034773bea80feb6a3ceb1",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Models/Poetry.cs",
+      "sha256": "4cf3c7cd9237cabc5ceeada4ed5532e18aefb3702e189e721684e195c286e5f3",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Models/PoetryQuery.cs",
+      "sha256": "6b025d54442317c3adb7f5a61896b511b0a2c1e10b4f9578518e606b769c401f",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Models/TodayImage.cs",
+      "sha256": "2415b108fa206322f6b2f2cd18e26d0717f6d91646f3a15286a6b96aff40eccf",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Models/TodayPoetry.cs",
+      "sha256": "999767fed66f2e48ae5f7e5822bb7c9621d21b5ba236c34c2d9f2a500866798a",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/BingImageService.cs",
+      "sha256": "69822b53632b02c16ee15e724d69b0a50037fbcd050a2110031636a39e3eb343",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/FavoriteStorage.cs",
+      "sha256": "9b5b2cd4a5be616064a991e040f7a9fb4a92b054e9220cf164679f91881ac143",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/FilePreferenceStorage.cs",
+      "sha256": "d1efc59d54704985d28e2bb40bbc2cd21b9569900f169e78a12be7414ea3534c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IAlertService.cs",
+      "sha256": "01a9c81d355936b183dc30c82a962f07cd89db18f2b288ae7eb3e2ead6524eee",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IContentNavigationService.cs",
+      "sha256": "e6430b92c16532614348e37e74ed8ce1824f2bb57267c8f66d08f29e7343ec79",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IFavoriteStorage.cs",
+      "sha256": "ba4db42e185694d1d3d064250812ff0cdf74c73aba8dc22f67caf3ecc4e0cc35",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IMenuNavigationService.cs",
+      "sha256": "e94fd5801daa402cab67c26b8d80aa759c86eb299b29ac824e932e0f8bffa949",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IPoetryStorage.cs",
+      "sha256": "4148772b440057ec525e19bb19f99ffb16176c816c397f6d35970c86a5918f93",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IPreferenceStorage.cs",
+      "sha256": "26d0c6b842da1fbd2526870fd7b68af7a1d3f52969a4e954f82760cb866874b5",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/IRootNavigationService.cs",
+      "sha256": "d154e4bf1123c0af8eb7458d9539fd375db2206777eb1e1da9d3cd718afb6ab9",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/ITodayImageService.cs",
+      "sha256": "197c45e089a4160f4682ee79600141bc9491e06f6c9de99026ebc12857bc15b4",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/ITodayImageStorage.cs",
+      "sha256": "43213948323d11f1d90498d859ffbe57d02365ee2e7856cbe2ba116ee5da525b",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/ITodayPoetryService.cs",
+      "sha256": "572924f8bedfd3bbb93528d9a91cf61c3bd78fef58a171df12256ce898417af8",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/JinrishiciService.cs",
+      "sha256": "5feeaec4759c7295909da82773d58e5d0bc0cdb9981cd2e7b7fa4fe8a26a47ef",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/PoetryStorage.cs",
+      "sha256": "d722aabd113b78d73e1010afcea6612f187898ecb08d5745204d8dd2819d0274",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/Services/TodayImageStorage.cs",
+      "sha256": "345e64f43a34a1064a0097448db5080dfab842f9463bf123e747dfcbc0c650dc",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/DetailViewModel.cs",
+      "sha256": "c27606c5fa509a5daa5fc3acf9d24e1b93ce3ff930b335b46d7068eb9aab2e74",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/FavoriteViewModel.cs",
+      "sha256": "ab88b10095641223c53012b3f21922133e3b3726ae4a493eb649cc4e49e35bcf",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/InitializationViewModel.cs",
+      "sha256": "3bf949991060a62609784dc46d012daca402373eb032481d0ea309becc7e8423",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/MainViewModel.cs",
+      "sha256": "c66f8182ecb0b3fb29f3a37fd368cd65e0d6b5945bb27a308770d40359053121",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/MainWindowViewModel.cs",
+      "sha256": "fa466ec3a51962b5af56ef675e7276e47f8eb6196115d5704297b635f9e04c4c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+      "sha256": "88f324b94a030a6f16d7413ea4e4ec7b0d0c10bd8a0fb69b61843a76d9d16d28",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/ResultViewModel.cs",
+      "sha256": "a9a21da7a39337b1a4dee6bd50caab771d20462851d0cd654c46d70e51724aa9",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/TodayDetailViewModel.cs",
+      "sha256": "6472b12d24649602908fcd1ce55148c4a502d60160461723c5d7967ea5207310",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/TodayViewModel.cs",
+      "sha256": "da3ee00c6b49718973a5b9bf32babd0cb6aa0655477a00d3dd694dcc3ef20d89",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA.Library/ViewModels/ViewModelBase.cs",
+      "sha256": "f49d382c31405e286abca6737313bee7e9b7ac291cd4edef471c7ba524bc1552",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/DetailView.axaml",
+      "sha256": "ab8ddab1cdf26ab2dba0bc145faca3cd2b8a19ac633b13b97dfd0098a95e4a7c",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/FavoriteView.axaml",
+      "sha256": "aa4964f855a03e2cbbbc8239f9ecebb0aead2a5f3482190afd93e8473fc4eb7f",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/InitializationView.axaml",
+      "sha256": "a04f97c3c5765816d33f180555a6fbe5b5e1382e1df5797fe51dc6a3039a3c99",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/MainView.axaml",
+      "sha256": "b9fe02c74fafc1afa0eb5731e64725af5e28eb4db507db956378d3cf5e6ca9b4",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/MainWindow.axaml",
+      "sha256": "e523a555d445c5f0230237c5c764a6eaa3c498e5b229579291e570cd2ab636ff",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/QueryView.axaml",
+      "sha256": "61e86ee268a9541bb59ec497d938e0a39a81c733ebc9aa6170fe2b79108f071e",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/ResultView.axaml",
+      "sha256": "b86086150148a3d542a0b81a81afe5b59ff24eec635cbf2300a6cdaab7e03919",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/TodayDetailView.axaml",
+      "sha256": "475b9cf203117ecd1440b732da4ef8dfe5d66498cf6a3abb8b3fc0c1b0f628d3",
+      "matches": true
+    },
+    {
+      "path": "daily-poetry-a/DailyPoetryA/Views/TodayView.axaml",
+      "sha256": "2c87dd750ca27206e5ce3462c86c6eb2c02dccaf4214cbe2e3e30e4d9bb7971b",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8bf1072e-d10d-4b3f-8449-cd554bb8c528" name="@012ee0d4d6ab 2026-10-21 03:32:13" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-21T03:32:13.6283354+00:00" queuing="2026-10-21T03:32:13.6283355+00:00" start="2026-10-21T03:32:10.4169461+00:00" finish="2026-10-21T03:32:13.6982103+00:00" />
+  <TestSettings name="default" id="fd0a29b1-4cc4-4c29-b88a-e32ef6bbce81">
+    <Deployment runDeploymentRoot="_012ee0d4d6ab_2026-10-21_03_32_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f3de4523-706e-47b6-8904-e5f54e1f779a" testId="59080f27-9a07-74ba-01ee-7a6fe15eeee8" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.FailedBusyOperationReleasesNavigationGuard" computerName="012ee0d4d6ab" duration="00:00:00.0013952" startTime="2026-10-21T03:32:13.6140428+00:00" endTime="2026-10-21T03:32:13.6140430+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3de4523-706e-47b6-8904-e5f54e1f779a" />
+    <UnitTestResult executionId="d769ff71-18a0-419d-a638-7c6e8a3da0d4" testId="ffb00c55-02da-eb70-5ae7-f3920845e066" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-content&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0047272" startTime="2026-10-21T03:32:13.0975731+00:00" endTime="2026-10-21T03:32:13.0975733+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d769ff71-18a0-419d-a638-7c6e8a3da0d4" />
+    <UnitTestResult executionId="e3c6bd74-bb86-498b-8677-9b11e8c9e0f6" testId="fba03132-fe53-ecfd-4142-da865bed8c57" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" computerName="012ee0d4d6ab" duration="00:00:00.1212432" startTime="2026-10-21T03:32:13.5990092+00:00" endTime="2026-10-21T03:32:13.5990094+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3c6bd74-bb86-498b-8677-9b11e8c9e0f6" />
+    <UnitTestResult executionId="442fb7d3-5376-471d-99ec-c57a815f0914" testId="bb764ede-f620-6045-a548-a6448dd31817" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;close&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0067537" startTime="2026-10-21T03:32:13.4572041+00:00" endTime="2026-10-21T03:32:13.4572043+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="442fb7d3-5376-471d-99ec-c57a815f0914" />
+    <UnitTestResult executionId="f493b23d-91fd-4f7e-aad7-a03f3f1c7cef" testId="8db79a5d-986c-1f29-4cd5-52c5505e4e13" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;add-quote&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.5972364" startTime="2026-10-21T03:32:13.0919430+00:00" endTime="2026-10-21T03:32:13.0919583+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f493b23d-91fd-4f7e-aad7-a03f3f1c7cef" />
+    <UnitTestResult executionId="200b6ac3-b4ae-4bb8-8682-293afb1431d7" testId="4125ede0-aa6c-a6ea-caa2-081644c94f7f" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;menu&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0199423" startTime="2026-10-21T03:32:13.4772810+00:00" endTime="2026-10-21T03:32:13.4772812+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="200b6ac3-b4ae-4bb8-8682-293afb1431d7" />
+    <UnitTestResult executionId="3d814b7e-9ca0-495e-93ff-ac141ecd7a0e" testId="aece9e8d-10e9-0a0c-12ed-b8e8109e123f" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;edit-quote&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0011409" startTime="2026-10-21T03:32:13.0971213+00:00" endTime="2026-10-21T03:32:13.0971215+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d814b7e-9ca0-495e-93ff-ac141ecd7a0e" />
+    <UnitTestResult executionId="e2234fcf-d09f-4ed3-8c35-6f508d8f7b1e" testId="708e237e-d4bb-7fa7-02dd-2e2d47b98a73" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;back&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0777122" startTime="2026-10-21T03:32:13.4502696+00:00" endTime="2026-10-21T03:32:13.4502697+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2234fcf-d09f-4ed3-8c35-6f508d8f7b1e" />
+    <UnitTestResult executionId="284323e5-5c4a-4d24-94f6-11474f53ea91" testId="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-menu&quot;)" computerName="012ee0d4d6ab" duration="00:00:00.0011740" startTime="2026-10-21T03:32:13.0976060+00:00" endTime="2026-10-21T03:32:13.0976060+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="284323e5-5c4a-4d24-94f6-11474f53ea91" />
+    <UnitTestResult executionId="651e1997-5127-49f7-8373-1d348d406136" testId="7b3b81ca-fac7-ce4c-1f3d-c0f7db28ac70" testName="ReadJournal.UnitTest.RestoreConcurrencyTests.ConcurrentFavoriteChangesAreAtomicAndPreserveOtherQuoteFields" computerName="012ee0d4d6ab" duration="00:00:00.2694795" startTime="2026-10-21T03:32:13.3706402+00:00" endTime="2026-10-21T03:32:13.3706404+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="651e1997-5127-49f7-8373-1d348d406136" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;close&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="bb764ede-f620-6045-a548-a6448dd31817">
+      <Execution id="442fb7d3-5376-471d-99ec-c57a815f0914" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;add-quote&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="8db79a5d-986c-1f29-4cd5-52c5505e4e13">
+      <Execution id="f493b23d-91fd-4f7e-aad7-a03f3f1c7cef" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.FailedBusyOperationReleasesNavigationGuard" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="59080f27-9a07-74ba-01ee-7a6fe15eeee8">
+      <Execution id="f3de4523-706e-47b6-8904-e5f54e1f779a" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="FailedBusyOperationReleasesNavigationGuard" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ConcurrentFavoriteChangesAreAtomicAndPreserveOtherQuoteFields" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="7b3b81ca-fac7-ce4c-1f3d-c0f7db28ac70">
+      <Execution id="651e1997-5127-49f7-8373-1d348d406136" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ConcurrentFavoriteChangesAreAtomicAndPreserveOtherQuoteFields" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;edit-quote&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="aece9e8d-10e9-0a0c-12ed-b8e8109e123f">
+      <Execution id="3d814b7e-9ca0-495e-93ff-ac141ecd7a0e" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-menu&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d">
+      <Execution id="284323e5-5c4a-4d24-94f6-11474f53ea91" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="fba03132-fe53-ecfd-4142-da865bed8c57">
+      <Execution id="e3c6bd74-bb86-498b-8677-9b11e8c9e0f6" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;back&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="708e237e-d4bb-7fa7-02dd-2e2d47b98a73">
+      <Execution id="e2234fcf-d09f-4ed3-8c35-6f508d8f7b1e" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;direct-content&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="ffb00c55-02da-eb70-5ae7-f3920845e066">
+      <Execution id="d769ff71-18a0-419d-a638-7c6e8a3da0d4" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: &quot;menu&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="4125ede0-aa6c-a6ea-caa2-081644c94f7f">
+      <Execution id="200b6ac3-b4ae-4bb8-8682-293afb1431d7" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.RestoreConcurrencyTests" name="BusyPageCannotLeaveAndNavigationResumesAfterOperation" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="59080f27-9a07-74ba-01ee-7a6fe15eeee8" executionId="f3de4523-706e-47b6-8904-e5f54e1f779a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffb00c55-02da-eb70-5ae7-f3920845e066" executionId="d769ff71-18a0-419d-a638-7c6e8a3da0d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fba03132-fe53-ecfd-4142-da865bed8c57" executionId="e3c6bd74-bb86-498b-8677-9b11e8c9e0f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb764ede-f620-6045-a548-a6448dd31817" executionId="442fb7d3-5376-471d-99ec-c57a815f0914" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8db79a5d-986c-1f29-4cd5-52c5505e4e13" executionId="f493b23d-91fd-4f7e-aad7-a03f3f1c7cef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4125ede0-aa6c-a6ea-caa2-081644c94f7f" executionId="200b6ac3-b4ae-4bb8-8682-293afb1431d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aece9e8d-10e9-0a0c-12ed-b8e8109e123f" executionId="3d814b7e-9ca0-495e-93ff-ac141ecd7a0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="708e237e-d4bb-7fa7-02dd-2e2d47b98a73" executionId="e2234fcf-d09f-4ed3-8c35-6f508d8f7b1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a05162cc-59fb-ac48-9f1b-f7de1a0e8e0d" executionId="284323e5-5c4a-4d24-94f6-11474f53ea91" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b3b81ca-fac7-ce4c-1f3d-c0f7db28ac70" executionId="651e1997-5127-49f7-8373-1d348d406136" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="10" executed="10" passed="10" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:01.11]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:01.29]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:01.30]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:02.52]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

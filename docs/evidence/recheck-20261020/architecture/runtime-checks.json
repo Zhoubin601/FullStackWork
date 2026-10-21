@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-20",
+  "scope": "0313917\u672C\u8F6E\u53EA\u8BFB\u590D\u6838\u7684Release DLL",
+  "assembly_sha256": {
+    "ReadJournal": "ae437aad9f957a4c3779aaf6812e18ffe641760376477b6f44e83edba7e4982f",
+    "ReadJournal.Library": "0c31a5bd11056d7c3ebd43b8a774fb60f2fa1b6684315a7bada2662c63b0329f"
+  },
+  "concrete_view_models": 14,
+  "reflected_views": 13,
+  "interfaces": 14,
+  "checks_count": 71,
+  "passed": true,
+  "checks": [
+    {
+      "name": "Current equals application resource",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Actual Microsoft DI container",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Singleton VM MainWindowViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Singleton VM InitializationViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind InitializationViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.InitializationView"
+    },
+    {
+      "name": "Singleton VM MainViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind MainViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.MainView"
+    },
+    {
+      "name": "Singleton VM OverviewViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind OverviewViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.OverviewView"
+    },
+    {
+      "name": "Singleton VM BookListViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind BookListViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.BookListView"
+    },
+    {
+      "name": "Singleton VM BookDetailViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind BookDetailViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.BookDetailView"
+    },
+    {
+      "name": "Singleton VM BookEditViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind BookEditViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.BookEditView"
+    },
+    {
+      "name": "Singleton VM QuoteListViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind QuoteListViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.QuoteListView"
+    },
+    {
+      "name": "Singleton VM QuoteEditViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind QuoteEditViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.QuoteEditView"
+    },
+    {
+      "name": "Singleton VM ReadingRecordEditViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind ReadingRecordEditViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.ReadingRecordEditView"
+    },
+    {
+      "name": "Singleton VM ReadingPlanListViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind ReadingPlanListViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.ReadingPlanListView"
+    },
+    {
+      "name": "Singleton VM ReadingPlanEditViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind ReadingPlanEditViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.ReadingPlanEditView"
+    },
+    {
+      "name": "Singleton VM StatisticsViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind StatisticsViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.StatisticsView"
+    },
+    {
+      "name": "Singleton VM SettingsViewModel",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Reflect/create/cache/bind SettingsViewModel",
+      "passed": true,
+      "evidence": "ReadJournal.Views.SettingsView"
+    },
+    {
+      "name": "Singleton service IAlertService",
+      "passed": true,
+      "evidence": "ReadJournal.Services.AlertService"
+    },
+    {
+      "name": "Singleton service IBackupService",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.BackupService"
+    },
+    {
+      "name": "Singleton service IBookStorage",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.BookStorage"
+    },
+    {
+      "name": "Singleton service IContentNavigationService",
+      "passed": true,
+      "evidence": "ReadJournal.Services.ContentNavigationService"
+    },
+    {
+      "name": "Singleton service IDatabaseService",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.DatabaseService"
+    },
+    {
+      "name": "Singleton service IFileService",
+      "passed": true,
+      "evidence": "ReadJournal.Services.FileService"
+    },
+    {
+      "name": "Singleton service IMenuNavigationService",
+      "passed": true,
+      "evidence": "ReadJournal.Services.MenuNavigationService"
+    },
+    {
+      "name": "Singleton service IPreferenceStorage",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.FilePreferenceStorage"
+    },
+    {
+      "name": "Singleton service IQuoteStorage",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.QuoteStorage"
+    },
+    {
+      "name": "Singleton service IReadingPlanStorage",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.ReadingPlanStorage"
+    },
+    {
+      "name": "Singleton service IReadingRecordStorage",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.ReadingRecordStorage"
+    },
+    {
+      "name": "Singleton service IReadingService",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.ReadingService"
+    },
+    {
+      "name": "Singleton service IRootNavigationService",
+      "passed": true,
+      "evidence": "ReadJournal.Services.RootNavigationService"
+    },
+    {
+      "name": "Singleton service IStatisticsService",
+      "passed": true,
+      "evidence": "ReadJournal.Library.Services.StatisticsService"
+    },
+    {
+      "name": "Root route InitializationView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Root route MainView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack OverviewView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack BookListView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack QuoteListView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack ReadingPlanListView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack StatisticsView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Menu route \u002B parameter \u002B stack SettingsView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Content route \u002B parameter \u002B push BookDetailView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Duplicate target unchanged BookDetailView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Back from BookDetailView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Stack bottom protected BookDetailView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Content route \u002B parameter \u002B push BookEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Duplicate target unchanged BookEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Back from BookEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Stack bottom protected BookEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Content route \u002B parameter \u002B push QuoteEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Duplicate target unchanged QuoteEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Back from QuoteEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Stack bottom protected QuoteEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Content route \u002B parameter \u002B push ReadingPlanEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Duplicate target unchanged ReadingPlanEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Back from ReadingPlanEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Stack bottom protected ReadingPlanEditView",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Detail parameter reached field",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Book editor parameter reached field",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Quote editor parameter reached field",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "Plan editor parameter reached field",
+      "passed": true,
+      "evidence": null
+    }
+  ]
+}

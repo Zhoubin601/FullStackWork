@@ -1,0 +1,84 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.46]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "add-quote") [FAIL]
+[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "edit-quote") [FAIL]
+[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-content") [FAIL]
+[xUnit.net 00:00:01.49]     ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-menu") [FAIL]
+[xUnit.net 00:00:01.54]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "back") [FAIL]
+[xUnit.net 00:00:01.54]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "close") [FAIL]
+[xUnit.net 00:00:01.55]     ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "menu") [FAIL]
+[xUnit.net 00:00:02.56]     ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact [FAIL]
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "add-quote") [362 ms]
+  Error Message:
+   Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "edit-quote") [4 ms]
+  Error Message:
+   Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-content") [< 1 ms]
+  Error Message:
+   Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-menu") [2 ms]
+  Error Message:
+   Direct navigation must not bypass the pending-operation guard.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(String route) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 87
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "back") [69 ms]
+  Error Message:
+   A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "close") [1 ms]
+  Error Message:
+   A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(action: "menu") [4 ms]
+  Error Message:
+   A pending operation must finish before leaving its page.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.BusyPageCannotLeaveAndNavigationResumesAfterOperation(String action) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 49
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact [1 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 141
+--- End of stack trace from previous location ---
+WARNING: Overwriting results file: /workspace/FullStackWork/docs/evidence/p1-fix-20261021/before.trx
+Results File: /workspace/FullStackWork/docs/evidence/p1-fix-20261021/before.trx
+
+Failed!  - Failed:     8, Passed:     0, Skipped:     0, Total:     8, Duration: 1 s - ReadJournal.UnitTest.dll (net8.0)

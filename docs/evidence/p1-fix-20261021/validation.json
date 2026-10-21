@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-21",
+  "base_commit": "031391711512bec26d36c0b53963bcc57898e8ce",
+  "p1_fixed": true,
+  "test_counts": {
+    "before": {
+      "total": "8",
+      "executed": "8",
+      "passed": "0",
+      "failed": "8",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "full": {
+      "total": "93",
+      "executed": "93",
+      "passed": "93",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "clean": {
+      "total": "93",
+      "executed": "93",
+      "passed": "93",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "architecture_assertions": 71,
+  "assemblies": {
+    "ReadJournal": "6b2e994a209d7c330f4925667d9d72be0a87c2238806ac0ede8fe4f6e5777f6d",
+    "ReadJournal.Library": "980fc12eb618d962e2ab3dc22f4fe44a75b7d3fe78d9289b374a02ef38c6eec9"
+  },
+  "package": {
+    "Path": "/workspace/FullStackWork/output/20261021-阅记-源码-v4.zip",
+    "Bytes": 113136,
+    "Files": 119,
+    "Sha256": "de47a514929f6e9ac9e0d6115b69f762dd968987f9bfec227c31de20331d51b7"
+  },
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "protected_changes": [],
+  "ui_slow_io_favorite": {
+    "lock_seconds": 3.2632898110000497,
+    "before": {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "Architecture is verified through real execution.",
+      "Thoughts": "Independent recheck across page boundaries.",
+      "Page": 12,
+      "IsFavorite": 1,
+      "CreatedAt": 639281127723365243,
+      "UpdatedAt": 639281127723365243
+    },
+    "after": {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "Architecture is verified through real execution.",
+      "Thoughts": "Independent recheck across page boundaries.",
+      "Page": 12,
+      "IsFavorite": 0,
+      "CreatedAt": 639281127723365243,
+      "UpdatedAt": 639281507812142465
+    },
+    "favorite_changed_only": true
+  },
+  "ui_restored_fields_match_backup": true,
+  "ui_restarted_fields_match_restored": true,
+  "ui_after_restart": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Recheck Architecture Journey",
+        "Author": "Independent UI Recheck",
+        "Category": "Verification",
+        "TotalPages": 120,
+        "Description": "Fresh UI evidence for commit 0313917.",
+        "CreatedAt": 639281127287787298,
+        "UpdatedAt": 639281127287787298
+      }
+    ],
+    "ReadingRecord": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "ReadingDate": 639280512000000000,
+        "StartPage": 10,
+        "EndPage": 30,
+        "Minutes": 25
+      }
+    ],
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "Architecture is verified through real execution.",
+        "Thoughts": "Independent recheck across page boundaries.",
+        "Page": 12,
+        "IsFavorite": 1,
+        "CreatedAt": 639281127723365243,
+        "UpdatedAt": 639281127723365243
+      }
+    ],
+    "ReadingPlan": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "StartDate": 639280512000000000,
+        "TargetDate": 639283968000000000
+      }
+    ]
+  },
+  "ui_logs": {
+    "app.log": {
+      "binding_diagnostics": 0
+    },
+    "restart.log": {
+      "binding_diagnostics": 0
+    }
+  },
+  "ui_auto_backup_count": 2,
+  "ui_restart_method": "SIGTERM isolated test app then relaunch; no complete native closing-flow claim",
+  "windows_tested": false,
+  "pushed": false
+}

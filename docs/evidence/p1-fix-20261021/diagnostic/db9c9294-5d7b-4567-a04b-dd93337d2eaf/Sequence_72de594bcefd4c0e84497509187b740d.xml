@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<TestSequence>
+  <Test Name="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter" DisplayName="ReadJournal.UnitTest.RestoreConcurrencyTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: &quot;add-quote&quot;)" Source="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" Completed="False" />
+</TestSequence>

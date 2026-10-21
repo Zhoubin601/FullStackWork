@@ -1,0 +1,9 @@
+  Determining projects to restore...
+  Restored /workspace/FullStackWork/docs/evidence/p1-fix-20261021/architecture/RuntimeProbe.csproj (in 76 ms).
+  RuntimeProbe -> /workspace/scratch/p1-architecture/RuntimeProbe.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.56
