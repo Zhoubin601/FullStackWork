@@ -246,3 +246,8 @@ P0 已按用户“推送后继续p1”推送 feature/reader-native，远端 8465
 ## 2026-10-22 P3 当前进度（优先于前条）
 
 按用户“推送，开始p3”，P2已推送feature/reader-native=8696045。P3实现/证据本地17690bb，八项Linux验收通过：完整ZIP及旧JSON输入、完整自动备份、安全校验、持久日志/目录替换/SQL提交、启动对账与上下文失效。最终工作区及159文件独立源码各169项通过，四点真实进程中断与损坏日志保留、最终桌面恢复/重开均通过，见docs/evidence/reader/P3/acceptance.md。P3未推送，P4未开始；Windows保留未测，真实API仍至P9前通知，原始资料/正式交付不改。
+
+
+## 2026-10-22 P4及后续授权（优先于历史状态）
+
+P3已推送16e4155；P4八项Linux通过，实现5358a4a，工作区/独立源码各217项、10处真实进程中断、实际TXT与桌面完整往返及Missing均通过。阶段提交后推送feature/reader-native，见docs/evidence/reader/P4/acceptance.md。用户追加授权顺序完成P5/P6/P7且每phase完成后推送；不再停在P4，仍以逐阶段验收为前提。当前P5尚未开始，Windows保留，真实API仍到P9前通知。

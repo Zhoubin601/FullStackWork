@@ -101,3 +101,12 @@
 - 完整备份ZIP v2、旧JSON仅输入、完整自动备份、books/managed替换、日志/LastRestoreId及启动同连接恢复已实现。canonical v1、安全路径/限额/位置百分比、cleanup-only语义及DI清理约定见docs/reader-p3-protocol.md。保留收件原件/主题/secure，未知或损坏日志不能静默删除。
 - 下一阶段P4受管TXT导入/扫描，尚未开始；需复用文件层及扩展操作恢复分派，导入/正式Reader入口仍关闭。P7完整图像解码、P5会话采集、P8批次写入按阶段做；P9前主动通知真实API，当前零调用。
 - 用户仍按Linux逐阶段验收，Windows保留未测；raw/正式交付/参考/冻结fixtures未变。后续不要引用P2旧JSON限制或P3中间168项fixture当作当前实现结论。
+
+
+## 当前阅读器扩展状态：P4已通过，获授权连续完成P5～P7（优先于上条）
+
+- P3已推送origin/feature/reader-native=16e41558e8ceb4549274dd26cc6b0321e058350d；P4实现/证据5358a4a9620dd8b8708e657c7f44e0e3bfe53844，八项Linux通过，验收文档另行提交后在本轮推送并回读。继续时先核对真实git状态。
+- P4工作区/169文件独立源码各217/217（原169+48）；10处真进程中断，实际TXT完整初始/关联往返及最终桌面/Missing/独立构建4次正常关闭通过。见docs/evidence/reader/P4/acceptance.md、reader-p4-protocol.md。TXT严格UTF8/BOM/显式GB18030、字符簇安全分块，受管导入/扫描/Missing/孤立隔离、统一删除已接入；Reader路由尚未开放。
+- InboxSeen在AppMetadata中保存本机收件上下文，不随业务备份替换，避免保留来源的已删除书自动重现；显式文件选择器仍可再导入。Missing不能生成完整自动备份，需补回文件或显式删除损坏条目再恢复旧完整备份。删除先SQL再移trash，已确认无引用的IO清理失败留日志重试；信息不足停止业务。
+- 用户最新明确要求：P4完成推送后继续完成P5、P6、P7，每phase独立验收、提交、推送后再继续。无需反复询问推送或平台授权；不得停在P4。P5尚未开始，P8以后尚未授权，真实API到P9前主动通知。
+- Linux当前验收，Windows保留；raw/output/参考/冻结fixtures不改。SDK与桌面工具现放/workspace/.readjournal-env以便环境续接，临时源码验证包不作为正式交付；最终证据的源及工具SHA已记录。

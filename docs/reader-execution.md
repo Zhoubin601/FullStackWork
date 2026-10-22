@@ -2,15 +2,17 @@
 
 依据：output/reader-plan-v2 三份规划，以及 docs/20261022-阅读器v2计划执行复核-v1.md。用户于 2026-10-22 授权开始，按阶段实施和验收。
 
-功能分支：feature/reader-native。远端基线：0280730。前轮评估已单独保存为 3ab2db2；阶段代码和证据另行提交。用户随后授权“推送后继续p1”，P0 已推至 feature/reader-native（8465e49），P1 已在本轮按用户授权推至同名远端分支（4b336d3）；P2 已按用户“推送，开始p3”推送至远端8696045；P3当前为本地提交。
+功能分支：feature/reader-native。远端基线：0280730。前轮评估已单独保存为 3ab2db2；阶段代码和证据另行提交。用户随后授权“推送后继续p1”，P0 已推至 feature/reader-native（8465e49），P1 已在本轮按用户授权推至同名远端分支（4b336d3）；P2 已按用户“推送，开始p3”推送至远端8696045；P3已推送16e4155；P4验收完成，阶段提交后推送。用户已追加授权顺序完成并逐阶段推送P5、P6、P7。
 
 | 阶段 | 状态 | 证据 |
 |---|---|---|
 | P0 基线与环境 | 四项通过（Linux）；实现提交 fef2575 | docs/evidence/reader/P0/acceptance.md |
 | P1 原生分页实验 | 通过（用户授权 Linux 验收）；实现 bd6eb50 | docs/evidence/reader/P1/acceptance.md |
 | P2 正式契约与迁移 | 七项通过（Linux）；实现 9b24b07 | docs/evidence/reader/P2/acceptance.md |
-| P3 完整备份与恢复 | 八项通过（Linux）；实现 17690bb，本地未推送 | docs/evidence/reader/P3/acceptance.md |
-| P4～P10 | 未开始 | 按前置顺序推进 |
+| P3 完整备份与恢复 | 八项通过（Linux）；实现 17690bb，已推送16e4155 | docs/evidence/reader/P3/acceptance.md |
+| P4 受管TXT与扫描删除 | 八项通过（Linux）；实现5358a4a，验收后推送 | docs/evidence/reader/P4/acceptance.md |
+| P5～P7 | 已授权顺序实施，尚未开始 | 每阶段验收并推送后继续 |
+| P8～P10 | 未开始 | 按前置顺序推进 |
 
 ## P0 本轮步骤
 
@@ -46,3 +48,10 @@ P1 已推送核验远端4b336d3。P2实现及证据本地提交9b24b07，七项�
 用户“推送，开始p3”已执行：P2远端feature/reader-native=8696045c6361e1670ca55e05e816526b7d81c0f3。P3完整ZIP/旧JSON输入、完整自动备份、staging/trash/日志和启动恢复、单例缓存与代际失效已实现，本地代码/证据17690bb，八项通过。最终工作区与159文件白名单独立源码各169/169（原124+新增45）；四处真实杀进程重启分别确认完整旧集/新集，损坏日志阻止业务并保留两套文件及数据库业务行。
 
 最终真实桌面验证ZIP导出/确认恢复/重开，独立解包应用再次启动，3次正常关闭、默认目录未写入；文件与业务哈希及完整自动备份均一致。详细失败历史、资源限额和边界见P3/acceptance.md及docs/reader-p3-protocol.md。本轮P3未推送，P4未开始；Windows保留未测，API零调用，raw/正式交付/参考/冻结fixtures未变。
+
+
+## P4 当前验收（优先于历史状态）
+
+P3已按用户要求推送16e41558e8ceb4549274dd26cc6b0321e058350d。P4代码/工具/证据5358a4a，八项Linux通过：严格TXT/分块、受管导入/唯一去重、扫描/Missing/孤立隔离、统一删除、导入/删除日志和同连接启动恢复、实际TXT完整备份往返。最终工作区与169文件独立源码各217/217（原169+48），10处真实进程中断通过；最终桌面导入/编码/去重/删除/恢复/重开、Missing及独立构建启动共4次正常关闭，3书/11文件/5来源哈希一致。
+
+阶段验收见P4/acceptance.md，契约补充见docs/reader-p4-protocol.md；InboxSeen为本机收件处理记录，防止保留来源的已删除书自动重现。P4验收文档提交后正常推送并回读。用户最新授权继续P5、P6、P7，每phase验收并推送后再继续；P5尚未开始，Windows保留未测，无API，raw/正式交付/参考/冻结fixtures不改。

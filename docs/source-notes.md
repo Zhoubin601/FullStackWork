@@ -258,3 +258,15 @@
 ## 2026-10-22 P3 最终验收来源
 
 实现/证据17690bb；最终P3/p3-percent-validated.trx与p3-reviewed-clean-source.trx各169/169，reviewed-source-package.json记录159文件临时源码验证包。crash-probe-reviewed/probe.json记录四处真实Process.Kill与损坏日志保留；ui-accepted、ui-clean-accepted与ui-verification-final.json记录最终实际桌面及哈希核对。中间失败与早期百分比fixture均保留其历史含义，不作为最终版本依据。协议补充见reader-p3-protocol.md；未新增外部研究资料、未使用真实书籍/Key、未调用API，原始资料及正式交付未变。
+
+
+## 2026-10-22 P4 开始
+
+用户“推送，然后开始p4”；P3远端16e4155已核验。来源为output/reader-plan-v2三份规划、P3协议及验收、raw原规划和已冻结旧库资料；使用确定性合成TXT及编码/故障样本，未新增外部研究资料，未读取真实书籍/Key。计划见reader-p4-plan.md。
+
+用户追加“continue，完成后提交至远端”，P4最终验收后推送feature/reader-native；仅推当前功能分支，不改main。环境重建后重新下载官方.NET8.0.424与允许的Debian镜像桌面包，并重做最终独立验证；首次桌面仅完成UTF8导入/去重，保留为中间证据。
+
+
+## 2026-10-22 P4最终证据与授权
+
+实现5358a4a；P4/p4-inbox-tombstone-reviewed.trx、p4-final-clean-source.trx各217/217；final-source-package.json记录169文件临时验证包，逐文件SHA一致。crash-probe-reviewed/probe.json记录10处实际杀进程、实际TXT初始/关联往返与损坏日志保留。ui-final/ui-missing/ui-clean-source、ui-verification-final.json记录最终桌面、Missing、独立构建及3书/11文件/5来源摘要核对；中间失败保留，不作为最终结论。用户新增P5/P6/P7顺序实施及逐阶段推送授权。无新的研究资料/真实书籍/Key/API，raw与正式交付不改。
