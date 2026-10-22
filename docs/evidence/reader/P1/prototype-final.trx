@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d6022551-ae25-4448-99dc-3b6685bfeee3" name="@3234f363553d 2026-10-22 09:04:23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-22T09:04:23.1937476+00:00" queuing="2026-10-22T09:04:23.1937476+00:00" start="2026-10-22T09:04:21.2506237+00:00" finish="2026-10-22T09:04:25.7316460+00:00" />
+  <TestSettings name="default" id="53a113f4-a5a4-4fbd-8e04-b501be8c7585">
+    <Deployment runDeploymentRoot="_3234f363553d_2026-10-22_09_04_23" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="bdc49fa0-9bc2-4533-8695-e3e494c65567" testId="9084b519-e155-6d29-5152-b39e006f2658" testName="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 400, height: 200, font: 30, line: 10)" computerName="3234f363553d" duration="00:00:00.0003836" startTime="2026-10-22T09:04:25.2489202+00:00" endTime="2026-10-22T09:04:25.2489212+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bdc49fa0-9bc2-4533-8695-e3e494c65567" />
+    <UnitTestResult executionId="ad777def-d8a8-439e-896f-d43003eb4f1c" testId="ae720786-4b82-2f6b-31be-4067d9cc5587" testName="ReaderPrototype.Tests.NativeReaderTests.FrozenPageScopeIsExactAndCancellationDoesNotReturnPartialSnapshot" computerName="3234f363553d" duration="00:00:00.0695760" startTime="2026-10-22T09:04:25.2468321+00:00" endTime="2026-10-22T09:04:25.2468325+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad777def-d8a8-439e-896f-d43003eb4f1c" />
+    <UnitTestResult executionId="f9b4fbe9-4638-4b95-ab6d-ee23d0df9e5d" testId="ef0379e6-8a8c-ff9f-092d-d8c1eff13f73" testName="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;emoji \ud83d\udcd6\ud83d\udc69\ud83c\udffd‍\ud83d\ude80 与 é ❤️ 家庭 \ud83d\udc68‍\ud83d\udc69‍\ud83d\udc67‍\ud83d\udc66\n&quot;)" computerName="3234f363553d" duration="00:00:01.9833304" startTime="2026-10-22T09:04:25.1766572+00:00" endTime="2026-10-22T09:04:25.1766576+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9b4fbe9-4638-4b95-ab6d-ee23d0df9e5d" />
+    <UnitTestResult executionId="f1d19edb-602f-41c7-8658-1c799d251d31" testId="3687f27a-16c2-0e2e-9495-0091736cb37f" testName="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;\n\n\n &quot;)" computerName="3234f363553d" duration="00:00:00.0613947" startTime="2026-10-22T09:04:23.1964575+00:00" endTime="2026-10-22T09:04:23.1964577+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1d19edb-602f-41c7-8658-1c799d251d31" />
+    <UnitTestResult executionId="0aeb55a5-3b3b-4f8e-b8ab-8d30c21ed72d" testId="45b0bf55-9f2f-21ef-b03e-481ae0038f37" testName="ReaderPrototype.Tests.NativeReaderTests.CancelledIndexAndOldOpenCannotOverwriteNewState" computerName="3234f363553d" duration="00:00:00.0288078" startTime="2026-10-22T09:04:25.2782462+00:00" endTime="2026-10-22T09:04:25.2782466+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0aeb55a5-3b3b-4f8e-b8ab-8d30c21ed72d" />
+    <UnitTestResult executionId="79dadf9c-5e8c-435b-96d9-b4afb2b907cf" testId="ad419973-fb10-d2ee-1a68-1f86c570cdc3" testName="ReaderPrototype.Tests.NativeReaderTests.UnicodeHitTestingAndSelectionUseNativeLineGeometry" computerName="3234f363553d" duration="00:00:00.4809871" startTime="2026-10-22T09:04:22.9951330+00:00" endTime="2026-10-22T09:04:22.9952108+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79dadf9c-5e8c-435b-96d9-b4afb2b907cf" />
+    <UnitTestResult executionId="0b404e6f-9780-476d-95fe-9850dc31993a" testId="d596f668-449d-8eed-e4f6-c724da39122c" testName="ReaderPrototype.Tests.NativeReaderTests.StableAnchorSurvivesReflowAndOldPagesAreRejected" computerName="3234f363553d" duration="00:00:00.0688995" startTime="2026-10-22T09:04:25.6786638+00:00" endTime="2026-10-22T09:04:25.6786640+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b404e6f-9780-476d-95fe-9850dc31993a" />
+    <UnitTestResult executionId="007497a8-fce8-4478-94a9-cd4a098f9e13" testId="cbb511db-07a7-ad61-d389-47d50c958eb1" testName="ReaderPrototype.Tests.NativeReaderTests.ActualPointerDragReverseCopyAndCrossPageKeyboardSelection" computerName="3234f363553d" duration="00:00:00.3133783" startTime="2026-10-22T09:04:25.6093956+00:00" endTime="2026-10-22T09:04:25.6093958+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="007497a8-fce8-4478-94a9-cd4a098f9e13" />
+    <UnitTestResult executionId="f4f65506-fc5a-457a-b780-5f3d56ccbab6" testId="372dff19-57f1-68b9-b312-31e008cc2547" testName="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 400, height: 0, font: 22, line: 34)" computerName="3234f363553d" duration="00:00:00.0000631" startTime="2026-10-22T09:04:25.2490173+00:00" endTime="2026-10-22T09:04:25.2490174+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f4f65506-fc5a-457a-b780-5f3d56ccbab6" />
+    <UnitTestResult executionId="04cad633-d057-45d3-b550-1393b9eb6bb1" testId="1107c76b-107f-0dcc-a4b6-7cf012d01149" testName="ReaderPrototype.Tests.NativeReaderTests.LongParagraphHasBoundedSectionsAndProgressesBothDirections" computerName="3234f363553d" duration="00:00:00.0164919" startTime="2026-10-22T09:04:25.2959091+00:00" endTime="2026-10-22T09:04:25.2959092+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04cad633-d057-45d3-b550-1393b9eb6bb1" />
+    <UnitTestResult executionId="8f0e3aa7-9564-4564-8e4e-c7ae0c1d1fe2" testId="45c4b7e7-e587-ef31-3e44-edf387411bed" testName="ReaderPrototype.Tests.NativeReaderTests.EmptyInputAndUnboundedCombiningClusterFailExplicitly" computerName="3234f363553d" duration="00:00:00.0004274" startTime="2026-10-22T09:04:25.2787492+00:00" endTime="2026-10-22T09:04:25.2787493+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f0e3aa7-9564-4564-8e4e-c7ae0c1d1fe2" />
+    <UnitTestResult executionId="5eb5179a-3d90-482f-bbaa-59d35a21ec39" testId="a75cb479-83a8-986c-02bd-95b6b6399c81" testName="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 0, height: 200, font: 22, line: 34)" computerName="3234f363553d" duration="00:00:00.0010969" startTime="2026-10-22T09:04:25.2484616+00:00" endTime="2026-10-22T09:04:25.2484616+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5eb5179a-3d90-482f-bbaa-59d35a21ec39" />
+    <UnitTestResult executionId="cb538d3e-e627-4853-87bf-858e0f8d52d7" testId="ac89c1c4-51b8-bbaf-7e79-d4065eccb732" testName="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;中文。English!\r\n\r\n　　段首缩进。\r文末\n&quot;)" computerName="3234f363553d" duration="00:00:00.1321524" startTime="2026-10-22T09:04:23.1287108+00:00" endTime="2026-10-22T09:04:23.1287110+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb538d3e-e627-4853-87bf-858e0f8d52d7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.LongParagraphHasBoundedSectionsAndProgressesBothDirections" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="1107c76b-107f-0dcc-a4b6-7cf012d01149">
+      <Execution id="04cad633-d057-45d3-b550-1393b9eb6bb1" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="LongParagraphHasBoundedSectionsAndProgressesBothDirections" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.StableAnchorSurvivesReflowAndOldPagesAreRejected" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="d596f668-449d-8eed-e4f6-c724da39122c">
+      <Execution id="0b404e6f-9780-476d-95fe-9850dc31993a" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="StableAnchorSurvivesReflowAndOldPagesAreRejected" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.ActualPointerDragReverseCopyAndCrossPageKeyboardSelection" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="cbb511db-07a7-ad61-d389-47d50c958eb1">
+      <Execution id="007497a8-fce8-4478-94a9-cd4a098f9e13" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="ActualPointerDragReverseCopyAndCrossPageKeyboardSelection" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.EmptyInputAndUnboundedCombiningClusterFailExplicitly" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="45c4b7e7-e587-ef31-3e44-edf387411bed">
+      <Execution id="8f0e3aa7-9564-4564-8e4e-c7ae0c1d1fe2" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="EmptyInputAndUnboundedCombiningClusterFailExplicitly" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 0, height: 200, font: 22, line: 34)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="a75cb479-83a8-986c-02bd-95b6b6399c81">
+      <Execution id="5eb5179a-3d90-482f-bbaa-59d35a21ec39" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="InvalidViewportIsRejected" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.UnicodeHitTestingAndSelectionUseNativeLineGeometry" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="ad419973-fb10-d2ee-1a68-1f86c570cdc3">
+      <Execution id="79dadf9c-5e8c-435b-96d9-b4afb2b907cf" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="UnicodeHitTestingAndSelectionUseNativeLineGeometry" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;\n\n\n &quot;)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="3687f27a-16c2-0e2e-9495-0091736cb37f">
+      <Execution id="f1d19edb-602f-41c7-8658-1c799d251d31" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="PageCoverageAndGraphemeBoundaries" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.CancelledIndexAndOldOpenCannotOverwriteNewState" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="45b0bf55-9f2f-21ef-b03e-481ae0038f37">
+      <Execution id="0aeb55a5-3b3b-4f8e-b8ab-8d30c21ed72d" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="CancelledIndexAndOldOpenCannotOverwriteNewState" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.FrozenPageScopeIsExactAndCancellationDoesNotReturnPartialSnapshot" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="ae720786-4b82-2f6b-31be-4067d9cc5587">
+      <Execution id="ad777def-d8a8-439e-896f-d43003eb4f1c" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="FrozenPageScopeIsExactAndCancellationDoesNotReturnPartialSnapshot" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;emoji \ud83d\udcd6\ud83d\udc69\ud83c\udffd‍\ud83d\ude80 与 é ❤️ 家庭 \ud83d\udc68‍\ud83d\udc69‍\ud83d\udc67‍\ud83d\udc66\n&quot;)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="ef0379e6-8a8c-ff9f-092d-d8c1eff13f73">
+      <Execution id="f9b4fbe9-4638-4b95-ab6d-ee23d0df9e5d" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="PageCoverageAndGraphemeBoundaries" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.PageCoverageAndGraphemeBoundaries(sample: &quot;中文。English!\r\n\r\n　　段首缩进。\r文末\n&quot;)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="ac89c1c4-51b8-bbaf-7e79-d4065eccb732">
+      <Execution id="cb538d3e-e627-4853-87bf-858e0f8d52d7" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="PageCoverageAndGraphemeBoundaries" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 400, height: 0, font: 22, line: 34)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="372dff19-57f1-68b9-b312-31e008cc2547">
+      <Execution id="f4f65506-fc5a-457a-b780-5f3d56ccbab6" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="InvalidViewportIsRejected" />
+    </UnitTest>
+    <UnitTest name="ReaderPrototype.Tests.NativeReaderTests.InvalidViewportIsRejected(width: 400, height: 200, font: 30, line: 10)" storage="/workspace/fullstackwork/docs/experiments/readerprototype.tests/bin/release/net8.0/readerprototype.tests.dll" id="9084b519-e155-6d29-5152-b39e006f2658">
+      <Execution id="bdc49fa0-9bc2-4533-8695-e3e494c65567" />
+      <TestMethod codeBase="/workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReaderPrototype.Tests.NativeReaderTests" name="InvalidViewportIsRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9084b519-e155-6d29-5152-b39e006f2658" executionId="bdc49fa0-9bc2-4533-8695-e3e494c65567" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ae720786-4b82-2f6b-31be-4067d9cc5587" executionId="ad777def-d8a8-439e-896f-d43003eb4f1c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef0379e6-8a8c-ff9f-092d-d8c1eff13f73" executionId="f9b4fbe9-4638-4b95-ab6d-ee23d0df9e5d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3687f27a-16c2-0e2e-9495-0091736cb37f" executionId="f1d19edb-602f-41c7-8658-1c799d251d31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45b0bf55-9f2f-21ef-b03e-481ae0038f37" executionId="0aeb55a5-3b3b-4f8e-b8ab-8d30c21ed72d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ad419973-fb10-d2ee-1a68-1f86c570cdc3" executionId="79dadf9c-5e8c-435b-96d9-b4afb2b907cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d596f668-449d-8eed-e4f6-c724da39122c" executionId="0b404e6f-9780-476d-95fe-9850dc31993a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cbb511db-07a7-ad61-d389-47d50c958eb1" executionId="007497a8-fce8-4478-94a9-cd4a098f9e13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="372dff19-57f1-68b9-b312-31e008cc2547" executionId="f4f65506-fc5a-457a-b780-5f3d56ccbab6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1107c76b-107f-0dcc-a4b6-7cf012d01149" executionId="04cad633-d057-45d3-b550-1393b9eb6bb1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45c4b7e7-e587-ef31-3e44-edf387411bed" executionId="8f0e3aa7-9564-4564-8e4e-c7ae0c1d1fe2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a75cb479-83a8-986c-02bd-95b6b6399c81" executionId="5eb5179a-3d90-482f-bbaa-59d35a21ec39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac89c1c4-51b8-bbaf-7e79-d4065eccb732" executionId="cb538d3e-e627-4853-87bf-858e0f8d52d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="13" executed="13" passed="13" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:00.68]   Discovering: ReaderPrototype.Tests
+[xUnit.net 00:00:00.75]   Discovered:  ReaderPrototype.Tests
+[xUnit.net 00:00:00.75]   Starting:    ReaderPrototype.Tests
+[xUnit.net 00:00:03.98]   Finished:    ReaderPrototype.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

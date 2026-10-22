@@ -1,0 +1,10 @@
+  ReaderPrototype -> /workspace/FullStackWork/docs/experiments/ReaderPrototype/bin/Release/net8.0/ReaderPrototype.dll
+  ReaderPrototype.Tests -> /workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll
+Test run for /workspace/FullStackWork/docs/experiments/ReaderPrototype.Tests/bin/Release/net8.0/ReaderPrototype.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/FullStackWork/docs/evidence/reader/P1/prototype-linux-accepted.trx
+
+Passed!  - Failed:     0, Passed:    13, Skipped:     0, Total:    13, Duration: 2 s - ReaderPrototype.Tests.dll (net8.0)

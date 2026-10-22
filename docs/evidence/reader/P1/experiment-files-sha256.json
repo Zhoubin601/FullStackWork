@@ -1,0 +1,16 @@
+{
+  "docs/experiments/ReaderPrototype/NativeLayout.cs": "4c8eed4a791156c812f9b8a118fca0a03e451accb8789e4a51fd05b2ff5d2be6",
+  "docs/experiments/ReaderPrototype/ProbeRunner.cs": "26e490531745dd9c3ea7306ebadf3dfd42cd6e26de7b3344539fa3c150d9bd56",
+  "docs/experiments/ReaderPrototype/Program.cs": "01504e81d661344f29cd2f193bfbc595cf54cb8ae05b11bfac1bdf6673f63ea1",
+  "docs/experiments/ReaderPrototype/README.md": "970c6a6a5e2e3b5325512d17ef8e7cd076e81716c3290759a042e62d25b7f907",
+  "docs/experiments/ReaderPrototype/ReaderController.cs": "92a22a4da344f5f09a3636d7c8ea8eaaee7296e546ab6e55b7f0dc111d0b1d62",
+  "docs/experiments/ReaderPrototype/ReaderDocument.cs": "2e4d3e7f8ea6c09fc65a4f2554d067e2fd276c587566fb4326ecfd1b56a5bc15",
+  "docs/experiments/ReaderPrototype/ReaderPrototype.csproj": "7453b332cc922f683b2c597518b336abfcc5656e429dc162ef2945a89f1331b7",
+  "docs/experiments/ReaderPrototype/ReaderSurface.cs": "ea2037246db8ad53cba1450a830393748c172cac3b61d9971d35ed24518b951c",
+  "docs/experiments/ReaderPrototype/Test-P1Windows.ps1": "5425c66033eea3246d1366427ad496603955317129b8d29d5c7ebfa221607071",
+  "docs/experiments/ReaderPrototype/packages.lock.json": "976f49ee67ef08c254b66abf3a3ccd2c1a9e302e80d3756fc2bb2bcfb00317d7",
+  "docs/experiments/ReaderPrototype.Tests/NativeReaderTests.cs": "8c3123d4821ee70c4053d906745705ba81e76b5150d64d93c6a2462d51612537",
+  "docs/experiments/ReaderPrototype.Tests/ReaderPrototype.Tests.csproj": "9026952a14f0d718623fdde14bb508c0978ebf3f5f5ef911618d1286a54d4cec",
+  "docs/experiments/ReaderPrototype.Tests/packages.lock.json": "d4a32daa11ca6b660250fd5f11d3e0e0aa63379bc2130a9ba530ba0c6cff3ce6",
+  "docs/tools/reader/run_p1_probe.py": "b9cf4d6c7bb60a6d7ca6aea1f143291c680565d2ac4d38d40c5c2e88691b0b6a"
+}
