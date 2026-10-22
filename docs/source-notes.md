@@ -233,3 +233,11 @@
 - 为保留原始附件，按实际原文件名原样复制至 `raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md`，不覆盖已有资料；原附件和原有 raw 文件均不修改。
 - 交付：`output/reader-plan-v2/` 下总体规划 v2、接口与数据契约 v1、分阶段实施与验收执行表 v1，全部 Markdown。编制记录见 `docs/20261022-完整实施规划编制记录-v1.md`。
 - 新功能按 P0～P10 推进；真实 API 在 P9 前通知，P8 使用 Mock；本轮零真实调用、未实施代码、未重新运行应用测试。文档静态检查结果另存 docs/evidence/reader-planning-20261022/validation.json。
+
+## 2026-10-22 阅读器 P1 实验来源与实测
+
+- 当前用户“推送后继续p1”“continue”“你可以用linux，windows保留”：授权 P0 推送、继续 P1 并使用 Linux 验收，Windows 保留后续。
+- 需求来源：output/reader-plan-v2 三份规划；原始 v1 与 raw 指导书保持只读。测试文本来自 P0 generate_samples.py，非私有书籍。
+- 实测来源：docs/evidence/reader/P1 下 prototype-linux-fontfix.trx（14/14）、production-baseline.trx（96/96）、linux-fontfix-scale-{1,1.5,2}/native/probe.json 与真实窗口截图。实现提交 bd6eb50。
+- 外部诊断来源名称 Avalonia 官方 11.0.10 X11 实现；链接 https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Clipboard.cs 、同目录 X11Atoms.cs / X11Platform.cs；引用日期2026-10-22。准确 URL/blob SHA 见 P1/environment-and-results.json，未复制实现。只用于裸 Xvfb atom 缺失问题的根因验证。
+- .NET/NuGet 与 Debian X11/Openbox/xclip 是实验运行依赖，版本/平台记录随证据保留。零真实 DeepSeek 调用，无生产数据库修改。

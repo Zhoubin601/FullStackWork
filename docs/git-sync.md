@@ -81,3 +81,9 @@
 - 范围：完整规划三件套、可行性评估、编制与静态验证记录、原始 v1 附件副本、来源/分析/执行入口/背景记录。Code 和既有正式 v1 交付未改动。
 - 推送前复核三份交付摘要与内部链接一致，包含 11 个阶段和 79 项验收用例。未重新运行应用测试、未调用 DeepSeek，开发仍未开始。
 - 使用正常提交和 HEAD:main 快进推送，不强制覆盖；推送完成后读取真实远端 SHA 与本地提交核对，提交号以本轮最终回复为准。
+
+## 2026-10-22 P0 已推送与 P1 本地成果
+
+用户明确“推送后继续p1”，已正常推送 feature/reader-native 并设置上游。git ls-remote 再次读取真实远端 refs/heads/feature/reader-native = 8465e495496702054474b1f03c45ddf96c90856a，与 P0 验收提交一致，未改 origin/main。
+
+随后 P1 实现与证据本地提交 bd6eb50；阶段验收另行本地文档提交，本轮 P1 未再推送。当前平台按用户“你可以用linux，windows保留”完成 Linux 验收；完整证据在 docs/evidence/reader/P1/acceptance.md。
