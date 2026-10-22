@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-22",
+  "kind": "planning_static_validation",
+  "result": "passed",
+  "files": [
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-分阶段实施与验收执行表-v1.md",
+      "bytes": 25866,
+      "lines": 388,
+      "sha256": "7d544afd4709af7b0c1e46c9af53861a884e45cd6f9a699bdfcf63adabe5d2be",
+      "internal_links_valid": true,
+      "code_fences_balanced": true
+    },
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-原生阅读器与AI助手-完整实施规划-v2.md",
+      "bytes": 39668,
+      "lines": 481,
+      "sha256": "8ba0496e7c3bd452dff2fe697e52dbbd5dd42dd78f9d6d52b56c50ecbc03e8a3",
+      "internal_links_valid": true,
+      "code_fences_balanced": true
+    },
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-接口与数据契约-v1.md",
+      "bytes": 39284,
+      "lines": 661,
+      "sha256": "04bce10eb152b586d531e7643ca13323fbaf51b3cf290eabebcd818edaa47109",
+      "internal_links_valid": true,
+      "code_fences_balanced": true
+    }
+  ],
+  "stages": 11,
+  "acceptance_cases": 79,
+  "case_counts": {
+    "P0": 4,
+    "P1": 8,
+    "P2": 7,
+    "P3": 8,
+    "P4": 8,
+    "P5": 9,
+    "P6": 8,
+    "P7": 6,
+    "P8": 10,
+    "P9": 5,
+    "P10": 6
+  },
+  "required_interfaces_present": [
+    "IReaderLayoutService",
+    "IReaderDocumentService",
+    "IReaderSessionService",
+    "IApplicationDataCoordinator",
+    "IEbookLibraryService",
+    "IReadingHistoryService",
+    "IReadingStateCalculator",
+    "IReaderQuoteService",
+    "IAiQuoteVerifier",
+    "IDeepSeekClient",
+    "IReaderAiService",
+    "ISecretStore",
+    "ICompleteBackupService",
+    "IOperationRecoveryService"
+  ],
+  "original_attachment_sha256": "62c53dcd213a9b645d2adc08c6f8aba7f5894fa011b6529a0dd3574464d9833d",
+  "existing_raw_files_unchanged": true,
+  "application_code_unchanged": true,
+  "application_build_or_tests_run_this_turn": false,
+  "real_api_calls": 0,
+  "implementation_status": "not_started",
+  "limitations": [
+    "Interface snippets are proposed contracts, not compiled application code.",
+    "Performance, EPUB compatibility and real API validation remain future acceptance work."
+  ]
+}

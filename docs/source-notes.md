@@ -1,5 +1,12 @@
 # 资料来源与核对记录
 
+## 2026-10-22 电子书扩展规划评估
+
+- 来源：用户上传《阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md》（附件本地名带 `1-` 前缀）、当前 `Code/`、只读课程指导书和历史验收记录。
+- 本地提交 `2133786762fcfcac1906f3b07afa5460fde9a998`；本轮查询现有 origin/main 返回相同提交。未修改应用代码、原规划、原始资料或正式交付物；未提交/推送。
+- 已直接核对页数校验、最大页推断进度、计划状态、四表 JSON 备份、user_version=1、单例与视图缓存、导航及关闭门禁。实际解析两份已有 TRX，均 94 项通过；本轮未重新运行测试，未做分页实验。常见 SDK 路径及 PATH 未发现 dotnet。
+- 来源名称：当前项目 origin；链接：`https://github.com/Zhoubin601/FullStackWork`；引用日期：2026-10-22。除此没有新增外部技术资料。可行性、主观概率前提、实施建议及待验证项见 `docs/20261022-电子书扩展可行性评估-v1.md`；概率不属于统计数据。
+
 ## 2026-10-21 统一v1交付完成
 
 本轮依据原指导书、用户实际保存的Word v3及当前源码，生成`output/v1/`中的23页DOCX/PDF及119文件114395字节源码ZIP。未修改的用户正文、封面和两张SVG图保留；返回说明、94项测试与包元数据同步，图21更新、图22/23新增。独立源码94项通过、当前程序集71项探针通过、独立包空库实际启动正常；全部23页已渲染检查。
@@ -202,3 +209,12 @@
 - 架构依据：Code/ReadJournal/ServiceLocator.cs、ViewLocator.cs、App.axaml.cs，Library 的 Models/Services/ViewModels 及原报告架构说明。
 - 四实体字段依据：Code/ReadJournal.Library/Models/Book.cs、ReadingRecord.cs、Quote.cs、ReadingPlan.cs；外键和级联依据 Services/DatabaseService.cs 的建表 SQL。Book 到每种子表均为 1 对 0..*，子表 BookId 指向 Book.Id；ReadingRecord.Pages 为计算属性，不列为数据库持久化字段。
 - 未新增外部资料。过程与计划：docs/report-v3-diagrams-plan.md。
+
+
+## 2026-10-22 完整实施规划编制与交付
+
+- 用户本轮明确要求直接生成完整规划，包含接口、统一架构、分阶段功能、逐步验收，并在需要 API 时告知。此授权用于本轮规划交付，不把规划状态写成开发已完成。
+- 输入：用户 v1 附件、前轮可行性评估、当前 2133786 的 Code 实际接口/模型/服务/导航/调用方及原始课程约束。补读各存储接口与实现、详情/概览/计划/设置 VM、文件选择器和 README；没有调用新的外部技术资料或 DeepSeek。
+- 为保留原始附件，按实际原文件名原样复制至 `raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md`，不覆盖已有资料；原附件和原有 raw 文件均不修改。
+- 交付：`output/reader-plan-v2/` 下总体规划 v2、接口与数据契约 v1、分阶段实施与验收执行表 v1，全部 Markdown。编制记录见 `docs/20261022-完整实施规划编制记录-v1.md`。
+- 新功能按 P0～P10 推进；真实 API 在 P9 前通知，P8 使用 Mock；本轮零真实调用、未实施代码、未重新运行应用测试。文档静态检查结果另存 docs/evidence/reader-planning-20261022/validation.json。
