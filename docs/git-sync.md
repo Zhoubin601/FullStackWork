@@ -91,3 +91,8 @@
 ## 2026-10-22 P1 推送完成与 P2 本地提交
 
 用户“推送，然后开始p2”授权已执行。先fetch，再正常推送feature/reader-native（8465e49→4b336d3）；git ls-remote核验refs/heads/feature/reader-native=4b336d372c40526a8c4f482ba2c40c5c3da262fa，未强推/未改main。随后P2实现、回归、迁移/进程/桌面证据本地提交9b24b0731eac3818ee6bab02b70d2bc32b87e279；验收及进度另行文档提交。当前P2未推送，工作区最终以git status核对。
+
+
+## 2026-10-22 P2 推送完成与 P3 本地提交
+
+用户“推送，开始p3”授权已执行：正常推送feature/reader-native（4b336d3→8696045），git ls-remote核验真实远端refs/heads/feature/reader-native=8696045c6361e1670ca55e05e816526b7d81c0f3；未强推，main未改。P3实现/工具/证据本地提交17690bbf52b84f09150882332500fa4d4127654a；验收及进度另行本地文档提交。本轮不再推送P3，P4未开始。完整验收见docs/evidence/reader/P3/acceptance.md。

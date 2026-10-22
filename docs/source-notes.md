@@ -249,3 +249,12 @@
 ## 2026-10-22 P2 验收来源补充
 
 当前Code提交9b24b07；P0冻结SQL/JSON未修改。最终证据为P2/p2-reviewed-workspace.trx与p2-reviewed-clean-source.trx（各124/124）、process-accepted/probe.json（字段/SQL约束/独立子进程）、ui-accepted/desktop-smoke.json与截图（schema2真实窗口迁移/重开）。145文件临时白名单源码核验摘要reviewed-package.json，未覆盖正式交付。中间失败和版本结果均保留。无新增外部研究资料或DeepSeek调用；使用cloud-environment-runtime核对本环境与NuGet依赖可用性。
+
+## 2026-10-22 P3 开始
+
+来源：用户“推送，开始p3”、output/reader-plan-v2三份规划、P2正式契约和验收、P0冻结SQL/JSON。P2远端8696045已核验。使用合成受管文本/资源与故障注入，不读取用户私有书籍或密钥内容；计划见reader-p3-plan.md。
+
+
+## 2026-10-22 P3 最终验收来源
+
+实现/证据17690bb；最终P3/p3-percent-validated.trx与p3-reviewed-clean-source.trx各169/169，reviewed-source-package.json记录159文件临时源码验证包。crash-probe-reviewed/probe.json记录四处真实Process.Kill与损坏日志保留；ui-accepted、ui-clean-accepted与ui-verification-final.json记录最终实际桌面及哈希核对。中间失败与早期百分比fixture均保留其历史含义，不作为最终版本依据。协议补充见reader-p3-protocol.md；未新增外部研究资料、未使用真实书籍/Key、未调用API，原始资料及正式交付未变。

@@ -92,3 +92,12 @@
 - 正式契约补充见docs/reader-p2-contract-addendum.md：懒分页块引用+可空章内页号、DescribeAsync、显式租约SQL重载、CurrentPercent标量、AI不可变回执。原DI/单例/导航保留。
 - P3尚未开始；完整ZIP/日志恢复通过前不启用导入，Reader正式入口继续关闭。P2文本目录/布局为受限纯文本基础；受管文件/P5会话与输入/P7图片/P8批次按阶段落实。旧JSON纯手动可用，含电子书/定位数据时明确拒绝旧格式以免丢失。
 - Linux当前验收，Windows保留未测；raw/正式交付/参考/冻结fixtures不变，P9前主动通知真实API。
+
+
+## 当前阅读器扩展状态：P3已通过（2026-10-22，优先于上条）
+
+- 用户“推送，开始p3”已执行：P2推至origin/feature/reader-native，真实远端8696045c6361e1670ca55e05e816526b7d81c0f3；main未改。
+- P3实现/工具/证据本地17690bbf52b84f09150882332500fa4d4127654a，八项Linux验收通过；工作区和159文件独立源码各169/169（原124+45新增）。四点真实杀进程恢复完整旧集/新集，日志损坏阻止业务并保留两套文件及数据库业务行；最终桌面ZIP导出/恢复/重开与独立源码应用启动、哈希均通过。详见docs/evidence/reader/P3/acceptance.md；本轮P3未推送。
+- 完整备份ZIP v2、旧JSON仅输入、完整自动备份、books/managed替换、日志/LastRestoreId及启动同连接恢复已实现。canonical v1、安全路径/限额/位置百分比、cleanup-only语义及DI清理约定见docs/reader-p3-protocol.md。保留收件原件/主题/secure，未知或损坏日志不能静默删除。
+- 下一阶段P4受管TXT导入/扫描，尚未开始；需复用文件层及扩展操作恢复分派，导入/正式Reader入口仍关闭。P7完整图像解码、P5会话采集、P8批次写入按阶段做；P9前主动通知真实API，当前零调用。
+- 用户仍按Linux逐阶段验收，Windows保留未测；raw/正式交付/参考/冻结fixtures未变。后续不要引用P2旧JSON限制或P3中间168项fixture当作当前实现结论。
