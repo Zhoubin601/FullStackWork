@@ -157,3 +157,13 @@ ReadJournal.UnitTest/BackupUiIntegrationTests.cs
 ReadJournal.UnitTest/CompleteBackupTests.cs
 ReadJournal.UnitTest/ReaderBackupTestData.cs
 ReadJournal/Services/DataSetInvalidationService.cs
+ReadJournal.Library/Models/Reader/BookFileContracts.cs
+ReadJournal.Library/Services/Reader/BookDeletionService.cs
+ReadJournal.Library/Services/Reader/BookFileOperations.cs
+ReadJournal.Library/Services/Reader/EbookLibraryService.cs
+ReadJournal.Library/Services/Reader/EbookRuntime.cs
+ReadJournal.Library/Services/Reader/TxtBookParser.cs
+ReadJournal.UnitTest/EbookDeletionTests.cs
+ReadJournal.UnitTest/ReaderP4TestData.cs
+ReadJournal.UnitTest/TxtImportTests.cs
+ReadJournal/Services/ReaderPlatformService.cs

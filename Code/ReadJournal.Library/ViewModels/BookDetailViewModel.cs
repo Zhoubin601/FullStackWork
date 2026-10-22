@@ -2,11 +2,17 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ReadJournal.Library.Models;
 using ReadJournal.Library.Services;
+using ReadJournal.Library.Models.Reader;
+using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.ViewModels;
 public partial class BookDetailViewModel : ViewModelBase
 {
     private readonly IBookStorage _books; private readonly IReadingRecordStorage _records; private readonly IQuoteStorage _quotes; private readonly IAlertService _alert; private readonly ReadingRecordEditViewModel _editor;
     private int _id;
+    private IEbookLibraryService? _library;
+    private IApplicationDataCoordinator? _coordinator;
+    public bool CanAddManualRecord => Book?.Kind == BookKind.Manual;
+    partial void OnProgressChanged(BookProgress? value) => OnPropertyChanged(nameof(CanAddManualRecord));
     private readonly IReadingPlanStorage _plans;
     [ObservableProperty] private IReadOnlyList<PlanItem> _plansList = [];
     public IRelayCommand AddPlanCommand { get; }
@@ -31,6 +37,8 @@ public partial class BookDetailViewModel : ViewModelBase
         DeleteBookCommand = new AsyncRelayCommand(() => RunAsync(async () =>
         {
             var id = _id;
+            var uid = Book?.BookUid;
+            var epoch = _coordinator?.CurrentEpoch;
             var version = ParameterVersion;
             bool IsCurrentDetail() => version == ParameterVersion && ReferenceEquals(main.Content, this);
             if (!IsCurrentDetail()) return;
@@ -38,9 +46,10 @@ public partial class BookDetailViewModel : ViewModelBase
             if (!IsCurrentDetail()) return;
             var confirmed = await alert.ConfirmAsync("删除书籍", impact);
             if (!confirmed || !IsCurrentDetail()) return;
-            await _books.DeleteAsync(id);
+            if (_library is not null && uid is Guid identity && epoch is DataEpoch expected) await _library.DeleteBookAsync(id, identity, expected, CancellationToken.None);
+            else await _books.DeleteAsync(id);
             // A completed operation must not navigate away from a newer page or draft.
-            if (IsCurrentDetail()) main.GoBack();
+            if (IsCurrentDetail()) { main.GoBack(); if (_library?.LastWarning is string warning && main.Content is BookListViewModel list) list.ShowOperationMessage(warning); }
         }));
         AddRecordCommand = new AsyncRelayCommand(() => RunAsync(async () =>
         {
@@ -51,6 +60,8 @@ public partial class BookDetailViewModel : ViewModelBase
         EditRecordCommand = new AsyncRelayCommand<ReadingRecord>(r => RunAsync(async () => { if (r == null) return; _editor.SetParameter(r); _editor.SetRereadHint(false); await alert.EditRecordAsync(_editor); await LoadAsync(); }));
         DeleteRecordCommand = new AsyncRelayCommand<ReadingRecord>(r => RunAsync(async () => { if (r != null && await alert.ConfirmAsync("删除阅读记录", "删除后会重新计算进度和统计。")) { await records.DeleteAsync(r.Id); await LoadAsync(); } }));
     }
+    public BookDetailViewModel(IBookStorage books, IReadingRecordStorage records, IQuoteStorage quotes, IAlertService alert, ReadingRecordEditViewModel editor, IContentNavigationService content, MainViewModel main, IReadingPlanStorage plans,
+        IEbookLibraryService library, IApplicationDataCoordinator coordinator) : this(books, records, quotes, alert, editor, content, main, plans) { _library = library; _coordinator = coordinator; }
     public override void SetParameter(object parameter) { base.SetParameter(parameter); _id = (int)parameter; Progress = null; RecordsList = []; QuotesList = []; PlansList = []; OnPropertyChanged(nameof(Book)); }
     protected override async Task LoadAsync()
     {

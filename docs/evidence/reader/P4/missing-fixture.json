@@ -1,0 +1,6 @@
+{
+  "simulation": "app was normally closed; removed one private managed copy only, preserved all sources and held bytes outside data directory",
+  "relativePath": "books/managed/c874cc62-6aa0-45e1-ad1f-d15f8346283b/source.txt",
+  "sha256": "f1270acabf6aa82c3e8e6e2faf1a5da9211d1ee7807458a15fb6314c4f6ad2b3",
+  "repair": "after app normal close, restored the exact held managed bytes; next independent app startup must set Ready again"
+}

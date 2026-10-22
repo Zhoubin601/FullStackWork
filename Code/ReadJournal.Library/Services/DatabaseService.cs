@@ -16,6 +16,7 @@ public class DatabaseService : IDatabaseService, IOperationRecoveryService, IDis
     private SQLiteConnection? _connection;
     public bool IsInitialized { get; private set; }
     public ApplicationDataCoordinator Coordinator => _coordinator;
+    public DataPaths Paths => _paths;
     public DatabaseService(DataPaths paths) : this(paths, new ApplicationDataCoordinator(paths), new DatabaseMigrationV2()) { _ownsCoordinator = true; }
     public DatabaseService(DataPaths paths, ApplicationDataCoordinator coordinator, DatabaseMigrationV2 migration)
         : this(paths, coordinator, migration, BackupRuntime.CreateRecovery(paths)) { }
@@ -48,6 +49,7 @@ public class DatabaseService : IDatabaseService, IOperationRecoveryService, IDis
                         try { _recovery.RecoverPending(connection); }
                         catch (RecoveryCleanupException ex) { System.Diagnostics.Trace.WriteLine(ex.Message); }
                         var changed = _migration.Apply(connection);
+                        _recovery.ReconcileBookFiles(connection);
                         _connection = connection; return changed;
                     }
                     catch { connection.Dispose(); throw; }

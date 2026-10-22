@@ -30,6 +30,11 @@ public class ManagedBookFiles
         Checkpoint("journal.before-write");
         WriteDurable(path, BackupJson.Write(new RestoreJournalEnvelope(1, journal, Sha256(BackupJson.Write(journal)))));
     }
+    public virtual void WriteBookJournal(string path, BookFileJournal journal)
+    {
+        Checkpoint("book-journal.before-write");
+        WriteDurable(path, BackupJson.Write(new BookFileJournalEnvelope(1, journal, Sha256(BackupJson.Write(journal)))));
+    }
     // Flush rename metadata on the validated Linux filesystem as well as file contents.
     // Windows durability is retained for separate target-platform validation.
     private static void SyncDirectory(string path)

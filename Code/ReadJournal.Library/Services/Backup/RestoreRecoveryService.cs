@@ -10,8 +10,12 @@ public sealed class RestoreRecoveryService
     private readonly CompleteBackupArchive _archive;
     private readonly BackupV2Validator _validator;
     private readonly BackupLimits _limits;
+    private readonly Services.Reader.BookFileOperations _bookOperations;
     public RestoreRecoveryService(DataPaths paths, ManagedBookFiles files, CompleteBackupArchive archive, BackupV2Validator validator, BackupLimits limits)
-    { _paths = paths; _files = files; _archive = archive; _validator = validator; _limits = limits; }
+        : this(paths, files, archive, validator, limits, new(paths, files, limits)) { }
+    public RestoreRecoveryService(DataPaths paths, ManagedBookFiles files, CompleteBackupArchive archive, BackupV2Validator validator, BackupLimits limits, Services.Reader.BookFileOperations bookOperations)
+    { _paths = paths; _files = files; _archive = archive; _validator = validator; _limits = limits; _bookOperations = bookOperations; }
+    public void ReconcileBookFiles(SQLiteConnection c) => _bookOperations.Reconcile(c);
     public string JournalPath(Guid id) => ManagedBookFiles.SafePath(_paths.DirectoryPath, "operations/restore-" + id.ToString("D") + ".json");
     public string StageRoot(Guid id) => ManagedBookFiles.SafePath(_paths.DirectoryPath, "staging/" + id.ToString("D"));
     public string TrashRoot(Guid id) => ManagedBookFiles.SafePath(_paths.DirectoryPath, "trash/" + id.ToString("D"));
@@ -29,10 +33,19 @@ public sealed class RestoreRecoveryService
             if (primary is null) throw new InvalidOperationException("RecoveryRequired：存在不完整或未知操作日志，请保留恢复材料后检查。");
             ManagedBookFiles.RejectLink(entry);
         }
-        // P4 extends this dispatcher for import/delete journals. Unknown operations must not be skipped.
-        if (journals.Any(p => !Path.GetFileName(p).StartsWith("restore-", StringComparison.Ordinal) || !p.EndsWith(".json", StringComparison.Ordinal)) || journals.Length > 1)
+        var restores = journals.Where(p => Path.GetFileName(p).StartsWith("restore-", StringComparison.Ordinal)).ToArray();
+        if (journals.Length > _limits.MaxEntries || restores.Length > 1 || restores.Length == 1 && journals.Length != 1)
             throw new InvalidOperationException("RecoveryRequired：存在未知或多份操作日志。请保留 operations、staging、trash 和 backups 后检查。");
-        foreach (var journal in journals) Recover(c, Read(journal));
+        if (restores.Length == 1) { Recover(c, Read(restores[0])); return; }
+        var bookLogs = journals.Select(_bookOperations.Read).ToArray(); // Validate all identities before mutating any recovery material.
+        RecoveryCleanupException? cleanup = null;
+        foreach (var log in bookLogs)
+        {
+            try { _bookOperations.Recover(c, log); }
+            catch (RecoveryCleanupException ex) { cleanup = ex; }
+            catch (Exception ex) { throw new InvalidOperationException("RecoveryRequired：导入/删除对账不足以确认，请保留operations/staging/trash/books后检查。", ex); }
+        }
+        if (cleanup is not null) throw cleanup;
     }
     public RestoreJournal Read(string path)
     {

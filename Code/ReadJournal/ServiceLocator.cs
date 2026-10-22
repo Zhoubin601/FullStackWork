@@ -30,7 +30,13 @@ public class ServiceLocator
         serviceCollection.AddSingleton<IApplicationDataCoordinator>(sp => sp.GetRequiredService<ApplicationDataCoordinator>());
         serviceCollection.AddSingleton<DatabaseMigrationV2>();
         serviceCollection.AddSingleton<BackupLimits>();
+        serviceCollection.AddSingleton<TxtParserLimits>();
         serviceCollection.AddSingleton<ManagedBookFiles>();
+        serviceCollection.AddSingleton<BookFileOperations>();
+        serviceCollection.AddSingleton<TxtBookParser>();
+        serviceCollection.AddSingleton<IBookParser>(sp => sp.GetRequiredService<TxtBookParser>());
+        serviceCollection.AddSingleton<BookDeletionService>();
+        serviceCollection.AddSingleton<IEbookLibraryService, EbookLibraryService>();
         serviceCollection.AddSingleton<BackupV2Validator>();
         serviceCollection.AddSingleton<CompleteBackupArchive>();
         serviceCollection.AddSingleton<RestoreRecoveryService>();
@@ -68,7 +74,10 @@ public class ServiceLocator
         serviceCollection.AddSingleton<IReadingPlanStorage, ReadingPlanStorage>();
         serviceCollection.AddSingleton<IStatisticsService, StatisticsService>();
         serviceCollection.AddSingleton<IPreferenceStorage, FilePreferenceStorage>();
-        serviceCollection.AddSingleton<IFileService, FileService>();
+        serviceCollection.AddSingleton<FileService>();
+        serviceCollection.AddSingleton<IFileService>(sp => sp.GetRequiredService<FileService>());
+        serviceCollection.AddSingleton<IAppFileDialogService>(sp => sp.GetRequiredService<FileService>());
+        serviceCollection.AddSingleton<IReaderPlatformService, ReaderPlatformService>();
         serviceCollection.AddSingleton<IBackupService, BackupService>();
         serviceCollection.AddSingleton<ReadingPlanListViewModel>();
         serviceCollection.AddSingleton<ReadingPlanEditViewModel>();

@@ -6,7 +6,7 @@ namespace ReadJournal.Library.Services.Backup;
 
 public static class ManagedBookInventory
 {
-    public static IReadOnlyList<BackupFileEntry> Inspect(string root, BackupDataV2 data, BackupLimits limits)
+    public static IReadOnlyList<BackupFileEntry> Inspect(string root, BackupDataV2 data, BackupLimits limits, bool entireManagedRoot = true)
     {
         var inventory = new Dictionary<string, BackupFileEntry>(StringComparer.OrdinalIgnoreCase);
         long total = 0;
@@ -126,7 +126,9 @@ public static class ManagedBookInventory
                 else { actual.Add(Path.GetRelativePath(root, entry).Replace(Path.DirectorySeparatorChar, '/')); if (actual.Count > limits.MaxEntries) throw new ArgumentException("LimitExceeded：文件数超限。"); }
             }
         }
-        if (Directory.Exists(managed)) Walk(managed);
+        if (entireManagedRoot) { if (Directory.Exists(managed)) Walk(managed); }
+        else foreach (var file in data.Files)
+        { var directory = ManagedBookFiles.SafePath(root, ManagedBookFiles.BookPrefix(file.FileId).TrimEnd('/')); if (Directory.Exists(directory)) Walk(directory); }
         if (!actual.SetEquals(inventory.Keys)) throw new ArgumentException("InvalidFormat：受管目录含未登记文件，需先修复文件清单。");
         return inventory.Values.OrderBy(x => x.Path, StringComparer.Ordinal).ToArray();
     }

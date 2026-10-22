@@ -3,18 +3,51 @@ using System.Security.Cryptography;
 using System.Text;
 using ReadJournal.Library.Models;
 using ReadJournal.Library.Models.Reader;
+using ReadJournal.Library.Services.Backup;
 using Document = ReadJournal.Library.Models.Reader.ReaderDocument;
 namespace ReadJournal.Library.Services.Reader;
 
-// P2 immutable text catalog. Only synthetic fixtures publish here; P4 adds managed-file loading before enabling import.
+// Synthetic publication remains for layout fixtures; managed TXT loads immutable canonical chapters on demand.
 public sealed class ReaderDocumentService : IReaderDocumentService
 {
-    private sealed record Entry(Document Document, IReadOnlyDictionary<string, string> Text, IReadOnlyDictionary<string, int[]> Boundaries);
+    private sealed class Entry(Document document, IReadOnlyDictionary<string, string> text, IReadOnlyDictionary<string, int[]> boundaries,
+        CanonicalManifest? manifest = null, string? managedDirectory = null)
+    {
+        public Document Document => document;
+        public bool IsManaged => manifest is not null;
+        public IReadOnlyDictionary<string, string> Text => text;
+        private readonly Dictionary<string, (string Text, int[] Boundaries)> _cache = new();
+        public bool TryText(string key, out string value)
+        {
+            lock (_cache)
+            {
+                if (manifest is null) return text.TryGetValue(key, out value!);
+                var chapter = manifest.Chapters.FirstOrDefault(c => c.Key == key);
+                if (chapter is null) { value = ""; return false; }
+                if (!_cache.TryGetValue(key, out var cached))
+                {
+                    var path = ManagedBookFiles.SafePath(managedDirectory!, chapter.TextPath);
+                    if (!File.Exists(path) || new FileInfo(path).Length != (long)chapter.Utf16Length * 2 || ManagedBookFiles.HashFile(path) != chapter.Sha256) throw new InvalidOperationException("FileMissing/DocumentMismatch：章节缺失或已改变，请刷新书库。");
+                    value = new UnicodeEncoding(false, false, true).GetString(File.ReadAllBytes(path));
+                    cached = (value, StringInfo.ParseCombiningCharacters(value).Append(value.Length).ToArray());
+                    if (_cache.Count >= 2) _cache.Remove(_cache.Keys.First());
+                    _cache.Add(key, cached);
+                }
+                value = cached.Text; return true;
+            }
+        }
+        public string Value(string key) => TryText(key, out var value) ? value : throw new ArgumentException("章节不存在。");
+        public int[] Boundaries(string key)
+        { if (manifest is null) return boundaries[key]; lock (_cache) { Value(key); return _cache[key].Boundaries; } }
+        public IReadOnlyList<ReaderBlockDescriptor> Blocks(string key) => manifest?.Chapters.Single(c => c.Key == key).Blocks ?? [new(key, ReaderBlockKind.Paragraph, 0, Value(key).Length, null, [])];
+    }
     private readonly object _sync = new();
     private readonly Dictionary<DocumentKey, Entry> _documents = new();
     private readonly IDatabaseService _database;
     private readonly IApplicationDataCoordinator _coordinator;
-    public ReaderDocumentService(IDatabaseService database, IApplicationDataCoordinator coordinator) { _database = database; _coordinator = coordinator; }
+    private readonly DataPaths? _paths;
+    public ReaderDocumentService(IDatabaseService database, IApplicationDataCoordinator coordinator) { _database = database; _coordinator = coordinator; _paths = (database as DatabaseService)?.Paths; }
+    public ReaderDocumentService(IDatabaseService database, IApplicationDataCoordinator coordinator, DataPaths paths) : this(database, coordinator) { _paths = paths; }
     public void PublishText(Document document, IReadOnlyDictionary<string, string> chapterText)
     {
         ReaderContractValidator.Validate(document.Key);
@@ -53,15 +86,38 @@ public sealed class ReaderDocumentService : IReaderDocumentService
     {
         await _database.InitializeAsync();
         await using var lease = await _coordinator.EnterOperationAsync(identity.Epoch, ct);
-        await _database.ReadAsync(lease, c =>
+        var data = await _database.ReadAsync(lease, c =>
         {
             ct.ThrowIfCancellationRequested();
             var book = c.Find<Book>(identity.BookId); var file = c.Find<EbookFile>(identity.BookId);
             if (book?.BookUid != identity.BookUid || book.Kind != BookKind.Ebook || file is null ||
                 new DocumentKey(file.FileId, file.SourceSha256, file.CanonicalSha256, file.ParserVersion) != identity.Document)
                 throw new InvalidOperationException("StaleContext：书籍或文档身份不匹配。");
-            return 0;
+            if (file.Status != (int)EbookFileStatus.Ready) throw new InvalidOperationException("FileMissing：书籍原文未就绪，请恢复备份或重新导入。");
+            return BookFileOperations.Single(BackupDataStore.Snapshot(c), identity.BookId);
         });
+        bool loaded; lock (_sync) loaded = _documents.ContainsKey(identity.Document);
+        if (loaded && Get(identity.Document).IsManaged)
+            await Task.Run(() => ManagedBookInventory.Inspect(_paths!.DirectoryPath, data, new(), false), ct);
+        if (!loaded)
+        {
+            if (_paths is null) throw new InvalidOperationException("受管书库路径未配置。");
+            var file = data.Files.Single();
+            var entry = await Task.Run(() =>
+            {
+                ct.ThrowIfCancellationRequested(); ManagedBookInventory.Inspect(_paths.DirectoryPath, data, new(), false);
+                var manifest = BackupJson.Read<CanonicalManifest>(File.ReadAllBytes(ManagedBookFiles.SafePath(_paths.DirectoryPath, file.CanonicalRelativePath)));
+                if (file.Format != EbookFormat.Txt || manifest.Resources.Count != 0) throw new ArgumentException("当前文档服务仅开放受管TXT；EPUB由P7实现。");
+                TocEntry Toc(CanonicalTocEntry t) => new(t.Key, t.Title, new(identity.Document, t.ChapterKey, t.Utf16Offset, t.NonTextBlockKey), t.Children.Select(Toc).ToArray());
+                var document = new Document(identity.Document, manifest.Title, manifest.Chapters.Select(c => new ChapterDescriptor(c.Key, c.Title, c.Order, c.Utf16Length)).ToArray(), manifest.TableOfContents.Select(Toc).ToArray(), manifest.TotalTextUnits);
+                return new Entry(document, new Dictionary<string, string>(), new Dictionary<string, int[]>(), manifest, ManagedBookFiles.SafePath(_paths.DirectoryPath, ManagedBookFiles.BookPrefix(file.FileId).TrimEnd('/')));
+            }, ct);
+            lock (_sync)
+            {
+                if (!_documents.ContainsKey(identity.Document) && _documents.Count >= 2) throw new InvalidOperationException("请先释放旧文档，目录最多保留两本。");
+                _documents[identity.Document] = entry;
+            }
+        }
         ct.ThrowIfCancellationRequested(); return Get(identity.Document).Document;
     }
     private static int Snap(int[] boundaries, int value, bool forward)
@@ -69,21 +125,21 @@ public sealed class ReaderDocumentService : IReaderDocumentService
     private static int ValidatePosition(Entry entry, ReaderPosition position)
     {
         ReaderContractValidator.Validate(position);
-        if (position.Document != entry.Document.Key || position.NonTextBlockKey is not null || !entry.Text.TryGetValue(position.ChapterKey, out var text) ||
-            position.Utf16Offset > text.Length || Array.BinarySearch(entry.Boundaries[position.ChapterKey], position.Utf16Offset) < 0)
+        if (position.Document != entry.Document.Key || position.NonTextBlockKey is not null || !entry.TryText(position.ChapterKey, out var text) ||
+            position.Utf16Offset > text.Length || Array.BinarySearch(entry.Boundaries(position.ChapterKey), position.Utf16Offset) < 0)
             throw new ArgumentException("位置不是该文档的字符簇边界。");
         return entry.Document.Chapters.First(c => c.Key == position.ChapterKey).Order;
     }
     public Task<ChapterSlice> ReadSliceAsync(DocumentKey document, string chapterKey, int startOffset, int maxUtf16Units, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested(); var entry = Get(document);
-        if (!entry.Text.TryGetValue(chapterKey, out var text) || startOffset < 0 || startOffset > text.Length || maxUtf16Units < 1 || maxUtf16Units > 65536)
+        if (!entry.TryText(chapterKey, out var text) || startOffset < 0 || startOffset > text.Length || maxUtf16Units < 1 || maxUtf16Units > 65536)
             throw new ArgumentException("正文片段范围无效。");
-        var boundaries = entry.Boundaries[chapterKey]; var start = Snap(boundaries, startOffset, false);
+        var boundaries = entry.Boundaries(chapterKey); var start = Snap(boundaries, startOffset, false);
         var end = Snap(boundaries, Math.Min(text.Length, start + maxUtf16Units), false);
         if (end == start && start < text.Length) end = Snap(boundaries, start + 1, true);
         return Task.FromResult(new ChapterSlice(chapterKey, start, text[start..end],
-            [new ReaderBlockDescriptor(chapterKey, ReaderBlockKind.Paragraph, 0, text.Length, null, [])]));
+            entry.Blocks(chapterKey)));
     }
     public Task<TextSnapshot> ExtractAsync(DocumentRange range, CancellationToken ct)
     {
@@ -95,7 +151,7 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         {
             var start = chapter.Order == first ? range.Start.Utf16Offset : 0;
             var end = chapter.Order == last ? range.End.Utf16Offset : chapter.Utf16Length;
-            if (end > start) spans.Add(new TextSpan(new DocumentRange(new(entry.Document.Key, chapter.Key, start), new(entry.Document.Key, chapter.Key, end)), entry.Text[chapter.Key][start..end]));
+            if (end > start) spans.Add(new TextSpan(new DocumentRange(new(entry.Document.Key, chapter.Key, start), new(entry.Document.Key, chapter.Key, end)), entry.Value(chapter.Key)[start..end]));
         }
         if (spans.Count == 0) throw new ArgumentException("范围为空。");
         return Task.FromResult(new TextSnapshot(entry.Document.Key, Array.AsReadOnly(spans.ToArray()), Hash(string.Concat(spans.Select(s => s.Text)))));
@@ -113,7 +169,7 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         try
         {
             var entry = Get(position.Document); ValidatePosition(entry, position);
-            if (expectedOriginalText is not null && !entry.Text[position.ChapterKey][position.Utf16Offset..].StartsWith(expectedOriginalText, StringComparison.Ordinal))
+            if (expectedOriginalText is not null && !entry.Value(position.ChapterKey)[position.Utf16Offset..].StartsWith(expectedOriginalText, StringComparison.Ordinal))
                 return new(false, null, "原文不匹配，拒绝猜测位置。");
             return await Task.FromResult(new PositionResolution(true, position, null));
         }

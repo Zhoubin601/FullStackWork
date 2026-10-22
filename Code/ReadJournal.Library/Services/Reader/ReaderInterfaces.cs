@@ -12,6 +12,7 @@ public interface IBookParser
 
 public interface IEbookLibraryService
 {
+    string? LastWarning => null;
     Task<ImportResult> ImportAsync(
         ImportRequest request, IProgress<ImportProgress>? progress,
         CancellationToken ct);

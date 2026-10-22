@@ -78,6 +78,8 @@ def main(args):
                     if shifted:key('Shift_L',False)
                     time.sleep(.012)
             elif op=='capture':
+                # Force a real X11 exposure after GTK closes; otherwise root capture can catch a partial repaint.
+                subprocess.run(['xrefresh'],env=env,check=True,timeout=10)
                 time.sleep(.4);subprocess.run(['import','-window','root',str(evidence/(command['name']+'.png'))],env=env,check=True,timeout=10)
             elif op=='tree':
                 tree=subprocess.check_output(['xwininfo','-root','-tree'],env=env,text=True);(evidence/(command['name']+'.txt')).write_text(tree);print(tree,flush=True)

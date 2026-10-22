@@ -15,6 +15,31 @@ namespace ReadJournal.UnitTest;
 
 public sealed class BackupUiIntegrationTests
 {
+    [Fact]
+    public Task P4RealContainerScansBeforeNavigationAndSharesFileAndParserServices()=>Session.Value.Dispatch(async()=>
+    {
+        var directory=Path.Combine(Path.GetTempPath(),"ReadJournalP4Ui",Guid.NewGuid().ToString("N"));var previous=Environment.GetEnvironmentVariable("READJOURNAL_DATA_DIR");
+        Directory.CreateDirectory(Path.Combine(directory,"books"));await File.WriteAllTextAsync(Path.Combine(directory,"books","合成TXT.txt"),ReaderP4TestData.Text);
+        await File.WriteAllBytesAsync(Path.Combine(directory,"books","损坏.txt"),[0xff]);
+        Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR",directory);var locator=new ServiceLocator();Application.Current!.Resources[nameof(ServiceLocator)]=locator;
+        typeof(ServiceLocator).GetField("_current",BindingFlags.Static|BindingFlags.NonPublic)!.SetValue(null,null);
+        var provider=(ServiceProvider)typeof(ServiceLocator).GetField("_serviceProvider",BindingFlags.Instance|BindingFlags.NonPublic)!.GetValue(locator)!;
+        try
+        {
+            Assert.Same(provider.GetRequiredService<IFileService>(),provider.GetRequiredService<IAppFileDialogService>());
+            Assert.Same(provider.GetRequiredService<TxtBookParser>(),provider.GetRequiredService<IBookParser>());
+            Assert.Same(provider.GetRequiredService<IEbookLibraryService>(),provider.GetRequiredService<IEbookLibraryService>());
+            await locator.InitializationViewModel.OnLoadedCommand.ExecuteAsync(null);Assert.Empty(locator.InitializationViewModel.Error);
+            var books=await provider.GetRequiredService<IBookStorage>().GetAllAsync();Assert.Single(books);Assert.Equal("合成TXT",books.Single().Title);
+            Assert.Same(locator.MainViewModel,locator.MainWindowViewModel.Content);
+            locator.MainViewModel.SetMenuAndContent(MenuNavigationConstant.BookListView,locator.BookListViewModel);await locator.BookListViewModel.OnLoadedCommand.ExecuteAsync(null);
+            Assert.Single(locator.BookListViewModel.BooksPage);await locator.BookListViewModel.ScanInboxCommand.ExecuteAsync(null);Assert.Empty(locator.BookListViewModel.Error);
+            Assert.Contains("新增0本",locator.BookListViewModel.OperationMessage);Assert.Contains("EncodingRequired",locator.BookListViewModel.OperationMessage);
+            locator.BookDetailViewModel.SetParameter(books.Single().Id);await locator.BookDetailViewModel.OnLoadedCommand.ExecuteAsync(null);Assert.False(locator.BookDetailViewModel.CanAddManualRecord);
+        }
+        finally{provider.Dispose();Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR",previous);Directory.Delete(directory,true);typeof(ServiceLocator).GetField("_current",BindingFlags.Static|BindingFlags.NonPublic)!.SetValue(null,null);}
+        return true;
+    },default);
     private static readonly Lazy<HeadlessUnitTestSession> Session=new(()=>HeadlessUnitTestSession.StartNew(typeof(BackupUiIntegrationTests)));
     public static AppBuilder BuildAvaloniaApp()=>AppBuilder.Configure<App>().UseHeadless(new AvaloniaHeadlessPlatformOptions{UseHeadlessDrawing=false}).UseSkia();
     [Fact]

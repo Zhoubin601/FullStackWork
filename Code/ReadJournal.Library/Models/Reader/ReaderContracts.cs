@@ -9,7 +9,8 @@ public enum HistorySource { ManualRecord = 0, EbookSession = 1 }
 public enum PageDirection { Previous = -1, Next = 1 }
 public enum ReaderExitReason { Back, Menu, SwitchBook, WindowClose }
 public enum AiOperation { Analyze, ExplainSelection, ExtractQuotes }
-public enum MaintenanceKind { Migration, Backup, Restore, Reset }
+public enum MaintenanceKind { Migration, Backup, Restore, Reset, Reconcile, Delete }
+public enum EbookFileStatus { Ready = 0, Missing = 1, Invalid = 2 }
 public enum ImportState { Imported, Duplicate, Rejected, Cancelled }
 
 public readonly record struct DataEpoch(Guid Value);
@@ -115,7 +116,7 @@ public sealed record PageRangeSnapshot(
 public sealed record ParserOptions(
     int ParserVersion, string? RequestedEncoding,
     long MaxSourceBytes, long MaxExpandedBytes,
-    int MaxArchiveEntries, long MaxImagePixels);
+    int MaxArchiveEntries, long MaxImagePixels, string? Title = null);
 
 public sealed record ParsedBook(
     EbookFormat Format, string Title, string Author,
