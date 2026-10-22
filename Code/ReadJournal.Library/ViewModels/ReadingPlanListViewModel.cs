@@ -19,5 +19,6 @@ public partial class ReadingPlanListViewModel : ViewModelBase
         EditPlanCommand = new RelayCommand<PlanItem>(p => { if (p != null) content.NavigateTo(ContentNavigationConstant.ReadingPlanEditView, p.Plan); });
         DeletePlanCommand = new AsyncRelayCommand<PlanItem>(p => RunAsync(async () => { if (p != null && await alert.ConfirmAsync("删除计划", "删除计划不会影响阅读记录。是否继续？")) { await plans.DeleteAsync(p.Plan.Id); await LoadAsync(); } }));
     }
-    protected override async Task LoadAsync() { PlansList = (await _plans.GetAllAsync()).Where(x => State == "全部" || x.State == State).ToArray(); IsEmpty = PlansList.Count == 0; }
+    protected override async Task LoadAsync() { var version = ParameterVersion; var plans = (await _plans.GetAllAsync()).Where(x => State == "全部" || x.State == State).ToArray(); if (version != ParameterVersion) return; PlansList = plans; IsEmpty = PlansList.Count == 0; }
+    public override void InvalidateDataSet() { base.InvalidateDataSet(); PlansList = []; IsEmpty = true; }
 }

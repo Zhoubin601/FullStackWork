@@ -218,4 +218,4 @@ public sealed record BackupExportResult(
 
 public sealed record RestoreResult(
     string AutomaticBackupPath, DataEpoch NewEpoch,
-    int BookCount, int ManagedFileCount);
+    int BookCount, int ManagedFileCount, IReadOnlyList<string>? Warnings = null);

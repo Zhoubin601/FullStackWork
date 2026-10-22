@@ -143,3 +143,17 @@ ReadJournal/Reader/AvaloniaReaderLayoutService.cs
 ReadJournal/Reader/NativeTextDocument.cs
 ReadJournal/Reader/NativeTextLayout.cs
 ReadJournal/Reader/ReaderSurface.cs
+ReadJournal.Library/Models/Reader/BackupContracts.cs
+ReadJournal.Library/Services/Backup/BackupDataStore.cs
+ReadJournal.Library/Services/Backup/BackupRuntime.cs
+ReadJournal.Library/Services/Backup/BackupV2Validator.cs
+ReadJournal.Library/Services/Backup/CompleteBackupArchive.cs
+ReadJournal.Library/Services/Backup/CompleteBackupService.cs
+ReadJournal.Library/Services/Backup/ImageResourceValidator.cs
+ReadJournal.Library/Services/Backup/ManagedBookFiles.cs
+ReadJournal.Library/Services/Backup/ManagedBookInventory.cs
+ReadJournal.Library/Services/Backup/RestoreRecoveryService.cs
+ReadJournal.UnitTest/BackupUiIntegrationTests.cs
+ReadJournal.UnitTest/CompleteBackupTests.cs
+ReadJournal.UnitTest/ReaderBackupTestData.cs
+ReadJournal/Services/DataSetInvalidationService.cs

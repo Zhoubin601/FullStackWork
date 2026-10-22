@@ -73,7 +73,7 @@ public sealed class ReaderStateTests : IDisposable
         Assert.Equal("进行中", (await plans.GetAllAsync()).Single().State);
     }
     [Fact]
-    public async Task LegacyJsonUpgradeRegeneratesIdentityAndCannotSilentlyDropEbookData()
+    public async Task LegacyJsonUpgradeRegeneratesIdentityAndRejectsIncompleteEbookBeforeBackup()
     {
         var reading = new ReadingService(); var source = DemoData.Create();
         var adapter = new BackupV1Adapter(new BackupEntityValidator(reading));
@@ -84,9 +84,9 @@ public sealed class ReaderStateTests : IDisposable
         await new BookStorage(db, reading).SaveAsync(new() { Title = "合成电子书", Kind = BookKind.Ebook });
         var backup = new BackupService(db, reading, new Files(), paths);
         var input = Path.Combine(_directory,"old.json"); await File.WriteAllTextAsync(input,JsonSerializer.Serialize(source));
-        await Assert.ThrowsAsync<InvalidOperationException>(() => backup.ExportAsync(Path.Combine(_directory,"export.json")));
-        await Assert.ThrowsAsync<InvalidOperationException>(() => backup.RestoreAsync(input));
-        Assert.Single(await db.ReadAsync(c => c.Table<Book>().ToList())); Assert.False(File.Exists(Path.Combine(_directory,"export.json")));
+        await Assert.ThrowsAsync<ArgumentException>(() => backup.ExportAsync(Path.Combine(_directory,"export.zip")));
+        await Assert.ThrowsAsync<ArgumentException>(() => backup.RestoreAsync(input));
+        Assert.Single(await db.ReadAsync(c => c.Table<Book>().ToList())); Assert.False(File.Exists(Path.Combine(_directory,"export.zip")));
     }
     [Fact]
     public void PositionSerializationHasVersionAndRejectsInvalidDocuments()

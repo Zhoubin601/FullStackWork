@@ -1,14 +1,16 @@
 using SQLite;
+using ReadJournal.Library.Services.Backup;
 using ReadJournal.Library.Models.Reader;
 using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.Services;
 // One shared connection. Data leases precede the SQL gate; no callbacks into async storage inside SQL.
-public class DatabaseService : IDatabaseService, IDisposable
+public class DatabaseService : IDatabaseService, IOperationRecoveryService, IDisposable
 {
     private readonly DataPaths _paths;
     private readonly ApplicationDataCoordinator _coordinator;
     private readonly DatabaseMigrationV2 _migration;
     private readonly bool _ownsCoordinator;
+    private readonly RestoreRecoveryService _recovery;
     private readonly SemaphoreSlim _gate = new(1, 1);
     private readonly SemaphoreSlim _initializationGate = new(1, 1);
     private SQLiteConnection? _connection;
@@ -16,7 +18,10 @@ public class DatabaseService : IDatabaseService, IDisposable
     public ApplicationDataCoordinator Coordinator => _coordinator;
     public DatabaseService(DataPaths paths) : this(paths, new ApplicationDataCoordinator(paths), new DatabaseMigrationV2()) { _ownsCoordinator = true; }
     public DatabaseService(DataPaths paths, ApplicationDataCoordinator coordinator, DatabaseMigrationV2 migration)
-    { _paths = paths; _coordinator = coordinator; _migration = migration; }
+        : this(paths, coordinator, migration, BackupRuntime.CreateRecovery(paths)) { }
+    public DatabaseService(DataPaths paths, ApplicationDataCoordinator coordinator, DatabaseMigrationV2 migration, RestoreRecoveryService recovery)
+    { _paths = paths; _coordinator = coordinator; _migration = migration; _recovery = recovery; }
+    public Task RecoverBeforeBusinessReadyAsync(CancellationToken ct) => InitializeAsync().WaitAsync(ct);
     public async Task InitializeAsync()
     {
         if (IsInitialized) return;
@@ -39,6 +44,9 @@ public class DatabaseService : IDatabaseService, IDisposable
                     {
                         connection.Execute("PRAGMA foreign_keys=ON");
                         connection.ExecuteScalar<int>("PRAGMA busy_timeout=5000");
+                        if (connection.ExecuteScalar<int>("PRAGMA user_version") > DatabaseMigrationV2.CurrentVersion) throw new InvalidOperationException("数据库版本高于当前应用支持的版本。");
+                        try { _recovery.RecoverPending(connection); }
+                        catch (RecoveryCleanupException ex) { System.Diagnostics.Trace.WriteLine(ex.Message); }
                         var changed = _migration.Apply(connection);
                         _connection = connection; return changed;
                     }

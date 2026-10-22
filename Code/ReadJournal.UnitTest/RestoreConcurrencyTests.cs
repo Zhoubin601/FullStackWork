@@ -105,7 +105,7 @@ public class RestoreConcurrencyTests
             Assert.Equal("RESTORED quote text", restored.Text); Assert.Equal("RESTORED thoughts", restored.Thoughts);
             Assert.Equal(2, restored.Page); Assert.False(restored.IsFavorite);
             Assert.Equal("RESTORED book", (await books.GetAsync(book.Id))!.Title);
-            var automatic = JsonSerializer.Deserialize<BackupDocument>(await File.ReadAllTextAsync(Assert.Single(Directory.GetFiles(directory, "auto-backup-*.json"))))!;
+            var automatic = ReaderBackupTestData.Legacy(Assert.Single(Directory.GetFiles(Path.Combine(directory,"backups"), "auto-backup-*.zip")));
             Assert.True(Assert.Single(automatic.Quotes).IsFavorite);
         }
         finally { if (Directory.Exists(directory)) Directory.Delete(directory, true); }

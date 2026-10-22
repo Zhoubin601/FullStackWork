@@ -1,0 +1,25 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.83]     ReadJournal.UnitTest.BackupUiIntegrationTests.ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity [FAIL]
+  Failed ReadJournal.UnitTest.BackupUiIntegrationTests.ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity [1 s]
+  Error Message:
+   System.NullReferenceException : Object reference not set to an instance of an object.
+  Stack Trace:
+     at ReadJournal.Library.ViewModels.ReadingRecordEditViewModel.SetParameter(Object parameter) in /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs:line 19
+   at ReadJournal.Library.ViewModels.ViewModelBase.InvalidateDataSet() in /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ViewModelBase.cs:line 28
+   at ReadJournal.Services.DataSetInvalidationService.ResetViews() in /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs:line 18
+   at ReadJournal.Services.DataSetInvalidationService.InvalidateAsync(CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs:line 12
+   at ReadJournal.UnitTest.BackupUiIntegrationTests.<>c.<<ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity>b__2_0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/BackupUiIntegrationTests.cs:line 41
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P3/p3-ui-diagnostic.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: < 1 ms - ReadJournal.UnitTest.dll (net8.0)

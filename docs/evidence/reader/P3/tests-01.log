@@ -1,0 +1,225 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+/workspace/FullStackWork/Code/ReadJournal.UnitTest/ExtendedBusinessTests.cs(80,21): warning CS0649: Field 'ExtendedBusinessTests.TestFiles.FailAutomatic' is never assigned to, and will always have its default value false [/workspace/FullStackWork/Code/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj]
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.80]     ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact [FAIL]
+[xUnit.net 00:00:00.84]     ReadJournal.UnitTest.ReaderBackupCoordinationTests.RestoreBlocksOrdinaryWritesThenRejectsTheirCapturedOldEpoch [FAIL]
+  Failed ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact [138 ms]
+  Error Message:
+   Assert.Empty() Failure
+Expected: <empty>
+Actual:   "StorageFailure：恢复事务校验失败。"
+  Stack Trace:
+     at ReadJournal.UnitTest.RestoreConcurrencyTests.FavoriteMustFinishBeforeEnteringRestoreAndRestoredFieldsRemainIntact() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs:line 103
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ReaderBackupCoordinationTests.RestoreBlocksOrdinaryWritesThenRejectsTheirCapturedOldEpoch [15 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.UnitTest.ReaderBackupCoordinationTests.RestoreBlocksOrdinaryWritesThenRejectsTheirCapturedOldEpoch() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderBackupCoordinationTests.cs:line 19
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:00.90]     ReadJournal.UnitTest.ReaderBaselineFixtureTests.FrozenJsonRoundTripsSparseIdsAndKeepsHistoricalPlanProtection [FAIL]
+  Failed ReadJournal.UnitTest.ReaderBaselineFixtureTests.FrozenJsonRoundTripsSparseIdsAndKeepsHistoricalPlanProtection [12 ms]
+  Error Message:
+   System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+   at ReadJournal.UnitTest.ReaderBaselineFixtureTests.FrozenJsonRoundTripsSparseIdsAndKeepsHistoricalPlanProtection() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderBaselineFixtureTests.cs:line 69
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:01.11]     ReadJournal.UnitTest.ReaderStateTests.LegacyJsonUpgradeRegeneratesIdentityAndCannotSilentlyDropEbookData [FAIL]
+  Failed ReadJournal.UnitTest.ReaderStateTests.LegacyJsonUpgradeRegeneratesIdentityAndCannotSilentlyDropEbookData [9 ms]
+  Error Message:
+   Assert.Throws() Failure
+Expected: typeof(System.InvalidOperationException)
+Actual:   typeof(System.ArgumentException): 请将备份保存到书库目录外或 backups 目录。
+---- System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+----- Inner Stack Trace -----
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+[xUnit.net 00:00:01.54]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "increase-pages") [FAIL]
+[xUnit.net 00:00:01.55]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "edit-record") [FAIL]
+[xUnit.net 00:00:02.32]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "delete-record") [FAIL]
+[xUnit.net 00:00:02.34]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "move-record") [FAIL]
+[xUnit.net 00:00:02.38]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansAllowSafeChangesAndRetainHistoryThroughBackup [FAIL]
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "increase-pages") [13 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.Library.Services.BackupService.RestoreAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 23
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.RestoreLegacyCompletedPlansAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 123
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(String operation) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 54
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "edit-record") [8 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.Library.Services.BackupService.RestoreAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 23
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.RestoreLegacyCompletedPlansAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 123
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(String operation) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 54
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "delete-record") [772 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.Library.Services.BackupService.RestoreAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 23
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.RestoreLegacyCompletedPlansAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 123
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(String operation) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 54
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(operation: "move-record") [21 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.Library.Services.BackupService.RestoreAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 23
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.RestoreLegacyCompletedPlansAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 123
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansRejectInvalidatingChangesWithoutPartialWrites(String operation) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 54
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansAllowSafeChangesAndRetainHistoryThroughBackup [36 ms]
+  Error Message:
+   System.InvalidOperationException : StorageFailure：恢复事务校验失败。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.BackupDataStore.Replace(SQLiteConnection c, BackupDataV2 data, Guid restoreId) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs:line 47
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.<>c__DisplayClass14_0.<RestoreAsync>b__4(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 101
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_1`1.<ExecuteLeasedAsync>b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.<>c__DisplayClass26_0`1.<ExecuteLeasedAsync>b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 85
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 82
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 99
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 137
+   at ReadJournal.Library.Services.Backup.CompleteBackupService.RestoreAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 140
+   at ReadJournal.Library.Services.BackupService.RestoreAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 23
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.RestoreLegacyCompletedPlansAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 123
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.LegacyCompletedPlansAllowSafeChangesAndRetainHistoryThroughBackup() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 78
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:02.42]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation [FAIL]
+[xUnit.net 00:00:02.43]     ReadJournal.UnitTest.PlanConsistencyRegressionTests.ConcurrentPlanSavesLeaveOnePlanAndRestorableBackup [FAIL]
+[xUnit.net 00:00:03.36]     ReadJournal.UnitTest.ExtendedBusinessTests.StatisticsDemoAndBackupRoundTripPreserveIdsAndPreferences [FAIL]
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation [13 ms]
+  Error Message:
+   System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.ExportSnapshotAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 137
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.AssertBackupRoundTripAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 141
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.BackupExportedAfterLegalUiOperationsMustPassOwnValidation() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 43
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.PlanConsistencyRegressionTests.ConcurrentPlanSavesLeaveOnePlanAndRestorableBackup [13 ms]
+  Error Message:
+   System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.ExportSnapshotAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 137
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.AssertBackupRoundTripAsync() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 141
+   at ReadJournal.UnitTest.PlanConsistencyRegressionTests.ConcurrentPlanSavesLeaveOnePlanAndRestorableBackup() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs:line 100
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ExtendedBusinessTests.StatisticsDemoAndBackupRoundTripPreserveIdsAndPreferences [14 ms]
+  Error Message:
+   System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+   at ReadJournal.UnitTest.ExtendedBusinessTests.StatisticsDemoAndBackupRoundTripPreserveIdsAndPreferences() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ExtendedBusinessTests.cs:line 39
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:03.42]     ReadJournal.UnitTest.ExtendedBusinessTests.AutoBackupFailurePreventsReplacementAndSqliteFailureRollsBack [FAIL]
+  Failed ReadJournal.UnitTest.ExtendedBusinessTests.AutoBackupFailurePreventsReplacementAndSqliteFailureRollsBack [4 ms]
+  Error Message:
+   System.ArgumentException : 请将备份保存到书库目录外或 backups 目录。
+  Stack Trace:
+     at ReadJournal.Library.Services.Backup.CompleteBackupService.ExportAsync(String path, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs:line 36
+   at ReadJournal.Library.Services.BackupService.ExportAsync(String path) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/BackupService.cs:line 20
+   at ReadJournal.UnitTest.ExtendedBusinessTests.AutoBackupFailurePreventsReplacementAndSqliteFailureRollsBack() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ExtendedBusinessTests.cs:line 67
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P3/p3-first-regressions.trx
+
+Failed!  - Failed:    13, Passed:   111, Skipped:     0, Total:   124, Duration: 2 s - ReadJournal.UnitTest.dll (net8.0)

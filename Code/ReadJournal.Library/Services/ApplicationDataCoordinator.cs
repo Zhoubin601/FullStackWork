@@ -13,6 +13,8 @@ public sealed class ApplicationDataCoordinator : IApplicationDataCoordinator, ID
     private readonly HashSet<Guid> _readers = new();
     private int _operations;
     private bool _maintenance, _disposed;
+    private string? _recoveryRequired;
+    public void RequireRecovery(string reason) { lock (_sync) { _recoveryRequired = reason; Pulse(); } }
     private FileStream? _instanceLock;
     public ApplicationDataCoordinator(DataPaths paths) { _paths = paths; }
     private static TaskCompletionSource Signal() => new(TaskCreationOptions.RunContinuationsAsynchronously);
@@ -43,6 +45,7 @@ public sealed class ApplicationDataCoordinator : IApplicationDataCoordinator, ID
             lock (_sync)
             {
                 ObjectDisposedException.ThrowIf(_disposed, this); ct.ThrowIfCancellationRequested();
+                if (_recoveryRequired is not null) throw new InvalidOperationException(_recoveryRequired);
                 if (_epoch != expectedEpoch) throw new InvalidOperationException("StaleContext：数据集已改变，请重新打开。");
                 if (!_maintenance) { _operations++; return new OperationLease(this, _epoch); }
                 wait = _changed.Task;
@@ -61,6 +64,7 @@ public sealed class ApplicationDataCoordinator : IApplicationDataCoordinator, ID
             lock (_sync)
             {
                 ObjectDisposedException.ThrowIf(_disposed, this); ct.ThrowIfCancellationRequested();
+                if (_recoveryRequired is not null && kind != MaintenanceKind.Migration) throw new InvalidOperationException(_recoveryRequired);
                 if (_readers.Count != 0) throw new InvalidOperationException("请先退出阅读器，再执行维护。");
                 _maintenance = started = true; Pulse();
             }
@@ -88,6 +92,7 @@ public sealed class ApplicationDataCoordinator : IApplicationDataCoordinator, ID
         lock (_sync)
         {
             ObjectDisposedException.ThrowIf(_disposed, this); ct.ThrowIfCancellationRequested();
+            if (_recoveryRequired is not null) throw new InvalidOperationException(_recoveryRequired);
             if (_maintenance) throw new InvalidOperationException("维护正在进行，不能打开阅读器。");
             if (identity.Epoch != _epoch) throw new InvalidOperationException("StaleContext：数据集已改变。");
             if (identity.BookId <= 0 || identity.BookUid == Guid.Empty || identity.ReaderInstanceId == Guid.Empty || identity.ParameterVersion < 0)

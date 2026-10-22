@@ -21,5 +21,6 @@ public partial class QuoteListViewModel : ViewModelBase
         DeleteQuoteCommand = new AsyncRelayCommand<QuoteItem>(q => RunAsync(async () => { if (q != null && await alert.ConfirmAsync("删除书摘", "确定删除这条书摘吗？")) { await quotes.DeleteAsync(q.Quote.Id); await LoadAsync(); } }));
         ToggleFavoriteCommand = new AsyncRelayCommand<QuoteItem>(q => RunAsync(async () => { if (q == null) return; await quotes.ToggleFavoriteAsync(q.Quote.Id); await LoadAsync(); }));
     }
-    protected override async Task LoadAsync() { QuotesList = await _quotes.SearchAsync(Query, FavoritesOnly); IsEmpty = QuotesList.Count == 0; }
+    protected override async Task LoadAsync() { var version = ParameterVersion; var list = await _quotes.SearchAsync(Query, FavoritesOnly); if (version != ParameterVersion) return; QuotesList = list; IsEmpty = QuotesList.Count == 0; }
+    public override void InvalidateDataSet() { base.InvalidateDataSet(); QuotesList = []; IsEmpty = true; }
 }

@@ -124,5 +124,6 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
     { Dispatcher.UIThread.VerifyAccess(); var entry = Get(page.Layout); return (entry.Native, NativePage(entry, page), entry.Settings); }
     public Task ReleaseAsync(LayoutHandle layout) => Ui(() =>
     { if (_layouts.TryGetValue(layout.Id, out var entry)) { if (entry.Handle != layout) throw new ArgumentException("布局文档不一致。"); _layouts.Remove(layout.Id); entry.Native.Dispose(); } return true; });
+    public Task ReleaseAllAsync() => Ui(() => { Dispose(); return true; });
     public void Dispose() { Dispatcher.UIThread.VerifyAccess(); foreach (var entry in _layouts.Values) entry.Native.Dispose(); _layouts.Clear(); }
 }

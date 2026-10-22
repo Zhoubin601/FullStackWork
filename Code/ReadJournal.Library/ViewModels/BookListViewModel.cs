@@ -29,9 +29,13 @@ public partial class BookListViewModel : ViewModelBase
     }
     protected override async Task LoadAsync()
     {
+        var version = ParameterVersion;
         var result = await _books.SearchAsync(Query, State, _page, 10);
+        if (version != ParameterVersion) return;
         var pages = Math.Max(1, (result.TotalCount + 9) / 10);
         if (_page > pages) { _page = pages; result = await _books.SearchAsync(Query, State, _page, 10); }
+        if (version != ParameterVersion) return;
         BooksPage = result.Items; IsEmpty = result.TotalCount == 0; PageText = $"第 {_page}/{pages} 页 · 共 {result.TotalCount} 本";
     }
+    public override void InvalidateDataSet() { base.InvalidateDataSet(); BooksPage = []; PageText = ""; IsEmpty = true; _page = 1; }
 }

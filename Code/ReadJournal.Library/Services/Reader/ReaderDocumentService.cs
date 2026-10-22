@@ -119,6 +119,7 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         }
         catch (ArgumentException ex) { return new(false, null, ex.Message); }
     }
+    public Task ReleaseAllAsync() { lock (_sync) _documents.Clear(); return Task.CompletedTask; }
     public Task ReleaseAsync(DocumentKey document) { lock (_sync) _documents.Remove(document); return Task.CompletedTask; }
     internal static string Hash(string text) => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(text))).ToLowerInvariant();
 }

@@ -1,0 +1,84 @@
+{
+  "phase": "P3",
+  "date": "2026-10-22",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "dotnetSdk": "8.0.424",
+  "runtime": "8.0.30",
+  "Avalonia": "11.0.10",
+  "p2PushedSha": "8696045c6361e1670ca55e05e816526b7d81c0f3",
+  "workspaceAndCleanTests": {
+    "p3-percent-validated.trx": {
+      "total": "169",
+      "executed": "169",
+      "passed": "169",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "p3-reviewed-clean-source.trx": {
+      "total": "169",
+      "executed": "169",
+      "passed": "169",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "newTests": 45,
+  "preservedP2Tests": 124,
+  "crashProbe": "crash-probe-reviewed/probe.json",
+  "actualKilledProcessCases": 4,
+  "damagedJournalBlockedAndPreserved": {
+    "blocked": true,
+    "diagnosis": "RecoveryRequired：恢复日志无法确认，请保留两套数据及自动备份，勿删除 operations/staging/trash/backups。",
+    "preservedManagedFiles": 5,
+    "preservedTrashFiles": 5,
+    "allFilesUnchanged": true,
+    "databaseRowsUnchanged": true
+  },
+  "desktopVerification": "ui-verification-final.json",
+  "finalDesktopNormalCloses": 3,
+  "defaultDataDirectoryWritten": false,
+  "bindingDiagnosticsInFinalAppLogs": 0,
+  "sourcePackage": {
+    "Path": "/tmp/readjournal-p3-reviewed-source.zip",
+    "Bytes": 199883,
+    "Files": 159,
+    "Sha256": "3dd1b1c732836b92a738d6f3be4b5d2a2d771f24e380485bb9b20993529e05a1"
+  },
+  "dependencySource": "Locked NuGet restore using existing package cache; no claim that first restore works offline.",
+  "retainedWarnings": [
+    "Clean build NETSDK1206: old Alpine RID in fixed SQLite package",
+    "Linux desktop missing session DBus/session manager and blacklisted llvmpipe OpenGL: actual software-rendered window used"
+  ],
+  "windowsValidated": false,
+  "apiCalls": 0,
+  "p4Started": false,
+  "p3Pushed": false,
+  "rawOutputReferenceFrozenFixturesChanged": false,
+  "acceptedDesktopFolders": [
+    "ui-accepted",
+    "ui-clean-accepted"
+  ],
+  "retainedDiagnosticNormalCloses": 1
+}

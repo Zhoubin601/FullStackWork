@@ -20,8 +20,12 @@ public partial class OverviewViewModel : ViewModelBase
     }
     protected override async Task LoadAsync()
     {
-        Summary = (await _statistics.GetAsync()).Summary; ReadingBooks = (await _books.SearchAsync("", "在读", 1, 5)).Items;
-        RecentRecords = await _records.GetRecentSummariesAsync(5);
-        PendingPlans = (await _plans.GetAllAsync()).Where(x => x.State != "已完成").Take(5).ToArray();
+        var version = ParameterVersion;
+        var summary = (await _statistics.GetAsync()).Summary; var books = (await _books.SearchAsync("", "在读", 1, 5)).Items;
+        var records = await _records.GetRecentSummariesAsync(5);
+        var plans = (await _plans.GetAllAsync()).Where(x => x.State != "已完成").Take(5).ToArray();
+        if (version != ParameterVersion) return;
+        Summary = summary; ReadingBooks = books; RecentRecords = records; PendingPlans = plans;
     }
+    public override void InvalidateDataSet() { base.InvalidateDataSet(); Summary = ""; ReadingBooks = []; RecentRecords = []; PendingPlans = []; }
 }

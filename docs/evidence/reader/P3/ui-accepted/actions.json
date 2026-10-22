@@ -1,0 +1,141 @@
+[
+  {
+    "op": "capture",
+    "name": "01-initial-b"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "02-settings"
+  },
+  {
+    "op": "click",
+    "x": 390,
+    "y": 451
+  },
+  {
+    "op": "capture",
+    "name": "03-export-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "/tmp/readjournal-p3-ui-final/export.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "04-exported"
+  },
+  {
+    "op": "click",
+    "x": 550,
+    "y": 452
+  },
+  {
+    "op": "capture",
+    "name": "05-restore-picker"
+  },
+  {
+    "op": "click",
+    "x": 1082,
+    "y": 774
+  },
+  {
+    "op": "capture",
+    "name": "06-zip-json-filter"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Escape"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "07-location-entry"
+  },
+  {
+    "op": "type",
+    "text": "/tmp/readjournal-p3-ui-final/target.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "08-input-selected"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "09-full-replacement-confirmation"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 484
+  },
+  {
+    "op": "capture",
+    "name": "10-restore-success"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "11-reopened-overview-a"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "12-reopened-library-a"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

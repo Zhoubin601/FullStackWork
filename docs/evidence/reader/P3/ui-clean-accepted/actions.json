@@ -1,0 +1,23 @@
+[
+  {
+    "op": "capture",
+    "name": "01-clean-start"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "02-clean-library-stable"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  }
+]

@@ -65,9 +65,9 @@ public class ReaderBaselineFixtureTests : IDisposable
         var originalBytes = await File.ReadAllBytesAsync(Fixture("schema1.json"));
         await backup.RestoreAsync(Fixture("schema1.json"));
         Assert.Equal(Canonical(Expected()), Canonical(await Snapshot(database)));
-        var exportPath = Path.Combine(_directory, "export.json");
+        var exportPath = Path.Combine(_directory, "export.zip");
         await backup.ExportAsync(exportPath);
-        Assert.Equal(Canonical(Expected()), Canonical(JsonSerializer.Deserialize<BackupDocument>(await File.ReadAllTextAsync(exportPath))!));
+        Assert.Equal(Canonical(Expected()), Canonical(ReaderBackupTestData.Legacy(exportPath)));
         await new BookStorage(database, reading).DeleteAsync(11);
         await backup.RestoreAsync(exportPath);
         Assert.Equal(Canonical(Expected()), Canonical(await Snapshot(database)));

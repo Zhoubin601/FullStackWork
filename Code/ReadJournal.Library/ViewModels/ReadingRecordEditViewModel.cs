@@ -29,4 +29,5 @@ public partial class ReadingRecordEditViewModel : EditViewModelBase
         if (version == ParameterVersion) _record = record;
     }
     protected override void AfterSaved() => Saved?.Invoke(this, EventArgs.Empty);
+    public override void InvalidateDataSet() => SetParameter(new ReadingRecord());
 }

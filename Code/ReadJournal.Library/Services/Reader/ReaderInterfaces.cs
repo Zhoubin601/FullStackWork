@@ -24,6 +24,7 @@ public interface IEbookLibraryService
 
 public interface IReaderDocumentService
 {
+    Task ReleaseAllAsync();
     Task<ReaderDocument> DescribeAsync(DocumentKey document, CancellationToken ct);
     Task<ReaderDocument> OpenAsync(
         ReaderOpenIdentity identity, CancellationToken ct);
@@ -43,6 +44,7 @@ public interface IReaderDocumentService
 
 public interface IReaderLayoutService
 {
+    Task ReleaseAllAsync();
     Task<LayoutHandle> CreateAsync(
         DocumentKey document, LayoutSettings settings,
         ReaderPosition anchor, CancellationToken ct);
@@ -195,4 +197,9 @@ public interface ICompleteBackupService
 public interface IOperationRecoveryService
 {
     Task RecoverBeforeBusinessReadyAsync(CancellationToken ct);
+}
+
+public interface IDataSetInvalidationService
+{
+    Task InvalidateAsync(CancellationToken ct);
 }

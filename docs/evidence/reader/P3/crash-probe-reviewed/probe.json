@@ -1,0 +1,160 @@
+{
+  "platform": "Unix 6.18.55.0",
+  "runtime": "8.0.30",
+  "sourceDataSha256": "24c60a7f37644537755debf3fbac65cad6a68971f9750c0a9c14ef0d940141df",
+  "crashCases": [
+    {
+      "point": "restore.after-isolate",
+      "termination": "parent Process.Kill after checkpoint signal (actual process interruption)",
+      "childExit": 137,
+      "recovered": "complete_old",
+      "dataSha256": "bb03081b455a362651190c0b31d2d6a92a8a11e77878d0feda82c2ea5d52d536",
+      "fileSet": [
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/one.utf16",
+          "Bytes": 42,
+          "Sha256": "6c8314591e8b2cadee64ad488c25d915cfaa5590240eadf0362b2a8828973804"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/two.utf16",
+          "Bytes": 20,
+          "Sha256": "605a95ad92eba147a80d0a1a28005320c086a2c57a35884410a99ec7b28c5e19"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/document-v1.json",
+          "Bytes": 1274,
+          "Sha256": "8d629bc9b543b95d72b6ba61ccdb91b072f3468f3077cd6092077eee958b65d3"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/resources/pixel.png",
+          "Bytes": 68,
+          "Sha256": "bc8edffa8a82279b99cc3a8021ea2c820e765a0ffc8f16cfe1baae7d45c8af91"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/source.txt",
+          "Bytes": 90,
+          "Sha256": "f3c7093c12bedf6fa66daab6a8a08d59ce956f956fdb52ab917279826fb83c67"
+        }
+      ],
+      "integrity": "ok",
+      "lastRestoreId": ""
+    },
+    {
+      "point": "restore.after-install",
+      "termination": "parent Process.Kill after checkpoint signal (actual process interruption)",
+      "childExit": 137,
+      "recovered": "complete_old",
+      "dataSha256": "cc35ea382adc96d9b38234c5781fa76e78a147580ac8c5c8f224184e774ee828",
+      "fileSet": [
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/one.utf16",
+          "Bytes": 42,
+          "Sha256": "6c8314591e8b2cadee64ad488c25d915cfaa5590240eadf0362b2a8828973804"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/two.utf16",
+          "Bytes": 20,
+          "Sha256": "605a95ad92eba147a80d0a1a28005320c086a2c57a35884410a99ec7b28c5e19"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/document-v1.json",
+          "Bytes": 1274,
+          "Sha256": "8d629bc9b543b95d72b6ba61ccdb91b072f3468f3077cd6092077eee958b65d3"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/resources/pixel.png",
+          "Bytes": 68,
+          "Sha256": "bc8edffa8a82279b99cc3a8021ea2c820e765a0ffc8f16cfe1baae7d45c8af91"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/source.txt",
+          "Bytes": 90,
+          "Sha256": "f3c7093c12bedf6fa66daab6a8a08d59ce956f956fdb52ab917279826fb83c67"
+        }
+      ],
+      "integrity": "ok",
+      "lastRestoreId": ""
+    },
+    {
+      "point": "restore.in-transaction",
+      "termination": "parent Process.Kill after checkpoint signal (actual process interruption)",
+      "childExit": 137,
+      "recovered": "complete_old",
+      "dataSha256": "e0287238cb1fe4036c35ce029987b38d09e5bdee88bd72e68d5a515e86087ae7",
+      "fileSet": [
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/one.utf16",
+          "Bytes": 42,
+          "Sha256": "6c8314591e8b2cadee64ad488c25d915cfaa5590240eadf0362b2a8828973804"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/chapters/two.utf16",
+          "Bytes": 20,
+          "Sha256": "605a95ad92eba147a80d0a1a28005320c086a2c57a35884410a99ec7b28c5e19"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/document-v1.json",
+          "Bytes": 1274,
+          "Sha256": "8d629bc9b543b95d72b6ba61ccdb91b072f3468f3077cd6092077eee958b65d3"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/resources/pixel.png",
+          "Bytes": 68,
+          "Sha256": "bc8edffa8a82279b99cc3a8021ea2c820e765a0ffc8f16cfe1baae7d45c8af91"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000b/source.txt",
+          "Bytes": 90,
+          "Sha256": "f3c7093c12bedf6fa66daab6a8a08d59ce956f956fdb52ab917279826fb83c67"
+        }
+      ],
+      "integrity": "ok",
+      "lastRestoreId": ""
+    },
+    {
+      "point": "restore.after-commit",
+      "termination": "parent Process.Kill after checkpoint signal (actual process interruption)",
+      "childExit": 137,
+      "recovered": "complete_new",
+      "dataSha256": "24c60a7f37644537755debf3fbac65cad6a68971f9750c0a9c14ef0d940141df",
+      "fileSet": [
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000a/chapters/one.utf16",
+          "Bytes": 42,
+          "Sha256": "a4671ab75c050f17dc09f657bff4244a164e2a2eefa499d0646e9aa91d6e3377"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000a/chapters/two.utf16",
+          "Bytes": 20,
+          "Sha256": "605a95ad92eba147a80d0a1a28005320c086a2c57a35884410a99ec7b28c5e19"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000a/document-v1.json",
+          "Bytes": 1274,
+          "Sha256": "1fdecd4d8999f5d45837c1ea7e14353fb191344557cdb419abc9384785c723e4"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000a/resources/pixel.png",
+          "Bytes": 68,
+          "Sha256": "bc8edffa8a82279b99cc3a8021ea2c820e765a0ffc8f16cfe1baae7d45c8af91"
+        },
+        {
+          "Path": "books/managed/00000000-0000-0000-0000-00000000000a/source.txt",
+          "Bytes": 90,
+          "Sha256": "e599fa9910cbd9f3015ddc6c028c679ab35a2d399003a9b69db4fc20edebe13c"
+        }
+      ],
+      "integrity": "ok",
+      "lastRestoreId": "f75e64e0-368f-4945-9660-7339f6321282"
+    }
+  ],
+  "insufficientJournal": {
+    "blocked": true,
+    "diagnosis": "RecoveryRequired\uFF1A\u6062\u590D\u65E5\u5FD7\u65E0\u6CD5\u786E\u8BA4\uFF0C\u8BF7\u4FDD\u7559\u4E24\u5957\u6570\u636E\u53CA\u81EA\u52A8\u5907\u4EFD\uFF0C\u52FF\u5220\u9664 operations/staging/trash/backups\u3002",
+    "preservedManagedFiles": 5,
+    "preservedTrashFiles": 5,
+    "allFilesUnchanged": true,
+    "databaseRowsUnchanged": true
+  },
+  "passed": true
+}

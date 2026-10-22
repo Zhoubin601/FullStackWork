@@ -62,4 +62,5 @@ public partial class BookDetailViewModel : ViewModelBase
         Progress = progress ?? throw new InvalidOperationException("书籍已不存在，请返回书库。"); OnPropertyChanged(nameof(Book));
         RecordsList = records; QuotesList = quotes; PlansList = plans;
     }
+    public override void InvalidateDataSet() { SetParameter(0); }
 }

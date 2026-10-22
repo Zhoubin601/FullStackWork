@@ -7,9 +7,10 @@ namespace ReadJournal.Services;
 public class FileService : IFileService
 {
     private static Window Owner => ((IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!).MainWindow!;
+    private static FilePickerFileType ZipType => new("完整 ZIP 备份") { Patterns = ["*.zip"] };
     private static FilePickerFileType JsonType => new("JSON 备份") { Patterns = ["*.json"] };
-    public async Task<string?> ChooseSavePathAsync() { var file = await Owner.StorageProvider.SaveFilePickerAsync(new() { Title = "保存阅记备份", SuggestedFileName = "阅记备份-" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".json", DefaultExtension = "json", FileTypeChoices = [JsonType] }); return file?.TryGetLocalPath(); }
-    public async Task<string?> ChooseOpenPathAsync() { var files = await Owner.StorageProvider.OpenFilePickerAsync(new() { Title = "选择阅记备份", AllowMultiple = false, FileTypeFilter = [JsonType] }); return files.FirstOrDefault()?.TryGetLocalPath(); }
+    public async Task<string?> ChooseSavePathAsync() { var file = await Owner.StorageProvider.SaveFilePickerAsync(new() { Title = "保存阅记备份", SuggestedFileName = "阅记备份-" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".zip", DefaultExtension = "zip", FileTypeChoices = [ZipType] }); return file?.TryGetLocalPath(); }
+    public async Task<string?> ChooseOpenPathAsync() { var files = await Owner.StorageProvider.OpenFilePickerAsync(new() { Title = "选择阅记备份", AllowMultiple = false, FileTypeFilter = [ZipType, JsonType] }); return files.FirstOrDefault()?.TryGetLocalPath(); }
     public Task<string> ReadTextAsync(string path) => File.ReadAllTextAsync(path);
     public async Task WriteTextAsync(string path, string contents)
     {

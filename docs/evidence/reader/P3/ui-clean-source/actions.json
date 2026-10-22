@@ -1,0 +1,23 @@
+[
+  {
+    "op": "capture",
+    "name": "01-clean-source-reopened-overview-a"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "02-clean-source-library-a"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  }
+]
