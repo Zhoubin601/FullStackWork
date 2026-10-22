@@ -237,3 +237,7 @@ bin、obj、.git、IDE 状态、缓存、TestResults、覆盖率、运行数据�
 ## 2026-10-22 当前执行进度（优先于历史未开始状态）
 
 P0 已按用户“推送后继续p1”推送 feature/reader-native，远端 8465e49 已核验。P1 独立原生分页实验通过，代码/证据提交 bd6eb50；实验14项、生产96项与Linux三档实际缩放通过，验收见 docs/evidence/reader/P1/acceptance.md。用户明确“你可以用linux，windows保留”，Windows 补验保留未测、不阻塞当前阶段。P1 本地提交未推送；P2 下一阶段，尚未开始。原始资料、Code 与正式交付未因 P1 改动。
+
+## 2026-10-22 P2 当前进度（优先于前条）
+
+用户“推送，然后开始p2”已执行：P1远端feature/reader-native=4b336d3；P2实现/证据本地9b24b07，七项通过。工作区与白名单独立源码各124项通过，4次实际窗口启动/正常关闭，旧字段无损、迁移回滚/锁/代际通过。详见docs/evidence/reader/P2/acceptance.md和reader-p2-contract-addendum.md。P3尚未开始，P2未再次推送；导入与Reader入口关闭，Windows保留未测。

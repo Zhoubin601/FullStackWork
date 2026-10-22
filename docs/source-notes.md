@@ -241,3 +241,11 @@
 - 实测来源：docs/evidence/reader/P1 下 prototype-linux-fontfix.trx（14/14）、production-baseline.trx（96/96）、linux-fontfix-scale-{1,1.5,2}/native/probe.json 与真实窗口截图。实现提交 bd6eb50。
 - 外部诊断来源名称 Avalonia 官方 11.0.10 X11 实现；链接 https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Clipboard.cs 、同目录 X11Atoms.cs / X11Platform.cs；引用日期2026-10-22。准确 URL/blob SHA 见 P1/environment-and-results.json，未复制实现。只用于裸 Xvfb atom 缺失问题的根因验证。
 - .NET/NuGet 与 Debian X11/Openbox/xclip 是实验运行依赖，版本/平台记录随证据保留。零真实 DeepSeek 调用，无生产数据库修改。
+
+## 2026-10-22 P2 开始
+
+来源为用户最新“推送，然后开始p2”、既有规划三件套、P0冻结fixtures和P1真实实验。P1远端4b336d3已核验。P2实施计划见reader-p2-plan.md；当前尚在实施，不提前宣布验收通过。
+
+## 2026-10-22 P2 验收来源补充
+
+当前Code提交9b24b07；P0冻结SQL/JSON未修改。最终证据为P2/p2-reviewed-workspace.trx与p2-reviewed-clean-source.trx（各124/124）、process-accepted/probe.json（字段/SQL约束/独立子进程）、ui-accepted/desktop-smoke.json与截图（schema2真实窗口迁移/重开）。145文件临时白名单源码核验摘要reviewed-package.json，未覆盖正式交付。中间失败和版本结果均保留。无新增外部研究资料或DeepSeek调用；使用cloud-environment-runtime核对本环境与NuGet依赖可用性。

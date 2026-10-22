@@ -87,3 +87,7 @@
 用户明确“推送后继续p1”，已正常推送 feature/reader-native 并设置上游。git ls-remote 再次读取真实远端 refs/heads/feature/reader-native = 8465e495496702054474b1f03c45ddf96c90856a，与 P0 验收提交一致，未改 origin/main。
 
 随后 P1 实现与证据本地提交 bd6eb50；阶段验收另行本地文档提交，本轮 P1 未再推送。当前平台按用户“你可以用linux，windows保留”完成 Linux 验收；完整证据在 docs/evidence/reader/P1/acceptance.md。
+
+## 2026-10-22 P1 推送完成与 P2 本地提交
+
+用户“推送，然后开始p2”授权已执行。先fetch，再正常推送feature/reader-native（8465e49→4b336d3）；git ls-remote核验refs/heads/feature/reader-native=4b336d372c40526a8c4f482ba2c40c5c3da262fa，未强推/未改main。随后P2实现、回归、迁移/进程/桌面证据本地提交9b24b0731eac3818ee6bab02b70d2bc32b87e279；验收及进度另行文档提交。当前P2未推送，工作区最终以git status核对。

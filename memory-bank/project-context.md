@@ -84,3 +84,11 @@
 - P1 独立原生分页实验通过，代码及证据本地提交 bd6eb50；14项实验与96项原生产测试通过，Linux实际1/1.5/2缩放与真实输入/剪贴板/窗口/字体检查通过，详见docs/reader-execution.md和docs/evidence/reader/P1/acceptance.md。P1 尚未推送。
 - 用户明确“你可以用linux，windows保留”：当前阶段使用Linux验收，Windows检查工具保留且未运行，不阻塞当前P1/P2；不可宣称Windows兼容已通过。
 - P2 尚未开始，下一步正式契约/兼容读模型/schema2；P1不接入生产Code/SQLite/AI。保留老师DI/单例/三层导航，raw和既有正式交付不改。后续ResetProgress会话释放及AI不可变提交回执两项契约需补；真实API至P9前主动通知。
+
+## 当前阅读器扩展状态：P2已通过（2026-10-22，优先于上条）
+
+- 按用户“推送，然后开始p2”，P1已推至origin/feature/reader-native，远端SHA4b336d372c40526a8c4f482ba2c40c5c3da262fa；main未改。
+- P2实现/证据本地9b24b07，七项通过；生产schema2，最终工作区和145文件白名单独立源码各124/124（原96+新增28），4次真实Linux启动/正常关闭、旧字段保持、三处迁移回滚、独立进程写入互斥/崩溃锁释放及代际通过。详见docs/evidence/reader/P2/acceptance.md。P2尚未推送。
+- 正式契约补充见docs/reader-p2-contract-addendum.md：懒分页块引用+可空章内页号、DescribeAsync、显式租约SQL重载、CurrentPercent标量、AI不可变回执。原DI/单例/导航保留。
+- P3尚未开始；完整ZIP/日志恢复通过前不启用导入，Reader正式入口继续关闭。P2文本目录/布局为受限纯文本基础；受管文件/P5会话与输入/P7图片/P8批次按阶段落实。旧JSON纯手动可用，含电子书/定位数据时明确拒绝旧格式以免丢失。
+- Linux当前验收，Windows保留未测；raw/正式交付/参考/冻结fixtures不变，P9前主动通知真实API。
