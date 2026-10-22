@@ -2,17 +2,18 @@ using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
 using ReadJournal.Library.Services;
 using ReadJournal.Library.Models;
+using ReadJournal.Library.Models.Reader;
 namespace ReadJournal.Library.ViewModels;
 public partial class BookEditViewModel : EditViewModelBase
 {
-    private readonly IBookStorage _books; private int _id;
+    private readonly IBookStorage _books; private int _id; private Guid _bookUid = Guid.NewGuid(); private BookKind _kind;
     [ObservableProperty] private string _title = "";
     [ObservableProperty] private string _author = "";
     [ObservableProperty] private string _category = "";
     [ObservableProperty] private string _totalPages = "";
     [ObservableProperty] private string _description = "";
     public BookEditViewModel(IBookStorage books, IAlertService alert, MainViewModel main) : base(alert, main) { _books = books; }
-    public override void SetParameter(object parameter) { base.SetParameter(parameter); _id = parameter is int id ? id : 0; Title = Author = Category = Description = TotalPages = ""; AcceptChanges(); }
+    public override void SetParameter(object parameter) { base.SetParameter(parameter); _id = parameter is int id ? id : 0; _bookUid = Guid.NewGuid(); _kind = BookKind.Manual; Title = Author = Category = Description = TotalPages = ""; AcceptChanges(); }
     protected override async Task LoadAsync()
     {
         if (HasLoaded && IsDirty) return; var version = ParameterVersion; var id = _id;
@@ -21,6 +22,7 @@ public partial class BookEditViewModel : EditViewModelBase
         var book = await _books.GetAsync(id);
         if (version != ParameterVersion) return;
         if (book is null) throw new InvalidOperationException("书籍已不存在。");
+        _bookUid = book.BookUid; _kind = book.Kind;
         var loaded = new[] { book.Title, book.Author, book.Category, book.TotalPages.ToString(), book.Description };
         // Hydrate untouched fields while preserving anything typed during the database read.
         if (Title == initial[0]) Title = loaded[0];
@@ -36,7 +38,7 @@ public partial class BookEditViewModel : EditViewModelBase
     {
         if (!int.TryParse(TotalPages, out var pages)) throw new ArgumentException("总页数必须为正整数。");
         var version = ParameterVersion;
-        var id = await _books.SaveAsync(new Book { Id = _id, Title = Title, Author = Author, Category = Category, TotalPages = pages, Description = Description });
+        var id = await _books.SaveAsync(new Book { Id = _id, BookUid = _bookUid, Kind = _kind, Title = Title, Author = Author, Category = Category, TotalPages = pages, Description = Description });
         if (version == ParameterVersion) _id = id;
     }
 }

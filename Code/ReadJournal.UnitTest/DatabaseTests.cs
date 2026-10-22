@@ -11,8 +11,8 @@ public class DatabaseTests : IDisposable
         var paths = new DataPaths(_directory);
         using (var db = new DatabaseService(paths))
         {
-            await db.InitializeAsync(); await db.InitializeAsync();
-            Assert.Equal(1, await db.ReadAsync(c => c.ExecuteScalar<int>("PRAGMA user_version")));
+            await Task.WhenAll(Enumerable.Range(0, 16).Select(_ => db.InitializeAsync())); await db.InitializeAsync();
+            Assert.Equal(2, await db.ReadAsync(c => c.ExecuteScalar<int>("PRAGMA user_version")));
             await db.WriteAsync(c => c.Insert(new Book { Title = "持久化", TotalPages = 100 }));
         }
         using (var db = new DatabaseService(paths)) { await db.InitializeAsync(); Assert.Equal("持久化", await db.ReadAsync(c => c.Table<Book>().Single().Title)); }

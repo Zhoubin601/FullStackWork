@@ -1,0 +1,10 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+/workspace/FullStackWork/Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs(15,146): error CS1061: 'Task<T>' does not contain a definition for 'GetTask' and no accessible extension method 'GetTask' accepting a first argument of type 'Task<T>' could be found (are you missing a using directive or an assembly reference?) [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]
+
+Build FAILED.
+
+/workspace/FullStackWork/Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs(15,146): error CS1061: 'Task<T>' does not contain a definition for 'GetTask' and no accessible extension method 'GetTask' accepting a first argument of type 'Task<T>' could be found (are you missing a using directive or an assembly reference?) [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:05.08

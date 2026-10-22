@@ -3,6 +3,7 @@ namespace ReadJournal.Library.Models;
 [Table("Quote")]
 public class Quote
 {
+    [System.Text.Json.Serialization.JsonIgnore] public long Revision { get; set; }
     [System.Text.Json.Serialization.JsonRequired][PrimaryKey, AutoIncrement] public int Id { get; set; }
     [System.Text.Json.Serialization.JsonRequired][Indexed] public int BookId { get; set; }
     [System.Text.Json.Serialization.JsonRequired] public string Text { get; set; } = "";

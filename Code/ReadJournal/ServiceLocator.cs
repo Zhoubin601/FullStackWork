@@ -2,8 +2,10 @@ using Avalonia;
 using Avalonia.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using ReadJournal.Library.Services;
+using ReadJournal.Library.Services.Reader;
 using ReadJournal.Library.ViewModels;
 using ReadJournal.Services;
+using ReadJournal.Reader;
 namespace ReadJournal;
 public class ServiceLocator
 {
@@ -22,7 +24,18 @@ public class ServiceLocator
     {
         var serviceCollection = new ServiceCollection();
         serviceCollection.AddSingleton<DataPaths>();
+        serviceCollection.AddSingleton<ApplicationDataCoordinator>();
+        serviceCollection.AddSingleton<IApplicationDataCoordinator>(sp => sp.GetRequiredService<ApplicationDataCoordinator>());
+        serviceCollection.AddSingleton<DatabaseMigrationV2>();
         serviceCollection.AddSingleton<IDatabaseService, DatabaseService>();
+        serviceCollection.AddSingleton<IReadingStateCalculator, ReadingStateCalculator>();
+        serviceCollection.AddSingleton<BackupEntityValidator>();
+        serviceCollection.AddSingleton<BackupV1Adapter>();
+        serviceCollection.AddSingleton<IEbookProgressMaintenance, EbookProgressMaintenance>();
+        serviceCollection.AddSingleton<ReaderDocumentService>();
+        serviceCollection.AddSingleton<IReaderDocumentService>(sp => sp.GetRequiredService<ReaderDocumentService>());
+        serviceCollection.AddSingleton<AvaloniaReaderLayoutService>();
+        serviceCollection.AddSingleton<IReaderLayoutService>(sp => sp.GetRequiredService<AvaloniaReaderLayoutService>());
         serviceCollection.AddSingleton<IRootNavigationService, RootNavigationService>();
         serviceCollection.AddSingleton<IMenuNavigationService, MenuNavigationService>();
         serviceCollection.AddSingleton<IContentNavigationService, ContentNavigationService>();

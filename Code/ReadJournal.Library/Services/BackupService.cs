@@ -1,30 +1,59 @@
 using System.Text.Json;
 using ReadJournal.Library.Models;
 using SQLite;
+using ReadJournal.Library.Models.Reader;
+using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.Services;
 public class BackupService : IBackupService
 {
     private readonly IDatabaseService _database; private readonly IReadingService _reading; private readonly IFileService _files; private readonly DataPaths _paths;
+    private readonly IApplicationDataCoordinator? _coordinator;
     private static readonly JsonSerializerOptions Options = new() { WriteIndented = true };
-    public BackupService(IDatabaseService database, IReadingService reading, IFileService files, DataPaths paths) { _database = database; _reading = reading; _files = files; _paths = paths; }
-    private static BackupDocument Snapshot(SQLiteConnection c) => new() { Books = c.Table<Book>().ToList(), ReadingRecords = c.Table<ReadingRecord>().ToList(), Quotes = c.Table<Quote>().ToList(), ReadingPlans = c.Table<ReadingPlan>().ToList() };
-    public async Task ExportAsync(string path) { var doc = await _database.ReadAsync(Snapshot); await _files.WriteTextAsync(path, JsonSerializer.Serialize(doc, Options)); }
+    public BackupService(IDatabaseService database, IReadingService reading, IFileService files, DataPaths paths) { _database = database; _reading = reading; _files = files; _paths = paths; _coordinator = (database as DatabaseService)?.Coordinator; }
+    public BackupService(IDatabaseService database, IReadingService reading, IFileService files, DataPaths paths, IApplicationDataCoordinator coordinator) : this(database, reading, files, paths) { _coordinator = coordinator; }
+    private static BackupDocument Snapshot(SQLiteConnection c)
+    {
+        EnsureManualDataset(c);
+        return new() { Books = c.Table<Book>().ToList(), ReadingRecords = c.Table<ReadingRecord>().ToList(), Quotes = c.Table<Quote>().ToList(), ReadingPlans = c.Table<ReadingPlan>().ToList() };
+    }
+    private static void EnsureManualDataset(SQLiteConnection c)
+    {
+        if (c.Table<Book>().Any(x => x.Kind != BookKind.Manual) || c.Table<EbookFile>().Count() + c.Table<EbookProgress>().Count() + c.Table<EbookReadingSession>().Count() + c.Table<QuoteOrigin>().Count() + c.Table<AiGenerationBatch>().Count() != 0)
+            throw new InvalidOperationException("当前书库含电子书或定位数据，旧 JSON 备份不能完整保护它；需要完整 ZIP 备份，当前版本暂不支持。");
+    }
+    public async Task ExportAsync(string path)
+    {
+        await _database.InitializeAsync();
+        var coordinator = _coordinator ?? throw new InvalidOperationException("备份需要数据协调器。");
+        await using var maintenance = await coordinator.EnterMaintenanceAsync(MaintenanceKind.Backup, CancellationToken.None);
+        var doc = await _database.ReadAsync(maintenance, Snapshot);
+        await _files.WriteTextAsync(path, JsonSerializer.Serialize(doc, Options));
+    }
     public async Task<string> RestoreAsync(string path)
     {
         var doc = JsonSerializer.Deserialize<BackupDocument>(await _files.ReadTextAsync(path), Options) ?? throw new ArgumentException("备份内容为空。");
-        Validate(doc);
+        var upgraded = new BackupV1Adapter(new BackupEntityValidator(_reading)).Upgrade(doc);
+        doc.Books = upgraded.Books.Select(x => x.Book).ToList();
+        doc.Quotes = upgraded.Quotes.Select(x => x.Quote).ToList();
         var auto = Path.Combine(_paths.DirectoryPath, "auto-backup-" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + "-" + Guid.NewGuid().ToString("N") + ".json");
-        await _database.WriteAsync(c =>
+        await _database.InitializeAsync();
+        var coordinator = _coordinator ?? throw new InvalidOperationException("恢复需要数据协调器。");
+        await using var maintenance = await coordinator.EnterMaintenanceAsync(MaintenanceKind.Restore, CancellationToken.None);
+        var original = await _database.ReadAsync(maintenance, Snapshot);
+        // The maintenance lease protects the snapshot while file IO runs outside the SQL gate/transaction.
+        await _files.WriteTextAsync(auto, JsonSerializer.Serialize(original, Options));
+        Func<SQLiteConnection, bool> replace = c =>
         {
-            // 在同一串行边界捕获当前快照并写出自动备份，再进行事务替换，防止并发写入丢失。
-            // 此委托由数据库服务在工作线程执行；文件服务这里仅做文件 IO，不调用 UI。
-            _files.WriteTextAsync(auto, JsonSerializer.Serialize(Snapshot(c), Options)).GetAwaiter().GetResult();
+            EnsureManualDataset(c);
             c.DeleteAll<ReadingPlan>(); c.DeleteAll<Quote>(); c.DeleteAll<ReadingRecord>(); c.DeleteAll<Book>();
             Insert(c, doc); return true;
-        }); return auto;
+        };
+        await _database.WriteAsync(maintenance, replace); maintenance.CompleteReplacement();
+        return auto;
     }
     public Task LoadDemoAsync() => _database.WriteAsync(c =>
     {
+        EnsureManualDataset(c);
         if (c.Table<Book>().Count() + c.Table<ReadingRecord>().Count() + c.Table<Quote>().Count() + c.Table<ReadingPlan>().Count() != 0) throw new InvalidOperationException("演示数据仅可载入空业务库，已有数据不会混合导入。");
         var doc = DemoData.Create(); Validate(doc); Insert(c, doc); return true;
     });
@@ -36,18 +65,5 @@ public class BackupService : IBackupService
         foreach (var q in doc.Quotes) c.InsertOrReplace(q);
         foreach (var p in doc.ReadingPlans) c.InsertOrReplace(p);
     }
-    public void Validate(BackupDocument doc)
-    {
-        if (doc.FormatVersion != 1) throw new ArgumentException("不支持此备份格式版本。");
-        if (doc.Books is null || doc.ReadingRecords is null || doc.Quotes is null || doc.ReadingPlans is null) throw new ArgumentException("备份缺少实体集合。");
-        void Ids<T>(IEnumerable<T> items, Func<T, int> id) { var all = items.ToArray(); if (all.Any(x => x is null) || all.Select(id).Any(x => x <= 0) || all.Select(id).Distinct().Count() != all.Length) throw new ArgumentException("备份包含空实体、非法或重复 ID。"); }
-        Ids(doc.Books, b => b.Id); Ids(doc.ReadingRecords, r => r.Id); Ids(doc.Quotes, q => q.Id); Ids(doc.ReadingPlans, p => p.Id);
-        var books = doc.Books.ToDictionary(x => x.Id);
-        Book Parent(int id) => books.TryGetValue(id, out var book) ? book : throw new ArgumentException("备份包含孤立关联。");
-        foreach (var b in doc.Books) { _reading.ValidateBook(b, 0); if (b.Author is null || b.Category is null || b.Description is null || b.CreatedAt == default || b.UpdatedAt < b.CreatedAt) throw new ArgumentException("书籍字段或时间无效。"); }
-        foreach (var r in doc.ReadingRecords) _reading.ValidateRecord(r, Parent(r.BookId));
-        foreach (var q in doc.Quotes) { _reading.ValidateQuote(q, Parent(q.BookId)); if (q.Thoughts is null || q.CreatedAt == default || q.UpdatedAt < q.CreatedAt) throw new ArgumentException("书摘字段或时间无效。"); }
-        foreach (var p in doc.ReadingPlans) { Parent(p.BookId); if (p.StartDate == default || p.StartDate.Date > DateTime.Today || p.TargetDate.Date < p.StartDate.Date) throw new ArgumentException("计划日期无效。"); }
-        foreach (var group in doc.ReadingPlans.GroupBy(x => x.BookId)) ReadingPlanConsistency.Validate(_reading, Parent(group.Key), doc.ReadingRecords, group);
-    }
+    public void Validate(BackupDocument doc) => new BackupEntityValidator(_reading).ValidateV1(doc);
 }

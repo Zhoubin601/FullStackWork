@@ -31,7 +31,9 @@ def data_state(path):
     with sqlite3.connect(f'{path.as_uri()}?mode=ro', uri=True) as db:
         data = {t: db.execute(f'SELECT * FROM {t} ORDER BY Id').fetchall()
                 for t in ['Book', 'ReadingRecord', 'Quote', 'ReadingPlan']}
-        return {'schema': db.execute('PRAGMA user_version').fetchone()[0],
+        legacy = {t: db.execute(f"SELECT {','.join(row[1] for row in db.execute(f'PRAGMA table_info({t})') if row[1] not in ['BookUid','Kind','Revision'])} FROM {t} ORDER BY Id").fetchall()
+                  for t in ['Book', 'ReadingRecord', 'Quote', 'ReadingPlan']}
+        return {'legacy_field_sha256': hashlib.sha256(json.dumps(legacy, ensure_ascii=False).encode()).hexdigest(), 'schema': db.execute('PRAGMA user_version').fetchone()[0],
                 'integrity': db.execute('PRAGMA integrity_check').fetchone()[0],
                 'foreign_key_violations': db.execute('PRAGMA foreign_key_check').fetchall(),
                 'counts': {t: len(rows) for t, rows in data.items()},
@@ -128,11 +130,14 @@ def main(args):
                     if code != 0:
                         raise RuntimeError(f'{label}: nonzero close exit: {code}')
                     state = data_state(data / 'readjournal.sqlite3')
-                    assert state['schema'] == 1 and state['integrity'] == 'ok'
+                    assert state['schema'] == args.expected_schema and state['integrity'] == 'ok'
                     assert not state['foreign_key_violations']
                     assert state['counts'] == ({'Book': 0, 'ReadingRecord': 0, 'Quote': 0, 'ReadingPlan': 0} if scenario == 'empty' else {'Book': 3, 'ReadingRecord': 3, 'Quote': 2, 'ReadingPlan': 3})
                     if previous:
-                        assert state == previous, f'{label}: business fields changed on read-only startup'
+                        if previous['schema'] != args.expected_schema:
+                            assert state['legacy_field_sha256'] == previous['legacy_field_sha256'], f'{label}: migration changed legacy business fields'
+                        else:
+                            assert state == previous, f'{label}: business fields changed on read-only startup'
                     previous = state
                     results.append({'scenario': scenario, 'attempt': attempt, 'close_method': 'XTest Alt+F4 via Openbox (normal window close)', 'normal_close_exit_code': code, 'data': state, 'screenshot': f'{label}.png'})
                 finally:
@@ -159,4 +164,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['dotnet', 'xvfb', 'wm', 'app', 'fixture', 'work', 'evidence']:
         parser.add_argument('--' + name, required=True, type=Path)
+    parser.add_argument('--expected-schema', type=int, choices=[1, 2], default=1)
     main(parser.parse_args())

@@ -29,3 +29,6 @@ __pycache__/
 /docs/report/*.toc
 /docs/report/report.pdf
 /docs/report/report-text.txt
+
+# Runtime libraries created by reader process probes
+/docs/evidence/**/isolated-data/

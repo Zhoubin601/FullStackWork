@@ -40,7 +40,7 @@ public class ReaderBaselineFixtureTests : IDisposable
     {
         using var database = OpenGoldenDatabase();
         await database.InitializeAsync();
-        Assert.Equal(1, await database.ReadAsync(c => c.ExecuteScalar<int>("PRAGMA user_version")));
+        Assert.Equal(2, await database.ReadAsync(c => c.ExecuteScalar<int>("PRAGMA user_version")));
         Assert.Equal("ok", await database.ReadAsync(c => c.ExecuteScalar<string>("PRAGMA integrity_check")));
         Assert.Empty(await database.ReadAsync(c => c.Query<ForeignKeyViolation>("PRAGMA foreign_key_check")));
         Assert.Equal(Canonical(Expected()), Canonical(await Snapshot(database)));

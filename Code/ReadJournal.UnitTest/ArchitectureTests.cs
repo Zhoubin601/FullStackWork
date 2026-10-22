@@ -21,7 +21,14 @@ public class ArchitectureTests
         Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR", Path.Combine(Path.GetTempPath(), "ReadJournalTests", Guid.NewGuid().ToString()));
         return AppBuilder.Configure<App>().UseHeadless(new AvaloniaHeadlessPlatformOptions());
     }
-    private static void ResetLocatorForNewApplication() => typeof(ServiceLocator).GetField("_current", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, null);
+    private static void ResetLocatorForNewApplication()
+    {
+        // A Headless dispatch can create a fresh App while retaining the process environment.
+        // Give each materialized resource container its own real data-directory lock.
+        Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR", Path.Combine(Path.GetTempPath(), "ReadJournalTests", Guid.NewGuid().ToString()));
+        Application.Current!.Resources[nameof(ServiceLocator)] = new ServiceLocator();
+        typeof(ServiceLocator).GetField("_current", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, null);
+    }
     private static Task OnUiThread(Action action) => UiSession.Value.Dispatch(() =>
     {
         ResetLocatorForNewApplication(); action();
