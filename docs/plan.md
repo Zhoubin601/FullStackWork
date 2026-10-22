@@ -231,3 +231,5 @@ bin、obj、.git、IDE 状态、缓存、TestResults、覆盖率、运行数据�
 ## 2026-10-22 电子书与 AI 扩展的执行入口
 
 现有 v1 阅读管理交付继续保留。后续电子书扩展以 `output/reader-plan-v2/20261022-阅记-原生阅读器与AI助手-完整实施规划-v2.md` 及同目录接口/验收表为依据，按 P0～P10 推进。本条仅新增扩展规划入口，不把历史阅读管理规划改写为已经支持电子书。本轮交付规划，开发阶段均未开始；真实 DeepSeek API 在 P9 前通知用户。
+
+执行进度更新（2026-10-22）：用户已授权开始并逐阶段推进，当前状态以 docs/reader-execution.md 为准。P0 四项验收通过（Linux），实现提交 fef2575；旧库/JSON fixtures、样本生成器、96项测试及隔离真实窗口证据见 docs/evidence/reader/P0/acceptance.md。P1 尚未开始；Windows 字体/DPI 条件挂起，真实 API 仍至 P9 前通知。

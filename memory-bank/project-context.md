@@ -1,5 +1,12 @@
 # 已确认的项目背景与约束
 
+## 2026-10-22 阅读器扩展已授权，P0通过
+
+- 用户要求开始执行并一阶段一阶段推进。后续入口为 docs/reader-execution.md，依据 output/reader-plan-v2 三份规划；已在feature/reader-native分支开展，未推送。
+- P0实现/原始证据提交fef2575；四项验收通过（Linux）。工作区与干净源码各96项通过，旧schema1/JSON/SQL fixtures冻结，15确定性TXT/EPUB样本可重建，空库/旧库4次真实启动和正常关闭通过，默认目录未写入。证据见docs/evidence/reader/P0/acceptance.md。
+- 当前P1未开始；Windows目标机配置及字体/DPI未取得，P1-07/P10必须另行实测。生产逻辑/schema和既有output交付未变，正式v1仍为原94项版本，不能把P0新增回归当成新版阅读器功能已完成。
+- 后续P5/P6前补重置时先结束活动会话的编排；P8前补AI批次不可变回执。P9前通知真实API需求，聊天不接收Key。
+
 ## 2026-10-21 统一v1正式交付（当前最新）
 
 - 用户要求更新报告、新源码包、清除旧交付并统一v1目录。已生成output/v1内项目报告v1.docx/PDF（23页）及源码v1.zip（119文件114395字节，SHA256 be5d57de1e6001122a2299b9269e1aca0873bd9a134a53a4e83afbf2a0229187）。正式文件与当前源码配对，包含返回入口修复。

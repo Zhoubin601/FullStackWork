@@ -1,5 +1,11 @@
 # GitHub 同步记录
 
+## 阅读器 P0 功能分支（2026-10-22）
+
+- 用户授权开始分阶段执行，已建立 feature/reader-native。开始时fetch确认origin/main仍为0280730，保留前轮已有复核修改并独立提交3ab2db2。
+- P0实现与原始证据提交fef2575，包含固定旧库/备份fixtures、两项回归、生成/桌面验证工具和白名单。工作区与干净源码均96项通过，4次隔离正常启动关闭通过；验收记录另行文档提交，指向此实现提交。
+- 本轮只做本地提交，没有推送。raw、正式规划、现有output和生产应用逻辑未改。下一阶段状态见docs/reader-execution.md。
+
 ## 阅读器 v2 规划拉取与复核（2026-10-22）
 
 - 用户要求拉取最新更新并评估新计划。开始时 work 为 2133786，工作区干净；`git fetch --prune origin` 获取新 main，`git merge --ff-only origin/main` 成功，HEAD 为 `0280730a13ce512754f66850a49ee9e27020bdda`，与抓取到的 origin/main 差异 0/0。
