@@ -1,0 +1,103 @@
+{
+  "FormatVersion": 1,
+  "Books": [
+    {
+      "Id": 11,
+      "Title": "[合成]进行中的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 120,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": "2024-01-02T03:04:05",
+      "UpdatedAt": "2024-01-03T04:05:06"
+    },
+    {
+      "Id": 27,
+      "Title": "[合成]已读完的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 80,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": "2024-01-02T03:04:05",
+      "UpdatedAt": "2024-01-03T04:05:06"
+    },
+    {
+      "Id": 93,
+      "Title": "[合成]未开始的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 200,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": "2024-01-02T03:04:05",
+      "UpdatedAt": "2024-01-03T04:05:06"
+    }
+  ],
+  "ReadingRecords": [
+    {
+      "Id": 101,
+      "BookId": 11,
+      "ReadingDate": "2024-01-03T00:00:00",
+      "StartPage": 1,
+      "EndPage": 10,
+      "Minutes": 15
+    },
+    {
+      "Id": 109,
+      "BookId": 11,
+      "ReadingDate": "2024-01-04T00:00:00",
+      "StartPage": 10,
+      "EndPage": 20,
+      "Minutes": 20
+    },
+    {
+      "Id": 203,
+      "BookId": 27,
+      "ReadingDate": "2024-01-05T00:00:00",
+      "StartPage": 1,
+      "EndPage": 80,
+      "Minutes": 40
+    }
+  ],
+  "Quotes": [
+    {
+      "Id": 41,
+      "BookId": 11,
+      "Text": "合成原句：星光落在书页上。",
+      "Thoughts": "P0 synthetic note",
+      "Page": 20,
+      "IsFavorite": true,
+      "CreatedAt": "2024-01-02T03:04:05",
+      "UpdatedAt": "2024-01-03T04:05:06"
+    },
+    {
+      "Id": 57,
+      "BookId": 27,
+      "Text": "Synthetic quote: café, 中文与 emoji 📖。",
+      "Thoughts": "P0 synthetic note",
+      "Page": null,
+      "IsFavorite": false,
+      "CreatedAt": "2024-01-02T03:04:05",
+      "UpdatedAt": "2024-01-03T04:05:06"
+    }
+  ],
+  "ReadingPlans": [
+    {
+      "Id": 61,
+      "BookId": 27,
+      "StartDate": "2024-01-02T00:00:00",
+      "TargetDate": "2024-01-10T00:00:00"
+    },
+    {
+      "Id": 68,
+      "BookId": 27,
+      "StartDate": "2024-01-02T00:00:00",
+      "TargetDate": "2024-01-15T00:00:00"
+    },
+    {
+      "Id": 77,
+      "BookId": 11,
+      "StartDate": "2024-01-02T00:00:00",
+      "TargetDate": "2024-01-31T00:00:00"
+    }
+  ]
+}

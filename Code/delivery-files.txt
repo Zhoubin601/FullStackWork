@@ -117,3 +117,7 @@ ReadJournal.Library/Services/ReadingPlanConsistency.cs
 ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs
 ReadJournal.UnitTest/EditingRegressionTests.cs
 ReadJournal.UnitTest/RestoreConcurrencyTests.cs
+ReadJournal.UnitTest/ReaderBaselineFixtureTests.cs
+ReadJournal.UnitTest/Fixtures/Reader/schema1.json
+ReadJournal.UnitTest/Fixtures/Reader/schema1-sql.json
+ReadJournal.UnitTest/Fixtures/Reader/README.md

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/FullStackWork/docs/tools/reader/smoke_desktop.py", line 156, in <module>
+    main(parser.parse_args())
+  File "/workspace/FullStackWork/docs/tools/reader/smoke_desktop.py", line 124, in main
+    code = process.wait(timeout=10)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 2045, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/tmp/readjournal-review-sdk/dotnet', '/workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll']' timed out after 10 seconds

@@ -1,0 +1,157 @@
+{
+  "SchemaVersion": 1,
+  "FormatVersion": 1,
+  "Integrity": "ok",
+  "ForeignKeyViolations": 0,
+  "SourceSha256": "cd2817d8c632b64f5d79583e2a88b1a547ec3449ede56ad75a362da3ad8f998b",
+  "FieldSha256": "d0371d710a140dc5ba95ac9d9bc03d6a794ae55d39ef73becf0de4b4e5fb1d34",
+  "Counts": {
+    "Books": 3,
+    "ReadingRecords": 3,
+    "Quotes": 2,
+    "ReadingPlans": 3
+  },
+  "Fields": {
+    "FormatVersion": 1,
+    "Books": [
+      {
+        "Id": 11,
+        "Title": "[\u5408\u6210]\u8FDB\u884C\u4E2D\u7684\u4E66",
+        "Author": "P0\u6837\u672C\u751F\u6210\u5668",
+        "Category": "\u8FC1\u79FB\u56DE\u5F52",
+        "TotalPages": 120,
+        "Description": "\u786E\u5B9A\u6027\u865A\u6784\u8D44\u6599\uFF0C\u4EC5\u7528\u4E8E\u65E7\u6570\u636E\u517C\u5BB9\u9A8C\u6536\u3002",
+        "CreatedAt": "2024-01-02T03:04:05",
+        "UpdatedAt": "2024-01-03T04:05:06"
+      },
+      {
+        "Id": 27,
+        "Title": "[\u5408\u6210]\u5DF2\u8BFB\u5B8C\u7684\u4E66",
+        "Author": "P0\u6837\u672C\u751F\u6210\u5668",
+        "Category": "\u8FC1\u79FB\u56DE\u5F52",
+        "TotalPages": 80,
+        "Description": "\u786E\u5B9A\u6027\u865A\u6784\u8D44\u6599\uFF0C\u4EC5\u7528\u4E8E\u65E7\u6570\u636E\u517C\u5BB9\u9A8C\u6536\u3002",
+        "CreatedAt": "2024-01-02T03:04:05",
+        "UpdatedAt": "2024-01-03T04:05:06"
+      },
+      {
+        "Id": 93,
+        "Title": "[\u5408\u6210]\u672A\u5F00\u59CB\u7684\u4E66",
+        "Author": "P0\u6837\u672C\u751F\u6210\u5668",
+        "Category": "\u8FC1\u79FB\u56DE\u5F52",
+        "TotalPages": 200,
+        "Description": "\u786E\u5B9A\u6027\u865A\u6784\u8D44\u6599\uFF0C\u4EC5\u7528\u4E8E\u65E7\u6570\u636E\u517C\u5BB9\u9A8C\u6536\u3002",
+        "CreatedAt": "2024-01-02T03:04:05",
+        "UpdatedAt": "2024-01-03T04:05:06"
+      }
+    ],
+    "ReadingRecords": [
+      {
+        "Id": 101,
+        "BookId": 11,
+        "ReadingDate": "2024-01-03T00:00:00",
+        "StartPage": 1,
+        "EndPage": 10,
+        "Minutes": 15
+      },
+      {
+        "Id": 109,
+        "BookId": 11,
+        "ReadingDate": "2024-01-04T00:00:00",
+        "StartPage": 10,
+        "EndPage": 20,
+        "Minutes": 20
+      },
+      {
+        "Id": 203,
+        "BookId": 27,
+        "ReadingDate": "2024-01-05T00:00:00",
+        "StartPage": 1,
+        "EndPage": 80,
+        "Minutes": 40
+      }
+    ],
+    "Quotes": [
+      {
+        "Id": 41,
+        "BookId": 11,
+        "Text": "\u5408\u6210\u539F\u53E5\uFF1A\u661F\u5149\u843D\u5728\u4E66\u9875\u4E0A\u3002",
+        "Thoughts": "P0 synthetic note",
+        "Page": 20,
+        "IsFavorite": true,
+        "CreatedAt": "2024-01-02T03:04:05",
+        "UpdatedAt": "2024-01-03T04:05:06"
+      },
+      {
+        "Id": 57,
+        "BookId": 27,
+        "Text": "Synthetic quote: caf\u00E9, \u4E2D\u6587\u4E0E emoji \uD83D\uDCD6\u3002",
+        "Thoughts": "P0 synthetic note",
+        "Page": null,
+        "IsFavorite": false,
+        "CreatedAt": "2024-01-02T03:04:05",
+        "UpdatedAt": "2024-01-03T04:05:06"
+      }
+    ],
+    "ReadingPlans": [
+      {
+        "Id": 61,
+        "BookId": 27,
+        "StartDate": "2024-01-02T00:00:00",
+        "TargetDate": "2024-01-10T00:00:00"
+      },
+      {
+        "Id": 68,
+        "BookId": 27,
+        "StartDate": "2024-01-02T00:00:00",
+        "TargetDate": "2024-01-15T00:00:00"
+      },
+      {
+        "Id": 77,
+        "BookId": 11,
+        "StartDate": "2024-01-02T00:00:00",
+        "TargetDate": "2024-01-31T00:00:00"
+      }
+    ]
+  },
+  "States": [
+    {
+      "Id": 11,
+      "State": "\u5728\u8BFB",
+      "CurrentPage": 20,
+      "TotalReadPages": 21,
+      "TotalMinutes": 35,
+      "CompletedOn": null
+    },
+    {
+      "Id": 27,
+      "State": "\u5DF2\u5B8C\u6210",
+      "CurrentPage": 80,
+      "TotalReadPages": 80,
+      "TotalMinutes": 40,
+      "CompletedOn": "2024-01-05T00:00:00"
+    },
+    {
+      "Id": 93,
+      "State": "\u672A\u5F00\u59CB",
+      "CurrentPage": 0,
+      "TotalReadPages": 0,
+      "TotalMinutes": 0,
+      "CompletedOn": null
+    }
+  ],
+  "PlanStates": [
+    {
+      "Id": 61,
+      "State": "\u5DF2\u5B8C\u6210"
+    },
+    {
+      "Id": 68,
+      "State": "\u5DF2\u5B8C\u6210"
+    },
+    {
+      "Id": 77,
+      "State": "\u5DF2\u903E\u671F"
+    }
+  ]
+}
