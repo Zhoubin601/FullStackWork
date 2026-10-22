@@ -251,3 +251,8 @@ P0 已按用户“推送后继续p1”推送 feature/reader-native，远端 8465
 ## 2026-10-22 P4及后续授权（优先于历史状态）
 
 P3已推送16e4155；P4八项Linux通过，实现5358a4a，工作区/独立源码各217项、10处真实进程中断、实际TXT与桌面完整往返及Missing均通过。阶段提交后推送feature/reader-native，见docs/evidence/reader/P4/acceptance.md。用户追加授权顺序完成P5/P6/P7且每phase完成后推送；不再停在P4，仍以逐阶段验收为前提。当前P5尚未开始，Windows保留，真实API仍到P9前通知。
+
+
+## 2026-10-22 P5阶段结果（优先于历史状态）
+
+P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。

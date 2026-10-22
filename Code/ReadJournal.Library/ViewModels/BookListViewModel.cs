@@ -23,8 +23,8 @@ public partial class BookListViewModel : ViewModelBase
     [ObservableProperty] private bool _isEmpty;
     private int _page = 1;
     public string[] States { get; } = ["全部", "未开始", "在读", "已完成"];
-    public IRelayCommand<BookProgress> OpenBookCommand { get; }
-    public IRelayCommand AddBookCommand { get; }
+    public IAsyncRelayCommand<BookProgress> OpenBookCommand { get; }
+    public IAsyncRelayCommand AddBookCommand { get; }
     public IAsyncRelayCommand SearchCommand { get; }
     public IAsyncRelayCommand NextPageCommand { get; }
     public IAsyncRelayCommand PreviousPageCommand { get; }
@@ -35,8 +35,8 @@ public partial class BookListViewModel : ViewModelBase
     public BookListViewModel(IBookStorage books, IContentNavigationService content)
     {
         _books = books;
-        OpenBookCommand = new RelayCommand<BookProgress>(b => { if (b != null) content.NavigateTo(ContentNavigationConstant.BookDetailView, b.Book.Id); });
-        AddBookCommand = new RelayCommand(() => content.NavigateTo(ContentNavigationConstant.BookEditView));
+        OpenBookCommand = new AsyncRelayCommand<BookProgress>(b => b is null ? Task.CompletedTask : NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookDetailView, b.Book.Id)));
+        AddBookCommand = new AsyncRelayCommand(() => NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookEditView)));
         SearchCommand = new AsyncRelayCommand(() => RunAsync(async () => { _page = 1; await LoadAsync(); }));
         NextPageCommand = new AsyncRelayCommand(() => RunAsync(async () => { _page++; await LoadAsync(); }));
         PreviousPageCommand = new AsyncRelayCommand(() => RunAsync(async () => { _page = Math.Max(1, _page - 1); await LoadAsync(); }));

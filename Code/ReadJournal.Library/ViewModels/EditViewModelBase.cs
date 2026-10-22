@@ -14,11 +14,16 @@ public abstract class EditViewModelBase : ViewModelBase
     protected EditViewModelBase(IAlertService alert, MainViewModel main)
     {
         _alert = alert; Main = main;
-        SaveCommand = new AsyncRelayCommand(() => RunAsync(async () => { if (await SaveDraftAsync()) AfterSaved(); }));
+        SaveCommand = new AsyncRelayCommand(async () =>
+        {
+            var version = ParameterVersion; var saved = false;
+            await RunAsync(async () => saved = await SaveDraftAsync());
+            if (saved && version == ParameterVersion) await AfterSavedAsync();
+        });
     }
     protected abstract string DraftSnapshot();
     protected abstract Task SaveCoreAsync();
-    protected virtual void AfterSaved() => Main.GoBack();
+    protected virtual Task AfterSavedAsync() => Main.RequestBackAsync(this);
     public override void SetParameter(object parameter) { base.SetParameter(parameter); HasLoaded = false; }
     protected void MarkLoaded() => HasLoaded = true;
     protected void AcceptChanges() => AcceptChanges(DraftSnapshot());

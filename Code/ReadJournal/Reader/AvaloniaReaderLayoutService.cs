@@ -11,10 +11,12 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
     private sealed record Entry(LayoutHandle Handle, LayoutSettings Settings, Document Document, NativeLayout Native);
     private readonly IReaderDocumentService _documents;
     private readonly Dictionary<LayoutId, Entry> _layouts = new();
+    public int ActiveLayoutCount => _layouts.Count;
     public AvaloniaReaderLayoutService(IReaderDocumentService documents) { _documents = documents; }
     private static Task<T> Ui<T>(Func<Task<T>> action) => Dispatcher.UIThread.CheckAccess() ? action() : Dispatcher.UIThread.InvokeAsync(action);
     private static Task<T> Ui<T>(Func<T> action) => Ui(() => Task.FromResult(action()));
-    public Task<LayoutHandle> CreateAsync(DocumentKey document, LayoutSettings settings, ReaderPosition anchor, CancellationToken ct) => Ui(async () =>
+    public Task<LayoutHandle> CreateAsync(DocumentKey document, LayoutSettings settings, ReaderPosition anchor, CancellationToken ct) => CreateCoreAsync(document, settings, anchor, ct);
+    private async Task<LayoutHandle> CreateCoreAsync(DocumentKey document, LayoutSettings settings, ReaderPosition anchor, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested(); ReaderContractValidator.Validate(document); ReaderContractValidator.Validate(anchor);
         if (document != anchor.Document || settings.RendererVersion != 1 || string.IsNullOrWhiteSpace(settings.FontFallbackFingerprint) ||
@@ -25,8 +27,10 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
             settings.ViewportHeight - settings.Appearance.MarginVertical * 2, settings.Appearance.FontSize,
             settings.Appearance.LineHeight, settings.Appearance.FontFamily, settings.DpiScale, settings.Appearance.Palette == "dark" ? "#F0F0F0" : "#000000");
         options.Validate();
-        if (_layouts.Count >= 2) throw new InvalidOperationException("请先释放旧布局，最多同时保留两个重排上下文。");
+
         var descriptor = await _documents.DescribeAsync(document, ct);
+        var nativeDocument = await Task.Run(async () =>
+        {
         var text = new StringBuilder(); var chapters = new List<Chapter>();
         foreach (var chapter in descriptor.Chapters)
         {
@@ -40,13 +44,19 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
             }
             chapters.Add(new Chapter(chapter.Key, chapter.Title, start, text.Length));
         }
+            ct.ThrowIfCancellationRequested(); return new NativeTextDocument(text.ToString(), chapters);
+        }, ct);
+        return await Ui(() =>
+        {
         ct.ThrowIfCancellationRequested();
-        var native = new NativeLayout(new NativeTextDocument(text.ToString(), chapters), options);
+        if (_layouts.Count >= 2) throw new InvalidOperationException("请先释放旧布局，最多同时保留两个重排上下文。");
+        var native = new NativeLayout(nativeDocument, options);
         var handle = new LayoutHandle(new LayoutId(native.Id), document);
         var entry = new Entry(handle, settings, descriptor, native);
         try { native.Locate(Absolute(entry, anchor)); _layouts.Add(handle.Id, entry); return handle; }
         catch { native.Dispose(); throw; }
-    });
+        });
+    }
     private Entry Get(LayoutHandle handle)
     {
         var entry = Get(handle.Id);
@@ -94,6 +104,12 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
         entry.Native.Document.Sections.GroupBy(s => s.ChapterIndex).Count(g => g.All(s => entry.Native.IsSectionIndexed(s.Index))),
         entry.Document.Chapters.Count, entry.Native.Status.ExactPages);
     public Task<LayoutIndexStatus> GetIndexStatusAsync(LayoutHandle layout, CancellationToken ct) => Ui(() => { ct.ThrowIfCancellationRequested(); return Status(Get(layout)); });
+    public Task BuildIndexAsync(LayoutHandle layout, IProgress<LayoutIndexStatus>? progress, CancellationToken ct) => Ui(async () =>
+    {
+        var entry = Get(layout);
+        await entry.Native.BuildIndexAsync(new Progress<IndexStatus>(_ => { if (!ct.IsCancellationRequested && _layouts.ContainsKey(layout.Id)) progress?.Report(Status(entry)); }), ct);
+        ct.ThrowIfCancellationRequested(); Get(layout); progress?.Report(Status(entry)); return true;
+    });
     public Task<PageRangeSnapshot> ResolveGlobalPagesAsync(LayoutHandle layout, PageSpan pages, IProgress<LayoutIndexStatus>? progress, CancellationToken ct) => Ui(async () =>
     {
         var entry = Get(layout);

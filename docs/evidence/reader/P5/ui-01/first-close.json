@@ -1,0 +1,32 @@
+{
+  "progress": {
+    "BookId": 1,
+    "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e3e16672-582c-4a87-bbb6-dd5fd5c46075\",\"SourceSha256\":\"550a3bcb2477df0344afa8de0be59dd2a4805d65bce7beec1808e4e0d2175f7c\",\"CanonicalSha256\":\"2092c0530b0ef7258bd6bd0e8b06fe4e42ea6169b96d664b7c91729b4189fabb\",\"ParserVersion\":1}}",
+    "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e3e16672-582c-4a87-bbb6-dd5fd5c46075\",\"SourceSha256\":\"550a3bcb2477df0344afa8de0be59dd2a4805d65bce7beec1808e4e0d2175f7c\",\"CanonicalSha256\":\"2092c0530b0ef7258bd6bd0e8b06fe4e42ea6169b96d664b7c91729b4189fabb\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":442,\"NonTextBlockKey\":null}}",
+    "HasStarted": 1,
+    "CurrentPercent": 0.896079146900215,
+    "CompletedUtcTicks": null,
+    "CompletedOffsetMinutes": null,
+    "LastOpenedUtcTicks": 639282864004470749,
+    "LastSavedUtcTicks": 639282864631239422
+  },
+  "sessions": [
+    {
+      "SessionId": "8eab137a-3d37-483d-8ec1-2f6614385662",
+      "BookId": 1,
+      "BookUid": "9a0e5e69-2f1e-4556-84bb-bdb8f29ffe75",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e3e16672-582c-4a87-bbb6-dd5fd5c46075\",\"SourceSha256\":\"550a3bcb2477df0344afa8de0be59dd2a4805d65bce7beec1808e4e0d2175f7c\",\"CanonicalSha256\":\"2092c0530b0ef7258bd6bd0e8b06fe4e42ea6169b96d664b7c91729b4189fabb\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e3e16672-582c-4a87-bbb6-dd5fd5c46075\",\"SourceSha256\":\"550a3bcb2477df0344afa8de0be59dd2a4805d65bce7beec1808e4e0d2175f7c\",\"CanonicalSha256\":\"2092c0530b0ef7258bd6bd0e8b06fe4e42ea6169b96d664b7c91729b4189fabb\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e3e16672-582c-4a87-bbb6-dd5fd5c46075\",\"SourceSha256\":\"550a3bcb2477df0344afa8de0be59dd2a4805d65bce7beec1808e4e0d2175f7c\",\"CanonicalSha256\":\"2092c0530b0ef7258bd6bd0e8b06fe4e42ea6169b96d664b7c91729b4189fabb\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":442,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.0,
+      "EndPercent": 0.896079146900215,
+      "OpenedUtcTicks": 639282864004470749,
+      "ClosedUtcTicks": 639282864631239422,
+      "OpenedOffsetMinutes": 0,
+      "ClosedOffsetMinutes": 0,
+      "DurationMilliseconds": 62676,
+      "CloseLocalDate": "2026-10-22",
+      "ClockAnomaly": 0
+    }
+  ]
+}

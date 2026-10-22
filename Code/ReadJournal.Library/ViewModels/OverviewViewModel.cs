@@ -10,13 +10,13 @@ public partial class OverviewViewModel : ViewModelBase
     [ObservableProperty] private IReadOnlyList<BookProgress> _readingBooks = [];
     [ObservableProperty] private IReadOnlyList<string> _recentRecords = [];
     [ObservableProperty] private IReadOnlyList<PlanItem> _pendingPlans = [];
-    public IRelayCommand OpenLibraryCommand { get; }
-    public IRelayCommand<BookProgress> OpenBookCommand { get; }
+    public IAsyncRelayCommand OpenLibraryCommand { get; }
+    public IAsyncRelayCommand<BookProgress> OpenBookCommand { get; }
     public OverviewViewModel(IReadingRecordStorage records, IBookStorage books, IStatisticsService statistics, IReadingPlanStorage plans, IMenuNavigationService menu, IContentNavigationService content)
     {
         _records = records; _books = books; _statistics = statistics; _plans = plans;
-        OpenLibraryCommand = new RelayCommand(() => menu.NavigateTo(MenuNavigationConstant.BookListView));
-        OpenBookCommand = new RelayCommand<BookProgress>(b => { if (b != null) content.NavigateTo(ContentNavigationConstant.BookDetailView, b.Book.Id); });
+        OpenLibraryCommand = new AsyncRelayCommand(() => NavigateAsync(() => menu.NavigateToAsync(MenuNavigationConstant.BookListView)));
+        OpenBookCommand = new AsyncRelayCommand<BookProgress>(b => b is null ? Task.CompletedTask : NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookDetailView, b.Book.Id)));
     }
     protected override async Task LoadAsync()
     {

@@ -45,6 +45,7 @@ public interface IReaderDocumentService
 
 public interface IReaderLayoutService
 {
+    Task BuildIndexAsync(LayoutHandle layout, IProgress<LayoutIndexStatus>? progress, CancellationToken ct);
     Task ReleaseAllAsync();
     Task<LayoutHandle> CreateAsync(
         DocumentKey document, LayoutSettings settings,
@@ -89,6 +90,8 @@ public interface IReaderActionLease : IAsyncDisposable { }
 
 public interface IReaderSessionService
 {
+    Task<ReaderContext> ContinueAfterCloseFailureAsync(ReaderContext context, ReaderPosition position, DateTimeOffset now, CancellationToken ct);
+    Task<IReadOnlyList<EbookReadingSession>> GetForBookAsync(int bookId, CancellationToken ct);
     Task<ReaderContext> BeginAsync(
         ReaderOpenIdentity identity, ReaderPosition start,
         DateTimeOffset openedAt, CancellationToken ct);
@@ -102,6 +105,11 @@ public interface IReaderSessionService
     Task ResetProgressAsync(
         int bookId, Guid bookUid, DataEpoch expectedEpoch,
         CancellationToken ct);
+}
+
+public interface IReaderAlertService
+{
+    Task<ReaderCloseDecision> ChooseCloseFailureAsync(string message, CancellationToken ct);
 }
 
 public interface IDataOperationLease : IAsyncDisposable

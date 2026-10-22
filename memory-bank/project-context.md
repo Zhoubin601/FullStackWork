@@ -110,3 +110,8 @@
 - InboxSeen在AppMetadata中保存本机收件上下文，不随业务备份替换，避免保留来源的已删除书自动重现；显式文件选择器仍可再导入。Missing不能生成完整自动备份，需补回文件或显式删除损坏条目再恢复旧完整备份。删除先SQL再移trash，已确认无引用的IO清理失败留日志重试；信息不足停止业务。
 - 用户最新明确要求：P4完成推送后继续完成P5、P6、P7，每phase独立验收、提交、推送后再继续。无需反复询问推送或平台授权；不得停在P4。P5尚未开始，P8以后尚未授权，真实API到P9前主动通知。
 - Linux当前验收，Windows保留；raw/output/参考/冻结fixtures不改。SDK与桌面工具现放/workspace/.readjournal-env以便环境续接，临时源码验证包不作为正式交付；最终证据的源及工具SHA已记录。
+
+
+## 2026-10-22 P5阶段结果（优先于历史状态）
+
+P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。

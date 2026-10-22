@@ -5,7 +5,7 @@ using Avalonia.Layout;
 using ReadJournal.Library.Services;
 using ReadJournal.Library.ViewModels;
 namespace ReadJournal.Services;
-public class AlertService : IAlertService
+public class AlertService : IAlertService, ReadJournal.Library.Services.Reader.IReaderAlertService
 {
     private static Window Owner => ((IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!).MainWindow!;
     private static async Task<string> ChooseAsync(string title, string message, params string[] choices)
@@ -16,6 +16,12 @@ public class AlertService : IAlertService
         var dialog = new Window { Title = title, Width = 560, SizeToContent = SizeToContent.Height, CanResize = false, WindowStartupLocation = WindowStartupLocation.CenterOwner, Content = panel };
         foreach (var choice in choices) { var button = new Button { Content = choice }; button.Click += (_, _) => dialog.Close(choice); buttons.Children.Add(button); }
         return await dialog.ShowDialog<string>(Owner) ?? "取消";
+    }
+    public async Task<ReadJournal.Library.Models.Reader.ReaderCloseDecision> ChooseCloseFailureAsync(string message, CancellationToken ct)
+    {
+        ct.ThrowIfCancellationRequested();
+        return await ChooseAsync("阅读会话保存失败", message, "留在阅读器", "继续阅读", "重试保存") switch
+        { "重试保存" => ReadJournal.Library.Models.Reader.ReaderCloseDecision.Retry, "继续阅读" => ReadJournal.Library.Models.Reader.ReaderCloseDecision.ContinueReading, _ => ReadJournal.Library.Models.Reader.ReaderCloseDecision.Stay };
     }
     public async Task<bool> ConfirmAsync(string title, string message) => await ChooseAsync(title, message, "取消", "确定") == "确定";
     public async Task<LeaveDecision> ConfirmLeaveAsync() => await ChooseAsync("尚未保存", "当前修改尚未保存，请选择如何离开。", "取消离开", "放弃修改", "保存并离开") switch { "保存并离开" => LeaveDecision.Save, "放弃修改" => LeaveDecision.Discard, _ => LeaveDecision.Cancel };

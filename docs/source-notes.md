@@ -270,3 +270,13 @@
 ## 2026-10-22 P4最终证据与授权
 
 实现5358a4a；P4/p4-inbox-tombstone-reviewed.trx、p4-final-clean-source.trx各217/217；final-source-package.json记录169文件临时验证包，逐文件SHA一致。crash-probe-reviewed/probe.json记录10处实际杀进程、实际TXT初始/关联往返与损坏日志保留。ui-final/ui-missing/ui-clean-source、ui-verification-final.json记录最终桌面、Missing、独立构建及3书/11文件/5来源摘要核对；中间失败保留，不作为最终结论。用户新增P5/P6/P7顺序实施及逐阶段推送授权。无新的研究资料/真实书籍/Key/API，raw与正式交付不改。
+
+
+## P5开始及P4推送回执（2026-10-22）
+
+P4已正常推送feature/reader-native并回读69b783abab2dfa02984121fa878da2fd6c74d692；main未改。P5来源为reader-plan-v2三份规划、P1原生实验/P2契约/P3协议/P4受管TXT与验收；用户已授权P5/P6/P7各阶段验收后推送。仍仅使用确定性合成资料和注入时间，无API或新外部研究资料。计划见reader-p5-plan.md。
+
+
+## 2026-10-22 P5阶段结果（优先于历史状态）
+
+P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。

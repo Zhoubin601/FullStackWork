@@ -56,6 +56,11 @@ public class ServiceLocator
         serviceCollection.AddSingleton<IRootNavigationService, RootNavigationService>();
         serviceCollection.AddSingleton<IMenuNavigationService, MenuNavigationService>();
         serviceCollection.AddSingleton<IContentNavigationService, ContentNavigationService>();
+        serviceCollection.AddSingleton<ReaderClock>();
+        serviceCollection.AddSingleton<ReaderSessionCheckpoints>();
+        serviceCollection.AddSingleton<IReaderSessionService, ReaderSessionService>();
+        serviceCollection.AddSingleton<IReaderPreferencesStorage, ReaderPreferencesStorage>();
+        serviceCollection.AddSingleton<ReaderViewModel>();
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<InitializationViewModel>();
         serviceCollection.AddSingleton<MainViewModel>();
@@ -66,7 +71,9 @@ public class ServiceLocator
         serviceCollection.AddSingleton<IBookStorage, BookStorage>();
         serviceCollection.AddSingleton<IReadingRecordStorage, ReadingRecordStorage>();
         serviceCollection.AddSingleton<IQuoteStorage, QuoteStorage>();
-        serviceCollection.AddSingleton<IAlertService, AlertService>();
+        serviceCollection.AddSingleton<AlertService>();
+        serviceCollection.AddSingleton<IAlertService>(sp => sp.GetRequiredService<AlertService>());
+        serviceCollection.AddSingleton<IReaderAlertService>(sp => sp.GetRequiredService<AlertService>());
         serviceCollection.AddSingleton<BookEditViewModel>();
         serviceCollection.AddSingleton<QuoteListViewModel>();
         serviceCollection.AddSingleton<QuoteEditViewModel>();
@@ -92,6 +99,8 @@ public class ServiceLocator
     public BookListViewModel BookListViewModel => _serviceProvider.GetService<BookListViewModel>()!;
     public BookDetailViewModel BookDetailViewModel => _serviceProvider.GetService<BookDetailViewModel>()!;
 
+    public ReaderViewModel ReaderViewModel => _serviceProvider.GetRequiredService<ReaderViewModel>();
+    public AvaloniaReaderLayoutService ReaderLayoutService => _serviceProvider.GetRequiredService<AvaloniaReaderLayoutService>();
     public BookEditViewModel BookEditViewModel => _serviceProvider.GetService<BookEditViewModel>()!;
     public QuoteListViewModel QuoteListViewModel => _serviceProvider.GetService<QuoteListViewModel>()!;
     public QuoteEditViewModel QuoteEditViewModel => _serviceProvider.GetService<QuoteEditViewModel>()!;

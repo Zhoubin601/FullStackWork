@@ -32,6 +32,8 @@ public sealed class EbookProgress
 [Table("EbookReadingSession")]
 public sealed class EbookReadingSession
 {
+    [Ignore, System.Text.Json.Serialization.JsonIgnore]
+    public string DisplayText => $"{new DateTimeOffset(ClosedUtcTicks, TimeSpan.Zero).ToOffset(TimeSpan.FromMinutes(ClosedOffsetMinutes)):yyyy-MM-dd HH:mm:ss} · {DurationMilliseconds / 1000.0:0.###} 秒 · {StartPercent:0.#}% → {EndPercent:0.#}%" + (ClockAnomaly ? "（时钟异常）" : "");
     [PrimaryKey] public Guid SessionId { get; set; }
     public int BookId { get; set; }
     public Guid BookUid { get; set; }

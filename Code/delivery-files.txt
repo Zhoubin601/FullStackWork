@@ -167,3 +167,11 @@ ReadJournal.UnitTest/EbookDeletionTests.cs
 ReadJournal.UnitTest/ReaderP4TestData.cs
 ReadJournal.UnitTest/TxtImportTests.cs
 ReadJournal/Services/ReaderPlatformService.cs
+ReadJournal.Library/Models/Reader/ReaderLifecycle.cs
+ReadJournal.Library/Services/Reader/ReaderPreferencesStorage.cs
+ReadJournal.Library/Services/Reader/ReaderSessionService.cs
+ReadJournal.Library/ViewModels/ReaderViewModel.cs
+ReadJournal.UnitTest/ReaderLifecycleTests.cs
+ReadJournal.UnitTest/ReaderSessionTests.cs
+ReadJournal/Views/ReaderView.axaml
+ReadJournal/Views/ReaderView.axaml.cs

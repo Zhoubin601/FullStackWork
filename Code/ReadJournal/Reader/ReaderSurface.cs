@@ -4,11 +4,16 @@ using Avalonia.Media;
 using ReadJournal.Library.Models.Reader;
 namespace ReadJournal.Reader;
 
-// P2 render boundary. P5 binds the Reader VM and input lifecycle; no visible Reader route exists yet.
+// Native rendering and presentation boundary; business timing starts after the first draw.
 public sealed class ReaderSurface : Control
 {
     public AvaloniaReaderLayoutService? LayoutService { get; set; }
-    public ReaderPage? Page { get; set; }
+    public static readonly StyledProperty<ReaderPage?> PageProperty = AvaloniaProperty.Register<ReaderSurface, ReaderPage?>(nameof(Page));
+    public ReaderPage? Page { get => GetValue(PageProperty); set => SetValue(PageProperty, value); }
+    private LayoutId? _presented;
+    public Func<LayoutId, Task>? Presented { get; set; }
+    static ReaderSurface() => AffectsRender<ReaderSurface>(PageProperty);
+    public ReaderSurface() { Focusable = true; PointerPressed += (_, _) => Focus(); }
     public DocumentRange? Selection { get; set; }
     public override void Render(DrawingContext context)
     {
@@ -30,6 +35,12 @@ public sealed class ReaderSurface : Control
                     context.FillRectangle(Brushes.LightSeaGreen, rect.Translate(origin));
             }
             foreach (var (line, y) in layout.Lines(page)) line.Draw(context, new Point(origin.X, origin.Y + y));
+        }
+        if (_presented != Page.Ref.Layout)
+        {
+            var id = Page.Ref.Layout; _presented = id;
+            Avalonia.Threading.Dispatcher.UIThread.Post(async () =>
+            { try { if (Page?.Ref.Layout == id && Presented is not null) await Presented(id); } catch (Exception ex) { System.Diagnostics.Trace.WriteLine(ex); } }, Avalonia.Threading.DispatcherPriority.Background);
         }
     }
 }

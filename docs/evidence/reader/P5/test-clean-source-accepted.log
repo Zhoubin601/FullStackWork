@@ -1,0 +1,14 @@
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/.readjournal-env/p5-accepted-clean/ReadJournal.Library/ReadJournal.Library.csproj]
+  ReadJournal.Library -> /workspace/.readjournal-env/p5-accepted-clean/ReadJournal.Library/bin/Debug/net8.0/ReadJournal.Library.dll
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/.readjournal-env/p5-accepted-clean/ReadJournal/ReadJournal.csproj]
+  ReadJournal -> /workspace/.readjournal-env/p5-accepted-clean/ReadJournal/bin/Debug/net8.0/ReadJournal.dll
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/.readjournal-env/p5-accepted-clean/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj]
+  ReadJournal.UnitTest -> /workspace/.readjournal-env/p5-accepted-clean/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/.readjournal-env/p5-accepted-clean/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/FullStackWork/docs/evidence/reader/P5/p5-clean-source-accepted.trx
+
+Passed!  - Failed:     0, Passed:   234, Skipped:     0, Total:   234, Duration: 11 s - ReadJournal.UnitTest.dll (net8.0)

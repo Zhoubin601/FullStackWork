@@ -9,6 +9,7 @@ public abstract class ViewModelBase : ObservableObject
     public string Error { get => _error; protected set => SetProperty(ref _error, value); }
     public bool IsBusy { get => _isBusy; protected set => SetProperty(ref _isBusy, value); }
     public IAsyncRelayCommand OnLoadedCommand { get; }
+    protected virtual bool UseGlobalBusyForLoad => true;
     protected ViewModelBase()
     {
         OnLoadedCommand = new AsyncRelayCommand(async () =>
@@ -20,7 +21,8 @@ public abstract class ViewModelBase : ObservableObject
                 // Keep its Loaded request so the new parameter is actually displayed.
                 while (IsBusy) await _operationFinished;
                 version = ParameterVersion;
-                await RunAsync(LoadAsync);
+                if (UseGlobalBusyForLoad) await RunAsync(LoadAsync);
+                else { try { await LoadAsync(); } catch (Exception ex) { if (version == ParameterVersion) Error = ex.Message; } }
             } while (version != ParameterVersion);
         });
     }
@@ -28,6 +30,11 @@ public abstract class ViewModelBase : ObservableObject
     public virtual void InvalidateDataSet() => SetParameter(null!);
     protected virtual Task LoadAsync() => Task.CompletedTask;
     public virtual Task<bool> CanLeaveAsync() => Task.FromResult(!IsBusy);
+    protected async Task NavigateAsync(Func<Task<bool>> navigation)
+    {
+        var version = ParameterVersion;
+        try { await navigation(); } catch (Exception ex) { if (version == ParameterVersion) Error = ex.Message; }
+    }
     protected async Task RunAsync(Func<Task> action)
     {
         if (IsBusy) return;
