@@ -1,0 +1,4 @@
+System.TimeoutException: The operation has timed out.
+   at ReaderPrototype.ProbeRunner.AwaitDesktopCopyAsync(PrototypeWindow window, String output, String signal) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\experiments\ReaderPrototype\ProbeRunner.cs:line 301
+   at ReaderPrototype.ProbeRunner.RunAsync(PrototypeWindow window, String outputDirectory, String samplesDirectory) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\experiments\ReaderPrototype\ProbeRunner.cs:line 147
+Local native probe: False, evidence: D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\evidence\reader\windows-20261023\native-p1

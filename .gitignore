@@ -32,3 +32,9 @@ __pycache__/
 
 # Runtime libraries created by reader process probes
 /docs/evidence/**/isolated-data/
+
+# Windows acceptance runtime fixtures; keep the JSON/log/TRX/screenshot evidence.
+/docs/evidence/reader/windows-20261023/p7-compatibility/data/
+/docs/evidence/reader/windows-20261023/p7-compatibility/sources/
+/docs/evidence/reader/windows-20261023/p7-compatibility/repeated-sources/
+/docs/evidence/reader/windows-20261023/**/*.zip

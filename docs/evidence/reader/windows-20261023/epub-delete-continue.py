@@ -1,0 +1,11 @@
+assert (EVIDENCE/"isolated-data/epub-desktop-complete.zip").exists()
+shot("33-epub-complete-backup-saved")
+click("我的书库")
+click("打开 →")
+click("删除书籍")
+click("确定")
+shot("34-epub-deleted-library-empty")
+assert not snapshot("epub-after-delete")["Book"]
+click("设置与数据")
+click("从 ZIP / 旧 JSON 恢复")
+dump()

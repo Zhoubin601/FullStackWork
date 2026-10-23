@@ -1,0 +1,29 @@
+{
+  "Date": "2026-10-23",
+  "Timezone": "Asia/Shanghai",
+  "OS": {
+    "Caption": "Microsoft Windows 11 家庭版 中文版",
+    "Version": "10.0.26300",
+    "OSArchitecture": "64 位"
+  },
+  "CPU": {
+    "Name": "Intel(R) Core(TM) i9-14900HX",
+    "NumberOfLogicalProcessors": 32
+  },
+  "SDK": "8.0.424",
+  "BranchBase": "e50612ba60f7823efc7d65f95266c8c6ec4547c3",
+  "MainBase": "0280730a13ce512754f66850a49ee9e27020bdda",
+  "ActualWindowDpi": 144,
+  "ActualAvaloniaRenderScaling": 1.5,
+  "ScreenshotFullscreenSize": [
+    2560,
+    1600
+  ],
+  "Untested": [
+    "Windows100Percent",
+    "Windows200Percent",
+    "CrossMonitorDpi",
+    "RealCommercialEpub",
+    "P8-P10"
+  ]
+}

@@ -72,3 +72,8 @@ P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按�
 P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
 
 验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+
+## 2026-10-23 Windows 补验（优先于上述保留未测状态）
+
+按用户授权验收feature/reader-native并通过后合并main。本机Windows11 x64、实际150%DPI：生产及独立186文件源码均270通过/0失败/2符号链接权限跳过；原生实验14/14，真实拖选/Shift跨页复制/焦点/重排通过；旧库迁移/锁、4处恢复/10处导入删除进程中断通过；11个EPUB变体往返及实际TXT/EPUB完整UI闭环通过。首次时区样本错误、权限表达及开发探针锁文件已修正。完整验收说明docs/reader-windows-acceptance-20261023.md，证据docs/evidence/reader/windows-20261023。当前已测范围允许合并；100%/200%与跨屏/真实商业EPUB仍未测，P8以后未实施，旧正式交付保持。

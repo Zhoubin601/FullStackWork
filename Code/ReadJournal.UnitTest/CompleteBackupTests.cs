@@ -108,10 +108,9 @@ public sealed class CompleteBackupTests : IDisposable
         Assert.Contains("RecoveryRequired",error.Message);Assert.False(reopen.IsInitialized);Assert.Equal("preserve",await File.ReadAllTextAsync(marker));
         using var raw=new SQLite.SQLiteConnection(paths.DatabasePath);Assert.Equal(dataBefore,BackupDataStore.Hash(BackupDataStore.Snapshot(raw)));
     }
-    [Fact]
+    [SymlinkFact]
     public async Task SymlinkInManagedContentOrDestinationIsRejected()
     {
-        if(OperatingSystem.IsWindows())return;
         var a=await Library("A");using var db=a.Db;var file=(await db.ReadAsync(c=>c.Table<EbookFile>().Single())).SourceRelativePath;
         var full=ManagedBookFiles.SafePath(a.Paths.DirectoryPath,file);var outside=Path.Combine(_root,"outside.txt");File.Move(full,outside);File.CreateSymbolicLink(full,outside);
         await Assert.ThrowsAnyAsync<Exception>(()=>BackupRuntime.CreateService(db,new ReadingService(),a.Paths).ExportAsync(Path.Combine(_root,"no.zip"),default));

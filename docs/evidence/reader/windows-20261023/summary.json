@@ -1,0 +1,328 @@
+{
+  "base": "e50612ba60f7823efc7d65f95266c8c6ec4547c3",
+  "tests": {
+    "initial": {
+      "total": 272,
+      "executed": 272,
+      "passed": 230,
+      "failed": 42,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "skipped": 0
+    },
+    "fixed": {
+      "total": 272,
+      "executed": 270,
+      "passed": 270,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "skipped": 2
+    },
+    "cleanSource": {
+      "total": 272,
+      "executed": 270,
+      "passed": 270,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "skipped": 2
+    },
+    "prototype": {
+      "total": 14,
+      "executed": 14,
+      "passed": 14,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "skipped": 0
+    }
+  },
+  "realDesktopScreenshots": [
+    {
+      "file": "01-empty-overview.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "02-manual-validation.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "03-manual-detail-record-quote-plan.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "04-manual-quote-list.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "05-manual-plan-list.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "06-manual-statistics.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "07-manual-overview.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "08-txt-imported.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "09-txt-deduplicated.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "10-txt-detail.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "11-native-txt-reader.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "12-txt-real-selection-saved.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "13-txt-duplicate-selection.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "14-txt-font-reflow.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "15-txt-window-resized.png",
+      "width": 1550,
+      "height": 1120
+    },
+    {
+      "file": "16-txt-completion-survives-review.png",
+      "width": 1550,
+      "height": 1120
+    },
+    {
+      "file": "17-txt-next-chapter.png",
+      "width": 1550,
+      "height": 1120
+    },
+    {
+      "file": "18-txt-history-after-restart.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "19-txt-resumed-chapter.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "23-txt-session-statistics-normal-window.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "24-epub-auto-scanned.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "25-epub-first-page.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "26-epub-selection-bookmark.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "27-epub-page-2.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "27-epub-page-3.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "27-epub-page-4.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "28-epub-image-after-reflow.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "29-epub-restarted-image-anchor.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "30-epub-quote-list.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "31-epub-quote-return-highlight.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "32-settings-for-complete-backup.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "33-epub-complete-backup-saved.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "34-epub-deleted-library-empty.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "35-epub-complete-restore-success.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "36-epub-restored-quote-exact-highlight.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "37-txt-quote-list-visible-recheck.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "38-txt-quote-highlight-visible-recheck.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "39-txt-fullscreen-visible-recheck.png",
+      "width": 2560,
+      "height": 1600
+    },
+    {
+      "file": "40-txt-left-fullscreen-normal-window.png",
+      "width": 1732,
+      "height": 1256
+    },
+    {
+      "file": "native-p1-final-cross-page-ready.json.png",
+      "width": 1762,
+      "height": 1286
+    },
+    {
+      "file": "native-p1-final-drag-ready.json.png",
+      "width": 1762,
+      "height": 1286
+    },
+    {
+      "file": "p1-cross-page-ready.json.png",
+      "width": 1762,
+      "height": 1286
+    },
+    {
+      "file": "p1-drag-ready.json.png",
+      "width": 1762,
+      "height": 1286
+    }
+  ],
+  "invalidCapturesDiscarded": [
+    "20-txt-quote-list-after-menu-save.png",
+    "21-txt-quote-source-highlight.png",
+    "22-txt-fullscreen.png"
+  ],
+  "replacementScreenshots": [
+    "37-txt-quote-list-visible-recheck.png",
+    "38-txt-quote-highlight-visible-recheck.png",
+    "39-txt-fullscreen-visible-recheck.png"
+  ],
+  "raw": [
+    {
+      "path": "raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md",
+      "sha256": "62c53dcd213a9b645d2adc08c6f8aba7f5894fa011b6529a0dd3574464d9833d",
+      "unchanged": true
+    },
+    {
+      "path": "raw/期末项目与报告要求.docx",
+      "sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+      "unchanged": true
+    }
+  ],
+  "approvedScope": "P0-P7 and existing manual workflow on Windows x64 at actual 150% DPI",
+  "limitations": [
+    "Windows100/200percent and cross-monitor not tested",
+    "Two symlink cases skipped without required OS privilege",
+    "Synthetic EPUB only; no market compatibility claim",
+    "P8-P10 not implemented"
+  ],
+  "decision": "No blocking issue in tested scope; merge authorized"
+}

@@ -1,0 +1,12 @@
+  ReadJournal.Library -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.Library\bin\Release\net8.0\ReadJournal.Library.dll
+  ReadJournal -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal\bin\Release\net8.0\ReadJournal.dll
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\tools\ReaderP7Probe\ReaderP7Probe.csproj]
+  ReaderP7Probe -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\tools\ReaderP7Probe\bin\Release\net8.0\ReaderP7Probe.dll
+
+已成功生成。
+
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\tools\ReaderP7Probe\ReaderP7Probe.csproj]
+    1 个警告
+    0 个错误
+
+已用时间 00:00:02.15

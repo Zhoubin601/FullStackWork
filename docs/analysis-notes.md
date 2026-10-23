@@ -231,3 +231,13 @@ P6远端已核验34f07e46c7ca56b159ea1e689604836fc1d1992a。来源reader-plan-v2
 P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
 
 验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+
+## 2026-10-23 feature 分支 Windows 验收
+
+目标 e50612b，独立 worktree 执行，计划见 reader-windows-acceptance-20261023-plan.md。P8～P10 未实现属既定阶段边界；以 P0～P7 与现有手动业务作为本轮验收范围，Windows 结论以本轮实测为准。
+
+
+## 2026-10-23 Windows 验收结论
+
+P0～P7及原有手动业务在本机实际150% DPI通过，未发现阻塞合并问题。生产工作区/186文件独立源码均270通过、0失败、2权限跳过，原生实验14通过；真实P1探针、P2锁/迁移、P3四点/P4十点中断、P7十一变体及实际UI完整往返均有新Windows证据。修正仅涉及测试时区/显式跳过和3份开发探针锁文件，未改生产业务代码。边界及失败历史见reader-windows-acceptance-20261023.md。

@@ -9,6 +9,22 @@ using ReadJournal.Library.Services.Reader;
 using Xunit;
 namespace ReadJournal.UnitTest;
 
+// Report unavailable OS privileges as a skipped case, never as a successful security check.
+public sealed class SymlinkFactAttribute : FactAttribute
+{
+    public SymlinkFactAttribute()
+    {
+        if (!OperatingSystem.IsWindows()) return;
+        var root = Path.Combine(Path.GetTempPath(), "ReadJournalSymlinkCapability", Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(root);
+        var link = Path.Combine(root, "probe-link");
+        try { File.CreateSymbolicLink(link, Path.Combine(root, "absent-target")); }
+        catch (IOException ex) when ((ex.HResult & 0xffff) == 1314)
+        { Skip = "Windows account cannot create symbolic links (ERROR_PRIVILEGE_NOT_HELD); run with symlink capability to verify this case."; }
+        finally { File.Delete(link); Directory.Delete(root); }
+    }
+}
+
 public sealed class TxtImportTests : IDisposable
 {
     private readonly string _root = Path.Combine(Path.GetTempPath(), "ReadJournalP4Tests", Guid.NewGuid().ToString("N"));
@@ -164,7 +180,7 @@ public sealed class TxtImportTests : IDisposable
         var hash = ManagedBookFiles.HashFile(orphan); await EbookRuntime.CreateLibrary(db).ReconcileAsync(default);
         Assert.False(File.Exists(orphan)); var retained = Directory.GetFiles(Path.Combine(paths.DirectoryPath, "trash"), "unknown.txt", SearchOption.AllDirectories).Single(); Assert.Equal(hash, ManagedBookFiles.HashFile(retained)); Assert.Empty(Journals(paths));
     }
-    [Fact]
+    [SymlinkFact]
     public async Task SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook()
     {
         var paths = Paths(); var real = await Source(); var good = await Source("合法正文", "data/books/good.txt"); var link = Path.Combine(paths.DirectoryPath, "books", "link.txt"); File.CreateSymbolicLink(link, real);

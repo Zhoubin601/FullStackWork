@@ -1,0 +1,431 @@
+[
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      201.0,
+      235.0,
+      1710.0,
+      1200.0
+    ]
+  },
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      201.0,
+      201.0,
+      1710.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统菜单栏",
+    "type": "ControlType.MenuBar",
+    "id": "SystemMenuBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      201.0,
+      201.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      201.0,
+      201.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "最小化",
+    "type": "ControlType.Button",
+    "id": "Minimize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1700.0,
+      191.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "最大化",
+    "type": "ControlType.Button",
+    "id": "Maximize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1771.0,
+      191.0,
+      70.0,
+      44.0
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1841.0,
+      191.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅 记",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      277.0,
+      255.0,
+      60.0
+    ]
+  },
+  {
+    "name": "让每一页，留下回响",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      364.0,
+      255.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      455.0,
+      255.0,
+      444.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      461.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      535.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      609.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      683.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      757.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      231.0,
+      831.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      558.0,
+      259.0,
+      1311.0,
+      36.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      561.0,
+      357.0,
+      1305.0,
+      1042.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      357.0,
+      1170.0,
+      56.0
+    ]
+  },
+  {
+    "name": "外观",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      440.0,
+      1170.0,
+      36.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      503.0,
+      270.0,
+      48.0
+    ]
+  },
+  {
+    "name": "浅色",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      647.0,
+      512.0,
+      204.0,
+      28.0
+    ]
+  },
+  {
+    "name": "应用主题",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      917.0,
+      503.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "业务数据备份",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      657.0,
+      1170.0,
+      36.0
+    ]
+  },
+  {
+    "name": "完整 ZIP 包含全部业务数据、电子书原文件、规范化正文和本地资源。恢复会整体替换当前书库，旧 JSON 仅用于恢复手动书籍；校验并生成完整自动备份后才替换。本机主题和密钥保留。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      720.0,
+      1170.0,
+      56.0
+    ]
+  },
+  {
+    "name": "导出完整 ZIP 备份",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      803.0,
+      226.0,
+      61.0
+    ]
+  },
+  {
+    "name": "从 ZIP / 旧 JSON 恢复",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      873.0,
+      803.0,
+      266.0,
+      61.0
+    ]
+  },
+  {
+    "name": "试用演示",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      957.0,
+      1170.0,
+      36.0
+    ]
+  },
+  {
+    "name": "仅在空业务库可载入。所有书籍、作者及摘录均为虚构演示资料。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      1020.0,
+      1170.0,
+      28.0
+    ]
+  },
+  {
+    "name": "载入虚构演示数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      1075.0,
+      222.0,
+      62.0
+    ]
+  },
+  {
+    "name": "备份已保存：D:\\2026Autumn Semester File\\FullStack\\期末大作业-reader-acceptance-20261023\\docs\\evidence\\reader\\windows-20261023\\isolated-data\\epub-desktop-complete.zip",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      1164.0,
+      1170.0,
+      56.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      1247.0,
+      1170.0,
+      28.0
+    ]
+  },
+  {
+    "name": "刷新 / 重试",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      629.0,
+      1302.0,
+      161.0,
+      62.0
+    ]
+  }
+]

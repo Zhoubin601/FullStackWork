@@ -302,3 +302,13 @@ P6远端已核验34f07e46c7ca56b159ea1e689604836fc1d1992a。来源reader-plan-v2
 P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
 
 验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+
+## 2026-10-23 Windows 分支验收来源
+
+用户授权补 Windows 实机并在通过后合入 main。依据 raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md、raw/期末项目与报告要求.docx、output/reader-plan-v2 三份规划、feature/reader-native 的 Code 与 P0～P7 证据；本轮结果单独留存，不把历史 Linux 结果当 Windows 实测。无新增外部技术资料。
+
+
+## 2026-10-23 Windows 验收新证据
+
+本轮实际Windows11/.NET8.0.424执行：windows-release-fixed.trx、windows-clean-source.trx各270通过/0失败/2权限跳过；windows-prototype.trx为14/14；原生真实输入最终结果native-p1-final/probe.json；P2/P3/P4/p7-compatibility及UI数据/截图均在docs/evidence/reader/windows-20261023。raw两文件SHA及未变验证见summary.json。首次42项失败和原生输入驱动首轮超时均保留，并在验收说明中解释修正；不新增外部技术来源。

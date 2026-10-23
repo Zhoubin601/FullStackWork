@@ -14,7 +14,7 @@ public static class ReaderBackupTestData
         await db.InitializeAsync();
         var fileId = Guid.Parse(label == "A" ? "00000000-0000-0000-0000-00000000000a" : "00000000-0000-0000-0000-00000000000b");
         var uid = Guid.Parse(label == "A" ? "10000000-0000-0000-0000-00000000000a" : "10000000-0000-0000-0000-00000000000b");
-        var prefix = ManagedBookFiles.BookPrefix(fileId); var now = DateTime.Today.AddDays(-2); var utc = new DateTimeOffset(now, TimeSpan.Zero);
+        var prefix = ManagedBookFiles.BookPrefix(fileId); var now = DateTime.Today.AddDays(-2); var utc = new DateTimeOffset(now).ToUniversalTime();
         var first = "第一章 " + label + "\n规范化正文 e\u0301 与 📖。\n"; var second = "图片前。\ufffc图片后。\n";
         var a = new UnicodeEncoding(false, false, true).GetBytes(first); var b = new UnicodeEncoding(false, false, true).GetBytes(second);
         var png = Convert.FromBase64String("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a0R8AAAAASUVORK5CYII=");

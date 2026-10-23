@@ -1,0 +1,4 @@
+{"time": "2026-10-23 11:34:08+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 11:34:09+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 11:34:10+0800", "action": "screenshot", "file": "35-epub-complete-restore-success.png", "rect": [190, 190, 1922, 1446], "dpi": 144}
+{"time": "2026-10-23 11:34:10+0800", "action": "database-readonly-verification", "label": "epub-after-restore", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 2, "Book": 1, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 3, "Quote": 1, "QuoteOrigin": 1, "ReadingPlan": 0, "ReadingRecord": 0}}
