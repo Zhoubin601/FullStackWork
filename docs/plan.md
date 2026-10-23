@@ -268,3 +268,9 @@ P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按�
 P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
 
 验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+## 2026-10-23 P8完成（优先于历史未开始状态）
+
+用户授权“继续p8，完成后推送远端”。从main=cd3386b建立feature/reader-ai-p8；完成当前页/选区/页范围冻结快照、默认本地Mock及有界DeepSeek HTTP适配、精确原句核验、原子批次/不可变回执/本地重试/安全撤销、AI来源与设置/隐藏会话密钥/取消及旧响应隔离。P8-01～10验收见docs/evidence/reader/P8/acceptance.md，协议见docs/reader-p8-protocol.md。
+
+Linux工作区与200文件白名单独立源码Release各327/327，含55项新增；真实窗口分析不写库、自动保存、AI来源、收藏保留/未改项删除、原文高亮与全书1～2页379字符Mock分析通过。凭据仅会话内存，未请求真实API。原始资料/正式交付/参考/冻结fixtures共107文件保持。完成后按本轮授权提交并正常推送该功能分支，远端SHA以实际回读为准；P9/P10未开始，P8新增Windows实机保留，不自动合并main或重做正式交付。

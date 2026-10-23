@@ -1,0 +1,4 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+/workspace/FullStackWork/Code/ReadJournal.UnitTest/AiWorkflowTests.cs(87,79): error CS8752: The type 'AiQuoteCandidate[]' may not be used as the target type of new() [/workspace/FullStackWork/Code/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj]
+/workspace/FullStackWork/Code/ReadJournal.UnitTest/AiTestFixture.cs(13,50): warning CS0649: Field 'AiTestFaults.Action' is never assigned to, and will always have its default value null [/workspace/FullStackWork/Code/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj]

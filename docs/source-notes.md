@@ -312,3 +312,10 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 ## 2026-10-23 Windows 验收新证据
 
 本轮实际Windows11/.NET8.0.424执行：windows-release-fixed.trx、windows-clean-source.trx各270通过/0失败/2权限跳过；windows-prototype.trx为14/14；原生真实输入最终结果native-p1-final/probe.json；P2/P3/P4/p7-compatibility及UI数据/截图均在docs/evidence/reader/windows-20261023。raw两文件SHA及未变验证见summary.json。首次42项失败和原生输入驱动首轮超时均保留，并在验收说明中解释修正；不新增外部技术来源。
+
+## 2026-10-23 P8 AI 本地与 Mock
+
+- 来源：raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md 第8节，已确认 output/reader-plan-v2 三份规划的 P8-01～10、AI/批次/凭据契约；基准 origin/main=cd3386b，P7与Windows补验记录仅作原有能力基线。
+- 原始资料要求当前页/页范围/选区分析、合法原句自动入库、AI来源标记和撤销，禁止AI自行SQL、上传范围外正文或让AI失败阻塞阅读。按v2允许凭据仅会话内存，P8不需要真实Key或真实费用。
+- 构建依赖来源：微软 .NET SDK https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.424/dotnet-sdk-8.0.424-linux-x64.tar.gz 、NuGet锁定包、Debian官方允许镜像 https://deb.debian.org/debian/ 。日期2026-10-23；系统原apt snapshot主机策略拒绝后改从已允许官方镜像取得桌面运行依赖，未绕过代理。没有新增供应商API/费率外部事实；DeepSeek当前真实能力留P9核验。
+- 新证据：docs/evidence/reader/P8；TXT/EPUB均为确定性合成内容，不包含真实用户书籍或真实凭据。raw及既有正式output保持原字节。

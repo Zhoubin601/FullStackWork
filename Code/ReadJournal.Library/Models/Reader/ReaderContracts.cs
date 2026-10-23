@@ -166,7 +166,7 @@ public sealed record AiScopeSnapshot(
 
 public sealed record AiProviderRequest(
     AiOperation Operation, string Model,
-    string SystemPrompt, string UserText, int MaxOutputTokens);
+    string SystemPrompt, string UserText, int MaxOutputTokens, AiSettings? Settings = null);
 
 public sealed record AiQuoteCandidate(
     string OriginalText, string Explanation,
@@ -190,11 +190,11 @@ public sealed record QuoteWriteCommand(
 
 public sealed record VerifiedAiBatchCommand(
     Guid BatchId, ReaderContext Context, string ScopeSha256,
-    IReadOnlyList<VerifiedQuote> Quotes, int RejectedCount);
+    IReadOnlyList<VerifiedQuote> Quotes, int RejectedCount, AiScopeSnapshot? Scope = null, IReadOnlyList<string>? RejectionReasons = null);
 
 public sealed record QuoteBatchResult(
     Guid BatchId, IReadOnlyList<int> InsertedQuoteIds,
-    int DuplicateCount, int RejectedCount);
+    int DuplicateCount, int RejectedCount, bool WasAlreadyUndone = false, IReadOnlyList<string>? RejectionReasons = null);
 
 public sealed record UndoBatchResult(
     Guid BatchId, int DeletedCount, int RetainedModifiedCount,
@@ -207,7 +207,7 @@ public sealed record AiAnalysisResult(
 public sealed record AiSettings(
     string HttpsEndpoint, string Model,
     int MaxInputUtf16Units, int MaxOutputTokens,
-    TimeSpan Timeout, bool HasAcknowledgedTextUpload);
+    TimeSpan Timeout, bool HasAcknowledgedTextUpload, bool UseMock = true);
 
 public sealed record BackupValidationResult(
     bool IsValid, int FormatVersion,

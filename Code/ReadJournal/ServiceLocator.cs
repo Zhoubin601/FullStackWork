@@ -8,6 +8,7 @@ using ReadJournal.Library.Services.Reader;
 using ReadJournal.Library.ViewModels;
 using ReadJournal.Services;
 using ReadJournal.Reader;
+using ReadJournal.Library.Services.Ai;
 namespace ReadJournal;
 public class ServiceLocator
 {
@@ -66,6 +67,13 @@ public class ServiceLocator
         serviceCollection.AddSingleton<ReaderSessionCheckpoints>();
         serviceCollection.AddSingleton<IReaderSessionService, ReaderSessionService>();
         serviceCollection.AddSingleton<IReaderPreferencesStorage, ReaderPreferencesStorage>();
+        serviceCollection.AddSingleton<IAiSettingsStorage, AiSettingsStorage>();
+        serviceCollection.AddSingleton<ISecretStore, SessionSecretStore>();
+        serviceCollection.AddSingleton<AiBatchCheckpoints>();
+        serviceCollection.AddSingleton<IAiQuoteVerifier, AiQuoteVerifier>();
+        serviceCollection.AddSingleton<IDeepSeekClient>(sp => new DeepSeekClient(sp.GetRequiredService<IAiSettingsStorage>(), sp.GetRequiredService<ISecretStore>()));
+        serviceCollection.AddSingleton<AiScopeFactory>();
+        serviceCollection.AddSingleton<IReaderAiService, ReaderAiService>();
         serviceCollection.AddSingleton<ReaderViewModel>();
         serviceCollection.AddSingleton<MainWindowViewModel>();
         serviceCollection.AddSingleton<InitializationViewModel>();

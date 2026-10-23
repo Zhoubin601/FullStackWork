@@ -1,0 +1,385 @@
+{
+  "analysis_before_generation": {
+    "quotes": 0,
+    "batches": 0
+  },
+  "after_generation": {
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 0,
+        "CreatedAt": 639283256542358588,
+        "UpdatedAt": 639283256542358588,
+        "Revision": 0
+      }
+    ],
+    "QuoteOrigin": [
+      {
+        "QuoteId": 1,
+        "Source": 2,
+        "OriginalText": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":64,\"NonTextBlockKey\":null}}",
+        "PrefixHash": null,
+        "SuffixHash": null,
+        "LocationStatus": 0,
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "DedupeKey": "0d173b5c4555be33ba4b2a0dbf9feef80830d79dbb1ecd8d42c9d858f05b7c0f"
+      }
+    ],
+    "AiGenerationBatch": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "30c35778eed981fbd1d90cd78f9dff5bb33767dd0adc8f484e57f9bc4b439102",
+        "CreatedUtcTicks": 639283256542430057,
+        "Status": 0,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[1]"
+      }
+    ],
+    "AiGenerationBatchItem": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "QuoteId": 1,
+        "CreatedRevision": 0,
+        "CreatedContentHash": "4fb15b4b4264cddb87b2745bbd68030f57854f5c95b0a72151623eb9c89169cb"
+      }
+    ]
+  },
+  "after_favorite_undo": {
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 1,
+        "CreatedAt": 639283256542358588,
+        "UpdatedAt": 639283257216331814,
+        "Revision": 1
+      }
+    ],
+    "AiGenerationBatch": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "30c35778eed981fbd1d90cd78f9dff5bb33767dd0adc8f484e57f9bc4b439102",
+        "CreatedUtcTicks": 639283256542430057,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[1]"
+      }
+    ],
+    "EbookReadingSession": [
+      {
+        "SessionId": "4f3bf06e-170e-4939-b0fe-7458275317ee",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 0.0,
+        "OpenedUtcTicks": 639283255952269892,
+        "ClosedUtcTicks": 639283256727467207,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 77519,
+        "CloseLocalDate": "2026-10-23",
+        "ClockAnomaly": 0
+      }
+    ]
+  },
+  "second_generation": {
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 1,
+        "CreatedAt": 639283256542358588,
+        "UpdatedAt": 639283257216331814,
+        "Revision": 1
+      },
+      {
+        "Id": 2,
+        "BookId": 1,
+        "Text": "第005段：这是用于本地AI模拟验收的合成正文，河岸树影随风轻轻摇动。\n第006段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 0,
+        "CreatedAt": 639283259972913286,
+        "UpdatedAt": 639283259972913286,
+        "Revision": 0
+      }
+    ],
+    "AiGenerationBatch": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "30c35778eed981fbd1d90cd78f9dff5bb33767dd0adc8f484e57f9bc4b439102",
+        "CreatedUtcTicks": 639283256542430057,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[1]"
+      },
+      {
+        "BatchId": "ca8debee-bf15-413c-ba85-03625354d057",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "44911be8cbf19ce4bc9c201ad02fd28748367908e2abd561b82f197fdac75192",
+        "CreatedUtcTicks": 639283259972932027,
+        "Status": 0,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[2]"
+      }
+    ]
+  },
+  "after_unmodified_undo": {
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 1,
+        "CreatedAt": 639283256542358588,
+        "UpdatedAt": 639283257216331814,
+        "Revision": 1
+      }
+    ],
+    "QuoteOrigin": [
+      {
+        "QuoteId": 1,
+        "Source": 2,
+        "OriginalText": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":64,\"NonTextBlockKey\":null}}",
+        "PrefixHash": null,
+        "SuffixHash": null,
+        "LocationStatus": 0,
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "DedupeKey": "0d173b5c4555be33ba4b2a0dbf9feef80830d79dbb1ecd8d42c9d858f05b7c0f"
+      }
+    ],
+    "AiGenerationBatch": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "30c35778eed981fbd1d90cd78f9dff5bb33767dd0adc8f484e57f9bc4b439102",
+        "CreatedUtcTicks": 639283256542430057,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[1]"
+      },
+      {
+        "BatchId": "ca8debee-bf15-413c-ba85-03625354d057",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "44911be8cbf19ce4bc9c201ad02fd28748367908e2abd561b82f197fdac75192",
+        "CreatedUtcTicks": 639283259972932027,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[2]"
+      }
+    ],
+    "AiGenerationBatchItem": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "QuoteId": 1,
+        "CreatedRevision": 0,
+        "CreatedContentHash": "4fb15b4b4264cddb87b2745bbd68030f57854f5c95b0a72151623eb9c89169cb"
+      }
+    ]
+  },
+  "final": {
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "Thoughts": "本地模拟感想：请结合原文自行判断。",
+        "Page": null,
+        "IsFavorite": 1,
+        "CreatedAt": 639283256542358588,
+        "UpdatedAt": 639283257216331814,
+        "Revision": 1
+      }
+    ],
+    "QuoteOrigin": [
+      {
+        "QuoteId": 1,
+        "Source": 2,
+        "OriginalText": "第一章 合成阅读样本\n春天的河流缓缓流过。每一条观察都留下独特的痕迹。\n第001段：这是用于本地AI模拟验收的合成正文，河岸树影",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":64,\"NonTextBlockKey\":null}}",
+        "PrefixHash": null,
+        "SuffixHash": null,
+        "LocationStatus": 0,
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "DedupeKey": "0d173b5c4555be33ba4b2a0dbf9feef80830d79dbb1ecd8d42c9d858f05b7c0f"
+      }
+    ],
+    "AiGenerationBatch": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "30c35778eed981fbd1d90cd78f9dff5bb33767dd0adc8f484e57f9bc4b439102",
+        "CreatedUtcTicks": 639283256542430057,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[1]"
+      },
+      {
+        "BatchId": "ca8debee-bf15-413c-ba85-03625354d057",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "ScopeSha256": "44911be8cbf19ce4bc9c201ad02fd28748367908e2abd561b82f197fdac75192",
+        "CreatedUtcTicks": 639283259972932027,
+        "Status": 1,
+        "InsertedCount": 1,
+        "DuplicateCount": 0,
+        "RejectedCount": 0,
+        "InsertedQuoteIdsJson": "[2]"
+      }
+    ],
+    "AiGenerationBatchItem": [
+      {
+        "BatchId": "5f06cfbe-cd6d-47a5-b53a-edc862223db9",
+        "QuoteId": 1,
+        "CreatedRevision": 0,
+        "CreatedContentHash": "4fb15b4b4264cddb87b2745bbd68030f57854f5c95b0a72151623eb9c89169cb"
+      }
+    ],
+    "EbookReadingSession": [
+      {
+        "SessionId": "4f3bf06e-170e-4939-b0fe-7458275317ee",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 0.0,
+        "OpenedUtcTicks": 639283255952269892,
+        "ClosedUtcTicks": 639283256727467207,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 77519,
+        "CloseLocalDate": "2026-10-23",
+        "ClockAnomaly": 0
+      },
+      {
+        "SessionId": "81bbd280-d366-45c6-86a4-a39d32b420a5",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":180,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 3.3112582781456954,
+        "OpenedUtcTicks": 639283258932959900,
+        "ClosedUtcTicks": 639283260110218963,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 117725,
+        "CloseLocalDate": "2026-10-23",
+        "ClockAnomaly": 0
+      },
+      {
+        "SessionId": "7471af87-301e-4800-9685-4af5e935c565",
+        "BookId": 1,
+        "BookUid": "a627159a-6007-42b5-9a0a-510051e91532",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"76459b2d-50f7-4c15-9751-2b556435c381\",\"SourceSha256\":\"d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51\",\"CanonicalSha256\":\"32932c3462d33167ec85b68e4b3d3afe1f8dad2a96da5d5b82aa11bd5ea9b9c0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 0.0,
+        "OpenedUtcTicks": 639283260990228768,
+        "ClosedUtcTicks": 639283262288751893,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 129852,
+        "CloseLocalDate": "2026-10-23",
+        "ClockAnomaly": 0
+      }
+    ],
+    "integrity_check": "ok",
+    "foreign_key_errors": [],
+    "source_sha256": "d72da1f6132cddcb943bac52a1ac6db343b078dd1fc40401c1ec3feb79340c51"
+  },
+  "range_analysis": {
+    "global_pages": [
+      1,
+      2
+    ],
+    "utf16_units": 379,
+    "quote_count_after": 1,
+    "mode": "local mock",
+    "evidence": [
+      "24-range-confirm.png",
+      "25-range-result.png"
+    ]
+  },
+  "normal_closes": [
+    {
+      "op": "normal-close",
+      "run": 1,
+      "exit_code": 0
+    },
+    {
+      "op": "normal-close",
+      "run": 2,
+      "exit_code": 0
+    }
+  ],
+  "actual_settings_saved": {
+    "HttpsEndpoint": "https://api.deepseek.com/chat/completions",
+    "Model": "deepseek-chat",
+    "MaxInputUtf16Units": 24000,
+    "MaxOutputTokens": 2048,
+    "Timeout": "00:00:45",
+    "HasAcknowledgedTextUpload": false,
+    "UseMock": true
+  },
+  "actual_settings_evidence": "settings-final/03-settings-after-save.png"
+}

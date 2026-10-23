@@ -1,0 +1,37 @@
+[
+  {
+    "op": "click",
+    "x": 115,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "01-settings-top"
+  },
+  {
+    "op": "click",
+    "x": 1136,
+    "y": 645
+  },
+  {
+    "op": "capture",
+    "name": "02-settings-bottom"
+  },
+  {
+    "op": "click",
+    "x": 370,
+    "y": 135
+  },
+  {
+    "op": "capture",
+    "name": "03-settings-after-save"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,304 @@
+[
+  {
+    "op": "capture",
+    "name": "01-start"
+  },
+  {
+    "op": "click",
+    "x": 117,
+    "y": 264
+  },
+  {
+    "op": "capture",
+    "name": "02-library"
+  },
+  {
+    "op": "click",
+    "x": 1079,
+    "y": 410
+  },
+  {
+    "op": "capture",
+    "name": "03-detail"
+  },
+  {
+    "op": "click",
+    "x": 330,
+    "y": 370
+  },
+  {
+    "op": "capture",
+    "name": "04-reader"
+  },
+  {
+    "op": "click",
+    "x": 921,
+    "y": 443
+  },
+  {
+    "op": "capture",
+    "name": "05-analysis-scope"
+  },
+  {
+    "op": "click",
+    "x": 821,
+    "y": 485
+  },
+  {
+    "op": "capture",
+    "name": "06-analysis-result"
+  },
+  {
+    "op": "click",
+    "x": 958,
+    "y": 500
+  },
+  {
+    "op": "capture",
+    "name": "07-auto-save-confirm"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 500
+  },
+  {
+    "op": "capture",
+    "name": "08-auto-saved"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 315
+  },
+  {
+    "op": "capture",
+    "name": "09-ai-quote-list"
+  },
+  {
+    "op": "click",
+    "x": 626,
+    "y": 515
+  },
+  {
+    "op": "click",
+    "x": 342,
+    "y": 515
+  },
+  {
+    "op": "capture",
+    "name": "10-undo-confirm"
+  },
+  {
+    "op": "click",
+    "x": 343,
+    "y": 515
+  },
+  {
+    "op": "capture",
+    "name": "11-undo-favorite-confirm"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "12-favorite-retained"
+  },
+  {
+    "op": "click",
+    "x": 453,
+    "y": 548
+  },
+  {
+    "op": "capture",
+    "name": "13-return-original"
+  },
+  {
+    "op": "click",
+    "x": 450,
+    "y": 516
+  },
+  {
+    "op": "capture",
+    "name": "14-original-highlight"
+  },
+  {
+    "op": "capture",
+    "name": "15-original-highlight-settled"
+  },
+  {
+    "op": "click",
+    "x": 1090,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "16-next-page"
+  },
+  {
+    "op": "click",
+    "x": 954,
+    "y": 500
+  },
+  {
+    "op": "capture",
+    "name": "17-second-batch-confirm"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 498
+  },
+  {
+    "op": "capture",
+    "name": "18-second-batch-saved"
+  },
+  {
+    "op": "click",
+    "x": 113,
+    "y": 315
+  },
+  {
+    "op": "capture",
+    "name": "19-two-batches"
+  },
+  {
+    "op": "click",
+    "x": 343,
+    "y": 490
+  },
+  {
+    "op": "capture",
+    "name": "20-undo-unmodified-confirm"
+  },
+  {
+    "op": "click",
+    "x": 822,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "21-unmodified-deleted"
+  },
+  {
+    "op": "click",
+    "x": 450,
+    "y": 516
+  },
+  {
+    "op": "capture",
+    "name": "22-back-to-retained-original"
+  },
+  {
+    "op": "click",
+    "x": 997,
+    "y": 347
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "End"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "23-page-range-mode"
+  },
+  {
+    "op": "click",
+    "x": 913,
+    "y": 389
+  },
+  {
+    "op": "type",
+    "text": "1"
+  },
+  {
+    "op": "click",
+    "x": 1034,
+    "y": 389
+  },
+  {
+    "op": "type",
+    "text": "2"
+  },
+  {
+    "op": "click",
+    "x": 920,
+    "y": 441
+  },
+  {
+    "op": "capture",
+    "name": "24-range-confirm"
+  },
+  {
+    "op": "click",
+    "x": 822,
+    "y": 486
+  },
+  {
+    "op": "capture",
+    "name": "25-range-result"
+  },
+  {
+    "op": "click",
+    "x": 116,
+    "y": 467
+  },
+  {
+    "op": "capture",
+    "name": "26-settings-mock"
+  },
+  {
+    "op": "click",
+    "x": 1136,
+    "y": 645
+  },
+  {
+    "op": "capture",
+    "name": "27-session-secret-controls"
+  },
+  {
+    "op": "click",
+    "x": 371,
+    "y": 135
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "28-restarted"
+  },
+  {
+    "op": "click",
+    "x": 113,
+    "y": 314
+  },
+  {
+    "op": "capture",
+    "name": "29-persisted-ai-quote"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

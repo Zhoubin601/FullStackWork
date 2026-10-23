@@ -1,17 +1,18 @@
 using ReadJournal.Library.Models;
 namespace ReadJournal.Library.Services;
-public class QuoteStorage : IQuoteStorage
+public partial class QuoteStorage : IQuoteStorage
 {
     private readonly IDatabaseService _database; private readonly IReadingService _reading;
-    public QuoteStorage(IDatabaseService database, IReadingService reading) { _database = database; _reading = reading; }
+    public QuoteStorage(IDatabaseService database, IReadingService reading, Reader.IReaderSessionService? sessions = null, Reader.IReaderDocumentService? documents = null, Reader.IApplicationDataCoordinator? data = null, Ai.AiBatchCheckpoints? checkpoints = null)
+    { _database = database; _reading = reading; _sessions = sessions; _documents = documents; _data = data; _checkpoints = checkpoints ?? new(); }
     public Task<Quote?> GetAsync(int id) => _database.ReadAsync(c => (Quote?)c.Find<Quote>(id));
     public Task<IReadOnlyList<QuoteItem>> SearchAsync(string query, bool favoritesOnly, int? bookId = null) => _database.ReadAsync(c =>
     {
-        var books = c.Table<Book>().ToDictionary(x => x.Id); var text = query.Trim();
+        var books = c.Table<Book>().ToDictionary(x => x.Id); var origins = c.Table<Models.Reader.QuoteOrigin>().ToDictionary(x => x.QuoteId); var text = query.Trim();
         return (IReadOnlyList<QuoteItem>)c.Table<Quote>().OrderByDescending(x => x.UpdatedAt).ToList()
          .Where(x => (!favoritesOnly || x.IsFavorite) && (!bookId.HasValue || x.BookId == bookId) && books.ContainsKey(x.BookId))
          .Where(x => x.Text.Contains(text, StringComparison.OrdinalIgnoreCase) || books[x.BookId].Title.Contains(text, StringComparison.OrdinalIgnoreCase))
-         .Select(x => new QuoteItem { Quote = x, BookTitle = books[x.BookId].Title }).ToArray();
+         .Select(x => new QuoteItem { Quote = x, BookTitle = books[x.BookId].Title, Source = origins.GetValueOrDefault(x.Id)?.Source ?? Models.Reader.QuoteSource.Manual, BatchId = origins.GetValueOrDefault(x.Id)?.BatchId }).ToArray();
     });
     public Task<int> SaveAsync(Quote quote) => _database.WriteAsync(c =>
     {

@@ -184,3 +184,17 @@ ReadJournal.Library/Services/Reader/EpubBookParser.cs
 ReadJournal.UnitTest/EpubTestBooks.cs
 ReadJournal.UnitTest/EpubImportTests.cs
 ReadJournal.UnitTest/EpubRenderingTests.cs
+ReadJournal.Library/Services/Ai/AiBatchCheckpoints.cs
+ReadJournal.Library/Services/Ai/AiBatchStorage.cs
+ReadJournal.Library/Services/Ai/AiIntegrity.cs
+ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs
+ReadJournal.Library/Services/Ai/AiScopeFactory.cs
+ReadJournal.Library/Services/Ai/AiSettingsStorage.cs
+ReadJournal.Library/Services/Ai/DeepSeekClient.cs
+ReadJournal.Library/Services/Ai/ReaderAiService.cs
+ReadJournal.Library/ViewModels/ReaderViewModel.Ai.cs
+ReadJournal.Library/ViewModels/SettingsViewModel.Ai.cs
+ReadJournal.UnitTest/AiHttpTests.cs
+ReadJournal.UnitTest/AiWorkflowTests.cs
+ReadJournal.UnitTest/AiTestFixture.cs
+ReadJournal.UnitTest/AiViewModelTests.cs

@@ -5,7 +5,7 @@ using ReadJournal.Library.Services;
 using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.ViewModels;
 
-public sealed class ReaderViewModel : ViewModelBase
+public sealed partial class ReaderViewModel : ViewModelBase
 {
     private readonly IDatabaseService _database; private readonly IApplicationDataCoordinator _data;
     private readonly IReaderDocumentService _documents; private readonly IReaderLayoutService _layouts;
@@ -55,10 +55,11 @@ public sealed class ReaderViewModel : ViewModelBase
     public IAsyncRelayCommand<TocEntry> GoToChapterCommand { get; }
     public ReaderViewModel(IDatabaseService database, IApplicationDataCoordinator data, IReaderDocumentService documents,
         IReaderLayoutService layouts, IReaderSessionService sessions, IReaderPreferencesStorage preferences,
-        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main, IReaderQuoteService? quotes = null, IAlertService? generalAlerts = null)
+        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main, IReaderQuoteService? quotes = null, IAlertService? generalAlerts = null, ReadJournal.Library.Services.Ai.AiScopeFactory? aiScopes = null, IReaderAiService? ai = null, IAiSettingsStorage? aiSettings = null)
     {
         _database = database; _data = data; _documents = documents; _layouts = layouts; _sessions = sessions;
         _preferences = preferences; _platform = platform; _alerts = alerts; _clock = clock; _quotes = quotes; _generalAlerts = generalAlerts;
+        InitializeAi(aiScopes, ai, aiSettings);
         CopySelectionCommand = new AsyncRelayCommand(() => Observe(CopySelectionAsync));
         SaveSelectionCommand = new AsyncRelayCommand(() => Observe(SaveSelectionAsync));
         MarkCompletedCommand = new AsyncRelayCommand(() => Observe(async () => { if (_context is null || Phase != ReaderPhase.Active) return; await _sessions.MarkCompletedAsync(_context, _lifetime.Token); Notice = "已标记读完；继续回看不会取消完成状态。"; }));
@@ -77,11 +78,11 @@ public sealed class ReaderViewModel : ViewModelBase
     {
         if (parameter is not ReaderOpenRequest { BookId: > 0 } request) throw new ArgumentException("阅读器参数无效。");
         if (_context is not null) throw new InvalidOperationException("请先关闭当前阅读会话。");
-        base.SetParameter(parameter); _request = request; _identity = null; _position = null; _start = null; _frozen = null;
+        ResetAi(); base.SetParameter(parameter); _request = request; _identity = null; _position = null; _start = null; _frozen = null;
         _lifetime.Dispose(); _lifetime = new(); Phase = ReaderPhase.Idle; Page = null; Document = null; Selection = null; Notice = "";
     }
     public override void InvalidateDataSet()
-    { if (_context is not null) throw new InvalidOperationException("活动阅读器不能替换数据集。"); _lifetime.Cancel(); base.SetParameter(null!); _request = null; Page = null; Document = null; _identity = null; }
+    { if (_context is not null) throw new InvalidOperationException("活动阅读器不能替换数据集。"); ResetAi(); _lifetime.Cancel(); base.SetParameter(null!); _request = null; Page = null; Document = null; _identity = null; }
     protected override Task LoadAsync()
     { if (_request is null || Phase != ReaderPhase.Idle) return Task.CompletedTask; return _opening = Observe(OpenAsync); }
     private async Task OpenAsync()
@@ -174,6 +175,7 @@ public sealed class ReaderViewModel : ViewModelBase
     }
     private async Task ReflowAsync()
     {
+        InvalidateAiPageNumbers();
         _reflow?.Cancel(); var source = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token); _reflow = source;
         var task = ReflowCoreAsync(source); _reflowing = task; await task;
     }
@@ -215,6 +217,7 @@ public sealed class ReaderViewModel : ViewModelBase
     }
     public override async Task<bool> CanLeaveAsync()
     {
+        CancelAi();
         if (_context is null)
         {
             _lifetime.Cancel(); _reflow?.Cancel(); _index?.Cancel(); await _opening; await _beginning;
@@ -252,7 +255,7 @@ public sealed class ReaderViewModel : ViewModelBase
     }
     private async Task ReleaseAsync()
     {
-        _lifetime.Cancel(); _index?.Cancel(); await _indexing; Page = null;
+        ResetAi(); _lifetime.Cancel(); _index?.Cancel(); await _indexing; Page = null;
         await _layouts.ReleaseAllAsync(); await _documents.ReleaseAllAsync(); _layout = null;
         if (_fullScreen) { await _platform.SetFullScreenAsync(false, CancellationToken.None); _fullScreen = false; }
         _identity = null; Document = null;

@@ -132,3 +132,9 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 ## 2026-10-23 Windows 阅读器验收
 
 feature/reader-native基准e50612b的P0～P7在Windows11 x64/.NET8.0.424/实际150%DPI补验通过，用户授权通过后并入main。生产工作区/186文件独立源码各270通过、0失败、2个符号链接权限跳过；原生实验14通过及真实鼠标/Shift跨页/焦点/重排通过。原有手动业务、TXT/EPUB续读与定位书摘、完整ZIP UI删除恢复及真实进程故障恢复有证据。说明docs/reader-windows-acceptance-20261023.md，原始证据docs/evidence/reader/windows-20261023。仍未覆盖Windows100%/200%与跨屏、真实商业EPUB；P8～P10未实施。现有正式报告和源码ZIP没有更新，不将旧交付认作当前扩展源码。
+
+## 2026-10-23 P8已完成（优先于历史状态）
+
+本轮用户明确“继续p8，完成后推送远端”。从main=cd3386b建立feature/reader-ai-p8；P8范围快照/默认Mock/DeepSeek HTTP适配/精确原句核验/原子自动入库/去重/不可变回执/本地保存重试/安全撤销、AI来源、设置与隐藏会话密钥、取消及过期响应隔离均完成。P8-01～10通过，Linux工作区与200文件独立源码Release各327通过、0失败、0跳过（原272+新增55）。真实Linux窗口验证分析不写库、生成/收藏保留/未改项撤销/原文高亮及全书1～2页379字符Mock分析。证据docs/evidence/reader/P8/acceptance.md，契约docs/reader-p8-protocol.md。
+
+凭据仅进程会话内存，退出需重输；默认Mock无真实内容API调用。P8新增Windows实机保留，P7的Windows150%结果不代替P8；P9/P10未开始，真实API当前接口/费率及受控调用后续另行说明，不在聊天收Key。raw/output/参考/冻结fixtures保持，旧正式报告和ZIP不代表P8源码。本轮完成后按授权推送feature/reader-ai-p8，继续前核对真实远端SHA；未经指令不自动合并main。

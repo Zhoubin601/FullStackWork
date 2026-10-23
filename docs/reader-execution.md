@@ -11,8 +11,9 @@
 | P2 正式契约与迁移 | 七项通过（Linux）；实现 9b24b07 | docs/evidence/reader/P2/acceptance.md |
 | P3 完整备份与恢复 | 八项通过（Linux）；实现 17690bb，已推送16e4155 | docs/evidence/reader/P3/acceptance.md |
 | P4 受管TXT与扫描删除 | 八项通过（Linux）；实现5358a4a，验收后推送 | docs/evidence/reader/P4/acceptance.md |
-| P5～P7 | 已授权顺序实施，尚未开始 | 每阶段验收并推送后继续 |
-| P8～P10 | 未开始 | 按前置顺序推进 |
+| P5～P7 | 已完成并合入main；Linux阶段验收及Windows150%补验通过 | P5/P6/P7/acceptance.md、reader-windows-acceptance-20261023.md |
+| P8 | P8-01～10已通过；按授权推送feature/reader-ai-p8 | docs/evidence/reader/P8/acceptance.md |
+| P9～P10 | 未开始 | 真实API及发布后续单列 |
 
 ## P0 本轮步骤
 
@@ -77,3 +78,9 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 ## 2026-10-23 Windows 补验（优先于上述保留未测状态）
 
 按用户授权验收feature/reader-native并通过后合并main。本机Windows11 x64、实际150%DPI：生产及独立186文件源码均270通过/0失败/2符号链接权限跳过；原生实验14/14，真实拖选/Shift跨页复制/焦点/重排通过；旧库迁移/锁、4处恢复/10处导入删除进程中断通过；11个EPUB变体往返及实际TXT/EPUB完整UI闭环通过。首次时区样本错误、权限表达及开发探针锁文件已修正。完整验收说明docs/reader-windows-acceptance-20261023.md，证据docs/evidence/reader/windows-20261023。当前已测范围允许合并；100%/200%与跨屏/真实商业EPUB仍未测，P8以后未实施，旧正式交付保持。
+
+## 2026-10-23 P8当前验收（优先于历史状态）
+
+P8从已合并main=cd3386b实施，分支feature/reader-ai-p8。默认Mock完整走HTTP序列化/结构解析，当前页/选区/页范围快照、原句核验、受保护批次存储、回执幂等、失败只重试本地保存、撤销、会话内密钥和Reader取消/过期隔离均已接入。验收P8-01～10通过，工作区与200文件独立源码各327/327，55项P8新测试；真实Linux窗口有分析0写入、自动保存、保留收藏/删除未改项、原文高亮及379字符页范围分析证据。详见P8/acceptance.md及reader-p8-protocol.md。
+
+本轮按用户要求完成后推送feature/reader-ai-p8，推送结果按真实Git回读；不自动合并main。真实内容API调用0，P9/P10未实施，P8新增Windows实机未测，现有output保持。

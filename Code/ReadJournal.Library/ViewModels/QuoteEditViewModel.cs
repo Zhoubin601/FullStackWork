@@ -8,6 +8,7 @@ namespace ReadJournal.Library.ViewModels;
 public partial class QuoteEditViewModel : EditViewModelBase
 {
     private ReaderQuoteNavigation? _readerNavigation;
+    [ObservableProperty] private string _sourceLabel = "";
     [ObservableProperty] private string _originalText = "";
     public IAsyncRelayCommand? OpenOriginalCommand { get; private set; }
     private readonly IBookStorage _books; private readonly IQuoteStorage _quotes; private Quote _quote = new();
@@ -20,7 +21,7 @@ public partial class QuoteEditViewModel : EditViewModelBase
     public QuoteEditViewModel(IBookStorage books, IQuoteStorage quotes, IAlertService alert, MainViewModel main) : base(alert, main) { _books = books; _quotes = quotes; }
     public QuoteEditViewModel(IBookStorage books, IQuoteStorage quotes, IAlertService alert, MainViewModel main, ReaderQuoteNavigation readerNavigation) : this(books, quotes, alert, main)
     { _readerNavigation = readerNavigation; OpenOriginalCommand = new AsyncRelayCommand(() => NavigateAsync(() => readerNavigation.OpenAsync(_quote.Id))); }
-    public override void SetParameter(object parameter) { base.SetParameter(parameter); _quote = parameter as Quote ?? new(); SelectedBook = null; BooksList = []; Text = Thoughts = Page = ""; IsFavorite = false; OriginalText = ""; AcceptChanges(); }
+    public override void SetParameter(object parameter) { base.SetParameter(parameter); _quote = parameter as Quote ?? new(); SelectedBook = null; BooksList = []; Text = Thoughts = Page = ""; IsFavorite = false; OriginalText = ""; SourceLabel = ""; AcceptChanges(); }
     protected override async Task LoadAsync()
     {
         var preserveDraft = HasLoaded && IsDirty; var version = ParameterVersion; var quote = _quote;
@@ -29,7 +30,7 @@ public partial class QuoteEditViewModel : EditViewModelBase
         if (quote.Id != 0) quote = await _quotes.GetAsync(quote.Id);
         var origin = _readerNavigation is null || quote is null ? null : await _readerNavigation.GetOriginAsync(quote.Id);
         var books = await _books.GetAllAsync(); if (version != ParameterVersion) return; _quote = quote ?? throw new InvalidOperationException("书摘已不存在。");
-        OriginalText = origin?.OriginalText ?? "";
+        OriginalText = origin?.OriginalText ?? ""; SourceLabel = origin?.Source == Models.Reader.QuoteSource.AiGenerated ? "AI生成书摘：原句已核验，解读请自行判断；修改或收藏后批次撤销将保留此项。" : "";
         var selectedId = preserveDraft || SelectedBook?.Id != initialBook ? SelectedBook?.Id : _quote.BookId;
         BooksList = books; SelectedBook = BooksList.FirstOrDefault(x => x.Id == selectedId);
         // Choices must still load when a draft already exists; only untouched fields receive stored values.

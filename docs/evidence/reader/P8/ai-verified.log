@@ -1,0 +1,11 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /workspace/FullStackWork/docs/evidence/reader/P8/ai-verified.trx
+
+Passed!  - Failed:     0, Passed:    51, Skipped:     0, Total:    51, Duration: 5 s - ReadJournal.UnitTest.dll (net8.0)

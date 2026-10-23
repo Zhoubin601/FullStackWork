@@ -173,11 +173,13 @@ public interface IDeepSeekClient
 
 public interface IReaderAiService
 {
+    void ForgetContext(ReaderContext context);
     Task<AiAnalysisResult> AnalyzeAsync(
         AiScopeSnapshot scope, AiOperation operation,
         CancellationToken ct);
     Task<QuoteBatchResult> GenerateAndSaveQuotesAsync(
         AiScopeSnapshot scope, CancellationToken ct);
+    Task<QuoteBatchResult> RetrySaveAsync(Guid batchId, ReaderContext context, CancellationToken ct);
     Task<UndoBatchResult> UndoBatchAsync(
         Guid batchId, DataEpoch expectedEpoch, CancellationToken ct);
 }
