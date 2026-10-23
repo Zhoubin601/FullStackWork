@@ -1,0 +1,33 @@
+{
+  "millionCharacterSample": true,
+  "actualWindowDpi": 144,
+  "firstVisibleCaptureUpperBoundMs": 575.6197999999131,
+  "firstVisibleNote": "After managed import; includes UIAutomation and screenshot overhead, OS caches warm",
+  "indexBuildingAtInputStart": false,
+  "indexBuildingBeforeLeave": false,
+  "inputRoundTripMs": [
+    11.326300000291667,
+    2.2528999998030486,
+    0.8058000003074994,
+    1.0591999998723622,
+    2.478000000337488,
+    1.089499999579857,
+    0.7590000004711328,
+    0.5351999989215983,
+    0.7039000010991003,
+    1.19510000149603,
+    0.552199999219738,
+    0.5535000000236323,
+    0.5854999999428401,
+    0.5846999993082136,
+    0.5781999989267206,
+    0.6088999998610234,
+    0.5163000005268259,
+    0.5096999993838836,
+    0.7015999999566702,
+    0.6537000008393079
+  ],
+  "maximumInputRoundTripMs": 11.326300000291667,
+  "leaveRequestMs": 104.34019999956945,
+  "normalClose": true
+}

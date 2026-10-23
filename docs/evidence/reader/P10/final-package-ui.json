@@ -1,0 +1,10 @@
+{
+  "finalPackageApp": true,
+  "schema1MigrationAndContinuedReading": true,
+  "txtAndEpub": true,
+  "completeBackupDeleteRestoreReopen": true,
+  "businessTablesExact": true,
+  "booksRestored": 5,
+  "quoteReturnAndCopy": true,
+  "normalCloses": 2
+}

@@ -1,0 +1,217 @@
+{"time": "2026-10-23 14:50:17+0800", "action": "start", "pid": 40904, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-new", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 14:51:11+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:51:12+0800", "action": "click", "name": "＋ 添加书籍", "index": 0}
+{"time": "2026-10-23 14:51:12+0800", "action": "click", "name": "保存并返回", "index": 0}
+{"time": "2026-10-23 14:51:12+0800", "action": "database-readonly-verification", "label": "01-invalid-manual", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 0, "EbookFile": 0, "EbookProgress": 0, "EbookReadingSession": 0, "Quote": 0, "QuoteOrigin": 0, "ReadingPlan": 0, "ReadingRecord": 0}}
+{"time": "2026-10-23 14:51:13+0800", "action": "edit", "index": 0, "value": "P10 合成手动书"}
+{"time": "2026-10-23 14:51:13+0800", "action": "edit", "index": 1, "value": "合成作者"}
+{"time": "2026-10-23 14:51:13+0800", "action": "edit", "index": 2, "value": "验收"}
+{"time": "2026-10-23 14:51:14+0800", "action": "edit", "index": 3, "value": "280"}
+{"time": "2026-10-23 14:51:14+0800", "action": "edit", "index": 4, "value": "隔离验收数据"}
+{"time": "2026-10-23 14:51:14+0800", "action": "click", "name": "保存并返回", "index": 0}
+{"time": "2026-10-23 14:51:15+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:51:16+0800", "action": "click", "name": "＋ 阅读记录", "index": 0}
+{"time": "2026-10-23 14:51:16+0800", "action": "edit", "index": 0, "value": "1"}
+{"time": "2026-10-23 14:51:16+0800", "action": "edit", "index": 1, "value": "35"}
+{"time": "2026-10-23 14:51:17+0800", "action": "edit", "index": 2, "value": "40"}
+{"time": "2026-10-23 14:51:17+0800", "action": "click", "name": "保存阅读记录", "index": 0}
+{"time": "2026-10-23 14:51:18+0800", "action": "click", "name": "＋ 书摘", "index": 0}
+{"time": "2026-10-23 14:51:18+0800", "action": "edit", "index": 0, "value": "用于P10验收的手动书摘。"}
+{"time": "2026-10-23 14:51:19+0800", "action": "edit", "index": 1, "value": "合成感想"}
+{"time": "2026-10-23 14:51:19+0800", "action": "edit", "index": 2, "value": "15"}
+{"time": "2026-10-23 14:51:20+0800", "action": "click", "name": "保存并返回", "index": 0}
+{"time": "2026-10-23 14:51:20+0800", "action": "click", "name": "＋ 阅读计划", "index": 0}
+{"time": "2026-10-23 14:51:21+0800", "action": "click", "name": "保存并返回", "index": 0}
+{"time": "2026-10-23 14:51:21+0800", "action": "database-readonly-verification", "label": "02-manual-complete", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 1, "EbookFile": 0, "EbookProgress": 0, "EbookReadingSession": 0, "Quote": 1, "QuoteOrigin": 0, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:51:21+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 14:51:22+0800", "action": "screenshot", "file": "01-manual-statistics.png", "rect": [38, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:51:23+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:51:24+0800", "action": "click", "name": "导入 TXT / EPUB", "index": 0}
+{"time": "2026-10-23 14:51:27+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 14:51:27+0800", "action": "database-readonly-verification", "label": "03-txt-imported", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 1, "EbookFile": 0, "EbookProgress": 0, "EbookReadingSession": 0, "Quote": 1, "QuoteOrigin": 0, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:52:09+0800", "action": "database-readonly-verification", "label": "05-txt-import-settled", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 2, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 0, "Quote": 1, "QuoteOrigin": 0, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:52:09+0800", "action": "click", "name": "导入 TXT / EPUB", "index": 0}
+{"time": "2026-10-23 14:52:10+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 14:52:11+0800", "action": "database-readonly-verification", "label": "06-txt-deduplicated", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 2, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 0, "Quote": 1, "QuoteOrigin": 0, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:52:12+0800", "action": "edit", "index": 0, "value": "mixed-lf"}
+{"time": "2026-10-23 14:52:12+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:52:13+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:52:13+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 14:52:14+0800", "action": "screenshot", "file": "02-native-txt.png", "rect": [75, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:53:14+0800", "action": "physical-drag", "start": [775, 548], "end": [1105, 548]}
+{"time": "2026-10-23 14:53:15+0800", "action": "keys", "codes": [17, 67]}
+{"time": "2026-10-23 14:53:15+0800", "action": "keys", "codes": [17, 83]}
+{"time": "2026-10-23 14:53:16+0800", "action": "database-readonly-verification", "label": "07-txt-located-quote", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 2, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 0, "Quote": 2, "QuoteOrigin": 1, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:53:16+0800", "action": "click", "name": "保存书摘 Ctrl+S", "index": 0}
+{"time": "2026-10-23 14:53:16+0800", "action": "database-readonly-verification", "label": "08-txt-quote-dedupe", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 2, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 0, "Quote": 2, "QuoteOrigin": 1, "ReadingPlan": 1, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:53:17+0800", "action": "edit", "index": 1, "value": "28"}
+{"time": "2026-10-23 14:53:17+0800", "action": "keys", "codes": [39]}
+{"time": "2026-10-23 14:53:18+0800", "action": "click", "name": "应用排版", "index": 0}
+{"time": "2026-10-23 14:53:18+0800", "action": "click", "name": "全屏 F11", "index": 0}
+{"time": "2026-10-23 14:53:19+0800", "action": "screenshot", "file": "03-txt-fullscreen.png", "rect": [0, 0, 2560, 1600], "dpi": 144}
+{"time": "2026-10-23 14:53:19+0800", "action": "keys", "codes": [122]}
+{"time": "2026-10-23 14:53:20+0800", "action": "click", "name": "← 返回", "index": 0}
+{"time": "2026-10-23 14:53:21+0800", "action": "click", "name": "＋ 阅读计划", "index": 0}
+{"time": "2026-10-23 14:53:21+0800", "action": "click", "name": "保存并返回", "index": 0}
+{"time": "2026-10-23 14:53:22+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 14:53:22+0800", "action": "click", "name": "标记读完", "index": 0}
+{"time": "2026-10-23 14:53:23+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:53:24+0800", "action": "click", "name": "← 上一页", "index": 0}
+{"time": "2026-10-23 14:53:24+0800", "action": "database-readonly-verification", "label": "09-txt-completed-with-plan", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 2, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 1, "Quote": 2, "QuoteOrigin": 1, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:53:24+0800", "action": "screenshot", "file": "04-txt-completed.png", "rect": [75, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:53:25+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 14:53:25+0800", "action": "screenshot", "file": "05-combined-statistics.png", "rect": [75, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:53:26+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:53:26+0800", "action": "edit", "index": 0, "value": ""}
+{"time": "2026-10-23 14:53:27+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:53:27+0800", "action": "click", "name": "导入 TXT / EPUB", "index": 0}
+{"time": "2026-10-23 14:53:29+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 14:55:45+0800", "action": "edit", "index": 0, "value": "large-image"}
+{"time": "2026-10-23 14:55:46+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:55:46+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:55:47+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 14:55:47+0800", "action": "screenshot", "file": "06-native-epub.png", "rect": [75, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:55:48+0800", "action": "physical-drag", "start": [715, 498], "end": [1035, 498]}
+{"time": "2026-10-23 14:55:49+0800", "action": "click", "name": "复制选区 Ctrl+C", "index": 0}
+{"time": "2026-10-23 14:55:50+0800", "action": "click", "name": "保存书摘 Ctrl+S", "index": 0}
+{"time": "2026-10-23 14:55:50+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:55:51+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:55:51+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:55:52+0800", "action": "screenshot", "file": "07-epub-image.png", "rect": [75, 38, 1770, 1294], "dpi": 144}
+{"time": "2026-10-23 14:55:52+0800", "action": "normal-close", "pid": 40904, "exitCode": 0}
+{"time": "2026-10-23 14:55:52+0800", "action": "database-readonly-verification", "label": "10-epub-closed", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 3, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:58:38+0800", "action": "start", "pid": 15536, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-new", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 14:58:39+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:58:39+0800", "action": "edit", "index": 0, "value": "large-image"}
+{"time": "2026-10-23 14:58:40+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:58:41+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:58:41+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 14:58:42+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:58:43+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:58:43+0800", "action": "click", "name": "下一页 →", "index": 0}
+{"time": "2026-10-23 14:58:44+0800", "action": "screenshot", "file": "10-epub-image-actual.png", "rect": [304, 304, 2036, 1560], "dpi": 144}
+{"time": "2026-10-23 14:58:44+0800", "action": "normal-close", "pid": 15536, "exitCode": 0}
+{"time": "2026-10-23 14:58:44+0800", "action": "database-readonly-verification", "label": "11-epub-image-closed", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 4, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:58:46+0800", "action": "start", "pid": 38504, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-new", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 14:58:47+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:58:47+0800", "action": "edit", "index": 0, "value": "large-image"}
+{"time": "2026-10-23 14:58:48+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:58:49+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:58:49+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 14:58:50+0800", "action": "screenshot", "file": "11-epub-image-resumed.png", "rect": [380, 344, 2112, 1600], "dpi": 144}
+{"time": "2026-10-23 14:58:51+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 14:58:52+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 14:58:52+0800", "action": "click", "name": "复制选区 Ctrl+C", "index": 0}
+{"time": "2026-10-23 14:58:53+0800", "action": "screenshot", "file": "12-quote-return-highlight.png", "rect": [380, 344, 2112, 1600], "dpi": 144}
+{"time": "2026-10-23 14:58:54+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 14:59:37+0800", "action": "click", "name": "保存会话密钥", "index": 0}
+{"time": "2026-10-23 14:59:38+0800", "action": "click", "name": "导出完整 ZIP 备份", "index": 0}
+{"time": "2026-10-23 14:59:40+0800", "action": "click", "name": "保存(S)", "index": 0}
+{"time": "2026-10-23 14:59:42+0800", "action": "database-readonly-verification", "label": "12-before-backup-delete", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 6, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 14:59:42+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 14:59:43+0800", "action": "edit", "index": 0, "value": "large-image"}
+{"time": "2026-10-23 14:59:43+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 14:59:44+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 14:59:44+0800", "action": "click", "name": "删除书籍", "index": 0}
+{"time": "2026-10-23 14:59:45+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 14:59:46+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 14:59:46+0800", "action": "click", "name": "从 ZIP / 旧 JSON 恢复", "index": 0}
+{"time": "2026-10-23 14:59:48+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 14:59:49+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 14:59:52+0800", "action": "database-readonly-verification", "label": "13-after-restore", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 6, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 15:05:41+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:05:41+0800", "action": "edit", "index": 0, "value": "mixed-lf"}
+{"time": "2026-10-23 15:05:42+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:05:42+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:05:43+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 15:05:43+0800", "action": "click", "name": "分析所选范围", "index": 0}
+{"time": "2026-10-23 15:05:44+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:05:44+0800", "action": "click", "name": "生成并自动保存书摘", "index": 0}
+{"time": "2026-10-23 15:05:45+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:05:46+0800", "action": "click", "name": "撤销本批新增书摘", "index": 0}
+{"time": "2026-10-23 15:05:46+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 15:05:47+0800", "action": "click", "name": "保存会话密钥", "index": 0}
+{"time": "2026-10-23 15:05:48+0800", "action": "click", "name": "导出完整 ZIP 备份", "index": 0}
+{"time": "2026-10-23 15:05:49+0800", "action": "click", "name": "保存(S)", "index": 0}
+{"time": "2026-10-23 15:05:49+0800", "action": "database-readonly-verification", "label": "14-before-backup-delete", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 1, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 7, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 15:05:50+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:05:50+0800", "action": "edit", "index": 0, "value": "large-image"}
+{"time": "2026-10-23 15:05:50+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:05:51+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:05:51+0800", "action": "click", "name": "删除书籍", "index": 0}
+{"time": "2026-10-23 15:05:52+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:05:53+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 15:05:53+0800", "action": "click", "name": "从 ZIP / 旧 JSON 恢复", "index": 0}
+{"time": "2026-10-23 15:05:54+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 15:05:55+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:10:19+0800", "action": "database-readonly-verification", "label": "16-restored-verified", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 1, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 3, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 7, "Quote": 3, "QuoteOrigin": 2, "ReadingPlan": 2, "ReadingRecord": 1}}
+{"time": "2026-10-23 15:10:20+0800", "action": "click", "name": "删除会话密钥", "index": 0}
+{"time": "2026-10-23 15:10:20+0800", "action": "screenshot", "file": "16-complete-restored-key-deleted.png", "rect": [380, 344, 2112, 1600], "dpi": 144}
+{"time": "2026-10-23 15:10:20+0800", "action": "normal-close", "pid": 38504, "exitCode": 0}
+{"time": "2026-10-23 15:10:22+0800", "action": "start", "pid": 33256, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-new", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:10:23+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 15:10:23+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 15:10:24+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 15:10:24+0800", "action": "click", "name": "复制选区 Ctrl+C", "index": 0}
+{"time": "2026-10-23 15:10:25+0800", "action": "screenshot", "file": "17-restored-quote-reopened.png", "rect": [304, 304, 2036, 1560], "dpi": 144}
+{"time": "2026-10-23 15:10:25+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 15:10:26+0800", "action": "screenshot", "file": "18-restored-statistics.png", "rect": [304, 304, 2036, 1560], "dpi": 144}
+{"time": "2026-10-23 15:10:26+0800", "action": "normal-close", "pid": 33256, "exitCode": 0}
+{"time": "2026-10-23 15:10:26+0800", "action": "closed-loop-result", "booksRestored": 3, "ebooksRestored": 2, "businessTablesExactlyMatchBackup": true, "fakeCredentialAbsentFromZipAndDataFiles": true, "restoreRetainedSessionCredential": true, "credentialDeleted": true, "restartHasNoCredential": true, "restoredQuoteReturnAndCopy": true, "normalCloses": 2, "mockAnalyzeSaveUndo": true, "zipBytes": 96668, "zipSha256": "fb783e6ff5e2265defa82bd9bb27f0115e118103422f886a924d6ae37c8dd3a9", "networkSamples": {"samples": 62, "maxTcpConnections": 0, "remoteObserved": false}}
+{"time": "2026-10-23 15:11:51+0800", "action": "start", "pid": 31312, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-migrated", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\clean-source\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:11:53+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:11:53+0800", "action": "click", "name": "导入 TXT / EPUB", "index": 0}
+{"time": "2026-10-23 15:11:55+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 15:11:56+0800", "action": "edit", "index": 0, "value": "mixed-lf"}
+{"time": "2026-10-23 15:11:57+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:11:58+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:11:58+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 15:11:59+0800", "action": "click", "name": "生成并自动保存书摘", "index": 0}
+{"time": "2026-10-23 15:11:59+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:12:00+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 15:12:01+0800", "action": "screenshot", "file": "19-migrated-clean-app-statistics.png", "rect": [380, 344, 2112, 1600], "dpi": 144}
+{"time": "2026-10-23 15:12:01+0800", "action": "normal-close", "pid": 31312, "exitCode": 0}
+{"time": "2026-10-23 15:12:03+0800", "action": "start", "pid": 39256, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-migrated", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\clean-source\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:12:03+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:12:04+0800", "action": "edit", "index": 0, "value": "mixed-lf"}
+{"time": "2026-10-23 15:12:04+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:12:05+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:12:05+0800", "action": "click", "name": "开始 / 继续阅读", "index": 0}
+{"time": "2026-10-23 15:12:06+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 15:12:06+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 15:12:07+0800", "action": "click", "name": "复制选区 Ctrl+C", "index": 0}
+{"time": "2026-10-23 15:12:07+0800", "action": "screenshot", "file": "20-migrated-clean-app-reopened.png", "rect": [76, 76, 1808, 1332], "dpi": 144}
+{"time": "2026-10-23 15:12:08+0800", "action": "normal-close", "pid": 39256, "exitCode": 0}
+{"time": "2026-10-23 15:12:08+0800", "action": "clean-migrated-result", "unpackedApp": true, "oldSchema": 1, "newSchema": 2, "legacyBusinessFieldsUnchanged": true, "newTxtAndEpubImported": true, "books": 5, "mockQuoteSaved": 1, "normalCloseAndReopen": true, "restoredQuoteReturnAndCopy": true, "sourceFilesSha256": {"mixed-lf.txt": "3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56", "image-styles.epub": "ddc27494eaf2a0449e0fbb47f4337d21ada990d68fb3ee1d79d739939d5f20b2"}}
+{"time": "2026-10-23 15:13:41+0800", "action": "start", "pid": 42592, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-million", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\Code\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:13:43+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:13:43+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:13:44+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:13:44+0800", "action": "screenshot", "file": "21-million-first-visible.png", "rect": [152, 152, 1884, 1408], "dpi": 144}
+{"time": "2026-10-23 15:13:46+0800", "action": "normal-close", "pid": 42592, "exitCode": 0}
+{"time": "2026-10-23 15:13:46+0800", "action": "desktop-million-result", "millionCharacterSample": true, "actualWindowDpi": 144, "firstVisibleCaptureUpperBoundMs": 575.6197999999131, "firstVisibleNote": "After managed import; includes UIAutomation and screenshot overhead, OS caches warm", "indexBuildingAtInputStart": false, "indexBuildingBeforeLeave": false, "inputRoundTripMs": [11.326300000291667, 2.2528999998030486, 0.8058000003074994, 1.0591999998723622, 2.478000000337488, 1.089499999579857, 0.7590000004711328, 0.5351999989215983, 0.7039000010991003, 1.19510000149603, 0.552199999219738, 0.5535000000236323, 0.5854999999428401, 0.5846999993082136, 0.5781999989267206, 0.6088999998610234, 0.5163000005268259, 0.5096999993838836, 0.7015999999566702, 0.6537000008393079], "maximumInputRoundTripMs": 11.326300000291667, "leaveRequestMs": 104.34019999956945, "normalClose": true}
+{"time": "2026-10-23 15:18:33+0800", "action": "start", "pid": 23324, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-migrated", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\final-source\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:18:34+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 15:18:35+0800", "action": "click", "name": "导出完整 ZIP 备份", "index": 0}
+{"time": "2026-10-23 15:18:36+0800", "action": "click", "name": "保存(S)", "index": 0}
+{"time": "2026-10-23 15:18:37+0800", "action": "database-readonly-verification", "label": "17-migrated-before-delete", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 1, "AiGenerationBatchItem": 1, "AppMetadata": 1, "Book": 5, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 3, "Quote": 3, "QuoteOrigin": 1, "ReadingPlan": 3, "ReadingRecord": 3}}
+{"time": "2026-10-23 15:18:37+0800", "action": "click", "name": "我的书库", "index": 0}
+{"time": "2026-10-23 15:18:38+0800", "action": "edit", "index": 0, "value": "[合成] image-styles"}
+{"time": "2026-10-23 15:18:38+0800", "action": "click", "name": "搜索 / 刷新", "index": 0}
+{"time": "2026-10-23 15:18:39+0800", "action": "click", "name": "打开 →", "index": 0}
+{"time": "2026-10-23 15:18:39+0800", "action": "click", "name": "删除书籍", "index": 0}
+{"time": "2026-10-23 15:18:40+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:18:40+0800", "action": "click", "name": "设置与数据", "index": 0}
+{"time": "2026-10-23 15:18:41+0800", "action": "click", "name": "从 ZIP / 旧 JSON 恢复", "index": 0}
+{"time": "2026-10-23 15:18:42+0800", "action": "click", "name": "打开(O)", "index": 0}
+{"time": "2026-10-23 15:18:43+0800", "action": "click", "name": "确定", "index": 0}
+{"time": "2026-10-23 15:18:44+0800", "action": "database-readonly-verification", "label": "18-migrated-after-restore", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 1, "AiGenerationBatchItem": 1, "AppMetadata": 1, "Book": 5, "EbookFile": 2, "EbookProgress": 2, "EbookReadingSession": 3, "Quote": 3, "QuoteOrigin": 1, "ReadingPlan": 3, "ReadingRecord": 3}}
+{"time": "2026-10-23 15:18:45+0800", "action": "screenshot", "file": "22-final-package-migrated-restored.png", "rect": [304, 304, 2036, 1560], "dpi": 144}
+{"time": "2026-10-23 15:18:45+0800", "action": "normal-close", "pid": 23324, "exitCode": 0}
+{"time": "2026-10-23 15:18:47+0800", "action": "start", "pid": 37480, "data": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\ui-migrated", "app": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\evidence\\reader\\P10\\isolated-data\\final-source\\ReadJournal\\bin\\Release\\net8.0\\ReadJournal.exe"}
+{"time": "2026-10-23 15:18:47+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 15:18:48+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 15:18:48+0800", "action": "click", "name": "复制选区 Ctrl+C", "index": 0}
+{"time": "2026-10-23 15:18:49+0800", "action": "screenshot", "file": "23-final-package-migrated-reopened.png", "rect": [76, 76, 1808, 1332], "dpi": 144}
+{"time": "2026-10-23 15:18:49+0800", "action": "normal-close", "pid": 37480, "exitCode": 0}
+{"time": "2026-10-23 15:18:49+0800", "action": "final-package-result", "finalPackageApp": true, "schema1MigrationAndContinuedReading": true, "txtAndEpub": true, "completeBackupDeleteRestoreReopen": true, "businessTablesExact": true, "booksRestored": 5, "quoteReturnAndCopy": true, "normalCloses": 2}

@@ -198,3 +198,5 @@ ReadJournal.UnitTest/AiHttpTests.cs
 ReadJournal.UnitTest/AiWorkflowTests.cs
 ReadJournal.UnitTest/AiTestFixture.cs
 ReadJournal.UnitTest/AiViewModelTests.cs
+DEPENDENCIES.md
+CHANGELOG.md

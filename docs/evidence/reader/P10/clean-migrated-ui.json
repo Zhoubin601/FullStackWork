@@ -1,0 +1,15 @@
+{
+  "unpackedApp": true,
+  "oldSchema": 1,
+  "newSchema": 2,
+  "legacyBusinessFieldsUnchanged": true,
+  "newTxtAndEpubImported": true,
+  "books": 5,
+  "mockQuoteSaved": 1,
+  "normalCloseAndReopen": true,
+  "restoredQuoteReturnAndCopy": true,
+  "sourceFilesSha256": {
+    "mixed-lf.txt": "3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56",
+    "image-styles.epub": "ddc27494eaf2a0449e0fbb47f4337d21ada990d68fb3ee1d79d739939d5f20b2"
+  }
+}

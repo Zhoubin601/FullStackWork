@@ -1,0 +1,22 @@
+edit(0,"large-image");click("搜索 / 刷新");click("打开 →");click("开始 / 继续阅读")
+shot("06-native-epub")
+hwnd=foreground();left,top,right,bottom=win32gui.GetWindowRect(hwnd)
+# The body begins at the same native reader column; current preference is 28pt.
+drag(left+640,top+460,left+960,top+460)
+click("复制选区 Ctrl+C")
+find("已复制选区正文。","Text")
+assert len(clipboard())>2
+click("保存书摘 Ctrl+S")
+for i in range(3):click("下一页 →")
+shot("07-epub-image")
+close()
+a=snapshot("10-epub-closed")
+assert len(a["Book"])==3 and len(a["EbookFile"])==2 and len(a["QuoteOrigin"])==2
+assert any(json.loads(p["LastPositionJson"])["Value"].get("NonTextBlockKey") for p in a["EbookProgress"])
+start(state()["data"])
+click("我的书库");edit(0,"large-image");click("搜索 / 刷新");click("打开 →");click("开始 / 继续阅读")
+shot("08-epub-image-resumed")
+click("书摘收藏");click("回到原文")
+click("复制选区 Ctrl+C");find("已复制选区正文。","Text")
+shot("09-epub-quote-return")
+click("设置与数据")

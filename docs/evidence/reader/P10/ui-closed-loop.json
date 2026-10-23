@@ -1,0 +1,19 @@
+{
+  "booksRestored": 3,
+  "ebooksRestored": 2,
+  "businessTablesExactlyMatchBackup": true,
+  "fakeCredentialAbsentFromZipAndDataFiles": true,
+  "restoreRetainedSessionCredential": true,
+  "credentialDeleted": true,
+  "restartHasNoCredential": true,
+  "restoredQuoteReturnAndCopy": true,
+  "normalCloses": 2,
+  "mockAnalyzeSaveUndo": true,
+  "zipBytes": 96668,
+  "zipSha256": "fb783e6ff5e2265defa82bd9bb27f0115e118103422f886a924d6ae37c8dd3a9",
+  "networkSamples": {
+    "samples": 62,
+    "maxTcpConnections": 0,
+    "remoteObserved": false
+  }
+}

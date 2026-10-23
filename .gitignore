@@ -38,3 +38,9 @@ __pycache__/
 /docs/evidence/reader/windows-20261023/p7-compatibility/sources/
 /docs/evidence/reader/windows-20261023/p7-compatibility/repeated-sources/
 /docs/evidence/reader/windows-20261023/**/*.zip
+
+# P10 generated process fixtures; keep probe summaries and logs in Git.
+/docs/evidence/reader/P10/p7-compatibility/data/
+/docs/evidence/reader/P10/p7-compatibility/sources/
+/docs/evidence/reader/P10/p7-compatibility/repeated-sources/
+/docs/evidence/reader/P10/**/*.zip

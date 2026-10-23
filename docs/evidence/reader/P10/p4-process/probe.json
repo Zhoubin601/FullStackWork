@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "platform": "Microsoft Windows NT 10.0.26300.0",
+  "runtime": "8.0.30",
+  "sourceSha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b",
+  "sourceUnchanged": true,
+  "actualInterruptions": [
+    {
+      "point": "import.copying",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "import.parsing",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "import.after-install",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "import.before-transaction",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "import.in-transaction",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "import.after-commit",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_import",
+      "dataSha256": "dd9770bf26f551f29f83eb2651ef4d6acc7b8580a46365aa668938cfa36727f9",
+      "inventory": [
+        {
+          "Path": "books/managed/abf2792d-096a-4b0e-8e4b-94046557d6e3/chapters/ch-0001.utf16",
+          "Bytes": 88,
+          "Sha256": "8881e32d62811dd3ef8d97e18950538811121d9da92ebd674ca6be674a910378"
+        },
+        {
+          "Path": "books/managed/abf2792d-096a-4b0e-8e4b-94046557d6e3/chapters/ch-0002.utf16",
+          "Bytes": 42,
+          "Sha256": "9f2a4a56413d77863fc0c1d389d2ffdee0b913ddcbed0aa2143224029e8c0d92"
+        },
+        {
+          "Path": "books/managed/abf2792d-096a-4b0e-8e4b-94046557d6e3/document-v1.json",
+          "Bytes": 1482,
+          "Sha256": "594abd1e3fb140818c881ee84f5409050136229c54bdabda2b0826d2cd3531b9"
+        },
+        {
+          "Path": "books/managed/abf2792d-096a-4b0e-8e4b-94046557d6e3/source.txt",
+          "Bytes": 168,
+          "Sha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b"
+        }
+      ],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "delete.before-transaction",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "bd92c7ff3d12e70142598a856c4861b145d635ae570e40a806cca3cbdc3d098c",
+      "inventory": [
+        {
+          "Path": "books/managed/c3d9d6e0-df37-42cd-a48b-ab8cda9dc80b/chapters/ch-0001.utf16",
+          "Bytes": 88,
+          "Sha256": "8881e32d62811dd3ef8d97e18950538811121d9da92ebd674ca6be674a910378"
+        },
+        {
+          "Path": "books/managed/c3d9d6e0-df37-42cd-a48b-ab8cda9dc80b/chapters/ch-0002.utf16",
+          "Bytes": 42,
+          "Sha256": "9f2a4a56413d77863fc0c1d389d2ffdee0b913ddcbed0aa2143224029e8c0d92"
+        },
+        {
+          "Path": "books/managed/c3d9d6e0-df37-42cd-a48b-ab8cda9dc80b/document-v1.json",
+          "Bytes": 1482,
+          "Sha256": "594abd1e3fb140818c881ee84f5409050136229c54bdabda2b0826d2cd3531b9"
+        },
+        {
+          "Path": "books/managed/c3d9d6e0-df37-42cd-a48b-ab8cda9dc80b/source.txt",
+          "Bytes": 168,
+          "Sha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b"
+        }
+      ],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "delete.in-transaction",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_old",
+      "dataSha256": "c75cc7622a436a094ce0db37427d5b5f5b38820eee88e97a01fd29f744c0e6e9",
+      "inventory": [
+        {
+          "Path": "books/managed/32ba05a6-47d6-4c1e-b372-621e7d5903b2/chapters/ch-0001.utf16",
+          "Bytes": 88,
+          "Sha256": "8881e32d62811dd3ef8d97e18950538811121d9da92ebd674ca6be674a910378"
+        },
+        {
+          "Path": "books/managed/32ba05a6-47d6-4c1e-b372-621e7d5903b2/chapters/ch-0002.utf16",
+          "Bytes": 42,
+          "Sha256": "9f2a4a56413d77863fc0c1d389d2ffdee0b913ddcbed0aa2143224029e8c0d92"
+        },
+        {
+          "Path": "books/managed/32ba05a6-47d6-4c1e-b372-621e7d5903b2/document-v1.json",
+          "Bytes": 1482,
+          "Sha256": "594abd1e3fb140818c881ee84f5409050136229c54bdabda2b0826d2cd3531b9"
+        },
+        {
+          "Path": "books/managed/32ba05a6-47d6-4c1e-b372-621e7d5903b2/source.txt",
+          "Bytes": 168,
+          "Sha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b"
+        }
+      ],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "delete.after-commit",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_deleted",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    },
+    {
+      "point": "delete.after-trash",
+      "termination": "actual parent Process.Kill after child checkpoint signal",
+      "childExit": -1,
+      "recovered": "complete_deleted",
+      "dataSha256": "ff3ba4a8c6dd4c6b7668e364a8e76747fe2cf0dfd7e4a6605ca893bccaa8a9f1",
+      "inventory": [],
+      "sourceUnchanged": true,
+      "integrity": "ok"
+    }
+  ],
+  "roundtrip": {
+    "passed": true,
+    "initialDataSha256": "4349f7dd1b5a4daaf7ee16c5090d72251470c909670c57bc632b968c777ec0d2",
+    "allRelatedDataSha256": "84ed88297ecd517ae77770ba25542f134ede9e57506b33601ea85943585410a3",
+    "impact": {
+      "ManualRecords": 0,
+      "Sessions": 1,
+      "Quotes": 1,
+      "Plans": 1,
+      "ManagedFileBytes": 1780
+    },
+    "inventory": [
+      {
+        "Path": "books/managed/4c7b4901-3646-41b7-868e-b50c5ccbb0c6/chapters/ch-0001.utf16",
+        "Bytes": 88,
+        "Sha256": "8881e32d62811dd3ef8d97e18950538811121d9da92ebd674ca6be674a910378"
+      },
+      {
+        "Path": "books/managed/4c7b4901-3646-41b7-868e-b50c5ccbb0c6/chapters/ch-0002.utf16",
+        "Bytes": 42,
+        "Sha256": "9f2a4a56413d77863fc0c1d389d2ffdee0b913ddcbed0aa2143224029e8c0d92"
+      },
+      {
+        "Path": "books/managed/4c7b4901-3646-41b7-868e-b50c5ccbb0c6/document-v1.json",
+        "Bytes": 1482,
+        "Sha256": "594abd1e3fb140818c881ee84f5409050136229c54bdabda2b0826d2cd3531b9"
+      },
+      {
+        "Path": "books/managed/4c7b4901-3646-41b7-868e-b50c5ccbb0c6/source.txt",
+        "Bytes": 168,
+        "Sha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b"
+      }
+    ],
+    "initialProgressPreserved": true,
+    "sourceUnchanged": true
+  },
+  "insufficientJournal": {
+    "blocked": true,
+    "diagnosis": "RecoveryRequired\uFF1A\u5BFC\u5165/\u5220\u9664\u65E5\u5FD7\u65E0\u6CD5\u786E\u8BA4\uFF0C\u8BF7\u4FDD\u7559 operations/staging/trash/books \u540E\u68C0\u67E5\u3002",
+    "allFilesUnchanged": true,
+    "preservedManagedFiles": 4
+  }
+}

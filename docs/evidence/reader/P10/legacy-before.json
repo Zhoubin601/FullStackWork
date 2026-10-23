@@ -1,0 +1,102 @@
+{
+  "Book": [
+    {
+      "Id": 11,
+      "Title": "[合成]进行中的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 120,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": 638397614450000000,
+      "UpdatedAt": 638398515060000000
+    },
+    {
+      "Id": 27,
+      "Title": "[合成]已读完的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 80,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": 638397614450000000,
+      "UpdatedAt": 638398515060000000
+    },
+    {
+      "Id": 93,
+      "Title": "[合成]未开始的书",
+      "Author": "P0样本生成器",
+      "Category": "迁移回归",
+      "TotalPages": 200,
+      "Description": "确定性虚构资料，仅用于旧数据兼容验收。",
+      "CreatedAt": 638397614450000000,
+      "UpdatedAt": 638398515060000000
+    }
+  ],
+  "Quote": [
+    {
+      "Id": 41,
+      "BookId": 11,
+      "Text": "合成原句：星光落在书页上。",
+      "Thoughts": "P0 synthetic note",
+      "Page": 20,
+      "IsFavorite": 1,
+      "CreatedAt": 638397614450000000,
+      "UpdatedAt": 638398515060000000
+    },
+    {
+      "Id": 57,
+      "BookId": 27,
+      "Text": "Synthetic quote: café, 中文与 emoji 📖。",
+      "Thoughts": "P0 synthetic note",
+      "Page": null,
+      "IsFavorite": 0,
+      "CreatedAt": 638397614450000000,
+      "UpdatedAt": 638398515060000000
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 101,
+      "BookId": 11,
+      "ReadingDate": 638398368000000000,
+      "StartPage": 1,
+      "EndPage": 10,
+      "Minutes": 15
+    },
+    {
+      "Id": 109,
+      "BookId": 11,
+      "ReadingDate": 638399232000000000,
+      "StartPage": 10,
+      "EndPage": 20,
+      "Minutes": 20
+    },
+    {
+      "Id": 203,
+      "BookId": 27,
+      "ReadingDate": 638400096000000000,
+      "StartPage": 1,
+      "EndPage": 80,
+      "Minutes": 40
+    }
+  ],
+  "ReadingPlan": [
+    {
+      "Id": 61,
+      "BookId": 27,
+      "StartDate": 638397504000000000,
+      "TargetDate": 638404416000000000
+    },
+    {
+      "Id": 68,
+      "BookId": 27,
+      "StartDate": 638397504000000000,
+      "TargetDate": 638408736000000000
+    },
+    {
+      "Id": 77,
+      "BookId": 11,
+      "StartDate": 638397504000000000,
+      "TargetDate": 638422560000000000
+    }
+  ]
+}

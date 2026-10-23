@@ -1,0 +1,11 @@
+{
+  "productionAndTestsAndDependenciesUnchanged": true,
+  "documentationOnlyDifferences": [
+    "README.md",
+    "delivery-files.txt",
+    "CHANGELOG.md"
+  ],
+  "previousFullTestTotal": 334,
+  "previousFullTestPassed": 332,
+  "previousFullTestSkipped": 2
+}

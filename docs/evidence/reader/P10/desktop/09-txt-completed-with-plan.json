@@ -1,0 +1,146 @@
+{
+  "AiGenerationBatch": [],
+  "AiGenerationBatchItem": [],
+  "AppMetadata": [
+    {
+      "Key": "LastRestoreId",
+      "Value": ""
+    }
+  ],
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "P10 合成手动书",
+      "Author": "合成作者",
+      "Category": "验收",
+      "TotalPages": 280,
+      "Description": "隔离验收数据",
+      "CreatedAt": 639283638744072559,
+      "UpdatedAt": 639283638744072559,
+      "Kind": 0,
+      "BookUid": "d4e90988-2045-468a-b2b0-759236ec1b45"
+    },
+    {
+      "Id": 2,
+      "Title": "mixed-lf",
+      "Author": "",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639283638870009208,
+      "UpdatedAt": 639283638870009208,
+      "Kind": 1,
+      "BookUid": "7cdfa1df-d7c2-49c8-928a-d29b8c96812d"
+    }
+  ],
+  "EbookFile": [
+    {
+      "BookId": 2,
+      "FileId": "2663833f-24f4-47ba-86cc-55a0012441d8",
+      "Format": 1,
+      "SourceRelativePath": "books/managed/2663833f-24f4-47ba-86cc-55a0012441d8/source.txt",
+      "CanonicalRelativePath": "books/managed/2663833f-24f4-47ba-86cc-55a0012441d8/document-v1.json",
+      "SourceSha256": "3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56",
+      "CanonicalSha256": "dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83",
+      "SourceBytes": 213,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639283350870009216,
+      "Status": 0
+    }
+  ],
+  "EbookProgress": [
+    {
+      "BookId": 2,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "HasStarted": 1,
+      "CurrentPercent": 0.0,
+      "CompletedUtcTicks": 639283352024981320,
+      "CompletedOffsetMinutes": 480,
+      "LastOpenedUtcTicks": 639283352020567361,
+      "LastSavedUtcTicks": 639283351999802426
+    }
+  ],
+  "EbookReadingSession": [
+    {
+      "SessionId": "9275f125-2df4-4996-aca9-b12de88f3849",
+      "BookId": 2,
+      "BookUid": "7cdfa1df-d7c2-49c8-928a-d29b8c96812d",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.0,
+      "EndPercent": 0.0,
+      "OpenedUtcTicks": 639283351335474697,
+      "ClosedUtcTicks": 639283351999802426,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 66432,
+      "CloseLocalDate": "2026-10-23",
+      "ClockAnomaly": 0
+    }
+  ],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "用于P10验收的手动书摘。",
+      "Thoughts": "合成感想",
+      "Page": 15,
+      "IsFavorite": 1,
+      "CreatedAt": 639283638795903342,
+      "UpdatedAt": 639283638795903342,
+      "Revision": 0
+    },
+    {
+      "Id": 2,
+      "BookId": 2,
+      "Text": "星光落在书页上。“今天",
+      "Thoughts": "",
+      "Page": null,
+      "IsFavorite": 0,
+      "CreatedAt": 639283639955285699,
+      "UpdatedAt": 639283639955285699,
+      "Revision": 0
+    }
+  ],
+  "QuoteOrigin": [
+    {
+      "QuoteId": 2,
+      "Source": 1,
+      "OriginalText": "星光落在书页上。“今天",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":10,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2663833f-24f4-47ba-86cc-55a0012441d8\",\"SourceSha256\":\"3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56\",\"CanonicalSha256\":\"dbaf9d7545e374e23c627b1aec5cc32fc4eea2f8745871abf3885c56d1e5fe83\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":21,\"NonTextBlockKey\":null}}",
+      "PrefixHash": null,
+      "SuffixHash": null,
+      "LocationStatus": 0,
+      "BatchId": null,
+      "DedupeKey": "72ceaebc3a220291cdc58b6524e9026851b7fa4f456ce1542ec1d73aa38bec05"
+    }
+  ],
+  "ReadingPlan": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639283104000000000,
+      "TargetDate": 639283104000000000
+    },
+    {
+      "Id": 2,
+      "BookId": 2,
+      "StartDate": 639283104000000000,
+      "TargetDate": 639283104000000000
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": 639283104000000000,
+      "StartPage": 1,
+      "EndPage": 35,
+      "Minutes": 40
+    }
+  ]
+}

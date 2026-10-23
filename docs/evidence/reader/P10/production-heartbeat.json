@@ -1,0 +1,1056 @@
+{
+  "passed": true,
+  "environment": {
+    "os": "Microsoft Windows NT 10.0.26300.0",
+    "runtime": "8.0.30",
+    "processorCount": 32,
+    "render": "Production ReaderViewModel/ReaderSurface with Skia offscreen; 760x440 DIP, raster1140x660; not a physical DPI acceptance"
+  },
+  "checksCount": 152,
+  "vmCount": 15,
+  "serviceInterfaceCount": 35,
+  "checks": [
+    {
+      "name": "Real Microsoft DI container",
+      "passed": true
+    },
+    {
+      "name": "Resource locator identity",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM MainWindowViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM InitializationViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind InitializationViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM MainViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind MainViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM OverviewViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind OverviewViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM BookListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind BookListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM BookDetailViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind BookDetailViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM ReaderViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind ReaderViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM BookEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind BookEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM QuoteListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind QuoteListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM QuoteEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind QuoteEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM ReadingRecordEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind ReadingRecordEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM ReadingPlanListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind ReadingPlanListViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM ReadingPlanEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind ReadingPlanEditViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM StatisticsViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind StatisticsViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton VM SettingsViewModel",
+      "passed": true
+    },
+    {
+      "name": "Reflect/cache/bind SettingsViewModel",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IAlertService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IBackupService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IBookStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IContentNavigationService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IDatabaseService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IFileService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IMenuNavigationService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IPreferenceStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IQuoteStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReadingPlanStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReadingRecordStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReadingService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IRootNavigationService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IStatisticsService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IEbookProgressMaintenance",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IEbookLibraryService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderDocumentService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderLayoutService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderPreferencesStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderPlatformService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IAppFileDialogService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderSessionService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderAlertService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IApplicationDataCoordinator",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReadingHistoryService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReadingStateCalculator",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderQuoteService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IAiQuoteVerifier",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IDeepSeekClient",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IReaderAiService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IAiSettingsStorage",
+      "passed": true
+    },
+    {
+      "name": "Singleton service ISecretStore",
+      "passed": true
+    },
+    {
+      "name": "Singleton service ICompleteBackupService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IOperationRecoveryService",
+      "passed": true
+    },
+    {
+      "name": "Singleton service IDataSetInvalidationService",
+      "passed": true
+    },
+    {
+      "name": "Both concrete parser singletons",
+      "passed": true
+    },
+    {
+      "name": "Reader layout concrete/interface identity",
+      "passed": true
+    },
+    {
+      "name": "Document concrete/interface identity",
+      "passed": true
+    },
+    {
+      "name": "Mock default and no session credential",
+      "passed": true
+    },
+    {
+      "name": "Root route InitializationView",
+      "passed": true
+    },
+    {
+      "name": "Root route MainView",
+      "passed": true
+    },
+    {
+      "name": "Menu route OverviewView",
+      "passed": true
+    },
+    {
+      "name": "Menu route BookListView",
+      "passed": true
+    },
+    {
+      "name": "Menu route QuoteListView",
+      "passed": true
+    },
+    {
+      "name": "Menu route ReadingPlanListView",
+      "passed": true
+    },
+    {
+      "name": "Menu route StatisticsView",
+      "passed": true
+    },
+    {
+      "name": "Menu route SettingsView",
+      "passed": true
+    },
+    {
+      "name": "Actual million-character TXT imported",
+      "passed": true
+    },
+    {
+      "name": "Second book imported",
+      "passed": true
+    },
+    {
+      "name": "Content route BookDetailView",
+      "passed": true
+    },
+    {
+      "name": "Back route BookDetailView",
+      "passed": true
+    },
+    {
+      "name": "Content route BookEditView",
+      "passed": true
+    },
+    {
+      "name": "Back route BookEditView",
+      "passed": true
+    },
+    {
+      "name": "Content route QuoteEditView",
+      "passed": true
+    },
+    {
+      "name": "Back route QuoteEditView",
+      "passed": true
+    },
+    {
+      "name": "Content route ReadingPlanEditView",
+      "passed": true
+    },
+    {
+      "name": "Back route ReadingPlanEditView",
+      "passed": true
+    },
+    {
+      "name": "Content route ReaderView",
+      "passed": true
+    },
+    {
+      "name": "Back route ReaderView",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "First leave",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 0",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 0",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 1",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 1",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 2",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 2",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 3",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 3",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 4",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 4",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 5",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 5",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 6",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 6",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 7",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 7",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 8",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 8",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 9",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 9",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 10",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 10",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 11",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 11",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 12",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 12",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 13",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 13",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 14",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 14",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 15",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 15",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 16",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 16",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 17",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 17",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 18",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 18",
+      "passed": true
+    },
+    {
+      "name": "Open has page",
+      "passed": true
+    },
+    {
+      "name": "Leave 19",
+      "passed": true
+    },
+    {
+      "name": "No retained layout/document/image 19",
+      "passed": true
+    }
+  ],
+  "measurements": {
+    "coldImportMs": 2323.5812,
+    "firstOpenMs": 507.248,
+    "firstOpenNote": "After architecture-route warmup; OS/disk/font caches warm; session load plus first bitmap draw",
+    "layoutDispatcherHeartbeatMs": [
+      4.6461,
+      14.947199999999999,
+      15.993400000000001,
+      16.144199999999998,
+      14.8474,
+      14.989900000000006,
+      16.0171,
+      14.988900000000001,
+      14.751599999999996,
+      15.597699999999989,
+      15.9606,
+      15.718100000000021,
+      14.96629999999999,
+      16.0086,
+      14.995200000000011,
+      15.9966,
+      15.002499999999998,
+      14.010599999999982,
+      16.01479999999998,
+      15.988500000000045,
+      14.984999999999957,
+      15.999600000000044,
+      16.00029999999998,
+      23.102599999999995,
+      7.897100000000023,
+      20.30899999999997,
+      11.689799999999991,
+      14.918700000000001,
+      15.866800000000012,
+      53.20859999999999,
+      11.47950000000003
+    ],
+    "layoutDispatcherMaximumGapMs": 53.20859999999999,
+    "flipsMs": [
+      2.9198,
+      1.2842,
+      1.0598,
+      1.0087,
+      1.3423,
+      1.0189,
+      0.9982,
+      0.9592,
+      0.9715,
+      9.9856,
+      1.1261,
+      1.3731,
+      1.0621,
+      1.0149,
+      0.9731,
+      1.3936,
+      3.0195,
+      1.9356,
+      1.6383,
+      9.3524,
+      1.1193,
+      1.0608,
+      0.9996,
+      1.0419,
+      1.4098,
+      1.3589,
+      1.4373,
+      1.4826,
+      1.3142,
+      10.6419,
+      2.1511,
+      1.428,
+      1.3407,
+      1.1308,
+      1.3504,
+      1.405,
+      1.3536,
+      1.3112,
+      1.4648,
+      11.1464,
+      1.7125,
+      2.1985,
+      1.5031,
+      1.332,
+      1.1839,
+      1.3752,
+      1.5209,
+      1.9368,
+      1.858,
+      13.0927,
+      2.1387,
+      1.3915,
+      1.263,
+      1.3341,
+      1.2548,
+      1.3581,
+      1.2978,
+      1.32,
+      1.1456,
+      15.1428,
+      1.6075,
+      3.2357,
+      1.5402,
+      1.4707,
+      1.3287,
+      1.4998,
+      1.8864,
+      2.1176,
+      1.4274,
+      14.6397,
+      1.2951,
+      1.3009,
+      1.5028,
+      1.3525,
+      1.4,
+      1.3323,
+      1.783,
+      1.7133,
+      2.4487,
+      12.1643,
+      1.3018,
+      1.219,
+      1.2173,
+      1.3788,
+      1.3413,
+      1.2448,
+      1.4873,
+      1.3081,
+      1.0208,
+      9.3904,
+      1.3395,
+      1.2617,
+      1.6111,
+      1.6307,
+      1.5932,
+      2.1699,
+      1.4765,
+      2.8222,
+      1.3583,
+      23.3147,
+      1.3019,
+      1.2455,
+      1.3365,
+      1.2158,
+      1.1707,
+      1.1678,
+      1.1842,
+      1.1588,
+      0.9537,
+      9.4984,
+      1.3429,
+      1.9464,
+      1.3843,
+      1.4786,
+      1.5948,
+      1.68,
+      1.5594,
+      1.5919,
+      1.0873,
+      9.311,
+      1.7404,
+      1.581,
+      1.5802,
+      1.417,
+      1.782,
+      1.4069,
+      2.0773,
+      1.4074,
+      1.2967,
+      11.5134,
+      1.3887,
+      1.2298,
+      1.1661,
+      1.1683,
+      1.209,
+      1.1906,
+      1.1749,
+      1.25,
+      1.0193,
+      9.4568,
+      1.7656,
+      2.9035,
+      1.4737,
+      1.3909,
+      1.2761,
+      1.4164,
+      1.6995,
+      1.7657,
+      1.4182,
+      11.0771,
+      1.3155,
+      1.2355,
+      1.2196,
+      1.2685,
+      1.2472,
+      1.3021,
+      1.5576,
+      1.6165,
+      1.3163,
+      9.5807,
+      2.2638,
+      1.3503,
+      1.3449,
+      1.2963,
+      1.2429,
+      1.4122,
+      1.6442,
+      1.9653,
+      1.4258,
+      9.8188,
+      1.635,
+      1.3156,
+      2.2247,
+      1.6466,
+      1.6692,
+      2.6562,
+      1.7511,
+      1.5091,
+      1.1615,
+      11.5647,
+      1.3715,
+      1.2797,
+      1.2655,
+      1.4943,
+      1.2301,
+      1.7104,
+      1.3934,
+      1.3856,
+      1.3336,
+      15.954,
+      1.3007,
+      1.2398,
+      1.5884,
+      1.3655,
+      1.577,
+      1.4093,
+      1.333,
+      1.3024,
+      1.1074,
+      10.7336
+    ],
+    "flipP95Ms": 10.7336,
+    "reflowsMs": [
+      95.9607,
+      100.6107,
+      95.5094,
+      96.558,
+      132.8598,
+      118.137,
+      100.5259,
+      95.5443,
+      98.5402,
+      90.5418,
+      94.2102,
+      95.5519,
+      88.7247,
+      94.5183,
+      94.8861,
+      89.8123,
+      100.0164,
+      104.8764,
+      97.7381,
+      95.3653
+    ],
+    "reflowP95Ms": 118.137,
+    "leaveDuringIndexMs": 18.4807,
+    "memory": [
+      {
+        "cycle": 1,
+        "managedBytes": 47551920,
+        "privateBytes": 226435072,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 2,
+        "managedBytes": 47550016,
+        "privateBytes": 226766848,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 3,
+        "managedBytes": 47559720,
+        "privateBytes": 227241984,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 4,
+        "managedBytes": 47561152,
+        "privateBytes": 226406400,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 5,
+        "managedBytes": 47554408,
+        "privateBytes": 129708032,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 6,
+        "managedBytes": 47564456,
+        "privateBytes": 116383744,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 7,
+        "managedBytes": 47557712,
+        "privateBytes": 115953664,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 8,
+        "managedBytes": 47559144,
+        "privateBytes": 115892224,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 9,
+        "managedBytes": 47560624,
+        "privateBytes": 116023296,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 10,
+        "managedBytes": 47570344,
+        "privateBytes": 115949568,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 11,
+        "managedBytes": 47571824,
+        "privateBytes": 116023296,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 12,
+        "managedBytes": 47573256,
+        "privateBytes": 116023296,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 13,
+        "managedBytes": 72726504,
+        "privateBytes": 127684608,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 14,
+        "managedBytes": 72736312,
+        "privateBytes": 127684608,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 15,
+        "managedBytes": 72729568,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 16,
+        "managedBytes": 72731720,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 17,
+        "managedBytes": 72741424,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 18,
+        "managedBytes": 72742984,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 19,
+        "managedBytes": 72736240,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      },
+      {
+        "cycle": 20,
+        "managedBytes": 72737672,
+        "privateBytes": 130371584,
+        "activeLayouts": 0,
+        "retainedDocuments": 0,
+        "decodedImages": 0
+      }
+    ]
+  },
+  "goals": {
+    "firstOpenUnder2Seconds": true,
+    "flipP95Under100Ms": true,
+    "reflowP95Under500Ms": true,
+    "allReferencesReleased": true
+  }
+}
