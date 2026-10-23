@@ -22,11 +22,11 @@ public class StatisticsService : IStatisticsService
             return new DayActivity { Date = date, Pages = manual.Sum(x => (long)x.Pages), Minutes = milliseconds / 60000,
                 DurationMilliseconds = milliseconds, SessionCount = ebook.Length };
         }).ToArray();
-        var max = Math.Max(1, recent.Max(x => x.Pages));
+        var max = Math.Max(1, recent.Max(x => x.Pages)); var maxMs = Math.Max(1, recent.Max(x => x.DurationMilliseconds));
         return new ReadingStatistics { TotalPages = records.Sum(x => (long)x.Pages), TotalMinutes = totalMs / 60000,
             DurationMilliseconds = totalMs, SessionCount = sessions.Count,
             CompletedBooks = books.Count(x => states.Calculate(x).State == "已完成"), LastSevenDays = recent.Select(x => new DayActivity
             { Date = x.Date, Pages = x.Pages, Minutes = x.Minutes, DurationMilliseconds = x.DurationMilliseconds,
-                SessionCount = x.SessionCount, BarValue = x.Pages * 100.0 / max }).ToArray() };
+                SessionCount = x.SessionCount, DurationBarValue = x.DurationMilliseconds * 100.0 / maxMs, BarValue = x.Pages * 100.0 / max }).ToArray() };
     });
 }

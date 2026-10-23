@@ -1,0 +1,215 @@
+[
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "01-imported"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "02-detail"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "03-reader"
+  },
+  {
+    "op": "capture",
+    "name": "04-reader-ready"
+  },
+  {
+    "op": "drag",
+    "x1": 533,
+    "y1": 321,
+    "x2": 863,
+    "y2": 321
+  },
+  {
+    "op": "capture",
+    "name": "05-selection"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "c"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "06-copied"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "s"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "07-saved-quote"
+  },
+  {
+    "op": "capture",
+    "name": "08-saved-ready"
+  },
+  {
+    "op": "click",
+    "x": 1091,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "09-reading-next"
+  },
+  {
+    "op": "click",
+    "x": 595,
+    "y": 750
+  },
+  {
+    "op": "capture",
+    "name": "10-mark-completed"
+  },
+  {
+    "op": "click",
+    "x": 109,
+    "y": 314
+  },
+  {
+    "op": "capture",
+    "name": "11-quotes"
+  },
+  {
+    "op": "capture",
+    "name": "12-quotes-ready"
+  },
+  {
+    "op": "click",
+    "x": 423,
+    "y": 410
+  },
+  {
+    "op": "capture",
+    "name": "13-edit-origin"
+  },
+  {
+    "op": "click",
+    "x": 603,
+    "y": 579
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "v"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "14-native-clipboard-paste"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Tab"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Tab"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Tab"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "15-save-focus"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "16-edited-saved"
+  },
+  {
+    "op": "click",
+    "x": 337,
+    "y": 410
+  },
+  {
+    "op": "capture",
+    "name": "17-return-highlight"
+  },
+  {
+    "op": "click",
+    "x": 1090,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "18-read-after-quote"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "19-restart-overview-history"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "20-reopened-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "21-reopened-detail-history"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "22-resume"
+  }
+]

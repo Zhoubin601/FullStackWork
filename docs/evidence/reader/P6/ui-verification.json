@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "all_business_fields_equal_by_row_content": true,
+  "physical_row_order_not_part_of_contract": true,
+  "managed_sha256": {
+    "books/managed/123d0cc9-23e0-4c20-b8be-0d2a50b8336b/chapters/ch-0001.utf16": "99af09fa8c2792b6f50028c67274be6f5a32b96a9c15d5842a1e709c074490ec",
+    "books/managed/123d0cc9-23e0-4c20-b8be-0d2a50b8336b/chapters/ch-0002.utf16": "5beb13e0e46c5303849bfcfde0bf7b655ec65f478e460094dc57f9a9da09ea0d",
+    "books/managed/123d0cc9-23e0-4c20-b8be-0d2a50b8336b/document-v1.json": "d4ba7ea1a5b803c2fd73891c0883d8a11df773764369fb794052048cb5279e0d",
+    "books/managed/123d0cc9-23e0-4c20-b8be-0d2a50b8336b/source.txt": "894c43287013bc7803a579b0eb5eb8f18b1ed7435e7b9fe359f11caf47ae6d14"
+  },
+  "source_sha256": "894c43287013bc7803a579b0eb5eb8f18b1ed7435e7b9fe359f11caf47ae6d14",
+  "automatic_backup_was_deleted_empty_library": true,
+  "sessions": 3,
+  "quotes": 1,
+  "integrity": "ok",
+  "backup_sha256": "2e5f1ad6a0a3c4ca72e4d9b3501af2acefe123c775605069adf809ba6f21e6db"
+}

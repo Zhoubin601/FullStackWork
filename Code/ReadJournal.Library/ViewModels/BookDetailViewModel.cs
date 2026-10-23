@@ -12,6 +12,16 @@ public partial class BookDetailViewModel : ViewModelBase
     private IEbookLibraryService? _library;
     private IApplicationDataCoordinator? _coordinator;
     private IReaderSessionService? _sessions;
+    private IReadingHistoryService? _history;
+    private int _historyPage = 1, _historyTotal;
+    public string HistoryPageText => $"第 {_historyPage}/{Math.Max(1, (_historyTotal + 49) / 50)} 页 · 共 {_historyTotal} 条";
+    public IAsyncRelayCommand PreviousHistoryCommand { get; }
+    public IAsyncRelayCommand NextHistoryCommand { get; }
+    [ObservableProperty] private IReadOnlyList<ReadingHistoryItem> _historyList = [];
+    public bool HasUnifiedHistory => _history is not null;
+    public IAsyncRelayCommand<ReadingHistoryItem> DeleteHistoryCommand { get; }
+    public IAsyncRelayCommand<ReadingHistoryItem> EditHistoryCommand { get; }
+    public IAsyncRelayCommand<QuoteItem>? OpenQuoteSourceCommand { get; private set; }
     [ObservableProperty] private IReadOnlyList<EbookReadingSession> _sessionsList = [];
     public bool IsEbook => Book?.Kind == BookKind.Ebook;
     public bool CanRead => IsEbook && Progress?.FileStatus == (int)EbookFileStatus.Ready;
@@ -36,6 +46,11 @@ public partial class BookDetailViewModel : ViewModelBase
     {
         _plans = plans; AddPlanCommand = new AsyncRelayCommand(() => NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.ReadingPlanEditView, new ReadingPlan { BookId = _id })));
         _books = books; _records = records; _quotes = quotes; _alert = alert; _editor = editor;
+        PreviousHistoryCommand = new AsyncRelayCommand(() => RunAsync(async () => { if (_historyPage <= 1) return; _historyPage--; await LoadAsync(); }));
+        NextHistoryCommand = new AsyncRelayCommand(() => RunAsync(async () => { if (_historyPage * 50 >= _historyTotal) return; _historyPage++; await LoadAsync(); }));
+        DeleteHistoryCommand = new AsyncRelayCommand<ReadingHistoryItem>(item => RunAsync(async () =>
+        { if (item is null || _history is null || _coordinator is null) return; var epoch = _coordinator.CurrentEpoch; if (await _alert.ConfirmAsync("删除阅读活动", "只删除此历史活动；当前正文位置和完成标记保留。")) { await _history.DeleteAsync(item.Key, epoch, default); await LoadAsync(); } }));
+        EditHistoryCommand = new AsyncRelayCommand<ReadingHistoryItem>(item => item is not { CanEdit: true } || !int.TryParse(item.Key.SourceId, out var recordId) ? Task.CompletedTask : EditRecordCommand!.ExecuteAsync(RecordsList.FirstOrDefault(r => r.Id == recordId)));
         OpenReaderCommand = new AsyncRelayCommand(() => NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.ReaderView, new ReaderOpenRequest(_id))), () => CanRead);
         EditBookCommand = new AsyncRelayCommand(() => NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookEditView, _id)));
         AddQuoteCommand = new AsyncRelayCommand(() => NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.QuoteEditView, new Quote { BookId = _id })));
@@ -76,7 +91,10 @@ public partial class BookDetailViewModel : ViewModelBase
         IEbookLibraryService library, IApplicationDataCoordinator coordinator) : this(books, records, quotes, alert, editor, content, main, plans) { _library = library; _coordinator = coordinator; }
     public BookDetailViewModel(IBookStorage books, IReadingRecordStorage records, IQuoteStorage quotes, IAlertService alert, ReadingRecordEditViewModel editor, IContentNavigationService content, MainViewModel main, IReadingPlanStorage plans,
         IEbookLibraryService library, IApplicationDataCoordinator coordinator, IReaderSessionService sessions) : this(books, records, quotes, alert, editor, content, main, plans, library, coordinator) { _sessions = sessions; }
-    public override void SetParameter(object parameter) { base.SetParameter(parameter); _id = (int)parameter; Progress = null; RecordsList = []; QuotesList = []; PlansList = []; SessionsList = []; OnPropertyChanged(nameof(Book)); }
+    public BookDetailViewModel(IBookStorage books, IReadingRecordStorage records, IQuoteStorage quotes, IAlertService alert, ReadingRecordEditViewModel editor, IContentNavigationService content, MainViewModel main, IReadingPlanStorage plans,
+        IEbookLibraryService library, IApplicationDataCoordinator coordinator, IReaderSessionService sessions, IReadingHistoryService history, ReaderQuoteNavigation quoteNavigation) : this(books, records, quotes, alert, editor, content, main, plans, library, coordinator, sessions)
+    { _history = history; OpenQuoteSourceCommand = new AsyncRelayCommand<QuoteItem>(q => q is null ? Task.CompletedTask : NavigateAsync(() => quoteNavigation.OpenAsync(q.Quote.Id))); }
+    public override void SetParameter(object parameter) { base.SetParameter(parameter); _id = (int)parameter; _historyPage = 1; _historyTotal = 0; Progress = null; RecordsList = []; QuotesList = []; PlansList = []; SessionsList = []; HistoryList = []; OnPropertyChanged(nameof(Book)); }
     protected override async Task LoadAsync()
     {
         var version = ParameterVersion; var id = _id;
@@ -84,7 +102,10 @@ public partial class BookDetailViewModel : ViewModelBase
         var records = await _records.GetForBookAsync(id); var quotes = await _quotes.SearchAsync("", false, id);
         var plans = (await _plans.GetAllAsync()).Where(x => x.Plan.BookId == id).ToArray();
         var sessions = _sessions is null ? [] : await _sessions.GetForBookAsync(id, CancellationToken.None);
+        var history = _history is null ? null : await _history.GetAsync(id, _historyPage, 50, default);
         if (version != ParameterVersion) return;
+        if (history is { TotalCount: > 0 } && _historyPage > (history.TotalCount + 49) / 50) { _historyPage = Math.Max(1, (history.TotalCount + 49) / 50); await LoadAsync(); return; }
+        HistoryList = history?.Items ?? []; _historyTotal = history?.TotalCount ?? 0; OnPropertyChanged(nameof(HistoryPageText));
         Progress = progress ?? throw new InvalidOperationException("书籍已不存在，请返回书库。"); OnPropertyChanged(nameof(Book));
         RecordsList = records; QuotesList = quotes; PlansList = plans; SessionsList = sessions;
     }

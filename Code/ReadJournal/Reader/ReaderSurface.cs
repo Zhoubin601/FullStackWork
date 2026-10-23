@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Media;
 using ReadJournal.Library.Models.Reader;
 namespace ReadJournal.Reader;
@@ -13,8 +14,38 @@ public sealed class ReaderSurface : Control
     private LayoutId? _presented;
     public Func<LayoutId, Task>? Presented { get; set; }
     static ReaderSurface() => AffectsRender<ReaderSurface>(PageProperty);
-    public ReaderSurface() { Focusable = true; PointerPressed += (_, _) => Focus(); }
-    public DocumentRange? Selection { get; set; }
+    public static readonly StyledProperty<DocumentRange?> SelectionProperty = AvaloniaProperty.Register<ReaderSurface, DocumentRange?>(nameof(Selection));
+    public DocumentRange? Selection { get => GetValue(SelectionProperty); set => SetValue(SelectionProperty, value); }
+    public Func<DocumentRange?, Task>? SelectionChanged { get; set; }
+    private ReaderPosition? _anchor;
+    public ReaderSurface()
+    {
+        Focusable = true;
+        PointerPressed += async (_, e) =>
+        {
+            Focus(); if (Page is null || LayoutService is null || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
+            var page = Page; var hit = await HitAsync(e.GetPosition(this)); if (hit is null || Page != page) return;
+            _anchor = e.KeyModifiers.HasFlag(KeyModifiers.Shift) && Selection is not null ? Selection.Start : hit;
+            e.Pointer.Capture(this); await UpdateSelectionAsync(hit);
+        };
+        PointerMoved += async (_, e) => { if (_anchor is null || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return; var hit = await HitAsync(e.GetPosition(this)); if (hit is not null) await UpdateSelectionAsync(hit); };
+        PointerReleased += (_, e) => { _anchor = null; e.Pointer.Capture(null); };
+        AffectsRender<ReaderSurface>(SelectionProperty);
+    }
+    private async Task<ReaderPosition?> HitAsync(Point point)
+    {
+        var page = Page; if (page is null || LayoutService is null) return null;
+        try { var settings = LayoutService.RenderPlan(page.Ref).Settings; return await LayoutService.HitTestAsync(page.Ref, new(point.X - settings.Appearance.MarginHorizontal, point.Y - settings.Appearance.MarginVertical), default); }
+        catch (InvalidOperationException) { return null; }
+    }
+    private async Task UpdateSelectionAsync(ReaderPosition hit)
+    {
+        if (_anchor is null || _anchor.Document != hit.Document || Page is null || LayoutService is null || SelectionChanged is null) return;
+        if (_anchor == hit) { await SelectionChanged(null); return; }
+        var chapters = LayoutService.RenderPlan(Page.Ref).Layout.Document.Chapters;
+        var a = chapters.ToList().FindIndex(c => c.Key == _anchor.ChapterKey); var b = chapters.ToList().FindIndex(c => c.Key == hit.ChapterKey);
+        await SelectionChanged(a < b || a == b && _anchor.Utf16Offset < hit.Utf16Offset ? new(_anchor, hit) : new(hit, _anchor));
+    }
     public override void Render(DrawingContext context)
     {
         base.Render(context);

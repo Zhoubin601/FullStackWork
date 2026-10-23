@@ -21,11 +21,15 @@ public sealed class ReaderLifecycleTests
         public AvaloniaReaderLayoutService Layouts { get; }
         public ReaderSessionService Sessions { get; }
         public ReaderViewModel Vm { get; }
+        public MainViewModel Main { get; }
         public Fixture(ReaderSessionCheckpoints? faults = null, IReaderAlertService? alerts = null)
         {
             Db = new(new DataPaths(Path.Combine(Root, "data"))); Documents = new(Db, Db.Coordinator); Layouts = new(Documents);
             Sessions = new(Db, Db.Coordinator, Documents, new EbookProgressMaintenance(Db, Db.Coordinator), new ReaderClock(), faults ?? new ReaderSessionCheckpoints());
-            Vm = new(Db, Db.Coordinator, Documents, Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), new MainViewModel(Mock.Of<IMenuNavigationService>()));
+            Main = new MainViewModel(Mock.Of<IMenuNavigationService>());
+            var confirmation = new Mock<IAlertService>(); confirmation.Setup(a => a.ConfirmAsync(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(true);
+            var quotes = new ReaderQuoteService(Db, Db.Coordinator, Documents, Sessions, new ReadingService(), new ReaderQuoteCheckpoints());
+            Vm = new(Db, Db.Coordinator, Documents, Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), Main, quotes, confirmation.Object);
         }
         public async Task<int> Add(int number, int repeats = 2000)
         {
@@ -71,6 +75,19 @@ public sealed class ReaderLifecycleTests
             ((IDisposable)provider).Dispose(); typeof(ServiceLocator).GetField("_current", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)!.SetValue(null, null);
             Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR", previous); if (Directory.Exists(root)) Directory.Delete(root, true);
         }
+    });
+    [Fact]
+    public Task SelectionCompletionAndResetCommandsKeepHistoryAndReopenFreshEpoch() => Ui(async () =>
+    {
+        using var x = new Fixture(); var id = await x.Add(1); x.Main.SetMenuAndContent(MenuNavigationConstant.BookListView, x.Vm); await x.Open(id);
+        var oldEpoch = x.Db.Coordinator.CurrentEpoch; var position = x.Vm.Position!;
+        await x.Vm.SetSelectionAsync(new(position, position with { Utf16Offset = 5 })); await x.Vm.SaveSelectionCommand.ExecuteAsync(null);
+        Assert.Equal(1, await x.Db.ReadAsync(c => c.Table<ReadJournal.Library.Models.Quote>().Count()));
+        await x.Vm.MarkCompletedCommand.ExecuteAsync(null); Assert.NotNull((await x.Db.ReadAsync(c => c.Find<EbookProgress>(id))).CompletedUtcTicks);
+        await x.Vm.ResetProgressCommand.ExecuteAsync(null); Assert.Equal("", x.Vm.Error); Assert.Equal(ReaderPhase.Presenting, x.Vm.Phase); Assert.NotEqual(oldEpoch, x.Db.Coordinator.CurrentEpoch);
+        Assert.Single(await x.Sessions.GetForBookAsync(id, default)); Assert.Equal(1, await x.Db.ReadAsync(c => c.Table<ReadJournal.Library.Models.Reader.QuoteOrigin>().Count()));
+        Assert.False((await x.Db.ReadAsync(c => c.Find<EbookProgress>(id)))?.HasStarted ?? false);
+        await x.Vm.PagePresentedAsync(x.Vm.Page!.Ref.Layout); Assert.Null((await x.Db.ReadAsync(c => c.Find<EbookProgress>(id))).CompletedUtcTicks); Assert.True(await x.Vm.CanLeaveAsync());
     });
     private sealed class Failure : ReaderSessionCheckpoints
     { public string? Point; public override void Checkpoint(string point) { if (Point == point) { Point = null; throw new IOException(point); } } }

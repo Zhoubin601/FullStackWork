@@ -1,0 +1,4 @@
+  Determining projects to restore...
+  Restored /workspace/.readjournal-env/p6-accepted-clean/ReadJournal.Library/ReadJournal.Library.csproj (in 4.36 sec).
+  Restored /workspace/.readjournal-env/p6-accepted-clean/ReadJournal/ReadJournal.csproj (in 4.4 sec).
+  Restored /workspace/.readjournal-env/p6-accepted-clean/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj (in 432 ms).

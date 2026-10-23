@@ -1,0 +1,2 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Debug/net8.0/ReadJournal.Library.dll
+/workspace/FullStackWork/Code/ReadJournal/Views/BookDetailView.axaml(8,445,8,445): Avalonia error AVLN:0004: Unable to find a setter that allows multiple assignments to the property Content of type Avalonia.Markup.Xaml:Avalonia.Markup.Xaml.Templates.DataTemplate Line 8, position 445. [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]

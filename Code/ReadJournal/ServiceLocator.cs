@@ -56,6 +56,10 @@ public class ServiceLocator
         serviceCollection.AddSingleton<IRootNavigationService, RootNavigationService>();
         serviceCollection.AddSingleton<IMenuNavigationService, MenuNavigationService>();
         serviceCollection.AddSingleton<IContentNavigationService, ContentNavigationService>();
+        serviceCollection.AddSingleton<ReaderQuoteNavigation>();
+        serviceCollection.AddSingleton<ReaderQuoteCheckpoints>();
+        serviceCollection.AddSingleton<IReaderQuoteService, ReaderQuoteService>();
+        serviceCollection.AddSingleton<IReadingHistoryService, ReadingHistoryService>();
         serviceCollection.AddSingleton<ReaderClock>();
         serviceCollection.AddSingleton<ReaderSessionCheckpoints>();
         serviceCollection.AddSingleton<IReaderSessionService, ReaderSessionService>();

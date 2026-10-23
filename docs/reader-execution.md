@@ -60,3 +60,8 @@ P3已按用户要求推送16e41558e8ceb4549274dd26cc6b0321e058350d。P4代码/�
 ## 2026-10-22 P5阶段结果（优先于历史状态）
 
 P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。
+
+
+## 2026-10-23 P6当前结果（优先于历史状态）
+
+P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按范围去重/保留原文与精确回跳、统一历史/毫秒统计图、完成与原子重置已实现。工作区完整243项通过；独立181文件白名单源码重验，真实桌面M1闭环10张业务表/4个受管文件与来源SHA一致、续读偏移294，续接桌面两次正常关闭。详见docs/evidence/reader/P6/acceptance.md与reader-p6-protocol.md。验收提交后正常推送并核对真实远端，然后按用户授权继续P7；Windows保留未测，无API，raw/output/参考/冻结fixtures不变。

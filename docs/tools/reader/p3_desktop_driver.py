@@ -38,6 +38,11 @@ def main(args):
         xt.XTestFakeButtonEvent.argtypes=[C.c_void_p,C.c_uint,C.c_int,C.c_ulong]
         xt.XTestFakeMotionEvent.argtypes=[C.c_void_p,C.c_int,C.c_int,C.c_int,C.c_ulong]
         display=x.XOpenDisplay(env['DISPLAY'].encode())
+        x.XInternAtom.argtypes=[C.c_void_p,C.c_char_p,C.c_int];x.XInternAtom.restype=C.c_ulong
+        names=['CLIPBOARD','TARGETS','UTF8_STRING','UTF16_STRING','MULTIPLE','SAVE_TARGETS','CLIPBOARD_MANAGER']
+        atoms_before={name:x.XInternAtom(display,name.encode(),1) for name in names}
+        atoms_after={name:x.XInternAtom(display,name.encode(),0) for name in names};x.XFlush(display)
+        (evidence/'x11-clipboard-bootstrap.json').write_text(json.dumps({'before':atoms_before,'after':atoms_after,'scope':'private test display protocol identifiers only, no owner/data set'},indent=2)+'\n')
         def key(name,down):
             symbol=ord(name) if len(name)==1 else x.XStringToKeysym(name.encode());code=x.XKeysymToKeycode(display,symbol)
             if not code:raise ValueError('No keyboard mapping for '+name)
@@ -69,6 +74,12 @@ def main(args):
             command=json.loads(line);op=command['op'];records.append(command)
             if op=='click':
                 xt.XTestFakeMotionEvent(display,0,int(command['x']),int(command['y']),0);xt.XTestFakeButtonEvent(display,1,1,0);xt.XTestFakeButtonEvent(display,1,0,0);x.XFlush(display)
+            elif op=='drag':
+                x1,y1,x2,y2=[int(command[k]) for k in ['x1','y1','x2','y2']]
+                xt.XTestFakeMotionEvent(display,0,x1,y1,0);xt.XTestFakeButtonEvent(display,1,1,0);x.XFlush(display);time.sleep(.1)
+                for step in range(1,31):
+                    xt.XTestFakeMotionEvent(display,0,x1+(x2-x1)*step//30,y1+(y2-y1)*step//30,0);x.XFlush(display);time.sleep(.015)
+                xt.XTestFakeButtonEvent(display,1,0,0);x.XFlush(display)
             elif op=='keys':chord(command['keys'])
             elif op=='type':
                 for ch in command['text']:

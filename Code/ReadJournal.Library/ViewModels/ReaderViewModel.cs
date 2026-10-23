@@ -11,6 +11,14 @@ public sealed class ReaderViewModel : ViewModelBase
     private readonly IReaderDocumentService _documents; private readonly IReaderLayoutService _layouts;
     private readonly IReaderSessionService _sessions; private readonly IReaderPreferencesStorage _preferences;
     private readonly IReaderPlatformService _platform; private readonly IReaderAlertService _alerts; private readonly ReaderClock _clock;
+    private readonly IReaderQuoteService? _quotes; private readonly IAlertService? _generalAlerts;
+    private DocumentRange? _selection; private string _notice = "";
+    public DocumentRange? Selection { get => _selection; private set => SetProperty(ref _selection, value); }
+    public string Notice { get => _notice; private set => SetProperty(ref _notice, value); }
+    public IAsyncRelayCommand CopySelectionCommand { get; }
+    public IAsyncRelayCommand SaveSelectionCommand { get; }
+    public IAsyncRelayCommand MarkCompletedCommand { get; }
+    public IAsyncRelayCommand ResetProgressCommand { get; }
     private ReaderOpenRequest? _request; private ReaderOpenIdentity? _identity; private ReaderContext? _context;
     private ReaderPosition? _position; private ReaderPosition? _start; private DateTimeOffset _opened;
     private SessionCloseCommand? _frozen; private LayoutHandle? _layout;
@@ -44,14 +52,18 @@ public sealed class ReaderViewModel : ViewModelBase
     public IAsyncRelayCommand<TocEntry> GoToChapterCommand { get; }
     public ReaderViewModel(IDatabaseService database, IApplicationDataCoordinator data, IReaderDocumentService documents,
         IReaderLayoutService layouts, IReaderSessionService sessions, IReaderPreferencesStorage preferences,
-        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main)
+        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main, IReaderQuoteService? quotes = null, IAlertService? generalAlerts = null)
     {
         _database = database; _data = data; _documents = documents; _layouts = layouts; _sessions = sessions;
-        _preferences = preferences; _platform = platform; _alerts = alerts; _clock = clock;
+        _preferences = preferences; _platform = platform; _alerts = alerts; _clock = clock; _quotes = quotes; _generalAlerts = generalAlerts;
+        CopySelectionCommand = new AsyncRelayCommand(() => Observe(CopySelectionAsync));
+        SaveSelectionCommand = new AsyncRelayCommand(() => Observe(SaveSelectionAsync));
+        MarkCompletedCommand = new AsyncRelayCommand(() => Observe(async () => { if (_context is null || Phase != ReaderPhase.Active) return; await _sessions.MarkCompletedAsync(_context, _lifetime.Token); Notice = "已标记读完；继续回看不会取消完成状态。"; }));
+        ResetProgressCommand = new AsyncRelayCommand(() => Observe(async () => { if (ReferenceEquals(main.Content, this)) await main.RequestInPlaceAsync(ResetAsync); }));
         NextCommand = new AsyncRelayCommand(() => Observe(() => FlipAsync(PageDirection.Next)));
         PreviousCommand = new AsyncRelayCommand(() => Observe(() => FlipAsync(PageDirection.Previous)));
         ApplyAppearanceCommand = new AsyncRelayCommand(() => Observe(ApplyAppearanceAsync));
-        FullScreenCommand = new AsyncRelayCommand(() => Observe(async () => { _fullScreen = !_fullScreen; await _platform.SetFullScreenAsync(_fullScreen, _lifetime.Token); }));
+        FullScreenCommand = new AsyncRelayCommand(() => Observe(async () => { if (Phase is ReaderPhase.Closing or ReaderPhase.CloseFailed) return; _fullScreen = !_fullScreen; await _platform.SetFullScreenAsync(_fullScreen, _lifetime.Token); }));
         RetryCloseCommand = new AsyncRelayCommand(() => NavigateAsync(() => main.RequestBackAsync(this)));
         ContinueReadingCommand = new AsyncRelayCommand(() => Observe(ContinueAsync));
         GoToChapterCommand = new AsyncRelayCommand<TocEntry>(e => e is null ? Task.CompletedTask : Observe(() => LocateAsync(e.Target)));
@@ -63,7 +75,7 @@ public sealed class ReaderViewModel : ViewModelBase
         if (parameter is not ReaderOpenRequest { BookId: > 0 } request) throw new ArgumentException("阅读器参数无效。");
         if (_context is not null) throw new InvalidOperationException("请先关闭当前阅读会话。");
         base.SetParameter(parameter); _request = request; _identity = null; _position = null; _start = null; _frozen = null;
-        _lifetime.Dispose(); _lifetime = new(); Phase = ReaderPhase.Idle; Page = null; Document = null;
+        _lifetime.Dispose(); _lifetime = new(); Phase = ReaderPhase.Idle; Page = null; Document = null; Selection = null; Notice = "";
     }
     public override void InvalidateDataSet()
     { if (_context is not null) throw new InvalidOperationException("活动阅读器不能替换数据集。"); _lifetime.Cancel(); base.SetParameter(null!); _request = null; Page = null; Document = null; _identity = null; }
@@ -87,7 +99,7 @@ public sealed class ReaderViewModel : ViewModelBase
             ct.ThrowIfCancellationRequested(); if (version != ParameterVersion) return;
             _identity = identity; Document = document; Title = document.Title; _appearance = appearance;
             FontSizeText = appearance.FontSize.ToString(System.Globalization.CultureInfo.InvariantCulture); Palette = appearance.Palette; OnPropertyChanged(nameof(FontFamily));
-            _position = position; await ReflowAsync(); ct.ThrowIfCancellationRequested(); Phase = ReaderPhase.Presenting;
+            _position = position; Selection = request.Target; await ReflowAsync(); ct.ThrowIfCancellationRequested(); Phase = ReaderPhase.Presenting;
         }
         catch { if (!ct.IsCancellationRequested && version == ParameterVersion) Phase = ReaderPhase.OpenFailed; throw; }
     }
@@ -104,7 +116,39 @@ public sealed class ReaderViewModel : ViewModelBase
     }
     public bool IsSameBook(object parameter) => parameter is ReaderOpenRequest request && request.BookId == _identity?.BookId && _identity.Epoch == _data.CurrentEpoch && Phase == ReaderPhase.Active;
     public Task NavigateWithinBookAsync(ReaderOpenRequest request, CancellationToken ct)
-    { ct.ThrowIfCancellationRequested(); return request.Target is null ? Task.CompletedTask : LocateAsync(request.Target.Start); }
+    { ct.ThrowIfCancellationRequested(); Selection = request.Target; return request.Target is null ? Task.CompletedTask : LocateAsync(request.Target.Start); }
+    public Task SetSelectionAsync(DocumentRange? selection) => Observe(async () =>
+    {
+        if (Phase != ReaderPhase.Active) return;
+        if (selection is not null) { ReaderContractValidator.Validate(selection); if (selection.Start.Document != _identity?.Document) return; await _documents.ExtractAsync(selection, _lifetime.Token); }
+        Selection = selection;
+    });
+    private async Task CopySelectionAsync()
+    {
+        if (_context is null || Selection is null || Phase != ReaderPhase.Active) return;
+        await using var action = await _sessions.EnterActiveActionAsync(_context, _lifetime.Token);
+        var text = await _documents.ExtractAsync(Selection, _lifetime.Token);
+        await _platform.CopyTextAsync(string.Concat(text.Spans.Select(s => s.Text)), _lifetime.Token); Notice = "已复制选区正文。";
+    }
+    private async Task SaveSelectionAsync()
+    {
+        if (_context is null || Selection is null || Phase != ReaderPhase.Active || _quotes is null) return;
+        var id = await _quotes.SaveSelectionAsync(_context, Selection, "", _lifetime.Token); Notice = $"书摘已保存（#{id}），可在书摘收藏中编辑感想或回跳。";
+    }
+    private async Task ResetAsync()
+    {
+        if (_context is null || _identity is null || Phase != ReaderPhase.Active || _generalAlerts is null) return;
+        var identity = _identity;
+        await using (var lease = await _data.EnterOperationAsync(identity.Epoch, _lifetime.Token))
+            await _database.ReadAsync(lease, c => { var book = c.Find<Book>(identity.BookId)!; if (book.BookUid != identity.BookUid) throw new InvalidOperationException("StaleContext"); ReadingStateCalculator.ValidateReset(book, c.Table<ReadingPlan>().Count(p => p.BookId == book.Id)); return 0; });
+        if (!await _generalAlerts.ConfirmAsync("重置正文进度", "将先保存本次阅读，再重置位置与完成标记。历史阅读时长和书摘保留，是否继续？")) return;
+        if (!await CanLeaveAsync()) return;
+        string? failure = null;
+        try { await _sessions.ResetProgressAsync(identity.BookId, identity.BookUid, identity.Epoch, CancellationToken.None); }
+        catch (Exception ex) { failure = ex.Message; }
+        SetParameter(new ReaderOpenRequest(identity.BookId)); await OnLoadedCommand.ExecuteAsync(null);
+        if (failure is not null) Error = "重置未完成：" + failure;
+    }
     private async Task LocateAsync(ReaderPosition position)
     {
         if (_layout is null || Phase is ReaderPhase.Closing or ReaderPhase.CloseFailed) return;

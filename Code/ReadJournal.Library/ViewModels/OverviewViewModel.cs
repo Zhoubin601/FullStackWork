@@ -2,9 +2,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ReadJournal.Library.Models;
 using ReadJournal.Library.Services;
+using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.ViewModels;
 public partial class OverviewViewModel : ViewModelBase
 {
+    private IReadingHistoryService? _history;
     private readonly IReadingRecordStorage _records; private readonly IBookStorage _books; private readonly IStatisticsService _statistics; private readonly IReadingPlanStorage _plans;
     [ObservableProperty] private string _summary = "";
     [ObservableProperty] private IReadOnlyList<BookProgress> _readingBooks = [];
@@ -18,11 +20,12 @@ public partial class OverviewViewModel : ViewModelBase
         OpenLibraryCommand = new AsyncRelayCommand(() => NavigateAsync(() => menu.NavigateToAsync(MenuNavigationConstant.BookListView)));
         OpenBookCommand = new AsyncRelayCommand<BookProgress>(b => b is null ? Task.CompletedTask : NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookDetailView, b.Book.Id)));
     }
+    public OverviewViewModel(IReadingRecordStorage records, IBookStorage books, IStatisticsService statistics, IReadingPlanStorage plans, IMenuNavigationService menu, IContentNavigationService content, IReadingHistoryService history) : this(records, books, statistics, plans, menu, content) { _history = history; }
     protected override async Task LoadAsync()
     {
         var version = ParameterVersion;
         var summary = (await _statistics.GetAsync()).Summary; var books = (await _books.SearchAsync("", "在读", 1, 5)).Items;
-        var records = await _records.GetRecentSummariesAsync(5);
+        IReadOnlyList<string> records = _history is null ? await _records.GetRecentSummariesAsync(5) : (await _history.GetAsync(null, 1, 5, default)).Items.Select(h => h.DisplayText).ToArray();
         var plans = (await _plans.GetAllAsync()).Where(x => x.State != "已完成").Take(5).ToArray();
         if (version != ParameterVersion) return;
         Summary = summary; ReadingBooks = books; RecentRecords = records; PendingPlans = plans;

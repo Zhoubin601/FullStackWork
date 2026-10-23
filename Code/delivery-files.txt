@@ -175,3 +175,7 @@ ReadJournal.UnitTest/ReaderLifecycleTests.cs
 ReadJournal.UnitTest/ReaderSessionTests.cs
 ReadJournal/Views/ReaderView.axaml
 ReadJournal/Views/ReaderView.axaml.cs
+ReadJournal.Library/Services/Reader/ReaderQuoteNavigation.cs
+ReadJournal.Library/Services/Reader/ReaderQuoteService.cs
+ReadJournal.Library/Services/Reader/ReadingHistoryService.cs
+ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs
