@@ -1,0 +1,11 @@
+{
+  "operation": "AnalyzeCancelled",
+  "mode": "real",
+  "cancelAfterConfirmationMs": 250,
+  "elapsedMs": 1724,
+  "quotesAfter": 0,
+  "readingAppearanceStillUsable": true,
+  "usageProvided": false,
+  "automaticRetry": false,
+  "providerReceiptUnknown": true
+}

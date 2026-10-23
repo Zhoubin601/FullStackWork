@@ -104,4 +104,50 @@ public sealed class AiHttpTests
         await using var x = await AiTestFixture.Create(); await Assert.ThrowsAsync<AiException>(() => x.Settings.SaveAsync(AiSettingsStorage.Default with { HttpsEndpoint = endpoint }, default));
         Assert.False(File.Exists(Path.Combine(x.Db.Paths.DirectoryPath, "ai-settings.json")));
     }
+    [Theory][InlineData("deepseek-flash")][InlineData("deepseek-v4-pro")]
+    public async Task CurrentModelsDisableThinkingAndPreserveReportedUsage(string model)
+    {
+        await using var x = await AiTestFixture.Create();
+        await x.Secrets.WriteApiKeyAsync("fictional-" + Guid.NewGuid().ToString("N"), default);
+        var config = AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true, Model = model };
+        var handler = new Handler(async (message, ct) =>
+        {
+            using var body = JsonDocument.Parse(await message.Content!.ReadAsStringAsync(ct));
+            Assert.Equal(model, body.RootElement.GetProperty("model").GetString());
+            Assert.Equal("disabled", body.RootElement.GetProperty("thinking").GetProperty("type").GetString());
+            Assert.Equal(config.MaxOutputTokens, body.RootElement.GetProperty("max_tokens").GetInt32());
+            return new(HttpStatusCode.OK) { Content = new StringContent(JsonSerializer.Serialize(new {
+                choices = new[] { new { message = new { content = "{\"analysis\":\"短文分析\"}" }, finish_reason = "stop" } },
+                usage = new { prompt_tokens = 120, completion_tokens = 24 }
+            })) };
+        });
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
+        var result = await client.SendAsync(Request(config, AiOperation.Analyze), default);
+        Assert.Equal(120, result.InputTokens); Assert.Equal(24, result.OutputTokens); Assert.Equal(1, handler.Count);
+    }
+    [Theory][InlineData("deepseek-chat")][InlineData("deepseek-reasoner")]
+    public async Task LegacyConfigurationRemainsReadableAndMockableButCannotSendRealRequests(string model)
+    {
+        await using var x = await AiTestFixture.Create();
+        var config = AiSettingsStorage.Default with { Model = model, UseMock = false, HasAcknowledgedTextUpload = true };
+        await x.Settings.SaveAsync(config, default); Assert.Equal(model, (await x.Settings.GetAsync(default)).Model);
+        var handler = new Handler((_, _) => throw new Exception("must reject before network"));
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
+        var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(config), default));
+        Assert.Equal("ModelUpdateRequired", error.Code); Assert.Contains("deepseek-flash", error.Message);
+        Assert.Single((await client.SendAsync(Request(config with { UseMock = true }), default)).Candidates);
+        Assert.Equal(0, handler.Count);
+    }
+    [Fact]
+    public async Task MismatchedModelAndAlreadyCancelledRequestNeverReachHttp()
+    {
+        await using var x = await AiTestFixture.Create();
+        var config = AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true };
+        var handler = new Handler((_, _) => throw new Exception("must reject before network"));
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
+        Assert.Equal("InvalidSettings", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(config) with { Model = "deepseek-v4-pro" }, default))).Code);
+        using var cancelled = new CancellationTokenSource(); cancelled.Cancel();
+        await Assert.ThrowsAnyAsync<OperationCanceledException>(() => client.SendAsync(Request(config), cancelled.Token));
+        Assert.Equal(0, handler.Count);
+    }
 }

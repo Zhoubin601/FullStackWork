@@ -1,0 +1,7 @@
+{
+  "maxCalls": null,
+  "started": 5,
+  "mode": "real",
+  "model": "deepseek-flash",
+  "authorization": "User removed call limit for synthetic-text integration"
+}

@@ -48,8 +48,10 @@ public sealed partial class ReaderViewModel
         _aiPending = null; _aiBatch = batch.InsertedQuoteIds.Count > 0 && !batch.WasAlreadyUndone ? batch.BatchId : null;
         _aiBatchEpoch = _context!.Identity.Epoch;
         AiStatus = batch.WasAlreadyUndone ? "此批次已撤销，未重新入库。" : $"已自动保存{batch.InsertedQuoteIds.Count}条，重复{batch.DuplicateCount}条，拒绝{batch.RejectedCount}条。";
-        AiResult = "已保存原句与所选正文逐字一致；AI解读请自行判断。可在书摘收藏中编辑或回跳。" + (batch.RejectionReasons is { Count: > 0 } reasons ? "\n拒绝原因：\n" + string.Join("\n", reasons.GroupBy(r => r).Select(g => $"{g.Key}（{g.Count()}条）")) : "");
+        AiResult = "已保存原句与所选正文逐字一致；AI解读请自行判断。可在书摘收藏中编辑或回跳。\n" + UsageText(batch.InputTokens, batch.OutputTokens) + (batch.RejectionReasons is { Count: > 0 } reasons ? "\n拒绝原因：\n" + string.Join("\n", reasons.GroupBy(r => r).Select(g => $"{g.Key}（{g.Count()}条）")) : "");
     }
+    private static string UsageText(int? input, int? output) =>
+        $"服务报告 token：输入{input?.ToString() ?? "未提供"}，输出{output?.ToString() ?? "未提供"}；费用以供应商账单为准。";
     private Task RunAiAsync(AiOperation operation) => RunAiActionAsync(async ct =>
     {
         if (_context is null || _aiScopes is null || _ai is null || _aiSettings is null || _layout is null || Page is null || Phase != ReaderPhase.Active) return;
@@ -81,7 +83,7 @@ public sealed partial class ReaderViewModel
         else
         {
             var result = await _ai.AnalyzeAsync(scope, operation, ct); ct.ThrowIfCancellationRequested();
-            AiResult = result.Analysis; AiStatus = $"{result.DisplayScope}：分析完成，未写入书摘。";
+            AiResult = result.Analysis + "\n" + UsageText(result.InputTokens, result.OutputTokens); AiStatus = $"{result.DisplayScope}：分析完成，未写入书摘。";
         }
     });
     private async Task RunAiActionAsync(Func<CancellationToken, Task> action)

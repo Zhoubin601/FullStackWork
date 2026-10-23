@@ -1,0 +1,12 @@
+{
+  "summary": "已自动保存0条，重复0条，拒绝2条。",
+  "inputTokens": 453,
+  "outputTokens": 127,
+  "localRejectionReasons": "\n未在所选连续原文中找到原句。（2条）",
+  "counts": {
+    "Quote": 0,
+    "QuoteOrigin": 0,
+    "AiGenerationBatch": 1,
+    "AiGenerationBatchItem": 0
+  }
+}

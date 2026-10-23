@@ -1,0 +1,4 @@
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.Library\ReadJournal.Library.csproj]
+D:\2026Autumn Semester File\FullStack\期末大作业\docs\tools\ReaderP9NetworkProbe\Program.cs(42,110): error CS0117: “ReaderExitReason”未包含“WindowClosing”的定义 [D:\2026Autumn Semester File\FullStack\期末大作业\docs\tools\ReaderP9NetworkProbe\ReaderP9NetworkProbe.csproj]
+
+生成失败。请修复生成错误并重新运行。

@@ -1,0 +1,14 @@
+{
+  "operation": "ExtractQuotes",
+  "mode": "real",
+  "characters": 86,
+  "elapsedMs": 2129,
+  "inputTokens": 243,
+  "outputTokens": 101,
+  "saved": 2,
+  "duplicates": 0,
+  "rejected": 0,
+  "origins": 2,
+  "allOriginalQuotesExactlyMatchSource": true,
+  "success": true
+}

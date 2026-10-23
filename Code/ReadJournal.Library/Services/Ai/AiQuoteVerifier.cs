@@ -15,7 +15,7 @@ public sealed class AiQuoteVerifier : IAiQuoteVerifier
             if (string.IsNullOrWhiteSpace(candidate.OriginalText) || candidate.OriginalText.Length > 8000 || candidate.Explanation is null || candidate.Explanation.Length > 4000 ||
                 candidate.PrefixHint?.Length > 256 || candidate.SuffixHint?.Length > 256)
             { rejected.Add("候选为空或超过限额。"); continue; }
-            var matches = new List<DocumentRange>();
+            var matches = new List<DocumentRange>(); var exactOccurrences = 0;
             foreach (var span in scope.Original.Spans)
             {
                 var boundaries = StringInfo.ParseCombiningCharacters(span.Text).Append(span.Text.Length).ToHashSet();
@@ -25,12 +25,15 @@ public sealed class AiQuoteVerifier : IAiQuoteVerifier
                     var found = span.Text.IndexOf(candidate.OriginalText, at, StringComparison.Ordinal); if (found < 0) break;
                     var end = found + candidate.OriginalText.Length; at = found + 1;
                     if (!boundaries.Contains(found) || !boundaries.Contains(end)) continue;
+                    exactOccurrences++;
                     if (!string.IsNullOrEmpty(candidate.PrefixHint) && !span.Text[..found].EndsWith(candidate.PrefixHint, StringComparison.Ordinal)) continue;
                     if (!string.IsNullOrEmpty(candidate.SuffixHint) && !span.Text[end..].StartsWith(candidate.SuffixHint, StringComparison.Ordinal)) continue;
                     matches.Add(new(span.Range.Start with { Utf16Offset = span.Range.Start.Utf16Offset + found }, span.Range.Start with { Utf16Offset = span.Range.Start.Utf16Offset + end }));
                 }
             }
-            if (matches.Count != 1) { rejected.Add(matches.Count == 0 ? "未在所选连续原文中找到原句。" : "原句重复，缺少可唯一定位的上下文。"); continue; }
+            if (matches.Count != 1) { rejected.Add(matches.Count == 0
+                ? exactOccurrences > 0 ? "候选上下文提示与紧邻原文不一致。" : "未在所选连续原文中找到完整原句。"
+                : "原句重复，缺少可唯一定位的上下文。"); continue; }
             accepted.Add(new(matches[0], candidate.OriginalText, candidate.Explanation));
         }
         return new(accepted.AsReadOnly(), rejected.AsReadOnly());

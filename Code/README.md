@@ -17,6 +17,8 @@ Windows 可执行 `powershell -ExecutionPolicy Bypass -File build.ps1`，Linux �
 
 ## 使用和数据
 
+2026-10-23 P9准备：依据当日DeepSeek官方文档，默认模型更新为`deepseek-flash`，也可选择`deepseek-v4-pro`；真实请求显式关闭思考模式，保留JSON输出、本地逐字核验与无自动重试。旧`deepseek-chat`/`deepseek-reasoner`配置仍可读取和运行Mock，真实发送前提示用户更新模型，不自动替换已保存的选择。分析和书摘生成显示供应商返回的输入/输出token，缺失显示“未提供”，金额以供应商账单为准。真实联调首轮3次：分析与选区解释成功，提取2候选全部被本地核验拒绝（零新增），尚未完成真实提取闭环。已改进中文JSON/提示词与细分拒绝提示，后续实测状态见仓库docs/reader-p9-execution.md；不能将Mock测试当作真实调用成功。官方依据见仓库`docs/reader-p9-provider-reference.md`。
+
 手动书籍从“我的书库”新增，在详情中添加页码记录、书摘与计划。第10～20页按闭区间计11页，重复阅读计入累计页数，手动书进度取最大结束页。电子书通过TXT/EPUB导入，详情“开始 / 继续阅读”进入原生阅读器；正文位置与显式完成标记分别保存，不使用物理页数。
 
 默认数据保存在用户 LocalApplicationData 下的 ReadJournal 目录，不写源码目录。设置 `READJOURNAL_DATA_DIR` 可指定隔离目录；设置 `READJOURNAL_LOG_BINDINGS=1` 可输出框架诊断。设置页支持虚构演示数据、浅深主题及完整 ZIP 备份；兼容旧 JSON 输入，恢复前先生成完整自动备份，本机主题和密钥独立保留。

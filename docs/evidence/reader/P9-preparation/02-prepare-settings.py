@@ -1,0 +1,10 @@
+edit(1,"deepseek-flash")
+edit(2,"600")
+edit(3,"1024")
+click("保存 AI 配置")
+foreground()
+r=find(kind="Edit",index=3).Current.BoundingRectangle
+u32.SetCursorPos(int(r.X+r.Width/2),int(r.Y+r.Height/2))
+u32.mouse_event(0x800,0,0,ctypes.c_ulong(-750).value,0)
+time.sleep(.5)
+shot("08-p9-key-entry-ready")

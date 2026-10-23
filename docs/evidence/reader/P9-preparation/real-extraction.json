@@ -1,0 +1,18 @@
+{
+  "operation": "ExtractQuotes",
+  "mode": "real",
+  "characters": 86,
+  "inputTokens": 453,
+  "outputTokens": 127,
+  "candidates": 2,
+  "saved": 0,
+  "duplicates": 0,
+  "rejected": 2,
+  "createdNewBatch": false,
+  "validationPassed": false,
+  "providerRequestSucceeded": true,
+  "applicationRefusedAllCandidates": true,
+  "failureCategory": "original-text-or-adjacent-context-not-matched",
+  "elapsedMs": null,
+  "elapsedNote": "Third-call recipe stopped on failed save-count assertion; exact time not captured"
+}

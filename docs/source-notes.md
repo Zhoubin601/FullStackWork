@@ -319,3 +319,15 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 - 原始资料要求当前页/页范围/选区分析、合法原句自动入库、AI来源标记和撤销，禁止AI自行SQL、上传范围外正文或让AI失败阻塞阅读。按v2允许凭据仅会话内存，P8不需要真实Key或真实费用。
 - 构建依赖来源：微软 .NET SDK https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.424/dotnet-sdk-8.0.424-linux-x64.tar.gz 、NuGet锁定包、Debian官方允许镜像 https://deb.debian.org/debian/ 。日期2026-10-23；系统原apt snapshot主机策略拒绝后改从已允许官方镜像取得桌面运行依赖，未绕过代理。没有新增供应商API/费率外部事实；DeepSeek当前真实能力留P9核验。
 - 新证据：docs/evidence/reader/P8；TXT/EPUB均为确定性合成内容，不包含真实用户书籍或真实凭据。raw及既有正式output保持原字节。
+
+
+## 2026-10-23 P8拉取与P9启动来源
+
+用户授权拉取远端、验证v8后开始v9，按执行表对应P8/P9。远端origin/feature/reader-ai-p8=4baef83；main=cd3386b。只读raw原规划、output/reader-plan-v2执行表P8/P9及P8协议/验收，Windows新证据位于docs/evidence/reader/windows-p8-20261023。用户已同意查阅DeepSeek官方文档，最多3次、每次不超过600字自建短文的真实联调准备；密钥不在聊天接收。
+
+官方外部来源：DeepSeek Your First API Call https://api-docs.deepseek.com/ ；Chat Completions API https://api-docs.deepseek.com/api/create-chat-completion/ ；Models & Pricing https://api-docs.deepseek.com/quick_start/pricing/ 。引用日期2026-10-23；当前模型/请求/费用摘要见reader-p9-provider-reference.md。JSON guide读取超时，未引用其未读内容。
+
+
+## 2026-10-23 P9真实新证据
+
+用户先通过应用输入Key并允许最多3次，随后明确解除次数限制且再次在应用配置。真实分析86字符、选区解释10字符成功；首轮提取2候选全拒绝；本地修订后真实提取保存2条、实际原文回跳复制与撤销通过。5次真实模式启动中4次完成、1次取消；已报告usage输入1331/输出343，取消usage未知。仅使用自建文本，不读取真实书籍；正式元数据及最终334项回归见P9-preparation/summary-final.json，官方来源及查询日期见reader-p9-provider-reference.md，完整验收见reader-p9-acceptance-20261023.md。raw/output哈希保持不变。

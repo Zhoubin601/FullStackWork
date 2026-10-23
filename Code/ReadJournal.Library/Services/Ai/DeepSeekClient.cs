@@ -36,7 +36,9 @@ public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
     { _settings = settings; _secrets = secrets; _http = new(handler) { Timeout = Timeout.InfiniteTimeSpan }; _mock = new(new AiMockHandler()) { Timeout = Timeout.InfiniteTimeSpan }; }
     public async Task<AiProviderResponse> SendAsync(AiProviderRequest request, CancellationToken ct)
     {
-        var settings = request.Settings ?? await _settings.GetAsync(ct); AiSettingsStorage.Validate(settings);
+        ct.ThrowIfCancellationRequested();
+        var settings = request.Settings ?? await _settings.GetAsync(ct); AiSettingsStorage.ValidateForRequest(settings);
+        if (request.Model != settings.Model) throw new AiException("InvalidSettings", "请求模型与已确认配置不一致，请重新确认后生成。");
         if (request.UserText.Length > AiIntegrity.MaxInput * 6 + 65536 || request.MaxOutputTokens < 1 || request.MaxOutputTokens > settings.MaxOutputTokens)
             throw new AiException("LimitExceeded", "请求超过限额，请缩小范围。");
         if (!settings.UseMock && !settings.HasAcknowledgedTextUpload) throw new AiException("UploadNotAcknowledged", "请先在设置中确认正文上传范围。");
@@ -48,7 +50,7 @@ public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
             if (string.IsNullOrEmpty(key)) throw new AiException("CredentialMissing", "未配置会话密钥，请前往设置。");
             message.Headers.Authorization = new AuthenticationHeaderValue("Bearer", key);
         }
-        message.Content = new StringContent(JsonSerializer.Serialize(new { model = request.Model, messages = new[] { new { role = "system", content = request.SystemPrompt }, new { role = "user", content = request.UserText } }, stream = false, max_tokens = request.MaxOutputTokens, response_format = new { type = "json_object" } }), Encoding.UTF8, "application/json");
+        message.Content = new StringContent(JsonSerializer.Serialize(new { model = request.Model, messages = new[] { new { role = "system", content = request.SystemPrompt }, new { role = "user", content = request.UserText } }, thinking = new { type = "disabled" }, stream = false, max_tokens = request.MaxOutputTokens, response_format = new { type = "json_object" } }), Encoding.UTF8, "application/json");
         try
         {
             using var response = await (settings.UseMock ? _mock : _http).SendAsync(message, HttpCompletionOption.ResponseHeadersRead, timeout.Token);

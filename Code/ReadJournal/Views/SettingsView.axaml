@@ -1,10 +1,10 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.SettingsView">
 <i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding SettingsViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
 <ScrollViewer><StackPanel Spacing="18" MaxWidth="780"><TextBlock Classes="h1" Text="设置与数据"/><TextBlock Classes="h2" Text="外观"/><StackPanel Orientation="Horizontal" Spacing="12"><ComboBox Width="180" ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme,Mode=TwoWay}"/><Button Content="应用主题" Command="{Binding ApplyThemeCommand}"/></StackPanel><Border BorderBrush="#8094A49C" BorderThickness="0,1,0,0" Margin="0,12"/><TextBlock Classes="h2" Text="AI 阅读助手"/>
-<TextBlock Text="默认本地模拟，不联网、不需要密钥。真实模式只发送确认范围内的正文，可能计费；P9真实联调尚未完成。密钥仅在本次应用会话内存中保留，退出后需重新输入，不写入备份。" TextWrapping="Wrap" Classes="muted"/>
+<TextBlock Text="默认本地模拟，不联网、不需要密钥。真实模式只发送确认范围内的正文，可能计费。密钥仅在本次应用会话内存中保留，退出后需重新输入，不写入备份。" TextWrapping="Wrap" Classes="muted"/>
 <CheckBox Content="使用本地模拟（Mock）" IsChecked="{Binding UseMock}"/>
 <TextBlock Text="HTTPS 地址"/><TextBox Text="{Binding AiEndpoint}"/>
-<TextBlock Text="模型"/><TextBox Text="{Binding AiModel}"/>
+<TextBlock Text="模型（deepseek-flash / deepseek-v4-pro）"/><TextBox Text="{Binding AiModel}"/>
 <WrapPanel><StackPanel Width="170" Margin="0,0,12,0"><TextBlock Text="输入字符上限"/><TextBox Text="{Binding AiInputLimit}"/></StackPanel><StackPanel Width="170" Margin="0,0,12,0"><TextBlock Text="输出 token 上限"/><TextBox Text="{Binding AiOutputLimit}"/></StackPanel><StackPanel Width="170"><TextBlock Text="超时秒数"/><TextBox Text="{Binding AiTimeoutSeconds}"/></StackPanel></WrapPanel>
 <CheckBox Content="我了解真实模式会将确认范围正文发送至 DeepSeek" IsChecked="{Binding UploadAcknowledged}"/>
 <Button Content="保存 AI 配置" Command="{Binding SaveAiSettingsCommand}"/>

@@ -1,0 +1,27 @@
+click("确定")
+find("当前页：分析完成，未写入书摘。", "Text")
+a=snapshot("02-after-analysis")
+assert len(a["Quote"])==0 and len(a["AiGenerationBatch"])==0
+shot("02-analysis")
+click("生成并自动保存书摘")
+click("确定")
+find("已自动保存1条，重复0条，拒绝0条。", "Text")
+a=snapshot("03-after-generate")
+assert len(a["Quote"])==1 and len(a["QuoteOrigin"])==1 and len(a["AiGenerationBatch"])==1
+shot("03-generated")
+click("撤销本批新增书摘")
+find("撤销完成：删除1条，保留已修改或收藏0条。", "Text")
+a=snapshot("04-after-undo")
+assert len(a["Quote"])==0 and len(a["AiGenerationBatch"])==1
+shot("04-undone")
+click("设置与数据")
+shot("05-settings")
+close()
+start(state()["data"])
+click("我的书库")
+click("打开 →")
+click("开始 / 继续阅读")
+a=snapshot("05-after-restart")
+assert len(a["ReadingSession"])==1 and len(a["Quote"])==0
+shot("06-restarted")
+close()

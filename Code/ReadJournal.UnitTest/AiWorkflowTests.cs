@@ -12,6 +12,33 @@ namespace ReadJournal.UnitTest;
 public sealed class AiWorkflowTests
 {
     [Fact]
+    public async Task ProviderSeesReadableChineseAndOptionalHintsHaveDistinctRejectionReasons()
+    {
+        await using var x = await AiTestFixture.Create(); var scope = await x.Scope();
+        await x.Ai.GenerateAndSaveQuotesAsync(scope, default);
+        Assert.Contains("春天的河流缓缓流过。", x.Client.Request!.UserText);
+        using var body = System.Text.Json.JsonDocument.Parse(x.Client.Request.UserText);
+        Assert.Equal(scope.Original.Spans[0].Text, body.RootElement.GetProperty("segments")[0].GetString());
+        var result = new AiQuoteVerifier().Verify(scope, [
+            new("春天的河流缓缓流过。", "感想", "不存在的上下文", null),
+            new("改写的河流。", "感想", null, null),
+            new("春天的河流缓缓流过。", "感想", null, null)]);
+        Assert.Single(result.Accepted);
+        Assert.Contains("候选上下文提示与紧邻原文不一致。", result.RejectionReasons);
+        Assert.Contains("未在所选连续原文中找到完整原句。", result.RejectionReasons);
+    }
+    [Fact]
+    public async Task ReportedQuoteUsageSurvivesLocalSaveRetryWithoutAnotherProviderCall()
+    {
+        await using var x = await AiTestFixture.Create();
+        x.Client.Reply = _ => Task.FromResult(new AiProviderResponse(null, [new("春天的河流缓缓流过。", "感想", null, null)], null, 101, 27));
+        var scope = await x.Scope(); x.Faults.Point = "ai.before-commit";
+        var pending = await Assert.ThrowsAsync<AiSavePendingException>(() => x.Ai.GenerateAndSaveQuotesAsync(scope, default));
+        var saved = await x.Ai.RetrySaveAsync(pending.BatchId, x.Context, default);
+        Assert.Equal(101, saved.InputTokens); Assert.Equal(27, saved.OutputTokens);
+        Assert.Single(saved.InsertedQuoteIds); Assert.Equal(1, x.Client.Count);
+    }
+    [Fact]
     public async Task SelectionRequestContainsOnlyFrozenTextAndAnalysisNeverWritesQuotes()
     {
         await using var x = await AiTestFixture.Create(); var scope = await x.Scope(0, 10);
@@ -162,10 +189,13 @@ public sealed class AiWorkflowTests
         var backup = BackupRuntime.CreateService(x.Db, new ReadingService(), x.Db.Paths); var path = Path.Combine(x.Root, "complete.zip"); var before = await x.Hash(); await backup.ExportAsync(path, default);
         await x.Ai.UndoBatchAsync(saved.BatchId, x.Db.Coordinator.CurrentEpoch, default); await backup.RestoreAsync(path, default); Assert.Equal(before, await x.Hash());
         Assert.True(await x.Secrets.HasApiKeyAsync(default)); Assert.Equal(1, (await x.Ai.UndoBatchAsync(saved.BatchId, x.Db.Coordinator.CurrentEpoch, default)).DeletedCount);
-        foreach (var file in Directory.EnumerateFiles(x.Root, "*", SearchOption.AllDirectories).Where(f => !f.EndsWith(".lock"))) Assert.False(System.Text.Encoding.UTF8.GetString(await File.ReadAllBytesAsync(file)).Contains(key, StringComparison.Ordinal));
         using (var zip = System.IO.Compression.ZipFile.OpenRead(path)) foreach (var entry in zip.Entries) { using var reader = new StreamReader(entry.Open()); Assert.False((await reader.ReadToEndAsync()).Contains(key, StringComparison.Ordinal)); }
         Assert.False(await new SessionSecretStore().HasApiKeyAsync(default)); await x.Secrets.DeleteApiKeyAsync(default); Assert.False(await x.Secrets.HasApiKeyAsync(default));
         Assert.Equal("ok", await x.Db.ReadAsync(c => c.ExecuteScalar<string>("pragma integrity_check"))); Assert.Empty(await x.Db.ReadAsync(c => c.Query<ForeignKeyError>("pragma foreign_key_check")));
+        // SQLite holds an exclusive Windows file handle. Close it before scanning the
+        // on-disk database as well as the remaining files; do not omit the DB from QA.
+        x.Db.Dispose();
+        foreach (var file in Directory.EnumerateFiles(x.Root, "*", SearchOption.AllDirectories).Where(f => !f.EndsWith(".lock", StringComparison.OrdinalIgnoreCase))) Assert.False(System.Text.Encoding.UTF8.GetString(await File.ReadAllBytesAsync(file)).Contains(key, StringComparison.Ordinal));
     }
     [Fact]
     public async Task CancellationInsideTransactionRollsBackReceiptOriginAndAllQuotes()

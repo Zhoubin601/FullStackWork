@@ -48,7 +48,7 @@ public sealed class AiViewModelTests
     {
         await using var x = await ReaderFixture.Create(); var vm = x.Vm;
         await vm.AnalyzeCommand.ExecuteAsync(null); Assert.Contains("模拟分析", vm.AiResult); Assert.Equal(0, await x.Data.QuoteCount());
-        x.Alerts.Verify(a => a.ConfirmAsync("确认分析范围", It.Is<string>(s => s.Contains("deepseek-chat") && s.Contains("24000"))), Times.Once);
+        x.Alerts.Verify(a => a.ConfirmAsync("确认分析范围", It.Is<string>(s => s.Contains("deepseek-flash") && s.Contains("24000"))), Times.Once);
         x.Data.Faults.Point = "ai.before-commit"; await vm.GenerateQuotesCommand.ExecuteAsync(null); Assert.True(vm.CanRetryAiSave); Assert.False(vm.IsAiBusy); Assert.False(vm.IsBusy);
         var requests = x.Data.Client.Count; await vm.RetryAiSaveCommand.ExecuteAsync(null); Assert.Equal(requests, x.Data.Client.Count); Assert.True(vm.CanUndoAi); Assert.Contains("保存1条", vm.AiStatus);
         await vm.UndoAiCommand.ExecuteAsync(null); Assert.Equal(0, await x.Data.QuoteCount()); Assert.False(vm.CanUndoAi);

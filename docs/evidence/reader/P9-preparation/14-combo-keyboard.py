@@ -1,0 +1,6 @@
+box=find(kind="ComboBox",index=1)
+box.SetFocus()
+keys(0x12,0x28)
+keys(0x23)
+keys(0x0D)
+print([e.Current.Name for e in elements() if e.Current.Name in ["全书页范围","当前页","当前选区"]])

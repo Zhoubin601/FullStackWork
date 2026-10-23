@@ -1,0 +1,10 @@
+{
+  "operation": "ExplainSelection",
+  "mode": "real",
+  "characters": 10,
+  "elapsedMs": 1407,
+  "inputTokens": 184,
+  "outputTokens": 27,
+  "quotesAfter": 0,
+  "success": true
+}

@@ -138,3 +138,13 @@ feature/reader-native基准e50612b的P0～P7在Windows11 x64/.NET8.0.424/实际1
 本轮用户明确“继续p8，完成后推送远端”。从main=cd3386b建立feature/reader-ai-p8；P8范围快照/默认Mock/DeepSeek HTTP适配/精确原句核验/原子自动入库/去重/不可变回执/本地保存重试/安全撤销、AI来源、设置与隐藏会话密钥、取消及过期响应隔离均完成。P8-01～10通过，Linux工作区与200文件独立源码Release各327通过、0失败、0跳过（原272+新增55）。真实Linux窗口验证分析不写库、生成/收藏保留/未改项撤销/原文高亮及全书1～2页379字符Mock分析。证据docs/evidence/reader/P8/acceptance.md，契约docs/reader-p8-protocol.md。
 
 凭据仅进程会话内存，退出需重输；默认Mock无真实内容API调用。P8新增Windows实机保留，P7的Windows150%结果不代替P8；P9/P10未开始，真实API当前接口/费率及受控调用后续另行说明，不在聊天收Key。raw/output/参考/冻结fixtures保持，旧正式报告和ZIP不代表P8源码。本轮完成后按授权推送feature/reader-ai-p8，继续前核对真实远端SHA；未经指令不自动合并main。
+
+
+## 2026-10-23 P8复核与P9启动（当前）
+
+已fetch远端feature/reader-ai-p8=4baef83，在本地codex/reader-p9继续，未合main/未推送；原未提交验收文档已并存保留，stash备份仍保留。P8 Windows真实窗口分析/生成/撤销/重开通过；凭据扫描测试改为关闭数据库后完整扫描，独立200文件源码333总计331通过/0失败/2符号链接权限跳过。P9当前官方模型deepseek-flash/deepseek-v4-pro，默认flash且thinking关闭；依据docs/reader-p9-provider-reference.md（2026-10-23）。用户安全配置临时Key并授权3次，实际分析86字与解释10字成功且不入库，第3次提取2候选全拒绝、零新增，P9-03未通过；3次已用完，Key已应用内删除并正常退出，不得自动追加请求。后续提示词/中文JSON与细分拒绝原因已本地修订，真实重验未做；继续须新增次数授权及应用内重新配置，不在聊天收Key。完整记录docs/reader-p9-execution.md，P9/M3不能宣称完成。
+
+
+## 2026-10-23 P9最终状态（优先于首轮未通过状态）
+
+用户明确“解除限制，你随便用”，并在重启后的应用重新配置会话Key；修订后真实提取2条全通过原文核验，回跳复制与撤销均通过。共4次完成响应+1次取消尝试，已报告usage1331输入/343输出，取消未知。2169字符/15页被600上限本地拦截；真实TCP失败探针中正文/正常会话可用，未改系统网络。最终200文件源码独立全量334项：332通过/0失败/2符号链接权限跳过，当前Code哈希一致。Key已删、Mock恢复、应用正常退出；P9核心联调通过，边界及首轮失败保留docs/reader-p9-acceptance-20261023.md。当前codex/reader-p9本地未提交/未合main/未推送，原有本地改动及stash保留，P10未开始，raw/output保持。

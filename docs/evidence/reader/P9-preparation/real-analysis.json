@@ -1,0 +1,10 @@
+{
+  "operation": "Analyze",
+  "mode": "real",
+  "characters": 86,
+  "elapsedMs": 2355,
+  "inputTokens": 451,
+  "outputTokens": 88,
+  "quotesAfter": 0,
+  "success": true
+}

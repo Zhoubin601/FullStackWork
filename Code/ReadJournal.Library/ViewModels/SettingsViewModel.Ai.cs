@@ -28,7 +28,7 @@ public partial class SettingsViewModel
             if (_aiSettings is null) return;
             if (!int.TryParse(AiInputLimit, out var input) || !int.TryParse(AiOutputLimit, out var output) || !int.TryParse(AiTimeoutSeconds, out var timeout)) throw new AiException("InvalidSettings", "限额与超时请输入整数。");
             await _aiSettings.SaveAsync(new(AiEndpoint, AiModel, input, output, TimeSpan.FromSeconds(timeout), UploadAcknowledged, UseMock), default);
-            Status = UseMock ? "AI配置已保存：本地模拟，不上传正文。" : "AI配置已保存：真实模式只发送所选范围；P9真实联调尚未完成。";
+            Status = UseMock ? "AI配置已保存：本地模拟，不上传正文。" : "AI配置已保存：真实模式只发送确认范围，可能计费；请在阅读器中确认后生成。";
         }));
         SaveApiKeyCommand = new AsyncRelayCommand(() => RunAsync(async () =>
         {

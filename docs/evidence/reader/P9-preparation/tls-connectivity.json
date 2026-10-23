@@ -1,0 +1,8 @@
+{
+  "host": "api.deepseek.com",
+  "port": 443,
+  "test": "TLS handshake only; no HTTP request, credential or content sent",
+  "tls": "TLSv1.3",
+  "verified": true,
+  "elapsedMs": 257
+}

@@ -20,14 +20,22 @@ public sealed class SessionSecretStore : ISecretStore
 public sealed class AiSettingsStorage(DataPaths paths) : IAiSettingsStorage
 {
     private readonly SemaphoreSlim _gate = new(1, 1);
-    public static AiSettings Default => new("https://api.deepseek.com/chat/completions", "deepseek-chat", 24000, 2048, TimeSpan.FromSeconds(45), false);
+    public static AiSettings Default => new("https://api.deepseek.com/chat/completions", "deepseek-flash", 24000, 2048, TimeSpan.FromSeconds(45), false);
     public static void Validate(AiSettings settings)
     {
         if (!Uri.TryCreate(settings.HttpsEndpoint, UriKind.Absolute, out var uri) || uri.Scheme != "https" || uri.Host != "api.deepseek.com" || !uri.IsDefaultPort ||
             uri.UserInfo.Length > 0 || uri.Query.Length > 0 || uri.Fragment.Length > 0 || uri.AbsolutePath is not ("/chat/completions" or "/v1/chat/completions") ||
-            settings.Model is not ("deepseek-chat" or "deepseek-reasoner") || settings.MaxInputUtf16Units is < 1 or > AiIntegrity.MaxInput || settings.MaxOutputTokens is < 64 or > 8192 ||
+            settings.Model is not ("deepseek-flash" or "deepseek-v4-pro" or "deepseek-chat" or "deepseek-reasoner") || settings.MaxInputUtf16Units is < 1 or > AiIntegrity.MaxInput || settings.MaxOutputTokens is < 64 or > 8192 ||
             settings.Timeout < TimeSpan.FromSeconds(1) || settings.Timeout > TimeSpan.FromSeconds(120))
             throw new AiException("InvalidSettings", "AI 配置无效，请检查 HTTPS 地址、模型与限额。");
+    }
+    public static void ValidateForRequest(AiSettings settings)
+    {
+        Validate(settings);
+        // Keep old configuration readable, but require an explicit choice before
+        // sending to a different model. Mock remains available for offline QA.
+        if (!settings.UseMock && settings.Model is "deepseek-chat" or "deepseek-reasoner")
+            throw new AiException("ModelUpdateRequired", "旧模型已不在当前官方列表，请在设置中改用 deepseek-flash 或 deepseek-v4-pro 后保存。");
     }
     public async Task<AiSettings> GetAsync(CancellationToken ct)
     {
