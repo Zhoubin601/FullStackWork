@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3bc7087f-22b8-417d-81b8-8ca338400342" name="@892609bd2ea7 2026-10-22 17:32:35" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-22T17:32:35.9200676+00:00" queuing="2026-10-22T17:32:35.9200677+00:00" start="2026-10-22T17:32:34.4953159+00:00" finish="2026-10-22T17:32:35.9264281+00:00" />
+  <TestSettings name="default" id="6d193210-0298-486b-80d4-42acb0f554b1">
+    <Deployment runDeploymentRoot="_892609bd2ea7_2026-10-22_17_32_35" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="149c14b1-938d-4259-a36e-d7c972d7dad5" testId="9021f086-39bc-ac7a-01e1-2de7a75783be" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.VersionMismatchAndUnknownSourceReturnExplicitFailureWithoutGuessing" computerName="892609bd2ea7" duration="00:00:00.0198408" startTime="2026-10-22T17:32:35.8004403+00:00" endTime="2026-10-22T17:32:35.8004403+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="149c14b1-938d-4259-a36e-d7c972d7dad5" />
+    <UnitTestResult executionId="5119c714-9232-4bfb-b813-0ef62f47c3ec" testId="77c39d43-d3bb-598b-a6dd-50d186c3cf72" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair(point: &quot;quote.after-insert&quot;)" computerName="892609bd2ea7" duration="00:00:00.0265433" startTime="2026-10-22T17:32:35.6480648+00:00" endTime="2026-10-22T17:32:35.6480649+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5119c714-9232-4bfb-b813-0ef62f47c3ec" />
+    <UnitTestResult executionId="465ba700-e133-4401-9e38-e7c1fa4b8cbc" testId="1faeaac4-43f9-21a7-9400-8cbde4baaaa7" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.MillisecondsAccumulateWithoutInventedPagesAndSevenDayDurationBarIsVisible" computerName="892609bd2ea7" duration="00:00:00.0375312" startTime="2026-10-22T17:32:35.7501829+00:00" endTime="2026-10-22T17:32:35.7501830+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="465ba700-e133-4401-9e38-e7c1fa4b8cbc" />
+    <UnitTestResult executionId="a326ba40-e31f-4c99-968f-0f60ab8448c5" testId="f7c6bc18-76ca-0a0c-bf2b-069785415f4d" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject" computerName="892609bd2ea7" duration="00:00:00.0208149" startTime="2026-10-22T17:32:35.8329563+00:00" endTime="2026-10-22T17:32:35.8329564+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a326ba40-e31f-4c99-968f-0f60ab8448c5">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : 已读完的书籍不能新建普通阅读计划。</Message>
+          <StackTrace>   at ReadJournal.Library.Services.ReadingPlanStorage.&lt;&gt;c__DisplayClass7_0.&lt;SaveAsync&gt;b__0(SQLiteConnection c) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/ReadingPlanStorage.cs:line 25
+   at ReadJournal.Library.Services.DatabaseService.&lt;&gt;c__DisplayClass28_1`1.&lt;ExecuteLeasedAsync&gt;b__1() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 87
+   at SQLite.SQLiteConnection.RunInTransaction(Action action)
+   at ReadJournal.Library.Services.DatabaseService.&lt;&gt;c__DisplayClass28_0`1.&lt;ExecuteLeasedAsync&gt;b__0() in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 87
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&amp; currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 84
+   at ReadJournal.Library.Services.DatabaseService.ExecuteAsync[T](Func`2 action, Boolean transaction) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 70
+   at ReadJournal.Library.Services.DatabaseService.ExecuteAsync[T](Func`2 action, Boolean transaction) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 70
+   at ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs:line 97
+   at ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs:line 100
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6f45ce2d-c6ae-4fda-bd7d-f03bc07c4ce8" testId="216fa9b7-2f00-4f55-06ca-b9f6fb6e4647" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair(point: &quot;quote.after-origin&quot;)" computerName="892609bd2ea7" duration="00:00:00.0182988" startTime="2026-10-22T17:32:35.6688144+00:00" endTime="2026-10-22T17:32:35.6688144+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f45ce2d-c6ae-4fda-bd7d-f03bc07c4ce8" />
+    <UnitTestResult executionId="de6c1179-b745-45f3-91ad-045eae8b4ad7" testId="67d9be2a-a615-66e3-9bf8-a14af8280801" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.M1ActualImportQuoteCloseReopenBackupDeleteRestorePreservesAllFieldsAndFiles" computerName="892609bd2ea7" duration="00:00:00.3368948" startTime="2026-10-22T17:32:35.6231238+00:00" endTime="2026-10-22T17:32:35.6231538+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de6c1179-b745-45f3-91ad-045eae8b4ad7" />
+    <UnitTestResult executionId="8123d602-2111-4cce-b523-2c8a4a82f981" testId="c741b41a-75ad-b633-7f2f-b573dcb13422" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.UnifiedHistoryStablePaginationAndSessionDeletePreserveProgressCompletion" computerName="892609bd2ea7" duration="00:00:00.0448848" startTime="2026-10-22T17:32:35.7122260+00:00" endTime="2026-10-22T17:32:35.7122262+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8123d602-2111-4cce-b523-2c8a4a82f981" />
+    <UnitTestResult executionId="87e25ee1-42d0-4bd8-b47b-a6edd6dc3a0c" testId="ac965048-d2ef-063b-9fa3-ec87b7ec39ed" testName="ReadJournal.UnitTest.ReaderLocalWorkflowTests.DedupeIsByPositionAndEditsPreserveOriginalTextAndExactReturn" computerName="892609bd2ea7" duration="00:00:00.0296673" startTime="2026-10-22T17:32:35.7802403+00:00" endTime="2026-10-22T17:32:35.7802407+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87e25ee1-42d0-4bd8-b47b-a6edd6dc3a0c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.M1ActualImportQuoteCloseReopenBackupDeleteRestorePreservesAllFieldsAndFiles" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="67d9be2a-a615-66e3-9bf8-a14af8280801">
+      <Execution id="de6c1179-b745-45f3-91ad-045eae8b4ad7" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="M1ActualImportQuoteCloseReopenBackupDeleteRestorePreservesAllFieldsAndFiles" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.DedupeIsByPositionAndEditsPreserveOriginalTextAndExactReturn" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="ac965048-d2ef-063b-9fa3-ec87b7ec39ed">
+      <Execution id="87e25ee1-42d0-4bd8-b47b-a6edd6dc3a0c" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="DedupeIsByPositionAndEditsPreserveOriginalTextAndExactReturn" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair(point: &quot;quote.after-origin&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="216fa9b7-2f00-4f55-06ca-b9f6fb6e4647">
+      <Execution id="6f45ce2d-c6ae-4fda-bd7d-f03bc07c4ce8" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.MillisecondsAccumulateWithoutInventedPagesAndSevenDayDurationBarIsVisible" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="1faeaac4-43f9-21a7-9400-8cbde4baaaa7">
+      <Execution id="465ba700-e133-4401-9e38-e7c1fa4b8cbc" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="MillisecondsAccumulateWithoutInventedPagesAndSevenDayDurationBarIsVisible" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="f7c6bc18-76ca-0a0c-bf2b-069785415f4d">
+      <Execution id="a326ba40-e31f-4c99-968f-0f60ab8448c5" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.UnifiedHistoryStablePaginationAndSessionDeletePreserveProgressCompletion" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="c741b41a-75ad-b633-7f2f-b573dcb13422">
+      <Execution id="8123d602-2111-4cce-b523-2c8a4a82f981" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="UnifiedHistoryStablePaginationAndSessionDeletePreserveProgressCompletion" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair(point: &quot;quote.after-insert&quot;)" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="77c39d43-d3bb-598b-a6dd-50d186c3cf72">
+      <Execution id="5119c714-9232-4bfb-b813-0ef62f47c3ec" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="QuoteAndOriginRollbackTogetherAndRetryCreatesOnePair" />
+    </UnitTest>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLocalWorkflowTests.VersionMismatchAndUnknownSourceReturnExplicitFailureWithoutGuessing" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/debug/net8.0/readjournal.unittest.dll" id="9021f086-39bc-ac7a-01e1-2de7a75783be">
+      <Execution id="149c14b1-938d-4259-a36e-d7c972d7dad5" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLocalWorkflowTests" name="VersionMismatchAndUnknownSourceReturnExplicitFailureWithoutGuessing" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9021f086-39bc-ac7a-01e1-2de7a75783be" executionId="149c14b1-938d-4259-a36e-d7c972d7dad5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="77c39d43-d3bb-598b-a6dd-50d186c3cf72" executionId="5119c714-9232-4bfb-b813-0ef62f47c3ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1faeaac4-43f9-21a7-9400-8cbde4baaaa7" executionId="465ba700-e133-4401-9e38-e7c1fa4b8cbc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7c6bc18-76ca-0a0c-bf2b-069785415f4d" executionId="a326ba40-e31f-4c99-968f-0f60ab8448c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="216fa9b7-2f00-4f55-06ca-b9f6fb6e4647" executionId="6f45ce2d-c6ae-4fda-bd7d-f03bc07c4ce8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="67d9be2a-a615-66e3-9bf8-a14af8280801" executionId="de6c1179-b745-45f3-91ad-045eae8b4ad7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c741b41a-75ad-b633-7f2f-b573dcb13422" executionId="8123d602-2111-4cce-b523-2c8a4a82f981" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac965048-d2ef-063b-9fa3-ec87b7ec39ed" executionId="87e25ee1-42d0-4bd8-b47b-a6edd6dc3a0c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="7" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:00.38]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:00.44]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:00.44]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:01.02]       System.ArgumentException : 已读完的书籍不能新建普通阅读计划。
+[xUnit.net 00:00:01.02]       Stack Trace:
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/ReadingPlanStorage.cs(25,0): at ReadJournal.Library.Services.ReadingPlanStorage.&lt;&gt;c__DisplayClass7_0.&lt;SaveAsync&gt;b__0(SQLiteConnection c)
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs(87,0): at ReadJournal.Library.Services.DatabaseService.&lt;&gt;c__DisplayClass28_1`1.&lt;ExecuteLeasedAsync&gt;b__1()
+[xUnit.net 00:00:01.02]            at SQLite.SQLiteConnection.RunInTransaction(Action action)
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs(87,0): at ReadJournal.Library.Services.DatabaseService.&lt;&gt;c__DisplayClass28_0`1.&lt;ExecuteLeasedAsync&gt;b__0()
+[xUnit.net 00:00:01.02]            at System.Threading.Tasks.Task`1.InnerInvoke()
+[xUnit.net 00:00:01.02]            at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:01.02]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.02]            at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:01.02]            at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&amp; currentTaskSlot, Thread threadPoolThread)
+[xUnit.net 00:00:01.02]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs(84,0): at ReadJournal.Library.Services.DatabaseService.ExecuteLeasedAsync[T](Func`2 action, Boolean transaction, Action validate)
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs(70,0): at ReadJournal.Library.Services.DatabaseService.ExecuteAsync[T](Func`2 action, Boolean transaction)
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs(70,0): at ReadJournal.Library.Services.DatabaseService.ExecuteAsync[T](Func`2 action, Boolean transaction)
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs(97,0): at ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject()
+[xUnit.net 00:00:01.02]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs(100,0): at ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject()
+[xUnit.net 00:00:01.02]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.02]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="892609bd2ea7" outcome="Error" timestamp="2026-10-22T17:32:35.8313862+00:00">
+        <Text>[xUnit.net 00:00:01.02]     ReadJournal.UnitTest.ReaderLocalWorkflowTests.CompletedEbookCanReadBackwardAndMultiplePlansMakeResetEntirelyReject [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

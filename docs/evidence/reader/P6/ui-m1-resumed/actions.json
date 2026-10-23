@@ -1,0 +1,229 @@
+[
+  {
+    "op": "capture",
+    "name": "01-overview"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 415
+  },
+  {
+    "op": "capture",
+    "name": "02-duration-chart"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "03-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "04-detail-history"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "05-resumed-reader"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 467
+  },
+  {
+    "op": "capture",
+    "name": "06-settings"
+  },
+  {
+    "op": "click",
+    "x": 390,
+    "y": 451
+  },
+  {
+    "op": "capture",
+    "name": "07-save-dialog"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "08-save-name-selected"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p6-ui/m1-desktop.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "09-backup-export"
+  },
+  {
+    "op": "click",
+    "x": 477,
+    "y": 239
+  },
+  {
+    "op": "capture",
+    "name": "10-theme-choices"
+  },
+  {
+    "op": "click",
+    "x": 350,
+    "y": 309
+  },
+  {
+    "op": "click",
+    "x": 550,
+    "y": 241
+  },
+  {
+    "op": "capture",
+    "name": "11-dark-settings"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "12-dark-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "13-dark-detail-delete"
+  },
+  {
+    "op": "click",
+    "x": 763,
+    "y": 370
+  },
+  {
+    "op": "capture",
+    "name": "14-delete-confirm"
+  },
+  {
+    "op": "capture",
+    "name": "15-confirm-ready"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 477
+  },
+  {
+    "op": "capture",
+    "name": "16-deleted"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 467
+  },
+  {
+    "op": "capture",
+    "name": "17-settings-restore"
+  },
+  {
+    "op": "click",
+    "x": 550,
+    "y": 451
+  },
+  {
+    "op": "capture",
+    "name": "18-restore-file-dialog"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "19-restore-path-focus"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p6-ui/m1-desktop.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "20-restore-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 821
+  },
+  {
+    "op": "capture",
+    "name": "21-restore-confirm"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 484
+  },
+  {
+    "op": "capture",
+    "name": "22-restored"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "23-restored-restarted"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

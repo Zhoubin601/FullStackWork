@@ -1,0 +1,10 @@
+{
+  "kind": "isolated_proposed_schema_probe",
+  "scope": "Minimal in-memory reconstruction of documented FK rules; not application integration test",
+  "inserted_ids_before_delete": [
+    17
+  ],
+  "inserted_ids_after_delete": [],
+  "batch_inserted_count_after_delete": 1,
+  "finding": "Counts/status do not preserve original InsertedQuoteIds after cascading item deletion."
+}

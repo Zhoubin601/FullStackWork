@@ -1,0 +1,83 @@
+{
+  "generator_version": 1,
+  "seed": 20261022,
+  "million_text_characters": 1000000,
+  "content": "Synthetic fixtures only; no external books or copyrighted text.",
+  "files": [
+    {
+      "name": "basic.epub",
+      "bytes": 2444,
+      "sha256": "3b4f2c0bdf027ea5ebdadd97f2cac909bec34bee94c2180cb0b17d1481c03d05"
+    },
+    {
+      "name": "duplicate-titles.epub",
+      "bytes": 2442,
+      "sha256": "be9553ae99f94e075fcd977d060e4d200971ab85170338bb47fbb99ce679a364"
+    },
+    {
+      "name": "empty.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gb18030.txt",
+      "bytes": 164,
+      "sha256": "750cd883e3196d9b3f246688045135f57a9039544a3597d48836ce09d4393028"
+    },
+    {
+      "name": "image-styles.epub",
+      "bytes": 2959,
+      "sha256": "ddc27494eaf2a0449e0fbb47f4337d21ada990d68fb3ee1d79d739939d5f20b2"
+    },
+    {
+      "name": "invalid-utf8.txt",
+      "bytes": 18,
+      "sha256": "0ffa9e41812eb216ef6b2a62bac06ddf88a6e62bf4723942fd760616d654b778"
+    },
+    {
+      "name": "long-paragraph.txt",
+      "bytes": 420000,
+      "sha256": "259e8129b618ef8e9053aa90fbd36d355cf679c53a00c8ec36a5043d8f15c7f9"
+    },
+    {
+      "name": "million.txt",
+      "bytes": 2000000,
+      "sha256": "bcfe8f6d0c4c1f2e550fdefea7ddf481f835828ba47d7c6f6dfc17b3ec3d3eaf"
+    },
+    {
+      "name": "mixed-bom.txt",
+      "bytes": 216,
+      "sha256": "738ba5414a6a9ea0e93897edf9bc631e3026332e873aa65524d41a4aeeb0c984"
+    },
+    {
+      "name": "mixed-cr.txt",
+      "bytes": 213,
+      "sha256": "b4f0fb1ed1c4b5a8619ce8bd7e4db13e8eaa1f0011ef566644a7b242e9e0b4c9"
+    },
+    {
+      "name": "mixed-crlf.txt",
+      "bytes": 221,
+      "sha256": "866ec98e0e6ac614577e856a53f76c482a62436b2aff63f1ccf00dc742f84883"
+    },
+    {
+      "name": "mixed-lf.txt",
+      "bytes": 213,
+      "sha256": "3a48c1c6a31e9a5a89f2422b7f1b02dc3b561fa1545c375920ebb07fd231ed56"
+    },
+    {
+      "name": "nested-toc.epub",
+      "bytes": 2507,
+      "sha256": "89cab335991571f4a136261f219439aa51dafeee6e717d005cf93dc8b49e67f6"
+    },
+    {
+      "name": "toc-order.epub",
+      "bytes": 2452,
+      "sha256": "fd77ebe653b95c9029d04ff1175af55317e386402b429760a1ca6a35ccb47c4d"
+    },
+    {
+      "name": "unicode.txt",
+      "bytes": 156,
+      "sha256": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+    }
+  ]
+}

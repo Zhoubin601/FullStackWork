@@ -1,0 +1,27 @@
+[
+  {
+    "path": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+    "sha256": "3f9baf5b4db0f41f56e189b4dcedcf28461f805d11e0460a8d8cea8053809985",
+    "bytes": 1362
+  },
+  {
+    "path": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/chapters/sp-fc7a78472029444a6d87f557.utf16",
+    "sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333",
+    "bytes": 164
+  },
+  {
+    "path": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/document-v1.json",
+    "sha256": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351",
+    "bytes": 3865
+  },
+  {
+    "path": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/resources/r-8cdb4291bcc22472f1032ee8.image",
+    "sha256": "7276159bac5e71ddb7a95a023b31b2e3cee90bf661d43eaa300303bfb9c7b4be",
+    "bytes": 224718
+  },
+  {
+    "path": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/source.epub",
+    "sha256": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82",
+    "bytes": 45994
+  }
+]

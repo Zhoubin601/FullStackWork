@@ -1,0 +1,19 @@
+{
+  "testedPackage": {
+    "files": 186,
+    "bytes": 282341,
+    "sha256": "2afa73e7abb8ffdf26eb546284cadc85b16a9b0fe702a80f4bb1e80f5af3da90"
+  },
+  "finalPackage": {
+    "files": 186,
+    "bytes": 282663,
+    "sha256": "9ff566ee6fb39602b090f49baf3d68b7c57bd2432a1985631ea24cb7d02e3182"
+  },
+  "changedAfterIndependentTest": [
+    "README.md",
+    "ReadJournal.Library/packages.lock.json"
+  ],
+  "allCompiledSourcesIdentical": true,
+  "lockContentIdenticalIgnoringLineEndings": true,
+  "note": "Final package stored only as isolated verification material, not a new official delivery."
+}

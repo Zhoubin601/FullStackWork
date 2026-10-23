@@ -1,0 +1,108 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Debug/net8.0/ReadJournal.Library.dll
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Debug/net8.0/ReadJournal.dll
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj]
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Debug/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:05.37]     ReadJournal.UnitTest.ArchitectureTests.BackButtonOnlyOffersAnExistingPreviousPageAndTracksMenuReset [FAIL]
+[xUnit.net 00:00:05.38]     ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-content") [FAIL]
+[xUnit.net 00:00:05.39]     ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "edit-quote") [FAIL]
+[xUnit.net 00:00:05.39]     ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-menu") [FAIL]
+[xUnit.net 00:00:05.40]     ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "add-quote") [FAIL]
+  Failed ReadJournal.UnitTest.ArchitectureTests.BackButtonOnlyOffersAnExistingPreviousPageAndTracksMenuReset [45 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c.<<BackButtonOnlyOffersAnExistingPreviousPageAndTracksMenuReset>b__8_0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 98
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-content") [9 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 174
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 180
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "edit-quote") [7 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 184
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "direct-menu") [4 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期菜单导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.MenuNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/MenuNavigationService.cs:line 19
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 173
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 180
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ArchitectureTests.ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter(route: "add-quote") [4 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass11_0.<<ActualNavigationServicesRejectBusyPageBeforeChangingTargetParameter>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 184
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:05.43]     ReadJournal.UnitTest.ArchitectureTests.ThreeLayersParametersRepeatedTargetAndBackStack [FAIL]
+[xUnit.net 00:00:05.45]     ReadJournal.UnitTest.ArchitectureTests.SingletonDetailResetsOldBookBeforeLoadingAnother [FAIL]
+  Failed ReadJournal.UnitTest.ArchitectureTests.ThreeLayersParametersRepeatedTargetAndBackStack [5 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c.<<ThreeLayersParametersRepeatedTargetAndBackStack>b__6_0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 63
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.ArchitectureTests.SingletonDetailResetsOldBookBeforeLoadingAnother [7 ms]
+  Error Message:
+   System.InvalidOperationException : 运行期内容导航必须等待NavigateToAsync。
+  Stack Trace:
+     at ReadJournal.Services.ContentNavigationService.NavigateTo(String view, Object parameter) in /workspace/FullStackWork/Code/ReadJournal/Services/ContentNavigationService.cs:line 36
+   at ReadJournal.UnitTest.ArchitectureTests.<>c.<<SingletonDetailResetsOldBookBeforeLoadingAnother>b__10_0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 145
+--- End of stack trace from previous location ---
+   at ReadJournal.UnitTest.ArchitectureTests.<>c__DisplayClass4_0.<<OnUiThread>b__0>d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/ArchitectureTests.cs:line 38
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass9_0`1.<Dispatch>b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P5/p5-initial.trx
+
+Failed!  - Failed:     7, Passed:   210, Skipped:     0, Total:   217, Duration: 8 s - ReadJournal.UnitTest.dll (net8.0)

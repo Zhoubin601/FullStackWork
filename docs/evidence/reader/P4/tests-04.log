@@ -1,0 +1,20 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:07.42]     ReadJournal.UnitTest.EbookDeletionTests.DeleteFailuresKeepCommitFactAndRetriableCleanup(point: "delete.before-trash") [FAIL]
+  Failed ReadJournal.UnitTest.EbookDeletionTests.DeleteFailuresKeepCommitFactAndRetriableCleanup(point: "delete.before-trash") [16 ms]
+  Error Message:
+   System.InvalidOperationException : RecoveryRequired：删除对账未完成，请保留operations/trash并重启。
+  Stack Trace:
+     at ReadJournal.Library.Services.ApplicationDataCoordinator.EnterOperationAsync(DataEpoch expectedEpoch, CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs:line 48
+   at ReadJournal.Library.Services.DatabaseService.ExecuteAsync[T](Func`2 action, Boolean transaction) in /workspace/FullStackWork/Code/ReadJournal.Library/Services/DatabaseService.cs:line 69
+   at ReadJournal.UnitTest.EbookDeletionTests.DeleteFailuresKeepCommitFactAndRetriableCleanup(String point) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/EbookDeletionTests.cs:line 47
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P4/p4-delete-roundtrip.trx
+
+Failed!  - Failed:     1, Passed:   210, Skipped:     0, Total:   211, Duration: 7 s - ReadJournal.UnitTest.dll (net8.0)

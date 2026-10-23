@@ -21,7 +21,14 @@ public class ArchitectureTests
         Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR", Path.Combine(Path.GetTempPath(), "ReadJournalTests", Guid.NewGuid().ToString()));
         return AppBuilder.Configure<App>().UseHeadless(new AvaloniaHeadlessPlatformOptions());
     }
-    private static void ResetLocatorForNewApplication() => typeof(ServiceLocator).GetField("_current", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, null);
+    private static void ResetLocatorForNewApplication()
+    {
+        // A Headless dispatch can create a fresh App while retaining the process environment.
+        // Give each materialized resource container its own real data-directory lock.
+        Environment.SetEnvironmentVariable("READJOURNAL_DATA_DIR", Path.Combine(Path.GetTempPath(), "ReadJournalTests", Guid.NewGuid().ToString()));
+        Application.Current!.Resources[nameof(ServiceLocator)] = new ServiceLocator();
+        typeof(ServiceLocator).GetField("_current", BindingFlags.NonPublic | BindingFlags.Static)!.SetValue(null, null);
+    }
     private static Task OnUiThread(Action action) => UiSession.Value.Dispatch(() =>
     {
         ResetLocatorForNewApplication(); action();
@@ -53,18 +60,18 @@ public class ArchitectureTests
         Assert.Same(main, locator.MainWindowViewModel.Content);
         new MenuNavigationService().NavigateTo(MenuNavigationConstant.BookListView);
         Assert.Single(main.ContentStack);
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookDetailView, 101);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.BookDetailView, 101);
         Assert.Equal(2, main.ContentStack.Count);
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookDetailView, 202);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.BookDetailView, 202);
         Assert.Equal(2, main.ContentStack.Count);
-        Assert.Equal(101, typeof(BookDetailViewModel).GetField("_id", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(locator.BookDetailViewModel));
+        Assert.Equal(202, typeof(BookDetailViewModel).GetField("_id", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(locator.BookDetailViewModel));
         await main.GoBackCommand.ExecuteAsync(null); Assert.Same(locator.BookListViewModel, main.Content);
         if (locator.BookListViewModel.OnLoadedCommand.ExecutionTask is { } listLoad) await listLoad;
-        main.GoBack(); Assert.Single(main.ContentStack);
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookDetailView, 202);
+        Assert.Throws<InvalidOperationException>(() => main.GoBack()); Assert.Single(main.ContentStack);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.BookDetailView, 202);
         Assert.Equal(202, typeof(BookDetailViewModel).GetField("_id", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(locator.BookDetailViewModel));
         Assert.Null(locator.BookDetailViewModel.Book);
-        new MenuNavigationService().NavigateTo(MenuNavigationConstant.OverviewView); Assert.Single(main.ContentStack); Assert.Same(locator.OverviewViewModel, main.Content);
+        await new MenuNavigationService().NavigateToAsync(MenuNavigationConstant.OverviewView); Assert.Single(main.ContentStack); Assert.Same(locator.OverviewViewModel, main.Content);
         Assert.Throws<ArgumentException>(() => new ContentNavigationService().NavigateTo(MenuNavigationConstant.BookListView));
     });
     [Fact]
@@ -88,7 +95,7 @@ public class ArchitectureTests
         Assert.False(main.GoBackCommand.CanExecute(null));
         Assert.False(back.IsVisible);
 
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookEditView);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.BookEditView);
         await locator.BookEditViewModel.OnLoadedCommand.ExecuteAsync(null);
         Dispatcher.UIThread.RunJobs();
         Assert.True(main.GoBackCommand.CanExecute(null));
@@ -105,9 +112,9 @@ public class ArchitectureTests
         Assert.False(main.GoBackCommand.CanExecute(null));
         Assert.False(back.IsVisible);
 
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.BookEditView);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.BookEditView);
         Assert.True(main.GoBackCommand.CanExecute(null));
-        menu.NavigateTo(MenuNavigationConstant.StatisticsView);
+        await menu.NavigateToAsync(MenuNavigationConstant.StatisticsView);
         Dispatcher.UIThread.RunJobs();
         Assert.Single(main.ContentStack);
         Assert.Same(locator.StatisticsViewModel, main.Content);
@@ -135,12 +142,12 @@ public class ArchitectureTests
         var first = new ReadJournal.Library.Models.Book { Title = "导航 A", TotalPages = 100 }; var second = new ReadJournal.Library.Models.Book { Title = "导航 B", TotalPages = 200 };
         await books.SaveAsync(first); await books.SaveAsync(second);
         var menu = new MenuNavigationService(); var content = new ContentNavigationService();
-        menu.NavigateTo(MenuNavigationConstant.BookListView); content.NavigateTo(ContentNavigationConstant.BookDetailView, first.Id);
+        menu.NavigateTo(MenuNavigationConstant.BookListView); await content.NavigateToAsync(ContentNavigationConstant.BookDetailView, first.Id);
         await locator.BookDetailViewModel.OnLoadedCommand.ExecuteAsync(null); Assert.Equal("导航 A", locator.BookDetailViewModel.Book!.Title);
-        locator.MainViewModel.GoBack();
+        await locator.MainViewModel.RequestBackAsync();
         if (locator.BookListViewModel.OnLoadedCommand.ExecutionTask is { } listLoad) await listLoad;
-        content.NavigateTo(ContentNavigationConstant.BookDetailView, second.Id);
-        Assert.Null(locator.BookDetailViewModel.Book); Assert.Empty(locator.BookDetailViewModel.RecordsList);
+        await content.NavigateToAsync(ContentNavigationConstant.BookDetailView, second.Id);
+        Assert.Equal("导航 B", locator.BookDetailViewModel.Book!.Title); Assert.Empty(locator.BookDetailViewModel.RecordsList);
         await locator.BookDetailViewModel.OnLoadedCommand.ExecuteAsync(null); Assert.Equal("导航 B", locator.BookDetailViewModel.Book!.Title);
     });
 
@@ -163,8 +170,8 @@ public class ArchitectureTests
         {
             switch (route)
             {
-                case "direct-menu": new MenuNavigationService().NavigateTo(MenuNavigationConstant.SettingsView); break;
-                case "direct-content": new ContentNavigationService().NavigateTo(ContentNavigationConstant.QuoteEditView); break;
+                case "direct-menu": Assert.False(await new MenuNavigationService().NavigateToAsync(MenuNavigationConstant.SettingsView)); Assert.Throws<InvalidOperationException>(() => new MenuNavigationService().NavigateTo(MenuNavigationConstant.SettingsView)); break;
+                case "direct-content": Assert.False(await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.QuoteEditView)); Assert.Throws<InvalidOperationException>(() => new ContentNavigationService().NavigateTo(ContentNavigationConstant.QuoteEditView)); break;
                 case "add-quote": locator.QuoteListViewModel.AddQuoteCommand.Execute(null); break;
                 case "edit-quote": locator.QuoteListViewModel.EditQuoteCommand.Execute(new QuoteItem { Quote = new Quote { Id = 19 } }); break;
             }
@@ -174,7 +181,7 @@ public class ArchitectureTests
         Assert.True(stayed, "Direct navigation must not bypass the pending-operation guard.");
         Assert.Equal("Unchanged draft", draft);
         Assert.Single(main.ContentStack);
-        new ContentNavigationService().NavigateTo(ContentNavigationConstant.QuoteEditView);
+        await new ContentNavigationService().NavigateToAsync(ContentNavigationConstant.QuoteEditView);
         Assert.Same(target, main.Content); Assert.Equal("", target.Text);
         main.SetMenuAndContent(MenuNavigationConstant.OverviewView, locator.OverviewViewModel);
     });

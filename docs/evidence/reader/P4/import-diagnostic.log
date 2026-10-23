@@ -1,0 +1,38 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.91]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "utf8") [FAIL]
+[xUnit.net 00:00:00.92]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "gb18030") [FAIL]
+[xUnit.net 00:00:00.93]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "bom") [FAIL]
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "utf8") [205 ms]
+  Error Message:
+   The JSON property 'FileId' could not be mapped to any .NET member contained in type 'ReadJournal.Library.Services.Reader.ReaderContractValidator+Envelope`1[ReadJournal.Library.Models.Reader.DocumentKey]'.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "gb18030") [11 ms]
+  Error Message:
+   The JSON property 'FileId' could not be mapped to any .NET member contained in type 'ReadJournal.Library.Services.Reader.ReaderContractValidator+Envelope`1[ReadJournal.Library.Models.Reader.DocumentKey]'.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "bom") [6 ms]
+  Error Message:
+   The JSON property 'FileId' could not be mapped to any .NET member contained in type 'ReadJournal.Library.Services.Reader.ReaderContractValidator+Envelope`1[ReadJournal.Library.Models.Reader.DocumentKey]'.
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P4/p4-import-diagnostic.trx
+
+Failed!  - Failed:     3, Passed:     0, Skipped:     0, Total:     3, Duration: 15 ms - ReadJournal.UnitTest.dll (net8.0)

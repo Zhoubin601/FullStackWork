@@ -28,5 +28,6 @@ public partial class ReadingRecordEditViewModel : EditViewModelBase
         record.Id = await _records.SaveAsync(record);
         if (version == ParameterVersion) _record = record;
     }
-    protected override void AfterSaved() => Saved?.Invoke(this, EventArgs.Empty);
+    protected override Task AfterSavedAsync() { Saved?.Invoke(this, EventArgs.Empty); return Task.CompletedTask; }
+    public override void InvalidateDataSet() => SetParameter(new ReadingRecord());
 }

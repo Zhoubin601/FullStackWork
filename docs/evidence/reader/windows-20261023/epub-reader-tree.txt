@@ -1,0 +1,522 @@
+[
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      125.0,
+      159.0,
+      1710.0,
+      1200.0
+    ]
+  },
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      125.0,
+      125.0,
+      1710.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统菜单栏",
+    "type": "ControlType.MenuBar",
+    "id": "SystemMenuBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      125.0,
+      125.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      125.0,
+      125.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "最小化",
+    "type": "ControlType.Button",
+    "id": "Minimize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1624.0,
+      115.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "最大化",
+    "type": "ControlType.Button",
+    "id": "Maximize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1695.0,
+      115.0,
+      70.0,
+      44.0
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1765.0,
+      115.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅 记",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      201.0,
+      255.0,
+      60.0
+    ]
+  },
+  {
+    "name": "让每一页，留下回响",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      288.0,
+      255.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      379.0,
+      255.0,
+      444.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      385.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      459.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      533.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      607.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      681.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      155.0,
+      755.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "← 返回",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      482.0,
+      183.0,
+      122.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      628.0,
+      196.0,
+      1165.0,
+      36.0
+    ]
+  },
+  {
+    "name": "[合成P7] large-image",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      307.0,
+      1305.0,
+      36.0
+    ]
+  },
+  {
+    "name": "字体",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      360.0,
+      44.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      538.0,
+      343.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      802.0,
+      343.0,
+      96.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      906.0,
+      343.0,
+      150.0,
+      48.0
+    ]
+  },
+  {
+    "name": "paper",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      924.0,
+      352.0,
+      84.0,
+      28.0
+    ]
+  },
+  {
+    "name": "应用排版",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1065.0,
+      343.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "全屏 F11",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1214.0,
+      343.0,
+      138.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      405.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      433.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      461.0,
+      225.0,
+      674.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      461.0,
+      225.0,
+      674.0
+    ]
+  },
+  {
+    "name": "第一章 起点",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      467.0,
+      165.0,
+      62.0
+    ]
+  },
+  {
+    "name": "第二章 归途",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      541.0,
+      167.0,
+      62.0
+    ]
+  },
+  {
+    "name": "← 上一页",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      1135.0,
+      143.0,
+      62.0
+    ]
+  },
+  {
+    "name": "全书 6 页（随排版变化）",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1019.0,
+      1152.0,
+      237.0,
+      28.0
+    ]
+  },
+  {
+    "name": "下一页 →",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1647.0,
+      1135.0,
+      143.0,
+      62.0
+    ]
+  },
+  {
+    "name": "复制选区 Ctrl+C",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      485.0,
+      1209.0,
+      209.0,
+      62.0
+    ]
+  },
+  {
+    "name": "保存书摘 Ctrl+S",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      703.0,
+      1209.0,
+      207.0,
+      62.0
+    ]
+  },
+  {
+    "name": "标记读完",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      918.0,
+      1209.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "重置进度",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1067.0,
+      1209.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "位置百分比表示当前位置，不代表阅读覆盖率。Shift+单击可延伸选区。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      497.0,
+      1283.0,
+      673.0,
+      28.0
+    ]
+  }
+]

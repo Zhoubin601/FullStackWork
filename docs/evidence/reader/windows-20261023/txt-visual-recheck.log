@@ -1,0 +1,9 @@
+{"time": "2026-10-23 11:38:51+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 11:38:52+0800", "action": "screenshot", "file": "37-txt-quote-list-visible-recheck.png", "rect": [152, 152, 1884, 1408], "dpi": 144}
+{"time": "2026-10-23 11:38:52+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 11:38:53+0800", "action": "screenshot", "file": "38-txt-quote-highlight-visible-recheck.png", "rect": [152, 152, 1884, 1408], "dpi": 144}
+{"time": "2026-10-23 11:38:53+0800", "action": "click", "name": "全屏 F11", "index": 0}
+{"time": "2026-10-23 11:38:54+0800", "action": "screenshot", "file": "39-txt-fullscreen-visible-recheck.png", "rect": [0, 0, 2560, 1600], "dpi": 144}
+{"time": "2026-10-23 11:38:55+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 11:38:55+0800", "action": "screenshot", "file": "40-txt-left-fullscreen-normal-window.png", "rect": [152, 152, 1884, 1408], "dpi": 144}
+{"time": "2026-10-23 11:38:55+0800", "action": "normal-close", "pid": 1680, "exitCode": 0}

@@ -1,5 +1,20 @@
 # 资料来源与核对记录
 
+## 2026-10-22 阅读器 P0 实施与验收
+
+- 用户授权按阶段开始执行。依据 raw 中的总体规划/课程指导书、output/reader-plan-v2 三份规划及前轮复核；生产源码仍为 0280730 的逻辑，P0 实现与证据提交为 fef2575。
+- 固定原 schema 1 建库数据和 JSON/SQL fixtures，实际服务校验全部字段与旧业务状态；新增两项永久回归。工作区与白名单干净源码各 96 项通过。
+- 实际 Xvfb/Openbox 窗口完成空库/旧库各两轮正常启动关闭，退出码均0，默认数据目录不存在且未创建；首次无WM关闭超时单独保留，未伪装通过。15 个纯合成 TXT/EPUB 样本重复生成字节一致。
+- 记录位置 docs/evidence/reader/P0/acceptance.md；外部访问仅项目拉取及微软/NuGet/Debian 构建运行依赖，日期 2026-10-22，无新增产品研究结论。raw、正式规划和现有 output 未改；Windows 字体/DPI未验证，P1未开始。
+
+## 2026-10-22 拉取阅读器 v2 规划并独立复核
+
+- 来源：只读 raw 中的原始总体规划和课程 DOCX；最新提交 `0280730` 的 `output/reader-plan-v2/` 三份文件、既有编制/评估记录、实际 Code。已 fetch 并从 2133786 快进到 origin/main；最新提交不含应用代码修改。
+- 本轮独立检查三份规划摘要/链接及 79 个唯一验收编号；补齐临时 SDK 8.0.424 后实际锁定还原、Release 构建及 94 项现有测试通过，不再仅引用历史 TRX。未做新增分页实验、Windows 实机或真实 AI 调用。
+- 发现拟实施契约两处待补：Reader 内重置需先结束活动会话；批次明细级联删除后，计数不能重建原始新增 ID 回执。后者按契约 FK 规则用内存 SQLite 验证，不能误称现有应用缺陷。
+- 结论、主观成功率前提及来源链接见 `docs/20261022-阅读器v2计划执行复核-v1.md`；实际证据见 `docs/evidence/reader-plan-review-20261022/`。未改 raw、正式规划或既有交付，未开发/提交/推送。
+- 外部访问限于授权的项目拉取与构建依赖：GitHub 项目 origin、微软 SDK 下载、NuGet 锁定包还原；未用新的外部技术资料论证可行性。引用/下载日期：2026-10-22。
+
 ## 2026-10-22 电子书扩展规划评估
 
 - 来源：用户上传《阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md》（附件本地名带 `1-` 前缀）、当前 `Code/`、只读课程指导书和历史验收记录。
@@ -218,3 +233,82 @@
 - 为保留原始附件，按实际原文件名原样复制至 `raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md`，不覆盖已有资料；原附件和原有 raw 文件均不修改。
 - 交付：`output/reader-plan-v2/` 下总体规划 v2、接口与数据契约 v1、分阶段实施与验收执行表 v1，全部 Markdown。编制记录见 `docs/20261022-完整实施规划编制记录-v1.md`。
 - 新功能按 P0～P10 推进；真实 API 在 P9 前通知，P8 使用 Mock；本轮零真实调用、未实施代码、未重新运行应用测试。文档静态检查结果另存 docs/evidence/reader-planning-20261022/validation.json。
+
+## 2026-10-22 阅读器 P1 实验来源与实测
+
+- 当前用户“推送后继续p1”“continue”“你可以用linux，windows保留”：授权 P0 推送、继续 P1 并使用 Linux 验收，Windows 保留后续。
+- 需求来源：output/reader-plan-v2 三份规划；原始 v1 与 raw 指导书保持只读。测试文本来自 P0 generate_samples.py，非私有书籍。
+- 实测来源：docs/evidence/reader/P1 下 prototype-linux-fontfix.trx（14/14）、production-baseline.trx（96/96）、linux-fontfix-scale-{1,1.5,2}/native/probe.json 与真实窗口截图。实现提交 bd6eb50。
+- 外部诊断来源名称 Avalonia 官方 11.0.10 X11 实现；链接 https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Clipboard.cs 、同目录 X11Atoms.cs / X11Platform.cs；引用日期2026-10-22。准确 URL/blob SHA 见 P1/environment-and-results.json，未复制实现。只用于裸 Xvfb atom 缺失问题的根因验证。
+- .NET/NuGet 与 Debian X11/Openbox/xclip 是实验运行依赖，版本/平台记录随证据保留。零真实 DeepSeek 调用，无生产数据库修改。
+
+## 2026-10-22 P2 开始
+
+来源为用户最新“推送，然后开始p2”、既有规划三件套、P0冻结fixtures和P1真实实验。P1远端4b336d3已核验。P2实施计划见reader-p2-plan.md；当前尚在实施，不提前宣布验收通过。
+
+## 2026-10-22 P2 验收来源补充
+
+当前Code提交9b24b07；P0冻结SQL/JSON未修改。最终证据为P2/p2-reviewed-workspace.trx与p2-reviewed-clean-source.trx（各124/124）、process-accepted/probe.json（字段/SQL约束/独立子进程）、ui-accepted/desktop-smoke.json与截图（schema2真实窗口迁移/重开）。145文件临时白名单源码核验摘要reviewed-package.json，未覆盖正式交付。中间失败和版本结果均保留。无新增外部研究资料或DeepSeek调用；使用cloud-environment-runtime核对本环境与NuGet依赖可用性。
+
+## 2026-10-22 P3 开始
+
+来源：用户“推送，开始p3”、output/reader-plan-v2三份规划、P2正式契约和验收、P0冻结SQL/JSON。P2远端8696045已核验。使用合成受管文本/资源与故障注入，不读取用户私有书籍或密钥内容；计划见reader-p3-plan.md。
+
+
+## 2026-10-22 P3 最终验收来源
+
+实现/证据17690bb；最终P3/p3-percent-validated.trx与p3-reviewed-clean-source.trx各169/169，reviewed-source-package.json记录159文件临时源码验证包。crash-probe-reviewed/probe.json记录四处真实Process.Kill与损坏日志保留；ui-accepted、ui-clean-accepted与ui-verification-final.json记录最终实际桌面及哈希核对。中间失败与早期百分比fixture均保留其历史含义，不作为最终版本依据。协议补充见reader-p3-protocol.md；未新增外部研究资料、未使用真实书籍/Key、未调用API，原始资料及正式交付未变。
+
+
+## 2026-10-22 P4 开始
+
+用户“推送，然后开始p4”；P3远端16e4155已核验。来源为output/reader-plan-v2三份规划、P3协议及验收、raw原规划和已冻结旧库资料；使用确定性合成TXT及编码/故障样本，未新增外部研究资料，未读取真实书籍/Key。计划见reader-p4-plan.md。
+
+用户追加“continue，完成后提交至远端”，P4最终验收后推送feature/reader-native；仅推当前功能分支，不改main。环境重建后重新下载官方.NET8.0.424与允许的Debian镜像桌面包，并重做最终独立验证；首次桌面仅完成UTF8导入/去重，保留为中间证据。
+
+
+## 2026-10-22 P4最终证据与授权
+
+实现5358a4a；P4/p4-inbox-tombstone-reviewed.trx、p4-final-clean-source.trx各217/217；final-source-package.json记录169文件临时验证包，逐文件SHA一致。crash-probe-reviewed/probe.json记录10处实际杀进程、实际TXT初始/关联往返与损坏日志保留。ui-final/ui-missing/ui-clean-source、ui-verification-final.json记录最终桌面、Missing、独立构建及3书/11文件/5来源摘要核对；中间失败保留，不作为最终结论。用户新增P5/P6/P7顺序实施及逐阶段推送授权。无新的研究资料/真实书籍/Key/API，raw与正式交付不改。
+
+
+## P5开始及P4推送回执（2026-10-22）
+
+P4已正常推送feature/reader-native并回读69b783abab2dfa02984121fa878da2fd6c74d692；main未改。P5来源为reader-plan-v2三份规划、P1原生实验/P2契约/P3协议/P4受管TXT与验收；用户已授权P5/P6/P7各阶段验收后推送。仍仅使用确定性合成资料和注入时间，无API或新外部研究资料。计划见reader-p5-plan.md。
+
+
+## 2026-10-22 P5阶段结果（优先于历史状态）
+
+P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。
+
+
+## 2026-10-22 P6开始
+
+来源：output/reader-plan-v2/20261022-阅记-分阶段实施与验收执行表-v1.md P6-01～08及同目录接口契约。P5已推送并回读af7ebb60bb65498628cd3a9631a82b92de7701c2；继续用户授权P6/随后P7，每阶段验收推送。实施与取证计划见docs/reader-p6-plan.md。
+
+
+## 2026-10-23 P6当前结果（优先于历史状态）
+
+P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按范围去重/保留原文与精确回跳、统一历史/毫秒统计图、完成与原子重置已实现。工作区完整243项通过；独立181文件白名单源码重验，真实桌面M1闭环10张业务表/4个受管文件与来源SHA一致、续读偏移294，续接桌面两次正常关闭。详见docs/evidence/reader/P6/acceptance.md与reader-p6-protocol.md。验收提交后正常推送并核对真实远端，然后按用户授权继续P7；Windows保留未测，无API，raw/output/参考/冻结fixtures不变。
+
+
+## 2026-10-23 P7开始
+
+P6远端已核验34f07e46c7ca56b159ea1e689604836fc1d1992a。来源reader-plan-v2完整规划第181行及执行表P7-01～06，正式扩展EPUB/图片；NuGet公开索引实际可见VersOne.Epub3.3.6、AngleSharp1.8.5，许可证/兼容性仍待包内容核验。资料未提供真实EPUB书集，覆盖限制须明确。计划见docs/reader-p7-plan.md。
+
+
+## 2026-10-23 P7完成验收（优先于历史状态）
+
+P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
+
+验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+
+## 2026-10-23 Windows 分支验收来源
+
+用户授权补 Windows 实机并在通过后合入 main。依据 raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md、raw/期末项目与报告要求.docx、output/reader-plan-v2 三份规划、feature/reader-native 的 Code 与 P0～P7 证据；本轮结果单独留存，不把历史 Linux 结果当 Windows 实测。无新增外部技术资料。
+
+
+## 2026-10-23 Windows 验收新证据
+
+本轮实际Windows11/.NET8.0.424执行：windows-release-fixed.trx、windows-clean-source.trx各270通过/0失败/2权限跳过；windows-prototype.trx为14/14；原生真实输入最终结果native-p1-final/probe.json；P2/P3/P4/p7-compatibility及UI数据/截图均在docs/evidence/reader/windows-20261023。raw两文件SHA及未变验证见summary.json。首次42项失败和原生输入驱动首轮超时均保留，并在验收说明中解释修正；不新增外部技术来源。

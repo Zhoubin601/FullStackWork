@@ -2,6 +2,7 @@ using System.Text.Json;
 using ReadJournal.Library.Models;
 using ReadJournal.Library.Services;
 using Xunit;
+using ReadJournal.Library.Services.Backup;
 namespace ReadJournal.UnitTest;
 public class ExtendedBusinessTests : IDisposable
 {
@@ -35,11 +36,11 @@ public class ExtendedBusinessTests : IDisposable
         await _backup.LoadDemoAsync(); await Assert.ThrowsAsync<InvalidOperationException>(() => _backup.LoadDemoAsync());
         var stats = await new StatisticsService(_db, _reading).GetAsync(); Assert.Equal(191, stats.TotalPages); Assert.Equal(210, stats.TotalMinutes); Assert.Equal(1, stats.CompletedBooks); Assert.Equal(7, stats.LastSevenDays.Count);
         var prefs = new FilePreferenceStorage(new DataPaths(_dir)); await prefs.SetThemeAsync("深色");
-        var path = Path.Combine(_dir, "manual.json"); await _backup.ExportAsync(path); var before = await File.ReadAllTextAsync(path);
+        var path = Path.Combine(_dir, "manual.zip"); await _backup.ExportAsync(path); var before = JsonSerializer.Serialize(ReaderBackupTestData.Legacy(path));
         await new BookStorage(_db, _reading).DeleteAsync(1); var auto = await _backup.RestoreAsync(path); Assert.True(File.Exists(auto));
-        var after = Path.Combine(_dir, "after.json"); await _backup.ExportAsync(after); Assert.Equal(before, await File.ReadAllTextAsync(after)); Assert.Equal("深色", await prefs.GetThemeAsync());
+        var after = Path.Combine(_dir, "after.zip"); await _backup.ExportAsync(after); Assert.Equal(before, JsonSerializer.Serialize(ReaderBackupTestData.Legacy(after))); Assert.Equal("深色", await prefs.GetThemeAsync());
         var doc = JsonSerializer.Deserialize<BackupDocument>(before)!; foreach (var book in doc.Books) book.Id *= 10; foreach (var r in doc.ReadingRecords) r.BookId *= 10; foreach (var q in doc.Quotes) q.BookId *= 10; foreach (var p in doc.ReadingPlans) p.BookId *= 10;
-        await File.WriteAllTextAsync(path, JsonSerializer.Serialize(doc)); await _backup.RestoreAsync(path); Assert.NotNull(await new BookStorage(_db, _reading).GetAsync(20));
+        var legacyPath = Path.Combine(_dir,"legacy.json"); await File.WriteAllTextAsync(legacyPath, JsonSerializer.Serialize(doc)); await _backup.RestoreAsync(legacyPath); Assert.NotNull(await new BookStorage(_db, _reading).GetAsync(20));
         Assert.All(await new ReadingRecordStorage(_db, _reading).GetForBookAsync(20), r => Assert.Equal(20, r.BookId));
     }
     [Theory]
@@ -58,25 +59,27 @@ public class ExtendedBusinessTests : IDisposable
         switch (kind) { case "version": doc.FormatVersion = 99; break; case "duplicate": doc.Books.Add(doc.Books[0]); break; case "orphan": doc.Quotes[0].BookId = 999; break; case "page": doc.ReadingRecords[0].EndPage = 999; break; case "future": doc.ReadingRecords[0].ReadingDate = DateTime.Today.AddDays(1); break; case "plans": doc.ReadingPlans.Add(new() { Id = 9, BookId = 1, StartDate = DateTime.Today, TargetDate = DateTime.Today }); break; case "null": doc.Books[0].Author = null!; break; }
         var path = Path.Combine(_dir, "invalid.json"); await File.WriteAllTextAsync(path, kind == "json" ? "{not json" : kind == "missing" ? "{}" : JsonSerializer.Serialize(doc));
         await Assert.ThrowsAnyAsync<Exception>(() => _backup.RestoreAsync(path)); Assert.Equal(3, await _db.ReadAsync(c => c.Table<Book>().Count())); Assert.Equal(191, (await new StatisticsService(_db, _reading).GetAsync()).TotalPages);
-        Assert.Empty(Directory.GetFiles(_dir, "auto-backup-*.json"));
+        Assert.Empty(Directory.Exists(Path.Combine(_dir,"backups")) ? Directory.GetFiles(Path.Combine(_dir,"backups"), "auto-backup-*.zip") : []);
     }
     [Fact]
     public async Task AutoBackupFailurePreventsReplacementAndSqliteFailureRollsBack()
     {
-        await _backup.LoadDemoAsync(); var path = Path.Combine(_dir, "source.json"); await _backup.ExportAsync(path);
-        _files.FailAutomatic = true; await Assert.ThrowsAsync<IOException>(() => _backup.RestoreAsync(path)); Assert.Equal(3, await _db.ReadAsync(c => c.Table<Book>().Count()));
-        _files.FailAutomatic = false;
+        await _backup.LoadDemoAsync(); var path = Path.Combine(_dir, "source.zip"); await _backup.ExportAsync(path);
+        var fault = new AutomaticFailure(); var complete = BackupRuntime.CreateService(_db,_reading,new DataPaths(_dir),fault);
+        await Assert.ThrowsAsync<IOException>(() => complete.RestoreAsync(path,default)); Assert.Equal(3, await _db.ReadAsync(c => c.Table<Book>().Count()));
+
         await _db.WriteAsync(c => c.Execute("CREATE TRIGGER fail_quote BEFORE INSERT ON Quote BEGIN SELECT RAISE(FAIL, '模拟替换失败'); END"));
         await Assert.ThrowsAnyAsync<Exception>(() => _backup.RestoreAsync(path));
-        Assert.Equal(3, await _db.ReadAsync(c => c.Table<Book>().Count())); Assert.Equal(2, await _db.ReadAsync(c => c.Table<Quote>().Count())); Assert.Equal(4, await _db.ReadAsync(c => c.Table<ReadingRecord>().Count())); Assert.Single(Directory.GetFiles(_dir, "auto-backup-*.json"));
+        Assert.Equal(3, await _db.ReadAsync(c => c.Table<Book>().Count())); Assert.Equal(2, await _db.ReadAsync(c => c.Table<Quote>().Count())); Assert.Equal(4, await _db.ReadAsync(c => c.Table<ReadingRecord>().Count())); Assert.Single(Directory.GetFiles(Path.Combine(_dir,"backups"), "auto-backup-*.zip"));
     }
     public void Dispose() { _db.Dispose(); if (Directory.Exists(_dir)) Directory.Delete(_dir, true); }
+    private sealed class AutomaticFailure : ManagedBookFiles
+    { public override void InstallFile(string source,string destination) { if(Path.GetFileName(destination).StartsWith("auto-backup-"))throw new IOException("injected automatic backup failure");base.InstallFile(source,destination); } }
     private class TestFiles : IFileService
     {
-        public bool FailAutomatic;
         public Task<string?> ChooseSavePathAsync() => Task.FromResult<string?>(null);
         public Task<string?> ChooseOpenPathAsync() => Task.FromResult<string?>(null);
         public Task<string> ReadTextAsync(string path) => File.ReadAllTextAsync(path);
-        public Task WriteTextAsync(string path, string content) { if (FailAutomatic && Path.GetFileName(path).StartsWith("auto-backup-")) throw new IOException("模拟自动备份失败"); return File.WriteAllTextAsync(path, content); }
+        public Task WriteTextAsync(string path, string content) { return File.WriteAllTextAsync(path, content); }
     }
 }

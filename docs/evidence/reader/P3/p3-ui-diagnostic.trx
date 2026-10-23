@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="11a5ab93-507b-44c1-8fc0-829bb051d1f0" name="@3234f363553d 2026-10-22 13:16:11" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-22T13:16:11.1643504+00:00" queuing="2026-10-22T13:16:11.1643505+00:00" start="2026-10-22T13:16:08.9625118+00:00" finish="2026-10-22T13:16:11.1709807+00:00" />
+  <TestSettings name="default" id="f749236e-fb76-45a7-af1d-1202a25869b9">
+    <Deployment runDeploymentRoot="_3234f363553d_2026-10-22_13_16_11" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="8e5f6b51-ed5d-4139-baa5-b0fce43d7fdb" testId="5fd7df0a-7a8a-fbd3-d4a4-c0a6f7d2afa3" testName="ReadJournal.UnitTest.BackupUiIntegrationTests.ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity" computerName="3234f363553d" duration="00:00:01.3274754" startTime="2026-10-22T13:16:11.1042112+00:00" endTime="2026-10-22T13:16:11.1042239+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8e5f6b51-ed5d-4139-baa5-b0fce43d7fdb">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at ReadJournal.Library.ViewModels.ReadingRecordEditViewModel.SetParameter(Object parameter) in /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs:line 19
+   at ReadJournal.Library.ViewModels.ViewModelBase.InvalidateDataSet() in /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ViewModelBase.cs:line 28
+   at ReadJournal.Services.DataSetInvalidationService.ResetViews() in /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs:line 18
+   at ReadJournal.Services.DataSetInvalidationService.InvalidateAsync(CancellationToken ct) in /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs:line 12
+   at ReadJournal.UnitTest.BackupUiIntegrationTests.&lt;&gt;c.&lt;&lt;ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity&gt;b__2_0&gt;d.MoveNext() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/BackupUiIntegrationTests.cs:line 41
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.&lt;&gt;c__DisplayClass9_0`1.&lt;Dispatch&gt;b__0()
+--- End of stack trace from previous location ---
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.BackupUiIntegrationTests.ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity" storage="/workspace/fullstackwork/code/readjournal.unittest/bin/release/net8.0/readjournal.unittest.dll" id="5fd7df0a-7a8a-fbd3-d4a4-c0a6f7d2afa3">
+      <Execution id="8e5f6b51-ed5d-4139-baa5-b0fce43d7fdb" />
+      <TestMethod codeBase="/workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.BackupUiIntegrationTests" name="ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5fd7df0a-7a8a-fbd3-d4a4-c0a6f7d2afa3" executionId="8e5f6b51-ed5d-4139-baa5-b0fce43d7fdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)
+[xUnit.net 00:00:00.42]   Discovering: ReadJournal.UnitTest
+[xUnit.net 00:00:00.46]   Discovered:  ReadJournal.UnitTest
+[xUnit.net 00:00:00.47]   Starting:    ReadJournal.UnitTest
+[xUnit.net 00:00:01.83]       System.NullReferenceException : Object reference not set to an instance of an object.
+[xUnit.net 00:00:01.83]       Stack Trace:
+[xUnit.net 00:00:01.83]         /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs(19,0): at ReadJournal.Library.ViewModels.ReadingRecordEditViewModel.SetParameter(Object parameter)
+[xUnit.net 00:00:01.83]         /workspace/FullStackWork/Code/ReadJournal.Library/ViewModels/ViewModelBase.cs(28,0): at ReadJournal.Library.ViewModels.ViewModelBase.InvalidateDataSet()
+[xUnit.net 00:00:01.83]         /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs(18,0): at ReadJournal.Services.DataSetInvalidationService.ResetViews()
+[xUnit.net 00:00:01.83]         /workspace/FullStackWork/Code/ReadJournal/Services/DataSetInvalidationService.cs(12,0): at ReadJournal.Services.DataSetInvalidationService.InvalidateAsync(CancellationToken ct)
+[xUnit.net 00:00:01.83]         /workspace/FullStackWork/Code/ReadJournal.UnitTest/BackupUiIntegrationTests.cs(41,0): at ReadJournal.UnitTest.BackupUiIntegrationTests.&lt;&gt;c.&lt;&lt;ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity&gt;b__2_0&gt;d.MoveNext()
+[xUnit.net 00:00:01.83]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.83]            at Avalonia.Headless.HeadlessUnitTestSession.&lt;&gt;c__DisplayClass9_0`1.&lt;Dispatch&gt;b__0()
+[xUnit.net 00:00:01.83]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.83]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.84]   Finished:    ReadJournal.UnitTest
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="3234f363553d" outcome="Error" timestamp="2026-10-22T13:16:11.1025206+00:00">
+        <Text>[xUnit.net 00:00:01.83]     ReadJournal.UnitTest.BackupUiIntegrationTests.ActualSingletonRestoreClearsCachedViewsDocumentsLayoutsAndOldBookIdentity [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

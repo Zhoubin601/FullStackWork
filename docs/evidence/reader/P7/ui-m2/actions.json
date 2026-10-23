@@ -1,0 +1,180 @@
+[
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "01-epub-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "02-epub-detail"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "03-native-epub"
+  },
+  {
+    "op": "capture",
+    "name": "04-ready"
+  },
+  {
+    "op": "drag",
+    "x1": 446,
+    "y1": 321,
+    "x2": 752,
+    "y2": 321
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "s"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "05-epub-selection-quote"
+  },
+  {
+    "op": "click",
+    "x": 1091,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "06-page-two"
+  },
+  {
+    "op": "click",
+    "x": 1091,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "07-page-three-styles"
+  },
+  {
+    "op": "click",
+    "x": 1091,
+    "y": 700
+  },
+  {
+    "op": "capture",
+    "name": "08-large-image"
+  },
+  {
+    "op": "capture",
+    "name": "09-image-ready"
+  },
+  {
+    "op": "click",
+    "x": 511,
+    "y": 180
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "10-font-focus"
+  },
+  {
+    "op": "type",
+    "text": "28"
+  },
+  {
+    "op": "capture",
+    "name": "11-font-input"
+  },
+  {
+    "op": "click",
+    "x": 700,
+    "y": 180
+  },
+  {
+    "op": "capture",
+    "name": "12-image-after-reflow"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "13-restarted"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "14-reopened-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "15-reopened-detail"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "16-resumed-image-anchor"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 314
+  },
+  {
+    "op": "capture",
+    "name": "17-epub-quote-list"
+  },
+  {
+    "op": "click",
+    "x": 337,
+    "y": 410
+  },
+  {
+    "op": "capture",
+    "name": "18-epub-quote-return"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

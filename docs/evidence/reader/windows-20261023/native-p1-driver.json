@@ -1,0 +1,15 @@
+{
+  "exitCode": 1,
+  "actions": [
+    {
+      "signal": "drag-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    },
+    {
+      "signal": "cross-page-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    }
+  ]
+}

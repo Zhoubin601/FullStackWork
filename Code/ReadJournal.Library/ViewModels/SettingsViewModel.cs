@@ -18,7 +18,7 @@ public partial class SettingsViewModel : ViewModelBase
         ApplyThemeCommand = new AsyncRelayCommand(() => RunAsync(async () => { await preferences.SetThemeAsync(SelectedTheme); Status = "主题已保存。"; }));
         LoadDemoCommand = new AsyncRelayCommand(() => RunAsync(async () => { if (await alert.ConfirmAsync("载入演示数据", "将载入明确标注的虚构书籍、记录、书摘与计划。仅允许在空业务库载入。")) { await backup.LoadDemoAsync(); Status = "演示数据已载入，可从概览和各业务页面查看。"; } }));
         ExportCommand = new AsyncRelayCommand(() => RunAsync(async () => { var path = await files.ChooseSavePathAsync(); if (path != null) { await backup.ExportAsync(path); Status = "备份已保存：" + path; } }));
-        RestoreCommand = new AsyncRelayCommand(() => RunAsync(async () => { var path = await files.ChooseOpenPathAsync(); if (path != null && await alert.ConfirmAsync("恢复备份", "将替换全部业务数据。校验通过后会先自动备份当前数据；主题偏好会保留。是否继续？")) { var auto = await backup.RestoreAsync(path); Status = "恢复成功。原数据已自动备份至：" + auto; } }));
+        RestoreCommand = new AsyncRelayCommand(() => RunAsync(async () => { var path = await files.ChooseOpenPathAsync(); if (path != null && await alert.ConfirmAsync("恢复备份", "将整体替换全部业务数据，包括当前电子书、原书文件、阅读会话、书摘和计划。旧 JSON 只恢复手动书籍，也会移除当前电子书。校验通过后会先生成完整自动备份；本机主题和密钥保留。是否继续？")) { var auto = await backup.RestoreAsync(path); Status = "恢复成功。原数据已自动备份至：" + auto + (backup.LastWarning is string warning ? "\n" + warning : ""); } }));
     }
     protected override async Task LoadAsync() { SelectedTheme = await _preferences.GetThemeAsync(); }
     public override Task<bool> CanLeaveAsync() => Task.FromResult(!IsBusy);

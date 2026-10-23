@@ -1,5 +1,17 @@
 # GitHub 同步记录
 
+## 阅读器 P0 功能分支（2026-10-22）
+
+- 用户授权开始分阶段执行，已建立 feature/reader-native。开始时fetch确认origin/main仍为0280730，保留前轮已有复核修改并独立提交3ab2db2。
+- P0实现与原始证据提交fef2575，包含固定旧库/备份fixtures、两项回归、生成/桌面验证工具和白名单。工作区与干净源码均96项通过，4次隔离正常启动关闭通过；验收记录另行文档提交，指向此实现提交。
+- 本轮只做本地提交，没有推送。raw、正式规划、现有output和生产应用逻辑未改。下一阶段状态见docs/reader-execution.md。
+
+## 阅读器 v2 规划拉取与复核（2026-10-22）
+
+- 用户要求拉取最新更新并评估新计划。开始时 work 为 2133786，工作区干净；`git fetch --prune origin` 获取新 main，`git merge --ff-only origin/main` 成功，HEAD 为 `0280730a13ce512754f66850a49ee9e27020bdda`，与抓取到的 origin/main 差异 0/0。
+- 最新提交包含规划及记录共 13 文件；`git diff 2133786..HEAD -- Code` 为空。本轮独立复验现有 94 项测试通过，规划复核和新证据留在 docs；未新增功能、未提交或推送。
+- 复核结果见 `docs/20261022-阅读器v2计划执行复核-v1.md`，应用源码、raw、正式规划和既有交付保持抓取后的版本。
+
 ## 返回导航修复与当前交付同步（2026-10-21）
 
 - 用户明确要求“推送至远端”，将当前源码、过程记录和现有交付同步至 `origin/main`。推送前执行 `git fetch origin`，本地与远端均为 `d6c3f8a`，ahead/behind 为 0/0。
@@ -69,3 +81,42 @@
 - 范围：完整规划三件套、可行性评估、编制与静态验证记录、原始 v1 附件副本、来源/分析/执行入口/背景记录。Code 和既有正式 v1 交付未改动。
 - 推送前复核三份交付摘要与内部链接一致，包含 11 个阶段和 79 项验收用例。未重新运行应用测试、未调用 DeepSeek，开发仍未开始。
 - 使用正常提交和 HEAD:main 快进推送，不强制覆盖；推送完成后读取真实远端 SHA 与本地提交核对，提交号以本轮最终回复为准。
+
+## 2026-10-22 P0 已推送与 P1 本地成果
+
+用户明确“推送后继续p1”，已正常推送 feature/reader-native 并设置上游。git ls-remote 再次读取真实远端 refs/heads/feature/reader-native = 8465e495496702054474b1f03c45ddf96c90856a，与 P0 验收提交一致，未改 origin/main。
+
+随后 P1 实现与证据本地提交 bd6eb50；阶段验收另行本地文档提交，本轮 P1 未再推送。当前平台按用户“你可以用linux，windows保留”完成 Linux 验收；完整证据在 docs/evidence/reader/P1/acceptance.md。
+
+## 2026-10-22 P1 推送完成与 P2 本地提交
+
+用户“推送，然后开始p2”授权已执行。先fetch，再正常推送feature/reader-native（8465e49→4b336d3）；git ls-remote核验refs/heads/feature/reader-native=4b336d372c40526a8c4f482ba2c40c5c3da262fa，未强推/未改main。随后P2实现、回归、迁移/进程/桌面证据本地提交9b24b0731eac3818ee6bab02b70d2bc32b87e279；验收及进度另行文档提交。当前P2未推送，工作区最终以git status核对。
+
+
+## 2026-10-22 P2 推送完成与 P3 本地提交
+
+用户“推送，开始p3”授权已执行：正常推送feature/reader-native（4b336d3→8696045），git ls-remote核验真实远端refs/heads/feature/reader-native=8696045c6361e1670ca55e05e816526b7d81c0f3；未强推，main未改。P3实现/工具/证据本地提交17690bbf52b84f09150882332500fa4d4127654a；验收及进度另行本地文档提交。本轮不再推送P3，P4未开始。完整验收见docs/evidence/reader/P3/acceptance.md。
+
+
+## 2026-10-22 P3推送与P4阶段提交
+
+用户“推送，然后开始p4”已执行：正常推送feature/reader-native至16e41558e8ceb4549274dd26cc6b0321e058350d并用git ls-remote回读；P4结束前再次fetch确认远端仍为同SHA，无需合并。P4实现/工具/证据本地5358a4a9620dd8b8708e657c7f44e0e3bfe53844，验收文档另行提交后正常推送并读取真实远端，不强推、不改main。
+
+用户随后授权完成后提交远端，并进一步明确P4推送后顺序完成P5/P6/P7，每阶段验收并推送。后续各阶段在其开始计划中记录上一阶段实际推送SHA；不能仅以本地提交或预定推送当作成功回执。
+
+
+## 2026-10-22 P5验收与阶段推送
+
+P4真实远端69b783a已回读。P5工作区和177文件独立白名单源码各234/234，九项Linux验收、真实桌面两次正常关闭与重启续读通过；验收见P5/acceptance.md。正常提交并推送feature/reader-native，后续P6开始记录本阶段实际远端SHA；不强推、不改main。P6与P7依用户授权继续，每阶段仍单独验收推送。
+
+
+## 2026-10-23 P6当前结果（优先于历史状态）
+
+P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按范围去重/保留原文与精确回跳、统一历史/毫秒统计图、完成与原子重置已实现。工作区完整243项通过；独立181文件白名单源码重验，真实桌面M1闭环10张业务表/4个受管文件与来源SHA一致、续读偏移294，续接桌面两次正常关闭。详见docs/evidence/reader/P6/acceptance.md与reader-p6-protocol.md。验收提交后正常推送并核对真实远端，然后按用户授权继续P7；Windows保留未测，无API，raw/output/参考/冻结fixtures不变。
+
+
+## 2026-10-23 P7完成验收（优先于历史状态）
+
+P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
+
+验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。

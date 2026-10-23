@@ -134,12 +134,12 @@ public class PlanConsistencyRegressionTests : IDisposable
     }
     private async Task<string> ExportSnapshotAsync()
     {
-        var path = Path.Combine(_directory, "snapshot.json"); await _backup.ExportAsync(path); return await File.ReadAllTextAsync(path);
+        var path = Path.Combine(_directory, "snapshot.zip"); await _backup.ExportAsync(path); return JsonSerializer.Serialize(ReaderBackupTestData.Legacy(path));
     }
     private async Task AssertBackupRoundTripAsync()
     {
         var before = await ExportSnapshotAsync(); _backup.Validate(JsonSerializer.Deserialize<BackupDocument>(before)!);
-        var auto = await _backup.RestoreAsync(Path.Combine(_directory, "snapshot.json")); Assert.True(File.Exists(auto));
+        var auto = await _backup.RestoreAsync(Path.Combine(_directory, "snapshot.zip")); Assert.True(File.Exists(auto));
         Assert.Equal(before, await ExportSnapshotAsync());
     }
     public void Dispose() { _database.Dispose(); if (Directory.Exists(_directory)) Directory.Delete(_directory, true); }

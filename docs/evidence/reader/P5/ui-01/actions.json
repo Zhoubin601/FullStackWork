@@ -1,0 +1,191 @@
+[
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "01-books"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "02-detail"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "03-native-reader"
+  },
+  {
+    "op": "click",
+    "x": 800,
+    "y": 390
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Right"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Right"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Left"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "04-backward-page"
+  },
+  {
+    "op": "click",
+    "x": 508,
+    "y": 180
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "28"
+  },
+  {
+    "op": "click",
+    "x": 700,
+    "y": 180
+  },
+  {
+    "op": "capture",
+    "name": "05-font-reflow"
+  },
+  {
+    "op": "click",
+    "x": 800,
+    "y": 390
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "F11"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "06-fullscreen"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "F11"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "07-window"
+  },
+  {
+    "op": "click",
+    "x": 509,
+    "y": 180
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "08-font-selection"
+  },
+  {
+    "op": "type",
+    "text": "28"
+  },
+  {
+    "op": "capture",
+    "name": "09-font-input"
+  },
+  {
+    "op": "click",
+    "x": 700,
+    "y": 180
+  },
+  {
+    "op": "capture",
+    "name": "10-font-reflow-valid"
+  },
+  {
+    "op": "click",
+    "x": 310,
+    "y": 70
+  },
+  {
+    "op": "capture",
+    "name": "11-session-detail"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "12-restarted-library"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 408
+  },
+  {
+    "op": "capture",
+    "name": "13-reopened-detail"
+  },
+  {
+    "op": "click",
+    "x": 340,
+    "y": 371
+  },
+  {
+    "op": "capture",
+    "name": "14-resumed-anchor"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

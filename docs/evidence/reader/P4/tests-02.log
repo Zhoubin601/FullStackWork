@@ -1,0 +1,146 @@
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+  ReadJournal.UnitTest -> /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll
+Test run for /workspace/FullStackWork/Code/ReadJournal.UnitTest/bin/Release/net8.0/ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.61]     ReadJournal.UnitTest.TxtImportTests.RootOnlyScanSkipsChangingFilesAndOneBadFileDoesNotBlockOthers [FAIL]
+[xUnit.net 00:00:02.62]     ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.after-install") [FAIL]
+[xUnit.net 00:00:02.65]     ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.in-transaction") [FAIL]
+[xUnit.net 00:00:02.65]     ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.after-commit") [FAIL]
+  Failed ReadJournal.UnitTest.TxtImportTests.RootOnlyScanSkipsChangingFilesAndOneBadFileDoesNotBlockOthers [190 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: 1
+Actual:   0
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.RootOnlyScanSkipsChangingFilesAndOneBadFileDoesNotBlockOthers() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 141
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.after-install") [11 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Cancelled
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(String point) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 119
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.in-transaction") [29 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(String point) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 119
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(point: "import.after-commit") [5 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.CancellationReportsActualCommitState(String point) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 119
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:02.69]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "utf8") [FAIL]
+[xUnit.net 00:00:02.70]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "gb18030") [FAIL]
+[xUnit.net 00:00:02.71]     ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "bom") [FAIL]
+[xUnit.net 00:00:02.72]     ReadJournal.UnitTest.TxtImportTests.DuplicateBytesAndSameNameDifferentContentsKeepCorrectBooksAndSources [FAIL]
+[xUnit.net 00:00:02.75]     ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "manifest") [FAIL]
+[xUnit.net 00:00:02.77]     ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "chapter") [FAIL]
+[xUnit.net 00:00:02.78]     ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "source") [FAIL]
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "utf8") [10 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "gb18030") [9 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(kind: "bom") [9 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.StrictEncodingAndMixedNewlinesPreserveSourceAndInitialProgress(String kind) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 31
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.DuplicateBytesAndSameNameDifferentContentsKeepCorrectBooksAndSources [7 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.DuplicateBytesAndSameNameDifferentContentsKeepCorrectBooksAndSources() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 86
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "manifest") [35 ms]
+  Error Message:
+   System.InvalidOperationException : Sequence contains no elements
+  Stack Trace:
+     at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(String missing) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 150
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "chapter") [10 ms]
+  Error Message:
+   System.InvalidOperationException : Sequence contains no elements
+  Stack Trace:
+     at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(String missing) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 150
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(missing: "source") [7 ms]
+  Error Message:
+   System.InvalidOperationException : Sequence contains no elements
+  Stack Trace:
+     at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at ReadJournal.UnitTest.TxtImportTests.MissingFilesAreMarkedAndCannotOpenOrExport(String missing) in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 150
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:17.79]     ReadJournal.UnitTest.TxtImportTests.SimultaneousIdenticalImportsUseSqlUniqueConstraintAndCleanLosingDirectory [FAIL]
+  Failed ReadJournal.UnitTest.TxtImportTests.SimultaneousIdenticalImportsUseSqlUniqueConstraintAndCleanLosingDirectory [15 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.SimultaneousIdenticalImportsUseSqlUniqueConstraintAndCleanLosingDirectory() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 96
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:17.95]     ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook [FAIL]
+[xUnit.net 00:00:18.19]     ReadJournal.UnitTest.TxtImportTests.LongUnheadedTextHasStableCanonicalAndNoLostOrSplitGraphemes [FAIL]
+[xUnit.net 00:00:18.20]     ReadJournal.UnitTest.TxtImportTests.CommittedImportCleanupCanRetryAfterOrdinaryMetadataEdits [FAIL]
+  Failed ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook [159 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: 1
+Actual:   0
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 173
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.LongUnheadedTextHasStableCanonicalAndNoLostOrSplitGraphemes [238 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.LongUnheadedTextHasStableCanonicalAndNoLostOrSplitGraphemes() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 63
+--- End of stack trace from previous location ---
+  Failed ReadJournal.UnitTest.TxtImportTests.CommittedImportCleanupCanRetryAfterOrdinaryMetadataEdits [6 ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: Imported
+Actual:   Rejected
+  Stack Trace:
+     at ReadJournal.UnitTest.TxtImportTests.CommittedImportCleanupCanRetryAfterOrdinaryMetadataEdits() in /workspace/FullStackWork/Code/ReadJournal.UnitTest/TxtImportTests.cs:line 128
+--- End of stack trace from previous location ---
+Results File: /workspace/FullStackWork/docs/evidence/reader/P4/p4-import-regressions.trx
+
+Failed!  - Failed:    15, Passed:   187, Skipped:     0, Total:   202, Duration: 20 s - ReadJournal.UnitTest.dll (net8.0)

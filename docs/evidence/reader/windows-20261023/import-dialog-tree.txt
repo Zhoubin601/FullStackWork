@@ -1,0 +1,1510 @@
+[
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      277.0,
+      311.0,
+      1710.0,
+      1200.0
+    ]
+  },
+  {
+    "name": "选择要导入的TXT / EPUB书籍",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      277.0,
+      311.0,
+      1280.0,
+      798.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      288.0,
+      429.0,
+      1258.0,
+      539.0
+    ]
+  },
+  {
+    "name": "命令模块",
+    "type": "ControlType.ToolBar",
+    "id": "FolderBandModuleInner",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      288.0,
+      429.0,
+      1258.0,
+      48.0
+    ]
+  },
+  {
+    "name": "帮助(&H)",
+    "type": "ControlType.Button",
+    "id": "HelpButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1490.0,
+      432.0,
+      42.0,
+      40.0
+    ]
+  },
+  {
+    "name": "预览窗格",
+    "type": "ControlType.CheckBox",
+    "id": "PreviewButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1436.0,
+      432.0,
+      42.0,
+      40.0
+    ]
+  },
+  {
+    "name": "详细信息",
+    "type": "ControlType.SplitButton",
+    "id": "ViewControl",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1359.0,
+      432.0,
+      77.0,
+      40.0
+    ]
+  },
+  {
+    "name": "视图滑块",
+    "type": "ControlType.Button",
+    "id": "SplitMenuButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1400.0,
+      432.0,
+      21.0,
+      40.0
+    ]
+  },
+  {
+    "name": "组织​​",
+    "type": "ControlType.Button",
+    "id": "{7DDC1264-7E4D-4F74-BBC0-D191987C8D0F}",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      293.0,
+      432.0,
+      97.0,
+      40.0
+    ]
+  },
+  {
+    "name": "新建​​文件夹​​",
+    "type": "ControlType.Button",
+    "id": "{E44616AD-6DF1-4B94-85A4-E465AE8A19DB}",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      390.0,
+      432.0,
+      136.0,
+      40.0
+    ]
+  },
+  {
+    "name": "控制项宿主",
+    "type": "ControlType.Pane",
+    "id": "ProperTreeHost",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      291.0,
+      477.0,
+      231.0,
+      491.0
+    ]
+  },
+  {
+    "name": "命名空间树状控制项",
+    "type": "ControlType.Tree",
+    "id": "100",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      291.0,
+      477.0,
+      231.0,
+      491.0
+    ]
+  },
+  {
+    "name": "垂直滚动条",
+    "type": "ControlType.ScrollBar",
+    "id": "Vertical ScrollBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      477.0,
+      26.0,
+      491.0
+    ]
+  },
+  {
+    "name": "小幅度后滚",
+    "type": "ControlType.Button",
+    "id": "SmallDecrement",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      477.0,
+      26.0,
+      17.0
+    ]
+  },
+  {
+    "name": "大幅度后滚",
+    "type": "ControlType.Button",
+    "id": "LargeDecrement",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      494.0,
+      26.0,
+      217.0
+    ]
+  },
+  {
+    "name": "缩略",
+    "type": "ControlType.Thumb",
+    "id": "Thumb",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      711.0,
+      26.0,
+      208.0
+    ]
+  },
+  {
+    "name": "大幅度前滚",
+    "type": "ControlType.Button",
+    "id": "LargeIncrement",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      919.0,
+      26.0,
+      32.0
+    ]
+  },
+  {
+    "name": "小幅度前滚",
+    "type": "ControlType.Button",
+    "id": "SmallIncrement",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      496.0,
+      951.0,
+      26.0,
+      17.0
+    ]
+  },
+  {
+    "name": "2026Autumn Semester File",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      477.0,
+      237.0,
+      48.0
+    ]
+  },
+  {
+    "name": "daily_poetry_qt_mvvm",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      525.0,
+      198.0,
+      48.0
+    ]
+  },
+  {
+    "name": "output",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      573.0,
+      63.0,
+      48.0
+    ]
+  },
+  {
+    "name": "raw",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      621.0,
+      35.0,
+      48.0
+    ]
+  },
+  {
+    "name": "此电脑",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      717.0,
+      58.0,
+      48.0
+    ]
+  },
+  {
+    "name": "Windows (C:)",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      378.0,
+      765.0,
+      116.0,
+      48.0
+    ]
+  },
+  {
+    "name": "Data (D:)",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      378.0,
+      813.0,
+      80.0,
+      48.0
+    ]
+  },
+  {
+    "name": "Game (E:)",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      378.0,
+      861.0,
+      85.0,
+      48.0
+    ]
+  },
+  {
+    "name": "Linux",
+    "type": "ControlType.TreeItem",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      366.0,
+      909.0,
+      49.0,
+      48.0
+    ]
+  },
+  {
+    "name": "Shell 文件夹视图",
+    "type": "ControlType.Pane",
+    "id": "listview",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      528.0,
+      477.0,
+      1018.0,
+      491.0
+    ]
+  },
+  {
+    "name": "项目视图",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      528.0,
+      477.0,
+      1018.0,
+      491.0
+    ]
+  },
+  {
+    "name": "水平",
+    "type": "ControlType.Pane",
+    "id": "HorizontalScrollBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      528.0,
+      942.0,
+      1018.0,
+      26.0
+    ]
+  },
+  {
+    "name": "标题",
+    "type": "ControlType.Header",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      528.0,
+      477.0,
+      1055.0,
+      40.0
+    ]
+  },
+  {
+    "name": "名称",
+    "type": "ControlType.SplitButton",
+    "id": "System.ItemNameDisplay",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      528.0,
+      477.0,
+      459.0,
+      40.0
+    ]
+  },
+  {
+    "name": "筛选器下拉列表",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      962.0,
+      477.0,
+      23.0,
+      40.0
+    ]
+  },
+  {
+    "name": "修改日期",
+    "type": "ControlType.SplitButton",
+    "id": "System.DateModified",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      987.0,
+      477.0,
+      243.0,
+      40.0
+    ]
+  },
+  {
+    "name": "筛选器下拉列表",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1205.0,
+      477.0,
+      23.0,
+      40.0
+    ]
+  },
+  {
+    "name": "类型",
+    "type": "ControlType.SplitButton",
+    "id": "System.ItemTypeText",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1230.0,
+      477.0,
+      203.0,
+      40.0
+    ]
+  },
+  {
+    "name": "筛选器下拉列表",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1408.0,
+      477.0,
+      23.0,
+      40.0
+    ]
+  },
+  {
+    "name": "大小",
+    "type": "ControlType.SplitButton",
+    "id": "System.Size",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1433.0,
+      477.0,
+      135.0,
+      40.0
+    ]
+  },
+  {
+    "name": "筛选器下拉列表",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1543.0,
+      477.0,
+      23.0,
+      40.0
+    ]
+  },
+  {
+    "name": "录音",
+    "type": "ControlType.ListItem",
+    "id": "0",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      549.0,
+      526.0,
+      1013.0,
+      37.0
+    ]
+  },
+  {
+    "name": "名称",
+    "type": "ControlType.Edit",
+    "id": "System.ItemNameDisplay",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      582.0,
+      531.0,
+      405.0,
+      29.0
+    ]
+  },
+  {
+    "name": "修改日期",
+    "type": "ControlType.Edit",
+    "id": "System.DateModified",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      987.0,
+      531.0,
+      243.0,
+      29.0
+    ]
+  },
+  {
+    "name": "类型",
+    "type": "ControlType.Edit",
+    "id": "System.ItemTypeText",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1230.0,
+      531.0,
+      203.0,
+      29.0
+    ]
+  },
+  {
+    "name": "大小",
+    "type": "ControlType.Edit",
+    "id": "System.Size",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1433.0,
+      531.0,
+      135.0,
+      29.0
+    ]
+  },
+  {
+    "name": "文件名(N):",
+    "type": "ControlType.Text",
+    "id": "1090",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      492.0,
+      996.0,
+      85.0,
+      24.0
+    ]
+  },
+  {
+    "name": "文件名(N):",
+    "type": "ControlType.ComboBox",
+    "id": "1148",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      585.0,
+      992.0,
+      634.0,
+      33.0
+    ]
+  },
+  {
+    "name": "文件名(N):",
+    "type": "ControlType.Edit",
+    "id": "1148",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      589.0,
+      996.0,
+      601.0,
+      24.0
+    ]
+  },
+  {
+    "name": "下拉按钮",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1194.0,
+      993.0,
+      24.0,
+      31.0
+    ]
+  },
+  {
+    "name": "文件类型(T):",
+    "type": "ControlType.ComboBox",
+    "id": "1136",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1237.0,
+      992.0,
+      282.0,
+      32.0
+    ]
+  },
+  {
+    "name": "下拉按钮",
+    "type": "ControlType.Button",
+    "id": "DropDown",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1494.0,
+      993.0,
+      24.0,
+      30.0
+    ]
+  },
+  {
+    "name": "打开(O)",
+    "type": "ControlType.Button",
+    "id": "1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1237.0,
+      1033.0,
+      132.0,
+      39.0
+    ]
+  },
+  {
+    "name": "取消",
+    "type": "ControlType.Button",
+    "id": "2",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1387.0,
+      1033.0,
+      132.0,
+      39.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1520.0,
+      1072.0,
+      26.0,
+      26.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "40965",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      288.0,
+      356.0,
+      1258.0,
+      73.0
+    ]
+  },
+  {
+    "name": "导航按钮",
+    "type": "ControlType.ToolBar",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      294.0,
+      368.0,
+      146.0,
+      48.0
+    ]
+  },
+  {
+    "name": "后退 (Alt + 向左键)",
+    "type": "ControlType.Button",
+    "id": "Item 256",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      294.0,
+      368.0,
+      53.0,
+      48.0
+    ]
+  },
+  {
+    "name": "前进 (Alt + 向右键)",
+    "type": "ControlType.Button",
+    "id": "Item 257",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      347.0,
+      368.0,
+      53.0,
+      48.0
+    ]
+  },
+  {
+    "name": "最近浏览的位置",
+    "type": "ControlType.Button",
+    "id": "Item 258",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      400.0,
+      368.0,
+      30.0,
+      48.0
+    ]
+  },
+  {
+    "name": "上区段",
+    "type": "ControlType.ToolBar",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      440.0,
+      368.0,
+      55.0,
+      55.0
+    ]
+  },
+  {
+    "name": "上移到“a3185”(Alt + 向上键)",
+    "type": "ControlType.Button",
+    "id": "Item 256",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      440.0,
+      368.0,
+      50.0,
+      50.0
+    ]
+  },
+  {
+    "name": "正在加载",
+    "type": "ControlType.ProgressBar",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      497.0,
+      366.0,
+      720.0,
+      52.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      497.0,
+      366.0,
+      620.0,
+      52.0
+    ]
+  },
+  {
+    "name": "地址: D:\\a3185\\Documents",
+    "type": "ControlType.ToolBar",
+    "id": "1001",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      506.0,
+      366.0,
+      611.0,
+      52.0
+    ]
+  },
+  {
+    "name": "所有位置",
+    "type": "ControlType.SplitButton",
+    "id": "Item 1280",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      506.0,
+      366.0,
+      51.0,
+      51.0
+    ]
+  },
+  {
+    "name": "此电脑",
+    "type": "ControlType.SplitButton",
+    "id": "Item 1281",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      557.0,
+      366.0,
+      85.0,
+      51.0
+    ]
+  },
+  {
+    "name": "Data (D:)",
+    "type": "ControlType.SplitButton",
+    "id": "Item 1282",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      642.0,
+      366.0,
+      107.0,
+      51.0
+    ]
+  },
+  {
+    "name": "‎a3185",
+    "type": "ControlType.SplitButton",
+    "id": "Item 1283",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      749.0,
+      366.0,
+      85.0,
+      51.0
+    ]
+  },
+  {
+    "name": "文档",
+    "type": "ControlType.SplitButton",
+    "id": "Item 1284",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      834.0,
+      366.0,
+      67.0,
+      51.0
+    ]
+  },
+  {
+    "name": "地址区段",
+    "type": "ControlType.ToolBar",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1117.0,
+      366.0,
+      100.0,
+      52.0
+    ]
+  },
+  {
+    "name": "上一个位置",
+    "type": "ControlType.Button",
+    "id": "Item 202",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1117.0,
+      366.0,
+      50.0,
+      50.0
+    ]
+  },
+  {
+    "name": "刷新“文档”(F5)",
+    "type": "ControlType.Button",
+    "id": "Item 102",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1167.0,
+      366.0,
+      50.0,
+      50.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1223.0,
+      390.0,
+      6.0,
+      1.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1229.0,
+      365.0,
+      306.0,
+      54.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1234.0,
+      365.0,
+      296.0,
+      54.0
+    ]
+  },
+  {
+    "name": "搜索框",
+    "type": "ControlType.Edit",
+    "id": "SearchEditBox",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1236.0,
+      380.0,
+      242.0,
+      24.0
+    ]
+  },
+  {
+    "name": "搜索",
+    "type": "ControlType.Button",
+    "id": "SearchBoxSearchButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1482.0,
+      365.0,
+      45.0,
+      54.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1539.0,
+      390.0,
+      7.0,
+      1.0
+    ]
+  },
+  {
+    "name": "选择要导入的TXT / EPUB书籍",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      288.0,
+      322.0,
+      1258.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      Infinity,
+      Infinity,
+      -Infinity,
+      -Infinity
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1495.0,
+      312.0,
+      52.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      277.0,
+      277.0,
+      1710.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统菜单栏",
+    "type": "ControlType.MenuBar",
+    "id": "SystemMenuBar",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      277.0,
+      277.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      277.0,
+      277.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "最小化",
+    "type": "ControlType.Button",
+    "id": "Minimize",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      1776.0,
+      267.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "最大化",
+    "type": "ControlType.Button",
+    "id": "Maximize",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      1847.0,
+      267.0,
+      70.0,
+      44.0
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      1917.0,
+      267.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅 记",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      353.0,
+      255.0,
+      60.0
+    ]
+  },
+  {
+    "name": "让每一页，留下回响",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      440.0,
+      255.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      531.0,
+      255.0,
+      444.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      537.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      611.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      685.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      759.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      833.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      307.0,
+      907.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      634.0,
+      335.0,
+      1311.0,
+      36.0
+    ]
+  },
+  {
+    "name": "＋ 添加书籍",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1778.0,
+      433.0,
+      164.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      433.0,
+      1141.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      516.0,
+      180.0,
+      48.0
+    ]
+  },
+  {
+    "name": "UTF-8",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      655.0,
+      525.0,
+      114.0,
+      27.0
+    ]
+  },
+  {
+    "name": "导入 TXT / EPUB",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      829.0,
+      516.0,
+      215.0,
+      62.0
+    ]
+  },
+  {
+    "name": "取消导入",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1055.0,
+      516.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "扫描收件区",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1207.0,
+      516.0,
+      159.0,
+      62.0
+    ]
+  },
+  {
+    "name": "打开收件目录",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1378.0,
+      516.0,
+      181.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      605.0,
+      450.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1102.0,
+      605.0,
+      165.0,
+      48.0
+    ]
+  },
+  {
+    "name": "全部",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1120.0,
+      614.0,
+      99.0,
+      28.0
+    ]
+  },
+  {
+    "name": "搜索 / 刷新",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1282.0,
+      605.0,
+      161.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      694.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      722.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      750.0,
+      1305.0,
+      645.0
+    ]
+  },
+  {
+    "name": "还没有匹配的书籍。试试更换条件，或添加第一本书。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      786.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      Infinity,
+      Infinity,
+      -Infinity,
+      -Infinity
+    ]
+  },
+  {
+    "name": "上一页",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      637.0,
+      1413.0,
+      115.0,
+      62.0
+    ]
+  },
+  {
+    "name": "第 1/1 页 · 共 0 本",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      773.0,
+      1430.0,
+      176.0,
+      28.0
+    ]
+  },
+  {
+    "name": "下一页",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      970.0,
+      1413.0,
+      115.0,
+      62.0
+    ]
+  }
+]

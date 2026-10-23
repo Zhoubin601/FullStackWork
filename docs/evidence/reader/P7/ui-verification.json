@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "books": 1,
+  "sessions": 3,
+  "origin": {
+    "QuoteId": 1,
+    "Source": 1,
+    "OriginalText": "\u6B63\u6587\u661F\u5149\u843D\u5728\u4E66\u9875\u4E0A\u3002\u76F8\u540C\u53E5\u5B50",
+    "DocumentKeyJson": "{\u0022ContractVersion\u0022:1,\u0022Value\u0022:{\u0022FileId\u0022:\u00222529aa09-b9e8-4325-b98a-27060bc40e23\u0022,\u0022SourceSha256\u0022:\u002218edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\u0022,\u0022CanonicalSha256\u0022:\u002285f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\u0022,\u0022ParserVersion\u0022:1}}",
+    "StartPositionJson": "{\u0022ContractVersion\u0022:1,\u0022Value\u0022:{\u0022Document\u0022:{\u0022FileId\u0022:\u00222529aa09-b9e8-4325-b98a-27060bc40e23\u0022,\u0022SourceSha256\u0022:\u002218edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\u0022,\u0022CanonicalSha256\u0022:\u002285f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\u0022,\u0022ParserVersion\u0022:1},\u0022ChapterKey\u0022:\u0022sp-9c9b173769a20a6d5e97255f\u0022,\u0022Utf16Offset\u0022:7,\u0022NonTextBlockKey\u0022:null}}",
+    "EndPositionJson": "{\u0022ContractVersion\u0022:1,\u0022Value\u0022:{\u0022Document\u0022:{\u0022FileId\u0022:\u00222529aa09-b9e8-4325-b98a-27060bc40e23\u0022,\u0022SourceSha256\u0022:\u002218edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\u0022,\u0022CanonicalSha256\u0022:\u002285f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\u0022,\u0022ParserVersion\u0022:1},\u0022ChapterKey\u0022:\u0022sp-9c9b173769a20a6d5e97255f\u0022,\u0022Utf16Offset\u0022:21,\u0022NonTextBlockKey\u0022:null}}",
+    "PrefixHash": null,
+    "SuffixHash": null,
+    "LocationStatus": 0,
+    "BatchId": null,
+    "DedupeKey": "b78a55ce01f8f417575fcde5dc11b5516f473fc18672312cbbb266c3945c753b"
+  },
+  "progress": {
+    "BookId": 1,
+    "DocumentKeyJson": "{\u0022ContractVersion\u0022:1,\u0022Value\u0022:{\u0022FileId\u0022:\u00222529aa09-b9e8-4325-b98a-27060bc40e23\u0022,\u0022SourceSha256\u0022:\u002218edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\u0022,\u0022CanonicalSha256\u0022:\u002285f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\u0022,\u0022ParserVersion\u0022:1}}",
+    "LastPositionJson": "{\u0022ContractVersion\u0022:1,\u0022Value\u0022:{\u0022Document\u0022:{\u0022FileId\u0022:\u00222529aa09-b9e8-4325-b98a-27060bc40e23\u0022,\u0022SourceSha256\u0022:\u002218edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\u0022,\u0022CanonicalSha256\u0022:\u002285f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\u0022,\u0022ParserVersion\u0022:1},\u0022ChapterKey\u0022:\u0022sp-9c9b173769a20a6d5e97255f\u0022,\u0022Utf16Offset\u0022:7,\u0022NonTextBlockKey\u0022:null}}",
+    "HasStarted": true,
+    "CurrentPercent": 0.9186351706036745,
+    "CompletedUtcTicks": null,
+    "CompletedOffsetMinutes": null,
+    "LastOpenedUtcTicks": 639283200648051245,
+    "LastSavedUtcTicks": 639283200810691659
+  },
+  "resources": [
+    {
+      "Key": "r-8cdb4291bcc22472f1032ee8",
+      "Path": "resources/r-8cdb4291bcc22472f1032ee8.image",
+      "MediaType": "image/png",
+      "PixelWidth": 2400,
+      "PixelHeight": 1800,
+      "Sha256": "7ee97094a06d832e43bb2614089c5ccf941018b5dc00972286315837382cde39"
+    }
+  ],
+  "inventory": [
+    {
+      "Path": "books/managed/2529aa09-b9e8-4325-b98a-27060bc40e23/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+      "Bytes": 1362,
+      "Sha256": "3f9baf5b4db0f41f56e189b4dcedcf28461f805d11e0460a8d8cea8053809985"
+    },
+    {
+      "Path": "books/managed/2529aa09-b9e8-4325-b98a-27060bc40e23/chapters/sp-fc7a78472029444a6d87f557.utf16",
+      "Bytes": 164,
+      "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+    },
+    {
+      "Path": "books/managed/2529aa09-b9e8-4325-b98a-27060bc40e23/document-v1.json",
+      "Bytes": 3865,
+      "Sha256": "85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91"
+    },
+    {
+      "Path": "books/managed/2529aa09-b9e8-4325-b98a-27060bc40e23/resources/r-8cdb4291bcc22472f1032ee8.image",
+      "Bytes": 198821,
+      "Sha256": "7ee97094a06d832e43bb2614089c5ccf941018b5dc00972286315837382cde39"
+    },
+    {
+      "Path": "books/managed/2529aa09-b9e8-4325-b98a-27060bc40e23/source.epub",
+      "Bytes": 37857,
+      "Sha256": "18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068"
+    }
+  ],
+  "sourceSha256": "18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068",
+  "allSourceBytesPreserved": true,
+  "quoteExactlyResolves": true,
+  "integrity": "ok"
+}

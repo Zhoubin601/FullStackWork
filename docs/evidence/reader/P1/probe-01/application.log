@@ -1,0 +1,4 @@
+System.InvalidOperationException: 系统剪贴板与选区原文不一致。
+   at ReaderPrototype.ProbeRunner.Require(Boolean condition, String message) in /workspace/FullStackWork/docs/experiments/ReaderPrototype/ProbeRunner.cs:line 17
+   at ReaderPrototype.ProbeRunner.RunAsync(PrototypeWindow window, String outputDirectory, String samplesDirectory) in /workspace/FullStackWork/docs/experiments/ReaderPrototype/ProbeRunner.cs:line 111
+Local native probe: False, evidence: /workspace/FullStackWork/docs/evidence/reader/P1/probe-01/native

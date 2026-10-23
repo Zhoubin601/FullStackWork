@@ -1,0 +1,25 @@
+{
+  "exitCode": 0,
+  "actions": [
+    {
+      "signal": "drag-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    },
+    {
+      "signal": "cross-page-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    },
+    {
+      "signal": "focus-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    },
+    {
+      "signal": "resize-ready.json",
+      "actualScale": 1.5,
+      "physicalWindowsInput": true
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+/workspace/.readjournal-env/sdk/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/docs/tools/ReaderP4Probe/ReaderP4Probe.csproj]
+Prepared isolated inbox/UTF8/GB18030/duplicate/invalid UI sources.

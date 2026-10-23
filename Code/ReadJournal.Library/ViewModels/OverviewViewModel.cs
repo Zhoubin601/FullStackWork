@@ -2,26 +2,33 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ReadJournal.Library.Models;
 using ReadJournal.Library.Services;
+using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.ViewModels;
 public partial class OverviewViewModel : ViewModelBase
 {
+    private IReadingHistoryService? _history;
     private readonly IReadingRecordStorage _records; private readonly IBookStorage _books; private readonly IStatisticsService _statistics; private readonly IReadingPlanStorage _plans;
     [ObservableProperty] private string _summary = "";
     [ObservableProperty] private IReadOnlyList<BookProgress> _readingBooks = [];
     [ObservableProperty] private IReadOnlyList<string> _recentRecords = [];
     [ObservableProperty] private IReadOnlyList<PlanItem> _pendingPlans = [];
-    public IRelayCommand OpenLibraryCommand { get; }
-    public IRelayCommand<BookProgress> OpenBookCommand { get; }
+    public IAsyncRelayCommand OpenLibraryCommand { get; }
+    public IAsyncRelayCommand<BookProgress> OpenBookCommand { get; }
     public OverviewViewModel(IReadingRecordStorage records, IBookStorage books, IStatisticsService statistics, IReadingPlanStorage plans, IMenuNavigationService menu, IContentNavigationService content)
     {
         _records = records; _books = books; _statistics = statistics; _plans = plans;
-        OpenLibraryCommand = new RelayCommand(() => menu.NavigateTo(MenuNavigationConstant.BookListView));
-        OpenBookCommand = new RelayCommand<BookProgress>(b => { if (b != null) content.NavigateTo(ContentNavigationConstant.BookDetailView, b.Book.Id); });
+        OpenLibraryCommand = new AsyncRelayCommand(() => NavigateAsync(() => menu.NavigateToAsync(MenuNavigationConstant.BookListView)));
+        OpenBookCommand = new AsyncRelayCommand<BookProgress>(b => b is null ? Task.CompletedTask : NavigateAsync(() => content.NavigateToAsync(ContentNavigationConstant.BookDetailView, b.Book.Id)));
     }
+    public OverviewViewModel(IReadingRecordStorage records, IBookStorage books, IStatisticsService statistics, IReadingPlanStorage plans, IMenuNavigationService menu, IContentNavigationService content, IReadingHistoryService history) : this(records, books, statistics, plans, menu, content) { _history = history; }
     protected override async Task LoadAsync()
     {
-        Summary = (await _statistics.GetAsync()).Summary; ReadingBooks = (await _books.SearchAsync("", "在读", 1, 5)).Items;
-        RecentRecords = await _records.GetRecentSummariesAsync(5);
-        PendingPlans = (await _plans.GetAllAsync()).Where(x => x.State != "已完成").Take(5).ToArray();
+        var version = ParameterVersion;
+        var summary = (await _statistics.GetAsync()).Summary; var books = (await _books.SearchAsync("", "在读", 1, 5)).Items;
+        IReadOnlyList<string> records = _history is null ? await _records.GetRecentSummariesAsync(5) : (await _history.GetAsync(null, 1, 5, default)).Items.Select(h => h.DisplayText).ToArray();
+        var plans = (await _plans.GetAllAsync()).Where(x => x.State != "已完成").Take(5).ToArray();
+        if (version != ParameterVersion) return;
+        Summary = summary; ReadingBooks = books; RecentRecords = records; PendingPlans = plans;
     }
+    public override void InvalidateDataSet() { base.InvalidateDataSet(); Summary = ""; ReadingBooks = []; RecentRecords = []; PendingPlans = []; }
 }

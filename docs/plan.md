@@ -231,3 +231,40 @@ bin、obj、.git、IDE 状态、缓存、TestResults、覆盖率、运行数据�
 ## 2026-10-22 电子书与 AI 扩展的执行入口
 
 现有 v1 阅读管理交付继续保留。后续电子书扩展以 `output/reader-plan-v2/20261022-阅记-原生阅读器与AI助手-完整实施规划-v2.md` 及同目录接口/验收表为依据，按 P0～P10 推进。本条仅新增扩展规划入口，不把历史阅读管理规划改写为已经支持电子书。本轮交付规划，开发阶段均未开始；真实 DeepSeek API 在 P9 前通知用户。
+
+执行进度更新（2026-10-22）：用户已授权开始并逐阶段推进，当前状态以 docs/reader-execution.md 为准。P0 四项验收通过（Linux），实现提交 fef2575；旧库/JSON fixtures、样本生成器、96项测试及隔离真实窗口证据见 docs/evidence/reader/P0/acceptance.md。P1 尚未开始；Windows 字体/DPI 条件挂起，真实 API 仍至 P9 前通知。
+
+## 2026-10-22 当前执行进度（优先于历史未开始状态）
+
+P0 已按用户“推送后继续p1”推送 feature/reader-native，远端 8465e49 已核验。P1 独立原生分页实验通过，代码/证据提交 bd6eb50；实验14项、生产96项与Linux三档实际缩放通过，验收见 docs/evidence/reader/P1/acceptance.md。用户明确“你可以用linux，windows保留”，Windows 补验保留未测、不阻塞当前阶段。P1 本地提交未推送；P2 下一阶段，尚未开始。原始资料、Code 与正式交付未因 P1 改动。
+
+## 2026-10-22 P2 当前进度（优先于前条）
+
+用户“推送，然后开始p2”已执行：P1远端feature/reader-native=4b336d3；P2实现/证据本地9b24b07，七项通过。工作区与白名单独立源码各124项通过，4次实际窗口启动/正常关闭，旧字段无损、迁移回滚/锁/代际通过。详见docs/evidence/reader/P2/acceptance.md和reader-p2-contract-addendum.md。P3尚未开始，P2未再次推送；导入与Reader入口关闭，Windows保留未测。
+
+
+## 2026-10-22 P3 当前进度（优先于前条）
+
+按用户“推送，开始p3”，P2已推送feature/reader-native=8696045。P3实现/证据本地17690bb，八项Linux验收通过：完整ZIP及旧JSON输入、完整自动备份、安全校验、持久日志/目录替换/SQL提交、启动对账与上下文失效。最终工作区及159文件独立源码各169项通过，四点真实进程中断与损坏日志保留、最终桌面恢复/重开均通过，见docs/evidence/reader/P3/acceptance.md。P3未推送，P4未开始；Windows保留未测，真实API仍至P9前通知，原始资料/正式交付不改。
+
+
+## 2026-10-22 P4及后续授权（优先于历史状态）
+
+P3已推送16e4155；P4八项Linux通过，实现5358a4a，工作区/独立源码各217项、10处真实进程中断、实际TXT与桌面完整往返及Missing均通过。阶段提交后推送feature/reader-native，见docs/evidence/reader/P4/acceptance.md。用户追加授权顺序完成P5/P6/P7且每phase完成后推送；不再停在P4，仍以逐阶段验收为前提。当前P5尚未开始，Windows保留，真实API仍到P9前通知。
+
+
+## 2026-10-22 P5阶段结果（优先于历史状态）
+
+P4已推送并回读69b783abab2dfa02984121fa878da2fd6c74d692。P5实现正式原生Reader/首屏开始会话/SessionId幂等事务关闭/CloseFailed重试继续、所有运行期异步离开门禁、正文锚点重排/偏好/可取消索引。验收见docs/evidence/reader/P5/acceptance.md；接口补充见docs/reader-p5-protocol.md。Linux工作区与独立白名单源码完整回归，真实桌面两次正常关闭、偏移442重启一致、字号28保留；20次切书布局每次清零。P5完成提交后按授权正常推送并回读，再开始P6，随后P7，每阶段均验收/推送。Windows仍保留未测，无API；raw/output/参考/冻结fixtures保持。
+
+
+## 2026-10-23 P6当前结果（优先于历史状态）
+
+P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按范围去重/保留原文与精确回跳、统一历史/毫秒统计图、完成与原子重置已实现。工作区完整243项通过；独立181文件白名单源码重验，真实桌面M1闭环10张业务表/4个受管文件与来源SHA一致、续读偏移294，续接桌面两次正常关闭。详见docs/evidence/reader/P6/acceptance.md与reader-p6-protocol.md。验收提交后正常推送并核对真实远端，然后按用户授权继续P7；Windows保留未测，无API，raw/output/参考/冻结fixtures不变。
+
+
+## 2026-10-23 P7完成验收（优先于历史状态）
+
+P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
+
+验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。

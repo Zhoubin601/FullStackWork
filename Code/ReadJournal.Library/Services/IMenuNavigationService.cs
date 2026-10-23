@@ -1,5 +1,9 @@
 namespace ReadJournal.Library.Services;
-public interface IMenuNavigationService { void NavigateTo(string view, object? parameter = null); }
+public interface IMenuNavigationService
+{
+    void NavigateTo(string view, object? parameter = null);
+    Task<bool> NavigateToAsync(string view, object? parameter = null, CancellationToken ct = default);
+}
 public static class MenuNavigationConstant
 {
     public const string OverviewView = nameof(OverviewView);

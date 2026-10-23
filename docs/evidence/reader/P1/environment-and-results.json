@@ -1,0 +1,373 @@
+{
+  "date": "2026-10-22",
+  "phase": "P1",
+  "phase_status": "passed_linux_user_approved_platform",
+  "pushed_P0_ref": "refs/heads/feature/reader-native",
+  "pushed_P0_commit": "8465e495496702054474b1f03c45ddf96c90856a",
+  "sdk": "8.0.424",
+  "runtime": "8.0.30",
+  "avalonia": "11.0.10",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpu_count": 3,
+  "font": "Noto Sans CJK SC; UI controls explicitly inherit it",
+  "display": "private Xvfb/Openbox; three independent actual Avalonia RenderScaling 1/1.5/2; pixel buffers and input coordinates scaled",
+  "tests": {
+    "prototype-linux-fontfix.trx": {
+      "total": "14",
+      "executed": "14",
+      "passed": "14",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "production-baseline.trx": {
+      "total": "96",
+      "executed": "96",
+      "passed": "96",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "native_evidence": [
+    "linux-fontfix-scale-1/native/probe.json",
+    "linux-fontfix-scale-1.5/native/probe.json",
+    "linux-fontfix-scale-2/native/probe.json"
+  ],
+  "milestones": {
+    "P1-01": "passed_local_probe",
+    "P1-02": "passed_local_probe",
+    "P1-03": "passed_real_desktop_drag_crosspage_clipboard",
+    "P1-04": "passed_local_probe",
+    "P1-05": "passed_local_probe",
+    "P1-06": "passed_on_recorded_linux_machine_only",
+    "P1-07": "passed_linux_three_actual_scales_fonts_and_focus_per_user_override",
+    "P1-08": "passed_local_probe"
+  },
+  "production_Code_raw_output_unchanged_from_P0": true,
+  "deepseek_api_calls": 0,
+  "windows_acceptance": {
+    "status": "not_run",
+    "required_actual_scales": [
+      1,
+      1.5,
+      2
+    ],
+    "script": "docs/experiments/ReaderPrototype/Test-P1Windows.ps1",
+    "script_tested_on_windows": false,
+    "blocks_current_P1": false
+  },
+  "P2_started": false,
+  "limitations": [
+    "TXT-only technical experiment, no production integration or database changes.",
+    "Bounded sections can leave whitespace at the end of a block page; no EPUB images/styles in P1.",
+    "Linux software raster timing is not monitor latency or target Windows performance.",
+    "Memory figures are managed heap samples, not native/private working set or leak freedom.",
+    "Windows real font/DPI/focus/multi-monitor checks retained but not run. Linux actual scaling is not Windows compatibility evidence.",
+    "Visual review caught clipping with a missing font after automated probes passed; explicit fallback fixed it. Pre-fix screenshots retained.",
+    "First screen starts at managed process entry; excludes dotnet host pre-entry time; OS file cache not cleared.",
+    "Memory growth compares open 20 to open 6 after warmup; raw 20 samples retained."
+  ],
+  "external_source_references": [
+    {
+      "url": "https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Clipboard.cs",
+      "blob_sha": "637d44d617160b5777878acc813bcd6d9fa09e1e",
+      "date": "2026-10-22"
+    },
+    {
+      "url": "https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Atoms.cs",
+      "blob_sha": "b00879bd1dd195868d95d69b6645591a2b1fa9ea",
+      "date": "2026-10-22"
+    },
+    {
+      "url": "https://github.com/AvaloniaUI/Avalonia/blob/11.0.10/src/Avalonia.X11/X11Platform.cs",
+      "blob_sha": "728b6fe3e3c0d7bafaeb0b3330749ac467ca7740",
+      "date": "2026-10-22"
+    }
+  ],
+  "acceptance_platform_override": {
+    "user_instruction": "你可以用linux，windows保留",
+    "effect": "Linux acceptance for current P1; retain unverified Windows compatibility checks without blocking P2"
+  },
+  "linux_scale_results": [
+    {
+      "scale": 1,
+      "process_first_screen_ms": 870.2266,
+      "reload_layout_raster_ms": 44.8226,
+      "flip_p95_ms": 1.2815,
+      "reflow_p95_ms": 4.2113,
+      "flip_samples": 200,
+      "reflow_samples": 200,
+      "max_index_heartbeat_gap_ms": 20.3074,
+      "memory": {
+        "managedBytesAfterEachOf20Opens": [
+          38475528,
+          38463120,
+          38471344,
+          38471344,
+          38471344,
+          38471376,
+          38471376,
+          38471376,
+          38471376,
+          38463216,
+          38463216,
+          38463216,
+          38463216,
+          38463216,
+          38463216,
+          38463216,
+          38463216,
+          38463344,
+          38463344,
+          38463344
+        ],
+        "retainedGrowthBytes": -8032,
+        "lastOpenManagedBudgetBytes": 134217728,
+        "shapedSectionCacheLimit": 8,
+        "caveat": "Local experimental budget; managed heap only. Growth is open 20 minus open 6 (after warmup), not full-run growth or leak freedom."
+      },
+      "resize": {
+        "expectedAnchor": 750000,
+        "actualAnchor": 750000,
+        "beforeWidth": 1160,
+        "afterWidth": 1040,
+        "Width": 960,
+        "DpiScale": 1
+      },
+      "focus": {
+        "numericInputFocused": true,
+        "readerPageUnchanged": true,
+        "actualScale": 1
+      },
+      "font_screens": [
+        {
+          "font": "Noto Sans CJK SC",
+          "fileName": "unicode-cjk.png",
+          "actualScale": 1,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "DejaVu Sans",
+          "fileName": "unicode-fallback.png",
+          "actualScale": 1,
+          "baselines": [
+            20.4208984375,
+            20.4208984375,
+            20.4208984375
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "MissingFont-P1",
+          "fileName": "unicode-missing-font.png",
+          "actualScale": 1,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        }
+      ]
+    },
+    {
+      "scale": 1.5,
+      "process_first_screen_ms": 919.0893,
+      "reload_layout_raster_ms": 64.0633,
+      "flip_p95_ms": 2.3529,
+      "reflow_p95_ms": 4.624,
+      "flip_samples": 200,
+      "reflow_samples": 200,
+      "max_index_heartbeat_gap_ms": 22.5931,
+      "memory": {
+        "managedBytesAfterEachOf20Opens": [
+          38495160,
+          38481904,
+          38481904,
+          38481904,
+          38481904,
+          38481936,
+          38481936,
+          38481936,
+          38481936,
+          38482000,
+          38482000,
+          38482000,
+          38482000,
+          38482000,
+          38482000,
+          38482848,
+          38482000,
+          38482128,
+          38482128,
+          38482128
+        ],
+        "retainedGrowthBytes": 192,
+        "lastOpenManagedBudgetBytes": 134217728,
+        "shapedSectionCacheLimit": 8,
+        "caveat": "Local experimental budget; managed heap only. Growth is open 20 minus open 6 (after warmup), not full-run growth or leak freedom."
+      },
+      "resize": {
+        "expectedAnchor": 750000,
+        "actualAnchor": 750000,
+        "beforeWidth": 1160,
+        "afterWidth": 1040,
+        "Width": 960,
+        "DpiScale": 1.5
+      },
+      "focus": {
+        "numericInputFocused": true,
+        "readerPageUnchanged": true,
+        "actualScale": 1.5
+      },
+      "font_screens": [
+        {
+          "font": "Noto Sans CJK SC",
+          "fileName": "unicode-cjk.png",
+          "actualScale": 1.5,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "DejaVu Sans",
+          "fileName": "unicode-fallback.png",
+          "actualScale": 1.5,
+          "baselines": [
+            20.4208984375,
+            20.4208984375,
+            20.4208984375
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "MissingFont-P1",
+          "fileName": "unicode-missing-font.png",
+          "actualScale": 1.5,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        }
+      ]
+    },
+    {
+      "scale": 2,
+      "process_first_screen_ms": 912.682,
+      "reload_layout_raster_ms": 43.2422,
+      "flip_p95_ms": 3.4933,
+      "reflow_p95_ms": 5.5498,
+      "flip_samples": 200,
+      "reflow_samples": 200,
+      "max_index_heartbeat_gap_ms": 33.108,
+      "memory": {
+        "managedBytesAfterEachOf20Opens": [
+          46883408,
+          46871848,
+          46871000,
+          46871000,
+          46871000,
+          46871880,
+          46871032,
+          46879256,
+          46879256,
+          46871096,
+          46879320,
+          46871944,
+          46871096,
+          46871944,
+          46871096,
+          46871096,
+          46871096,
+          46871224,
+          46880296,
+          46879448
+        ],
+        "retainedGrowthBytes": 7568,
+        "lastOpenManagedBudgetBytes": 134217728,
+        "shapedSectionCacheLimit": 8,
+        "caveat": "Local experimental budget; managed heap only. Growth is open 20 minus open 6 (after warmup), not full-run growth or leak freedom."
+      },
+      "resize": {
+        "expectedAnchor": 750000,
+        "actualAnchor": 750000,
+        "beforeWidth": 1160,
+        "afterWidth": 1040,
+        "Width": 960,
+        "DpiScale": 2
+      },
+      "focus": {
+        "numericInputFocused": true,
+        "readerPageUnchanged": true,
+        "actualScale": 2
+      },
+      "font_screens": [
+        {
+          "font": "Noto Sans CJK SC",
+          "fileName": "unicode-cjk.png",
+          "actualScale": 2,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "DejaVu Sans",
+          "fileName": "unicode-fallback.png",
+          "actualScale": 2,
+          "baselines": [
+            20.4208984375,
+            20.4208984375,
+            20.4208984375
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        },
+        {
+          "font": "MissingFont-P1",
+          "fileName": "unicode-missing-font.png",
+          "actualScale": 2,
+          "baselines": [
+            25.52,
+            25.52,
+            25.52
+          ],
+          "Hash": "084c2c099092c75f500c0907a8a9f360116982bde63f7caa4c7ae47ab0cde2b0"
+        }
+      ]
+    }
+  ]
+}

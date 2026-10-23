@@ -1,0 +1,1072 @@
+{
+  "passed": true,
+  "syntheticSupported": 11,
+  "syntheticRejected": 15,
+  "realBooksProvided": 0,
+  "marketCompatibilityRate": "not measured",
+  "allFixturesDeterministic": true,
+  "rows": [
+    {
+      "variant": "basic",
+      "synthetic": true,
+      "sourceSha256": "e8bd8f031e74b73b9c1a86d60ec367966ed394fc81d9d17a5981de0ff1752560",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "6f63126649462276afcb5c540ebe629ced8f7a8751dbef3bf95ecae548770aac",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 643
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "f15c4ad986be6ac60758f6bf652dbfcb47500d1d9f479f4c7b54fe7411de66fa",
+      "inventory": [
+        {
+          "Path": "books/managed/d3c73bd5-5f9b-4b82-880e-d030de779aca/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1286,
+          "Sha256": "2dad40e2c0332f7185ef677fab4b0f7a2eae089706edea8d9738f125312595e9"
+        },
+        {
+          "Path": "books/managed/d3c73bd5-5f9b-4b82-880e-d030de779aca/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/d3c73bd5-5f9b-4b82-880e-d030de779aca/document-v1.json",
+          "Bytes": 2569,
+          "Sha256": "6f63126649462276afcb5c540ebe629ced8f7a8751dbef3bf95ecae548770aac"
+        },
+        {
+          "Path": "books/managed/d3c73bd5-5f9b-4b82-880e-d030de779aca/source.epub",
+          "Bytes": 1963,
+          "Sha256": "e8bd8f031e74b73b9c1a86d60ec367966ed394fc81d9d17a5981de0ff1752560"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "toc-order",
+      "synthetic": true,
+      "sourceSha256": "6bea62ffde5d0fa7a3ccf2693d8ed8b9e03d63de6f75d36811fa22824fede3fb",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "e8e83df2217b3146aa0ed08cbcbe19283218434080532154b908c5ac81d433a9",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 643
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "77242736df6934f664af6749e5a7fb8667f607f40520d901c36a9400e209e04e",
+      "inventory": [
+        {
+          "Path": "books/managed/338fc436-f813-45ec-a54c-93386b46bf20/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1286,
+          "Sha256": "2dad40e2c0332f7185ef677fab4b0f7a2eae089706edea8d9738f125312595e9"
+        },
+        {
+          "Path": "books/managed/338fc436-f813-45ec-a54c-93386b46bf20/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/338fc436-f813-45ec-a54c-93386b46bf20/document-v1.json",
+          "Bytes": 2573,
+          "Sha256": "e8e83df2217b3146aa0ed08cbcbe19283218434080532154b908c5ac81d433a9"
+        },
+        {
+          "Path": "books/managed/338fc436-f813-45ec-a54c-93386b46bf20/source.epub",
+          "Bytes": 1963,
+          "Sha256": "6bea62ffde5d0fa7a3ccf2693d8ed8b9e03d63de6f75d36811fa22824fede3fb"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "duplicate-titles",
+      "synthetic": true,
+      "sourceSha256": "96082ea690ff5bf59d9ca70730c70744d5a48ba1a0d0c3fb24bf3958db12d660",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "cdcccceb226d6b4225ac4c8fc1d682987cd4059d76b22fbf7ad1f1dbf4f4ba5f",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u540C\u540D\u7AE0\u8282",
+          "Order": 0,
+          "Utf16Length": 641
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u540C\u540D\u7AE0\u8282",
+          "Order": 1,
+          "Utf16Length": 80
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u540C\u540D\u7AE0\u8282",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u540C\u540D\u7AE0\u8282",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 5,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "b1ff40b753a864db499612ee8cef93c160d995ccb6338341b56eb85a0a08b29c",
+      "inventory": [
+        {
+          "Path": "books/managed/9208169b-d210-4dc2-93f3-17e63a18f48e/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1282,
+          "Sha256": "ac5a18ce6f5e6bd33c59f371ecbbeae9226fd67a09257fad3f4a384f9815c2d8"
+        },
+        {
+          "Path": "books/managed/9208169b-d210-4dc2-93f3-17e63a18f48e/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 160,
+          "Sha256": "3230f1581850d7bc6c2027c97219a43c1212f70ba84c9fcb13cc8a19153aff58"
+        },
+        {
+          "Path": "books/managed/9208169b-d210-4dc2-93f3-17e63a18f48e/document-v1.json",
+          "Bytes": 2552,
+          "Sha256": "cdcccceb226d6b4225ac4c8fc1d682987cd4059d76b22fbf7ad1f1dbf4f4ba5f"
+        },
+        {
+          "Path": "books/managed/9208169b-d210-4dc2-93f3-17e63a18f48e/source.epub",
+          "Bytes": 1942,
+          "Sha256": "96082ea690ff5bf59d9ca70730c70744d5a48ba1a0d0c3fb24bf3958db12d660"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "nested-toc",
+      "synthetic": true,
+      "sourceSha256": "5737881048aa941dee0ff8a7b3934095a29e39a4c1920fa9e3645841abeea37c",
+      "result": "supported_with_declared_degradation",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002\u6CE8\u610F\uFF1A\u76EE\u5F55\u6307\u5411\u975E\u7EBF\u6027/\u975E\u6B63\u6587\u8D44\u6E90\uFF0C\u5DF2\u8DF3\u8FC7\u3002",
+      "canonicalSha256": "9cfc51b5bd27d89bb64f1f2e888ab89cb58362db288fc98633998a8928d6cfc6",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 643
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u5377\u4E00",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": [
+            {
+              "Key": "toc-2",
+              "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+              "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+              "Utf16Offset": 0,
+              "NonTextBlockKey": null,
+              "Children": []
+            },
+            {
+              "Key": "toc-3",
+              "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+              "ChapterKey": "sp-fc7a78472029444a6d87f557",
+              "Utf16Offset": 7,
+              "NonTextBlockKey": null,
+              "Children": []
+            }
+          ]
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "4ad8f2d45a5ecf196134a889766539a7d4e9795b98ccbec2ad812f039a79f854",
+      "inventory": [
+        {
+          "Path": "books/managed/5a1d401f-a550-4feb-9cb1-e2436cb1020d/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1286,
+          "Sha256": "2dad40e2c0332f7185ef677fab4b0f7a2eae089706edea8d9738f125312595e9"
+        },
+        {
+          "Path": "books/managed/5a1d401f-a550-4feb-9cb1-e2436cb1020d/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/5a1d401f-a550-4feb-9cb1-e2436cb1020d/document-v1.json",
+          "Bytes": 2708,
+          "Sha256": "9cfc51b5bd27d89bb64f1f2e888ab89cb58362db288fc98633998a8928d6cfc6"
+        },
+        {
+          "Path": "books/managed/5a1d401f-a550-4feb-9cb1-e2436cb1020d/source.epub",
+          "Bytes": 1978,
+          "Sha256": "5737881048aa941dee0ff8a7b3934095a29e39a4c1920fa9e3645841abeea37c"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "image-styles",
+      "synthetic": true,
+      "sourceSha256": "a74c8c7870f79f4ac581f4302d3e96b961937f712277e1e32dcef7b9e661ba7e",
+      "result": "supported_with_declared_degradation",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002\u6CE8\u610F\uFF1A\u590D\u6742CSS\u4EC5\u4FDD\u7559\u57FA\u672C\u7C97\u659C\u4F53\uFF0C\u9875\u9762\u5E03\u5C40\u7531\u9605\u8BFB\u504F\u597D\u51B3\u5B9A\u3002",
+      "canonicalSha256": "b582510f1d6237d328cf6edc572a597644552cc2c96570b6afad789bd25ff58d",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 681
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [
+        {
+          "Key": "r-8cdb4291bcc22472f1032ee8",
+          "Path": "resources/r-8cdb4291bcc22472f1032ee8.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        }
+      ],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "72d2d4c649107abdb1033d0985813f15d92f51ab013ca3f7178a8f946987fc16",
+      "inventory": [
+        {
+          "Path": "books/managed/21081eba-5604-47cb-8f47-e48f135e3b12/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1362,
+          "Sha256": "3f9baf5b4db0f41f56e189b4dcedcf28461f805d11e0460a8d8cea8053809985"
+        },
+        {
+          "Path": "books/managed/21081eba-5604-47cb-8f47-e48f135e3b12/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/21081eba-5604-47cb-8f47-e48f135e3b12/document-v1.json",
+          "Bytes": 3862,
+          "Sha256": "b582510f1d6237d328cf6edc572a597644552cc2c96570b6afad789bd25ff58d"
+        },
+        {
+          "Path": "books/managed/21081eba-5604-47cb-8f47-e48f135e3b12/resources/r-8cdb4291bcc22472f1032ee8.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/21081eba-5604-47cb-8f47-e48f135e3b12/source.epub",
+          "Bytes": 82835,
+          "Sha256": "a74c8c7870f79f4ac581f4302d3e96b961937f712277e1e32dcef7b9e661ba7e"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "large-image",
+      "synthetic": true,
+      "sourceSha256": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82",
+      "result": "supported_with_declared_degradation",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002\u6CE8\u610F\uFF1A\u590D\u6742CSS\u4EC5\u4FDD\u7559\u57FA\u672C\u7C97\u659C\u4F53\uFF0C\u9875\u9762\u5E03\u5C40\u7531\u9605\u8BFB\u504F\u597D\u51B3\u5B9A\u3002",
+      "canonicalSha256": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 681
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [
+        {
+          "Key": "r-8cdb4291bcc22472f1032ee8",
+          "Path": "resources/r-8cdb4291bcc22472f1032ee8.image",
+          "MediaType": "image/png",
+          "PixelWidth": 2400,
+          "PixelHeight": 1800,
+          "Sha256": "7276159bac5e71ddb7a95a023b31b2e3cee90bf661d43eaa300303bfb9c7b4be"
+        }
+      ],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "9a58bf46f41d9ac2bf9237945b5455163fb11873a82147972f7e97d7c5cae58e",
+      "inventory": [
+        {
+          "Path": "books/managed/0f186fe9-3bb3-46b4-9e53-00a63f89f320/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1362,
+          "Sha256": "3f9baf5b4db0f41f56e189b4dcedcf28461f805d11e0460a8d8cea8053809985"
+        },
+        {
+          "Path": "books/managed/0f186fe9-3bb3-46b4-9e53-00a63f89f320/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/0f186fe9-3bb3-46b4-9e53-00a63f89f320/document-v1.json",
+          "Bytes": 3865,
+          "Sha256": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351"
+        },
+        {
+          "Path": "books/managed/0f186fe9-3bb3-46b4-9e53-00a63f89f320/resources/r-8cdb4291bcc22472f1032ee8.image",
+          "Bytes": 224718,
+          "Sha256": "7276159bac5e71ddb7a95a023b31b2e3cee90bf661d43eaa300303bfb9c7b4be"
+        },
+        {
+          "Path": "books/managed/0f186fe9-3bb3-46b4-9e53-00a63f89f320/source.epub",
+          "Bytes": 45994,
+          "Sha256": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "inline-style",
+      "synthetic": true,
+      "sourceSha256": "031f310844b5e3961822a91b5689a0edaef319f95a59b784d7b384818a4b734b",
+      "result": "supported_with_declared_degradation",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002\u6CE8\u610F\uFF1A\u590D\u6742CSS\u4EC5\u4FDD\u7559\u57FA\u672C\u7C97\u659C\u4F53\uFF0C\u9875\u9762\u5E03\u5C40\u7531\u9605\u8BFB\u504F\u597D\u51B3\u5B9A\u3002",
+      "canonicalSha256": "3dfdfd706c79ef57c0f53f1d14ea7dee7a0b8a2b51d34e5f0be0098662a03ef1",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 659
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "f6745394c0d8cd19c56910ee22425aea76770ebf27a85d1b1f294b4d2e5ee390",
+      "inventory": [
+        {
+          "Path": "books/managed/bfee1331-4f18-49dc-a88f-afd61b21c334/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1318,
+          "Sha256": "42153af31e424a54cfe9883c6713c72949c529e66d296e11abf9764dec09fcf9"
+        },
+        {
+          "Path": "books/managed/bfee1331-4f18-49dc-a88f-afd61b21c334/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/bfee1331-4f18-49dc-a88f-afd61b21c334/document-v1.json",
+          "Bytes": 3138,
+          "Sha256": "3dfdfd706c79ef57c0f53f1d14ea7dee7a0b8a2b51d34e5f0be0098662a03ef1"
+        },
+        {
+          "Path": "books/managed/bfee1331-4f18-49dc-a88f-afd61b21c334/source.epub",
+          "Bytes": 2061,
+          "Sha256": "031f310844b5e3961822a91b5689a0edaef319f95a59b784d7b384818a4b734b"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "unicode-path",
+      "synthetic": true,
+      "sourceSha256": "98c6cf2eb0065b8a7e99b82cd6debe25ef265322216aa31fefca48e0eb59b04d",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "538dbef969fedb8eab18a4679dc386d7cddee0008b7d42acc5d89ecbbcb22f9f",
+      "chapters": [
+        {
+          "Key": "sp-b4ab63758d63a3ace00e08d7",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 643
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-b4ab63758d63a3ace00e08d7",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "fa37d075823243e990f3134e1fcd7dfb8835073c784e1a8657f96b0f6ebae088",
+      "inventory": [
+        {
+          "Path": "books/managed/61cfee98-3505-4216-83c5-d54dffd2453f/chapters/sp-b4ab63758d63a3ace00e08d7.utf16",
+          "Bytes": 1286,
+          "Sha256": "2dad40e2c0332f7185ef677fab4b0f7a2eae089706edea8d9738f125312595e9"
+        },
+        {
+          "Path": "books/managed/61cfee98-3505-4216-83c5-d54dffd2453f/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/61cfee98-3505-4216-83c5-d54dffd2453f/document-v1.json",
+          "Bytes": 2576,
+          "Sha256": "538dbef969fedb8eab18a4679dc386d7cddee0008b7d42acc5d89ecbbcb22f9f"
+        },
+        {
+          "Path": "books/managed/61cfee98-3505-4216-83c5-d54dffd2453f/source.epub",
+          "Bytes": 1985,
+          "Sha256": "98c6cf2eb0065b8a7e99b82cd6debe25ef265322216aa31fefca48e0eb59b04d"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "epub2-ncx",
+      "synthetic": true,
+      "sourceSha256": "cf885f501419f3ec707628b4462939e1507d3028d33d13aaa04e8c41b6d10497",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "f5a6db8659fabf7c1877254c03fef0d017efbdfe177928338ac7bfb51d511157",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 643
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "b48164406a37620b842709233a69f37c99b4602e125b5e6299f1cf6d1866d98d",
+      "inventory": [
+        {
+          "Path": "books/managed/d23e512f-ffd2-4f2a-ae1f-d001c0b69a77/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1286,
+          "Sha256": "2dad40e2c0332f7185ef677fab4b0f7a2eae089706edea8d9738f125312595e9"
+        },
+        {
+          "Path": "books/managed/d23e512f-ffd2-4f2a-ae1f-d001c0b69a77/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/d23e512f-ffd2-4f2a-ae1f-d001c0b69a77/document-v1.json",
+          "Bytes": 2547,
+          "Sha256": "f5a6db8659fabf7c1877254c03fef0d017efbdfe177928338ac7bfb51d511157"
+        },
+        {
+          "Path": "books/managed/d23e512f-ffd2-4f2a-ae1f-d001c0b69a77/source.epub",
+          "Bytes": 2022,
+          "Sha256": "cf885f501419f3ec707628b4462939e1507d3028d33d13aaa04e8c41b6d10497"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "long-chapter",
+      "synthetic": true,
+      "sourceSha256": "e9f0712b69631a49af5a0db312f2e43414da29c6f7a77f678b7a3f6e0c14f867",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "5cbe8fdfbaabf9eeac4cd73adeb8e23a6ecf2c8a4564c641348395fd36bd93f0",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 42407
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "b29b86db43ca91d20f1f22e35155e51a425317cc590637f08f187cf23592e847",
+      "inventory": [
+        {
+          "Path": "books/managed/405fc6f2-6cf3-4f67-aada-806d8df60187/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 84814,
+          "Sha256": "597dd76e0e5d559853f97158c12f903b26a3a00fb59c5136668889ce7f41298f"
+        },
+        {
+          "Path": "books/managed/405fc6f2-6cf3-4f67-aada-806d8df60187/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/405fc6f2-6cf3-4f67-aada-806d8df60187/document-v1.json",
+          "Bytes": 70869,
+          "Sha256": "5cbe8fdfbaabf9eeac4cd73adeb8e23a6ecf2c8a4564c641348395fd36bd93f0"
+        },
+        {
+          "Path": "books/managed/405fc6f2-6cf3-4f67-aada-806d8df60187/source.epub",
+          "Bytes": 2669,
+          "Sha256": "e9f0712b69631a49af5a0db312f2e43414da29c6f7a77f678b7a3f6e0c14f867"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "many-images",
+      "synthetic": true,
+      "sourceSha256": "3fb85459eff3f40272ec654da52e8afd72cb77564ea032a9de6fa5ad77a80640",
+      "result": "supported",
+      "reason": "\u5BFC\u5165\u6210\u529F\u3002",
+      "canonicalSha256": "1f9102c857a29cfd38b52f6da8dd7d6c74df2c38c4e919589d9459398503e2e3",
+      "chapters": [
+        {
+          "Key": "sp-9c9b173769a20a6d5e97255f",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "Order": 0,
+          "Utf16Length": 788
+        },
+        {
+          "Key": "sp-fc7a78472029444a6d87f557",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "Order": 1,
+          "Utf16Length": 82
+        }
+      ],
+      "toc": [
+        {
+          "Key": "toc-1",
+          "Title": "\u7B2C\u4E00\u7AE0 \u8D77\u70B9",
+          "ChapterKey": "sp-9c9b173769a20a6d5e97255f",
+          "Utf16Offset": 0,
+          "NonTextBlockKey": null,
+          "Children": []
+        },
+        {
+          "Key": "toc-2",
+          "Title": "\u7B2C\u4E8C\u7AE0 \u5F52\u9014",
+          "ChapterKey": "sp-fc7a78472029444a6d87f557",
+          "Utf16Offset": 7,
+          "NonTextBlockKey": null,
+          "Children": []
+        }
+      ],
+      "images": [
+        {
+          "Key": "r-0e2426a2dc74c89c42e7e3d8",
+          "Path": "resources/r-0e2426a2dc74c89c42e7e3d8.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-3b90b5f9f98a1623f8c40e6d",
+          "Path": "resources/r-3b90b5f9f98a1623f8c40e6d.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-452c1207392b2ffd4eae3aee",
+          "Path": "resources/r-452c1207392b2ffd4eae3aee.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-7013e00c03fca9ae9a9e32ac",
+          "Path": "resources/r-7013e00c03fca9ae9a9e32ac.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-73f9794385729d37d8f9748b",
+          "Path": "resources/r-73f9794385729d37d8f9748b.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-792f73484bb12a0f5545b5b3",
+          "Path": "resources/r-792f73484bb12a0f5545b5b3.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-8a32b1a99c733e84f0eac468",
+          "Path": "resources/r-8a32b1a99c733e84f0eac468.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-8cdb4291bcc22472f1032ee8",
+          "Path": "resources/r-8cdb4291bcc22472f1032ee8.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-933308bd34b0c05165f054e3",
+          "Path": "resources/r-933308bd34b0c05165f054e3.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-b1fc1ed7376df1c3319a7a26",
+          "Path": "resources/r-b1fc1ed7376df1c3319a7a26.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-ea572a78a728047a0a810461",
+          "Path": "resources/r-ea572a78a728047a0a810461.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Key": "r-fa520e8f30ca048d3c4c4f5d",
+          "Path": "resources/r-fa520e8f30ca048d3c4c4f5d.image",
+          "MediaType": "image/png",
+          "PixelWidth": 240,
+          "PixelHeight": 180,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        }
+      ],
+      "sourceUnchanged": true,
+      "sessionMilliseconds": 1275,
+      "quoteExactAfterCompleteBackupDeleteRestore": true,
+      "dataSha256": "74e9d4785a9c83a8d02b45ebd327abe46c5ea75b00b7883cc81fe1412bd3f003",
+      "inventory": [
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+          "Bytes": 1576,
+          "Sha256": "c5a70ca361312b0dbb2ada495892ae3bc97f9814b786605c4fd36a177380c9c5"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/chapters/sp-fc7a78472029444a6d87f557.utf16",
+          "Bytes": 164,
+          "Sha256": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/document-v1.json",
+          "Bytes": 10341,
+          "Sha256": "1f9102c857a29cfd38b52f6da8dd7d6c74df2c38c4e919589d9459398503e2e3"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-0e2426a2dc74c89c42e7e3d8.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-3b90b5f9f98a1623f8c40e6d.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-452c1207392b2ffd4eae3aee.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-7013e00c03fca9ae9a9e32ac.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-73f9794385729d37d8f9748b.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-792f73484bb12a0f5545b5b3.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-8a32b1a99c733e84f0eac468.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-8cdb4291bcc22472f1032ee8.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-933308bd34b0c05165f054e3.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-b1fc1ed7376df1c3319a7a26.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-ea572a78a728047a0a810461.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/resources/r-fa520e8f30ca048d3c4c4f5d.image",
+          "Bytes": 91485,
+          "Sha256": "0a21430a4fd3c229f080ec94fea052580a9b4cb7fad6aa2e4020ded62431df0b"
+        },
+        {
+          "Path": "books/managed/3a163109-2a46-4ad7-925c-6e1df84b2565/source.epub",
+          "Bytes": 970458,
+          "Sha256": "3fb85459eff3f40272ec654da52e8afd72cb77564ea032a9de6fa5ad77a80640"
+        }
+      ],
+      "integrity": "ok"
+    },
+    {
+      "variant": "missing-image",
+      "synthetic": true,
+      "sourceSha256": "3ef5c22773abaa6824de93aa2dcb3bee13d565d4a9886338b3eb42cfa8bb1342",
+      "result": "rejected",
+      "reason": "MissingResource\uFF1Amanifest\u8D44\u6E90\u4E0D\u5B58\u5728\uFF1AOEBPS/picture.png",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "traversal",
+      "synthetic": true,
+      "sourceSha256": "a20b2147b9f425085c317db6e49c6ffa9a4710f474d764a30e483a3ec58665a6",
+      "result": "rejected",
+      "reason": "UnsafePath\uFF1AEPUB\u6761\u76EE\u8DEF\u5F84\u65E0\u6548\u6216\u8D8A\u754C\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "remote-image",
+      "synthetic": true,
+      "sourceSha256": "0b2c5d1edaf29c687ff122747e6578bbebf357e58ab76f433a8851bd1f6aef1a",
+      "result": "rejected",
+      "reason": "UnsafeResource\uFF1A\u7981\u6B62\u5916\u90E8/\u7EDD\u5BF9\u8D44\u6E90\u548C\u6B67\u4E49\u8DEF\u5F84\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "external-css",
+      "synthetic": true,
+      "sourceSha256": "56ad1e5cb37cc8b5f6843fd96d3477490de8fcf11dc429c7026798c0a9ea23ca",
+      "result": "rejected",
+      "reason": "UnsafeResource\uFF1A\u7981\u6B62\u5916\u90E8/\u7EDD\u5BF9\u8D44\u6E90\u548C\u6B67\u4E49\u8DEF\u5F84\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "dtd",
+      "synthetic": true,
+      "sourceSha256": "64ce084ab66d28f183f7b428b24bb2ce655f9b426dca17d9f0837526a45528cf",
+      "result": "rejected",
+      "reason": "InvalidFormat\uFF1AEPUB ZIP/XML\u635F\u574F\u6216\u7F16\u7801\u65E0\u6548\u3002For security reasons DTD is prohibited in this XML document. To enable DTD processing set the DtdProcessing property on XmlReaderSettings to Parse and pass the settings into XmlReader.Create method.",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "script",
+      "synthetic": true,
+      "sourceSha256": "35c59cf79cd413edafe3af788a7229a1fb9d24c823c135e61649ea7b316fe2e1",
+      "result": "rejected",
+      "reason": "UnsupportedFormat\uFF1AEPUB\u542B\u811A\u672C/\u5D4C\u5165\u5185\u5BB9\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "fixed-layout",
+      "synthetic": true,
+      "sourceSha256": "6953d80eaaa91f029d14e3f61a19fd8d35a70b59ba6c21851baa009a4b65f302",
+      "result": "rejected",
+      "reason": "UnsupportedFormat\uFF1A\u56FA\u5B9A\u7248\u5F0FEPUB\u6682\u4E0D\u652F\u6301\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "drm",
+      "synthetic": true,
+      "sourceSha256": "91fba743ca5d7d3c8782b8c62b5e59c638eac5a042aecfc0d01ed29440dcdc89",
+      "result": "rejected",
+      "reason": "UnsupportedFormat\uFF1ADRM/\u52A0\u5BC6\u8D44\u6E90\u6682\u4E0D\u652F\u6301\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "broken-xhtml",
+      "synthetic": true,
+      "sourceSha256": "c183f2e2603808c297497b4a1c4da1430d2e720449784e41b2748614d40c294a",
+      "result": "rejected",
+      "reason": "InvalidFormat\uFF1AEPUB ZIP/XML\u635F\u574F\u6216\u7F16\u7801\u65E0\u6548\u3002The \u0027p\u0027 start tag on line 1 position 14 does not match the end tag of \u0027body\u0027. Line 1, position 20.",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "oversize-image",
+      "synthetic": true,
+      "sourceSha256": "387098172c5c57773efc814d2c48c24b207e6d45b916f397d63b4ddf910258c3",
+      "result": "rejected",
+      "reason": "LimitExceeded\uFF1A\u56FE\u7247\u8D85\u8FC7\u50CF\u7D20\u9884\u7B97\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "bad-image",
+      "synthetic": true,
+      "sourceSha256": "9714a5c371d232a48307aa7cfbcfcdfdd21b6487799d05e678b8b5992070e12f",
+      "result": "rejected",
+      "reason": "InvalidFormat\uFF1A\u56FE\u7247\u5934\u65E0\u6548\u6216\u683C\u5F0F\u4E0D\u652F\u6301\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "encoded-parent",
+      "synthetic": true,
+      "sourceSha256": "b9766271b64561c9bd1329ade6e5b6a7770a6fa51a05c824fdf116a0e1223c1e",
+      "result": "rejected",
+      "reason": "UnsafePath\uFF1A\u8D44\u6E90\u8D8A\u8FC7EPUB\u6839\u76EE\u5F55\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "duplicate-path",
+      "synthetic": true,
+      "sourceSha256": "4a4af73308d805bc26a56b7d866d0be7ecdeb261beed87972f7451d449fc8ec2",
+      "result": "rejected",
+      "reason": "UnsafePath\uFF1AEPUB\u91CD\u590D\u8DEF\u5F84\u6216\u7B26\u53F7\u94FE\u63A5\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "symlink",
+      "synthetic": true,
+      "sourceSha256": "a1dbc459f553e5a4cc5755c9d0bbd721a0dd105314537939364e7f533e21c429",
+      "result": "rejected",
+      "reason": "UnsafePath\uFF1AEPUB\u91CD\u590D\u8DEF\u5F84\u6216\u7B26\u53F7\u94FE\u63A5\u3002",
+      "sourceUnchanged": true
+    },
+    {
+      "variant": "entry-limit",
+      "synthetic": true,
+      "sourceSha256": "411c87df6c30fa993ff53d3ba924bb25b60e636a0419f2c9f18d813226a1bf4b",
+      "result": "rejected",
+      "reason": "LimitExceeded\uFF1AEPUB\u6761\u76EE\u6570\u8D85\u9650\u3002",
+      "sourceUnchanged": true
+    }
+  ]
+}

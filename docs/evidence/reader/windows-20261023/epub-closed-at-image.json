@@ -1,0 +1,105 @@
+{
+  "AiGenerationBatch": [],
+  "AiGenerationBatchItem": [],
+  "AppMetadata": [
+    {
+      "Key": "LastRestoreId",
+      "Value": ""
+    },
+    {
+      "Key": "InboxSeen/e2deec6496650ca0b048c25aecc4889d9c5de4e652e07717c76741783da6dded",
+      "Value": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82"
+    }
+  ],
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "[合成P7] large-image",
+      "Author": "ReadJournal deterministic fixtures",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639283518075648157,
+      "UpdatedAt": 639283518075648157,
+      "Kind": 1,
+      "BookUid": "f3880dcd-ca6f-4610-9b54-7f5f062331cb"
+    }
+  ],
+  "EbookFile": [
+    {
+      "BookId": 1,
+      "FileId": "a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0",
+      "Format": 2,
+      "SourceRelativePath": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/source.epub",
+      "CanonicalRelativePath": "books/managed/a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0/document-v1.json",
+      "SourceSha256": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82",
+      "CanonicalSha256": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351",
+      "SourceBytes": 45994,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639283230075648170,
+      "Status": 0
+    }
+  ],
+  "EbookProgress": [
+    {
+      "BookId": 1,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "HasStarted": 1,
+      "CurrentPercent": 87.79527559055119,
+      "CompletedUtcTicks": null,
+      "CompletedOffsetMinutes": null,
+      "LastOpenedUtcTicks": 639283230133494411,
+      "LastSavedUtcTicks": 639283230639812154
+    }
+  ],
+  "EbookReadingSession": [
+    {
+      "SessionId": "21a4f685-31c4-4f4e-bab3-2fecf413b4f8",
+      "BookId": 1,
+      "BookUid": "f3880dcd-ca6f-4610-9b54-7f5f062331cb",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "StartPercent": 0.0,
+      "EndPercent": 87.79527559055119,
+      "OpenedUtcTicks": 639283230133494411,
+      "ClosedUtcTicks": 639283230639812154,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 50631,
+      "CloseLocalDate": "2026-10-23",
+      "ClockAnomaly": 0
+    }
+  ],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "正文星光落在书页上。",
+      "Thoughts": "",
+      "Page": null,
+      "IsFavorite": 0,
+      "CreatedAt": 639283518592010540,
+      "UpdatedAt": 639283518592010540,
+      "Revision": 0
+    }
+  ],
+  "QuoteOrigin": [
+    {
+      "QuoteId": 1,
+      "Source": 1,
+      "OriginalText": "正文星光落在书页上。",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":7,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"a3fb3ddb-e336-4bf3-905e-272fcaa3cfc0\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":17,\"NonTextBlockKey\":null}}",
+      "PrefixHash": null,
+      "SuffixHash": null,
+      "LocationStatus": 0,
+      "BatchId": null,
+      "DedupeKey": "c469c40c3846ae05cd6ad2d63c2782262c8c301cc321eccf364fe417196fd97d"
+    }
+  ],
+  "ReadingPlan": [],
+  "ReadingRecord": []
+}

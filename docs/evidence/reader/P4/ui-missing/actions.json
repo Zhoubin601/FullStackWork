@@ -1,0 +1,23 @@
+[
+  {
+    "op": "capture",
+    "name": "01-startup-missing-overview"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "02-missing-library"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\2026Autumn Semester File\FullStack\��ĩ����ҵ-reader-acceptance-20261023\docs\tools\reader\windows_prototype_probe.py", line 88, in <module>
+    assert p.returncode==0,'Inspect native-p1/probe.json and native-p1-process.log'
+           ^^^^^^^^^^^^^^^
+AssertionError: Inspect native-p1/probe.json and native-p1-process.log

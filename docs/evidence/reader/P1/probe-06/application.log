@@ -1,0 +1,5 @@
+System.InvalidOperationException: 外部剪贴板读取失败：Error: target STRING not available
+
+   at ReaderPrototype.ProbeRunner.Require(Boolean condition, String message) in /workspace/FullStackWork/docs/experiments/ReaderPrototype/ProbeRunner.cs:line 17
+   at ReaderPrototype.ProbeRunner.RunAsync(PrototypeWindow window, String outputDirectory, String samplesDirectory) in /workspace/FullStackWork/docs/experiments/ReaderPrototype/ProbeRunner.cs:line 125
+Local native probe: False, evidence: /workspace/FullStackWork/docs/evidence/reader/P1/probe-06/native

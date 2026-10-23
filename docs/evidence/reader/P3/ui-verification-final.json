@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "dataSha256": "40db29e3d0899bd141a2075859e6dfdb00186991348446d9715e6c571a0925c4",
+  "fileSet": [
+    {
+      "Path": "books/managed/00000000-0000-0000-0000-00000000000a/chapters/one.utf16",
+      "Bytes": 42,
+      "Sha256": "a4671ab75c050f17dc09f657bff4244a164e2a2eefa499d0646e9aa91d6e3377"
+    },
+    {
+      "Path": "books/managed/00000000-0000-0000-0000-00000000000a/chapters/two.utf16",
+      "Bytes": 20,
+      "Sha256": "605a95ad92eba147a80d0a1a28005320c086a2c57a35884410a99ec7b28c5e19"
+    },
+    {
+      "Path": "books/managed/00000000-0000-0000-0000-00000000000a/document-v1.json",
+      "Bytes": 1274,
+      "Sha256": "1fdecd4d8999f5d45837c1ea7e14353fb191344557cdb419abc9384785c723e4"
+    },
+    {
+      "Path": "books/managed/00000000-0000-0000-0000-00000000000a/resources/pixel.png",
+      "Bytes": 68,
+      "Sha256": "bc8edffa8a82279b99cc3a8021ea2c820e765a0ffc8f16cfe1baae7d45c8af91"
+    },
+    {
+      "Path": "books/managed/00000000-0000-0000-0000-00000000000a/source.txt",
+      "Bytes": 90,
+      "Sha256": "e599fa9910cbd9f3015ddc6c028c679ab35a2d399003a9b69db4fc20edebe13c"
+    }
+  ],
+  "automaticBackupOldDataMatches": true,
+  "bookCount": 2,
+  "sessionCount": 1,
+  "batchReceipt": "[26,999]",
+  "integrity": "ok",
+  "desktopExportMatchesAutomaticOriginalBusinessAndFiles": true,
+  "desktopExportSha256": "4b57c1388da1df0ff5213f9344b2ab491e1620360f6bec9c46d8aac47d7bb9ac",
+  "desktopExportBytes": 3742,
+  "zipEntries": [
+    "manifest.json",
+    "data.json",
+    "books/managed/00000000-0000-0000-0000-00000000000b/chapters/one.utf16",
+    "books/managed/00000000-0000-0000-0000-00000000000b/chapters/two.utf16",
+    "books/managed/00000000-0000-0000-0000-00000000000b/document-v1.json",
+    "books/managed/00000000-0000-0000-0000-00000000000b/resources/pixel.png",
+    "books/managed/00000000-0000-0000-0000-00000000000b/source.txt"
+  ],
+  "uiProcess": {
+    "normal_closes": [
+      {
+        "op": "normal-close",
+        "run": 1,
+        "exit_code": 0
+      },
+      {
+        "op": "normal-close",
+        "run": 2,
+        "exit_code": 0
+      }
+    ],
+    "default_directory_existence_unchanged": true,
+    "default_existed": false
+  },
+  "cleanSourceProcess": {
+    "normal_closes": [
+      {
+        "op": "normal-close",
+        "run": 1,
+        "exit_code": 0
+      }
+    ],
+    "default_directory_existence_unchanged": true,
+    "default_existed": false
+  },
+  "acceptedCleanSourceScreens": "ui-clean-accepted",
+  "intermediateCaptureNote": "ui-clean-source overview visible; immediate post-navigation capture was black. Kept original; stable separate-command recapture in ui-clean-accepted confirms library. No product change."
+}

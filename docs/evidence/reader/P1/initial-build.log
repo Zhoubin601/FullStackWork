@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  Restored /workspace/FullStackWork/docs/experiments/ReaderPrototype/ReaderPrototype.csproj (in 252 ms).
+/workspace/FullStackWork/docs/experiments/ReaderPrototype/Program.cs(85,40): error CS0103: The name 'ProbeRunner' does not exist in the current context [/workspace/FullStackWork/docs/experiments/ReaderPrototype/ReaderPrototype.csproj]
+
+Build FAILED.
+
+/workspace/FullStackWork/docs/experiments/ReaderPrototype/Program.cs(85,40): error CS0103: The name 'ProbeRunner' does not exist in the current context [/workspace/FullStackWork/docs/experiments/ReaderPrototype/ReaderPrototype.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:03.00

@@ -1,0 +1,802 @@
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.Library\ReadJournal.Library.csproj]
+  ReadJournal.Library -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.Library\bin\Release\net8.0\ReadJournal.Library.dll
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal\ReadJournal.csproj]
+  ReadJournal -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal\bin\Release\net8.0\ReadJournal.dll
+C:\Program Files\dotnet\sdk\8.0.424\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: 找到了特定于版本或特定于发行版的运行时标识符: alpine-x64。受影响的库: SQLitePCLRaw.lib.e_sqlite3。在 .NET 8.0 及更高版本中，默认情况下找不到特定于版本和特定于发行版的运行时标识符的资产。有关详细信息，请参阅 https://aka.ms/dotnet/rid-usage。 [D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReadJournal.UnitTest.csproj]
+  ReadJournal.UnitTest -> D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\bin\Release\net8.0\ReadJournal.UnitTest.dll
+D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\bin\Release\net8.0\ReadJournal.UnitTest.dll (.NETCoreApp,Version=v8.0)的测试运行
+VSTest 版本 17.11.1 (x64)
+
+正在启动测试执行，请稍候...
+总共 1 个测试文件与指定模式相匹配。
+[xUnit.net 00:00:16.01]     ReadJournal.UnitTest.CompleteBackupTests.CleanupFailureReportsCommittedSuccessAndNextStartupCanCleanAfterMoreEdits [FAIL]
+[xUnit.net 00:00:16.06]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "case-duplicate") [FAIL]
+[xUnit.net 00:00:16.10]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "resource-dimensions") [FAIL]
+[xUnit.net 00:00:16.14]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "grapheme") [FAIL]
+[xUnit.net 00:00:16.17]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-json") [FAIL]
+[xUnit.net 00:00:16.20]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "resource-pixels") [FAIL]
+[xUnit.net 00:00:16.23]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "absolute") [FAIL]
+[xUnit.net 00:00:16.27]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "receipt") [FAIL]
+[xUnit.net 00:00:16.30]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "block-gap") [FAIL]
+  失败 ReadJournal.UnitTest.CompleteBackupTests.CleanupFailureReportsCommittedSuccessAndNextStartupCanCleanAfterMoreEdits [35 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.CleanupFailureReportsCommittedSuccessAndNextStartupCanCleanAfterMoreEdits() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 92
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "case-duplicate") [48 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "resource-dimensions") [40 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "grapheme") [37 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-json") [32 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "resource-pixels") [30 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "absolute") [30 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "receipt") [30 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "block-gap") [37 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+[xUnit.net 00:00:16.35]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "missing") [FAIL]
+[xUnit.net 00:00:16.39]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "traversal") [FAIL]
+[xUnit.net 00:00:16.42]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-id") [FAIL]
+[xUnit.net 00:00:16.46]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "extra-secret") [FAIL]
+[xUnit.net 00:00:16.50]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "position") [FAIL]
+[xUnit.net 00:00:16.52]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "canonical") [FAIL]
+[xUnit.net 00:00:16.56]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "percent") [FAIL]
+[xUnit.net 00:00:16.58]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "missing-collection") [FAIL]
+[xUnit.net 00:00:16.65]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "hash") [FAIL]
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "missing") [46 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "traversal") [39 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-id") [32 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "extra-secret") [37 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "position") [31 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "canonical") [28 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "percent") [30 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "missing-collection") [28 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "hash") [63 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+[xUnit.net 00:00:16.70]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "toc-target") [FAIL]
+[xUnit.net 00:00:16.73]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "orphan") [FAIL]
+[xUnit.net 00:00:16.76]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-uid") [FAIL]
+[xUnit.net 00:00:16.80]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "windows") [FAIL]
+[xUnit.net 00:00:16.83]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "symlink") [FAIL]
+[xUnit.net 00:00:16.86]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "data-hash") [FAIL]
+[xUnit.net 00:00:16.90]     ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "canonical-cr") [FAIL]
+[xUnit.net 00:00:16.93]     ReadJournal.UnitTest.CompleteBackupTests.InvalidJournalStopsStartupWithoutDeletingDataOrRecoveryCopies [FAIL]
+[xUnit.net 00:00:16.96]     ReadJournal.UnitTest.CompleteBackupTests.LegacyJsonReplacesEbooksOnlyAfterReadableCompleteAutomaticBackup [FAIL]
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "toc-target") [51 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "orphan") [29 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "duplicate-uid") [31 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "windows") [33 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "symlink") [34 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "data-hash") [29 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(kind: "canonical-cr") [33 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.UntrustedPackageIsRejectedBeforeAutomaticBackupOrDataChanges(String kind) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 58
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.InvalidJournalStopsStartupWithoutDeletingDataOrRecoveryCopies [29 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.InvalidJournalStopsStartupWithoutDeletingDataOrRecoveryCopies() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 103
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.LegacyJsonReplacesEbooksOnlyAfterReadableCompleteAutomaticBackup [32 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.LegacyJsonReplacesEbooksOnlyAfterReadableCompleteAutomaticBackup() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 42
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+[xUnit.net 00:00:17.03]     ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "entries") [FAIL]
+[xUnit.net 00:00:17.05]     ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "json") [FAIL]
+[xUnit.net 00:00:17.09]     ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "archive") [FAIL]
+[xUnit.net 00:00:17.11]     ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "expanded") [FAIL]
+[xUnit.net 00:00:17.14]     ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "automatic") [FAIL]
+[xUnit.net 00:00:17.17]     ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "install") [FAIL]
+[xUnit.net 00:00:17.20]     ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "journal") [FAIL]
+[xUnit.net 00:00:17.23]     ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "sql") [FAIL]
+  失败 ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "entries") [61 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(String budget) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 72
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "json") [27 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(String budget) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 72
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "archive") [32 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(String budget) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 72
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(budget: "expanded") [26 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.ArchiveBudgetsRejectBeforeExpansionOrMutation(String budget) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 72
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "automatic") [28 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 81
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "install") [26 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 81
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "journal") [32 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 81
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(point: "sql") [27 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.PreCommitFailuresRestoreWholeOldDataset(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 81
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+[xUnit.net 00:00:17.28]     ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(point: "restore.after-install") [FAIL]
+[xUnit.net 00:00:17.31]     ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(point: "restore.after-isolate") [FAIL]
+[xUnit.net 00:00:17.34]     ReadJournal.UnitTest.CompleteBackupTests.AtomicExportFailurePreservesExistingReadableTargetAndNoTemporaryFiles [FAIL]
+[xUnit.net 00:00:17.37]     ReadJournal.UnitTest.CompleteBackupTests.CompleteZipRoundTripPreservesAllBusinessRowsFilesAndLocalPreferences [FAIL]
+[xUnit.net 00:00:17.40]     ReadJournal.UnitTest.CompleteBackupTests.PostCommitFailureReturnsSuccessWithRestartWarningAndRecoveryUsesCommittedFact [FAIL]
+[xUnit.net 00:00:17.43]     ReadJournal.UnitTest.CompleteBackupTests.ActiveReaderPreventsRestoreBeforeAutomaticBackup [FAIL]
+  失败 ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(point: "restore.after-install") [43 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 132
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(point: "restore.after-isolate") [31 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.CancellationBeforeSqlCommitRollsBackFilesAndKeepsEpoch(String point) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 132
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.AtomicExportFailurePreservesExistingReadableTargetAndNoTemporaryFiles [29 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.AtomicExportFailurePreservesExistingReadableTargetAndNoTemporaryFiles() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 123
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.CompleteZipRoundTripPreservesAllBusinessRowsFilesAndLocalPreferences [25 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.CompleteZipRoundTripPreservesAllBusinessRowsFilesAndLocalPreferences() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 21
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.PostCommitFailureReturnsSuccessWithRestartWarningAndRecoveryUsesCommittedFact [28 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.PostCommitFailureReturnsSuccessWithRestartWarningAndRecoveryUsesCommittedFact() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 152
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+  失败 ReadJournal.UnitTest.CompleteBackupTests.ActiveReaderPreventsRestoreBeforeAutomaticBackup [29 ms]
+  错误消息:
+   System.AggregateException : One or more errors occurred. (The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')) (The process cannot access the file 'library.lock' because it is being used by another process.)
+---- System.ArgumentException : The UTC Offset of the local dateTime parameter does not match the offset argument. (Parameter 'offset')
+---- System.IO.IOException : The process cannot access the file 'library.lock' because it is being used by another process.
+  堆栈跟踪:
+  
+----- Inner Stack Trace #1 (System.ArgumentException) -----
+   at System.DateTimeOffset..ctor(DateTime dateTime, TimeSpan offset)
+   at ReadJournal.UnitTest.ReaderBackupTestData.SeedAsync(DatabaseService db, DataPaths paths, String label) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\ReaderBackupTestData.cs:line 17
+   at ReadJournal.UnitTest.CompleteBackupTests.Library(String name) in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 15
+   at ReadJournal.UnitTest.CompleteBackupTests.ActiveReaderPreventsRestoreBeforeAutomaticBackup() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 141
+--- End of stack trace from previous location ---
+----- Inner Stack Trace #2 (System.IO.IOException) -----
+   at System.IO.FileSystem.RemoveDirectoryRecursive(String fullPath, WIN32_FIND_DATA& findData, Boolean topLevel)
+   at System.IO.FileSystem.RemoveDirectory(String fullPath, Boolean recursive)
+   at ReadJournal.UnitTest.CompleteBackupTests.Dispose() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\CompleteBackupTests.cs:line 227
+   at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+[xUnit.net 00:02:13.67]     ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook [FAIL]
+  失败 ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook [6 ms]
+  错误消息:
+   System.IO.IOException : 客户端没有所需的特权。 : 'C:\Users\a3185\AppData\Local\Temp\ReadJournalP4Tests\805145a95120416a9f6ba1d042c3a16f\data\books\link.txt'
+  堆栈跟踪:
+     at Interop.Kernel32.CreateSymbolicLink(String symlinkFileName, String targetFileName, Boolean isDirectory)
+   at System.IO.File.CreateSymbolicLink(String path, String pathToTarget)
+   at ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook() in D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\Code\ReadJournal.UnitTest\TxtImportTests.cs:line 170
+--- End of stack trace from previous location ---
+结果文件: D:\2026Autumn Semester File\FullStack\期末大作业-reader-acceptance-20261023\docs\evidence\reader\windows-20261023\windows-release.trx
+
+失败!  - 失败:    42，通过:   230，已跳过:     0，总计:   272，持续时间: 2 m 34 s - ReadJournal.UnitTest.dll (net8.0)

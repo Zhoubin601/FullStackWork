@@ -1,0 +1,8 @@
+{
+  "same_seed_twice_identical": true,
+  "files": 15,
+  "million_text_characters": 1000000,
+  "encodings_and_newlines_roundtrip": true,
+  "epub_container_and_xml_valid": true,
+  "note": "Container/XML checks only; EPUB rendering belongs to P7."
+}

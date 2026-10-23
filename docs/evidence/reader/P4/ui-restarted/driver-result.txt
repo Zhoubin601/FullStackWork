@@ -1,0 +1,3 @@
+Intermediate UI run: UTF8/duplicate/invalid/GB18030/scan/export and delete confirmation captured.
+Escape did not dismiss the explicit confirmation window. The main-window close was correctly refused while the detail action remained busy; the driver's 15-second normal-close wait timed out and its finally block stopped its own app/display.
+This run has no normal-close receipt and is not the final acceptance. Final UI repeats the workflow with explicit confirmation buttons, final code and a fresh isolated dataset in ui-final.

@@ -47,6 +47,11 @@
         "resolved": "2.4.5",
         "contentHash": "OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw=="
       },
+      "AngleSharp": {
+        "type": "Transitive",
+        "resolved": "1.8.5",
+        "contentHash": "BUgFIpmkjwMPi6QneHUHaprjUOGSXoWEF/xi/2seHCpnI8XMHACNiC09rn9qL8jbxrP8jWyJ3DnOjsGvXWNGmw=="
+      },
       "Avalonia": {
         "type": "Transitive",
         "resolved": "11.0.10",
@@ -1338,6 +1343,11 @@
           "System.IO.Pipelines": "6.0.0"
         }
       },
+      "VersOne.Epub": {
+        "type": "Transitive",
+        "resolved": "3.3.6",
+        "contentHash": "X7b7Zvw5lLCRYDdDjqWldkZMZ/+rIvSWHAZjRxdq0fCL8+vv4W/OBiSIL0x8fTv2mlPNWGJcL48BIyIfpw2GBg=="
+      },
       "xunit.abstractions": {
         "type": "Transitive",
         "resolved": "2.0.3",
@@ -1398,7 +1408,9 @@
       "readjournal.library": {
         "type": "Project",
         "dependencies": {
+          "AngleSharp": "[1.8.5, )",
           "CommunityToolkit.Mvvm": "[8.2.2, )",
+          "VersOne.Epub": "[3.3.6, )",
           "sqlite-net-pcl": "[1.8.116, )"
         }
       }

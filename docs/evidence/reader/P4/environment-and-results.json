@@ -1,0 +1,156 @@
+{
+  "phase": "P4",
+  "date": "2026-10-22",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "sdk": "8.0.424",
+  "runtime": "8.0.30",
+  "Avalonia": "11.0.10",
+  "p3PushedSha": "16e41558e8ceb4549274dd26cc6b0321e058350d",
+  "finalTests": {
+    "p4-inbox-tombstone-reviewed.trx": {
+      "total": "217",
+      "executed": "217",
+      "passed": "217",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "p4-final-clean-source.trx": {
+      "total": "217",
+      "executed": "217",
+      "passed": "217",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "preservedP3Tests": 169,
+  "newTests": 48,
+  "sourcePackage": {
+    "Path": "/workspace/.readjournal-env/p4-final-source.zip",
+    "Bytes": 229536,
+    "Files": 169,
+    "Sha256": "097b575eb14550580a54e0644d3afa3cec883ffcd8e774c2ff295bc98f674fbd"
+  },
+  "actualProcessInterruptions": 10,
+  "crashEvidence": "crash-probe-reviewed/probe.json",
+  "actualTxtRoundtrip": {
+    "passed": true,
+    "initialDataSha256": "c91c93269f0829c31f32a71c9e28f5362a8bca6cfacbbaf3d5496db8d26f0744",
+    "allRelatedDataSha256": "ba3aeef54a2d090e542f608e756883d02aa812015df9ea306354ececb25b364b",
+    "impact": {
+      "ManualRecords": 0,
+      "Sessions": 1,
+      "Quotes": 1,
+      "Plans": 1,
+      "ManagedFileBytes": 1780
+    },
+    "inventory": [
+      {
+        "Path": "books/managed/fbfa508b-cb94-4fd2-aa9b-f6c6adac65a8/chapters/ch-0001.utf16",
+        "Bytes": 88,
+        "Sha256": "8881e32d62811dd3ef8d97e18950538811121d9da92ebd674ca6be674a910378"
+      },
+      {
+        "Path": "books/managed/fbfa508b-cb94-4fd2-aa9b-f6c6adac65a8/chapters/ch-0002.utf16",
+        "Bytes": 42,
+        "Sha256": "9f2a4a56413d77863fc0c1d389d2ffdee0b913ddcbed0aa2143224029e8c0d92"
+      },
+      {
+        "Path": "books/managed/fbfa508b-cb94-4fd2-aa9b-f6c6adac65a8/document-v1.json",
+        "Bytes": 1482,
+        "Sha256": "594abd1e3fb140818c881ee84f5409050136229c54bdabda2b0826d2cd3531b9"
+      },
+      {
+        "Path": "books/managed/fbfa508b-cb94-4fd2-aa9b-f6c6adac65a8/source.txt",
+        "Bytes": 168,
+        "Sha256": "acf50867f33eeec0847bc102adb1718abb27a9d0c1ffe9fc973e131ad826b38b"
+      }
+    ],
+    "initialProgressPreserved": true,
+    "sourceUnchanged": true
+  },
+  "insufficientJournal": {
+    "blocked": true,
+    "diagnosis": "RecoveryRequired：导入/删除日志无法确认，请保留 operations/staging/trash/books 后检查。",
+    "allFilesUnchanged": true,
+    "preservedManagedFiles": 4
+  },
+  "desktopDataSha256": "b990ce5ad0110bc1e78a0f762a60b9b3326bd6eab1e383890ed890823d3ae757",
+  "desktopVerification": "ui-verification-final.json",
+  "finalDesktopNormalCloses": 4,
+  "desktopProcessReceipts": {
+    "ui-final": {
+      "normal_closes": [
+        {
+          "op": "normal-close",
+          "run": 1,
+          "exit_code": 0
+        },
+        {
+          "op": "normal-close",
+          "run": 2,
+          "exit_code": 0
+        }
+      ],
+      "default_directory_existence_unchanged": true,
+      "default_existed": false
+    },
+    "ui-missing": {
+      "normal_closes": [
+        {
+          "op": "normal-close",
+          "run": 1,
+          "exit_code": 0
+        }
+      ],
+      "default_directory_existence_unchanged": true,
+      "default_existed": false
+    },
+    "ui-clean-source": {
+      "normal_closes": [
+        {
+          "op": "normal-close",
+          "run": 1,
+          "exit_code": 0
+        }
+      ],
+      "default_directory_existence_unchanged": true,
+      "default_existed": false
+    }
+  },
+  "defaultDirectoryWritten": false,
+  "finalBindingDiagnostics": 0,
+  "retainedEnvironmentWarnings": [
+    "Old Alpine RID NETSDK1206 in fixed SQLite dependency",
+    "DBus/SessionManager unavailable and llvmpipe GLX fallback under Xvfb",
+    "GTK WIDGET_REALIZED_FOR_EVENT diagnostic during native picker close; actual final operations and normal closes passed"
+  ],
+  "restoredEnvironment": "Temporary SDK/UI source data lost when environment restarted; final SDK restored from builds.dotnet.microsoft.com and desktop packages downloaded from allowed deb.debian.org. snapshot.debian.org was denied; no proxy bypass. NuGet restored through configured proxy with locked dependencies.",
+  "sourceArchivePurpose": "Temporary verification only; formal output unchanged",
+  "apiCalls": 0,
+  "windowsValidated": false,
+  "p5Started": false,
+  "p4PushAuthorized": true,
+  "rawOutputReferenceFrozenFixturesChanged": false
+}

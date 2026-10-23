@@ -11,5 +11,7 @@ public class Book
     [System.Text.Json.Serialization.JsonRequired] public string Description { get; set; } = "";
     [System.Text.Json.Serialization.JsonRequired] public DateTime CreatedAt { get; set; }
     [System.Text.Json.Serialization.JsonRequired] public DateTime UpdatedAt { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore] public Reader.BookKind Kind { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore] public Guid BookUid { get; set; } = Guid.NewGuid();
     public override string ToString() => Title;
 }

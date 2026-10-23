@@ -1,0 +1,180 @@
+[
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "settings-before"
+  },
+  {
+    "op": "click",
+    "x": 390,
+    "y": 451
+  },
+  {
+    "op": "capture",
+    "name": "zip-save-dialog"
+  },
+  {
+    "op": "tree",
+    "name": "zip-save-dialog-tree"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "/tmp/readjournal-p3-ui/export.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "zip-export-complete"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "click",
+    "x": 551,
+    "y": 452
+  },
+  {
+    "op": "capture",
+    "name": "zip-open-dialog"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "settings-reopened"
+  },
+  {
+    "op": "click",
+    "x": 550,
+    "y": 452
+  },
+  {
+    "op": "capture",
+    "name": "zip-open-dialog-actual"
+  },
+  {
+    "op": "click",
+    "x": 1082,
+    "y": 774
+  },
+  {
+    "op": "capture",
+    "name": "restore-format-options"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Escape"
+    ]
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "/tmp/readjournal-p3-ui/target.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "restore-confirmation"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "/tmp/readjournal-p3-ui/target.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "restore-confirmation-actual"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "restore-confirm-dialog"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 484
+  },
+  {
+    "op": "capture",
+    "name": "zip-restored-complete"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "reopened-restored-library"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 3,
+    "exit_code": 0
+  }
+]

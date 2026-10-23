@@ -1,0 +1,387 @@
+[
+  {
+    "op": "capture",
+    "name": "01-startup-inbox"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "02-inbox-library"
+  },
+  {
+    "op": "click",
+    "x": 452,
+    "y": 194
+  },
+  {
+    "op": "capture",
+    "name": "03-utf8-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "03-utf8-location"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/source/selected.txt"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "03-utf8-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "03-utf8-result"
+  },
+  {
+    "op": "click",
+    "x": 452,
+    "y": 194
+  },
+  {
+    "op": "capture",
+    "name": "04-duplicate-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "04-duplicate-location"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/source/duplicate.txt"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "04-duplicate-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "04-duplicate-result"
+  },
+  {
+    "op": "click",
+    "x": 452,
+    "y": 194
+  },
+  {
+    "op": "capture",
+    "name": "05-invalid-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "05-invalid-location"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/source/invalid.txt"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "05-invalid-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "05-invalid-result"
+  },
+  {
+    "op": "click",
+    "x": 330,
+    "y": 190
+  },
+  {
+    "op": "capture",
+    "name": "06-encoding-options"
+  },
+  {
+    "op": "click",
+    "x": 322,
+    "y": 260
+  },
+  {
+    "op": "capture",
+    "name": "07-gb18030-selected"
+  },
+  {
+    "op": "click",
+    "x": 452,
+    "y": 194
+  },
+  {
+    "op": "capture",
+    "name": "08-gb-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "08-gb-location"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/source/gb18030.txt"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "08-gb-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "08-gb-result"
+  },
+  {
+    "op": "click",
+    "x": 548,
+    "y": 194
+  },
+  {
+    "op": "capture",
+    "name": "09-scan-no-duplicates"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "10-settings"
+  },
+  {
+    "op": "click",
+    "x": 390,
+    "y": 451
+  },
+  {
+    "op": "capture",
+    "name": "11-export-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "a"
+    ]
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/desktop.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "12-export-submitted"
+  },
+  {
+    "op": "capture",
+    "name": "13-export-complete"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "14-three-books-before-delete"
+  },
+  {
+    "op": "click",
+    "x": 1078,
+    "y": 562
+  },
+  {
+    "op": "capture",
+    "name": "15-selected-detail"
+  },
+  {
+    "op": "click",
+    "x": 623,
+    "y": 369
+  },
+  {
+    "op": "capture",
+    "name": "16-delete-confirmation"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 477
+  },
+  {
+    "op": "capture",
+    "name": "17-after-delete-two-books"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 468
+  },
+  {
+    "op": "capture",
+    "name": "18-settings-before-restore"
+  },
+  {
+    "op": "click",
+    "x": 550,
+    "y": 452
+  },
+  {
+    "op": "capture",
+    "name": "19-restore-picker"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Control_L",
+      "l"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "20-restore-location"
+  },
+  {
+    "op": "type",
+    "text": "/workspace/.readjournal-env/p4-final-ui/desktop.zip"
+  },
+  {
+    "op": "keys",
+    "keys": [
+      "Return"
+    ]
+  },
+  {
+    "op": "capture",
+    "name": "21-restore-path"
+  },
+  {
+    "op": "click",
+    "x": 1008,
+    "y": 820
+  },
+  {
+    "op": "capture",
+    "name": "22-restore-confirmation"
+  },
+  {
+    "op": "click",
+    "x": 823,
+    "y": 484
+  },
+  {
+    "op": "capture",
+    "name": "23-restore-success"
+  },
+  {
+    "op": "capture",
+    "name": "24-restore-success-stable"
+  },
+  {
+    "op": "reopen"
+  },
+  {
+    "op": "normal-close",
+    "run": 1,
+    "exit_code": 0
+  },
+  {
+    "op": "capture",
+    "name": "25-reopened-overview"
+  },
+  {
+    "op": "click",
+    "x": 110,
+    "y": 261
+  },
+  {
+    "op": "capture",
+    "name": "26-reopened-library"
+  },
+  {
+    "op": "finish"
+  },
+  {
+    "op": "normal-close",
+    "run": 2,
+    "exit_code": 0
+  }
+]

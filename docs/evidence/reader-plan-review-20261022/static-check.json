@@ -1,0 +1,31 @@
+{
+  "kind": "independent_plan_static_review",
+  "commit": "0280730a13ce512754f66850a49ee9e27020bdda",
+  "checks": [
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-分阶段实施与验收执行表-v1.md",
+      "sha256": "7d544afd4709af7b0c1e46c9af53861a884e45cd6f9a699bdfcf63adabe5d2be",
+      "matches_previous_manifest": true,
+      "code_fences_balanced": true,
+      "relative_links_valid": true
+    },
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-原生阅读器与AI助手-完整实施规划-v2.md",
+      "sha256": "8ba0496e7c3bd452dff2fe697e52dbbd5dd42dd78f9d6d52b56c50ecbc03e8a3",
+      "matches_previous_manifest": true,
+      "code_fences_balanced": true,
+      "relative_links_valid": true
+    },
+    {
+      "path": "output/reader-plan-v2/20261022-阅记-接口与数据契约-v1.md",
+      "sha256": "04bce10eb152b586d531e7643ca13323fbaf51b3cf290eabebcd818edaa47109",
+      "matches_previous_manifest": true,
+      "code_fences_balanced": true,
+      "relative_links_valid": true
+    }
+  ],
+  "acceptance_cases": 79,
+  "unique_acceptance_cases": 79,
+  "code_changed_in_latest_commit": false,
+  "raw_unchanged_from_fetched_commit": true
+}

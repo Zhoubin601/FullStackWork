@@ -1,0 +1,11 @@
+/workspace/FullStackWork/Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs(235,19): error CS0116: A namespace cannot directly contain members such as fields, methods or statements [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+/workspace/FullStackWork/Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs(235,19): error CS0501: '<invalid-global-code>.RequestNavigationAsync(Action, CancellationToken)' must declare a body because it is not marked abstract, extern, or partial [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+
+Build FAILED.
+
+/workspace/FullStackWork/Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs(235,19): error CS0116: A namespace cannot directly contain members such as fields, methods or statements [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+/workspace/FullStackWork/Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs(235,19): error CS0501: '<invalid-global-code>.RequestNavigationAsync(Action, CancellationToken)' must declare a body because it is not marked abstract, extern, or partial [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:02.62

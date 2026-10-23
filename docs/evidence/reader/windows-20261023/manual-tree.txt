@@ -1,0 +1,418 @@
+[
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      163.0,
+      197.0,
+      1710.0,
+      1200.0
+    ]
+  },
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      163.0,
+      163.0,
+      1710.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统菜单栏",
+    "type": "ControlType.MenuBar",
+    "id": "SystemMenuBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      163.0,
+      163.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      163.0,
+      163.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "最小化",
+    "type": "ControlType.Button",
+    "id": "Minimize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1662.0,
+      153.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "最大化",
+    "type": "ControlType.Button",
+    "id": "Maximize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1733.0,
+      153.0,
+      70.0,
+      44.0
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1803.0,
+      153.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅 记",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      239.0,
+      255.0,
+      60.0
+    ]
+  },
+  {
+    "name": "让每一页，留下回响",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      326.0,
+      255.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      417.0,
+      255.0,
+      444.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      423.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      497.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      571.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      645.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      719.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      193.0,
+      793.0,
+      255.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      520.0,
+      221.0,
+      1311.0,
+      36.0
+    ]
+  },
+  {
+    "name": "＋ 添加书摘",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1663.0,
+      319.0,
+      165.0,
+      62.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      523.0,
+      319.0,
+      1140.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      523.0,
+      408.0,
+      450.0,
+      62.0
+    ]
+  },
+  {
+    "name": "仅收藏",
+    "type": "ControlType.CheckBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      991.0,
+      414.0,
+      108.0,
+      49.0
+    ]
+  },
+  {
+    "name": "搜索 / 刷新",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1117.0,
+      408.0,
+      161.0,
+      62.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      523.0,
+      497.0,
+      1305.0,
+      28.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      523.0,
+      525.0,
+      1305.0,
+      836.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      523.0,
+      525.0,
+      1305.0,
+      299.0
+    ]
+  },
+  {
+    "name": "《Windows 实机手动书》 · 第 15 页",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      558.0,
+      560.0,
+      1235.0,
+      28.0
+    ]
+  },
+  {
+    "name": "★ Windows 实机手动书摘。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      558.0,
+      606.0,
+      1235.0,
+      36.0
+    ]
+  },
+  {
+    "name": "用于核对原有业务回归。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      558.0,
+      660.0,
+      1235.0,
+      28.0
+    ]
+  },
+  {
+    "name": "回到原文",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      558.0,
+      706.0,
+      138.0,
+      62.0
+    ]
+  },
+  {
+    "name": "编辑",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      711.0,
+      706.0,
+      97.0,
+      62.0
+    ]
+  },
+  {
+    "name": "切换收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      823.0,
+      706.0,
+      139.0,
+      62.0
+    ]
+  },
+  {
+    "name": "删除",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      977.0,
+      706.0,
+      96.0,
+      62.0
+    ]
+  }
+]

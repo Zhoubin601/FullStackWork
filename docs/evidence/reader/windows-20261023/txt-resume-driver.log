@@ -1,0 +1,11 @@
+{"time": "2026-10-23 11:29:51+0800", "action": "database-readonly-verification", "label": "txt-after-restart", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 1, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 2, "Quote": 1, "QuoteOrigin": 1, "ReadingPlan": 0, "ReadingRecord": 0}}
+{"time": "2026-10-23 11:29:51+0800", "action": "click", "name": "书摘收藏", "index": 0}
+{"time": "2026-10-23 11:29:52+0800", "action": "screenshot", "file": "20-txt-quote-list-after-menu-save.png", "rect": [-32000, -32000, -31763, -31961], "dpi": 144}
+{"time": "2026-10-23 11:29:52+0800", "action": "click", "name": "回到原文", "index": 0}
+{"time": "2026-10-23 11:29:53+0800", "action": "screenshot", "file": "21-txt-quote-source-highlight.png", "rect": [-32000, -32000, -31763, -31961], "dpi": 144}
+{"time": "2026-10-23 11:29:53+0800", "action": "click", "name": "全屏 F11", "index": 0}
+{"time": "2026-10-23 11:29:54+0800", "action": "screenshot", "file": "22-txt-fullscreen.png", "rect": [-32000, -32000, -31763, -31961], "dpi": 144}
+{"time": "2026-10-23 11:29:55+0800", "action": "click", "name": "阅读统计", "index": 0}
+{"time": "2026-10-23 11:29:55+0800", "action": "screenshot", "file": "23-txt-session-statistics-normal-window.png", "rect": [380, 380, 2112, 1636], "dpi": 144}
+{"time": "2026-10-23 11:29:55+0800", "action": "database-readonly-verification", "label": "txt-final", "integrity": "ok", "foreignKeyErrors": 0, "rows": {"AiGenerationBatch": 0, "AiGenerationBatchItem": 0, "AppMetadata": 1, "Book": 1, "EbookFile": 1, "EbookProgress": 1, "EbookReadingSession": 4, "Quote": 1, "QuoteOrigin": 1, "ReadingPlan": 0, "ReadingRecord": 0}}
+{"time": "2026-10-23 11:29:55+0800", "action": "normal-close", "pid": 16276, "exitCode": 0}

@@ -1,0 +1,16 @@
+{
+  "normal_closes": [
+    {
+      "op": "normal-close",
+      "run": 1,
+      "exit_code": 0
+    },
+    {
+      "op": "normal-close",
+      "run": 2,
+      "exit_code": 0
+    }
+  ],
+  "default_directory_existence_unchanged": true,
+  "default_existed": false
+}

@@ -1,0 +1,55 @@
+{
+  "platform": "Unix 6.18.55.0",
+  "runtime": "8.0.30",
+  "schemaBefore": 1,
+  "legacyAllFieldsMatch": true,
+  "schemaAfter": 2,
+  "books": [
+    {
+      "Id": 11,
+      "BookUid": "9614f375-06a8-46c9-8e2f-b155e7b0d8c3",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u8FDB\u884C\u4E2D\u7684\u4E66"
+    },
+    {
+      "Id": 27,
+      "BookUid": "0e8355a8-6fca-450f-9158-fe2d1c1cebe1",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u5DF2\u8BFB\u5B8C\u7684\u4E66"
+    },
+    {
+      "Id": 93,
+      "BookUid": "b565005e-561c-4b39-80ad-6b6c9779247a",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u672A\u5F00\u59CB\u7684\u4E66"
+    }
+  ],
+  "quoteRevisions": [
+    {
+      "Id": 41,
+      "Revision": 0
+    },
+    {
+      "Id": 57,
+      "Revision": 0
+    }
+  ],
+  "integrity": "ok",
+  "foreignKeyViolations": 0,
+  "secondProcessWhileHeld": {
+    "ExitCode": 23,
+    "Output": "\u8BE5\u4E66\u5E93\u5DF2\u88AB\u53E6\u4E00\u5B9E\u4F8B\u6253\u5F00\uFF0C\u6216\u9501\u6587\u4EF6\u65E0\u6CD5\u8BBF\u95EE\u3002\u8BF7\u5173\u95ED\u53E6\u4E00\u5B9E\u4F8B\u540E\u91CD\u8BD5\u3002\n",
+    "Error": ""
+  },
+  "secondProcessAfterRelease": {
+    "ExitCode": 0,
+    "Output": "lock-acquired\n",
+    "Error": ""
+  },
+  "secondProcessAfterCrashWithStaleLockFile": {
+    "ExitCode": 0,
+    "Output": "lock-acquired\n",
+    "Error": ""
+  },
+  "passed": true
+}

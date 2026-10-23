@@ -18,6 +18,8 @@ public class QuoteStorage : IQuoteStorage
         var book = c.Find<Book>(quote.BookId) ?? throw new ArgumentException("请选择有效的书籍。");
         var old = quote.Id == 0 ? null : c.Find<Quote>(quote.Id);
         if (quote.Id != 0 && old is null) throw new InvalidOperationException("书摘已被删除。");
+        if (old is not null && old.BookId != quote.BookId && c.Find<ReadJournal.Library.Models.Reader.QuoteOrigin>(quote.Id)?.DocumentKeyJson is not null) throw new ArgumentException("定位书摘不能更换关联书籍，请复制为新书摘。");
+        quote.Revision = old is null ? 0 : checked(old.Revision + 1);
         _reading.ValidateQuote(quote, book); quote.UpdatedAt = DateTime.Now; quote.CreatedAt = old?.CreatedAt ?? quote.UpdatedAt;
         if (old is null) c.Insert(quote); else c.Update(quote); return quote.Id;
     });
@@ -25,7 +27,7 @@ public class QuoteStorage : IQuoteStorage
     {
         // Read and change the current row in one transaction; never write a detached quote snapshot.
         var quote = c.Find<Quote>(id) ?? throw new InvalidOperationException("书摘已不存在。");
-        return c.Execute("UPDATE Quote SET IsFavorite = ?, UpdatedAt = ? WHERE Id = ?", !quote.IsFavorite, DateTime.Now, id);
+        return c.Execute("UPDATE Quote SET IsFavorite = ?, UpdatedAt = ?, Revision = Revision + 1 WHERE Id = ?", !quote.IsFavorite, DateTime.Now, id);
     });
     public Task DeleteAsync(int id) => _database.WriteAsync(c => c.Delete<Quote>(id));
 }
