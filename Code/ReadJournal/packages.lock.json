@@ -70,6 +70,11 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         }
       },
+      "AngleSharp": {
+        "type": "Transitive",
+        "resolved": "1.8.5",
+        "contentHash": "BUgFIpmkjwMPi6QneHUHaprjUOGSXoWEF/xi/2seHCpnI8XMHACNiC09rn9qL8jbxrP8jWyJ3DnOjsGvXWNGmw=="
+      },
       "Avalonia.Angle.Windows.Natives": {
         "type": "Transitive",
         "resolved": "2.1.0.2023020321",
@@ -350,10 +355,17 @@
           "System.IO.Pipelines": "6.0.0"
         }
       },
+      "VersOne.Epub": {
+        "type": "Transitive",
+        "resolved": "3.3.6",
+        "contentHash": "X7b7Zvw5lLCRYDdDjqWldkZMZ/+rIvSWHAZjRxdq0fCL8+vv4W/OBiSIL0x8fTv2mlPNWGJcL48BIyIfpw2GBg=="
+      },
       "readjournal.library": {
         "type": "Project",
         "dependencies": {
+          "AngleSharp": "[1.8.5, )",
           "CommunityToolkit.Mvvm": "[8.2.2, )",
+          "VersOne.Epub": "[3.3.6, )",
           "sqlite-net-pcl": "[1.8.116, )"
         }
       }

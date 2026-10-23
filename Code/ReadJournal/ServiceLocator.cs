@@ -33,6 +33,8 @@ public class ServiceLocator
         serviceCollection.AddSingleton<TxtParserLimits>();
         serviceCollection.AddSingleton<ManagedBookFiles>();
         serviceCollection.AddSingleton<BookFileOperations>();
+        serviceCollection.AddSingleton<EpubBookParser>();
+        serviceCollection.AddSingleton<IBookParser>(sp => sp.GetRequiredService<EpubBookParser>());
         serviceCollection.AddSingleton<TxtBookParser>();
         serviceCollection.AddSingleton<IBookParser>(sp => sp.GetRequiredService<TxtBookParser>());
         serviceCollection.AddSingleton<BookDeletionService>();

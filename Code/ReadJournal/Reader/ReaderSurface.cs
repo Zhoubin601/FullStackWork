@@ -65,7 +65,13 @@ public sealed class ReaderSurface : Control
                 foreach (var rect in layout.SelectionRects(page, chapter.Start + Selection.Start.Utf16Offset, endChapter.Start + Selection.End.Utf16Offset))
                     context.FillRectangle(Brushes.LightSeaGreen, rect.Translate(origin));
             }
-            foreach (var (line, y) in layout.Lines(page)) line.Draw(context, new Point(origin.X, origin.Y + y));
+            if (LayoutService.Image(Page.Ref) is { } bitmap && layout.Document.Images.TryGetValue(page.Start, out var image))
+            {
+                var ratio = Math.Min(1, Math.Min(layout.Options.Width / image.Resource.PixelWidth, layout.Options.Height / image.Resource.PixelHeight));
+                var width = image.Resource.PixelWidth * ratio; var height = image.Resource.PixelHeight * ratio;
+                context.DrawImage(bitmap, new Rect(0, 0, bitmap.PixelSize.Width, bitmap.PixelSize.Height), new Rect(origin.X + (layout.Options.Width - width) / 2, origin.Y + (layout.Options.Height - height) / 2, width, height));
+            }
+            else foreach (var (line, y) in layout.Lines(page)) line.Draw(context, new Point(origin.X, origin.Y + y));
         }
         if (_presented != Page.Ref.Layout)
         {

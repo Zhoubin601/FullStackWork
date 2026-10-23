@@ -2,6 +2,12 @@
   "version": 1,
   "dependencies": {
     "net8.0": {
+      "AngleSharp": {
+        "type": "Direct",
+        "requested": "[1.8.5, )",
+        "resolved": "1.8.5",
+        "contentHash": "BUgFIpmkjwMPi6QneHUHaprjUOGSXoWEF/xi/2seHCpnI8XMHACNiC09rn9qL8jbxrP8jWyJ3DnOjsGvXWNGmw=="
+      },
       "CommunityToolkit.Mvvm": {
         "type": "Direct",
         "requested": "[8.2.2, )",
@@ -16,6 +22,12 @@
         "dependencies": {
           "SQLitePCLRaw.bundle_green": "2.0.4"
         }
+      },
+      "VersOne.Epub": {
+        "type": "Direct",
+        "requested": "[3.3.6, )",
+        "resolved": "3.3.6",
+        "contentHash": "X7b7Zvw5lLCRYDdDjqWldkZMZ/+rIvSWHAZjRxdq0fCL8+vv4W/OBiSIL0x8fTv2mlPNWGJcL48BIyIfpw2GBg=="
       },
       "SQLitePCLRaw.bundle_green": {
         "type": "Transitive",

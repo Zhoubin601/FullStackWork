@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.TextFormatting;
 using Avalonia.Threading;
+using Avalonia.Utilities;
 
 namespace ReadJournal.Reader;
 
@@ -24,7 +25,7 @@ internal sealed record ScopeSnapshot(Guid Layout, string DocumentHash, int First
 
 internal sealed class NativeLayout : IDisposable
 {
-    private sealed record Entry(TextLayout Layout, IReadOnlyList<NativePage> Pages);
+    private sealed record Entry(TextLayout? Layout, IReadOnlyList<NativePage> Pages);
     public Guid Id { get; } = Guid.NewGuid();
     public NativeTextDocument Document { get; }
     public LayoutOptions Options { get; }
@@ -52,16 +53,38 @@ internal sealed class NativeLayout : IDisposable
             _lru.Remove(sectionIndex); _lru.AddFirst(sectionIndex); return cached;
         }
         var section = Document.Sections[sectionIndex];
+        if (Document.Images.ContainsKey(section.Start))
+        {
+            var imagePages = new[] { new NativePage(new PageKey(Id, sectionIndex, 0), section.Start, section.End, 0, 0) };
+            _index[sectionIndex] = imagePages; return Install(sectionIndex, new Entry(null, imagePages));
+        }
         var text = Document.Text[section.Start..section.End];
+        var overrides = new List<ValueSpan<TextRunProperties>>(); var relevant = Document.Styles(sectionIndex);
+        var events = new SortedDictionary<int, List<(NativeStyle Style, int Delta)>>();
+        foreach (var style in relevant)
+        {
+            var left = Math.Max(section.Start, style.Start); var right = Math.Min(section.End, style.Start + style.Length);
+            if (!events.TryGetValue(left, out var begin)) events.Add(left, begin = []); begin.Add((style, 1));
+            if (!events.TryGetValue(right, out var end)) events.Add(right, end = []); end.Add((style, -1));
+        }
+        var cuts = events.Keys.ToArray(); var boldCount = 0; var italicCount = 0; var headings = new int[7];
+        for (var i = 0; i + 1 < cuts.Length; i++)
+        {
+            foreach (var (style, delta) in events[cuts[i]]) { if (style.Bold) boldCount += delta; if (style.Italic) italicCount += delta; headings[style.Heading] += delta; }
+            var start = cuts[i]; var end = cuts[i + 1]; var heading = Enumerable.Range(1, 6).LastOrDefault(h => headings[h] > 0);
+            var bold = boldCount > 0 || heading > 0; var italic = italicCount > 0; if (!bold && !italic && heading == 0) continue;
+            var typeface = new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, DejaVu Sans"), italic ? FontStyle.Italic : FontStyle.Normal, bold ? FontWeight.Bold : FontWeight.Normal);
+            overrides.Add(new(start - section.Start, end - start, new GenericTextRunProperties(typeface, heading > 0 ? Math.Min(Options.FontSize * 1.2, Options.LineHeight * .9) : Options.FontSize, null, new SolidColorBrush(Color.Parse(Options.Foreground)), null)));
+        }
         var layout = new TextLayout(text, new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, DejaVu Sans")), Options.FontSize,
-            new SolidColorBrush(Color.Parse(Options.Foreground)), textWrapping: TextWrapping.Wrap, maxWidth: Options.Width, lineHeight: Options.LineHeight);
+            new SolidColorBrush(Color.Parse(Options.Foreground)), textWrapping: TextWrapping.Wrap, maxWidth: Options.Width, lineHeight: Options.LineHeight, textStyleOverrides: overrides);
         var pages = new List<NativePage>();
         var first = 0; var count = 0; double height = 0; var pageStart = section.Start; var pageEnd = pageStart;
         void Commit()
         {
             if (pageEnd <= pageStart) return;
             if (!Document.IsBoundary(pageStart) || !Document.IsBoundary(pageEnd))
-                throw new InvalidOperationException("原生换行切断字符簇，停止实验。");
+                throw new InvalidOperationException("原生换行切断字符簇，无法继续排版。");
             pages.Add(new NativePage(new PageKey(Id, sectionIndex, pages.Count), pageStart, pageEnd, first, count));
             pageStart = pageEnd; first += count; count = 0; height = 0;
         }
@@ -79,13 +102,16 @@ internal sealed class NativeLayout : IDisposable
         if (_index.TryGetValue(sectionIndex, out var known) && !known.SequenceEqual(pages))
         { layout.Dispose(); throw new InvalidOperationException("相同布局重建得到不同页边界。"); }
         _index[sectionIndex] = pages;
-        var entry = new Entry(layout, pages);
+        return Install(sectionIndex, new Entry(layout, pages));
+    }
+    private Entry Install(int sectionIndex, Entry entry)
+    {
         _cache.Add(sectionIndex, entry); _lru.AddFirst(sectionIndex);
         while (_cache.Count > CacheLimit)
         {
             var victim = _lru.Last!;
             while (victim.Value == PinnedSection || victim.Value == sectionIndex) victim = victim.Previous!;
-            _cache.Remove(victim.Value, out var old); old!.Layout.Dispose(); _lru.Remove(victim);
+            _cache.Remove(victim.Value, out var old); old!.Layout?.Dispose(); _lru.Remove(victim);
         }
         return entry;
     }
@@ -128,13 +154,15 @@ internal sealed class NativeLayout : IDisposable
     public IReadOnlyList<(TextLine Line, double Top)> Lines(NativePage page)
     {
         Check(page);
-        var lines = Ensure(page.Key.Section).Layout.TextLines.Skip(page.FirstLine).Take(page.LineCount);
+        if (page.LineCount == 0) return [];
+        var lines = Ensure(page.Key.Section).Layout!.TextLines.Skip(page.FirstLine).Take(page.LineCount);
         var result = new List<(TextLine, double)>(); double y = 0;
         foreach (var line in lines) { result.Add((line, y)); y += line.Height; }
         return result;
     }
     public int Hit(NativePage page, Point point)
     {
+        if (Document.Images.ContainsKey(page.Start)) return point.X <= Options.Width / 2 ? page.Start : page.End;
         var lines = Lines(page);
         var item = lines.FirstOrDefault(p => point.Y < p.Top + p.Line.Height);
         if (item.Line is null) return page.End;
@@ -193,7 +221,7 @@ internal sealed class NativeLayout : IDisposable
     {
         Dispatcher.UIThread.VerifyAccess();
         if (_disposed) return; _disposed = true;
-        foreach (var entry in _cache.Values) entry.Layout.Dispose();
+        foreach (var entry in _cache.Values) entry.Layout?.Dispose();
         _cache.Clear(); _lru.Clear(); _index.Clear();
     }
 }

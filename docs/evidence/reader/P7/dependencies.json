@@ -1,0 +1,22 @@
+{
+  "verified_date": "2026-10-23",
+  "packages": [
+    {
+      "name": "versone.epub",
+      "version": "3.3.6",
+      "license": "Unlicense",
+      "target": "netstandard2.0",
+      "nupkg_sha256": "3724b44fc03d97ed1e293130b8d59b59ca75b849f3ec9b2cb6247f688f587460",
+      "source": "https://api.nuget.org/v3-flatcontainer/versone.epub/3.3.6/versone.epub.3.3.6.nupkg"
+    },
+    {
+      "name": "anglesharp",
+      "version": "1.8.5",
+      "license": "MIT",
+      "target": "net8.0",
+      "nupkg_sha256": "f526553d799a885c2e039967fcd585d8e73186e6e161931b25f44efb1f6edafb",
+      "source": "https://api.nuget.org/v3-flatcontainer/anglesharp/1.8.5/anglesharp.1.8.5.nupkg"
+    }
+  ],
+  "mit_text_source": "https://raw.githubusercontent.com/AngleSharp/AngleSharp/4994f0a06ba703dea38f77d6f24da690e1fafe78/LICENSE"
+}

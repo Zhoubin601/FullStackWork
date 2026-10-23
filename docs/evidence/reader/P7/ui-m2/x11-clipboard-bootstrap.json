@@ -1,0 +1,21 @@
+{
+  "before": {
+    "CLIPBOARD": 0,
+    "TARGETS": 0,
+    "UTF8_STRING": 229,
+    "UTF16_STRING": 0,
+    "MULTIPLE": 0,
+    "SAVE_TARGETS": 0,
+    "CLIPBOARD_MANAGER": 0
+  },
+  "after": {
+    "CLIPBOARD": 345,
+    "TARGETS": 346,
+    "UTF8_STRING": 229,
+    "UTF16_STRING": 347,
+    "MULTIPLE": 348,
+    "SAVE_TARGETS": 349,
+    "CLIPBOARD_MANAGER": 350
+  },
+  "scope": "private test display protocol identifiers only, no owner/data set"
+}

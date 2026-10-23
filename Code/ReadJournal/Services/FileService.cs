@@ -15,7 +15,7 @@ public class FileService : IFileService, IAppFileDialogService
     public async Task<IReadOnlyList<string>> ChooseBooksAsync(CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();
-        var selected = await Owner.StorageProvider.OpenFilePickerAsync(new() { Title = "选择要导入的书籍（当前支持TXT）", AllowMultiple = true,
+        var selected = await Owner.StorageProvider.OpenFilePickerAsync(new() { Title = "选择要导入的TXT / EPUB书籍", AllowMultiple = true,
             FileTypeFilter = [new FilePickerFileType("TXT / EPUB书籍") { Patterns = ["*.txt", "*.epub"] }] });
         ct.ThrowIfCancellationRequested(); return selected.Select(f => f.TryGetLocalPath()).Where(p => p is not null).Cast<string>().ToArray();
     }

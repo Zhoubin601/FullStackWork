@@ -32,7 +32,10 @@ public sealed class ReaderViewModel : ViewModelBase
     private bool _layoutBusy, _fullScreen;
     protected override bool UseGlobalBusyForLoad => false;
     public ReaderPage? Page { get => _page; private set => SetProperty(ref _page, value); }
-    public ReaderDocument? Document { get => _document; private set => SetProperty(ref _document, value); }
+    public ReaderDocument? Document { get => _document; private set { SetProperty(ref _document, value); OnPropertyChanged(nameof(TableOfContents)); } }
+    public IReadOnlyList<TocEntry> TableOfContents => Document is null ? [] : Flatten(Document.TableOfContents, 0).ToArray();
+    private static IEnumerable<TocEntry> Flatten(IReadOnlyList<TocEntry> entries, int depth)
+    { foreach (var entry in entries) { yield return entry with { Title = new string('　', depth) + entry.Title, Children = [] }; foreach (var child in Flatten(entry.Children, depth + 1)) yield return child; } }
     public ReaderContext? Context => _context;
     public ReaderPosition? Position => _position;
     public ReaderPhase Phase { get => _phase; private set { SetProperty(ref _phase, value); OnPropertyChanged(nameof(IsCloseFailed)); } }
@@ -128,6 +131,7 @@ public sealed class ReaderViewModel : ViewModelBase
         if (_context is null || Selection is null || Phase != ReaderPhase.Active) return;
         await using var action = await _sessions.EnterActiveActionAsync(_context, _lifetime.Token);
         var text = await _documents.ExtractAsync(Selection, _lifetime.Token);
+        if (text.Spans.Count == 0) { Notice = "图片没有可复制的正文。"; return; }
         await _platform.CopyTextAsync(string.Concat(text.Spans.Select(s => s.Text)), _lifetime.Token); Notice = "已复制选区正文。";
     }
     private async Task SaveSelectionAsync()

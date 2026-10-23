@@ -113,3 +113,10 @@ P4真实远端69b783a已回读。P5工作区和177文件独立白名单源码各
 ## 2026-10-23 P6当前结果（优先于历史状态）
 
 P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按范围去重/保留原文与精确回跳、统一历史/毫秒统计图、完成与原子重置已实现。工作区完整243项通过；独立181文件白名单源码重验，真实桌面M1闭环10张业务表/4个受管文件与来源SHA一致、续读偏移294，续接桌面两次正常关闭。详见docs/evidence/reader/P6/acceptance.md与reader-p6-protocol.md。验收提交后正常推送并核对真实远端，然后按用户授权继续P7；Windows保留未测，无API，raw/output/参考/冻结fixtures不变。
+
+
+## 2026-10-23 P7完成验收（优先于历史状态）
+
+P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
+
+验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。

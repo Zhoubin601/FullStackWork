@@ -1,0 +1,33 @@
+{
+  "progress": {
+    "BookId": 1,
+    "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"2529aa09-b9e8-4325-b98a-27060bc40e23\",\"SourceSha256\":\"18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\",\"CanonicalSha256\":\"85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\",\"ParserVersion\":1}}",
+    "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2529aa09-b9e8-4325-b98a-27060bc40e23\",\"SourceSha256\":\"18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\",\"CanonicalSha256\":\"85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+    "HasStarted": 1,
+    "CurrentPercent": 87.79527559055119,
+    "CompletedUtcTicks": null,
+    "CompletedOffsetMinutes": null,
+    "LastOpenedUtcTicks": 639283200426393350,
+    "LastSavedUtcTicks": 639283200241281163
+  },
+  "sessions": [
+    {
+      "SessionId": "e1e9d18a-ede3-4f83-af32-1f94ef5053a4",
+      "BookId": 1,
+      "BookUid": "84686e17-f5de-49fa-b444-b64bc2e741a6",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"2529aa09-b9e8-4325-b98a-27060bc40e23\",\"SourceSha256\":\"18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\",\"CanonicalSha256\":\"85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2529aa09-b9e8-4325-b98a-27060bc40e23\",\"SourceSha256\":\"18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\",\"CanonicalSha256\":\"85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"2529aa09-b9e8-4325-b98a-27060bc40e23\",\"SourceSha256\":\"18edb5ca174acfb4ccd67e485bf4f60d730f0af95547b819dadfa53893283068\",\"CanonicalSha256\":\"85f150b0cdc5da80445528cb4247af889e4d06eb55b31ec2af26a4b8e9223f91\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "StartPercent": 0.0,
+      "EndPercent": 87.79527559055119,
+      "OpenedUtcTicks": 639283199484980416,
+      "ClosedUtcTicks": 639283200241281163,
+      "OpenedOffsetMinutes": 0,
+      "ClosedOffsetMinutes": 0,
+      "DurationMilliseconds": 75630,
+      "CloseLocalDate": "2026-10-23",
+      "ClockAnomaly": 0
+    }
+  ],
+  "image_affinity_preserved": true
+}

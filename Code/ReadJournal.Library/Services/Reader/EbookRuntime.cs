@@ -13,6 +13,6 @@ public static class EbookRuntime
         var validator = new BackupV2Validator(new ReadingService(), new ReadingStateCalculator());
         var archive = new CompleteBackupArchive(validator, new BackupV1Adapter(new BackupEntityValidator(new ReadingService())), limits, files);
         var recovery = new RestoreRecoveryService(db.Paths, files, archive, validator, limits, ops);
-        return new(db, db.Coordinator, db.Paths, files, ops, [new TxtBookParser(files, txtLimits ?? new())], validator, limits, recovery, new(db, db.Coordinator, files, ops, [], []));
+        return new(db, db.Coordinator, db.Paths, files, ops, [new TxtBookParser(files, txtLimits ?? new()), new EpubBookParser(files)], validator, limits, recovery, new(db, db.Coordinator, files, ops, [], []));
     }
 }

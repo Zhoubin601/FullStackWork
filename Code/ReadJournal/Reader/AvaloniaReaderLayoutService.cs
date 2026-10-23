@@ -1,6 +1,7 @@
 using System.Text;
 using Avalonia;
 using Avalonia.Threading;
+using Avalonia.Media.Imaging;
 using ReadJournal.Library.Models.Reader;
 using ReadJournal.Library.Services.Reader;
 using Document = ReadJournal.Library.Models.Reader.ReaderDocument;
@@ -8,10 +9,12 @@ namespace ReadJournal.Reader;
 
 public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposable
 {
-    private sealed record Entry(LayoutHandle Handle, LayoutSettings Settings, Document Document, NativeLayout Native);
+    private sealed record Entry(LayoutHandle Handle, LayoutSettings Settings, Document Document, NativeLayout Native)
+    { public Dictionary<string, Bitmap> Images { get; } = new(); }
     private readonly IReaderDocumentService _documents;
     private readonly Dictionary<LayoutId, Entry> _layouts = new();
     public int ActiveLayoutCount => _layouts.Count;
+    public int DecodedImageCount => _layouts.Values.Sum(e => e.Images.Count);
     public AvaloniaReaderLayoutService(IReaderDocumentService documents) { _documents = documents; }
     private static Task<T> Ui<T>(Func<Task<T>> action) => Dispatcher.UIThread.CheckAccess() ? action() : Dispatcher.UIThread.InvokeAsync(action);
     private static Task<T> Ui<T>(Func<T> action) => Ui(() => Task.FromResult(action()));
@@ -22,7 +25,7 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
         if (document != anchor.Document || settings.RendererVersion != 1 || string.IsNullOrWhiteSpace(settings.FontFallbackFingerprint) ||
             settings.Appearance.FirstLineIndent != 0 || settings.Appearance.ParagraphSpacing != 0 ||
             settings.Appearance.MarginHorizontal < 0 || settings.Appearance.MarginVertical < 0 || settings.Appearance.Palette is not ("paper" or "light" or "dark"))
-            throw new ArgumentException("布局配置无效；P2 引擎暂仅支持零首行附加缩进/段距，文本内缩进仍保留。");
+            throw new ArgumentException("布局配置无效；当前排版仅支持零首行附加缩进/段距，文本内缩进仍保留。");
         var options = new LayoutOptions(settings.ViewportWidth - settings.Appearance.MarginHorizontal * 2,
             settings.ViewportHeight - settings.Appearance.MarginVertical * 2, settings.Appearance.FontSize,
             settings.Appearance.LineHeight, settings.Appearance.FontFamily, settings.DpiScale, settings.Appearance.Palette == "dark" ? "#F0F0F0" : "#000000");
@@ -31,20 +34,25 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
         var descriptor = await _documents.DescribeAsync(document, ct);
         var nativeDocument = await Task.Run(async () =>
         {
-        var text = new StringBuilder(); var chapters = new List<Chapter>();
+        var text = new StringBuilder(); var chapters = new List<Chapter>(); var images = new Dictionary<int, NativeImage>(); var styles = new List<NativeStyle>();
         foreach (var chapter in descriptor.Chapters)
         {
-            var start = text.Length; var offset = 0;
+            var start = text.Length; var offset = 0; var seen = new HashSet<string>();
             while (offset < chapter.Utf16Length)
             {
                 var slice = await _documents.ReadSliceAsync(document, chapter.Key, offset, 4096, ct);
-                if (slice.StartOffset != offset || slice.Text.Length == 0 || slice.Text.Length > chapter.Utf16Length - offset || slice.Text.Contains('\ufffc'))
-                    throw new InvalidOperationException("正文片段无进展、范围不一致或含 P7 才支持的图片。");
+                if (slice.StartOffset != offset || slice.Text.Length == 0 || slice.Text.Length > chapter.Utf16Length - offset)
+                    throw new InvalidOperationException("正文片段未推进或范围不一致，请重新打开书籍。");
+                foreach (var block in slice.Blocks.Where(b => seen.Add(b.Key)))
+                {
+                    if (block.Image is not null) images.Add(start + block.StartOffset, new NativeImage(block.Key, block.Image));
+                    styles.AddRange(block.Styles.Select(s => new NativeStyle(start + s.StartOffset, s.Utf16Length, s.Bold, s.Italic, s.HeadingLevel)));
+                }
                 text.Append(slice.Text); offset += slice.Text.Length;
             }
             chapters.Add(new Chapter(chapter.Key, chapter.Title, start, text.Length));
         }
-            ct.ThrowIfCancellationRequested(); return new NativeTextDocument(text.ToString(), chapters);
+            ct.ThrowIfCancellationRequested(); return new NativeTextDocument(text.ToString(), chapters, images, styles);
         }, ct);
         return await Ui(() =>
         {
@@ -68,21 +76,23 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
     {
         ReaderContractValidator.Validate(position);
         var chapter = entry.Native.Document.Chapters.FirstOrDefault(c => c.Key == position.ChapterKey);
-        if (position.Document != entry.Handle.Document || chapter is null || position.NonTextBlockKey is not null || position.Utf16Offset > chapter.End - chapter.Start ||
+        if (position.Document != entry.Handle.Document || chapter is null || position.Utf16Offset > chapter.End - chapter.Start ||
             !entry.Native.Document.IsBoundary(chapter.Start + position.Utf16Offset)) throw new ArgumentException("正文锚点不属于当前文档或字符边界。");
-        return chapter.Start + position.Utf16Offset;
+        var absolute = chapter.Start + position.Utf16Offset;
+        if (position.NonTextBlockKey is string block && (!entry.Native.Document.Images.TryGetValue(absolute, out var image) || image.BlockKey != block)) throw new ArgumentException("图片亲和位置无效。");
+        return absolute;
     }
-    private static ReaderPosition Position(Entry entry, int chapterIndex, int absolute)
+    private static ReaderPosition Position(Entry entry, int chapterIndex, int absolute, bool imageAffinity = false)
     {
         var chapter = entry.Native.Document.Chapters[chapterIndex];
-        return new ReaderPosition(entry.Handle.Document, chapter.Key, absolute - chapter.Start);
+        return new ReaderPosition(entry.Handle.Document, chapter.Key, absolute - chapter.Start, imageAffinity && entry.Native.Document.Images.TryGetValue(absolute, out var image) ? image.BlockKey : null);
     }
     private static ReaderPage ConvertPage(Entry entry, NativePage page)
     {
         var section = entry.Native.Document.Sections[page.Key.Section]; var chapter = entry.Native.Document.Chapters[section.ChapterIndex];
         return new ReaderPage(new PageRef(entry.Handle.Id, chapter.Key, entry.Native.ChapterPageNumber(page),
             section.Start - chapter.Start, page.Key.Number + 1),
-            [new DocumentRange(Position(entry, section.ChapterIndex, page.Start), Position(entry, section.ChapterIndex, page.End))],
+            [new DocumentRange(Position(entry, section.ChapterIndex, page.Start, true), Position(entry, section.ChapterIndex, page.End))],
             entry.Native.GlobalNumber(page), page.Start == 0, page.End == entry.Native.Document.Text.Length);
     }
     private NativePage NativePage(Entry entry, PageRef page)
@@ -96,10 +106,10 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
         if (page.PageInChapter.HasValue && known.HasValue && page.PageInChapter != known) throw new ArgumentException("章内页号不一致。");
         return native;
     }
-    public Task<ReaderPage> LocateAsync(LayoutHandle layout, ReaderPosition anchor, CancellationToken ct) => Ui(() =>
-    { ct.ThrowIfCancellationRequested(); var entry = Get(layout); var page = entry.Native.Locate(Absolute(entry, anchor)); entry.Native.PinnedSection = page.Key.Section; return ConvertPage(entry, page); });
-    public Task<ReaderPage?> GetAdjacentAsync(PageRef page, PageDirection direction, CancellationToken ct) => Ui(() =>
-    { ct.ThrowIfCancellationRequested(); var entry = Get(page.Layout); var next = entry.Native.Adjacent(NativePage(entry, page), (int)direction); if (next is null) return null; entry.Native.PinnedSection = next.Key.Section; return (ReaderPage?)ConvertPage(entry, next); });
+    public Task<ReaderPage> LocateAsync(LayoutHandle layout, ReaderPosition anchor, CancellationToken ct) => Ui(async () =>
+    { ct.ThrowIfCancellationRequested(); var entry = Get(layout); var page = entry.Native.Locate(Absolute(entry, anchor)); await LoadImageAsync(entry, page, ct); ct.ThrowIfCancellationRequested(); Get(layout); entry.Native.PinnedSection = page.Key.Section; return ConvertPage(entry, page); });
+    public Task<ReaderPage?> GetAdjacentAsync(PageRef page, PageDirection direction, CancellationToken ct) => Ui(async () =>
+    { ct.ThrowIfCancellationRequested(); var entry = Get(page.Layout); var next = entry.Native.Adjacent(NativePage(entry, page), (int)direction); if (next is null) return null; await LoadImageAsync(entry, next, ct); ct.ThrowIfCancellationRequested(); Get(entry.Handle); entry.Native.PinnedSection = next.Key.Section; return (ReaderPage?)ConvertPage(entry, next); });
     private static LayoutIndexStatus Status(Entry entry) => new(entry.Handle.Id,
         entry.Native.Document.Sections.GroupBy(s => s.ChapterIndex).Count(g => g.All(s => entry.Native.IsSectionIndexed(s.Index))),
         entry.Document.Chapters.Count, entry.Native.Status.ExactPages);
@@ -116,18 +126,37 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
         var scope = await entry.Native.ResolvePagesAsync(pages.StartInclusive, pages.EndInclusive, ct);
         ct.ThrowIfCancellationRequested(); Get(layout);
         var resolved = scope.Ranges.Select(range => ConvertPage(entry, entry.Native.Locate(range.Start))).ToArray();
-        var spans = resolved.SelectMany(p => p.ContentRanges).Select(range => new TextSpan(range,
-            entry.Native.Document.Text[Absolute(entry, range.Start)..Absolute(entry, range.End)])).ToArray();
-        progress?.Report(Status(entry));
-        return new PageRangeSnapshot(layout.Id, pages, Array.AsReadOnly(resolved),
-            new TextSnapshot(layout.Document, Array.AsReadOnly(spans), Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(Encoding.UTF8.GetBytes(scope.Text))).ToLowerInvariant()));
+        var spans = new List<TextSpan>();
+        foreach (var range in resolved.SelectMany(p => p.ContentRanges)) spans.AddRange((await _documents.ExtractAsync(range, ct)).Spans);
+        ct.ThrowIfCancellationRequested(); Get(layout); progress?.Report(Status(entry));
+        return new PageRangeSnapshot(layout.Id, pages, Array.AsReadOnly(resolved), new TextSnapshot(layout.Document, spans.AsReadOnly(),
+            Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(Encoding.UTF8.GetBytes(string.Concat(spans.Select(s => s.Text))))).ToLowerInvariant()));
     });
+    private async Task LoadImageAsync(Entry entry, NativePage page, CancellationToken ct)
+    {
+        if (!entry.Native.Document.Images.TryGetValue(page.Start, out var image) || entry.Images.ContainsKey(image.Resource.Key)) return;
+        if ((long)image.Resource.PixelWidth * image.Resource.PixelHeight > 25000000) throw new ArgumentException("LimitExceeded：图片像素预算超限。");
+        await using var stream = await _documents.OpenResourceAsync(entry.Handle.Document, image.Resource.Key, ct);
+        ct.ThrowIfCancellationRequested(); Get(entry.Handle);
+        Bitmap bitmap;
+        try { bitmap = Bitmap.DecodeToWidth(stream, Math.Max(1, Math.Min(image.Resource.PixelWidth, (int)Math.Ceiling(entry.Native.Options.Width * entry.Settings.DpiScale)))); }
+        catch (Exception ex) { throw new ArgumentException("InvalidImage：图片完整解码失败，无法安全呈现。", ex); }
+        if ((long)bitmap.PixelSize.Width * bitmap.PixelSize.Height > 25000000) { bitmap.Dispose(); throw new ArgumentException("LimitExceeded：图片解码后超出像素预算。"); }
+        if (entry.Images.Count >= 4) { var old = entry.Images.Keys.First(); entry.Images[old].Dispose(); entry.Images.Remove(old); }
+        entry.Images.Add(image.Resource.Key, bitmap);
+    }
+    internal Bitmap? Image(PageRef page)
+    {
+        var entry = Get(page.Layout); var native = NativePage(entry, page);
+        return entry.Native.Document.Images.TryGetValue(native.Start, out var image) && entry.Images.TryGetValue(image.Resource.Key, out var bitmap) ? bitmap : null;
+    }
     public Task<ReaderPosition?> HitTestAsync(PageRef page, PointD point, CancellationToken ct) => Ui(() =>
     {
         ct.ThrowIfCancellationRequested();
         if (!double.IsFinite(point.X + point.Y)) throw new ArgumentException("命中坐标无效。");
         var entry = Get(page.Layout); var native = NativePage(entry, page);
-        return (ReaderPosition?)Position(entry, entry.Native.Document.Sections[native.Key.Section].ChapterIndex, entry.Native.Hit(native, new Point(point.X, point.Y)));
+        var hit = entry.Native.Hit(native, new Point(point.X, point.Y));
+        return (ReaderPosition?)Position(entry, entry.Native.Document.Sections[native.Key.Section].ChapterIndex, hit, hit == native.Start && entry.Native.Document.Images.ContainsKey(hit));
     });
     public Task<IReadOnlyList<RectD>> GetSelectionRectsAsync(PageRef page, DocumentRange selection, CancellationToken ct) => Ui(() =>
     {
@@ -139,7 +168,7 @@ public sealed class AvaloniaReaderLayoutService : IReaderLayoutService, IDisposa
     internal (NativeLayout Layout, NativePage Page, LayoutSettings Settings) RenderPlan(PageRef page)
     { Dispatcher.UIThread.VerifyAccess(); var entry = Get(page.Layout); return (entry.Native, NativePage(entry, page), entry.Settings); }
     public Task ReleaseAsync(LayoutHandle layout) => Ui(() =>
-    { if (_layouts.TryGetValue(layout.Id, out var entry)) { if (entry.Handle != layout) throw new ArgumentException("布局文档不一致。"); _layouts.Remove(layout.Id); entry.Native.Dispose(); } return true; });
+    { if (_layouts.TryGetValue(layout.Id, out var entry)) { if (entry.Handle != layout) throw new ArgumentException("布局文档不一致。"); _layouts.Remove(layout.Id); entry.Native.Dispose(); foreach (var image in entry.Images.Values) image.Dispose(); entry.Images.Clear(); } return true; });
     public Task ReleaseAllAsync() => Ui(() => { Dispose(); return true; });
-    public void Dispose() { Dispatcher.UIThread.VerifyAccess(); foreach (var entry in _layouts.Values) entry.Native.Dispose(); _layouts.Clear(); }
+    public void Dispose() { Dispatcher.UIThread.VerifyAccess(); foreach (var entry in _layouts.Values) { entry.Native.Dispose(); foreach (var image in entry.Images.Values) image.Dispose(); entry.Images.Clear(); } _layouts.Clear(); }
 }

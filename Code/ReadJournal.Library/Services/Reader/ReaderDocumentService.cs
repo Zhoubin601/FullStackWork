@@ -14,6 +14,8 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         CanonicalManifest? manifest = null, string? managedDirectory = null)
     {
         public Document Document => document;
+        public CanonicalManifest? Manifest => manifest;
+        public string? ManagedDirectory => managedDirectory;
         public bool IsManaged => manifest is not null;
         public IReadOnlyDictionary<string, string> Text => text;
         private readonly Dictionary<string, (string Text, int[] Boundaries)> _cache = new();
@@ -107,7 +109,7 @@ public sealed class ReaderDocumentService : IReaderDocumentService
             {
                 ct.ThrowIfCancellationRequested(); ManagedBookInventory.Inspect(_paths.DirectoryPath, data, new(), false);
                 var manifest = BackupJson.Read<CanonicalManifest>(File.ReadAllBytes(ManagedBookFiles.SafePath(_paths.DirectoryPath, file.CanonicalRelativePath)));
-                if (file.Format != EbookFormat.Txt || manifest.Resources.Count != 0) throw new ArgumentException("当前文档服务仅开放受管TXT；EPUB由P7实现。");
+                if (file.Format is not (EbookFormat.Txt or EbookFormat.Epub)) throw new ArgumentException("不支持的正文格式。");
                 TocEntry Toc(CanonicalTocEntry t) => new(t.Key, t.Title, new(identity.Document, t.ChapterKey, t.Utf16Offset, t.NonTextBlockKey), t.Children.Select(Toc).ToArray());
                 var document = new Document(identity.Document, manifest.Title, manifest.Chapters.Select(c => new ChapterDescriptor(c.Key, c.Title, c.Order, c.Utf16Length)).ToArray(), manifest.TableOfContents.Select(Toc).ToArray(), manifest.TotalTextUnits);
                 return new Entry(document, new Dictionary<string, string>(), new Dictionary<string, int[]>(), manifest, ManagedBookFiles.SafePath(_paths.DirectoryPath, ManagedBookFiles.BookPrefix(file.FileId).TrimEnd('/')));
@@ -125,9 +127,10 @@ public sealed class ReaderDocumentService : IReaderDocumentService
     private static int ValidatePosition(Entry entry, ReaderPosition position)
     {
         ReaderContractValidator.Validate(position);
-        if (position.Document != entry.Document.Key || position.NonTextBlockKey is not null || !entry.TryText(position.ChapterKey, out var text) ||
+        if (position.Document != entry.Document.Key || !entry.TryText(position.ChapterKey, out var text) ||
             position.Utf16Offset > text.Length || Array.BinarySearch(entry.Boundaries(position.ChapterKey), position.Utf16Offset) < 0)
             throw new ArgumentException("位置不是该文档的字符簇边界。");
+        if (position.NonTextBlockKey is string block && !entry.Blocks(position.ChapterKey).Any(b => b.Kind == ReaderBlockKind.Image && b.Key == block && b.StartOffset == position.Utf16Offset)) throw new ArgumentException("图片亲和位置无效。");
         return entry.Document.Chapters.First(c => c.Key == position.ChapterKey).Order;
     }
     public Task<ChapterSlice> ReadSliceAsync(DocumentKey document, string chapterKey, int startOffset, int maxUtf16Units, CancellationToken ct)
@@ -139,7 +142,7 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         var end = Snap(boundaries, Math.Min(text.Length, start + maxUtf16Units), false);
         if (end == start && start < text.Length) end = Snap(boundaries, start + 1, true);
         return Task.FromResult(new ChapterSlice(chapterKey, start, text[start..end],
-            entry.Blocks(chapterKey)));
+            entry.Blocks(chapterKey).Where(b => b.StartOffset < end && b.StartOffset + b.Utf16Length > start).ToArray()));
     }
     public Task<TextSnapshot> ExtractAsync(DocumentRange range, CancellationToken ct)
     {
@@ -151,17 +154,29 @@ public sealed class ReaderDocumentService : IReaderDocumentService
         {
             var start = chapter.Order == first ? range.Start.Utf16Offset : 0;
             var end = chapter.Order == last ? range.End.Utf16Offset : chapter.Utf16Length;
-            if (end > start) spans.Add(new TextSpan(new DocumentRange(new(entry.Document.Key, chapter.Key, start), new(entry.Document.Key, chapter.Key, end)), entry.Value(chapter.Key)[start..end]));
+            var text = entry.Value(chapter.Key); var at = start;
+            while (at < end)
+            {
+                if (text[at] == '\ufffc') { at++; continue; }
+                var image = text.IndexOf('\ufffc', at, end - at); var next = image < 0 ? end : image;
+                spans.Add(new(new(new(entry.Document.Key, chapter.Key, at), new(entry.Document.Key, chapter.Key, next)), text[at..next])); at = next;
+            }
         }
-        if (spans.Count == 0) throw new ArgumentException("范围为空。");
+
         return Task.FromResult(new TextSnapshot(entry.Document.Key, Array.AsReadOnly(spans.ToArray()), Hash(string.Concat(spans.Select(s => s.Text)))));
     }
     public Task<Stream> OpenResourceAsync(DocumentKey document, string resourceKey, CancellationToken ct)
-    { ct.ThrowIfCancellationRequested(); Get(document); throw new ArgumentException("P2 文本文档没有声明图片资源。"); }
+    {
+        ct.ThrowIfCancellationRequested(); var entry = Get(document);
+        var resource = entry.Manifest?.Resources.FirstOrDefault(r => r.Key == resourceKey) ?? throw new ArgumentException("未声明的本地图片资源。");
+        var path = ManagedBookFiles.SafePath(entry.ManagedDirectory!, resource.Path);
+        if (!File.Exists(path) || ManagedBookFiles.HashFile(path) != resource.Sha256) throw new InvalidOperationException("FileMissing/DocumentMismatch：图片资源缺失或改变。");
+        return Task.FromResult<Stream>(new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read));
+    }
     public Task<double> GetPercentAsync(ReaderPosition position, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested(); var entry = Get(position.Document); var order = ValidatePosition(entry, position);
-        return Task.FromResult(100.0 * (entry.Document.Chapters.Take(order).Sum(c => (long)c.Utf16Length) + position.Utf16Offset) / entry.Document.TotalTextUnits);
+        return Task.FromResult(100.0 * (entry.Document.Chapters.Take(order).Sum(c => (long)c.Utf16Length - entry.Blocks(c.Key).Count(b => b.Kind == ReaderBlockKind.Image)) + position.Utf16Offset - entry.Blocks(position.ChapterKey).Count(b => b.Kind == ReaderBlockKind.Image && b.StartOffset < position.Utf16Offset)) / entry.Document.TotalTextUnits);
     }
     public async Task<PositionResolution> ResolveAsync(ReaderPosition position, string? expectedOriginalText, CancellationToken ct)
     {

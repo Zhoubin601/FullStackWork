@@ -5,7 +5,7 @@ namespace ReadJournal.Library.Services.Backup;
 // Bounded header inspection; full image decoding remains the renderer's responsibility in P7.
 public static class ImageResourceValidator
 {
-    public static void Validate(string path, CanonicalResource expected)
+    public static (string MediaType, int Width, int Height) Inspect(string path)
     {
         using var stream=File.OpenRead(path);Span<byte> header=stackalloc byte[30];var read=stream.Read(header);int width=0,height=0;string? media=null;
         if(read>=24&&header[..8].SequenceEqual(new byte[]{137,80,78,71,13,10,26,10})&&header[12..16].SequenceEqual("IHDR"u8))
@@ -32,6 +32,9 @@ public static class ImageResourceValidator
                 stream.Position+=length-2;
             }
         }
-        if(media!=expected.MediaType||width<=0||height<=0||width!=expected.PixelWidth||height!=expected.PixelHeight)throw new ArgumentException("InvalidFormat：图片头信息与资源清单不一致。");
+        if(media is null || width<=0 || height<=0) throw new ArgumentException("InvalidFormat：图片头无效或格式不支持。");
+        return (media,width,height);
     }
+    public static void Validate(string path, CanonicalResource expected)
+    { var value = Inspect(path); if(value.MediaType != expected.MediaType || value.Width != expected.PixelWidth || value.Height != expected.PixelHeight) throw new ArgumentException("InvalidFormat：图片头信息与资源清单不一致。"); }
 }

@@ -23,7 +23,7 @@ public sealed class EbookLibraryService(IDatabaseService database, ApplicationDa
         try
         {
             var source = Path.GetFullPath(request.SourcePath); ManagedBookFiles.RejectLink(source);
-            if (!string.Equals(Path.GetExtension(source), ".txt", StringComparison.OrdinalIgnoreCase)) throw new ArgumentException("InvalidFormat：当前阶段仅支持TXT；EPUB将在P7开放。");
+            var format = Path.GetExtension(source).ToLowerInvariant() switch { ".txt" => EbookFormat.Txt, ".epub" => EbookFormat.Epub, _ => throw new ArgumentException("InvalidFormat：请选择TXT或EPUB。") };
             var info = new FileInfo(source);
             if (!info.Exists) throw new ArgumentException("FileMissing：来源文件不存在。");
             if (info.Length > 104857600) throw new ArgumentException("LimitExceeded：单源文件超过100MiB。");
@@ -31,9 +31,9 @@ public sealed class EbookLibraryService(IDatabaseService database, ApplicationDa
             var dataPrefix = paths.DirectoryPath.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar;
             var inboxPrefix = Path.Combine(paths.DirectoryPath, "books") + Path.DirectorySeparatorChar;
             if (source.StartsWith(dataPrefix, StringComparison.Ordinal) && (!source.StartsWith(inboxPrefix, StringComparison.Ordinal) || Path.GetDirectoryName(source) != Path.Combine(paths.DirectoryPath, "books")))
-                throw new ArgumentException("InvalidFormat：只允许外部TXT或books收件区本层文件。");
+                throw new ArgumentException("InvalidFormat：只允许外部TXT/EPUB或books收件区本层文件。");
             operations.Write(log); written = true;
-            var stage = operations.Stage(id); var relative = ManagedBookFiles.BookPrefix(fileId) + "source.txt";
+            var stage = operations.Stage(id); var relative = ManagedBookFiles.BookPrefix(fileId) + (format == EbookFormat.Txt ? "source.txt" : "source.epub");
             var staged = ManagedBookFiles.SafePath(stage, relative); Report("复制并校验来源", 0);
             hash = await Task.Run(() => CopySource(source, staged, ct), ct);
             log = log with { SourceSha256 = hash };
@@ -45,7 +45,7 @@ public sealed class EbookLibraryService(IDatabaseService database, ApplicationDa
                 return new(ImportState.Duplicate, existing.BookId, oldBook?.BookUid, "Duplicate：相同字节内容已在书库，未创建副本。");
             }
             Report("解析并写入规范化正文", .35);
-            var parser = parsers.Single(p => p.Format == EbookFormat.Txt);
+            var parser = parsers.Single(p => p.Format == format);
             var parsed = await parser.ParseAsync(staged, stage, new(1, request.EncodingName, 104857600, 314572800, limits.MaxEntries, limits.MaxImagePixels, Path.GetFileNameWithoutExtension(source)), ct);
             var now = DateTime.Now; var ticks = DateTime.UtcNow.Ticks;
             var book = new Book { Id = 1, BookUid = uid, Kind = BookKind.Ebook, Title = parsed.Title, Author = parsed.Author, TotalPages = 0, CreatedAt = now, UpdatedAt = now };
@@ -74,7 +74,7 @@ public sealed class EbookLibraryService(IDatabaseService database, ApplicationDa
             });
             committed = true; files.Checkpoint("import.after-commit");
             await database.ReadAsync(lease, c => { operations.Recover(c, log); return 0; });
-            Report("导入完成", 1); return new(ImportState.Imported, bookId, uid, "导入成功。");
+            Report("导入完成", 1); return new(ImportState.Imported, bookId, uid, "导入成功。" + (parsed.Warnings.Count == 0 ? "" : "注意：" + string.Join("；", parsed.Warnings)));
         }
         catch (Exception ex)
         {
