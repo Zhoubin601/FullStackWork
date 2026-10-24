@@ -1,10 +1,114 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.BookDetailView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding BookDetailViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<ScrollViewer><StackPanel Spacing="14">
-<TextBlock Classes="h1" Text="{Binding Book.Title}"/><TextBlock Text="{Binding Book.Author}" Classes="muted"/><TextBlock Text="{Binding Book.Description}" TextWrapping="Wrap"/><TextBlock Text="{Binding Progress.ProgressText}"/><ProgressBar Value="{Binding Progress.Percent}" Maximum="100"/><TextBlock Text="{Binding Progress.ActivityText}"/>
-<WrapPanel><Button Content="开始 / 继续阅读" Command="{Binding OpenReaderCommand}" IsVisible="{Binding IsEbook}" Margin="0,0,10,10"/><Button Content="编辑资料" Command="{Binding EditBookCommand}" Margin="0,0,10,10"/><Button Content="＋ 阅读记录" Command="{Binding AddRecordCommand}" IsVisible="{Binding CanAddManualRecord}" Margin="0,0,10,10"/><Button Content="＋ 书摘" Command="{Binding AddQuoteCommand}" Margin="0,0,10,10"/><Button Content="＋ 阅读计划" Command="{Binding AddPlanCommand}" Margin="0,0,10,10"/><Button Content="删除书籍" Command="{Binding DeleteBookCommand}" Margin="0,0,10,10"/></WrapPanel>
-<TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><Button Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
-<TextBlock Classes="h2" Text="阅读历史"/><ItemsControl ItemsSource="{Binding HistoryList}"><ItemsControl.ItemTemplate><DataTemplate><Border BorderBrush="#8094A49C" BorderThickness="0,0,0,1" Padding="0,10"><Grid ColumnDefinitions="*,Auto,Auto"><TextBlock Text="{Binding DisplayText}" TextWrapping="Wrap" VerticalAlignment="Center"/><Button Grid.Column="1" Content="修改" IsVisible="{Binding CanEdit}" Command="{Binding $parent[UserControl].DataContext.EditHistoryCommand}" CommandParameter="{Binding}" Margin="8,0"/><Button Grid.Column="2" Content="删除活动" Command="{Binding $parent[UserControl].DataContext.DeleteHistoryCommand}" CommandParameter="{Binding}"/></Grid></Border></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
-<StackPanel Orientation="Horizontal" Spacing="10"><Button Content="上一页历史" Command="{Binding PreviousHistoryCommand}"/><TextBlock Text="{Binding HistoryPageText}" VerticalAlignment="Center"/><Button Content="下一页历史" Command="{Binding NextHistoryCommand}"/></StackPanel><TextBlock Classes="h2" Text="关联计划"/><ItemsControl ItemsSource="{Binding PlansList}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Spacing="5" Margin="0,5"><TextBlock Text="{Binding Deadline}"/><TextBlock Text="{Binding Suggestion}"/></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Classes="h2" Text="关联书摘" Margin="0,12,0,0"/><ItemsControl ItemsSource="{Binding QuotesList}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel><Button HorizontalAlignment="Stretch" Margin="0,5" Command="{Binding $parent[UserControl].DataContext.EditQuoteCommand}" CommandParameter="{Binding}"><TextBlock Text="{Binding Quote.Text}" TextWrapping="Wrap"/></Button><Button Content="回到原文" Command="{Binding $parent[UserControl].DataContext.OpenQuoteSourceCommand}" CommandParameter="{Binding}"/></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
-</StackPanel></ScrollViewer>
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding BookDetailViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <ScrollViewer>
+    <StackPanel Spacing="16" Margin="0,0,0,16">
+      <Border Classes="card">
+        <StackPanel Spacing="12">
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBlock Classes="h1" Text="{Binding Book.Title}" VerticalAlignment="Center"/>
+            <Border Classes="badge">
+              <TextBlock Classes="badge-text" Text="{Binding Progress.KindLabel}"/>
+            </Border>
+            <Border Classes="badge-amber">
+              <TextBlock Classes="badge-amber-text" Text="{Binding Progress.State}"/>
+            </Border>
+          </StackPanel>
+          <TextBlock Text="{Binding Book.Author}" Classes="muted"/>
+          <TextBlock Text="{Binding Book.Description}" TextWrapping="Wrap"/>
+
+          <Border Classes="surface-muted" Padding="14,12">
+            <StackPanel Spacing="8">
+              <TextBlock Text="{Binding Progress.ProgressText}" FontWeight="Medium"/>
+              <ProgressBar Value="{Binding Progress.Percent}" Maximum="100" Height="8"/>
+              <TextBlock Text="{Binding Progress.ActivityText}" Classes="muted"/>
+            </StackPanel>
+          </Border>
+
+          <WrapPanel Margin="0,4,0,0">
+            <Button Classes="primary" Content="开始 / 继续阅读" Command="{Binding OpenReaderCommand}" IsVisible="{Binding IsEbook}" Margin="0,0,10,8"/>
+            <Button Classes="secondary" Content="编辑资料" Command="{Binding EditBookCommand}" Margin="0,0,10,8"/>
+            <Button Classes="secondary" Content="＋ 阅读记录" Command="{Binding AddRecordCommand}" IsVisible="{Binding CanAddManualRecord}" Margin="0,0,10,8"/>
+            <Button Classes="secondary" Content="＋ 书摘" Command="{Binding AddQuoteCommand}" Margin="0,0,10,8"/>
+            <Button Classes="secondary" Content="＋ 阅读计划" Command="{Binding AddPlanCommand}" Margin="0,0,10,8"/>
+            <Button Classes="secondary" Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}" Margin="0,0,10,8"/>
+            <Button Classes="danger" Content="删除书籍" Command="{Binding DeleteBookCommand}" Margin="0,0,0,8"/>
+          </WrapPanel>
+
+          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+        </StackPanel>
+      </Border>
+
+      <Border Classes="card">
+        <StackPanel Spacing="12">
+          <TextBlock Classes="h2" Text="阅读历史"/>
+          <ItemsControl ItemsSource="{Binding HistoryList}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Border Classes="surface-muted" Padding="14,10" Margin="0,0,0,8">
+                  <Grid ColumnDefinitions="*,Auto,Auto">
+                    <TextBlock Text="{Binding DisplayText}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <Button Grid.Column="1" Classes="secondary" Content="修改" IsVisible="{Binding CanEdit}" Command="{Binding $parent[UserControl].DataContext.EditHistoryCommand}" CommandParameter="{Binding}" Margin="8,0"/>
+                    <Button Grid.Column="2" Classes="danger" Content="删除活动" Command="{Binding $parent[UserControl].DataContext.DeleteHistoryCommand}" CommandParameter="{Binding}"/>
+                  </Grid>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+          <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Classes="secondary" Content="上一页历史" Command="{Binding PreviousHistoryCommand}"/>
+            <TextBlock Text="{Binding HistoryPageText}" VerticalAlignment="Center" FontWeight="Medium"/>
+            <Button Classes="secondary" Content="下一页历史" Command="{Binding NextHistoryCommand}"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <Border Classes="card">
+        <StackPanel Spacing="10">
+          <TextBlock Classes="h2" Text="关联计划"/>
+          <ItemsControl ItemsSource="{Binding PlansList}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Border Classes="surface-muted" Padding="14,10" Margin="0,0,0,8">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="{Binding Deadline}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding Suggestion}" Classes="muted"/>
+                  </StackPanel>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+
+      <Border Classes="card">
+        <StackPanel Spacing="10">
+          <TextBlock Classes="h2" Text="关联书摘"/>
+          <ItemsControl ItemsSource="{Binding QuotesList}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Border Classes="surface-muted" Padding="14,12" Margin="0,0,0,8">
+                  <StackPanel Spacing="8">
+                    <Button Classes="card-action"
+                            Command="{Binding $parent[UserControl].DataContext.EditQuoteCommand}"
+                            CommandParameter="{Binding}">
+                      <TextBlock Text="{Binding Quote.Text}" TextWrapping="Wrap"/>
+                    </Button>
+                    <Button Classes="secondary"
+                            Content="回到原文"
+                            HorizontalAlignment="Left"
+                            Command="{Binding $parent[UserControl].DataContext.OpenQuoteSourceCommand}"
+                            CommandParameter="{Binding}"/>
+                  </StackPanel>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>

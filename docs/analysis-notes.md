@@ -1,5 +1,79 @@
 # 审议判断与规划修订说明
 
+## 2026-10-23 阅记 UI/UX 现状审查与问题分析（ui-ux-pro-max 专项）
+
+依据 `ui-ux-pro-max` 设计智能系统标准（结合 Avalonia 桌面特性、Swiss Modernism 2.0 规范、WCAG 2.2 AA 无障碍基准），对当前应用全部 14 个 XAML 视图及样式定义进行了深度静态走查与人机工效评估。审查发现系统在功能完整性达标的同时，在**视觉一致性、动态主题适配、信息层级传达、交互微反馈与无障碍体验**上存在明显短板。
+
+### 一、问题总览与严重级别分类
+
+| 严重等级 | 数量 | 核心问题摘要 |
+|---|---|---|
+| **CRITICAL** | 2 | 侧边栏导航缺少当前激活项视觉反馈；深色模式下大量硬编码色彩导致卡片与文字对比度失调 |
+| **HIGH** | 5 | 纯文字侧边栏无矢量图标；书库导入工具栏在最小窗口宽度下溢出；书籍详情主次与危险操作按钮层级混同；阅读器字体与配色直接暴露生硬英文/手动文本框；核心控件缺失无障碍辅助属性 |
+| **MEDIUM** | 6 | 书籍/书摘卡片缺乏背景与悬停提升感；列表空态缺少引导性 CTA 与图形；阅读器目录过窄截断章节名；AI 异步执行期间无进度加载动画；表单垂直节奏偏紧且无必填星号区分；返回按钮使用纯 ASCII 字符缺少呼吸感 |
+| **LOW** | 3 | 部分错误提示文本颜色（Crimson）偏刺眼；统计图表色彩与主主题色缺少协同；部分操作成功消息缺乏自愈式轻量反馈 |
+
+---
+
+### 二、分维度深度走查结论
+
+#### 1. 主题系统与动态画刷（Theming & Tokens）
+- **硬编码色彩泛滥**：
+  - `App.axaml`、`MainView.axaml` 中硬编码了 `#173D36`（深绿侧边栏背景）、`#254C44`（菜单按钮背景）、`#246650`（主按钮背景）、`#8094A49C`（全局边框与分割线）、`#399B75`（进度条前景色）。
+  - 各视图（`BookListView`、`OverviewView`、`BookDetailView`、`QuoteListView` 等）大量直接书写 `BorderBrush="#8094A49C"`。
+- **深色模式（Dark Mode）断层**：
+  - 应用虽然支持通过 `SettingsView` 切换深色主题（`ThemeVariant.Dark`），但由于未在 `App.axaml` 建立 `ThemeDictionaries`（`Light` 与 `Dark` 字典），自定义容器与边框无法随主题自动流转。
+  - 在深色模式下，原生 Fluent 控件转为深灰（`#1e1e1e` / `#2d2d2d`），而自定义边框依然采用浅灰绿 `#8094A49C`，侧边栏保持 `#173D36`，导致界面出现严重的“补丁感”与视觉割裂。
+- **对比度合规风险（WCAG 2.2 AA）**：
+  - `TextBlock.muted` 统一声明为 `Opacity="0.65"`，在浅色底或彩色背景下，次级文字对比度容易跌破 4.5:1 基准线。
+  - 错误提示直接硬编码 `Foreground="Crimson"`，在深色背景下刺眼且未遵循语义画刷规范。
+
+#### 2. 全局导航与应用外壳（Navigation & App Shell）
+- **致命缺陷：无选中激活态（Active State）**：
+  - `MainView.axaml` 中的侧边栏菜单通过 `ItemsControl` 渲染 `MenuItem.MenuItems`，每个菜单项均为普通 `Button`。
+  - 无论是位于“概览”、“我的书库”还是“设置与数据”，所有菜单按钮样式完全一致（无背景高亮、无左侧强调竖条、无加粗或颜色变幻）。用户无法从侧边栏一眼判断当前所处模块。
+- **纯文字无图标（Icon Deficiency）**：
+  - 侧边栏按钮只有“概览”、“我的书库”、“阅读计划”等裸文字。缺乏统一矢量图标系统（如 Phosphor 图标族的 Compass、Books、Quotes、Calendar、ChartLine、Gear），在现代桌面端显得粗糙且识别效率低。
+- **返回入口生硬**：
+  - 顶部导航栏使用 `Button Content="← 返回"`，直接使用 ASCII 箭头，与右侧标题紧贴，缺少精致图标按钮的视觉包裹。
+
+#### 3. 核心业务视图与卡片（Cards & Lists）
+- **书库工具栏小屏横向溢出**：
+  - `BookListView.axaml` 第 1 行将 `ComboBox`、`导入 TXT / EPUB`、`取消导入`、`扫描收件区`、`打开收件目录` 强行塞入单个横向 `StackPanel`。
+  - 在应用最小宽度（900px）或系统 125%/150% DPI 缩放时，最右侧按钮极易被截断在可视区外，破坏可用性。应改造为自适应折行或清晰主次分组。
+- **卡片扁平无背景与微动（Hover Feedback）**：
+  - `BookListView` 与 `QuoteListView` 的条目仅用 `Border BorderThickness="1"` 包裹，未定义 `Background`（透明背景），直接贴附在窗口底色上，没有“卡片”的实体感。
+  - 缺乏 `:pointerover` 悬停状态提升（微调背景亮度或微投影），缺乏可点击与交互认知。
+  - 书籍条目缺少“电子书格式标签”（TXT / EPUB）与“阅读状态胶囊”（在读 / 未读 / 已读完），进度表达单薄。
+- **空态体验荒芜（Empty States）**：
+  - 书库、书摘、计划为空时，仅有一行灰字 `TextBlock`（如“还没有匹配的书籍…”），没有引导性插画/图标，更缺少引导用户行动的主操作按钮（如“添加第一本书”或“快速导入”）。
+
+#### 4. 原生阅读器与 AI 助手交互（Reader & AI Panel）
+- **配置生硬暴露技术细节**：
+  - `ReaderView.axaml` 字体切换使用输入框 `<TextBox Text="{Binding FontFamily}" Width="170"/>`，要求用户手敲字体名称（如 Microsoft YaHei），极其不友好。
+  - 羊皮纸/浅色/深色配色下拉框直接绑定英文技术枚举：`<x:String>paper</x:String>`、`<x:String>light</x:String>`、`<x:String>dark</x:String>`，界面出现英文，破坏中文阅读沉浸感。
+  - 字号只能手输数字，缺少阅读器标配的快速字号微调按钮（`A-` / `A+`）。
+- **目录侧栏过窄截断**：
+  - 左侧目录固定宽度 `150px`，中文章节标题（如“第一章 醒来的清晨与落叶”）必被严重截断。
+  - 目录列表项为普通未修饰按钮，无当前阅读章节的高亮标记。
+- **AI 助手反馈单薄**：
+  - AI 执行分析时（`IsAiBusy = true`），仅在底部出现静态文本 `AiStatus`，缺少 Indeterminate ProgressBar 或旋转加载动效，易让用户误以为界面卡死。
+  - AI 输出直接放在固定高度的 TextBox 中，段落结构挤压，缺乏卡片化展示。
+
+#### 5. 详情页与表单层级（Details & Forms）
+- **操作层级严重混乱**：
+  - `BookDetailView.axaml` 中，核心高频操作“开始 / 继续阅读”与辅助操作“编辑资料”、“＋ 书摘”、“＋ 阅读计划”以及破坏性操作“删除书籍”全部平铺在一个 `WrapPanel` 里，外观毫无区分。
+  - “开始阅读”应作为突出强调色的大按钮，“删除书籍”必须采用红框/警示样式的 Destructive 风格，防止误触。
+- **信息展示纵向无限堆叠**：
+  - 详情页下方将“阅读历史”、“关联计划”、“关联书摘”三个大模块线性串联，无分栏或 Tab 标签组织，造成长页面滚动负担。
+- **表单间距与反馈**：
+  - 编辑类视图（`BookEditView`、`QuoteEditView` 等）表单间距仅 10px，必填星号 `*` 混在标题文字中未用强调色区分；未保存修改提示与保存按钮缺乏视觉呼吸感。
+
+#### 6. 无障碍体验（Accessibility）
+- 全局各类按钮及图标按钮绝大多数未配置 `AutomationProperties.Name`，屏幕阅读器仅能朗读未格式化文本或静音。
+- 缺少键盘 Tab 键导航时的明确外发光/聚焦环（Focus Visual）。
+
+
 ## 2026-10-21 统一v1交付完成
 
 前轮“源码未入包、报告仍93项、output无PDF”三项收尾现已完成：当前正式目录output/v1含Word/PDF/源码ZIP，均统一v1；报告23页、94项工作区与独立包测试、71项新探针，包与Code逐文件一致。保留用户Word微调及SVG绘图，明确历史Linux93项边界。
@@ -251,6 +325,11 @@ P0～P7及原有手动业务在本机实际150% DPI通过，未发现阻塞合�
 独立复核时修正内容摘要的DateTime.Kind差异：摘要使用Ticks，避免SQLite读取的Unspecified使未改动项被错误保留。自动化首轮失败来自测试预期漏计换行、凭据扫描误读独占library.lock，修正测试后再验，失败记录保留。新增真实EPUB跨图片核验、事务内取消与回执丢失覆盖，不把纯接口Mock当成全部业务验证。
 
 
+## 2026-10-21 当前验收复核结论
+
+项目实现可进入验收；报告核心内容与当前代码及ZIP对应，当前重新构建/94项测试全部通过，66类/14接口/10业务页达标。正式交付尚缺PDF，报告关于目录含PDF的文字与实际文件不符。当前Word保存后哈希改变，正文段落和媒体未变，末表一格缩短；旧版23页渲染不能充当当前版排版复验。详细证据见acceptance-recheck-20261021.md。
+
+
 ## 2026-10-23 P8复核/P9启动
 
 P8基准4baef83；工作分支codex/reader-p9。原有本地追加与远端追加发生文档尾部冲突，已并存保留，stash保留作备份。先在Windows复核P8，再准备P9；现有真实API凭据资料未提供，不能宣称M3通过。计划见reader-p9-plan.md。
@@ -269,3 +348,50 @@ P10是发布门禁，必须区分历史验收、当前重验和未覆盖平台�
 ## 2026-10-23 P10发布判断（当前）
 
 用户最后指令跳过缩放补测，按Windows实际150%范围交付。生产C#/AXAML不改；README/CHANGELOG/依赖索引/白名单已更新，最终包生产及测试字节与334项完整回归版本一致。最终包独立构建并完成真实迁移库完整备份删除恢复重开。P10六项门禁在声明范围通过，2项符号链接权限和其他缩放/真实商业EPUB/一个构建包许可元数据缺失如实保留；不把完整测试全部写为334通过。验收reader-p10-acceptance-20261023.md。
+
+## 2026-10-23 拓展计划进度汇报判断
+
+按用户调整范围，P0～P10的11阶段完成，M1/M2/M3均有相应闭环证据，P10已推送82070fa；阶段完成不代表所有原规划验收档位均已覆盖。报告更新和功能分支合并main仍为后续收尾，其他缩放/跨屏、真实商业EPUB和符号链接权限缺口继续明确保留。本轮只汇总证据并更新执行表索引，不改原始规划快照、不重跑测试、不自动提交。
+
+## 2026-10-24 更新与复验
+先核对远端与保留本地过程文档，再对最终版本重新构建及全量、故障、性能、实际窗口与真实 AI 闭环复验。历史通过证据只作范围依据，不代替本轮测试。计划及原始日志见 docs/recheck-20261024-plan.md、docs/evidence/recheck-20261024。
+
+本轮最终结果：main=82070fa已最新；334项332通过0失败2权限跳过，原生实验14/14、生产152检查通过。真实AI3次成功，2条提取/回跳/撤销通过，Key已删、Mock已恢复。实际Windows完整ZIP恢复10表一致；raw不变，旧源码ZIP与当前Code逐文件一致。详见docs/recheck-20261024.md；生产代码无需修改。
+
+## 2026-10-24 基于最新代码与 Windows 150% DPI 真机截图的 UI/UX 全面诊断（ui-ux-pro-max）
+
+经核查最新 `main`（`82070fa`）生产代码与 `docs/evidence/recheck-20261024/desktop/*.png`、`docs/evidence/live-windows-test-20261022/*.png` 真机截图，2026-10-24 复验仅验证了功能闭环，**尚未对生产 `Code/` 实施任何 UI 美化修改**。结合静态 XAML/C# 审查与真机渲染像素级比对，共定位 **6 大核心维度、18 项具体 UI/UX 问题**：
+
+### 一、 主题色板与全局样式层（`App.axaml`）
+1. **`Button.primary` 定义后全工程 0 次使用（最直观的灰块感根源）**：`App.axaml:21` 定义了 `<Style Selector="Button.primary">`（翡翠绿 `#246650` 背景 + 白字），但全部 14 个 `.axaml` 视图中**没有任何一个按钮标记 `Classes="primary"`**。导致真机截图中所有核心操作（`＋ 添加书籍`、`开始 / 继续阅读`、`保存并返回`、`生成并自动保存书摘`）全部渲染为 Fluent 默认 `#CCCCCC` 水泥灰块。
+2. **缺乏 `ThemeDictionaries`，硬编码颜色破坏深色模式**：`App.axaml` 未配置 `Light`/`Dark` 语义画刷字典；各视图硬编码 `#173D36`、`#254C44`、`#8094A49C`、`Crimson`，切换深色主题时出现刺眼白底或深底黑字不可读。
+3. **工具栏控件高度参差不齐（`40px` vs `32px`）**：`App.axaml` 为 `TextBox` 设了 `MinHeight="40"`、`Button` 设了 `Padding="16,10"`（约 40px 高），但漏掉了 `ComboBox` 与 `DatePicker`（保持默认 32px 高且顶部对齐）。在 `BookListView`、`ReaderView`、`SettingsView`、`ReadingPlanListView` 真机截图中，下拉框明显比相邻输入框和按钮矮一截（悬空 8px）。
+
+### 二、 导航外壳与页面布局对齐（`MainView` & 各表单页）
+4. **顶部栏与正文“双重标题冗余” + 子页标题滞留**：`MainView.axaml:44` 顶部栏显示 `Text="{Binding Title}"`（如“阅读统计”、“我的书库”），而子页面第一行又写了一遍 `<TextBlock Classes="h1" Text="阅读统计"/>`，垂直间距仅 40px 内重复两次相同大标题（见 `04-combined-statistics.png`、`19-settings.png`）；且进入 `ReaderView`、`BookDetailView`、`*EditView` 等二级页面时，顶部栏 `Title` 仍停留在父级菜单名（如在阅读器内顶部栏仍显示 `[← 返回] 我的书库`）。
+5. **侧边栏无当前激活态（`SelectedMenuItem` 已实现但未绑定）且无矢量图标**：`MainViewModel.cs:13` 已有 `SelectedMenuItem` 属性并在 `TapMenu` 中更新，但 `MainView.axaml:24` 的 `ItemsControl` 完全没有绑定选中态样式，导致侧边栏 6 个按钮永远一模一样；且纯文字无图标。
+6. **窄表单容器居中漂移（`MaxWidth` 缺 `HorizontalAlignment="Left"`）**：`SettingsView`（`MaxWidth="780"`）、`BookEditView`（`MaxWidth="720"`）、`QuoteEditView`（`MaxWidth="720"`）、`ReadingPlanEditView`（`MaxWidth="720"`）的根 `StackPanel` 未设置 `HorizontalAlignment="Left"`，在最大化窗口中表单块悬浮在屏幕正中（`X ≈ 380px`），与左上角标题栏（`X ≈ 240px`）形成突兀的斜向错位（见 `04-book-form-filled.png`、`10-quote-form-filled.png`、`19-settings.png`）。
+
+### 三、 原生阅读器与 AI 助手面板（`ReaderView.axaml` & `ReaderSurface.cs`）
+7. **`ReaderSurface` 选区高亮色过于刺眼（100% 不透明 `Brushes.LightSeaGreen`）**：`ReaderSurface.cs:66` 使用 `context.FillRectangle(Brushes.LightSeaGreen, rect.Translate(origin))` 绘制正文选中态，在真机截图（`03-txt-fullscreen.png`、`08-epub-quote-return.png`）中呈现高饱和度青绿色实心块遮挡黑字，与暖黄纸张 `#F8F3E7` 极度冲突。应改为柔和半透明琥珀/松石绿高亮画刷（如 `#40246650` 或 `#55EAB308`）。
+8. **阅读画布无书页边界与层次感**：`ReaderSurface` 直接裸露在纯白背景上，缺少外层微圆角边框容器与柔和纸张阴影；深色配色（`#202520`）下画布四周仍是刺眼白底。
+9. **排版工具栏暴露内部英文枚举与手输字体**：配色下拉框直接绑定 `Palettes = ["paper", "light", "dark"]` 显示英文代码；字体框要求用户手输字符串（如 `Noto Sans CJK SC`），缺乏预设中文字体下拉选择与 `A-`/`A+` 快捷字号调节。
+10. **左侧目录栏（TOC）与右侧 AI 面板粗糙**：目录章节项直接渲染为扁平水泥灰 `Button`（见 `05-native-epub.png`），无面板标题、无当前章节指示；右侧 AI 面板 7 个灰按钮密集堆叠，缺少卡片层次与加载动效。
+
+### 四、 仪表盘、书库、详情与统计页（`OverviewView`, `BookListView`, `BookDetailView`, `StatisticsView`）
+11. **`OverviewView` 1000px 满宽水泥灰按钮条**：`OverviewView.axaml:59` 将“正在阅读”列表项直接写成 `<Button HorizontalAlignment="Stretch">`，在 `18-overview-populated.png` 中渲染成横贯全屏的巨大灰色金属条；而“近期阅读记录”和“待完成计划”又是毫无边框的裸文本行。
+12. **多页面底部常驻突兀的“刷新 / 重试”按钮且被裁切**：`StatisticsView`、`OverviewView`、`BookDetailView`、`SettingsView` 底部均常驻一个孤立的 `刷新 / 重试` 按钮（即使无错误也显示），在 `04-combined-statistics.png` 中该按钮在窗口底部边缘被裁切。
+13. **`BookListView` 顶部 5 控件单行挤压与卡片平淡**：顶部栏单行塞入 5 个控件，窄窗口或高 DPI 下易挤压截断；书籍卡片与书摘/计划卡片均为透明底色 + 半透明灰框，缺少表面高度（Surface Elevation）与悬停微交互。
+14. **`BookDetailView` 动作层级混乱**：`开始 / 继续阅读`、`编辑`、`标记已读`、`重置阅读进度`、`删除书籍` 等 7 个按钮外观完全相同，危险删除操作无红色警示隔离。
+15. **所有列表页空态（Empty State）简陋**：仅有一行灰色纯文字，缺少视觉引导插画图标与快捷操作入口。
+
+### 五、 模态弹窗与记录编辑（`AlertService.cs` & `ReadingRecordEditView.axaml`）
+16. **原生弹窗与添加记录窗口粗糙**：`AlertService.cs` 动态创建的确认/提示框及 `ReadingRecordEditView` 弹窗（`07-record-dialog.png`）使用原始灰按钮，且“添加阅读记录”弹窗内只有“保存记录”按钮而无“取消”按钮（只能点窗口右上角 X）。
+
+### 六、 测试与架构门禁硬约束（重构红线）
+17. **单元测试直接断言的控件属性（绝不可改）**：
+    - `MainView.axaml` 返回按钮必须保持 `Content="← 返回"`（`ArchitectureTests.cs:93`）。
+    - `ReaderView.axaml` AI 提取按钮必须保持 `Content="生成并自动保存书摘"`（`AiViewModelTests.cs:57`）。
+    - `SettingsView.axaml` 密钥输入框必须保持 `Name="ApiKeyBox" PasswordChar="●"`（`AiViewModelTests.cs:101`）。
+    - `AvaloniaReaderLayoutService.cs:27` 要求 `Palette` 底层值保持 `"paper" | "light" | "dark"`（UI 中文显示可通过转换器或映射项实现，不改底层字符串值）。
+18. **UIAutomation 探针兼容**：已有各业务按钮的中文文案或 `AutomationProperties.Name` 需保持向后兼容，确保 334 项单测与 152 项探针 100% 绿灯。

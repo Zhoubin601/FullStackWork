@@ -1,22 +1,284 @@
 <Application xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:ReadJournal" x:Class="ReadJournal.App" RequestedThemeVariant="Light">
-<Application.Resources><ResourceDictionary>
-<ControlTheme x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
- <Setter Property="Background" Value="#60798A80"/><Setter Property="Foreground" Value="#399B75"/>
- <Setter Property="MinHeight" Value="6"/><Setter Property="CornerRadius" Value="4"/>
- <Setter Property="Template"><ControlTemplate>
-  <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" ClipToBounds="True">
-   <Border x:Name="PART_Indicator" Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAlignment="Left"/>
-  </Border>
- </ControlTemplate></Setter>
-</ControlTheme><local:ServiceLocator x:Key="ServiceLocator"/></ResourceDictionary></Application.Resources>
-<Application.DataTemplates><local:ViewLocator/></Application.DataTemplates>
-<Application.Styles><FluentTheme/>
-<Style Selector="Window"><Setter Property="FontFamily" Value="Noto Sans CJK SC,Microsoft YaHei,Arial"/></Style>
-<Style Selector="TextBlock.h1"><Setter Property="FontSize" Value="28"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
-<Style Selector="TextBlock.h2"><Setter Property="FontSize" Value="18"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
-<Style Selector="TextBlock.muted"><Setter Property="Opacity" Value="0.65"/></Style>
-<Style Selector="Button"><Setter Property="Padding" Value="16,10"/></Style>
-<Style Selector="TextBox"><Setter Property="MinHeight" Value="40"/></Style>
-<Style Selector="Border.nav Button"><Setter Property="Foreground" Value="White"/><Setter Property="Background" Value="#254C44"/></Style>
-<Style Selector="Button.primary"><Setter Property="Background" Value="#246650"/><Setter Property="Foreground" Value="White"/></Style>
-</Application.Styles></Application>
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="AppBackgroundBrush" Color="#FAF8F5"/>
+          <SolidColorBrush x:Key="AppSurfaceBrush" Color="#FFFFFF"/>
+          <SolidColorBrush x:Key="AppSurfaceMutedBrush" Color="#F3EFE9"/>
+          <SolidColorBrush x:Key="AppSurfaceHoverBrush" Color="#EAE4DC"/>
+          <SolidColorBrush x:Key="AppBorderBrush" Color="#E2DDD4"/>
+          <SolidColorBrush x:Key="AppTextPrimaryBrush" Color="#18221F"/>
+          <SolidColorBrush x:Key="AppTextSecondaryBrush" Color="#5A6B65"/>
+          <SolidColorBrush x:Key="AppAccentBrush" Color="#246650"/>
+          <SolidColorBrush x:Key="AppAccentHoverBrush" Color="#1D5341"/>
+          <SolidColorBrush x:Key="AppAccentSoftBrush" Color="#1A246650"/>
+          <SolidColorBrush x:Key="AppDangerBrush" Color="#C93B3B"/>
+          <SolidColorBrush x:Key="AppDangerSoftBrush" Color="#16C93B3B"/>
+          <SolidColorBrush x:Key="AppWarningBrush" Color="#B45309"/>
+          <SolidColorBrush x:Key="AppWarningSoftBrush" Color="#1AB45309"/>
+          <SolidColorBrush x:Key="AppSidebarBgBrush" Color="#163832"/>
+          <SolidColorBrush x:Key="AppSidebarItemBgBrush" Color="#1F4740"/>
+          <SolidColorBrush x:Key="AppSidebarItemHoverBrush" Color="#285950"/>
+          <SolidColorBrush x:Key="AppSidebarItemActiveBgBrush" Color="#2E6F5E"/>
+          <SolidColorBrush x:Key="AppHeaderBgBrush" Color="#FFFFFF"/>
+          <SolidColorBrush x:Key="AppReaderFrameBgBrush" Color="#EFECE6"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="AppBackgroundBrush" Color="#141A18"/>
+          <SolidColorBrush x:Key="AppSurfaceBrush" Color="#1D2623"/>
+          <SolidColorBrush x:Key="AppSurfaceMutedBrush" Color="#24302C"/>
+          <SolidColorBrush x:Key="AppSurfaceHoverBrush" Color="#2C3B36"/>
+          <SolidColorBrush x:Key="AppBorderBrush" Color="#2E3D38"/>
+          <SolidColorBrush x:Key="AppTextPrimaryBrush" Color="#ECF3F0"/>
+          <SolidColorBrush x:Key="AppTextSecondaryBrush" Color="#9AA8A3"/>
+          <SolidColorBrush x:Key="AppAccentBrush" Color="#2E8568"/>
+          <SolidColorBrush x:Key="AppAccentHoverBrush" Color="#389B7A"/>
+          <SolidColorBrush x:Key="AppAccentSoftBrush" Color="#28389B7A"/>
+          <SolidColorBrush x:Key="AppDangerBrush" Color="#F06565"/>
+          <SolidColorBrush x:Key="AppDangerSoftBrush" Color="#24F06565"/>
+          <SolidColorBrush x:Key="AppWarningBrush" Color="#F59E0B"/>
+          <SolidColorBrush x:Key="AppWarningSoftBrush" Color="#24F59E0B"/>
+          <SolidColorBrush x:Key="AppSidebarBgBrush" Color="#0F1715"/>
+          <SolidColorBrush x:Key="AppSidebarItemBgBrush" Color="#182421"/>
+          <SolidColorBrush x:Key="AppSidebarItemHoverBrush" Color="#21322D"/>
+          <SolidColorBrush x:Key="AppSidebarItemActiveBgBrush" Color="#245448"/>
+          <SolidColorBrush x:Key="AppHeaderBgBrush" Color="#19211E"/>
+          <SolidColorBrush x:Key="AppReaderFrameBgBrush" Color="#101513"/>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+
+      <StreamGeometry x:Key="IconOverview">M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z</StreamGeometry>
+      <StreamGeometry x:Key="IconBooks">M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14zm2.5-.5a1 1 0 0 0 0 2H20v-2H6.5z</StreamGeometry>
+      <StreamGeometry x:Key="IconQuotes">M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z</StreamGeometry>
+      <StreamGeometry x:Key="IconPlans">M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm-9-4l-3-3 1.4-1.4 1.6 1.6 4.6-4.6L16 11l-6 5z</StreamGeometry>
+      <StreamGeometry x:Key="IconStats">M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z</StreamGeometry>
+      <StreamGeometry x:Key="IconSettings">M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z</StreamGeometry>
+
+      <ControlTheme x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">
+        <Setter Property="Background" Value="#30798A80"/>
+        <Setter Property="Foreground" Value="{DynamicResource AppAccentBrush}"/>
+        <Setter Property="MinHeight" Value="8"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Template">
+          <ControlTemplate>
+            <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" ClipToBounds="True">
+              <Border x:Name="PART_Indicator" Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAlignment="Left"/>
+            </Border>
+          </ControlTemplate>
+        </Setter>
+      </ControlTheme>
+
+      <local:ServiceLocator x:Key="ServiceLocator"/>
+    </ResourceDictionary>
+  </Application.Resources>
+
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+
+  <Application.Styles>
+    <FluentTheme/>
+    <Style Selector="Window">
+      <Setter Property="FontFamily" Value="Noto Sans CJK SC,Microsoft YaHei UI,Microsoft YaHei,Segoe UI,Arial"/>
+      <Setter Property="Background" Value="{DynamicResource AppBackgroundBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontSize" Value="24"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style Selector="TextBlock.h2">
+      <Setter Property="FontSize" Value="17"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style Selector="TextBlock.h3">
+      <Setter Property="FontSize" Value="15"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="{DynamicResource AppTextSecondaryBrush}"/>
+      <Setter Property="Opacity" Value="0.92"/>
+    </Style>
+    <Style Selector="TextBlock.danger-text">
+      <Setter Property="Foreground" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+    <Style Selector="TextBlock.badge-text">
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppAccentBrush}"/>
+    </Style>
+    <Style Selector="TextBlock.badge-amber-text">
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppWarningBrush}"/>
+    </Style>
+
+    <Style Selector="TextBox">
+      <Setter Property="MinHeight" Value="40"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="Padding" Value="12,8"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+    </Style>
+    <Style Selector="ComboBox">
+      <Setter Property="MinHeight" Value="40"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="Padding" Value="12,6"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+    </Style>
+    <Style Selector="DatePicker">
+      <Setter Property="MinHeight" Value="40"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+    </Style>
+
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="12"/>
+      <Setter Property="Padding" Value="18"/>
+    </Style>
+    <Style Selector="Border.card-compact">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="Padding" Value="14"/>
+    </Style>
+    <Style Selector="Border.surface-muted">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceMutedBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="Padding" Value="14"/>
+    </Style>
+    <Style Selector="Border.badge">
+      <Setter Property="Background" Value="{DynamicResource AppAccentSoftBrush}"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="8,3"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Border.badge-amber">
+      <Setter Property="Background" Value="{DynamicResource AppWarningSoftBrush}"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="8,3"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="Border.error-banner">
+      <Setter Property="Background" Value="{DynamicResource AppDangerSoftBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="Padding" Value="12,8"/>
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="MinHeight" Value="38"/>
+      <Setter Property="Padding" Value="14,8"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="FontWeight" Value="Medium"/>
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="Button.primary">
+      <Setter Property="Background" Value="{DynamicResource AppAccentBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style Selector="Button.secondary">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceMutedBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="Button.ghost">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Padding" Value="10,6"/>
+    </Style>
+    <Style Selector="Button.danger">
+      <Setter Property="Background" Value="{DynamicResource AppDangerSoftBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style Selector="Button.danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppDangerBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style Selector="Button.card-action">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="Padding" Value="14,12"/>
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+    <Style Selector="Button.toc-item">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="CornerRadius" Value="6"/>
+      <Setter Property="Padding" Value="10,8"/>
+      <Setter Property="MinHeight" Value="34"/>
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    </Style>
+    <Style Selector="Border.nav Button">
+      <Setter Property="Foreground" Value="#E8F3EE"/>
+      <Setter Property="Background" Value="{DynamicResource AppSidebarItemBgBrush}"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="CornerRadius" Value="10"/>
+      <Setter Property="Padding" Value="14,10"/>
+      <Setter Property="MinHeight" Value="42"/>
+    </Style>
+    <Style Selector="Border.nav Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSidebarItemHoverBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style Selector="Border.nav Button.active">
+      <Setter Property="Background" Value="{DynamicResource AppSidebarItemActiveBgBrush}"/>
+      <Setter Property="BorderBrush" Value="#58C4A3"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style Selector="Border.nav Button.active:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSidebarItemActiveBgBrush}"/>
+      <Setter Property="BorderBrush" Value="#58C4A3"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+  </Application.Styles>
+</Application>

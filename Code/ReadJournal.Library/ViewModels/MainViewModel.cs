@@ -63,6 +63,7 @@ public class MainViewModel : ViewModelBase
     public void SetMenuAndContent(string view, ViewModelBase content)
     {
         ContentStack.Clear(); PushContent(content);
+        foreach (var item in MenuItem.MenuItems) item.IsSelected = item.View == view;
         SelectedMenuItem = MenuItem.MenuItems.First(x => x.View == view); Title = SelectedMenuItem.Name;
     }
     public void GoBack() { if (!_navigationCommit) throw new InvalidOperationException("返回必须先通过异步离开门禁。"); if (ContentStack.Count <= 1) return; ContentStack.RemoveAt(0); Content = ContentStack[0]; }

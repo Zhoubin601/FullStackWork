@@ -13,6 +13,7 @@ public class BookProgress
     public double CurrentPercent { get; init; }
     public long DurationMilliseconds { get; init; }
     public int SessionCount { get; init; }
+    public string KindLabel => Book.Kind == BookKind.Ebook ? "电子书" : "纸质/手动";
     public string State => Book.Kind == BookKind.Ebook
         ? EbookCompletedAt.HasValue ? "已完成" : HasStarted ? "在读" : "未开始"
         : CurrentPage == 0 ? "未开始" : CurrentPage >= Book.TotalPages ? "已完成" : "在读";

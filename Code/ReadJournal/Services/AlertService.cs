@@ -10,11 +10,23 @@ public class AlertService : IAlertService, ReadJournal.Library.Services.Reader.I
     private static Window Owner => ((IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!).MainWindow!;
     private static async Task<string> ChooseAsync(string title, string message, params string[] choices)
     {
-        var panel = new StackPanel { Spacing = 20, Margin = new Thickness(28) };
+        var panel = new StackPanel { Spacing = 18 };
+        panel.Children.Add(new TextBlock { Text = title, Classes = { "h2" } });
         panel.Children.Add(new TextBlock { Text = message, TextWrapping = Avalonia.Media.TextWrapping.Wrap });
-        var buttons = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 10, HorizontalAlignment = HorizontalAlignment.Right }; panel.Children.Add(buttons);
-        var dialog = new Window { Title = title, Width = 560, SizeToContent = SizeToContent.Height, CanResize = false, WindowStartupLocation = WindowStartupLocation.CenterOwner, Content = panel };
-        foreach (var choice in choices) { var button = new Button { Content = choice }; button.Click += (_, _) => dialog.Close(choice); buttons.Children.Add(button); }
+        var buttons = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 10, HorizontalAlignment = HorizontalAlignment.Right };
+        panel.Children.Add(buttons);
+        var card = new Border { Classes = { "card" }, Margin = new Thickness(18), Child = panel };
+        var dialog = new Window { Title = title, Width = 540, SizeToContent = SizeToContent.Height, CanResize = false, WindowStartupLocation = WindowStartupLocation.CenterOwner, Content = card };
+        for (var i = 0; i < choices.Length; i++)
+        {
+            var choice = choices[i];
+            var button = new Button { Content = choice };
+            if (choice.Contains("放弃") || choice.Contains("删除")) button.Classes.Add("danger");
+            else if (i == choices.Length - 1) button.Classes.Add("primary");
+            else button.Classes.Add("secondary");
+            button.Click += (_, _) => dialog.Close(choice);
+            buttons.Children.Add(button);
+        }
         return await dialog.ShowDialog<string>(Owner) ?? "取消";
     }
     public async Task<ReadJournal.Library.Models.Reader.ReaderCloseDecision> ChooseCloseFailureAsync(string message, CancellationToken ct)

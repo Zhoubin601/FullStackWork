@@ -1,4 +1,49 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.ReadingPlanEditView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding ReadingPlanEditViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<ScrollViewer><StackPanel MaxWidth="720" Spacing="16"><TextBlock Classes="h1" Text="编辑阅读计划"/><TextBlock Classes="muted" Text="目标是读到全书末页；每本书最多一个未完成计划。" TextWrapping="Wrap"/><TextBlock Text="关联书籍 *"/><ComboBox IsEnabled="{Binding !IsBusy}" ItemsSource="{Binding BooksList}" SelectedItem="{Binding SelectedBook,Mode=TwoWay}" HorizontalAlignment="Stretch"><ComboBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding Title}"/></DataTemplate></ComboBox.ItemTemplate></ComboBox><TextBlock Text="目标完成日期 *"/><DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding TargetDate,Mode=TwoWay}"/><TextBlock Text="{Binding Suggestion}" Classes="h2"/><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><Button IsEnabled="{Binding !IsBusy}" Content="保存并返回" Command="{Binding SaveCommand}"/><TextBlock Text="有未保存修改" IsVisible="{Binding IsDirty}" Classes="muted"/><Button IsEnabled="{Binding !IsBusy}" Content="重新加载" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/></StackPanel></ScrollViewer>
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding ReadingPlanEditViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <ScrollViewer>
+    <StackPanel MaxWidth="760" HorizontalAlignment="Left" Spacing="16" Margin="0,0,0,16">
+      <StackPanel Spacing="4">
+        <TextBlock Classes="h1" Text="编辑阅读计划"/>
+        <TextBlock Classes="muted" Text="目标是读到全书末页；每本书最多一个未完成计划。" TextWrapping="Wrap"/>
+      </StackPanel>
+
+      <Border Classes="card" Padding="24,20">
+        <StackPanel Spacing="14">
+          <StackPanel Spacing="6">
+            <TextBlock Classes="h3" Text="关联书籍 *"/>
+            <ComboBox IsEnabled="{Binding !IsBusy}" ItemsSource="{Binding BooksList}" SelectedItem="{Binding SelectedBook,Mode=TwoWay}" HorizontalAlignment="Stretch">
+              <ComboBox.ItemTemplate>
+                <DataTemplate>
+                  <TextBlock Text="{Binding Title}"/>
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
+            </ComboBox>
+          </StackPanel>
+
+          <StackPanel Spacing="6">
+            <TextBlock Classes="h3" Text="目标完成日期 *"/>
+            <DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding TargetDate,Mode=TwoWay}"/>
+          </StackPanel>
+
+          <Border Classes="surface-muted" Padding="14,12">
+            <TextBlock Text="{Binding Suggestion}" Classes="h2"/>
+          </Border>
+
+          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+
+          <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,6,0,0">
+            <Button Classes="primary" IsEnabled="{Binding !IsBusy}" Content="保存并返回" Command="{Binding SaveCommand}"/>
+            <Button Classes="secondary" IsEnabled="{Binding !IsBusy}" Content="重新加载" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
+            <Border Classes="badge-amber" IsVisible="{Binding IsDirty}" VerticalAlignment="Center">
+              <TextBlock Classes="badge-amber-text" Text="有未保存修改"/>
+            </Border>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>

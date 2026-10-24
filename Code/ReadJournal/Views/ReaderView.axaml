@@ -1,19 +1,146 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:r="using:ReadJournal.Reader" x:Class="ReadJournal.Views.ReaderView">
-<Grid RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
-<TextBlock Text="{Binding Title}" Classes="h2"/>
-<WrapPanel Grid.Row="1"><TextBlock Text="字体" VerticalAlignment="Center"/><TextBox Text="{Binding FontFamily}" Width="170" Margin="6,0"/><TextBox Text="{Binding FontSizeText}" Width="60" Margin="0,0,6,0"/><ComboBox SelectedItem="{Binding Palette}" Width="100" Margin="0,0,6,0"><x:String>paper</x:String><x:String>light</x:String><x:String>dark</x:String></ComboBox><Button Content="应用排版" Command="{Binding ApplyAppearanceCommand}" Margin="0,0,6,0"/><Button Content="全屏 F11" Command="{Binding FullScreenCommand}"/></WrapPanel>
-<StackPanel Grid.Row="2"><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><TextBlock Text="{Binding Notice}" TextWrapping="Wrap"/><StackPanel Orientation="Horizontal" IsVisible="{Binding IsCloseFailed}"><Button Content="重试保存并返回" Command="{Binding RetryCloseCommand}"/><Button Content="继续阅读" Command="{Binding ContinueReadingCommand}" Margin="8,0"/></StackPanel></StackPanel>
-<Grid Grid.Row="3" ColumnDefinitions="150,*,300"><ScrollViewer><ItemsControl ItemsSource="{Binding TableOfContents}"><ItemsControl.ItemTemplate><DataTemplate><Button Content="{Binding Title}" Command="{Binding $parent[UserControl].DataContext.GoToChapterCommand}" CommandParameter="{Binding}" Margin="0,4"/></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></ScrollViewer><r:ReaderSurface Name="Surface" Grid.Column="1" Page="{Binding Page}" Selection="{Binding Selection}" MinWidth="180" MinHeight="120"/><Border Grid.Column="2" BorderThickness="1,0,0,0" BorderBrush="#8094A49C" Padding="12,0,0,0" Margin="10,0,0,0"><ScrollViewer><StackPanel Spacing="8"><TextBlock Text="AI 阅读助手" Classes="h2"/>
-<TextBlock Text="生成书摘会自动保存；原句核验不代表AI解读正确。" TextWrapping="Wrap" Classes="muted"/>
-<ComboBox ItemsSource="{Binding AiScopes}" SelectedItem="{Binding AiScope}" HorizontalAlignment="Stretch" IsEnabled="{Binding !IsAiBusy}"/>
-<StackPanel Orientation="Horizontal" Spacing="6"><TextBox Width="115" Watermark="全书起始页" Text="{Binding AiFirstPage}" IsEnabled="{Binding !IsAiBusy}"/><TextBox Width="115" Watermark="全书结束页" Text="{Binding AiLastPage}" IsEnabled="{Binding !IsAiBusy}"/></StackPanel>
-<WrapPanel><Button Content="分析所选范围" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,6,6"/><Button Content="解释选区" Command="{Binding ExplainCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,0,6"/></WrapPanel>
-<Button Content="生成并自动保存书摘" Command="{Binding GenerateQuotesCommand}" IsEnabled="{Binding !IsAiBusy}"/>
-<Button Content="取消AI任务" Command="{Binding CancelAiCommand}" IsVisible="{Binding IsAiBusy}"/>
-<TextBlock Text="{Binding AiStatus}" TextWrapping="Wrap"/>
-<TextBox Text="{Binding AiResult,Mode=OneWay}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="100" MaxHeight="260"/>
-<Button Content="重试本地保存（不重新生成）" Command="{Binding RetryAiSaveCommand}" IsVisible="{Binding CanRetryAiSave}"/>
-<Button Content="撤销本批新增书摘" Command="{Binding UndoAiCommand}" IsVisible="{Binding CanUndoAi}"/>
-</StackPanel></ScrollViewer></Border></Grid>
-<Grid Grid.Row="4" ColumnDefinitions="Auto,*,Auto"><Button Content="← 上一页" Command="{Binding PreviousCommand}"/><TextBlock Grid.Column="1" Text="{Binding IndexText}" HorizontalAlignment="Center" VerticalAlignment="Center"/><Button Grid.Column="2" Content="下一页 →" Command="{Binding NextCommand}"/></Grid>
-<WrapPanel Grid.Row="5" Margin="0,8,0,0"><Button Content="复制选区 Ctrl+C" Command="{Binding CopySelectionCommand}" Margin="0,0,6,0"/><Button Content="保存书摘 Ctrl+S" Command="{Binding SaveSelectionCommand}" Margin="0,0,6,0"/><Button Content="标记读完" Command="{Binding MarkCompletedCommand}" Margin="0,0,6,0"/><Button Content="重置进度" Command="{Binding ResetProgressCommand}"/><TextBlock Text="位置百分比表示当前位置，不代表阅读覆盖率。Shift+单击可延伸选区。" TextWrapping="Wrap" Margin="8,8"/></WrapPanel></Grid></UserControl>
+  <Grid RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
+    <DockPanel Grid.Row="0" Margin="0,0,0,8">
+      <Border DockPanel.Dock="Right" Classes="badge" Margin="12,0,0,0">
+        <TextBlock Classes="badge-text" Text="原生排版阅读器"/>
+      </Border>
+      <TextBlock Text="{Binding Title}" Classes="h1" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+    </DockPanel>
+
+    <Border Grid.Row="1" Classes="card-compact" Padding="14,10" Margin="0,0,0,8">
+      <WrapPanel VerticalAlignment="Center">
+        <TextBlock Text="字体" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <TextBox Text="{Binding FontFamily}" Width="165" Margin="0,0,10,0" ToolTip.Tip="输入正文字体名称"/>
+        <TextBlock Text="字号" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <TextBox Text="{Binding FontSizeText}" Width="58" Margin="0,0,10,0" ToolTip.Tip="输入字号大小"/>
+        <TextBlock Text="纸张" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+        <ComboBox SelectedItem="{Binding Palette}" Width="100" Margin="0,0,10,0" ToolTip.Tip="选择阅读纸张主题 (paper/light/dark)">
+          <x:String>paper</x:String>
+          <x:String>light</x:String>
+          <x:String>dark</x:String>
+        </ComboBox>
+        <Button Classes="primary" Content="应用排版" Command="{Binding ApplyAppearanceCommand}" Margin="0,0,8,0"/>
+        <Button Classes="secondary" Content="全屏 F11" Command="{Binding FullScreenCommand}"/>
+      </WrapPanel>
+    </Border>
+
+    <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,6">
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      <TextBlock Text="{Binding Notice}" Classes="muted" TextWrapping="Wrap"/>
+      <StackPanel Orientation="Horizontal" Spacing="8" IsVisible="{Binding IsCloseFailed}">
+        <Button Classes="primary" Content="重试保存并返回" Command="{Binding RetryCloseCommand}"/>
+        <Button Classes="secondary" Content="继续阅读" Command="{Binding ContinueReadingCommand}"/>
+      </StackPanel>
+    </StackPanel>
+
+    <Grid Grid.Row="3" ColumnDefinitions="164,*,304" Margin="0,0,0,8">
+      <Border Grid.Column="0" Classes="card-compact" Padding="8,10" Margin="0,0,10,0">
+        <DockPanel>
+          <TextBlock DockPanel.Dock="Top" Text="章节目录" Classes="h3" Margin="6,0,6,8"/>
+          <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding TableOfContents}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <Button Classes="toc-item"
+                          Content="{Binding Title}"
+                          Command="{Binding $parent[UserControl].DataContext.GoToChapterCommand}"
+                          CommandParameter="{Binding}"
+                          Margin="0,2"/>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </ScrollViewer>
+        </DockPanel>
+      </Border>
+
+      <Border Grid.Column="1"
+              Background="{DynamicResource AppReaderFrameBgBrush}"
+              BorderBrush="{DynamicResource AppBorderBrush}"
+              BorderThickness="1"
+              CornerRadius="10"
+              Padding="2"
+              ClipToBounds="True">
+        <r:ReaderSurface Name="Surface"
+                         Page="{Binding Page}"
+                         Selection="{Binding Selection}"
+                         MinWidth="180"
+                         MinHeight="120"/>
+      </Border>
+
+      <Border Grid.Column="2" Classes="card-compact" Padding="14,12" Margin="10,0,0,0">
+        <ScrollViewer>
+          <StackPanel Spacing="10">
+            <StackPanel Spacing="4">
+              <TextBlock Text="AI 阅读助手" Classes="h2"/>
+              <TextBlock Text="生成书摘会自动保存；原句核验不代表AI解读正确。" TextWrapping="Wrap" Classes="muted" FontSize="12"/>
+            </StackPanel>
+
+            <ComboBox ItemsSource="{Binding AiScopes}"
+                      SelectedItem="{Binding AiScope}"
+                      HorizontalAlignment="Stretch"
+                      IsEnabled="{Binding !IsAiBusy}"/>
+
+            <Grid ColumnDefinitions="*,*">
+              <TextBox Grid.Column="0" Watermark="全书起始页" Text="{Binding AiFirstPage}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,4,0"/>
+              <TextBox Grid.Column="1" Watermark="全书结束页" Text="{Binding AiLastPage}" IsEnabled="{Binding !IsAiBusy}" Margin="4,0,0,0"/>
+            </Grid>
+
+            <WrapPanel>
+              <Button Classes="secondary" Content="分析所选范围" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,6,6"/>
+              <Button Classes="secondary" Content="解释选区" Command="{Binding ExplainCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,0,6"/>
+            </WrapPanel>
+
+            <Button Classes="primary"
+                    Content="生成并自动保存书摘"
+                    Command="{Binding GenerateQuotesCommand}"
+                    IsEnabled="{Binding !IsAiBusy}"
+                    HorizontalAlignment="Stretch"/>
+
+            <Button Classes="danger"
+                    Content="取消AI任务"
+                    Command="{Binding CancelAiCommand}"
+                    IsVisible="{Binding IsAiBusy}"
+                    HorizontalAlignment="Stretch"/>
+
+            <TextBlock Text="{Binding AiStatus}" TextWrapping="Wrap" FontSize="13" FontWeight="Medium"/>
+
+            <TextBox Text="{Binding AiResult,Mode=OneWay}"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     MinHeight="110"
+                     MaxHeight="250"/>
+
+            <Button Classes="secondary"
+                    Content="重试本地保存（不重新生成）"
+                    Command="{Binding RetryAiSaveCommand}"
+                    IsVisible="{Binding CanRetryAiSave}"
+                    HorizontalAlignment="Stretch"/>
+
+            <Button Classes="danger"
+                    Content="撤销本批新增书摘"
+                    Command="{Binding UndoAiCommand}"
+                    IsVisible="{Binding CanUndoAi}"
+                    HorizontalAlignment="Stretch"/>
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+    </Grid>
+
+    <Border Grid.Row="4" Classes="card-compact" Padding="12,8" Margin="0,0,0,8">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <Button Classes="secondary" Content="← 上一页" Command="{Binding PreviousCommand}"/>
+        <TextBlock Grid.Column="1" Text="{Binding IndexText}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Column="2" Classes="secondary" Content="下一页 →" Command="{Binding NextCommand}"/>
+      </Grid>
+    </Border>
+
+    <WrapPanel Grid.Row="5" VerticalAlignment="Center">
+      <Button Classes="secondary" Content="复制选区 Ctrl+C" Command="{Binding CopySelectionCommand}" Margin="0,0,8,0"/>
+      <Button Classes="primary" Content="保存书摘 Ctrl+S" Command="{Binding SaveSelectionCommand}" Margin="0,0,8,0"/>
+      <Button Classes="secondary" Content="标记读完" Command="{Binding MarkCompletedCommand}" Margin="0,0,8,0"/>
+      <Button Classes="danger" Content="重置进度" Command="{Binding ResetProgressCommand}" Margin="0,0,12,0"/>
+      <TextBlock Text="位置百分比表示当前位置，不代表阅读覆盖率。Shift+单击可延伸选区。" Classes="muted" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center"/>
+    </WrapPanel>
+  </Grid>
+</UserControl>

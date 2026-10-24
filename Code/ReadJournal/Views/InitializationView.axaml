@@ -1,1 +1,19 @@
-<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.InitializationView"><i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding InitializationViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors><StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="18"><TextBlock Classes="h1" Text="阅记"/><TextBlock Text="正在准备本地阅读空间"/><TextBlock Text="正在初始化…" IsVisible="{Binding IsBusy}" Classes="muted"/><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap" MaxWidth="600"/><Button Content="重试初始化" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/></StackPanel></UserControl>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.InitializationView" Background="{DynamicResource AppBackgroundBrush}">
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding InitializationViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <Border Classes="card" MaxWidth="460" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="32,28">
+    <StackPanel HorizontalAlignment="Center" Spacing="16">
+      <Border Width="52" Height="52" CornerRadius="14" Background="{DynamicResource AppAccentBrush}" HorizontalAlignment="Center">
+        <PathIcon Data="{StaticResource IconBooks}" Width="26" Height="26" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      </Border>
+      <TextBlock Classes="h1" Text="阅记 · ReadJournal" HorizontalAlignment="Center"/>
+      <TextBlock Classes="muted" Text="正在准备本地阅读空间与数据库环境" HorizontalAlignment="Center"/>
+      <TextBlock Text="正在初始化…" IsVisible="{Binding IsBusy}" Classes="muted" HorizontalAlignment="Center"/>
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap" MaxWidth="380" HorizontalAlignment="Center"/>
+      <Button Classes="primary" Content="重试初始化" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}" HorizontalAlignment="Center"/>
+    </StackPanel>
+  </Border>
+</UserControl>

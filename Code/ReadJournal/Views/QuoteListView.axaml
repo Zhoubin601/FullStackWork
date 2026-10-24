@@ -1,6 +1,66 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.QuoteListView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding QuoteListViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<Grid RowDefinitions="Auto,Auto,Auto,*"><DockPanel><Button DockPanel.Dock="Right" Content="＋ 添加书摘" Command="{Binding AddQuoteCommand}"/><TextBlock Classes="h1" Text="书摘收藏"/></DockPanel>
-<StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="12" Margin="0,18"><TextBox Width="300" Watermark="搜索摘录内容或书名" Text="{Binding Query,Mode=TwoWay}"/><CheckBox Content="仅收藏" IsChecked="{Binding FavoritesOnly,Mode=TwoWay}"/><Button Content="搜索 / 刷新" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/></StackPanel><StackPanel Grid.Row="2"><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><TextBlock Text="{Binding BatchStatus}" TextWrapping="Wrap"/></StackPanel>
-<ScrollViewer Grid.Row="3"><StackPanel><TextBlock Text="没有匹配的书摘。记录一句打动你的话吧。" IsVisible="{Binding IsEmpty}" Classes="muted" Margin="0,20"/><ItemsControl ItemsSource="{Binding QuotesList}"><ItemsControl.ItemTemplate><DataTemplate><Border BorderThickness="1" BorderBrush="#8094A49C" CornerRadius="10" Padding="22" Margin="0,0,0,14"><StackPanel Spacing="12"><TextBlock Text="{Binding SourceLabel}" Classes="muted"/><TextBlock Text="{Binding Location}" Classes="muted"/><TextBlock Text="{Binding Quote}" Classes="h2" TextWrapping="Wrap"/><TextBlock Text="{Binding Quote.Thoughts}" TextWrapping="Wrap"/><StackPanel Orientation="Horizontal" Spacing="10"><Button Content="撤销AI批次" IsVisible="{Binding HasAiBatch}" Command="{Binding $parent[UserControl].DataContext.UndoBatchCommand}" CommandParameter="{Binding}"/><Button Content="回到原文" Command="{Binding $parent[UserControl].DataContext.OpenSourceCommand}" CommandParameter="{Binding}"/><Button Content="编辑" Command="{Binding $parent[UserControl].DataContext.EditQuoteCommand}" CommandParameter="{Binding}"/><Button Content="切换收藏" Command="{Binding $parent[UserControl].DataContext.ToggleFavoriteCommand}" CommandParameter="{Binding}"/><Button Content="删除" Command="{Binding $parent[UserControl].DataContext.DeleteQuoteCommand}" CommandParameter="{Binding}"/></StackPanel></StackPanel></Border></DataTemplate></ItemsControl.ItemTemplate></ItemsControl></StackPanel></ScrollViewer></Grid>
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding QuoteListViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <Grid RowDefinitions="Auto,Auto,Auto,*">
+    <DockPanel Grid.Row="0" Margin="0,0,0,12">
+      <Button DockPanel.Dock="Right" Classes="primary" Content="＋ 添加书摘" Command="{Binding AddQuoteCommand}"/>
+      <StackPanel Spacing="2">
+        <TextBlock Classes="h1" Text="书摘收藏"/>
+        <TextBlock Classes="muted" Text="汇集手动摘录、阅读器正文选区与 AI 核验书摘"/>
+      </StackPanel>
+    </DockPanel>
+
+    <Border Grid.Row="1" Classes="card-compact" Padding="14,10" Margin="0,0,0,10">
+      <WrapPanel VerticalAlignment="Center">
+        <TextBox Width="300" Watermark="搜索摘录内容或书名" Text="{Binding Query,Mode=TwoWay}" Margin="0,0,12,0"/>
+        <CheckBox Content="仅收藏" IsChecked="{Binding FavoritesOnly,Mode=TwoWay}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+        <Button Classes="primary" Content="搜索 / 刷新" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
+      </WrapPanel>
+    </Border>
+
+    <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,8">
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      <TextBlock Text="{Binding BatchStatus}" Classes="muted" TextWrapping="Wrap"/>
+    </StackPanel>
+
+    <ScrollViewer Grid.Row="3">
+      <StackPanel Spacing="2">
+        <Border Classes="card" IsVisible="{Binding IsEmpty}" Padding="32,28" Margin="0,12">
+          <StackPanel HorizontalAlignment="Center" Spacing="10">
+            <PathIcon Data="{StaticResource IconQuotes}" Width="28" Height="28" Foreground="{DynamicResource AppAccentBrush}" HorizontalAlignment="Center"/>
+            <TextBlock Text="没有匹配的书摘。记录一句打动你的话吧。" Classes="muted" HorizontalAlignment="Center"/>
+          </StackPanel>
+        </Border>
+
+        <ItemsControl ItemsSource="{Binding QuotesList}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <Border Classes="card" Padding="20,18" Margin="0,0,0,12">
+                <StackPanel Spacing="10">
+                  <WrapPanel VerticalAlignment="Center">
+                    <Border Classes="badge" Margin="0,0,8,0">
+                      <TextBlock Classes="badge-text" Text="{Binding SourceLabel}"/>
+                    </Border>
+                    <TextBlock Text="{Binding Location}" Classes="muted" VerticalAlignment="Center"/>
+                  </WrapPanel>
+                  <TextBlock Text="{Binding Quote}" Classes="h2" TextWrapping="Wrap"/>
+                  <TextBlock Text="{Binding Quote.Thoughts}" Classes="muted" TextWrapping="Wrap"/>
+                  <WrapPanel Margin="0,4,0,0">
+                    <Button Classes="danger" Content="撤销AI批次" IsVisible="{Binding HasAiBatch}" Command="{Binding $parent[UserControl].DataContext.UndoBatchCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
+                    <Button Classes="primary" Content="回到原文" Command="{Binding $parent[UserControl].DataContext.OpenSourceCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
+                    <Button Classes="secondary" Content="编辑" Command="{Binding $parent[UserControl].DataContext.EditQuoteCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
+                    <Button Classes="secondary" Content="切换收藏" Command="{Binding $parent[UserControl].DataContext.ToggleFavoriteCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
+                    <Button Classes="danger" Content="删除" Command="{Binding $parent[UserControl].DataContext.DeleteQuoteCommand}" CommandParameter="{Binding}" Margin="0,0,0,6"/>
+                  </WrapPanel>
+                </StackPanel>
+              </Border>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
 </UserControl>

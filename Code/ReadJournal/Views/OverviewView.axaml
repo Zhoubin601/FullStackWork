@@ -1,4 +1,109 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.OverviewView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding OverviewViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<ScrollViewer><StackPanel Spacing="20"><TextBlock Classes="h1" Text="今天，也读一会儿"/><TextBlock Classes="muted" Text="从一本书开始，积累你的阅读轨迹。"/><Border Padding="24" BorderBrush="#8094A49C" BorderThickness="1" CornerRadius="12"><StackPanel Spacing="16"><TextBlock Text="{Binding Summary}" TextWrapping="Wrap" Classes="h2"/><Button Content="前往我的书库 →" Command="{Binding OpenLibraryCommand}"/></StackPanel></Border><TextBlock Classes="h2" Text="正在阅读"/><ItemsControl ItemsSource="{Binding ReadingBooks}"><ItemsControl.ItemTemplate><DataTemplate><Button HorizontalAlignment="Stretch" Margin="0,4" Command="{Binding $parent[UserControl].DataContext.OpenBookCommand}" CommandParameter="{Binding}"><StackPanel Spacing="6"><TextBlock Text="{Binding Book.Title}"/><TextBlock Text="{Binding ProgressText}" Classes="muted"/></StackPanel></Button></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Classes="h2" Text="近期记录"/><ItemsControl ItemsSource="{Binding RecentRecords}"><ItemsControl.ItemTemplate><DataTemplate><TextBlock Text="{Binding}" Margin="0,5" TextWrapping="Wrap"/></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Classes="h2" Text="待完成计划"/><ItemsControl ItemsSource="{Binding PendingPlans}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Margin="0,5" Spacing="5"><TextBlock Text="{Binding Progress.Book.Title}"/><TextBlock Text="{Binding Suggestion}" Classes="muted"/></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><Button Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/></StackPanel></ScrollViewer>
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding OverviewViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <ScrollViewer>
+    <StackPanel Spacing="18" Margin="0,0,0,16">
+      <DockPanel>
+        <Button DockPanel.Dock="Right" Classes="secondary" Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
+        <StackPanel Spacing="4">
+          <TextBlock Classes="h1" Text="今天，也读一会儿"/>
+          <TextBlock Classes="muted" Text="从一本书开始，积累你的阅读轨迹与思考回响。"/>
+        </StackPanel>
+      </DockPanel>
+
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+
+      <Border Classes="card" Padding="22,20">
+        <DockPanel>
+          <Button DockPanel.Dock="Right" Classes="primary" Content="前往我的书库 →" Command="{Binding OpenLibraryCommand}" VerticalAlignment="Center" Margin="16,0,0,0"/>
+          <StackPanel Spacing="6" VerticalAlignment="Center">
+            <Border Classes="badge" HorizontalAlignment="Left">
+              <TextBlock Classes="badge-text" Text="阅读数据总览"/>
+            </Border>
+            <TextBlock Text="{Binding Summary}" TextWrapping="Wrap" Classes="h2"/>
+          </StackPanel>
+        </DockPanel>
+      </Border>
+
+      <Border Classes="card">
+        <StackPanel Spacing="12">
+          <DockPanel>
+            <Border DockPanel.Dock="Right" Classes="badge">
+              <TextBlock Classes="badge-text" Text="点击卡片进入详情"/>
+            </Border>
+            <TextBlock Classes="h2" Text="正在阅读" VerticalAlignment="Center"/>
+          </DockPanel>
+          <ItemsControl ItemsSource="{Binding ReadingBooks}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Classes="card-action"
+                        Margin="0,4"
+                        Command="{Binding $parent[UserControl].DataContext.OpenBookCommand}"
+                        CommandParameter="{Binding}">
+                  <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Spacing="6">
+                      <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Classes="h3" Text="{Binding Book.Title}" VerticalAlignment="Center"/>
+                        <Border Classes="badge">
+                          <TextBlock Classes="badge-text" Text="{Binding KindLabel}"/>
+                        </Border>
+                      </StackPanel>
+                      <TextBlock Text="{Binding ProgressText}" Classes="muted"/>
+                      <ProgressBar Maximum="100" Value="{Binding Percent}" Height="6"/>
+                    </StackPanel>
+                    <Border Grid.Column="1" Classes="badge" VerticalAlignment="Center" Margin="16,0,0,0">
+                      <TextBlock Classes="badge-text" Text="继续阅读 →"/>
+                    </Border>
+                  </Grid>
+                </Button>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+
+      <Grid ColumnDefinitions="*,*">
+        <Border Grid.Column="0" Classes="card" Margin="0,0,8,0">
+          <StackPanel Spacing="10">
+            <TextBlock Classes="h2" Text="近期记录"/>
+            <ItemsControl ItemsSource="{Binding RecentRecords}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <Border Classes="surface-muted" Padding="12,8" Margin="0,4">
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Classes="card" Margin="8,0,0,0">
+          <StackPanel Spacing="10">
+            <TextBlock Classes="h2" Text="待完成计划"/>
+            <ItemsControl ItemsSource="{Binding PendingPlans}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <Border Classes="surface-muted" Padding="12,10" Margin="0,4">
+                    <StackPanel Spacing="4">
+                      <DockPanel>
+                        <Border DockPanel.Dock="Right" Classes="badge-amber">
+                          <TextBlock Classes="badge-amber-text" Text="{Binding Deadline}"/>
+                        </Border>
+                        <TextBlock Classes="h3" Text="{Binding Progress.Book.Title}" VerticalAlignment="Center"/>
+                      </DockPanel>
+                      <TextBlock Text="{Binding Suggestion}" Classes="muted"/>
+                    </StackPanel>
+                  </Border>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ItemsControl>
+          </StackPanel>
+        </Border>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>

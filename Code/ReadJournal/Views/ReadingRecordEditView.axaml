@@ -1,4 +1,48 @@
-<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.ReadingRecordEditView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding ReadingRecordEditViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<ScrollViewer Margin="28"><StackPanel Spacing="10" MaxWidth="720" HorizontalAlignment="Stretch"><TextBlock Classes="h1" Text="记录这一段阅读" Margin="0,0,0,12"/><TextBlock Text="{Binding Hint}" Classes="muted" TextWrapping="Wrap"/><TextBlock Text="阅读日期 *"/><DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding ReadingDate,Mode=TwoWay}"/><TextBlock Text="起始页 *"/><TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding StartPage,Mode=TwoWay}"/><TextBlock Text="结束页 *"/><TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding EndPage,Mode=TwoWay}"/><TextBlock Text="分钟数 *"/><TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding Minutes,Mode=TwoWay}"/><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/><StackPanel Orientation="Horizontal" Spacing="14" Margin="0,12"><Button IsEnabled="{Binding !IsBusy}" Content="保存阅读记录" Command="{Binding SaveCommand}"/><TextBlock Text="有未保存修改" IsVisible="{Binding IsDirty}" VerticalAlignment="Center" Classes="muted"/></StackPanel></StackPanel></ScrollViewer>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.ReadingRecordEditView" Background="{DynamicResource AppBackgroundBrush}">
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding ReadingRecordEditViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <ScrollViewer Margin="24">
+    <Border Classes="card" Padding="24,20">
+      <StackPanel Spacing="12" HorizontalAlignment="Stretch">
+        <StackPanel Spacing="4">
+          <TextBlock Classes="h1" Text="记录这一段阅读"/>
+          <TextBlock Text="{Binding Hint}" Classes="muted" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <StackPanel Spacing="6">
+          <TextBlock Classes="h3" Text="阅读日期 *"/>
+          <DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding ReadingDate,Mode=TwoWay}"/>
+        </StackPanel>
+
+        <Grid ColumnDefinitions="*,*">
+          <StackPanel Grid.Column="0" Spacing="6" Margin="0,0,8,0">
+            <TextBlock Classes="h3" Text="起始页 *"/>
+            <TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding StartPage,Mode=TwoWay}"/>
+          </StackPanel>
+          <StackPanel Grid.Column="1" Spacing="6" Margin="8,0,0,0">
+            <TextBlock Classes="h3" Text="结束页 *"/>
+            <TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding EndPage,Mode=TwoWay}"/>
+          </StackPanel>
+        </Grid>
+
+        <StackPanel Spacing="6">
+          <TextBlock Classes="h3" Text="分钟数 *"/>
+          <TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding Minutes,Mode=TwoWay}"/>
+        </StackPanel>
+
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+        <TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
+          <Button Classes="primary" IsEnabled="{Binding !IsBusy}" Content="保存阅读记录" Command="{Binding SaveCommand}"/>
+          <Border Classes="badge-amber" IsVisible="{Binding IsDirty}" VerticalAlignment="Center">
+            <TextBlock Classes="badge-amber-text" Text="有未保存修改"/>
+          </Border>
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </ScrollViewer>
 </UserControl>

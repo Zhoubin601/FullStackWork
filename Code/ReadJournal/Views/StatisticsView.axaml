@@ -1,4 +1,59 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:i="using:Avalonia.Xaml.Interactivity" xmlns:ia="using:Avalonia.Xaml.Interactions.Core" x:Class="ReadJournal.Views.StatisticsView">
-<i:Interaction.Behaviors><ia:EventTriggerBehavior EventName="Loaded"><ia:InvokeCommandAction Command="{Binding StatisticsViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/></ia:EventTriggerBehavior></i:Interaction.Behaviors>
-<ScrollViewer><StackPanel Spacing="22"><TextBlock Classes="h1" Text="阅读统计"/><TextBlock Classes="muted" Text="统计覆盖全部书籍和有效记录，累计页数只来自手动记录（含重读）；时长包含电子书自动会话。" TextWrapping="Wrap"/><Border BorderBrush="#8094A49C" BorderThickness="1" Padding="24" CornerRadius="12"><TextBlock Classes="h2" Text="{Binding StatisticsData.Summary}" TextWrapping="Wrap"/></Border><TextBlock Classes="h2" Text="近七日阅读趋势（上：手动页数，下：阅读时长）"/><ItemsControl ItemsSource="{Binding StatisticsData.LastSevenDays}"><ItemsControl.ItemTemplate><DataTemplate><Grid ColumnDefinitions="300,*" RowDefinitions="Auto,Auto" Margin="0,8"><TextBlock Text="{Binding Label}"/><ProgressBar Grid.Column="1" Maximum="100" Value="{Binding BarValue}" Height="8" VerticalAlignment="Center"/><ProgressBar Grid.Column="1" Grid.Row="1" Maximum="100" Value="{Binding DurationBarValue}" Height="8" Margin="0,5" Foreground="#C08B42"/></Grid></DataTemplate></ItemsControl.ItemTemplate></ItemsControl><TextBlock Text="{Binding Error}" Foreground="Crimson" TextWrapping="Wrap"/><Button Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/></StackPanel></ScrollViewer>
+  <i:Interaction.Behaviors>
+    <ia:EventTriggerBehavior EventName="Loaded">
+      <ia:InvokeCommandAction Command="{Binding StatisticsViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
+    </ia:EventTriggerBehavior>
+  </i:Interaction.Behaviors>
+  <ScrollViewer>
+    <StackPanel Spacing="18" Margin="0,0,0,16">
+      <DockPanel>
+        <Button DockPanel.Dock="Right" Classes="secondary" Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
+        <StackPanel Spacing="4">
+          <TextBlock Classes="h1" Text="阅读统计"/>
+          <TextBlock Classes="muted" Text="统计覆盖全部书籍和有效记录，累计页数只来自手动记录（含重读）；时长包含电子书自动会话。" TextWrapping="Wrap"/>
+        </StackPanel>
+      </DockPanel>
+
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+
+      <Border Classes="card" Padding="22,18">
+        <StackPanel Spacing="6">
+          <Border Classes="badge" HorizontalAlignment="Left">
+            <TextBlock Classes="badge-text" Text="累计阅读成果"/>
+          </Border>
+          <TextBlock Classes="h2" Text="{Binding StatisticsData.Summary}" TextWrapping="Wrap"/>
+        </StackPanel>
+      </Border>
+
+      <Border Classes="card" Padding="22,18">
+        <StackPanel Spacing="14">
+          <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+              <Border Classes="badge">
+                <TextBlock Classes="badge-text" Text="■ 上：手动页数"/>
+              </Border>
+              <Border Classes="badge-amber">
+                <TextBlock Classes="badge-amber-text" Text="■ 下：阅读时长"/>
+              </Border>
+            </StackPanel>
+            <TextBlock Classes="h2" Text="近七日阅读趋势（上：手动页数，下：阅读时长）" VerticalAlignment="Center"/>
+          </DockPanel>
+
+          <ItemsControl ItemsSource="{Binding StatisticsData.LastSevenDays}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Border Classes="surface-muted" Padding="14,10" Margin="0,4">
+                  <Grid ColumnDefinitions="280,*" RowDefinitions="Auto,Auto">
+                    <TextBlock Grid.RowSpan="2" Text="{Binding Label}" VerticalAlignment="Center" FontWeight="Medium" Margin="0,0,12,0"/>
+                    <ProgressBar Grid.Column="1" Maximum="100" Value="{Binding BarValue}" Height="8" VerticalAlignment="Center"/>
+                    <ProgressBar Grid.Column="1" Grid.Row="1" Maximum="100" Value="{Binding DurationBarValue}" Height="8" Margin="0,6,0,0" Foreground="#D97706"/>
+                  </Grid>
+                </Border>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
 </UserControl>

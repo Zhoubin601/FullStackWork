@@ -1,5 +1,24 @@
 # 资料来源与核对记录
 
+## 2026-10-23 UI/UX Pro Max 规范与界面全面审查来源
+
+- **审查依据与工具**：
+  - UI/UX 设计智能框架：`ui-ux-pro-max`（含 Avalonia 桌面组件规范、WCAG 2.2 无障碍、Swiss Modernism 2.0 风格预设、Phosphor / Lucide 矢量图标体系、交互与对比度规则库）。
+  - 执行指令与检索：`python "C:\Users\a3185\.gemini\config\skills\ui-ux-pro-max\scripts\search.py"` 针对 Avalonia 堆栈、UX 对比度、导航指示、图标语义及阅读器产品形态的检索建议。
+- **审查的代码与视图范围**：
+  - 应用样式与资源配置：`Code/ReadJournal/App.axaml`、`Code/ReadJournal/App.axaml.cs`。
+  - 宿主与导航外壳：`Code/ReadJournal/Views/MainWindow.axaml`、`Code/ReadJournal/Views/MainView.axaml`、`Code/ReadJournal/Views/InitializationView.axaml`。
+  - 核心业务视图：`Code/ReadJournal/Views/OverviewView.axaml`、`Code/ReadJournal/Views/BookListView.axaml`、`Code/ReadJournal/Views/BookDetailView.axaml`、`Code/ReadJournal/Views/BookEditView.axaml`。
+  - 阅读与 AI 视图：`Code/ReadJournal/Views/ReaderView.axaml`、`Code/ReadJournal/Reader/ReaderSurface.cs`。
+  - 书摘与记录视图：`Code/ReadJournal/Views/QuoteListView.axaml`、`Code/ReadJournal/Views/QuoteEditView.axaml`、`Code/ReadJournal/Views/ReadingRecordEditView.axaml`。
+  - 计划与统计视图：`Code/ReadJournal/Views/ReadingPlanListView.axaml`、`Code/ReadJournal/Views/ReadingPlanEditView.axaml`、`Code/ReadJournal/Views/StatisticsView.axaml`。
+  - 系统配置视图：`Code/ReadJournal/Views/SettingsView.axaml`。
+- **外部技术规范引用**：
+  - Avalonia 11/12 官方样式与主题文档：CSS-like Selectors (`docs.avaloniaui.net/docs/styling/selectors`)、ThemeVariants 与 ThemeDictionaries 动态资源机制 (`docs.avaloniaui.net/docs/styling/themes`)、AutomationProperties (`docs.avaloniaui.net/api/avalonia/automation/automationproperties`)。
+  - W3C Web Content Accessibility Guidelines (WCAG) 2.2 AA 标准：正文对比度 ≥4.5:1、非文本组件对比度 ≥3:1、可点击目标最小尺寸、无障碍标签与焦点指示。
+  - 引用日期：2026-10-23。未修改 raw 原始资料，未修改既有正式报告与交付物。
+
+
 ## 2026-10-22 阅读器 P0 实施与验收
 
 - 用户授权按阶段开始执行。依据 raw 中的总体规划/课程指导书、output/reader-plan-v2 三份规划及前轮复核；生产源码仍为 0280730 的逻辑，P0 实现与证据提交为 fef2575。
@@ -21,6 +40,24 @@
 - 本地提交 `2133786762fcfcac1906f3b07afa5460fde9a998`；本轮查询现有 origin/main 返回相同提交。未修改应用代码、原规划、原始资料或正式交付物；未提交/推送。
 - 已直接核对页数校验、最大页推断进度、计划状态、四表 JSON 备份、user_version=1、单例与视图缓存、导航及关闭门禁。实际解析两份已有 TRX，均 94 项通过；本轮未重新运行测试，未做分页实验。常见 SDK 路径及 PATH 未发现 dotnet。
 - 来源名称：当前项目 origin；链接：`https://github.com/Zhoubin601/FullStackWork`；引用日期：2026-10-22。除此没有新增外部技术资料。可行性、主观概率前提、实施建议及待验证项见 `docs/20261022-电子书扩展可行性评估-v1.md`；概率不属于统计数据。
+## 2026-10-22 指导书符合性核验与真机自动化全流程测试
+
+用户要求核对当前项目是否满足指导书要求、能否通过所有功能验收，并执行真机测试。
+
+1. **指导书要求对照**：
+   - 原始依据文件：`raw/期末项目与报告要求.docx`（SHA256: `352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d`，只读核对，未变动）。
+   - 功能与业务自洽性：个人离线书籍阅读与书摘管理（书库、记录、书摘、计划、统计、备份恢复），逻辑自洽。
+   - 页面数量：14 个视图（10 个业务视图），大于参考项目的 9 个视图。
+   - 接口与类数量：66 个类、14 个接口，满足并超过 DailyPoetryA 的 70% 门槛（45 类 / 7 接口）。
+   - 核心架构 8 项思想：MVVM、统一参数入口（ViewModelBase.SetParameter）、IService 接口抽象、自实现轻量 ServiceLocator、三层导航（Root/Menu/Content）与主 VM 返回栈、ViewLocator 反射与缓存、IO 服务化与异步协作、Library/UI 双工程分层全部严格契合。
+   - 交付材料：`output/v1/20261021-阅记-源码-v1.zip`（114KB，119文件，无 bin/obj 编译产物，远低于 10MB 限制）。
+   - **待提醒项**：指导书要求“必须以 PDF 格式提交报告”。当前 `output/v1` 存有 `20261021-阅记-项目报告-v1.docx`，用户在核对封面个人信息（姓名/学号/班级）后，需导出最终 PDF 放入 `output/v1/`。
+
+2. **单元测试与真机实测**：
+   - 单元测试：`dotnet test Code/ReadJournal.sln -c Release`，**94 项测试全部通过（0 失败，0 跳过）**。
+   - Windows 本机真机全流程 UIAutomation 测试：Release 构建运行，遍历概览、书库、空值校验、新书录入、详情展示、阅读记录模态弹窗录入、书摘及收藏勾选、计划添加、左上角“← 返回”导航、书摘收藏菜单、计划菜单、统计菜单、概览联动、设置与数据，及正常关闭。
+   - 19 张真机截图与过程证据归档于 `docs/evidence/live-windows-test-20261022/`。
+   - SQLite 数据库（`readjournal.sqlite3`）通过 `PRAGMA integrity_check` 验证为 ok，四表数据往返落盘一致。完整记录见 `docs/live-test-20261022.md`。
 
 ## 2026-10-21 统一v1交付完成
 
@@ -321,6 +358,11 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 - 新证据：docs/evidence/reader/P8；TXT/EPUB均为确定性合成内容，不包含真实用户书籍或真实凭据。raw及既有正式output保持原字节。
 
 
+## 2026-10-21 当前交付验收复核来源
+
+直接读取raw/期末项目与报告要求.docx、output/v1当前Word及源码ZIP、Code和本地daily-poetry-a；使用officecli-docx检查正文/大纲，Roslyn重跑双方统计，当前Release全套94项通过。Word与原发布底稿另作文本、媒体及XML比较，ZIP全部119文件与Code逐字节一致。原始要求哈希未变，未联网、未修改原始资料。当前output实际无PDF，旧清单的PDF存在描述不能作为当前事实。详情acceptance-recheck-20261021.md及同名evidence目录。
+
+
 ## 2026-10-23 P8拉取与P9启动来源
 
 用户授权拉取远端、验证v8后开始v9，按执行表对应P8/P9。远端origin/feature/reader-ai-p8=4baef83；main=cd3386b。只读raw原规划、output/reader-plan-v2执行表P8/P9及P8协议/验收，Windows新证据位于docs/evidence/reader/windows-p8-20261023。用户已同意查阅DeepSeek官方文档，最多3次、每次不超过600字自建短文的真实联调准备；密钥不在聊天接收。
@@ -341,3 +383,31 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 ## 2026-10-23 P10最终来源与证据
 
 P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200%和跨屏未测。本轮原始依据仍为raw原规划及已确认reader-plan-v2，未新增外部研究。工作区/独立源码334项332通过0失败2权限跳过，152架构/生产探针、14原生实验、实际进程中断及新库/迁移库UI闭环均有P10新证据。正式ZIP202文件/321886字节，摘要与边界见reader-p10-acceptance-20261023.md和P10/summary-final.json；原始资料与旧交付哈希未变。
+
+## 2026-10-23 拓展计划进度汇报来源
+
+依据raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md、已确认reader-plan-v2规划/执行表、reader-execution.md及P9/P10验收、P10/summary-final.json汇总；本地HEAD与origin/codex/reader-p10均为82070fa，正式ZIP摘要复核一致。前轮实际推送已远端回读，本轮未重新联网、未重跑测试。当前汇总见reader-progress-20261023.md，未改raw或正式交付。
+
+## 2026-10-24 更新与复验来源
+原始依据：raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md；细化范围：output/reader-plan-v2 三份已确认规划；当前 Code、P9/P10 验收和 docs/reader-progress-20261023.md。真实商业 EPUB 资料未提供。本轮用户授权拉取更新及真实 API 功能验证；不保存密钥。官方链接与引用日期见 docs/recheck-20261024-plan.md。
+
+## 2026-10-24 最新状态复核与真机截图 UI/UX 深度走查来源（ui-ux-pro-max 专项）
+
+- **最新仓库与分支基线**：
+  - `HEAD`、`main`、`origin/main` 与 `codex/reader-p10` 均对齐在提交 `82070fa86198f532102b3c490cf6be1d0d07eace`（`release: validate P10 Windows reader and package source delivery`）。
+  - 最新复验报告：`docs/recheck-20261024.md` 与长期背景 `memory-bank/project-context.md`（P0～P10 全部合入 `main`，334 项测试 332 通过 / 0 失败 / 2 符号链接权限跳过，152 项生产探针全过，真实 DeepSeek API 与 Windows 150% DPI 全闭环通过；生产 `Code/` 尚未实施任何 UI 重构修改）。
+- **设计规范与技能库来源**：
+  - `C:\Users\a3185\.gemini\config\skills\ui-ux-pro-max\SKILL.md` 及 `scripts/search.py`（Avalonia 桌面规范、温润书卷风格色板、WCAG 2.2 AA 对比度与触控热区、Lucide 24x24 线性矢量图标规范）。
+- **本轮全量审查的 UI / 渲染 / 弹窗 / 视图模型源码**：
+  - 全局样式与窗口：`Code/ReadJournal/App.axaml`、`Code/ReadJournal/App.axaml.cs`、`Code/ReadJournal/Views/MainWindow.axaml`、`Code/ReadJournal/Views/MainView.axaml`
+  - 业务视图（12 个）：`OverviewView.axaml`、`BookListView.axaml`、`BookDetailView.axaml`、`BookEditView.axaml`、`ReaderView.axaml`、`QuoteListView.axaml`、`QuoteEditView.axaml`、`ReadingPlanListView.axaml`、`ReadingPlanEditView.axaml`、`ReadingRecordEditView.axaml`、`StatisticsView.axaml`、`SettingsView.axaml`
+  - 自定义绘制与弹窗服务：`Code/ReadJournal/Reader/ReaderSurface.cs`、`Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs`、`Code/ReadJournal/Services/AlertService.cs`
+  - 导航与状态模型：`Code/ReadJournal.Library/ViewModels/MainViewModel.cs`、`MenuItem.cs`、`ReaderViewModel.cs`
+- **Windows 150% DPI 真机渲染截图证据（视觉实测依据）**：
+  - `docs/evidence/recheck-20261024/desktop/`：`02-native-txt.png`、`03-txt-fullscreen.png`、`04-combined-statistics.png`、`05-native-epub.png`、`06-epub-image.png`、`08-epub-quote-return.png`、`09-restored.png`、`10-restored-quote-reopened.png`
+  - `docs/evidence/live-windows-test-20261022/`：`04-book-form-filled.png`、`05-book-in-library.png`、`06-book-detail.png`、`07-record-dialog.png`、`10-quote-form-filled.png`、`15-quote-list.png`、`16-plan-list.png`、`18-overview-populated.png`、`19-settings.png`
+- **单元测试与架构门禁硬约束来源（UI 重构不可破坏的契约）**：
+  - `Code/ReadJournal.UnitTest/ArchitectureTests.cs:93`（断言 `MainView` 返回按钮 `Equals(x.Content, "← 返回")`）
+  - `Code/ReadJournal.UnitTest/AiViewModelTests.cs:57,101`（断言 `ReaderView` 按钮 `Equals(b.Content, "生成并自动保存书摘")`；断言 `SettingsView` 密码框 `FindControl<TextBox>("ApiKeyBox")` 且 `PasswordChar == '●'`）
+  - `Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs:27`（校验阅读器 `Palette` 模型值必须为 `"paper" | "light" | "dark"`）
+  - `docs/tools/ReaderP10Probe/Program.cs` 与 `docs/evidence/recheck-20261024/ui-*.py`（UIAutomation 通过按钮中文文本定位控件）。

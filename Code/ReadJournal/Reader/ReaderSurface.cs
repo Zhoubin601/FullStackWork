@@ -53,7 +53,11 @@ public sealed class ReaderSurface : Control
         var (layout, page, settings) = LayoutService.RenderPlan(Page.Ref);
         var appearance = settings.Appearance;
         var color = appearance.Palette == "dark" ? "#202520" : appearance.Palette == "light" ? "#FFFFFF" : "#F8F3E7";
-        context.FillRectangle(new SolidColorBrush(Color.Parse(color)), new Rect(Bounds.Size));
+        var borderColor = appearance.Palette == "dark" ? "#33FFFFFF" : "#18000000";
+        var selectionBrush = new SolidColorBrush(Color.Parse(appearance.Palette == "dark" ? "#66389B7A" : "#40246650"));
+        var boundsRect = new Rect(Bounds.Size);
+        context.FillRectangle(new SolidColorBrush(Color.Parse(color)), boundsRect);
+        context.DrawRectangle(new Pen(new SolidColorBrush(Color.Parse(borderColor)), 1), boundsRect.Deflate(0.5));
         var origin = new Vector(appearance.MarginHorizontal, appearance.MarginVertical);
         using (context.PushClip(new Rect(origin.X, origin.Y, layout.Options.Width, layout.Options.Height)))
         {
@@ -63,7 +67,7 @@ public sealed class ReaderSurface : Control
                 var endChapter = layout.Document.Chapters.First(c => c.Key == Selection.End.ChapterKey);
                 if (Selection.Start.Document != Selection.End.Document || Selection.Start.Document != Page.ContentRanges[0].Start.Document) throw new ArgumentException("选区文档不一致。");
                 foreach (var rect in layout.SelectionRects(page, chapter.Start + Selection.Start.Utf16Offset, endChapter.Start + Selection.End.Utf16Offset))
-                    context.FillRectangle(Brushes.LightSeaGreen, rect.Translate(origin));
+                    context.FillRectangle(selectionBrush, rect.Translate(origin), 3f);
             }
             if (LayoutService.Image(Page.Ref) is { } bitmap && layout.Document.Images.TryGetValue(page.Start, out var image))
             {

@@ -274,3 +274,134 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 用户授权“继续p8，完成后推送远端”。从main=cd3386b建立feature/reader-ai-p8；完成当前页/选区/页范围冻结快照、默认本地Mock及有界DeepSeek HTTP适配、精确原句核验、原子批次/不可变回执/本地重试/安全撤销、AI来源与设置/隐藏会话密钥/取消及旧响应隔离。P8-01～10验收见docs/evidence/reader/P8/acceptance.md，协议见docs/reader-p8-protocol.md。
 
 Linux工作区与200文件白名单独立源码Release各327/327，含55项新增；真实窗口分析不写库、自动保存、AI来源、收藏保留/未改项删除、原文高亮与全书1～2页379字符Mock分析通过。凭据仅会话内存，未请求真实API。原始资料/正式交付/参考/冻结fixtures共107文件保持。完成后按本轮授权提交并正常推送该功能分支，远端SHA以实际回读为准；P9/P10未开始，P8新增Windows实机保留，不自动合并main或重做正式交付。
+
+## 2026-10-23 UI/UX 全面修复与现代化实施计划（ui-ux-pro-max 专项）
+
+为彻底解决全面走查发现的 16 项视觉与交互缺陷，按“底座画刷先行 → 核心导航升级 → 关键页面分治 → 无障碍与全量回归”的严谨节奏，制定 6 个阶段修复计划。各阶段均以“不破坏现有 MVVM 导航机制、不破坏现有数据与业务层、保证全量单元测试 100% 通过”为铁律。
+
+### Phase 1: 视觉基础与动态主题画刷体系（Tokens & ThemeDictionaries）
+- **目标**：彻底消除硬编码色彩，实现真正的深色/浅色模式平滑切换，统一 8px 空间律动。
+- **任务**：
+  1. 在 `App.axaml` 中声明 `<ResourceDictionary.ThemeDictionaries>`，建立 `Light` 与 `Dark` 双套语义画刷资源：
+     - `AppBackgroundBrush`（页面底色：浅暖纸 `#FAF8F5` / 夜读深灰 `#161C1A`）
+     - `AppSurfaceBrush`（卡片与容器底色：纯白 `#FFFFFF` / 深色卡片 `#202926`）
+     - `AppSurfaceHoverBrush`（悬停微光底色）
+     - `AppBorderBrush`（边框线：浅色 `#E5E0D8` / 深色 `#2D3A36`，替换硬编码 `#8094A49C`）
+     - `AppTextPrimaryBrush`、`AppTextSecondaryBrush`（满足 WCAG 4.5:1 对比度）
+     - `AppAccentBrush`、`AppAccentHoverBrush`（翡翠墨绿 `#246650` 品牌主色）
+     - `AppDestructiveBrush`（危险操作红 `#DC2626`）
+  2. 规范全局排版样式：`.h1` (26px), `.h2` (18px), `.h3` (15px), `.caption` (12px muted)。
+  3. 规范控件基础圆角（`CornerRadius="8"`）、按钮高度与内边距。
+
+### Phase 2: 全局导航与应用外壳翻新（App Shell & Navigation）
+- **目标**：赋予侧边栏清晰的当前位置指示与专业矢量图标，重构顶部标题栏。
+- **任务**：
+  1. 侧边栏按钮实现当前激活态（Active State）高亮反馈：当前所在模块呈现轻微半透明翡翠底色与加粗字重，未选中项保持静默。
+  2. 在 `App.axaml` 资源字典中引入 6 个轻量级原生矢量 `PathIcon`（概览、书库、计划、书摘、统计、设置），侧边栏按钮升级为“矢量图标 + 文字”专业桌面布局。
+  3. 顶部导航栏美化：返回按钮改造为微圆角胶囊按钮并集成左箭头矢量图标，与模块标题保持优雅呼吸间距。
+
+### Phase 3: 书库列表与卡片体验重构（Bookshelf & Card Elevation）
+- **目标**：解决工具栏横向溢出问题，提升卡片物理质感与信息表达度，补全空态引导。
+- **任务**：
+  1. 改造 `BookListView.axaml` 顶部导入操作栏：将“TXT/EPUB导入”、“扫描收件区”、“收件目录”进行自适应折行或清晰主次分组，确保在 900px 最小窗口及高 DPI 下永不横向出界。
+  2. 书籍卡片实体化：卡片赋予 `AppSurfaceBrush` 背景、悬停变色提升反馈、增加图书格式胶囊（TXT / EPUB / 手动）和阅读状态标签。
+  3. 重塑空态展示：居中展示书籍矢量插画、友好的引导说明文案，并提供直接唤起“＋ 添加书籍”或“导入书籍”的 Primary CTA 按钮。
+
+### Phase 4: 原生阅读器与 AI 助手交互升级（Reader & AI Panel）
+- **目标**：告别生硬的手输与英文枚举，提升阅读专注度与 AI 交互感知。
+- **任务**：
+  1. 排版工具栏优化：字体选择改为常用高品质中文字体下拉列表（如微软雅黑、思源黑体、楷体等），配色选项替换为中文友好显示（“羊皮纸”、“晨曦浅色”、“夜间深色”），字号增加 `A-` / `A+` 快捷调整。
+  2. 目录栏优化：将目录栏最小宽度调优并支持章节名称完整自适应，高亮当前阅读章节。
+  3. AI 助手动效：当 `IsAiBusy` 时，展示 Indeterminate 进度动画与清晰的“正在阅读理解与提炼…”状态，结果卡片化展示。
+
+### Phase 5: 书籍详情、表单与统计打磨（Details, Forms & Statistics）
+- **目标**：强化视觉操作层级，防范危险误触，提升表单可用性与数据图表美观度。
+- **任务**：
+  1. `BookDetailView.axaml` 区分操作层级：“开始 / 继续阅读”设为最大尺寸的 Primary 突出按钮；“编辑”、“＋ 记录”等作为次级按钮；“删除书籍”赋予明显的 Destructive 危险红框提示，防止误触。
+  2. 将阅读历史、计划、书摘等堆叠信息进行结构化视觉卡片分区。
+  3. 各编辑表单（`*EditView`）垂直间距放宽至 16px，必填项星号着色区分，未保存修改状态增加柔和点缀。
+  4. 统计页面（`StatisticsView`）图表双进度条赋予协调的品牌色与高质感圆角。
+
+### Phase 6: 无障碍适配、主题验证与全套回归（A11y & Verification）
+- **目标**：实现 WCAG 2.2 AA 无障碍合规，全平台视觉走查，保证工程 100% 绿色构建。
+- **任务**：
+  1. 为所有独立图标按钮与核心控件添加 `AutomationProperties.Name`。
+  2. 针对浅色与深色模式分别进行实际窗口渲染检查与对比度验证。
+  3. 运行全量单元测试（334 项），验证全部通过（0 失败，0 跳过），确保架构、导航栈、数据存储及已有业务逻辑零回归。
+
+
+## 2026-10-24 本轮
+用户授权拉取更新、测试全部既定功能。执行 docs/recheck-20261024-plan.md；保留本地未提交修改，不自动提交/推送，不覆盖旧交付。
+
+本轮已完成全部复验工作，范围结论及未测项见docs/recheck-20261024.md。未提交/推送，未覆盖旧output。
+
+## 2026-10-24 UI/UX 重构美化实施规划（基于 `82070fa` 与真机截图复核升级版）
+
+基于 2026-10-24 最新 `main`（`82070fa`）代码与 Windows 150% DPI 真机截图审查结论，将 UI 重构美化规划升级为以下 **6 个阶段（Phases 1～6）**。全程严格遵守“不破坏现有 MVVM 架构与 334 项单元测试 / 152 项探针契约”红线：
+
+### Phase 1：设计令牌、动态主题画刷与全局控件基线（`App.axaml`）
+1. **构建 `ThemeDictionaries`（`Light` / `Dark` 双套温润书卷语义画刷）**：
+   - `AppBackgroundBrush`（暖白宣纸 `#FAF8F5` / 夜读深墨 `#141A18`）
+   - `AppSurfaceBrush`（纯白卡片 `#FFFFFF` / 深色卡片 `#1E2724`）
+   - `AppSurfaceMutedBrush`（次级容器 `#F3EFEA` / `#25302C`）
+   - `AppBorderBrush`（柔和边框 `#E4DFD7` / `#2E3B37`，全面替换 `#8094A49C`）
+   - `AppTextPrimaryBrush`（`#1C2421` / `#ECF2EF`）、`AppTextSecondaryBrush`（`#5A6963` / `#9BA8A3`）
+   - `AppAccentBrush`（品牌翡翠绿 `#246650` / `#348F70`）、`AppAccentSoftBrush`（激活底色 `#18246650` / `#28348F70`）
+   - `AppDangerBrush`（危险红 `#DC2626` / `#F87171`）、`AppDangerSoftBrush`（`#15DC2626`）
+   - `AppSidebarBgBrush`、`AppSidebarActiveBgBrush`、`AppHeaderBgBrush`
+2. **统一全局控件尺寸与样式类**：
+   - 补齐 `ComboBox`、`DatePicker` 的 `MinHeight="40"` 与 `VerticalContentAlignment="Center"`，彻底消除工具栏 `40px` vs `32px` 高度错位。
+   - 完善按钮样式体系：`Button.primary`（翡翠主色实心）、`Button.secondary`（浅底描边）、`Button.ghost`（透明悬停微光）、`Button.danger`（红色描边/警示）、`Button.card-action`（卡片化可点击列表项，消除 `OverviewView` 1000px 灰条）。
+   - 规范统一卡片样式 `Border.card`（`Background="{DynamicResource AppSurfaceBrush}"`、`BorderBrush="{DynamicResource AppBorderBrush}"`、`BorderThickness="1"`、`CornerRadius="12"`、`BoxShadow="0 2 8 0 #0D000000"`）。
+
+### Phase 2：导航外壳、侧边栏激活态与顶部栏去重（`MainView` & `MainViewModel`）
+1. **侧边栏激活态高亮与 Lucide 线性矢量图标**：
+   - 在 `MenuItem.cs` 增加轻量级 `IsSelected` 通知属性（或图标 Geometry 键），在 `MainViewModel` 导航切换时同步更新，使侧边栏当前页面高亮显示左侧翡翠指示条 + 半透明高亮底色 + 加粗文字，并配齐 6 个模块的 `StreamGeometry` 矢量图标。
+2. **消除“双重标题冗余”与优化返回栏**：
+   - 重构 `MainView.axaml` 顶部栏与各页面头部关系：一级页面统一展现主标题与副标题说明，消除相距 40px 的上下重复标题；二级页面（详情、编辑、阅读器）清晰展示 `[← 返回]` 胶囊按钮（**严格保留 `Content="← 返回"` 字符串以通过 `ArchitectureTests.cs:93`**）与当前上下文区域。
+
+### Phase 3：原生阅读器与 AI 助手沉浸式重构（`ReaderView.axaml` & `ReaderSurface.cs`）
+1. **`ReaderSurface.cs` 选区高亮与画布质感升级**：
+   - 将 `ReaderSurface.cs:66` 刺眼的 `Brushes.LightSeaGreen` 替换为柔和半透明暖琥珀/翡翠选区高亮画刷（`#45D97706` 或根据 `Palette` 自适应半透明画刷），确保黑字/白字清晰可读。
+   - 为阅读器画布外层增加带圆角、细边框与柔和阴影的书页容器，并根据阅读器当前配色（`paper` / `light` / `dark`）协调外围包裹背景。
+2. **阅读器工具栏、目录栏与 AI 面板美化**：
+   - 字体设置提供预设中文字体快捷选择（同时兼容自定义字体名），配色下拉框保持底层 `"paper" | "light" | "dark"` 契约值的同时提供直观视觉反馈。
+   - 左侧目录（TOC）按钮改为左对齐、悬停高亮的清爽章节列表项，去除笨重水泥灰块。
+   - 右侧 AI 助手面板分区卡片化：主操作 `生成并自动保存书摘` 设为 `Classes="primary"`（**严格保留 `Content="生成并自动保存书摘"` 字符串以通过 `AiViewModelTests.cs:57`**），`IsAiBusy` 时显示加载进度条，结果与批次状态使用精致表面卡片展示。
+
+### Phase 4：仪表盘、我的书库、详情页与统计图表重塑（`Overview`, `BookList`, `BookDetail`, `Statistics`）
+1. **`OverviewView` 仪表盘现代卡片化**：
+   - KPI 指标卡增加左侧色条或微图标点缀；“正在阅读”列表从 1000px 满宽灰按钮改为 `Button.card-action` 白底圆角卡片（含书名、进度徽章与右侧箭头）；“近期记录”与“待完成计划”统一纳入结构化列表项；底部无意义的常驻“刷新 / 重试”按钮改为右上角轻量操作或仅在出错时显现。
+2. **`BookListView` 响应式工具栏与高质感书籍卡片**：
+   - 顶部“筛选搜索栏”与“导入/收件区工具栏”分为清晰的主次两栏（或 `WrapPanel` 自适应），彻底解决窄窗口挤压溢出；`＋ 添加书籍` 设为 `Classes="primary"`。
+   - 书籍卡片升级为白底圆角带悬停阴影提升感，为 TXT / EPUB / 手动书籍提供差异化色彩徽章（Badge）。
+3. **`BookDetailView` 与 `StatisticsView` 视觉层级重塑**：
+   - `BookDetailView` 中 `开始 / 继续阅读` 设为醒目的 `Button.primary`，`编辑`/`＋ 记录`/`＋ 书摘`/`＋ 计划` 设为 `Button.secondary`，`删除书籍` 设为 `Button.danger` 并与主操作拉出安全间距。
+   - `StatisticsView` 图表进度条赋予柔和圆角与高辨识度双色对比，修复底部按钮裁切问题。
+   - 为书库、书摘、计划、统计等列表补齐带矢量图标的居中优雅空态（Empty State）。
+
+### Phase 5：表单左对齐修复与模态弹窗美化（`*EditView`, `SettingsView`, `AlertService.cs`）
+1. **修复表单居中漂移问题**：
+   - 为 `SettingsView`、`BookEditView`、`QuoteEditView`、`ReadingPlanEditView` 内的 `MaxWidth` 容器统一补充 `HorizontalAlignment="Left"`（或合理的网格卡片布局），使表单与页面标题左边缘完美对齐。
+   - `SettingsView` 拆分为“外观主题”、“AI 助手配置（**严格保留 `Name="ApiKeyBox" PasswordChar="●"`**）”、“数据备份与恢复”三张独立设置卡片。
+2. **美化模态弹窗与记录窗口（`AlertService.cs` & `ReadingRecordEditView.axaml`）**：
+   - 优化 `AlertService.cs` 动态弹窗的卡片边距、圆角与主次按钮样式（确认按钮使用 `primary`，危险确认使用 `danger`），并在 `ReadingRecordEditView` 底部操作栏贴心呈现“保存记录”（`primary`）主按钮。
+
+### Phase 6：无障碍适配、真机截图复验与 334 项单测 / 152 项探针全量回归
+1. 补齐图标与核心交互控件的 `AutomationProperties.Name`。
+2. 运行 `dotnet test Code/ReadJournal.sln -c Release` 确保 334 项测试零回归（332 通过 / 0 失败 / 2 权限跳过），运行 `ReaderP10Probe` 确保 152 项生产检查 100% 通过。
+3. 启动 Windows 桌面端实际渲染并截图对比，验证浅色/深色主题、阅读器选区高亮与各页面布局效果。
+
+## 2026-10-24 UI/UX 重构美化逐阶段执行与验收结果（已完成）
+
+按用户指令“开始执行，每完成一个阶段就验收一次”，已顺序完成全部 6 个阶段的实施与逐阶段测试验收：
+
+- **Phase 1 验收（通过）**：在 `Code/ReadJournal/App.axaml` 建立 `Light` / `Dark` 双套 `ThemeDictionaries`、6 枚矢量 `StreamGeometry` 图标、统一 `40px` 高度基线（`TextBox` / `ComboBox` / `DatePicker`）以及 `.primary` / `.secondary` / `.danger` / `.card-action` / `.toc-item` / `Border.card` 样式体系。全套 334 项测试（332 通过 / 0 失败 / 2 权限跳过）通过。
+- **Phase 2 验收（通过）**：更新 `MenuItem.cs`、`MainViewModel.cs`、`MainView.axaml` 与 `InitializationView.axaml`，实现侧边栏当前模块翡翠指示条 + 矢量图标激活态高亮（保留 `AutomationProperties.Name`），并在一级页面隐藏冗余顶部栏、二级页面展示 `[← 返回]` 导航栏，彻底根治“双重标题冗余”。29/29 项导航与架构测试全绿。
+- **Phase 3 验收（通过）**：更新 `ReaderSurface.cs` 与 `ReaderView.axaml`，将刺眼的 100% 不透明 `Brushes.LightSeaGreen` 选区高亮替换为柔和半透明圆角高亮画刷（浅色 `#40246650` / 深色 `#66389B7A`）并绘制精致书页内边框；章节目录改为清爽 `toc-item` 列表，AI 面板与排版栏卡片化且严格保留 `Content="生成并自动保存书摘"` 及 `Edit` 索引顺序。32/32 项阅读器、EPUB 与 AI 视图测试全绿。
+- **Phase 4 验收（通过）**：更新 `BookProgress.cs`（新增 `KindLabel` 格式标签）及 `OverviewView.axaml`、`BookListView.axaml`、`BookDetailView.axaml`、`QuoteListView.axaml`、`ReadingPlanListView.axaml`、`StatisticsView.axaml`。消除概览页 1000px 水泥灰按钮条与统计页底部按钮裁切，补齐带矢量图标的优雅空态与卡片层级。49/49 项业务与视图测试全绿。
+- **Phase 5 验收（通过）**：更新 `BookEditView.axaml`、`QuoteEditView.axaml`、`ReadingPlanEditView.axaml`、`ReadingRecordEditView.axaml`、`SettingsView.axaml` 与 `AlertService.cs`，统一 `HorizontalAlignment="Left"` 解决窄表单居中漂移，将设置页拆分为 4 张主题卡片（严格保留 `Name="ApiKeyBox" PasswordChar="●"`），并为弹窗按钮赋予主次与危险警示层级。48/48 项编辑、设置与导航测试全绿。
+- **Phase 6 验收（通过）**：
+  - 全量单元测试 `dotnet test Code/ReadJournal.sln -c Release`：**334 项总计，332 项通过，0 项失败，2 项符号链接权限跳过**。
+  - 生产架构与性能探针 `ReaderP10Probe`：**152/152 项检查全部通过**（`firstOpenMs: 542.7ms <= 2000ms`，`flipP95Ms: 7.58ms <= 100ms`，`reflowP95Ms: 128.64ms <= 500ms`，20 轮切书零内存/句柄泄漏）。
+  - 渲染截图证据保存于 `docs/evidence/ui-refactor-20261024/`。

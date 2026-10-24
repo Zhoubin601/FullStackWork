@@ -13,7 +13,8 @@
 | P4 受管TXT与扫描删除 | 八项通过（Linux）；实现5358a4a，验收后推送 | docs/evidence/reader/P4/acceptance.md |
 | P5～P7 | 已完成并合入main；Linux阶段验收及Windows150%补验通过 | P5/P6/P7/acceptance.md、reader-windows-acceptance-20261023.md |
 | P8 | P8-01～10已通过；按授权推送feature/reader-ai-p8 | docs/evidence/reader/P8/acceptance.md |
-| P9～P10 | 未开始 | 真实API及发布后续单列 |
+| P9 | 真实 DeepSeek 联调通过，已推送 9f6ae53 | docs/reader-p9-acceptance-20261023.md |
+| P10 | 用户调整后的 Windows150% 发布验收完成，已推送 82070fa | docs/reader-p10-acceptance-20261023.md；reader-progress-20261023.md |
 
 ## P0 本轮步骤
 
