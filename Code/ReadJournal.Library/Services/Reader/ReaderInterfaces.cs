@@ -72,6 +72,11 @@ public interface IReaderPreferencesStorage
     Task SaveAsync(ReaderAppearance appearance, CancellationToken ct);
 }
 
+public interface IReaderFontCatalog
+{
+    IReadOnlyList<string> FontFamilies { get; }
+}
+
 public interface IReaderPlatformService
 {
     Task CopyTextAsync(string text, CancellationToken ct);

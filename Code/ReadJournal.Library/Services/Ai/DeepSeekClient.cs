@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
@@ -7,33 +6,13 @@ using ReadJournal.Library.Models.Reader;
 using ReadJournal.Library.Services.Reader;
 namespace ReadJournal.Library.Services.Ai;
 
-// The local mock exercises exactly the same HTTP serialization/response parser as the real adapter.
-public sealed class AiMockHandler : HttpMessageHandler
-{
-    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken ct)
-    {
-        using var body = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(ct));
-        var messages = body.RootElement.GetProperty("messages");
-        using var scope = JsonDocument.Parse(messages[1].GetProperty("content").GetString()!);
-        var operation = scope.RootElement.GetProperty("operation").GetString();
-        var text = scope.RootElement.GetProperty("segments").EnumerateArray().Select(x => x.GetString()!).First(x => !string.IsNullOrWhiteSpace(x));
-        var boundaries = StringInfo.ParseCombiningCharacters(text).Append(text.Length).ToArray();
-        var length = boundaries.Where(x => x <= 64).Last(); if (length == 0) length = boundaries[1];
-        var content = operation == nameof(AiOperation.ExtractQuotes)
-            ? JsonSerializer.Serialize(new { quotes = new[] { new { originalText = text[..length], explanation = "本地模拟感想：请结合原文自行判断。", prefixHint = (string?)null, suffixHint = text[length..Math.Min(text.Length, length + 32)] } } })
-            : JsonSerializer.Serialize(new { analysis = $"本地模拟结果：已冻结{scope.RootElement.GetProperty("segments").GetArrayLength()}段正文，共{scope.RootElement.GetProperty("segments").EnumerateArray().Sum(x => x.GetString()!.Length)}字符。本结果仅用于演示流程，不代表真实模型分析。" });
-        ct.ThrowIfCancellationRequested();
-        return new(HttpStatusCode.OK) { Content = new StringContent(JsonSerializer.Serialize(new { choices = new[] { new { message = new { content }, finish_reason = "stop" } }, usage = new { prompt_tokens = (int?)null, completion_tokens = (int?)null } }), Encoding.UTF8, "application/json") };
-    }
-}
-
 public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
 {
     private readonly IAiSettingsStorage _settings; private readonly ISecretStore _secrets;
-    private readonly HttpClient _http, _mock;
+    private readonly HttpClient _http;
     public DeepSeekClient(IAiSettingsStorage settings, ISecretStore secrets) : this(settings, secrets, new HttpClientHandler { AllowAutoRedirect = false }) { }
     public DeepSeekClient(IAiSettingsStorage settings, ISecretStore secrets, HttpMessageHandler handler)
-    { _settings = settings; _secrets = secrets; _http = new(handler) { Timeout = Timeout.InfiniteTimeSpan }; _mock = new(new AiMockHandler()) { Timeout = Timeout.InfiniteTimeSpan }; }
+    { _settings = settings; _secrets = secrets; _http = new(handler) { Timeout = Timeout.InfiniteTimeSpan }; }
     public async Task<AiProviderResponse> SendAsync(AiProviderRequest request, CancellationToken ct)
     {
         ct.ThrowIfCancellationRequested();
@@ -41,10 +20,9 @@ public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
         if (request.Model != settings.Model) throw new AiException("InvalidSettings", "请求模型与已确认配置不一致，请重新确认后生成。");
         if (request.UserText.Length > AiIntegrity.MaxInput * 6 + 65536 || request.MaxOutputTokens < 1 || request.MaxOutputTokens > settings.MaxOutputTokens)
             throw new AiException("LimitExceeded", "请求超过限额，请缩小范围。");
-        if (!settings.UseMock && !settings.HasAcknowledgedTextUpload) throw new AiException("UploadNotAcknowledged", "请先在设置中确认正文上传范围。");
+        if (!settings.HasAcknowledgedTextUpload) throw new AiException("UploadNotAcknowledged", "请先在设置中确认正文上传范围。");
         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(ct); timeout.CancelAfter(settings.Timeout);
         using var message = new HttpRequestMessage(HttpMethod.Post, settings.HttpsEndpoint);
-        if (!settings.UseMock)
         {
             var key = await _secrets.ReadApiKeyAsync(ct);
             if (string.IsNullOrEmpty(key)) throw new AiException("CredentialMissing", "未配置会话密钥，请前往设置。");
@@ -53,7 +31,7 @@ public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
         message.Content = new StringContent(JsonSerializer.Serialize(new { model = request.Model, messages = new[] { new { role = "system", content = request.SystemPrompt }, new { role = "user", content = request.UserText } }, thinking = new { type = "disabled" }, stream = false, max_tokens = request.MaxOutputTokens, response_format = new { type = "json_object" } }), Encoding.UTF8, "application/json");
         try
         {
-            using var response = await (settings.UseMock ? _mock : _http).SendAsync(message, HttpCompletionOption.ResponseHeadersRead, timeout.Token);
+            using var response = await _http.SendAsync(message, HttpCompletionOption.ResponseHeadersRead, timeout.Token);
             if (!response.IsSuccessStatusCode) throw response.StatusCode switch
             {
                 HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden => new AiException("ProviderUnauthorized", "密钥无效或无权限（401/403），请检查设置。"),
@@ -105,5 +83,5 @@ public sealed class DeepSeekClient : IDeepSeekClient, IDisposable
         int? Tokens(string name) => root.TryGetProperty("usage", out var usage) && usage.ValueKind == JsonValueKind.Object && usage.TryGetProperty(name, out var token) && token.ValueKind == JsonValueKind.Number && token.TryGetInt32(out var n) && n >= 0 ? n : null;
         return new(analysis, candidates.AsReadOnly(), null, Tokens("prompt_tokens"), Tokens("completion_tokens"));
     }
-    public void Dispose() { _http.Dispose(); _mock.Dispose(); }
+    public void Dispose() { _http.Dispose(); }
 }

@@ -16,20 +16,45 @@ public sealed class AiHttpTests
     private static HttpResponseMessage Response(string payload, string finish = "stop") => new(HttpStatusCode.OK) { Content = new StringContent(JsonSerializer.Serialize(new { choices = new[] { new { message = new { content = payload }, finish_reason = finish } } }), Encoding.UTF8, "application/json") };
     private static AiProviderRequest Request(AiSettings settings, AiOperation operation = AiOperation.ExtractQuotes) => new(operation, settings.Model, "test schema", "{\"operation\":\"ExtractQuotes\",\"segments\":[\"合成原文。\"]}", settings.MaxOutputTokens, settings);
     [Fact]
-    public async Task DefaultMockUsesRealSerializerParserAndCannotCallNetworkOrReadAKey()
+    public async Task DefaultRequiresConsentAndCredentialAndNeverReturnsSimulation()
     {
-        await using var x = await AiTestFixture.Create(); var handler = new Handler((_, _) => throw new Exception("Must not use network"));
+        await using var x = await AiTestFixture.Create();
+        var handler = new Handler((_, _) => throw new Exception("Must not use network"));
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
-        var result = await client.SendAsync(Request(AiSettingsStorage.Default), default);
-        Assert.Single(result.Candidates); Assert.Equal("合成原文。", result.Candidates[0].OriginalText); Assert.Equal(0, handler.Count);
-        var analysisRequest = Request(AiSettingsStorage.Default, AiOperation.Analyze) with { UserText = "{\"operation\":\"Analyze\",\"segments\":[\"合成原文。\"]}" };
-        Assert.Contains("本地模拟", (await client.SendAsync(analysisRequest, default)).Analysis); Assert.False(await x.Secrets.HasApiKeyAsync(default));
+        Assert.Equal("UploadNotAcknowledged", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default), default))).Code);
+        var config = AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true };
+        Assert.Equal("CredentialMissing", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(config), default))).Code);
+        Assert.Equal(0, handler.Count);
+    }
+    [Fact]
+    public async Task TestOnlyHandlerExercisesRealSerializerParser()
+    {
+        await using var x = await AiTestFixture.Create();
+        await x.Secrets.WriteApiKeyAsync("fictional-test-handler", default);
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, new AiMockHandler());
+        var config = AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true };
+        Assert.Single((await client.SendAsync(Request(config), default)).Candidates);
+    }
+    [Fact]
+    public async Task OldMockSettingCannotProduceSimulatedResultsAndIsRemovedOnSave()
+    {
+        await using var x = await AiTestFixture.Create();
+        var path = Path.Combine(x.Db.Paths.DirectoryPath, "ai-settings.json");
+        var json = JsonSerializer.Serialize(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true });
+        await File.WriteAllTextAsync(path, json[..^1] + ",\"UseMock\":true}");
+        var settings = await x.Settings.GetAsync(default);
+        var handler = new Handler((_, _) => throw new Exception("must reject before network"));
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
+        Assert.Equal("CredentialMissing", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(settings), default))).Code);
+        Assert.Equal(0, handler.Count);
+        await x.Settings.SaveAsync(settings, default);
+        Assert.DoesNotContain("UseMock", await File.ReadAllTextAsync(path));
     }
     [Fact]
     public async Task RealAdapterPostsOnlyMessagesWithBearerAndRejectsMissingConsentOrCredentialBeforeHttp()
     {
         await using var x = await AiTestFixture.Create(); var key = "fictional-" + Guid.NewGuid().ToString("N");
-        var config = AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true };
+        var config = AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true };
         var handler = new Handler(async (request, ct) =>
         {
             Assert.Equal(HttpMethod.Post, request.Method); Assert.Equal("https://api.deepseek.com/chat/completions", request.RequestUri!.ToString());
@@ -50,7 +75,7 @@ public sealed class AiHttpTests
         await using var x = await AiTestFixture.Create(); var key = "fictional-" + Guid.NewGuid().ToString("N"); await x.Secrets.WriteApiKeyAsync(key, default);
         var handler = new Handler((_, _) => Task.FromResult(new HttpResponseMessage((HttpStatusCode)status) { Content = new StringContent(key) }));
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
-        var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true }), default));
+        var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true }), default));
         Assert.Equal(code, error.Code); Assert.False(error.ToString().Contains(key, StringComparison.Ordinal)); Assert.Equal(1, handler.Count);
     }
     [Theory][InlineData("offline","Offline")][InlineData("disconnect","Interrupted")][InlineData("timeout","Timeout")][InlineData("cancel","cancel")]
@@ -66,7 +91,7 @@ public sealed class AiHttpTests
             await Task.Delay(Timeout.InfiniteTimeSpan, ct); throw new Exception("unreachable");
         });
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
-        var operation = client.SendAsync(Request(AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true, Timeout = TimeSpan.FromSeconds(1) }), cancel.Token);
+        var operation = client.SendAsync(Request(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true, Timeout = TimeSpan.FromSeconds(1) }), cancel.Token);
         if (failure == "cancel") await Assert.ThrowsAnyAsync<OperationCanceledException>(() => operation);
         else { var error = await Assert.ThrowsAsync<AiException>(() => operation); Assert.Equal(code, error.Code); Assert.False(error.ToString().Contains(key, StringComparison.Ordinal)); }
         Assert.Equal(1, handler.Count);
@@ -80,7 +105,7 @@ public sealed class AiHttpTests
     {
         await using var x = await AiTestFixture.Create(); await x.Secrets.WriteApiKeyAsync("fictional-" + Guid.NewGuid().ToString("N"), default);
         var handler = new Handler((_, _) => Task.FromResult(Response(payload))); using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
-        var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true }), default));
+        var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true }), default));
         Assert.Equal("InvalidAiResponse", error.Code); Assert.Equal(0, await x.QuoteCount());
     }
     [Theory][InlineData("huge")][InlineData("truncated")][InlineData("broken-envelope")][InlineData("too-many")]
@@ -95,7 +120,7 @@ public sealed class AiHttpTests
             _ => new(HttpStatusCode.OK) { Content = new StringContent("{\"choices\":[null]}") }
         }));
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
-        Assert.Equal("InvalidAiResponse", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true }), default))).Code);
+        Assert.Equal("InvalidAiResponse", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true }), default))).Code);
         Assert.Equal(1, handler.Count);
     }
     [Theory][InlineData("http://api.deepseek.com/chat/completions")][InlineData("https://attacker.invalid/chat/completions")][InlineData("https://api.deepseek.com/chat/completions?key=x")][InlineData("https://user:pass@api.deepseek.com/chat/completions")]
@@ -109,7 +134,7 @@ public sealed class AiHttpTests
     {
         await using var x = await AiTestFixture.Create();
         await x.Secrets.WriteApiKeyAsync("fictional-" + Guid.NewGuid().ToString("N"), default);
-        var config = AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true, Model = model };
+        var config = AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true, Model = model };
         var handler = new Handler(async (message, ct) =>
         {
             using var body = JsonDocument.Parse(await message.Content!.ReadAsStringAsync(ct));
@@ -126,23 +151,22 @@ public sealed class AiHttpTests
         Assert.Equal(120, result.InputTokens); Assert.Equal(24, result.OutputTokens); Assert.Equal(1, handler.Count);
     }
     [Theory][InlineData("deepseek-chat")][InlineData("deepseek-reasoner")]
-    public async Task LegacyConfigurationRemainsReadableAndMockableButCannotSendRealRequests(string model)
+    public async Task LegacyModelRemainsReadableButCannotSendRequests(string model)
     {
         await using var x = await AiTestFixture.Create();
-        var config = AiSettingsStorage.Default with { Model = model, UseMock = false, HasAcknowledgedTextUpload = true };
+        var config = AiSettingsStorage.Default with { Model = model, HasAcknowledgedTextUpload = true };
         await x.Settings.SaveAsync(config, default); Assert.Equal(model, (await x.Settings.GetAsync(default)).Model);
         var handler = new Handler((_, _) => throw new Exception("must reject before network"));
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
         var error = await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(config), default));
         Assert.Equal("ModelUpdateRequired", error.Code); Assert.Contains("deepseek-flash", error.Message);
-        Assert.Single((await client.SendAsync(Request(config with { UseMock = true }), default)).Candidates);
         Assert.Equal(0, handler.Count);
     }
     [Fact]
     public async Task MismatchedModelAndAlreadyCancelledRequestNeverReachHttp()
     {
         await using var x = await AiTestFixture.Create();
-        var config = AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true };
+        var config = AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true };
         var handler = new Handler((_, _) => throw new Exception("must reject before network"));
         using var client = new DeepSeekClient(x.Settings, x.Secrets, handler);
         Assert.Equal("InvalidSettings", (await Assert.ThrowsAsync<AiException>(() => client.SendAsync(Request(config) with { Model = "deepseek-v4-pro" }, default))).Code);

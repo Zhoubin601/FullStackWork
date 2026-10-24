@@ -1,0 +1,26 @@
+{
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "tables": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Manual Acceptance",
+        "Author": "Synthetic Author",
+        "Category": "Acceptance",
+        "TotalPages": 100,
+        "Description": "",
+        "CreatedAt": 639284094171282431,
+        "UpdatedAt": 639284094171282431,
+        "Kind": 0,
+        "BookUid": "18669c75-3c56-4b6c-909b-c44b107944fc"
+      }
+    ],
+    "ReadingRecord": [],
+    "Quote": [],
+    "ReadingPlan": [],
+    "EbookFile": [],
+    "EbookProgress": [],
+    "EbookReadingSession": []
+  }
+}

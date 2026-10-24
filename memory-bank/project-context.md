@@ -155,3 +155,9 @@ feature/reader-native基准e50612b的P0～P7在Windows11 x64/.NET8.0.424/实际1
 用户授权先推送再P10；P9已正常推送origin/codex/reader-p9=9f6ae53097feefdfef44cfd160672193678aa726并回读。当前codex/reader-p10，生产功能源码不改，只更新README/CHANGELOG/139包版本许可证索引/白名单及验收工具。用户明确跳过缩放补测，按Windows实际150%交付，100%/200%与跨屏仍未测。工作区及独立源码各334项332通过0失败2符号链接权限跳过；152架构/性能探针、14原生实验、14处进程中断及新库/迁移库完整UI往返通过。正式output/reader-release-v1/20261023-阅记-阅读器与AI助手源码-v1.zip，202文件/321886字节，SHA256=c3de04c9e383b28a69241b1edcda5dcea740f72851c9056f5622b714f4358587。P10验收与已知限制见docs/reader-p10-acceptance-20261023.md。测试Key均已删除，应用正常退出；未合main/未自动推送P10，旧报告未同步扩展功能，raw/旧output未变；原有本地历史记录仍保留。
 
 P10补充生产布局UI Dispatcher心跳31样本，最大间隔53.209ms，小于250ms；与真实窗口输入记录分别保存，不当作物理DPI证据。
+
+## 2026-10-24 字体与AI清理（优先于历史状态）
+
+本轮开始真实远端main与本地基线均82070fa，P10此前已在main（历史文档的未合main为当时状态）。新增系统字体搜索/预览/字号/默认恢复、缺失字体校验和Windows中文后备；生产移除Mock及模拟返回，旧UseMock字段兼容忽略，测试替身移到测试工程。工作区与206文件独立源码各339通过/0失败/0跳过，Linux X11虚拟桌面实际流程、153架构性能检查、14处进程中断与EPUB回归通过。
+
+用户要求完成后推送，本轮按feature/reader-fonts-live-ai交付实现与待补验记录。Windows真机未连接，真实DeepSeek目标被云环境代理CONNECT403阻止；本轮真实Provider调用0，不把旧Windows/P9结果视为新版本通过。密钥未落盘，不在此记录。详细结果docs/font-ai-acceptance-20261024.md；正式output/报告不变，候选源码包仅在工作区外用于独立验证。

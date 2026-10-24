@@ -8,7 +8,6 @@ namespace ReadJournal.Library.ViewModels;
 public partial class SettingsViewModel
 {
     private IAiSettingsStorage? _aiSettings; private ISecretStore? _secrets;
-    [ObservableProperty] private bool _useMock = true;
     [ObservableProperty] private bool _uploadAcknowledged;
     [ObservableProperty] private string _apiKeyInput = "";
     [ObservableProperty] private string _aiEndpoint = AiSettingsStorage.Default.HttpsEndpoint;
@@ -27,8 +26,8 @@ public partial class SettingsViewModel
         {
             if (_aiSettings is null) return;
             if (!int.TryParse(AiInputLimit, out var input) || !int.TryParse(AiOutputLimit, out var output) || !int.TryParse(AiTimeoutSeconds, out var timeout)) throw new AiException("InvalidSettings", "限额与超时请输入整数。");
-            await _aiSettings.SaveAsync(new(AiEndpoint, AiModel, input, output, TimeSpan.FromSeconds(timeout), UploadAcknowledged, UseMock), default);
-            Status = UseMock ? "AI配置已保存：本地模拟，不上传正文。" : "AI配置已保存：真实模式只发送确认范围，可能计费；请在阅读器中确认后生成。";
+            await _aiSettings.SaveAsync(new(AiEndpoint, AiModel, input, output, TimeSpan.FromSeconds(timeout), UploadAcknowledged), default);
+            Status = "AI配置已保存：只发送确认范围，可能计费；请在阅读器中确认后生成。";
         }));
         SaveApiKeyCommand = new AsyncRelayCommand(() => RunAsync(async () =>
         {
@@ -42,8 +41,8 @@ public partial class SettingsViewModel
     {
         ApiKeyInput = ""; if (_aiSettings is null) return;
         var settings = await _aiSettings.GetAsync(default);
-        UseMock = settings.UseMock; UploadAcknowledged = settings.HasAcknowledgedTextUpload; AiEndpoint = settings.HttpsEndpoint; AiModel = settings.Model;
+        UploadAcknowledged = settings.HasAcknowledgedTextUpload; AiEndpoint = settings.HttpsEndpoint; AiModel = settings.Model;
         AiInputLimit = settings.MaxInputUtf16Units.ToString(); AiOutputLimit = settings.MaxOutputTokens.ToString(); AiTimeoutSeconds = ((int)settings.Timeout.TotalSeconds).ToString();
-        CredentialStatus = _secrets is not null && await _secrets.HasApiKeyAsync(default) ? "已配置会话密钥，退出应用后自动清除" : "未配置会话密钥（本地模拟不需要密钥）";
+        CredentialStatus = _secrets is not null && await _secrets.HasApiKeyAsync(default) ? "已配置会话密钥，退出应用后自动清除" : "未配置会话密钥，请输入后保存";
     }
 }

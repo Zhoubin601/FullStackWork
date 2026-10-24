@@ -1,0 +1,27 @@
+[
+  {
+    "probe": "ReaderP2Probe",
+    "exit_code": 134
+  },
+  {
+    "probe": "ReaderP3Probe",
+    "exit_code": 0
+  },
+  {
+    "probe": "ReaderP4Probe",
+    "exit_code": 0
+  },
+  {
+    "probe": "ReaderP7Probe",
+    "exit_code": 0
+  },
+  {
+    "probe": "ReaderP10Probe",
+    "exit_code": 0
+  },
+  {
+    "probe": "ReaderP2Probe corrected fixture path",
+    "exit_code": 0,
+    "evidence": "ReaderP2Probe-fixed.log"
+  }
+]

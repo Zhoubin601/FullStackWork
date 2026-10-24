@@ -8,7 +8,7 @@ public sealed partial class ReaderViewModel
 {
     private AiScopeFactory? _aiScopes; private IReaderAiService? _ai; private IAiSettingsStorage? _aiSettings;
     private CancellationTokenSource? _aiCancellation; private int _aiVersion; private bool _aiBusy, _aiPreparing;
-    private string _aiStatus = "本地模拟模式可在设置页配置。生成书摘会自动入库，分析与解释只显示结果。", _aiResult = "", _aiScope = "当前页", _aiFirst = "", _aiLast = "";
+    private string _aiStatus = "请先在设置中配置 DeepSeek 和会话密钥。生成书摘会自动入库，分析与解释只显示结果。", _aiResult = "", _aiScope = "当前页", _aiFirst = "", _aiLast = "";
     private Guid? _aiBatch, _aiPending; private DataEpoch _aiBatchEpoch;
     public string[] AiScopes { get; } = ["当前页", "当前选区", "全书页范围"];
     public string AiScope { get => _aiScope; set => SetProperty(ref _aiScope, value); }
@@ -71,7 +71,7 @@ public sealed partial class ReaderViewModel
         }
         finally { if (aiVersion == _aiVersion) _aiPreparing = false; }
         ct.ThrowIfCancellationRequested(); var config = await _aiSettings.GetAsync(ct); ct.ThrowIfCancellationRequested();
-        var modeLabel = config.UseMock ? "本地模拟，不上传正文" : "真实服务，将上传所选正文；可能产生费用（暂无可靠费用估算）";
+        const string modeLabel = "将上传所选正文至 DeepSeek，可能产生费用";
         AiStatus = $"{scope.DisplayScope}，{scope.Original.Spans.Sum(s => s.Text.Length)}字符，模型{config.Model}，输入上限{config.MaxInputUtf16Units}字符；{modeLabel}。";
         var confirmed = _generalAlerts is not null && await _generalAlerts.ConfirmAsync(operation == AiOperation.ExtractQuotes ? "生成并自动保存书摘" : "确认分析范围", AiStatus + (operation == AiOperation.ExtractQuotes ? "\n合法原句将自动保存，重复项跳过；可撤销本批未修改且未收藏的新增项。是否继续？" : "\n只显示结果，不写入书摘。是否继续？"));
         ct.ThrowIfCancellationRequested();

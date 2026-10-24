@@ -1,0 +1,5 @@
+  Determining projects to restore...
+  Restored /workspace/FullStackWork/docs/tools/ReaderP4Probe/ReaderP4Probe.csproj (in 428 ms).
+  1 of 2 projects are up-to-date for restore.
+/workspace/.readjournal-env/dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/docs/tools/ReaderP4Probe/ReaderP4Probe.csproj]
+Ten actual process interruptions, actual TXT backup/delete/restore and damaged import journal preservation passed.

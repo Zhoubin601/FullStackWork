@@ -1,0 +1,16 @@
+{
+  "tables_equal": {
+    "Book": true,
+    "ReadingRecord": true,
+    "Quote": true,
+    "ReadingPlan": true,
+    "EbookFile": true,
+    "EbookProgress": true,
+    "EbookReadingSession": true,
+    "QuoteOrigin": true,
+    "AiGenerationBatch": true,
+    "AiGenerationBatchItem": true
+  },
+  "integrity": "ok",
+  "foreign_key_errors": []
+}

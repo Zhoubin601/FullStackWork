@@ -96,7 +96,7 @@ public sealed class AiViewModelTests
     public Task SettingsMaskAndClearInputDeleteCredentialsAndPersistOnlyNonSecrets() => Ui(async () =>
     {
         await using var x = await AiTestFixture.Create(); var vm = new SettingsViewModel(Mock.Of<IPreferenceStorage>(), Mock.Of<IBackupService>(), Mock.Of<IFileService>(), Mock.Of<IAlertService>(), x.Settings, x.Secrets);
-        await vm.OnLoadedCommand.ExecuteAsync(null); Assert.True(vm.UseMock); var key = "fictional-" + Guid.NewGuid().ToString("N");
+        await vm.OnLoadedCommand.ExecuteAsync(null); Assert.False(vm.UploadAcknowledged); var key = "fictional-" + Guid.NewGuid().ToString("N");
         var view = new ReadJournal.Views.SettingsView { DataContext = vm }; view.ApplyTemplate(); Dispatcher.UIThread.RunJobs();
         var box = view.FindControl<TextBox>("ApiKeyBox")!; Assert.Equal('●', box.PasswordChar);
         vm.ApiKeyInput = key; await vm.SaveApiKeyCommand.ExecuteAsync(null); Assert.Equal("", vm.ApiKeyInput); Assert.True(await x.Secrets.HasApiKeyAsync(default));

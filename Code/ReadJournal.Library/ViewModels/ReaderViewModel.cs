@@ -45,7 +45,8 @@ public sealed partial class ReaderViewModel : ViewModelBase
     public string IndexText { get => _indexText; private set => SetProperty(ref _indexText, value); }
     public string FontSizeText { get => _fontSize; set => SetProperty(ref _fontSize, value); }
     public string Palette { get => _palette; set => SetProperty(ref _palette, value); }
-    public string FontFamily { get => _appearance.FontFamily; set { _appearance = _appearance with { FontFamily = value }; OnPropertyChanged(); } }
+    private string _fontFamilyText = ReaderPreferencesStorage.Default.FontFamily;
+    public string FontFamily { get => _fontFamilyText; set { if (SetProperty(ref _fontFamilyText, value ?? "")) OnPropertyChanged(nameof(FontHint)); } }
     public IAsyncRelayCommand NextCommand { get; }
     public IAsyncRelayCommand PreviousCommand { get; }
     public IAsyncRelayCommand ApplyAppearanceCommand { get; }
@@ -55,11 +56,12 @@ public sealed partial class ReaderViewModel : ViewModelBase
     public IAsyncRelayCommand<TocEntry> GoToChapterCommand { get; }
     public ReaderViewModel(IDatabaseService database, IApplicationDataCoordinator data, IReaderDocumentService documents,
         IReaderLayoutService layouts, IReaderSessionService sessions, IReaderPreferencesStorage preferences,
-        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main, IReaderQuoteService? quotes = null, IAlertService? generalAlerts = null, ReadJournal.Library.Services.Ai.AiScopeFactory? aiScopes = null, IReaderAiService? ai = null, IAiSettingsStorage? aiSettings = null)
+        IReaderPlatformService platform, IReaderAlertService alerts, ReaderClock clock, MainViewModel main, IReaderQuoteService? quotes = null, IAlertService? generalAlerts = null, ReadJournal.Library.Services.Ai.AiScopeFactory? aiScopes = null, IReaderAiService? ai = null, IAiSettingsStorage? aiSettings = null, IReaderFontCatalog? fonts = null)
     {
         _database = database; _data = data; _documents = documents; _layouts = layouts; _sessions = sessions;
         _preferences = preferences; _platform = platform; _alerts = alerts; _clock = clock; _quotes = quotes; _generalAlerts = generalAlerts;
         InitializeAi(aiScopes, ai, aiSettings);
+        InitializeFonts(fonts);
         CopySelectionCommand = new AsyncRelayCommand(() => Observe(CopySelectionAsync));
         SaveSelectionCommand = new AsyncRelayCommand(() => Observe(SaveSelectionAsync));
         MarkCompletedCommand = new AsyncRelayCommand(() => Observe(async () => { if (_context is null || Phase != ReaderPhase.Active) return; await _sessions.MarkCompletedAsync(_context, _lifetime.Token); Notice = "已标记读完；继续回看不会取消完成状态。"; }));
@@ -102,7 +104,7 @@ public sealed partial class ReaderViewModel : ViewModelBase
             if (!resolution.IsExact) throw new InvalidOperationException(resolution.Reason ?? "正文位置已失效。");
             ct.ThrowIfCancellationRequested(); if (version != ParameterVersion) return;
             _identity = identity; Document = document; Title = document.Title; _appearance = appearance;
-            FontSizeText = appearance.FontSize.ToString(System.Globalization.CultureInfo.InvariantCulture); Palette = appearance.Palette; OnPropertyChanged(nameof(FontFamily));
+            FontFamily = appearance.FontFamily; FontSizeText = appearance.FontSize.ToString(System.Globalization.CultureInfo.InvariantCulture); Palette = appearance.Palette;
             _position = position; Selection = request.Target; await ReflowAsync(); ct.ThrowIfCancellationRequested(); Phase = ReaderPhase.Presenting;
         }
         catch { if (!ct.IsCancellationRequested && version == ParameterVersion) Phase = ReaderPhase.OpenFailed; throw; }
@@ -212,8 +214,8 @@ public sealed partial class ReaderViewModel : ViewModelBase
     {
         if (Phase is ReaderPhase.Closing or ReaderPhase.CloseFailed) return;
         if (!double.TryParse(FontSizeText, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var size)) throw new ArgumentException("字号请输入数字。");
-        var appearance = _appearance with { FontSize = size, LineHeight = size * 1.55, Palette = Palette };
-        await _preferences.SaveAsync(appearance, _lifetime.Token); _appearance = appearance; if (_identity is not null) await ReflowAsync();
+        var appearance = _appearance with { FontFamily = InstalledFont(FontFamily.Trim()), FontSize = size, LineHeight = size * 1.55, Palette = Palette };
+        await _preferences.SaveAsync(appearance, _lifetime.Token); _appearance = appearance; FontFamily = appearance.FontFamily; Error = ""; if (_identity is not null) await ReflowAsync();
     }
     public override async Task<bool> CanLeaveAsync()
     {

@@ -200,3 +200,7 @@ ReadJournal.UnitTest/AiTestFixture.cs
 ReadJournal.UnitTest/AiViewModelTests.cs
 DEPENDENCIES.md
 CHANGELOG.md
+ReadJournal/Reader/SystemReaderFontCatalog.cs
+ReadJournal/Reader/ReaderFontFamilyConverter.cs
+ReadJournal.Library/ViewModels/ReaderViewModel.Fonts.cs
+ReadJournal.UnitTest/AiMockHandler.cs

@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "path": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/chapters/ch-0001.utf16",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/chapters/ch-0002.utf16",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/document-v1.json",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/source.txt",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/ec1621c0-2edf-4380-8f41-06b461d52fc5/chapters/sp-9c9b173769a20a6d5e97255f.utf16",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/ec1621c0-2edf-4380-8f41-06b461d52fc5/chapters/sp-fc7a78472029444a6d87f557.utf16",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/ec1621c0-2edf-4380-8f41-06b461d52fc5/document-v1.json",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/ec1621c0-2edf-4380-8f41-06b461d52fc5/resources/r-8cdb4291bcc22472f1032ee8.image",
+      "sha256_equal": true
+    },
+    {
+      "path": "books/managed/ec1621c0-2edf-4380-8f41-06b461d52fc5/source.epub",
+      "sha256_equal": true
+    }
+  ],
+  "all_equal": true
+}

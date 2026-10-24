@@ -73,10 +73,10 @@ internal sealed class NativeLayout : IDisposable
             foreach (var (style, delta) in events[cuts[i]]) { if (style.Bold) boldCount += delta; if (style.Italic) italicCount += delta; headings[style.Heading] += delta; }
             var start = cuts[i]; var end = cuts[i + 1]; var heading = Enumerable.Range(1, 6).LastOrDefault(h => headings[h] > 0);
             var bold = boldCount > 0 || heading > 0; var italic = italicCount > 0; if (!bold && !italic && heading == 0) continue;
-            var typeface = new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, DejaVu Sans"), italic ? FontStyle.Italic : FontStyle.Normal, bold ? FontWeight.Bold : FontWeight.Normal);
+            var typeface = new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, Microsoft YaHei, DejaVu Sans"), italic ? FontStyle.Italic : FontStyle.Normal, bold ? FontWeight.Bold : FontWeight.Normal);
             overrides.Add(new(start - section.Start, end - start, new GenericTextRunProperties(typeface, heading > 0 ? Math.Min(Options.FontSize * 1.2, Options.LineHeight * .9) : Options.FontSize, null, new SolidColorBrush(Color.Parse(Options.Foreground)), null)));
         }
-        var layout = new TextLayout(text, new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, DejaVu Sans")), Options.FontSize,
+        var layout = new TextLayout(text, new Typeface(new FontFamily($"{Options.FontFamily}, Noto Sans CJK SC, Microsoft YaHei, DejaVu Sans")), Options.FontSize,
             new SolidColorBrush(Color.Parse(Options.Foreground)), textWrapping: TextWrapping.Wrap, maxWidth: Options.Width, lineHeight: Options.LineHeight, textStyleOverrides: overrides);
         var pages = new List<NativePage>();
         var first = 0; var count = 0; double height = 0; var pageStart = section.Start; var pageEnd = pageStart;

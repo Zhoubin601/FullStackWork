@@ -13,7 +13,7 @@
 | P4 受管TXT与扫描删除 | 八项通过（Linux）；实现5358a4a，验收后推送 | docs/evidence/reader/P4/acceptance.md |
 | P5～P7 | 已完成并合入main；Linux阶段验收及Windows150%补验通过 | P5/P6/P7/acceptance.md、reader-windows-acceptance-20261023.md |
 | P8 | P8-01～10已通过；按授权推送feature/reader-ai-p8 | docs/evidence/reader/P8/acceptance.md |
-| P9～P10 | 未开始 | 真实API及发布后续单列 |
+| P9～P10 | 已完成既定范围，代码在main=82070fa；本轮字体/AI调整另需补验 | reader-p9-acceptance-20261023.md、reader-p10-acceptance-20261023.md |
 
 ## P0 本轮步骤
 
@@ -94,3 +94,7 @@ P8从已合并main=cd3386b实施，分支feature/reader-ai-p8。默认Mock完整
 ## 2026-10-23 P10当前交付
 
 P9已推送origin/codex/reader-p9=9f6ae53；P10在codex/reader-p10完成。用户跳过其他缩放补测，按实际150%范围验收；工作区与独立源码各334项332通过0失败2权限跳过，152架构/性能探针、14原生实验、旧库迁移/14处实际中断、新库/迁移库实际UI完整闭环通过。最终202文件源码ZIP已新增至output/reader-release-v1；正式大小和SHA见reader-p10-acceptance-20261023.md。生产功能代码不改；本轮只更新发布文档/索引/白名单及工具。旧Word/PDF/ZIP和raw保持，不合main、不自动推送P10。
+
+## 2026-10-24 字体与AI清理
+
+最新实现、Linux339项与窗口验证以及待补Windows/真实API条件见docs/font-ai-acceptance-20261024.md。本轮功能分支feature/reader-fonts-live-ai，不将旧版Windows验收冒充当前变更通过。
