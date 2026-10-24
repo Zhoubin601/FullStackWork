@@ -4,8 +4,8 @@ namespace ReadJournal.Library.Services.Ai;
 
 public sealed class AiScopeFactory(IReaderDocumentService documents, IReaderLayoutService layouts)
 {
-    public Task<AiScopeSnapshot> SelectionAsync(ReaderContext context, DocumentRange range, CancellationToken ct) => CreateAsync(context, null, "当前选区", [range], ct);
-    public Task<AiScopeSnapshot> CurrentPageAsync(ReaderContext context, ReaderPage page, CancellationToken ct) => CreateAsync(context, page.Ref.Layout, "当前页", page.ContentRanges, ct);
+    public Task<AiScopeSnapshot> SelectionAsync(ReaderContext context, DocumentRange range, CancellationToken ct) => CreateAsync(context, null, "当前选区", [range], AiScopeKind.Selection, ct);
+    public Task<AiScopeSnapshot> CurrentPageAsync(ReaderContext context, ReaderPage page, CancellationToken ct) => CreateAsync(context, page.Ref.Layout, "当前页", page.ContentRanges, AiScopeKind.CurrentPage, ct);
     public async Task<AiScopeSnapshot> PagesAsync(ReaderContext context, LayoutHandle layout, PageSpan pages, CancellationToken ct)
     {
         if (pages.StartInclusive < 1 || pages.EndInclusive < pages.StartInclusive || pages.EndInclusive - (long)pages.StartInclusive >= 200)
@@ -14,9 +14,9 @@ public sealed class AiScopeFactory(IReaderDocumentService documents, IReaderLayo
         var resolved = await layouts.ResolveGlobalPagesAsync(layout, pages, null, ct);
         ct.ThrowIfCancellationRequested();
         if (resolved.Layout != layout.Id || layout.Document != context.Identity.Document) throw new AiException("StaleContext", "排版已变化，请重新选择页码。");
-        return await CreateAsync(context, layout.Id, $"全书第{pages.StartInclusive}～{pages.EndInclusive}页", resolved.ResolvedPages.SelectMany(p => p.ContentRanges).ToArray(), ct);
+        return await CreateAsync(context, layout.Id, $"全书第{pages.StartInclusive}～{pages.EndInclusive}页", resolved.ResolvedPages.SelectMany(p => p.ContentRanges).ToArray(), AiScopeKind.PageRange, ct);
     }
-    private async Task<AiScopeSnapshot> CreateAsync(ReaderContext context, LayoutId? layout, string display, IReadOnlyList<DocumentRange> ranges, CancellationToken ct)
+    private async Task<AiScopeSnapshot> CreateAsync(ReaderContext context, LayoutId? layout, string display, IReadOnlyList<DocumentRange> ranges, AiScopeKind kind, CancellationToken ct)
     {
         if (ranges.Count is 0 or > 2048) throw new AiException("LimitExceeded", "范围为空或过大。");
         var document = await documents.DescribeAsync(context.Identity.Document, ct);
@@ -36,7 +36,7 @@ public sealed class AiScopeFactory(IReaderDocumentService documents, IReaderLayo
             }
         }
         var original = new TextSnapshot(document.Key, spans.AsReadOnly(), AiIntegrity.Hash(string.Concat(spans.Select(s => s.Text))));
-        var snapshot = new AiScopeSnapshot(context, layout, display, original, "");
+        var snapshot = new AiScopeSnapshot(context, layout, display, original, "", kind);
         snapshot = snapshot with { ScopeSha256 = AiIntegrity.ScopeHash(snapshot) };
         await AiIntegrity.ValidateOriginalAsync(snapshot, documents, ct); return snapshot;
     }

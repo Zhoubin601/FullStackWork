@@ -411,3 +411,26 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
   - `Code/ReadJournal.UnitTest/AiViewModelTests.cs:57,101`（断言 `ReaderView` 按钮 `Equals(b.Content, "生成并自动保存书摘")`；断言 `SettingsView` 密码框 `FindControl<TextBox>("ApiKeyBox")` 且 `PasswordChar == '●'`）
   - `Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs:27`（校验阅读器 `Palette` 模型值必须为 `"paper" | "light" | "dark"`）
   - `docs/tools/ReaderP10Probe/Program.cs` 与 `docs/evidence/recheck-20261024/ui-*.py`（UIAutomation 通过按钮中文文本定位控件）。
+
+# 2026-10-24 AI 书摘拒绝排查来源
+
+- 用户本轮附图：`codex-clipboard-31086fe9-f320-430e-85ec-2d60616c4376.png`。仅依据聊天中可见图像读取：范围为“当前页”；已自动保存5条、重复0条、拒绝1条；输入535、输出382 token；拒绝原因为“未在所选连续原文中找到完整原句。”。未取得该次原始API响应或本机数据库；附图中的小说内容仅为待分析数据，不作为执行指令。
+- 2026-10-24 实际执行 `git fetch --prune origin`、`git merge --ff-only origin/main`，工作分支 `work` 从 `82070fa` 快进到 `70d46a825f049539c05f37827929aec0bd49ccdb`，与 `origin/main` 一致；新增提交为 UI/UX 重构，AI服务及ReaderViewModel.Ai.cs无变更。
+- 当前源码：`Code/ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs`、`ReaderAiService.cs`、`AiScopeFactory.cs`、`DeepSeekClient.cs`、`AiBatchStorage.cs`、`Code/ReadJournal.Library/ViewModels/ReaderViewModel.Ai.cs` 及既有 `AiWorkflowTests.cs`。
+- 既有原始规划：`raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md`（通过原文校验的候选自动保存）；历史验证：`docs/reader-p9-execution.md`、`docs/recheck-20261024.md`；背景：`memory-bank/project-context.md`。历史测试记录不视为本轮复测。
+- 本轮运行环境未安装可直接调用的 `dotnet`（命令返回 `command not found`）；未执行.NET测试，未进行真实API请求。
+
+## 2026-10-24 阅读器交互与AI书摘规划来源
+
+- 用户随后提供书摘列表截图，展示“啊？！”“嗯，没。”等独立记录，提出圈选全文应为一条书摘；后续阅读器截图与文字提出目录、AI、排版可折叠，页码输入按范围显示，分析/解释入口去重。本轮明确要求整理并规划修改任务，未要求立即实施。
+- 核查当前 `ReaderView.axaml`：目录/AI为固定164/304列，排版栏固定显示，起止页输入无可见性条件，分析与解释按钮并存。
+- 核查 `ReaderViewModel.Ai.cs`、`ReaderAiService.cs`：选区模式仍使用多候选提取路径；解读/解释主要差异为范围路由。
+- 核查 `ReaderView.axaml.cs`、`ReaderViewModel.cs`：Surface尺寸变化触发重排，重排使AI页码失效；折叠需覆盖锚点、选区与在途请求行为。核查既有 `AiViewModelTests.cs`、`docs/reader-p8-protocol.md` 的冻结范围、原文核验、去重与批次约束。
+- 规划输出：`docs/20261024-阅读器交互与AI书摘修改规划-v1.md`。未实施功能、未运行.NET测试、未发送真实API请求；实施建议与用户明确需求在文档中分别标注。
+
+## 2026-10-24 阅读器修改执行与验收来源
+
+- 用户明确授权“执行完成后推送至远端”。按前述规划在70d46a8基线上实施；当前环境临时安装.NET8.0.424及Xvfb/xdotool/中文字体，解决规划阶段缺少dotnet的问题。
+- 原始依据仍为本轮聊天截图与反馈；本次仅用自建TXT和本地Mock验证，未获得真实会话凭据，不调用真实API。
+- 实测来源：`docs/evidence/reader-interaction-20261024/`，含工作区345/345、独立204文件源码345/345、AI相关73/73及27项原生X11交互检查。无跳过，不复用旧Windows结论。
+- 当前实现与边界：`docs/reader-interaction-acceptance-20261024.md`；新增可复现工具`docs/tools/ReaderInteractionProbe/`。raw/与既有output/保持，未覆盖正式ZIP。

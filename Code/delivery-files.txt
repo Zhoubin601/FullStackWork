@@ -193,10 +193,12 @@ ReadJournal.Library/Services/Ai/AiSettingsStorage.cs
 ReadJournal.Library/Services/Ai/DeepSeekClient.cs
 ReadJournal.Library/Services/Ai/ReaderAiService.cs
 ReadJournal.Library/ViewModels/ReaderViewModel.Ai.cs
+ReadJournal.Library/ViewModels/ReaderViewModel.Panels.cs
 ReadJournal.Library/ViewModels/SettingsViewModel.Ai.cs
 ReadJournal.UnitTest/AiHttpTests.cs
 ReadJournal.UnitTest/AiWorkflowTests.cs
 ReadJournal.UnitTest/AiTestFixture.cs
 ReadJournal.UnitTest/AiViewModelTests.cs
+ReadJournal.UnitTest/AiSelectionWorkflowTests.cs
 DEPENDENCIES.md
 CHANGELOG.md

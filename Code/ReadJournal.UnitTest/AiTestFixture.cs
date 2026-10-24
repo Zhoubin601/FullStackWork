@@ -50,7 +50,13 @@ internal sealed class AiTestFixture : IAsyncDisposable
         x.Ai = new(x.Client, x.Settings, new AiQuoteVerifier(), x.Quotes, x.Sessions, x.Db.Coordinator, x.Documents); return x;
     }
     public DocumentRange Range(int first, int last) => new(Start with { Utf16Offset = first }, Start with { Utf16Offset = last });
-    public Task<AiScopeSnapshot> Scope(int start = 0, int? end = null) => Factory.SelectionAsync(Context, Range(start, end ?? Text.Length), default);
+    // Existing extraction scenarios exercise page-style candidate generation. Selection is tested separately.
+    public async Task<AiScopeSnapshot> Scope(int start = 0, int? end = null)
+    {
+        var scope = await Factory.SelectionAsync(Context, Range(start, end ?? Text.Length), default);
+        scope = scope with { Kind = AiScopeKind.CurrentPage, DisplayScope = "当前页" };
+        return scope with { ScopeSha256 = AiIntegrity.ScopeHash(scope) };
+    }
     public VerifiedAiBatchCommand Command(AiScopeSnapshot scope, Guid? id = null, params AiQuoteCandidate[] candidates)
     {
         var result = new AiQuoteVerifier().Verify(scope, candidates.Length == 0 ? [new("春天的河流缓缓流过。", "感想", null, null)] : candidates);

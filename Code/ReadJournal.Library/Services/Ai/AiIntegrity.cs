@@ -13,12 +13,13 @@ public static class AiIntegrity
 {
     public const int MaxInput = 60000, MaxCandidates = 32, MaxResponseBytes = 262144;
     public static string Hash(string text) => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(text))).ToLowerInvariant();
-    public static string ScopeHash(AiScopeSnapshot scope) => Hash(JsonSerializer.Serialize(new { scope.Context, scope.Layout, scope.DisplayScope, scope.Original }));
+    public static string ScopeHash(AiScopeSnapshot scope) => Hash(JsonSerializer.Serialize(new { scope.Context, scope.Layout, scope.DisplayScope, scope.Original, scope.Kind }));
     public static string Dedupe(Guid bookUid, DocumentRange range) => Hash(bookUid.ToString("D") + "\n" + ReaderContractValidator.WritePosition(range.Start) + "\n" + ReaderContractValidator.WritePosition(range.End));
     public static string ContentHash(Quote q) => Hash(JsonSerializer.Serialize(new { q.BookId, q.Text, q.Thoughts, q.Page, q.IsFavorite, CreatedTicks = q.CreatedAt.Ticks, UpdatedTicks = q.UpdatedAt.Ticks }));
     public static AiScopeSnapshot Freeze(AiScopeSnapshot scope) => scope with { Original = scope.Original with { Spans = Array.AsReadOnly(scope.Original.Spans.ToArray()) } };
     public static void Check(AiScopeSnapshot scope, int limit = MaxInput)
     {
+        if (!Enum.IsDefined(scope.Kind)) throw new AiException("InvalidScope", "正文范围类型无效，请重新选择。");
         var spans = scope.Original.Spans;
         if (spans.Count is 0 or > 2048 || spans.Sum(s => (long)s.Text.Length) > limit || spans.All(s => string.IsNullOrWhiteSpace(s.Text)))
             throw new AiException("LimitExceeded", "范围为空或超过正文限额，请缩小页范围或选区。");

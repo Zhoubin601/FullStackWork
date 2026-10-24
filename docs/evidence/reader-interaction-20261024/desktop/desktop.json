@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "platform": "Linux X11/Xvfb actual native window and xdotool mouse/keyboard; not Windows",
+  "checks": [
+    "Mock only; no credential",
+    "Synthetic TXT imported",
+    "Panel combination 7",
+    "Stable position and session 7",
+    "Panel combination 6",
+    "Stable position and session 6",
+    "Panel combination 5",
+    "Stable position and session 5",
+    "Panel combination 4",
+    "Stable position and session 4",
+    "Panel combination 3",
+    "Stable position and session 3",
+    "Panel combination 2",
+    "Stable position and session 2",
+    "Panel combination 1",
+    "Stable position and session 1",
+    "Panel combination 0",
+    "Stable position and session 0",
+    "Collapsed panels release space",
+    "Mouse selected multiple lines",
+    "Selection scope hides pages",
+    "Folding with selection preserves original range",
+    "One quote equals complete mouse selection",
+    "Clicking scope and generate preserves selection",
+    "Undo removes the one generated quote",
+    "Page range shows page fields",
+    "Normal reader close"
+  ],
+  "expanded": {
+    "AspectRatio": 1.216867469879518,
+    "Width": 606,
+    "Height": 498
+  },
+  "selectedCharacters": 68,
+  "input": "synthetic text only",
+  "api": "local Mock only",
+  "finalContextClosed": true
+}

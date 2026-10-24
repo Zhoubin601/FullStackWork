@@ -1,0 +1,13 @@
+/tmp/readjournal-dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+  ReadJournal.Library -> /workspace/FullStackWork/Code/ReadJournal.Library/bin/Release/net8.0/ReadJournal.Library.dll
+/tmp/readjournal-dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]
+  ReadJournal -> /workspace/FullStackWork/Code/ReadJournal/bin/Release/net8.0/ReadJournal.dll
+
+Build succeeded.
+
+/tmp/readjournal-dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal.Library/ReadJournal.Library.csproj]
+/tmp/readjournal-dotnet/sdk/8.0.424/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets(284,5): warning NETSDK1206: Found version-specific or distribution-specific runtime identifier(s): alpine-x64. Affected libraries: SQLitePCLRaw.lib.e_sqlite3. In .NET 8.0 and higher, assets for version-specific and distribution-specific runtime identifiers will not be found by default. See https://aka.ms/dotnet/rid-usage for details. [/workspace/FullStackWork/Code/ReadJournal/ReadJournal.csproj]
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:11.59

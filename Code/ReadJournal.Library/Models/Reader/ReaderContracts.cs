@@ -9,6 +9,7 @@ public enum HistorySource { ManualRecord = 0, EbookSession = 1 }
 public enum PageDirection { Previous = -1, Next = 1 }
 public enum ReaderExitReason { Back, Menu, SwitchBook, WindowClose }
 public enum AiOperation { Analyze, ExplainSelection, ExtractQuotes }
+public enum AiScopeKind { CurrentPage, Selection, PageRange }
 public enum MaintenanceKind { Migration, Backup, Restore, Reset, Reconcile, Delete }
 public enum EbookFileStatus { Ready = 0, Missing = 1, Invalid = 2 }
 public enum ImportState { Imported, Duplicate, Rejected, Cancelled }
@@ -162,7 +163,7 @@ public sealed record EbookStateInput(
 public sealed record AiScopeSnapshot(
     ReaderContext Context, LayoutId? Layout,
     string DisplayScope, TextSnapshot Original,
-    string ScopeSha256);
+    string ScopeSha256, AiScopeKind Kind = AiScopeKind.CurrentPage);
 
 public sealed record AiProviderRequest(
     AiOperation Operation, string Model,

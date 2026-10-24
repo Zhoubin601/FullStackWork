@@ -1,13 +1,43 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:r="using:ReadJournal.Reader" x:Class="ReadJournal.Views.ReaderView">
+  <UserControl.Styles>
+    <Style Selector="ToggleButton.reader-panel">
+      <Setter Property="MinHeight" Value="38"/>
+      <Setter Property="Padding" Value="14,8"/>
+      <Setter Property="CornerRadius" Value="8"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceMutedBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel:checked /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppAccentBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceHoverBrush}"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppAccentHoverBrush}"/>
+    </Style>
+  </UserControl.Styles>
   <Grid RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
-    <DockPanel Grid.Row="0" Margin="0,0,0,8">
-      <Border DockPanel.Dock="Right" Classes="badge" Margin="12,0,0,0">
-        <TextBlock Classes="badge-text" Text="原生排版阅读器"/>
-      </Border>
-      <TextBlock Text="{Binding Title}" Classes="h1" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
-    </DockPanel>
+    <StackPanel Grid.Row="0" Spacing="8" Margin="0,0,0,8">
+      <TextBlock Text="{Binding Title}" Classes="h1" TextTrimming="CharacterEllipsis"/>
+      <WrapPanel>
+        <ToggleButton Name="TocToggle" Classes="reader-panel" Content="章节目录" IsChecked="{Binding IsTocExpanded,Mode=TwoWay}" Margin="0,0,8,4" ToolTip.Tip="展开或收起章节目录" AutomationProperties.Name="展开或收起章节目录"/>
+        <ToggleButton Name="AppearanceToggle" Classes="reader-panel" Content="排版设置" IsChecked="{Binding IsAppearanceExpanded,Mode=TwoWay}" Margin="0,0,8,4" ToolTip.Tip="展开或收起排版设置" AutomationProperties.Name="展开或收起排版设置"/>
+        <ToggleButton Name="AiToggle" Classes="reader-panel" Content="AI 助手" IsChecked="{Binding IsAiExpanded,Mode=TwoWay}" Margin="0,0,8,4" ToolTip.Tip="展开或收起AI阅读助手" AutomationProperties.Name="展开或收起AI阅读助手"/>
+        <Button Classes="secondary" Content="全屏 F11" Command="{Binding FullScreenCommand}" Margin="0,0,8,4"/>
+        <TextBlock Text="AI处理中…" IsVisible="{Binding IsAiBusy}" VerticalAlignment="Center" Margin="0,0,8,4"/>
+        <Button Classes="danger" Content="取消AI任务" Command="{Binding CancelAiCommand}" IsVisible="{Binding IsAiBusy}" Margin="0,0,0,4"/>
+      </WrapPanel>
+    </StackPanel>
 
-    <Border Grid.Row="1" Classes="card-compact" Padding="14,10" Margin="0,0,0,8">
+    <Border Name="AppearancePanel" Grid.Row="1" IsVisible="{Binding IsAppearanceExpanded}" Classes="card-compact" Padding="14,10" Margin="0,0,0,8">
       <WrapPanel VerticalAlignment="Center">
         <TextBlock Text="字体" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
         <TextBox Text="{Binding FontFamily}" Width="165" Margin="0,0,10,0" ToolTip.Tip="输入正文字体名称"/>
@@ -20,7 +50,6 @@
           <x:String>dark</x:String>
         </ComboBox>
         <Button Classes="primary" Content="应用排版" Command="{Binding ApplyAppearanceCommand}" Margin="0,0,8,0"/>
-        <Button Classes="secondary" Content="全屏 F11" Command="{Binding FullScreenCommand}"/>
       </WrapPanel>
     </Border>
 
@@ -33,8 +62,8 @@
       </StackPanel>
     </StackPanel>
 
-    <Grid Grid.Row="3" ColumnDefinitions="164,*,304" Margin="0,0,0,8">
-      <Border Grid.Column="0" Classes="card-compact" Padding="8,10" Margin="0,0,10,0">
+    <Grid Name="ReadingPanels" Grid.Row="3" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,8">
+      <Border Name="TocPanel" Grid.Column="0" Width="164" IsVisible="{Binding IsTocExpanded}" Classes="card-compact" Padding="8,10" Margin="0,0,10,0">
         <DockPanel>
           <TextBlock DockPanel.Dock="Top" Text="章节目录" Classes="h3" Margin="6,0,6,8"/>
           <ScrollViewer>
@@ -67,39 +96,31 @@
                          MinHeight="120"/>
       </Border>
 
-      <Border Grid.Column="2" Classes="card-compact" Padding="14,12" Margin="10,0,0,0">
+      <Border Name="AiPanel" Grid.Column="2" Width="304" IsVisible="{Binding IsAiExpanded}" Classes="card-compact" Padding="14,12" Margin="10,0,0,0">
         <ScrollViewer>
           <StackPanel Spacing="10">
             <StackPanel Spacing="4">
               <TextBlock Text="AI 阅读助手" Classes="h2"/>
-              <TextBlock Text="生成书摘会自动保存；原句核验不代表AI解读正确。" TextWrapping="Wrap" Classes="muted" FontSize="12"/>
+              <TextBlock Text="AI解读只显示结果；生成书摘会自动保存。" TextWrapping="Wrap" Classes="muted" FontSize="12"/>
             </StackPanel>
 
             <ComboBox ItemsSource="{Binding AiScopes}"
                       SelectedItem="{Binding AiScope}"
                       HorizontalAlignment="Stretch"
                       IsEnabled="{Binding !IsAiBusy}"/>
+            <TextBlock Text="{Binding AiScopeDescription}" TextWrapping="Wrap" Classes="muted" FontSize="12"/>
 
-            <Grid ColumnDefinitions="*,*">
+            <Grid Name="AiPageRangeInputs" ColumnDefinitions="*,*" IsVisible="{Binding IsAiPageRange}">
               <TextBox Grid.Column="0" Watermark="全书起始页" Text="{Binding AiFirstPage}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,4,0"/>
               <TextBox Grid.Column="1" Watermark="全书结束页" Text="{Binding AiLastPage}" IsEnabled="{Binding !IsAiBusy}" Margin="4,0,0,0"/>
             </Grid>
 
-            <WrapPanel>
-              <Button Classes="secondary" Content="分析所选范围" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,6,6"/>
-              <Button Classes="secondary" Content="解释选区" Command="{Binding ExplainCommand}" IsEnabled="{Binding !IsAiBusy}" Margin="0,0,0,6"/>
-            </WrapPanel>
+            <Button Classes="secondary" Content="AI 解读" Command="{Binding AnalyzeCommand}" IsEnabled="{Binding CanRunAi}" HorizontalAlignment="Stretch"/>
 
             <Button Classes="primary"
                     Content="生成并自动保存书摘"
                     Command="{Binding GenerateQuotesCommand}"
-                    IsEnabled="{Binding !IsAiBusy}"
-                    HorizontalAlignment="Stretch"/>
-
-            <Button Classes="danger"
-                    Content="取消AI任务"
-                    Command="{Binding CancelAiCommand}"
-                    IsVisible="{Binding IsAiBusy}"
+                    IsEnabled="{Binding CanRunAi}"
                     HorizontalAlignment="Stretch"/>
 
             <TextBlock Text="{Binding AiStatus}" TextWrapping="Wrap" FontSize="13" FontWeight="Medium"/>

@@ -13,7 +13,7 @@ public sealed partial class ReaderViewModel : ViewModelBase
     private readonly IReaderPlatformService _platform; private readonly IReaderAlertService _alerts; private readonly ReaderClock _clock;
     private readonly IReaderQuoteService? _quotes; private readonly IAlertService? _generalAlerts;
     private DocumentRange? _selection; private string _notice = "";
-    public DocumentRange? Selection { get => _selection; private set => SetProperty(ref _selection, value); }
+    public DocumentRange? Selection { get => _selection; private set { if (SetProperty(ref _selection, value)) { OnPropertyChanged(nameof(AiScopeDescription)); AiButtons(); } } }
     public string Notice { get => _notice; private set => SetProperty(ref _notice, value); }
     public IAsyncRelayCommand CopySelectionCommand { get; }
     public IAsyncRelayCommand SaveSelectionCommand { get; }
@@ -31,16 +31,16 @@ public sealed partial class ReaderViewModel : ViewModelBase
     private string _title = "阅读器", _indexText = "总页数计算中", _fontSize = "22", _palette = "paper";
     private bool _layoutBusy, _fullScreen;
     protected override bool UseGlobalBusyForLoad => false;
-    public ReaderPage? Page { get => _page; private set => SetProperty(ref _page, value); }
+    public ReaderPage? Page { get => _page; private set { if (SetProperty(ref _page, value)) AiButtons(); } }
     public ReaderDocument? Document { get => _document; private set { SetProperty(ref _document, value); OnPropertyChanged(nameof(TableOfContents)); } }
     public IReadOnlyList<TocEntry> TableOfContents => Document is null ? [] : Flatten(Document.TableOfContents, 0).ToArray();
     private static IEnumerable<TocEntry> Flatten(IReadOnlyList<TocEntry> entries, int depth)
     { foreach (var entry in entries) { yield return entry with { Title = new string('　', depth) + entry.Title, Children = [] }; foreach (var child in Flatten(entry.Children, depth + 1)) yield return child; } }
     public ReaderContext? Context => _context;
     public ReaderPosition? Position => _position;
-    public ReaderPhase Phase { get => _phase; private set { SetProperty(ref _phase, value); OnPropertyChanged(nameof(IsCloseFailed)); } }
+    public ReaderPhase Phase { get => _phase; private set { SetProperty(ref _phase, value); OnPropertyChanged(nameof(IsCloseFailed)); AiButtons(); } }
     public bool IsCloseFailed => Phase == ReaderPhase.CloseFailed;
-    public bool IsLayoutBusy { get => _layoutBusy; private set => SetProperty(ref _layoutBusy, value); }
+    public bool IsLayoutBusy { get => _layoutBusy; private set { if (SetProperty(ref _layoutBusy, value)) AiButtons(); } }
     public string Title { get => _title; private set => SetProperty(ref _title, value); }
     public string IndexText { get => _indexText; private set => SetProperty(ref _indexText, value); }
     public string FontSizeText { get => _fontSize; set => SetProperty(ref _fontSize, value); }
