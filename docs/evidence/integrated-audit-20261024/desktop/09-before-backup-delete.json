@@ -1,0 +1,435 @@
+{
+  "AiGenerationBatch": [
+    {
+      "BatchId": "f9a92ab5-68b9-4879-a86d-5e125facf48f",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "ScopeSha256": "deb98671f9d8c51d2e9798edfe0f68609d1fa1e654ee11f69ae73f5c51d77db3",
+      "CreatedUtcTicks": 639284497924259453,
+      "Status": 1,
+      "InsertedCount": 1,
+      "DuplicateCount": 0,
+      "RejectedCount": 0,
+      "InsertedQuoteIdsJson": "[3]"
+    },
+    {
+      "BatchId": "33f45c91-2f20-4b3c-8a6e-acf471aa3b8c",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "ScopeSha256": "deb98671f9d8c51d2e9798edfe0f68609d1fa1e654ee11f69ae73f5c51d77db3",
+      "CreatedUtcTicks": 639284497948279121,
+      "Status": 0,
+      "InsertedCount": 0,
+      "DuplicateCount": 1,
+      "RejectedCount": 0,
+      "InsertedQuoteIdsJson": "[]"
+    },
+    {
+      "BatchId": "70cecea6-ca99-4a47-85a4-bb08e0a25f34",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "ScopeSha256": "b599d7ab36aceab72aa8e363f4def142d40e98a5bdad45c2bfad404fa8e31c55",
+      "CreatedUtcTicks": 639284498552921875,
+      "Status": 1,
+      "InsertedCount": 2,
+      "DuplicateCount": 0,
+      "RejectedCount": 0,
+      "InsertedQuoteIdsJson": "[4,5]"
+    }
+  ],
+  "AiGenerationBatchItem": [],
+  "AppMetadata": [
+    {
+      "Key": "LastRestoreId",
+      "Value": ""
+    }
+  ],
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "合并后验收手动书",
+      "Author": "自建作者",
+      "Category": "验收",
+      "TotalPages": 200,
+      "Description": "隔离功能检查样本",
+      "CreatedAt": 639284777558268370,
+      "UpdatedAt": 639284777558268370,
+      "Kind": 0,
+      "BookUid": "52f44f06-4295-470f-b6c0-415f9cb8c8f6"
+    },
+    {
+      "Id": 2,
+      "Title": "integrated",
+      "Author": "",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639284779935981100,
+      "UpdatedAt": 639284779935981100,
+      "Kind": 1,
+      "BookUid": "ce9a1bdb-2827-436d-8153-eb8747ca12da"
+    },
+    {
+      "Id": 3,
+      "Title": "real-ai",
+      "Author": "",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639284784920222756,
+      "UpdatedAt": 639284784920222756,
+      "Kind": 1,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70"
+    },
+    {
+      "Id": 4,
+      "Title": "[合成P7] large-image",
+      "Author": "ReadJournal deterministic fixtures",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639284787419473717,
+      "UpdatedAt": 639284787419473717,
+      "Kind": 1,
+      "BookUid": "638956dd-f327-4fae-89d8-992354ce1b4f"
+    }
+  ],
+  "EbookFile": [
+    {
+      "BookId": 2,
+      "FileId": "7b94f131-21ab-4d89-8164-2e245134d978",
+      "Format": 1,
+      "SourceRelativePath": "books/managed/7b94f131-21ab-4d89-8164-2e245134d978/source.txt",
+      "CanonicalRelativePath": "books/managed/7b94f131-21ab-4d89-8164-2e245134d978/document-v1.json",
+      "SourceSha256": "ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f",
+      "CanonicalSha256": "3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0",
+      "SourceBytes": 28969,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639284491935981105,
+      "Status": 0
+    },
+    {
+      "BookId": 3,
+      "FileId": "abc60e0b-9c3b-4383-b577-d8520f60cfcc",
+      "Format": 1,
+      "SourceRelativePath": "books/managed/abc60e0b-9c3b-4383-b577-d8520f60cfcc/source.txt",
+      "CanonicalRelativePath": "books/managed/abc60e0b-9c3b-4383-b577-d8520f60cfcc/document-v1.json",
+      "SourceSha256": "b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a",
+      "CanonicalSha256": "0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b",
+      "SourceBytes": 253,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639284496920222763,
+      "Status": 0
+    },
+    {
+      "BookId": 4,
+      "FileId": "e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90",
+      "Format": 2,
+      "SourceRelativePath": "books/managed/e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90/source.epub",
+      "CanonicalRelativePath": "books/managed/e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90/document-v1.json",
+      "SourceSha256": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82",
+      "CanonicalSha256": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351",
+      "SourceBytes": 45994,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639284499419473734,
+      "Status": 0
+    }
+  ],
+  "EbookProgress": [
+    {
+      "BookId": 2,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0002\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "HasStarted": 1,
+      "CurrentPercent": 85.15569076592699,
+      "CompletedUtcTicks": 639284496064205256,
+      "CompletedOffsetMinutes": 480,
+      "LastOpenedUtcTicks": 639284496058694118,
+      "LastSavedUtcTicks": 639284496083929954
+    },
+    {
+      "BookId": 3,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "HasStarted": 1,
+      "CurrentPercent": 10.465116279069768,
+      "CompletedUtcTicks": null,
+      "CompletedOffsetMinutes": null,
+      "LastOpenedUtcTicks": 639284498646638852,
+      "LastSavedUtcTicks": 639284498677401813
+    },
+    {
+      "BookId": 4,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":7,\"NonTextBlockKey\":null}}",
+      "HasStarted": 1,
+      "CurrentPercent": 0.9186351706036745,
+      "CompletedUtcTicks": null,
+      "CompletedOffsetMinutes": null,
+      "LastOpenedUtcTicks": 639284500144569715,
+      "LastSavedUtcTicks": 639284500161405437
+    }
+  ],
+  "EbookReadingSession": [
+    {
+      "SessionId": "690230e0-4673-485e-bbdb-dc5173246909",
+      "BookId": 2,
+      "BookUid": "ce9a1bdb-2827-436d-8153-eb8747ca12da",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0002\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.0,
+      "EndPercent": 85.15569076592699,
+      "OpenedUtcTicks": 639284495434057521,
+      "ClosedUtcTicks": 639284496038962144,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 60490,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "5056ce5e-890c-43b7-8542-2db4f3da6b7e",
+      "BookId": 2,
+      "BookUid": "ce9a1bdb-2827-436d-8153-eb8747ca12da",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0002\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0002\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "StartPercent": 85.15569076592699,
+      "EndPercent": 85.15569076592699,
+      "OpenedUtcTicks": 639284496058694118,
+      "ClosedUtcTicks": 639284496083929954,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 2523,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "e97dc86c-6b8d-4b0e-8f6e-2934eaa259f1",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.0,
+      "EndPercent": 0.0,
+      "OpenedUtcTicks": 639284497661670218,
+      "ClosedUtcTicks": 639284497951995508,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 29032,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "6ef7632a-0ad8-4f1f-be4f-cea4b4f2a2a8",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "StartPercent": 10.465116279069768,
+      "EndPercent": 10.465116279069768,
+      "OpenedUtcTicks": 639284497968193134,
+      "ClosedUtcTicks": 639284497980765027,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 1257,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "94892201-e220-4686-9c82-80890bcfe2e6",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "StartPercent": 10.465116279069768,
+      "EndPercent": 10.465116279069768,
+      "OpenedUtcTicks": 639284498516037657,
+      "ClosedUtcTicks": 639284498611452111,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 9541,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "aad755de-6306-43a4-8a72-7fdacc184a24",
+      "BookId": 3,
+      "BookUid": "5e1807bf-5ab3-40c4-ae23-081cdf75eb70",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"abc60e0b-9c3b-4383-b577-d8520f60cfcc\",\"SourceSha256\":\"b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a\",\"CanonicalSha256\":\"0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":9,\"NonTextBlockKey\":null}}",
+      "StartPercent": 10.465116279069768,
+      "EndPercent": 10.465116279069768,
+      "OpenedUtcTicks": 639284498646638852,
+      "ClosedUtcTicks": 639284498677401813,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 3076,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "266dafff-442d-4fa2-9126-430e11af3baa",
+      "BookId": 4,
+      "BookUid": "638956dd-f327-4fae-89d8-992354ce1b4f",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":636,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.0,
+      "EndPercent": 83.46456692913385,
+      "OpenedUtcTicks": 639284499441689833,
+      "ClosedUtcTicks": 639284499528694663,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 8700,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "9ad3e1ff-47e6-46c5-84f9-b25b83eea2db",
+      "BookId": 4,
+      "BookUid": "638956dd-f327-4fae-89d8-992354ce1b4f",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":636,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "StartPercent": 83.46456692913385,
+      "EndPercent": 87.79527559055119,
+      "OpenedUtcTicks": 639284500062304519,
+      "ClosedUtcTicks": 639284500077596743,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 1529,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "ded6563a-f9c0-4a42-a966-094fb82df0d3",
+      "BookId": 4,
+      "BookUid": "638956dd-f327-4fae-89d8-992354ce1b4f",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":669,\"NonTextBlockKey\":\"b-17\"}}",
+      "StartPercent": 87.79527559055119,
+      "EndPercent": 87.79527559055119,
+      "OpenedUtcTicks": 639284500126147961,
+      "ClosedUtcTicks": 639284500135992979,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 984,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    },
+    {
+      "SessionId": "a937719b-b365-40cf-aee2-c615545da829",
+      "BookId": 4,
+      "BookUid": "638956dd-f327-4fae-89d8-992354ce1b4f",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":7,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":7,\"NonTextBlockKey\":null}}",
+      "StartPercent": 0.9186351706036745,
+      "EndPercent": 0.9186351706036745,
+      "OpenedUtcTicks": 639284500144569715,
+      "ClosedUtcTicks": 639284500161405437,
+      "OpenedOffsetMinutes": 480,
+      "ClosedOffsetMinutes": 480,
+      "DurationMilliseconds": 1683,
+      "CloseLocalDate": "2026-10-24",
+      "ClockAnomaly": 0
+    }
+  ],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "自建手动书摘：读书让日子拥有新的光亮。",
+      "Thoughts": "验收感想",
+      "Page": 15,
+      "IsFavorite": 1,
+      "CreatedAt": 639284777611688555,
+      "UpdatedAt": 639284779888399179,
+      "Revision": 2
+    },
+    {
+      "Id": 2,
+      "BookId": 2,
+      "Text": "星光落在安静的书页上，窗",
+      "Thoughts": "",
+      "Page": null,
+      "IsFavorite": 0,
+      "CreatedAt": 639284784005290117,
+      "UpdatedAt": 639284784005290117,
+      "Revision": 0
+    },
+    {
+      "Id": 6,
+      "BookId": 4,
+      "Text": "正文星光落在书页",
+      "Thoughts": "",
+      "Page": null,
+      "IsFavorite": 0,
+      "CreatedAt": 639284787471788321,
+      "UpdatedAt": 639284787471788321,
+      "Revision": 0
+    }
+  ],
+  "QuoteOrigin": [
+    {
+      "QuoteId": 2,
+      "Source": 1,
+      "OriginalText": "星光落在安静的书页上，窗",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":35,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":47,\"NonTextBlockKey\":null}}",
+      "PrefixHash": null,
+      "SuffixHash": null,
+      "LocationStatus": 0,
+      "BatchId": null,
+      "DedupeKey": "f3dd6a74fe94e81451a8bdff68c3a56b6bfde113e90bdb5f05b6502253a46295"
+    },
+    {
+      "QuoteId": 6,
+      "Source": 1,
+      "OriginalText": "正文星光落在书页",
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1}}",
+      "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":7,\"NonTextBlockKey\":null}}",
+      "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\",\"SourceSha256\":\"af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82\",\"CanonicalSha256\":\"3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351\",\"ParserVersion\":1},\"ChapterKey\":\"sp-9c9b173769a20a6d5e97255f\",\"Utf16Offset\":15,\"NonTextBlockKey\":null}}",
+      "PrefixHash": null,
+      "SuffixHash": null,
+      "LocationStatus": 0,
+      "BatchId": null,
+      "DedupeKey": "9bd1ea3d8df7bbbbd8d3ccb95d93a6c19743c7713f06b480d0364eb9105e4f3b"
+    }
+  ],
+  "ReadingPlan": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639283968000000000,
+      "TargetDate": 639283968000000000
+    },
+    {
+      "Id": 2,
+      "BookId": 2,
+      "StartDate": 639283968000000000,
+      "TargetDate": 639283968000000000
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": 639283968000000000,
+      "StartPage": 1,
+      "EndPage": 35,
+      "Minutes": 30
+    }
+  ]
+}

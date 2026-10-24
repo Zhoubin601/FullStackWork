@@ -1,0 +1,990 @@
+[
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.Window",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      353.0,
+      387.0,
+      1710.0,
+      1200.0
+    ]
+  },
+  {
+    "name": "阅记 · 阅读与书摘",
+    "type": "ControlType.TitleBar",
+    "id": "TitleBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      353.0,
+      353.0,
+      1710.0,
+      34.0
+    ]
+  },
+  {
+    "name": "系统菜单栏",
+    "type": "ControlType.MenuBar",
+    "id": "SystemMenuBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      353.0,
+      353.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "系统",
+    "type": "ControlType.MenuItem",
+    "id": "Item 1",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      353.0,
+      353.0,
+      33.0,
+      33.0
+    ]
+  },
+  {
+    "name": "最小化",
+    "type": "ControlType.Button",
+    "id": "Minimize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1852.0,
+      343.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "最大化",
+    "type": "ControlType.Button",
+    "id": "Maximize",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1923.0,
+      343.0,
+      70.0,
+      44.0
+    ]
+  },
+  {
+    "name": "关闭",
+    "type": "ControlType.Button",
+    "id": "Close",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1993.0,
+      343.0,
+      71.0,
+      44.0
+    ]
+  },
+  {
+    "name": "阅 记",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      455.0,
+      426.0,
+      97.0,
+      42.0
+    ]
+  },
+  {
+    "name": "ReadJournal",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      455.0,
+      470.0,
+      97.0,
+      21.0
+    ]
+  },
+  {
+    "name": "让每一页，留下回响",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      392.0,
+      509.0,
+      261.0,
+      23.0
+    ]
+  },
+  {
+    "name": "本地优先 · 隐私安全阅读空间",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      414.0,
+      1515.0,
+      214.0,
+      21.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      568.0,
+      282.0,
+      911.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      572.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "阅读概览",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      442.0,
+      590.0,
+      86.0,
+      27.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      643.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      444.0,
+      661.0,
+      86.0,
+      27.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      714.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "书摘收藏",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      442.0,
+      732.0,
+      86.0,
+      27.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      785.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "阅读计划",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      442.0,
+      803.0,
+      84.0,
+      27.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      856.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "阅读统计",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      442.0,
+      874.0,
+      86.0,
+      27.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      380.0,
+      927.0,
+      282.0,
+      63.0
+    ]
+  },
+  {
+    "name": "设置与数据",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      442.0,
+      945.0,
+      107.0,
+      27.0
+    ]
+  },
+  {
+    "name": "← 返回",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      731.0,
+      402.0,
+      116.0,
+      54.0
+    ]
+  },
+  {
+    "name": "当前所属模块：",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      868.0,
+      414.0,
+      147.0,
+      28.0
+    ]
+  },
+  {
+    "name": "我的书库",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1027.0,
+      414.0,
+      92.0,
+      28.0
+    ]
+  },
+  {
+    "name": "原生排版阅读器",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1880.0,
+      512.0,
+      129.0,
+      23.0
+    ]
+  },
+  {
+    "name": "integrated",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      731.0,
+      500.0,
+      1119.0,
+      46.0
+    ]
+  },
+  {
+    "name": "展开或收起章节目录",
+    "type": "ControlType.Button",
+    "id": "TocToggle",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      731.0,
+      555.0,
+      132.0,
+      54.0
+    ]
+  },
+  {
+    "name": "展开或收起排版设置",
+    "type": "ControlType.Button",
+    "id": "AppearanceToggle",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      875.0,
+      555.0,
+      133.0,
+      54.0
+    ]
+  },
+  {
+    "name": "展开或收起AI阅读助手",
+    "type": "ControlType.Button",
+    "id": "AiToggle",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1020.0,
+      555.0,
+      119.0,
+      54.0
+    ]
+  },
+  {
+    "name": "全屏 F11",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1151.0,
+      555.0,
+      132.0,
+      54.0
+    ]
+  },
+  {
+    "name": "字体",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      751.0,
+      653.0,
+      43.0,
+      27.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "PART_TextBox",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      804.0,
+      637.0,
+      345.0,
+      58.0
+    ]
+  },
+  {
+    "name": "字号",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1164.0,
+      653.0,
+      44.0,
+      27.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "PART_TextBox",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1217.0,
+      637.0,
+      98.0,
+      58.0
+    ]
+  },
+  {
+    "name": "纸张",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1329.0,
+      653.0,
+      45.0,
+      27.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1384.0,
+      637.0,
+      158.0,
+      58.0
+    ]
+  },
+  {
+    "name": "paper",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1402.0,
+      653.0,
+      74.0,
+      27.0
+    ]
+  },
+  {
+    "name": "应用排版",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1557.0,
+      640.0,
+      133.0,
+      54.0
+    ]
+  },
+  {
+    "name": "恢复默认字体",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1702.0,
+      640.0,
+      175.0,
+      54.0
+    ]
+  },
+  {
+    "name": "春日读书，山河入卷。 Reading 123",
+    "type": "ControlType.Text",
+    "id": "FontPreview",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      751.0,
+      704.0,
+      1250.0,
+      39.0
+    ]
+  },
+  {
+    "name": "本机 209 种字体，输入名称可搜索；中文缺字时使用后备字体。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      751.0,
+      753.0,
+      1250.0,
+      27.0
+    ]
+  },
+  {
+    "name": "原字体未安装，已临时使用 Segoe UI；点击应用排版后保存。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      748.0,
+      814.0,
+      1256.0,
+      27.0
+    ]
+  },
+  {
+    "name": "章节目录",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      754.0,
+      878.0,
+      236.0,
+      29.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      745.0,
+      919.0,
+      254.0,
+      453.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.List",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      745.0,
+      919.0,
+      254.0,
+      453.0
+    ]
+  },
+  {
+    "name": "第一章 春日读书",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      745.0,
+      922.0,
+      254.0,
+      51.0
+    ]
+  },
+  {
+    "name": "第一章 春日读书",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      757.0,
+      934.0,
+      155.0,
+      27.0
+    ]
+  },
+  {
+    "name": "第二章 山河入卷",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      745.0,
+      979.0,
+      254.0,
+      51.0
+    ]
+  },
+  {
+    "name": "第二章 山河入卷",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      757.0,
+      991.0,
+      157.0,
+      27.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Pane",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      878.0,
+      404.0,
+      494.0
+    ]
+  },
+  {
+    "name": "AI 阅读助手",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      878.0,
+      398.0,
+      33.0
+    ]
+  },
+  {
+    "name": "AI解读只显示结果；生成书摘会自动保存。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      914.0,
+      398.0,
+      23.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ComboBox",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      949.0,
+      398.0,
+      57.0
+    ]
+  },
+  {
+    "name": "当前页",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1615.0,
+      964.0,
+      314.0,
+      27.0
+    ]
+  },
+  {
+    "name": "处理当前整页；如需只处理高亮文字，请切换为当前选区。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      1018.0,
+      398.0,
+      46.0
+    ]
+  },
+  {
+    "name": "AI 解读",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      1076.0,
+      398.0,
+      54.0
+    ]
+  },
+  {
+    "name": "生成并自动保存书摘",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": false,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      1142.0,
+      398.0,
+      53.0
+    ]
+  },
+  {
+    "name": "生成书摘会自动入库；AI解读只显示结果。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      1208.0,
+      398.0,
+      23.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Edit",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1597.0,
+      1243.0,
+      398.0,
+      150.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.ScrollBar",
+    "id": "PART_VerticalScrollBar",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1977.0,
+      878.0,
+      24.0,
+      494.0
+    ]
+  },
+  {
+    "name": "Avalonia.Controls.PathIcon",
+    "type": "ControlType.Button",
+    "id": "PART_LineUpButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1977.0,
+      878.0,
+      24.0,
+      24.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Button",
+    "id": "PART_PageUpButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      Infinity,
+      Infinity,
+      -Infinity,
+      -Infinity
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Button",
+    "id": "PART_PageDownButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1977.0,
+      1330.0,
+      24.0,
+      18.0
+    ]
+  },
+  {
+    "name": "",
+    "type": "ControlType.Thumb",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1995.0,
+      902.0,
+      3.0,
+      428.0
+    ]
+  },
+  {
+    "name": "Avalonia.Controls.PathIcon",
+    "type": "ControlType.Button",
+    "id": "PART_LineDownButton",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1977.0,
+      1348.0,
+      24.0,
+      24.0
+    ]
+  },
+  {
+    "name": "← 上一页",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      751.0,
+      1409.0,
+      137.0,
+      54.0
+    ]
+  },
+  {
+    "name": "总页数计算中",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1311.0,
+      1423.0,
+      129.0,
+      27.0
+    ]
+  },
+  {
+    "name": "下一页 →",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1864.0,
+      1409.0,
+      137.0,
+      54.0
+    ]
+  },
+  {
+    "name": "复制选区 Ctrl+C",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      731.0,
+      1483.0,
+      203.0,
+      54.0
+    ]
+  },
+  {
+    "name": "保存书摘 Ctrl+S",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      946.0,
+      1483.0,
+      201.0,
+      54.0
+    ]
+  },
+  {
+    "name": "标记读完",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1158.0,
+      1483.0,
+      133.0,
+      54.0
+    ]
+  },
+  {
+    "name": "重置进度",
+    "type": "ControlType.Button",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      1304.0,
+      1483.0,
+      133.0,
+      54.0
+    ]
+  },
+  {
+    "name": "位置百分比表示当前位置，不代表阅读覆盖率。Shift+单击可延伸选区。",
+    "type": "ControlType.Text",
+    "id": "",
+    "enabled": true,
+    "offscreen": false,
+    "rect": [
+      731.0,
+      1537.0,
+      577.0,
+      23.0
+    ]
+  }
+]

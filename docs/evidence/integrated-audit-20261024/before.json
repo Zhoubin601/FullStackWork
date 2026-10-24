@@ -1,0 +1,491 @@
+{
+  "head": "d28f1d6022ac88cd6ffdee27d393e770cb7e1bd7",
+  "raw": [
+    {
+      "path": "raw\\1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md",
+      "sha256": "62c53dcd213a9b645d2adc08c6f8aba7f5894fa011b6529a0dd3574464d9833d"
+    },
+    {
+      "path": "raw\\期末项目与报告要求.docx",
+      "sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d"
+    }
+  ],
+  "untracked": [
+    {
+      "path": "docs/acceptance-recheck-20261021-plan.md",
+      "sha256": "c25381f44b5d9bd52a524de6e74ddb9ad88e05f3411a19af7ae4ad88262cc858"
+    },
+    {
+      "path": "docs/acceptance-recheck-20261021.md",
+      "sha256": "d3781e2f0b7f473e50f6ce9ec0ed0b02768c3c7d5fdffccc6a8b4afd930ada15"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/acceptance-current.trx",
+      "sha256": "ed922576d2dc5c582438467b404623abcdf96da0860fc727eab822ce20c06816"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/application-inventory.json",
+      "sha256": "1142180b1d72bc588aed6c68c18f3d91b765168efafa1cd2f6e16fa65a3f4c48"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/artifact-checks.json",
+      "sha256": "badc94e7554917714da4f737d3a2c89869fa5de4fb550086511cd91866626922"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/diagram-1.svg",
+      "sha256": "9b69370fca287f109a9bbc8dadf6c837f41fcf095cbe275c40514bd17462ded3"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/diagram-2.svg",
+      "sha256": "e587b9b18165e85ea8810db4f45751f7e64986ad87dc1d4a08567f90d7db9ce9"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/reference-inventory.json",
+      "sha256": "7b7faebf22b38a2a566fd9dba8b2832592e61830ed87ceb708dbb64703eee717"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/report-text.txt",
+      "sha256": "cef6dfa72233fb7c4d8632e0abafb90b25550b9bc59cac7aac6cd138a45f1952"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/word-and-tests-checks.json",
+      "sha256": "69bf9c4b907abb0c687636e098958df5fa9f1eaead8b8f2f60e1ca068ec9abf0"
+    },
+    {
+      "path": "docs/evidence/acceptance-recheck-20261021/word-document-xml-diff.txt",
+      "sha256": "494a9cac019974887e0674fc281ba209937b89fd43368e68009367172ae87ead"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/01-overview-empty.png",
+      "sha256": "5883071d5e206f61a5ee14411e2d1b97d4506ac01f80af43354ec16283f3f004"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/02-library-empty.png",
+      "sha256": "7f86d5be4624623fae828b96eb23bb405e659bfd20e588c31970a93236bc5c7c"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/03-book-validation-error.png",
+      "sha256": "2216af2309d05cec9b2e4215ed5f8e9de92f73b07e3a6e25e5c5998c7321c437"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/04-book-form-filled.png",
+      "sha256": "f96645aa469a4824dd1ebcffe096a943ca81051e13a545ecf2ff0a48a233d7a9"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/05-book-in-library.png",
+      "sha256": "0a1678b5b29aecd47ec35b07667eddc1da6e56455382881118ae4db1ba30de38"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/06-book-detail.png",
+      "sha256": "afb2cc9201620c3512a78f8b1f1ba8f0a28f8a71bcdb8068c2356e6431870705"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/07-record-dialog.png",
+      "sha256": "34f0721533b772fe1cc5d0de9ff34eb0877901aa75a717e9ac42842d13a0ea4d"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/08-record-dialog-filled.png",
+      "sha256": "4c5e82e3db89783042196dcc06839656721a53ccc1fb212299dd606652330a38"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/09-book-detail-with-record.png",
+      "sha256": "1deaae118dcd3bf674fd22040aa5479fced8361bf6e7aefa8aa521848190f5be"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/10-quote-form-filled.png",
+      "sha256": "57332de4650078e79d9d43b48b28fe32a092441e5a54129d19bdac606ae91ba9"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/11-book-detail-with-quote.png",
+      "sha256": "c1d21da3aa46346fd22fd5530222c031954a300b8e07f0eb1a7f9227f199be67"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/12-plan-editor.png",
+      "sha256": "7eae3da1c40547188a44fb6c7c0d671820bd6e39cd1aca175a2a8c2ea02fde6b"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/13-book-detail-with-plan.png",
+      "sha256": "e8c490ca1c52da4f9348003f6f8e19c13a4f8390898c769fc24e9344167c5d72"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/14-back-to-library.png",
+      "sha256": "85252e62c3c21926f5b288f24bafff9b9df02d9015050656a8809c9e5818e055"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/15-quote-list.png",
+      "sha256": "1a8ca8e688ee78ea9368207f5f61435121a61d2e5b5356ca550266a6c8206972"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/16-plan-list.png",
+      "sha256": "0e54f0e3ecf9ce24382be2a84b19ffd8cb7bbc1ff34f3e84a9cc055b2f79fc12"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/17-statistics.png",
+      "sha256": "67869ae13c189390351c4760aceec42718b8e20b8a2b7f41ea935c9958a9e7e2"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/18-overview-populated.png",
+      "sha256": "28896ad65bfa5d639021b3892e6bbb35042f51eba4b92bf89e0419079c9005d0"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/19-settings.png",
+      "sha256": "0476c19cc88f182b70c77d7d088c9a24a6c2ae65aec88fe74e414032ff608c90"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/data/readjournal.sqlite3",
+      "sha256": "445e3ae6d2ae6be9b2a87d0f20f21e51d83efdb0047512bb1db65adbd5861dd6"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/db-verification.json",
+      "sha256": "f17c9c9abd45567f1187e4c7625ade447b8379be3d3836db35ed5c707d8dcf90"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/run_live_test.ps1",
+      "sha256": "ac5fdec2ca70bc19fe742fd7a2da54a0c43a46afbf95ac1f728e979a766091ce"
+    },
+    {
+      "path": "docs/evidence/live-windows-test-20261022/test_live.ps1",
+      "sha256": "abb908e89287f3885634359e6387509c08d43059d926429dbfd8ad661bfcfa3d"
+    },
+    {
+      "path": "docs/evidence/local-windows-20261021/ui-live.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/.gitignore",
+      "sha256": "a86712610c75c4a36a50f0d1551f1fd9cef710639bd1d6e0cb84a4304273a68d"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P10-build.log",
+      "sha256": "0faa7d16ff569354ae57dd6a34f1a3278838db015bc3a1a56189aedeebfa2123"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P10-probe.log",
+      "sha256": "778b77d9170ddeb2d1a23972209f4e63b89c483080156f6579a28016ed3d2dbd"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P10-restore.log",
+      "sha256": "81ec1b51fabec446c1075857b2c9898004fb976ee6d002f069c1578a8dcbe3e9"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P2-build.log",
+      "sha256": "5c893451b108e9b9ee8035ee05939ab9dd7998affc3748f53aeb7fff6b01a1a1"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P2-probe.log",
+      "sha256": "e8c37b62ed3dc8e8e5c776f9bc5b794ffe797c1cb2644424317752de1bbf8d5d"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P2-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P3-build.log",
+      "sha256": "5ae772f0fac2e82f4d4c7e9e65002106be01f696c766df040698e9803dbb2a37"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P3-probe.log",
+      "sha256": "593a9f5ad2e152c5f0556ee85b18897850246637c5f0096f147eea73d450a871"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P3-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P4-build.log",
+      "sha256": "ae55a6934ba4bcad748be6308012d7f1752a15366c7dd9531abd68033fbda588"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P4-probe.log",
+      "sha256": "0fe3d24c53c192c59f911b17c599dc41100dc6f526c19f001fd32dd8c6911d22"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P4-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P7-build.log",
+      "sha256": "05387675b82fceca8a5b49fa680596b0d909dc25b202e330e52d902ebf593551"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P7-probe.log",
+      "sha256": "f454d277bb4ce4f0fc7eb2b65fe7abeeded41d374f5dbe0a93a691cc2e0e54f5"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P7-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P9Network-build.log",
+      "sha256": "e7d686c9cd7572cdd26b705c34f99a6aa015178b020db9dcd15b082092238ea6"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P9Network-probe.log",
+      "sha256": "495ea3c651356c8bb9eaf176d475e0174bb250b774754f79c4663fa8034438fb"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/P9Network-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/build.log",
+      "sha256": "7d387a1e436515442035f1530adab386372a76a2390908fffc1c4b873f362b41"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/01-invalid-manual.json",
+      "sha256": "91697ad599e0986054870eb218ad0a453d5198f7018c240dddb6034c2acb9c59"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/01-manual-statistics.png",
+      "sha256": "4ae627f7986435e3760610c0084310a8e5f7d4042d70b438dc9c5e1f28cd2f5b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/02-manual-complete.json",
+      "sha256": "f6889364a6ead07629995e914c9b2d2ecadca80de5b92d48853101269ef491e7"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/02-native-txt.png",
+      "sha256": "362f3e0320706e2c4c3f6aef9d30b96867bc7593053977757ab94d3a8d4f2fc2"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/03-deduplicated.json",
+      "sha256": "4ccd75f289f2c97eebeb1e5b216c58b68121a5a66b2161dd171aa84d1ae8ca2a"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/03-txt-fullscreen.png",
+      "sha256": "df2fca59a790112091b6b10336e646f0ecf150dd4540f919ceb5df9db1c8e40f"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/04-combined-statistics.png",
+      "sha256": "43bcf23aac5798614f9bf04233bdb6311554f374f778b4d2e7537e9dd6640f39"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/04-txt-quote.json",
+      "sha256": "748f98702f62bc1e94a8f7bcab0ef6fe8ad66ceba466b908ecc2bb4dec4b33d3"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/05-native-epub.png",
+      "sha256": "7483c0f729fbd10ee9db7ec32fe55d2019a83a55bd3ed3f6812cd0df7cab9ff4"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/05-txt-quote-deduped.json",
+      "sha256": "748f98702f62bc1e94a8f7bcab0ef6fe8ad66ceba466b908ecc2bb4dec4b33d3"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/06-epub-image.png",
+      "sha256": "ebccae3068316dec27f500538f2ffca78c27cd08fe96ec10ef2c1f70759d6bb1"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/06-txt-completed.json",
+      "sha256": "9eac4e5354c932807f98f52f357966a06e00f2438e64126b5d2d6fdc649de722"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/07-epub-image-resumed.png",
+      "sha256": "36eb5cd22eaa3a3516595761276ee384618d149d8bd7df63cfb417545b0c4110"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/07-epub-quote.json",
+      "sha256": "be3557b99dd64a5f2ca89f243bc6ae53666461f705785c0184ef6a25735d9742"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/08-epub-quote-return.png",
+      "sha256": "480f804fc153748bf70d3585969585184c1dad5af7b41b2e8e02aa7fd04ee607"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/08-mock-analysis.json",
+      "sha256": "be3557b99dd64a5f2ca89f243bc6ae53666461f705785c0184ef6a25735d9742"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/09-mock-undone.json",
+      "sha256": "e12a9a22306dda6f33cacaffae9e2ce054799e8082bc1dba0ba92a025908af72"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/09-restored.png",
+      "sha256": "959dee2216914bc9558d91262c56c40bfba17d2b17a458df2a6ba16f5e968800"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/10-epub-closed.json",
+      "sha256": "1badadf681c0a79c5389e9a63d4b1da5071aef7d1aeefe9fa7a7a0258f2afb02"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/10-restored-quote-reopened.png",
+      "sha256": "ba3bdf8367ab03458f9ebfbc6400c64cb0b54290dc9f3a8d02456b73175748bc"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/11-before-delete.json",
+      "sha256": "fad4951d739da689767a875a17dc568385e4498045bfa99db95a71782b96e78f"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/11-restored-statistics.png",
+      "sha256": "2cc30fe3b7df33065c76afa014f5f18313ceec178211773170136a3747882622"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/12-after-restore.json",
+      "sha256": "54b2014e9cf14996d20367ea05eb0c416629c0ff0b195405c8351e171b832a24"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/actions.jsonl",
+      "sha256": "1dd8ccd09d573caba9f68647aa066a07d1fd757ef0a88e719d3a595b5863392e"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/app-1792830563480307100.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/app-1792830721676823200.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/app-1792830802092605700.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/app-1792830948300533300.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/desktop-state.json",
+      "sha256": "f14c64c1ea325b37b881b6da05b3bdc74f17be5f297b2e0b056212e4a1d063b4"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/desktop/last-ui-tree.json",
+      "sha256": "1873fc35a124a2e695c7b57949037819e6bc161bfff4b620b4a65ec19b7dd787"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/full-release.trx",
+      "sha256": "d6bf4ca0b86a49d5b4ea824e9db31ff7bea7c68bb0fbe113e96a800444c24ac8"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/git-before.txt",
+      "sha256": "5628a766ce6890df7c336aa8846ae0bb0aa6e135b87be50589951100521dbf50"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/head-before.txt",
+      "sha256": "07fac7f4c7816ad3fb33fb7bebbf13464ec6740d5d3175fa19bfb844d704ac14"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/p7-compatibility/compatibility.json",
+      "sha256": "14eb8a95afcf9136bb69a9593170f7a57995a5bd31d75b53b199b6a384c94f5f"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/production-process/probe.json",
+      "sha256": "b0ec0214bbf9e2891fd35d539d39768f3d11c1f4ef3012f2d2c675eb761d677b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/prototype-restore.log",
+      "sha256": "0a5293e62d3bb4d8819d8d749f51206d3aa424744e622337bee96070823f245b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/prototype-test.log",
+      "sha256": "254f98991262f4097b7caa88e270afdee6671da12543aaef52206fdd7dfb1a07"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/prototype.trx",
+      "sha256": "aa0e3b8a4cbe440ff283febd319467870a664811f7985a5c73013f974b1036fe"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/raw-before.json",
+      "sha256": "e1ccac2f1575cf2323abe4c2e456889deb4ff25932636cd07e96bac66157d9e1"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/real-analysis.json",
+      "sha256": "c08834b82eeb04f83af4b8a53d6f8700dc077409b08188a64ad7113e0d171495"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/real-cleanup.json",
+      "sha256": "259bac2f60f844c25ef9d79321b346a6bf393fe264996b428be49ddad8cc4cf9"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/real-explanation.json",
+      "sha256": "f701d72b66f82ef9307191332e30060a078d5a6e62f4a61b04cb3b2a9045ba19"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/real-extraction.json",
+      "sha256": "2f28928a06ab588937d6e1cb1a655145ac1fa65b4bf50691a1965a0a0a52b3da"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/real-locate-undo.json",
+      "sha256": "07b78671b25bbbc0126e94fb6e84b8286b6fd8feb6dca518fa53476a9d08bdb9"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/restart-cleanup.json",
+      "sha256": "02973f9c19c3146db4a3a8671855c4f6febf970bde1ca7d42eb9023809241a03"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/restore.log",
+      "sha256": "3a9821142e20d7b367adaff6469abc2d7d0b0c010d511675c850e69105ff012b"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/run-probes.ps1",
+      "sha256": "2801191fe22a902b450119c94503a8c407b9b8f6d69f40e4b7562b8c0576a734"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/source-verification.json",
+      "sha256": "bd8182e801e40769688f6435fd2e813a5d30542b6ef7f9a1a81f9f0fdbbb3fb4"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/summary.json",
+      "sha256": "7c91e2425300ca760837d67d06ef782617d59a56184116254dea8c8b2c113d8d"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/test.log",
+      "sha256": "b597084fc0a0cf475c02fa6045d854c6a3d13f6f9f3e34f0bff021c36b9a1894"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-01-continue.py",
+      "sha256": "7d2eb171471589acb289de9f57ada1cfe2ff34c3e773011c780b8cf490177a1a"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-01-manual-import.py",
+      "sha256": "67711ad1a6142fac6aa993325506f2c1d870a3cbef237f57b6bbd8a5ec529578"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-02-reader.py",
+      "sha256": "00f443cf1a6d5a405313c414878db992e4c177ef47180cd3d0a44927468e1cfa"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-03-continue.py",
+      "sha256": "19001b16c5fcaaa988d1c2066ce25460ca8435eacc9819cdc42b559e5cccc618"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-03-epub-mock.py",
+      "sha256": "93edc0590f45d8bdd7e754859950844c9e635ea58ae5a3f84dea628c72eafb61"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-04-backup.py",
+      "sha256": "58628bfefbdd8fe216a434f39e17f725f16db324929580863e76b76fc2265612"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-04-continue.py",
+      "sha256": "3083f75650d09a8203c61afb6d47beb2bf74b9338b8bb416338127878213363c"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-05-ai-prepare.py",
+      "sha256": "cfe936c242ef2cd5a309f927db477b2830d6a52a42fd994bb929c6fc81173781"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-06-ai-real.py",
+      "sha256": "0290fd7de3d332a1de23f374413d2fe3a6ac9821d017dfcb645654dd281c9317"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-07-restart-cleanup.py",
+      "sha256": "f74cf3d436ea4086aed49c9f83e8a104f11f09817a586a42be57ba09c420b8bc"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-closed-loop.json",
+      "sha256": "82945a2ab0d7d100f91447d4b3a7507e042bed96aed81cb4957aa08979247ebf"
+    },
+    {
+      "path": "docs/evidence/recheck-20261024/ui-runner.py",
+      "sha256": "c90445c9fa46595cd10962228cf8aa08dac48a28bdf9873a7b46705b65b9da1e"
+    },
+    {
+      "path": "docs/live-test-20261022.md",
+      "sha256": "b9e827225ab64055bda6fb86b1816261691854d785d15c75c659af9ea16be77a"
+    },
+    {
+      "path": "docs/reader-progress-20261023.md",
+      "sha256": "ca7bfd24d91a2714a30521479edfe358b6b1ff18a02c0b3e38d4474e718b1ef7"
+    }
+  ]
+}

@@ -455,3 +455,11 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
 - 用户本轮明确确认：将 UI 优化和字体与真实 AI 两个分支均合入 main。
 - Git 实际来源：origin/main=8da5ba6、feature/ui-ux-polish-v2=ca79d15、origin/feature/reader-fonts-live-ai=c759bda；未引用外部调研资料，raw/ 仅做摘要比对。
 - 本轮执行与验证：docs/20261024-branch-merge-v1.md、docs/evidence/merge-20261024/；历史分支日志不能代替本轮结果。
+
+
+## 2026-10-24 合并后全功能检查来源
+
+用户要求检查全部功能与链路，确认包含真实 AI 联调。基线 d28f1d6；来源 raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md、当前 Code/README.md、已合并源码及既有验收协议。新证据独立存于 docs/evidence/integrated-audit-20261024/，详细计划 docs/20261024-integrated-audit-plan-v1.md。用户会话凭据不写入项目。
+
+
+本轮实际结果：两处缺陷已复现修复，最终353项中351通过/0失败/2权限跳过；153生产检查、14原生实验、14处进程中断及26个EPUB变体通过，真实AI5次成功。来源为本轮 full-verified.trx、production-complete/probe.json、各实际窗口快照及 real-*.json；汇总见 docs/20261024-integrated-audit-v1.md。raw与原有未跟踪文件摘要一致，旧output不变。

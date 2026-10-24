@@ -1,0 +1,97 @@
+{
+  "AiGenerationBatch": [],
+  "AiGenerationBatchItem": [],
+  "AppMetadata": [
+    {
+      "Key": "LastRestoreId",
+      "Value": ""
+    }
+  ],
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "合并后验收手动书",
+      "Author": "自建作者",
+      "Category": "验收",
+      "TotalPages": 200,
+      "Description": "隔离功能检查样本",
+      "CreatedAt": 639284777558268370,
+      "UpdatedAt": 639284777558268370,
+      "Kind": 0,
+      "BookUid": "52f44f06-4295-470f-b6c0-415f9cb8c8f6"
+    },
+    {
+      "Id": 2,
+      "Title": "integrated",
+      "Author": "",
+      "Category": "",
+      "TotalPages": 0,
+      "Description": "",
+      "CreatedAt": 639284779935981100,
+      "UpdatedAt": 639284779935981100,
+      "Kind": 1,
+      "BookUid": "ce9a1bdb-2827-436d-8153-eb8747ca12da"
+    }
+  ],
+  "EbookFile": [
+    {
+      "BookId": 2,
+      "FileId": "7b94f131-21ab-4d89-8164-2e245134d978",
+      "Format": 1,
+      "SourceRelativePath": "books/managed/7b94f131-21ab-4d89-8164-2e245134d978/source.txt",
+      "CanonicalRelativePath": "books/managed/7b94f131-21ab-4d89-8164-2e245134d978/document-v1.json",
+      "SourceSha256": "ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f",
+      "CanonicalSha256": "3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0",
+      "SourceBytes": 28969,
+      "ParserVersion": 1,
+      "ImportedUtcTicks": 639284491935981105,
+      "Status": 0
+    }
+  ],
+  "EbookProgress": [
+    {
+      "BookId": 2,
+      "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1}}",
+      "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"7b94f131-21ab-4d89-8164-2e245134d978\",\"SourceSha256\":\"ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f\",\"CanonicalSha256\":\"3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+      "HasStarted": 0,
+      "CurrentPercent": 0.0,
+      "CompletedUtcTicks": null,
+      "CompletedOffsetMinutes": null,
+      "LastOpenedUtcTicks": 639284491935981105,
+      "LastSavedUtcTicks": 639284491935981105
+    }
+  ],
+  "EbookReadingSession": [],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "自建手动书摘：读书让日子拥有新的光亮。",
+      "Thoughts": "验收感想",
+      "Page": 15,
+      "IsFavorite": 1,
+      "CreatedAt": 639284777611688555,
+      "UpdatedAt": 639284779888399179,
+      "Revision": 2
+    }
+  ],
+  "QuoteOrigin": [],
+  "ReadingPlan": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639283968000000000,
+      "TargetDate": 639283968000000000
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": 639283968000000000,
+      "StartPage": 1,
+      "EndPage": 35,
+      "Minutes": 30
+    }
+  ]
+}

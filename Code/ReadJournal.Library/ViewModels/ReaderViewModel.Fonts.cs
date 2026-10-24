@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
+using ReadJournal.Library.Models.Reader;
 using ReadJournal.Library.Services.Reader;
 
 namespace ReadJournal.Library.ViewModels;
@@ -26,4 +27,7 @@ public sealed partial class ReaderViewModel
 
     private string InstalledFont(string requested) => FontFamilies.FirstOrDefault(font => font.Equals(requested, StringComparison.OrdinalIgnoreCase))
         ?? (FontFamilies.Count == 0 ? requested : throw new ArgumentException("字体未安装，请从下拉列表选择本机字体后应用。"));
+
+    private ReaderAppearance AvailableAppearance(ReaderAppearance appearance) => FontFamilies.Count == 0 ? appearance
+        : appearance with { FontFamily = FontFamilies.FirstOrDefault(font => font.Equals(appearance.FontFamily, StringComparison.OrdinalIgnoreCase)) ?? FontFamilies[0] };
 }

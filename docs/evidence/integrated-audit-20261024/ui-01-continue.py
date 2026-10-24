@@ -1,0 +1,15 @@
+click('书摘收藏')
+find('切换收藏','Button'); click('切换收藏')
+expect(lambda: rows('Quote')[0]['IsFavorite']==0,'收藏切换保存')
+click('切换收藏'); expect(lambda: rows('Quote')[0]['IsFavorite']==1,'重新收藏保存')
+click('阅读计划'); shot('03-plans')
+click('阅读概览'); find('近期记录','Text'); shot('04-overview')
+click('我的书库'); click('导入 TXT / EPUB')
+sample=ROOT/'docs/evidence/integrated-audit-20261024/samples/integrated.txt'
+find('文件名(N):','Edit').GetCurrentPattern(ValuePattern.Pattern).SetValue(str(sample)); click('打开(O)')
+expect(lambda: len(rows('EbookFile'))==1,'TXT文件选择器导入')
+click('导入 TXT / EPUB'); find('文件名(N):','Edit').GetCurrentPattern(ValuePattern.Pattern).SetValue(str(sample)); click('打开(O)')
+time.sleep(1); assert len(rows('Book'))==2
+edit(0,'integrated'); click('搜索 / 刷新'); click('打开 →'); click('开始 / 继续阅读')
+shot('05-txt-reader')
+snapshot('02-txt-open')

@@ -1,0 +1,11 @@
+{
+  "operation": "whole-selection",
+  "scope": "\u5f53\u524d\u9009\u533a",
+  "characters": 9,
+  "elapsedMs": 1758,
+  "inputTokens": 114,
+  "outputTokens": 97,
+  "passed": true,
+  "saved": 1,
+  "originalExactlyMatchesSelection": true
+}

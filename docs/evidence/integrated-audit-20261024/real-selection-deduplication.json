@@ -1,0 +1,9 @@
+{
+  "operation": "selection-deduplication",
+  "scope": "\u5f53\u524d\u9009\u533a",
+  "characters": 9,
+  "elapsedMs": 1230,
+  "inputTokens": 114,
+  "outputTokens": 72,
+  "passed": true
+}

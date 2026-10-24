@@ -1,0 +1,838 @@
+[
+  {
+    "path": "Code/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "Code/CHANGELOG.md",
+    "sha256": "4e559bf7bf4165d60fe81acc7d95f198bfa0496ed0f85edcc905ec1a0a368392"
+  },
+  {
+    "path": "Code/DEPENDENCIES.md",
+    "sha256": "cdc75b983edd651652edc384e3b0e5e0951435f2800337b06a5e8d9abc3dc189"
+  },
+  {
+    "path": "Code/Directory.Build.props",
+    "sha256": "c498359cdc9aaed75dfd9147370ddc7c3248c3f852a0966ee17c7eade8df785d"
+  },
+  {
+    "path": "Code/README.md",
+    "sha256": "069ba546ef141fa07d7d8851d16447ab217f4431548ebf4b5e4dc6893c8f09fd"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/BackupDocument.cs",
+    "sha256": "7fb1a05bea6a506d85945d4b69721a642152cbc8fc221b66669aaa2e788bb5cf"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Book.cs",
+    "sha256": "b4bea62349a176844c7f46767f013aa5b0a2084e9dfde551f77f44880002d2e3"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/BookProgress.cs",
+    "sha256": "2f98c9dc249dfc0c2f7445f947157ebb3b04bb01f665d234b8b27ae4ed0d0cd7"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/DayActivity.cs",
+    "sha256": "1b13ca99098715402754fd447da88896fd8d826a362f47622b0f974793cfcaef"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/PageResult.cs",
+    "sha256": "30b4801f187d3c114c78cc51cdf326ece05cd81fe69bdae05f597950ae6b71e8"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/PlanItem.cs",
+    "sha256": "c46dd30c801bdc3534826133f2e801e229254cf084ef084513e9e1cff461e39b"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Quote.cs",
+    "sha256": "d324127b78d315ce2eee03d22587811b77548346fda4b83f814a1c15ba833716"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/QuoteItem.cs",
+    "sha256": "fc85f18b8013426c5ef3148d3e9dd1df32114938ef2779bbecce3d1e174725db"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Reader/BackupContracts.cs",
+    "sha256": "2d6a3474989a6750b09e20b852bcf8951f03571372ee2c2c154e9aef43b52de3"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Reader/BookFileContracts.cs",
+    "sha256": "ee27413366a89a5847f3afebba505b3f98eba165780f1ebee13bcbe288863266"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs",
+    "sha256": "398eec528e24619bc6b2e307ceeeb8ee46fca7fee3f4a425b436145e77867411"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Reader/ReaderLifecycle.cs",
+    "sha256": "03df71f5702caf84b3417f2b6fbdf130e29db7961514ba3b590693556ec445f1"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+    "sha256": "06582f027ba3e61b1b19dbaaf581fab6045d8b866f7ba2ff91c00113d5771243"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/ReadingPlan.cs",
+    "sha256": "8f531fab0b6b759737cd48a1b99c9e8e4ba91e965f56ad89e0628a01fb2e88d1"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/ReadingRecord.cs",
+    "sha256": "20a01737d43e93cd4f13eb4f473cdd3a5641776dba65c70c6ccb590125838c87"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Models/ReadingStatistics.cs",
+    "sha256": "f0c62772d0596fd47947d62498a7e1a06942b1eb600d2bf179f1249163182129"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ReadJournal.Library.csproj",
+    "sha256": "40d72d9ea77ea942ec1a251704cdb9893e25c9117f0f939c70817b662d12d6cb"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiBatchCheckpoints.cs",
+    "sha256": "0616fea84674a84e2a8128b57dc4491c7a07918ae8d0084abdf792e2c515f0c1"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiBatchStorage.cs",
+    "sha256": "cced97d10e9f328c2ac5db256e4db80beb37923b4d5f0f7ebbcfa7b71c0e2a45"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiIntegrity.cs",
+    "sha256": "0a651992405e5791091f03765777dd251cc1869e32cb10ea3558c67268b07833"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs",
+    "sha256": "89e5598ed4d8fe09c4a940ff6ba1f55f0a9dbf4e92605f8debcdd63148d2384b"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiScopeFactory.cs",
+    "sha256": "c8800cda0e9299fa8b181b2fccdc93675ecc7b56a8561a5bbf0eda63cc972487"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/AiSettingsStorage.cs",
+    "sha256": "42fa175ce215e7e8d8de2cb504e7836b62dc154c45d2352cddbab64270243883"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/DeepSeekClient.cs",
+    "sha256": "cf98cecfa802e9c333d65edd078cb796d126715d26748c4c9f79dd4acb4b4f9e"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Ai/ReaderAiService.cs",
+    "sha256": "8236fc22e7b553f97a3babda2df478bd174e2293a02fd569adb0d50cb1c67c7c"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs",
+    "sha256": "525af2134ec1c8880d49245079a68b149b126a0dc3bb3cf3cce3f7f1a94db96f"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs",
+    "sha256": "feee1bdab0e4cd304a79f4fc879cb95d4d5eb31f22d0878867a2ac805dd2ff2d"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/BackupRuntime.cs",
+    "sha256": "dab9cf3632d335773155158d28b1e2b765b33ab660746edec617fa72a769c2f6"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/BackupV2Validator.cs",
+    "sha256": "f45e414e4dda4dea35b1b70e256eeb70cd258b9cd5c70cde813d43f9120af280"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupArchive.cs",
+    "sha256": "ddeb10b6ad7d82da71443a135c3f32e729e824878a65470d23a844c6b85cd0d1"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs",
+    "sha256": "03d2ed2ac32a75c940339d3ed5ccb84e62f0a9ec1855209dc010ab571ff36c92"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/ImageResourceValidator.cs",
+    "sha256": "f4049055b537efb890a13de1036d6ed6e903a2a40f945b582c55dc6d61fa2bf4"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/ManagedBookFiles.cs",
+    "sha256": "59e0cc19368bd15a04de84df0f3a48a8882fc93f596ac6b12762eb7b0f57dd6e"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/ManagedBookInventory.cs",
+    "sha256": "ebf95ba5887c2940b9aa9f24cea182681d45383f96f3a372adbdc331e89bf854"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Backup/RestoreRecoveryService.cs",
+    "sha256": "77f8b07242073d2c9014188b18bc271b2148a97acf2596a8d00b8793a99b240b"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/BackupEntityValidator.cs",
+    "sha256": "a267ded0caae7ff0e15ddc54f3146d4f925de563505a03c627b1233076e58c99"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/BackupService.cs",
+    "sha256": "2dacbe8ce2a57f59eb78fdf9649e3d538faa0fbe88db9ca3fb806d873b3b1b6e"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/BackupV1Adapter.cs",
+    "sha256": "9771eba6c4b73c27c4500f44f756f2a3e58e1a3acb02a1ad68c3f59062fd3486"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/BookStorage.cs",
+    "sha256": "f9d436ec18cf5b6bcd67ed50f0da67e51d6fbbf0ce6c414ab7cffb1bb31db5eb"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/DataPaths.cs",
+    "sha256": "64852106106d1c50121d466b0396d43e7a5999ffd70681352c484be088a7700a"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/DatabaseMigrationV2.cs",
+    "sha256": "ea175b162d556eb2a551992bba5efc655154f68d257e249ee41d8bdb25187916"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/DatabaseService.cs",
+    "sha256": "93796afcd31f89076502a842965075f52824b57660ea14efbe1f171f33e41409"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/DemoData.cs",
+    "sha256": "b495ce0addb216d7eeae15a8479516ea38bcb2ed0958ff7ab7a3d28159aee52f"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/FilePreferenceStorage.cs",
+    "sha256": "a63f843ee45fef5bc679281822a919f0405b897fd1246877ad9622259bf9d77d"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IAlertService.cs",
+    "sha256": "97f5f9e198832926f2fc77a6c3cf9d1548f704f6560b0ed684de2e7152b94646"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IBackupService.cs",
+    "sha256": "5376acaddbb1d7340f593436050d9d541a16d2a9c8d4d89d348baa99a4a339c6"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IBookStorage.cs",
+    "sha256": "fe24886a3a5fde1bd7fae51d859a421d5b9b7694096a88f2f04abba624420d34"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IContentNavigationService.cs",
+    "sha256": "2a9bff44ffca76f88d4f1e98b242949a39c986945821a5b273b65cb945e7d571"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IDatabaseService.cs",
+    "sha256": "6b6016580fb45a2aea759ed71afbcbb956cd0984a79a4a11ba14296ca93e65dc"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IFileService.cs",
+    "sha256": "bd6992c58314e046fbf24159b1eaeffd36e0e573eb7ccd45de4ea59f58a08b98"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IMenuNavigationService.cs",
+    "sha256": "4ec2c54f3364eb6587e09e64b091cc05c6a7bc2ee4928dd80c6f66c0d45fa4a4"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IPreferenceStorage.cs",
+    "sha256": "e2819a1fa4559877989c1695536ac96935d973324a658c7e5c8fa61bbf5348d0"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IQuoteStorage.cs",
+    "sha256": "a7fae0c5c8aa48d59d9d3211b6f932f17d0e922d4890728a1ac10e64167e2968"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IReadingPlanStorage.cs",
+    "sha256": "91086472465f4d7f85c805cd1ceff1e7c52ab881f9faaf6a441e7e7d6871196f"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IReadingRecordStorage.cs",
+    "sha256": "fa0466bf5eb30c633d81ee8193f97286526de48448cf6733a9220fc83a296032"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IReadingService.cs",
+    "sha256": "3ebe1b192059edc93b0ef850ad835f048a77862f1b93519094626405562c204c"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IRootNavigationService.cs",
+    "sha256": "b6414427fcd51ea9a9b44d427a7ba78905c3a605140e04dd532cf99ee563a369"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/IStatisticsService.cs",
+    "sha256": "f6067fc72b30711dc8a8fadef9d2d85eeced7bac9f61568e3fd8cadd715795f2"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/QuoteStorage.cs",
+    "sha256": "6051f5867bb5c54ac1738508f4bb70eb076f1ba889a8f54dd8a20e0a0ac44abf"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/BookDeletionService.cs",
+    "sha256": "f489b174d9805f5e58479a6d14da52c14b19ddb54781f30799e37347f6fd69a9"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/BookFileOperations.cs",
+    "sha256": "3d71ef859e679af7babd30133e5073b24e21ce78381d5e99fce6ba14ce569703"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/EbookLibraryService.cs",
+    "sha256": "08669c2c414820b9c56a84c421f85dcdf32615b89e98692f7d9fe128e90a8b91"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/EbookProgressMaintenance.cs",
+    "sha256": "5d630e41787a672336a7d870fcae11a809b977291d4ae4d7282c836fec6d9b1f"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/EbookRuntime.cs",
+    "sha256": "a7ddda335380161bc7d41fb9adbe452d2947f6dda554a21ad6457bea5843d93a"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/EpubBookParser.cs",
+    "sha256": "9b6e627d4dc8c16e660cf1d4f5a6591a3b5c54ee8ff0394a1e3f07fe97f103fb"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderContractValidator.cs",
+    "sha256": "6f4d64f6c6e1d77117aa60daeb53fbe3d439b115fa5a34206660846439569f09"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderDocumentService.cs",
+    "sha256": "f94f06cdd8f492b0160a8a8d75bcde00b025644eebcfce4ac98026636f9f2418"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+    "sha256": "eceeacdc581c13f3c9bebbc3ce139f44a052f52b3fc909a1612cdcd5c06766fd"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderPreferencesStorage.cs",
+    "sha256": "3662b2a9a97ca74f4e1d2f38d8d89937b713fa062d3c1b807059553099b8d2f8"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderQuoteNavigation.cs",
+    "sha256": "940aec3a0dc15733fb21cf8afadb5e34202c80d2607daf026eda8e282144e991"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderQuoteService.cs",
+    "sha256": "686d42ce0a39e996157dbcf7a8f6e52e1dec24b4ba2dca9fbf688a55956a12e3"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+    "sha256": "921d55bf885e7d38482c97ad0244a8dec62f7a7a5c4c8e341650584e0e52ea4b"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReadingHistoryService.cs",
+    "sha256": "d27f905cd9b54937d14134d71fcf0d9ed8bbab4f8559b0b3868e401b50dbf221"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReadingStateCalculator.cs",
+    "sha256": "18b778870049764f271bbdb225171b744a75585189117a7bfd99f1e07e7d17d7"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/ReadingStateQuery.cs",
+    "sha256": "e7d7dabfb326519de2cab5b3199fc8ca8227594f3c59e730cfc49b4883e8ad76"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/Reader/TxtBookParser.cs",
+    "sha256": "c21911e5cc8b1b82de31548dc4f7beebb9dabbb297737f71d48ac5d08a4a2534"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/ReadingPlanConsistency.cs",
+    "sha256": "8921fc09535e77c324ceb9c8ef4ad9b798c55b4b8c0ad89f983ace71161b7952"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/ReadingPlanStorage.cs",
+    "sha256": "c08dd82ec42901415b6bb3aa859df97e9ec8514d5668a0ba254495d9963bac88"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/ReadingRecordStorage.cs",
+    "sha256": "c91e5f7ea210eb1002e3ef265b5da7a4ca25764fb09f8ea75ce2169e18230693"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/ReadingService.cs",
+    "sha256": "1da2ae7a3f26ee1e3c029ed7e4a8ab38ef5b45e64260060e7e8c349033fcbe38"
+  },
+  {
+    "path": "Code/ReadJournal.Library/Services/StatisticsService.cs",
+    "sha256": "ff2aca934824a0d590bc2572c93480a93e196ca743e8b9b287eaf011ec2daef0"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/BookDetailViewModel.cs",
+    "sha256": "466651d6debb874d5979245d50c1920d8742e90b30d6365abbc86b89ea842176"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/BookEditViewModel.cs",
+    "sha256": "45448aa21fb4692ffbec642b845c998ad186bca831d31b5a92044d652f40bf13"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/BookListViewModel.cs",
+    "sha256": "8fbf9c7ea3ece339f8574d7b1e533d2d47eb7fa0b90579468eb90e63d6cabf11"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/EditViewModelBase.cs",
+    "sha256": "cd40321fb77cfef183483183abed762b3e991c145933cd705abd428d2d76f2ca"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/InitializationViewModel.cs",
+    "sha256": "392e45f7f26f4435df2fdb165fa249cdedb5fbb6b51a7e956c6f96bab60a714c"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/MainViewModel.cs",
+    "sha256": "3f5bf2a76ae2f3c3572c7c2c37a0626fa0f41d2d74f037c0d365550b630da6d0"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/MainWindowViewModel.cs",
+    "sha256": "0464083e8fb55340b625dc21610dea7cc030bf22e06e953e7aa764ab98e0f08f"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/MenuItem.cs",
+    "sha256": "c6ff9ee563636a202d63e486e04b58e35d037ecdbd84d58e52b6bb4446e6bfa0"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/OverviewViewModel.cs",
+    "sha256": "968fb590fbac96a37a35c04ff262bc24a9ce445b08ee2f2695e77697b08019f7"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/QuoteEditViewModel.cs",
+    "sha256": "4bb0672e008380cca4938ee7720c1e6d874ed11b5f556f1b47491e0108b1cc23"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/QuoteListViewModel.cs",
+    "sha256": "e6abdbc3d409292bc71aaa296a88bd252069948fe77e33b7ca4826b281176d18"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Ai.cs",
+    "sha256": "3d49ce544d38e08a3399797ee481116e0f276906d9f820192e3900e2df26d86a"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Fonts.cs",
+    "sha256": "694a08cfed2e8fd1b734c4d01950741f59cf77e108da22b7b28727c00ea903ae"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Panels.cs",
+    "sha256": "c73e64c51ca7f9c9f3bf1f7c13b793a45a9ff2d4d5c66f845232577fd65e986d"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.cs",
+    "sha256": "3e18a2def22a6a2a36c3fdd3d25a7a3dd9bb940233ed27e4b3e6aff6e52af7be"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReadingPlanEditViewModel.cs",
+    "sha256": "9572ed008e9233e68e07479d09d667eea0571bed03a69d59c3135eb6e90ec20d"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReadingPlanListViewModel.cs",
+    "sha256": "367be9718cffd0eded442b125e9f3bcce31d7c9ee9ae1f8aa460891f27d5cd6b"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs",
+    "sha256": "04cb1697d2f945014cfe78e8cf0c3057ba7a7635f171d72ece2bc630ebac11c2"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/SettingsViewModel.Ai.cs",
+    "sha256": "a61662b1c78151ac6338dca586b602c4b7463495d9fb78244c5f04f7aec6cf82"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/SettingsViewModel.cs",
+    "sha256": "b5900ced8c6212075fb20495938ce5f3eff6488d674cf1893cfad387168203da"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/StatisticsViewModel.cs",
+    "sha256": "24d2a15fd79292e938c1d42f08d81b994a8dac6e4617646ae73f982a208c3e10"
+  },
+  {
+    "path": "Code/ReadJournal.Library/ViewModels/ViewModelBase.cs",
+    "sha256": "c104632a974ce42aeda2be58bb860903b15c91f02ee7676a41e2c164660ef6db"
+  },
+  {
+    "path": "Code/ReadJournal.Library/packages.lock.json",
+    "sha256": "8d5f56897e1c56fcc64068733bbf35fa8542b3b9a242ce563c9846c8561a36fd"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiHttpTests.cs",
+    "sha256": "477ee1ec1cb6b09cd55b3d1ea3e0c2a482615bf64bb2da37eb4bf4459c56ce6d"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiMockHandler.cs",
+    "sha256": "74da0b664b1b225ed2c23f9fbc69ff72bce325116185ae53b561b0297753b80e"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiSelectionWorkflowTests.cs",
+    "sha256": "42ab40ba9adf5e02b5629bb4b9ab98ef04b2ba1833f2fb8468d290a2cadab54e"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiTestFixture.cs",
+    "sha256": "ae55eb65a9b025ec0dde26ff22debf505eeb34e4f4e3f3a2925eb361f6b042b4"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiViewModelTests.cs",
+    "sha256": "9a1efa432150b48bca1a30029c387fd9d40c4d379735ff2ec47df8456b4cde4c"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/AiWorkflowTests.cs",
+    "sha256": "a523d479149fc790ee74c660b9b783e522322d589f5f67f5defccb3cd6e0fefb"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ArchitectureTests.cs",
+    "sha256": "5c51ca372828e2fe3feebcc448ffa569734e74b398cd9d3feef985020b66c4ed"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/BackupUiIntegrationTests.cs",
+    "sha256": "321563417b5847190e283dff3dac7817dd8adf43deee3baa9bdce17685c6c266"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/BusyLoadRegressionTests.cs",
+    "sha256": "534b04cbaab6fdd92de74b21a2be814abf2138750824b031822cfc30a7f4cc8c"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/CompleteBackupTests.cs",
+    "sha256": "c471c40d72d2990e0261ccd267a3690e4dca2502b9c5d662daec3347a8c9d286"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/DatabaseTests.cs",
+    "sha256": "52710edd00e5c12888e978d65e3bb54f6de0d954a85aca9c725bda142c8454b8"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/DeleteNavigationRaceTests.cs",
+    "sha256": "a69cf8d77def67d72c741b07bbb69a955fffb2919cb48495676a6a473463a147"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EbookDeletionTests.cs",
+    "sha256": "d8528c551d944ea512baf7489df9ca17ac2201612a363cfba2b268da065a507d"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EditingRegressionTests.cs",
+    "sha256": "031aa674eb3d3c88124deaed9037261f6e49f7374caa42b1a9c9ef50e497e4cc"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EditingTests.cs",
+    "sha256": "28eb433844a3d82b61e671deb0bc70518694b7a6cf0cca927826e28b4ac98593"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EpubImportTests.cs",
+    "sha256": "2f40c217518fdd112760f66ecbc3a5766ee0b5c3d127f28df5d1ee81fba75851"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EpubRenderingTests.cs",
+    "sha256": "3ce757c8b97676700a29530f86c131745bd31062004fd3b200ae926702c7b3f2"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/EpubTestBooks.cs",
+    "sha256": "caafb7ed4b83ca6c1e011362ab7e6dd8017ea0b875f4308a6fae9174e8635d84"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ExtendedBusinessTests.cs",
+    "sha256": "ba524f7d70c3b65ea23a88d2264dbf513f6073df6d701df991bdd18168005fb4"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/Fixtures/Reader/README.md",
+    "sha256": "205f35fc27d7a68e085da2d6f337b058fd60c4206f6e38d94dd52cabf79970ee"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/Fixtures/Reader/schema1-sql.json",
+    "sha256": "1d76fed19ff3f35558adb45c9175a4b146812a2f53c5a2f991ed65b5c8f955d8"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/Fixtures/Reader/schema1.json",
+    "sha256": "cd2817d8c632b64f5d79583e2a88b1a547ec3449ede56ad75a362da3ad8f998b"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/NavigationRaceTests.cs",
+    "sha256": "6db2ad7fdbc5d01f0522ab09ce672e40eb90bf51a4d8ba413934e769ea041cdc"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/OverviewArchitectureTests.cs",
+    "sha256": "07f218736433f072f625fbaf8bb810ce2dff2666dfd20bd4ea19e1f92bb1cbdd"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/PlanConsistencyRegressionTests.cs",
+    "sha256": "0852f0ed5474a0a3f4798c21f136cecd40e9745e89c3a90afc098dc44a2e9592"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReadJournal.UnitTest.csproj",
+    "sha256": "e50396c5baef86b34964a6dab9ea6d6446c35ef52b2616bf13f954c663c9bcbb"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderBackupCoordinationTests.cs",
+    "sha256": "8a39980f1d251ad7e5d41338a81d1bf6df1189b3231217f8448a9e2435bed69a"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderBackupTestData.cs",
+    "sha256": "c97c65b037b5dc5e37bbdb7066d4ff4d5a99fa0063666564eaff5abec554d571"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderBaselineFixtureTests.cs",
+    "sha256": "67565385d1e364ecb108b087c8cfe0a3e974f8a2861563c980f42b6de9b9e493"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderCoordinatorTests.cs",
+    "sha256": "7d261beb34a52805b3b56eb0ca8601076163198793cd25ed524063c6885037af"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderDocumentContractTests.cs",
+    "sha256": "72eb36a52aa8adfbbbab35aae9c49c68d17c63c90b80f2c30165f28cf3083eb6"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderLayoutContractTests.cs",
+    "sha256": "17ab613a2ea930cda8d60c5a01641db2529e9dcb5d8c8a6ff9f9cf0d2de7074b"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderLifecycleTests.cs",
+    "sha256": "5c287b8c74fb7f84c357913cccee41bc48af4a47ece552fb95c837eb1bc25aa9"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderLocalWorkflowTests.cs",
+    "sha256": "b7d959f2faaa3da6a37d66da18c692ff1b82179fcca638bc52dd68cc94f16ba7"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderMigrationTests.cs",
+    "sha256": "19273ad882936c3c7cefc527ae9d355065b419e05911249485f1608a031686db"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderP4TestData.cs",
+    "sha256": "568b99bbc4dd79dd927736b1d4e4fcddfb823cc6d23c4cb7109dd67e31f4b175"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderSessionTests.cs",
+    "sha256": "b60100bde56b790b5caecf5900ba24d1d839e629d18d43074e2cd8b4cf262668"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReaderStateTests.cs",
+    "sha256": "78da91e218b39116396599147f928b921c22937baad0ab3d5ac6f4cce8ce5400"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/ReadingBusinessTests.cs",
+    "sha256": "0d13660d463746c2869f94db2f52bf1e3bceae90769a22540b7bba9e697074b9"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/RestoreConcurrencyTests.cs",
+    "sha256": "52e1eb470208afeff4013e3c672ca730edc6db379b3a2238367c26c1f850c2cc"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/SettingsNavigationTests.cs",
+    "sha256": "7f466655f7a5329fe9afb1d3cc837dbbfa76503ba01e4c2b08b6007891c3b8ce"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/TxtImportTests.cs",
+    "sha256": "c26c7bc7d61ecc222578543b5bc56af4bc751536a35130603666a677b15d032f"
+  },
+  {
+    "path": "Code/ReadJournal.UnitTest/packages.lock.json",
+    "sha256": "77e28dbe18279340a882d2191f7f5bfc6c9469f05f78ea06ee2dfb79d333f473"
+  },
+  {
+    "path": "Code/ReadJournal.sln",
+    "sha256": "074974b660e48c18056efca31524829dc29de8088a4383ce11cafebb2778b3a2"
+  },
+  {
+    "path": "Code/ReadJournal/App.axaml",
+    "sha256": "b812c5f998bb8796f12ecefa6dbe5ae5ed7dbf7730403fffc3e6ed053cc1ce3b"
+  },
+  {
+    "path": "Code/ReadJournal/App.axaml.cs",
+    "sha256": "9cfa4a07984b06ae0e10a899b678ffdeee4fc7bc24b8ba1cb93825dea89a1444"
+  },
+  {
+    "path": "Code/ReadJournal/Program.cs",
+    "sha256": "fa026ac4acdc5e2e9a482c87d334244dadcd6eedd2dd081a7f816393a84bed4a"
+  },
+  {
+    "path": "Code/ReadJournal/ReadJournal.csproj",
+    "sha256": "3310009a767746b99941dedcd694665193cf707eb92fb7b72d3e5c781eef9b30"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs",
+    "sha256": "510969599abfe3f42dc00fff40b6b12ac765461939dadbb60ae55f616f812923"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/NativeTextDocument.cs",
+    "sha256": "d93a8f6cbe2988c9d3e7b3891fd2042cfe53454f3b858b05965743bc191da1a6"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/NativeTextLayout.cs",
+    "sha256": "b2707c6d763101232d6339f5043d67d06325e91febcf9530d3365da4f25faefa"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/ReaderFontFamilyConverter.cs",
+    "sha256": "6469212f303c89b7aa1fc8153d814eadcf0a95ab8481ade8157cdbc12726bb04"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/ReaderSurface.cs",
+    "sha256": "b483bd83d6780d01f1909479f93eca8fdbd64b49b864c5f6b816286c3ea1fdda"
+  },
+  {
+    "path": "Code/ReadJournal/Reader/SystemReaderFontCatalog.cs",
+    "sha256": "93762eb6a50a43259f658a0d55424941eed6dd679e35b4819c01f700f44a3f60"
+  },
+  {
+    "path": "Code/ReadJournal/ServiceLocator.cs",
+    "sha256": "ce23df1ee6fe7261511dd0ce43c36b15ebd0be6dff83e42fe077faa5428d1a50"
+  },
+  {
+    "path": "Code/ReadJournal/Services/AlertService.cs",
+    "sha256": "b55b725e17528aaaa3c14c2b3611ad9516bed9487518a2a09342480d6789ad30"
+  },
+  {
+    "path": "Code/ReadJournal/Services/ContentNavigationService.cs",
+    "sha256": "d4fe4facf91d262e58250836f31cdba08ddb6a72fb429bdbeee071f5c036a5dd"
+  },
+  {
+    "path": "Code/ReadJournal/Services/DataSetInvalidationService.cs",
+    "sha256": "d3e5eafff9e7be8dfa54c8680ee9469e5e58f30b16e3e8da97a3da1acaef36d0"
+  },
+  {
+    "path": "Code/ReadJournal/Services/FileService.cs",
+    "sha256": "2838942654b6badfe5b398506558b27490a0ab0ab0556bf77d753b704e00d161"
+  },
+  {
+    "path": "Code/ReadJournal/Services/MenuNavigationService.cs",
+    "sha256": "f9dd475c459fd24f8534f5596c9dbbc8f7e9c70222b69ecc36ab5152982e1718"
+  },
+  {
+    "path": "Code/ReadJournal/Services/ReaderPlatformService.cs",
+    "sha256": "c81efcb855c6c5d8c779e1e8bbb4cb330950c8ce855b97b7106ff5af62df9d14"
+  },
+  {
+    "path": "Code/ReadJournal/Services/RootNavigationService.cs",
+    "sha256": "f8b5936e382afadc0b19a9368900b14f3e559f13ac819db3bab781882f7ec414"
+  },
+  {
+    "path": "Code/ReadJournal/ViewLocator.cs",
+    "sha256": "2d44106bf66e461feae97239180bdf8d9709283a23562b004e1f59ec46a479b9"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookDetailView.axaml",
+    "sha256": "4f98d5bb510af9bec0a9d2f9af30439a23039d3e8cc4295b47fb7f38e74e8698"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookDetailView.axaml.cs",
+    "sha256": "6e1791738d907a754ede1becf5bf76bbfcb846a8c6f11065e672096036199f02"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookEditView.axaml",
+    "sha256": "d1d8c9c1148146a320664df22f5f13f8ce843e5c6d92a9cf2c479ca9853f719d"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookEditView.axaml.cs",
+    "sha256": "90e081fcafebcabdae9a5216dd767b58d674e457e93f40bce3136c26e514d426"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookListView.axaml",
+    "sha256": "d657a4e70955ace614c325efbf9ba4b2ce2f5457677bcb9bfdf4bb9410feea0d"
+  },
+  {
+    "path": "Code/ReadJournal/Views/BookListView.axaml.cs",
+    "sha256": "0ae4a1bf514b24a83cdd4dc2f4fe3d3c10ae5dafebe89df1c1473eeb989d2f73"
+  },
+  {
+    "path": "Code/ReadJournal/Views/InitializationView.axaml",
+    "sha256": "726a22fd7575e1d745d5619b1466b6f814609533f9a8ec41e4d52e67f283c445"
+  },
+  {
+    "path": "Code/ReadJournal/Views/InitializationView.axaml.cs",
+    "sha256": "686ff59c511f80c4af90f86b7b223a4dd8638a7af01d13a6cee4e32312337f62"
+  },
+  {
+    "path": "Code/ReadJournal/Views/MainView.axaml",
+    "sha256": "2f622b29ba116f3791a645bfdc08b9d4e0444e88c56723573eb00e7651a4ca97"
+  },
+  {
+    "path": "Code/ReadJournal/Views/MainView.axaml.cs",
+    "sha256": "2dae1edf5782e05b8fd8a80416b2c344f8398ac5d9a9897310ceea9967a55972"
+  },
+  {
+    "path": "Code/ReadJournal/Views/MainWindow.axaml",
+    "sha256": "bb8e862d564468d26dd2a73ad4fd997f80c5cf062ff514c37c7101b488a5e82b"
+  },
+  {
+    "path": "Code/ReadJournal/Views/MainWindow.axaml.cs",
+    "sha256": "d8985cad5be88dff05a27f5a9afd64dbd1500f07ee3b7ca18fc91822df18af08"
+  },
+  {
+    "path": "Code/ReadJournal/Views/OverviewView.axaml",
+    "sha256": "f6fa4bf7d57370490ed48e2996c417bdfaee9ada20785dc801e1241440fad90c"
+  },
+  {
+    "path": "Code/ReadJournal/Views/OverviewView.axaml.cs",
+    "sha256": "d1f198f0d66ba6e9bd9fb725a4c66f0a8c49748622a6380c280a45a5fe92ce21"
+  },
+  {
+    "path": "Code/ReadJournal/Views/QuoteEditView.axaml",
+    "sha256": "c34e931f997873e66d1d92903d9ce806bee9878f9ad8c94072ca743c1be2c89b"
+  },
+  {
+    "path": "Code/ReadJournal/Views/QuoteEditView.axaml.cs",
+    "sha256": "43cf66916e290d4392c07bb0faa1bced24e5e5b771f68b9bc9ddf245bc362e74"
+  },
+  {
+    "path": "Code/ReadJournal/Views/QuoteListView.axaml",
+    "sha256": "bbc8e0819eccb259a3b8d804ad3cddc948e01b3519e2f713ee6803351d9078f8"
+  },
+  {
+    "path": "Code/ReadJournal/Views/QuoteListView.axaml.cs",
+    "sha256": "1a42a9426fd9bb8ea0cdef5c2fdb67d07ea72b0f2199fe55a625516a196a70f7"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReaderView.axaml",
+    "sha256": "34e60baaef6bdc06ce65919ee377220a35118e67c1e798eea111fa45afc0196f"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReaderView.axaml.cs",
+    "sha256": "4288e6f9e7fcf191810a66346fae2c8ba10531654f096d48155be2b74a99990c"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingPlanEditView.axaml",
+    "sha256": "cc3a0421d8662dd4282cc62422de401b129dc2baaf93a060915f33dfbb362059"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingPlanEditView.axaml.cs",
+    "sha256": "046bdedc3b6362b0610ead9bbc762b05e067b4c4adc24ea8db8a73fb020164e7"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingPlanListView.axaml",
+    "sha256": "f36a5483c601c0fad9ca0ee7d6b2c44b449a70d733b07125e67631d28ddbf576"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingPlanListView.axaml.cs",
+    "sha256": "c9954e3fe1f19e617ae84e3477e209ea6ecf91f1c69cc55f19974c3b0a243dfb"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingRecordEditView.axaml",
+    "sha256": "50524b0b00b1780e958b734092980f3bb6af13b488dc60b534aad4908d143a29"
+  },
+  {
+    "path": "Code/ReadJournal/Views/ReadingRecordEditView.axaml.cs",
+    "sha256": "41dc46f0c7342c2521d616d6ddf069de9597890ba55c8fcc1aa01de981f03d12"
+  },
+  {
+    "path": "Code/ReadJournal/Views/SettingsView.axaml",
+    "sha256": "1611e35b6da832c21c1d030056e687832aced31e3b4a920f849a0b76cce889cb"
+  },
+  {
+    "path": "Code/ReadJournal/Views/SettingsView.axaml.cs",
+    "sha256": "a5c202971dcb12981c109be3a2a14cd35e7c39c5ccccc13184253669fcc48c8c"
+  },
+  {
+    "path": "Code/ReadJournal/Views/StatisticsView.axaml",
+    "sha256": "487a9a91177cba08a56d385f841b025c7fab83850b36398beeffce3692af85b3"
+  },
+  {
+    "path": "Code/ReadJournal/Views/StatisticsView.axaml.cs",
+    "sha256": "d8f4298b152d624fe96c1efc1071c2e97f901541801f3e81ff4040008817cd3b"
+  },
+  {
+    "path": "Code/ReadJournal/packages.lock.json",
+    "sha256": "2925fd2ee559ec8b914f20c9d3db35f34231617ba8bf1718de8ebbaea91d1d90"
+  },
+  {
+    "path": "Code/THIRD-PARTY-NOTICES.md",
+    "sha256": "8590ce8fe9799785ace5c8eaeba60a6fe41348e7f940918e6e083509644aeccc"
+  },
+  {
+    "path": "Code/build.ps1",
+    "sha256": "e516705f40b04b56663cf9e1b341f07c42bfa67b2c8d8919245f5b92d6a797bb"
+  },
+  {
+    "path": "Code/build.sh",
+    "sha256": "51670133049ac137d80269e35f87d00af8238f020bb4fcd1f6a98769acf61b5d"
+  },
+  {
+    "path": "Code/delivery-files.txt",
+    "sha256": "89564fff806f8ba135d4ae18d1731f45e35c323215ea933c56dfae0bbc9a47ba"
+  },
+  {
+    "path": "Code/global.json",
+    "sha256": "017782aa3c102a9e164acb36385998285a5a0dbd65a128ca8a0ac8fbdec9694a"
+  },
+  {
+    "path": "Code/pack.py",
+    "sha256": "d1bd4bafeef4772e5661d366b244ed5d906fb29b209317610adaa5ce0afa35d6"
+  }
+]

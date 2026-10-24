@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f8f03090-fc26-4468-88d5-9fb422cf3f5b" name="a3185@ZHOUBIBI 2026-10-24 22:37:36" runUser="ZHOUBIBI\a3185" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-24T22:37:36.1418065+08:00" queuing="2026-10-24T22:37:36.1418067+08:00" start="2026-10-24T22:37:33.8028044+08:00" finish="2026-10-24T22:37:36.1471546+08:00" />
+  <TestSettings name="default" id="9a91fef7-9791-4ede-bdc3-6f5ecc6cf0f2">
+    <Deployment runDeploymentRoot="a3185_ZHOUBIBI_2026-10-24_22_37_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="b25eb4c2-06ee-4f97-906f-328c84c451db" testId="b19862d3-2f49-c037-85bf-d242d4569c0a" testName="ReadJournal.UnitTest.ReaderLifecycleTests.ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession" computerName="ZHOUBIBI" duration="00:00:01.4676647" startTime="2026-10-24T22:37:36.0669404+08:00" endTime="2026-10-24T22:37:36.0669502+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b25eb4c2-06ee-4f97-906f-328c84c451db">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure&#xD;
+Expected: Presenting&#xD;
+Actual:   OpenFailed</Message>
+          <StackTrace>   at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c.&lt;&lt;ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession&gt;b__4_0&gt;d.MoveNext() in D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs:line 81&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c.&lt;&lt;ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession&gt;b__4_0&gt;d.MoveNext() in D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs:line 88&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c__DisplayClass2_0.&lt;&lt;Ui&gt;b__0&gt;d.MoveNext() in D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs:line 15&#xD;
+--- End of stack trace from previous location ---&#xD;
+   at Avalonia.Headless.HeadlessUnitTestSession.&lt;&gt;c__DisplayClass9_0`1.&lt;Dispatch&gt;b__0()&#xD;
+--- End of stack trace from previous location ---&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ReadJournal.UnitTest.ReaderLifecycleTests.ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession" storage="d:\2026autumn semester file\fullstack\期末大作业\code\readjournal.unittest\bin\release\net8.0\readjournal.unittest.dll" id="b19862d3-2f49-c037-85bf-d242d4569c0a">
+      <Execution id="b25eb4c2-06ee-4f97-906f-328c84c451db" />
+      <TestMethod codeBase="D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\bin\Release\net8.0\ReadJournal.UnitTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="ReadJournal.UnitTest.ReaderLifecycleTests" name="ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b19862d3-2f49-c037-85bf-d242d4569c0a" executionId="b25eb4c2-06ee-4f97-906f-328c84c451db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.30)&#xD;
+[xUnit.net 00:00:00.40]   Discovering: ReadJournal.UnitTest&#xD;
+[xUnit.net 00:00:00.45]   Discovered:  ReadJournal.UnitTest&#xD;
+[xUnit.net 00:00:00.45]   Starting:    ReadJournal.UnitTest&#xD;
+[xUnit.net 00:00:01.95]       Assert.Equal() Failure&#xD;
+[xUnit.net 00:00:01.95]       Expected: Presenting&#xD;
+[xUnit.net 00:00:01.95]       Actual:   OpenFailed&#xD;
+[xUnit.net 00:00:01.95]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.95]         D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs(81,0): at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c.&lt;&lt;ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession&gt;b__4_0&gt;d.MoveNext()&#xD;
+[xUnit.net 00:00:01.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.95]         D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs(88,0): at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c.&lt;&lt;ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession&gt;b__4_0&gt;d.MoveNext()&#xD;
+[xUnit.net 00:00:01.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.95]         D:\2026Autumn Semester File\FullStack\期末大作业\Code\ReadJournal.UnitTest\ReaderLifecycleTests.cs(15,0): at ReadJournal.UnitTest.ReaderLifecycleTests.&lt;&gt;c__DisplayClass2_0.&lt;&lt;Ui&gt;b__0&gt;d.MoveNext()&#xD;
+[xUnit.net 00:00:01.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.95]            at Avalonia.Headless.HeadlessUnitTestSession.&lt;&gt;c__DisplayClass9_0`1.&lt;Dispatch&gt;b__0()&#xD;
+[xUnit.net 00:00:01.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.96]   Finished:    ReadJournal.UnitTest&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="ZHOUBIBI" outcome="Error" timestamp="2026-10-24T22:37:36.0653186+08:00">
+        <Text>[xUnit.net 00:00:01.95]     ReadJournal.UnitTest.ReaderLifecycleTests.ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

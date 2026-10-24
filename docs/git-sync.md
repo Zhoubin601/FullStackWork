@@ -125,3 +125,12 @@ P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.E
 ## 2026-10-24 UI 与字体/真实 AI 双分支本地合并
 
 用户确认将 feature/ui-ux-polish-v2=ca79d15 与 feature/reader-fonts-live-ai=c759bda 均合入 main。已 fetch 并再次核对 origin/main=8da5ba6，三个远端引用未变化。main 先快进远端及 UI 分支，再合并字体/真实 AI，逐项整合 10 个冲突文件，并将旧整段选区协议测试改接测试工程 HTTP Handler。最终 Windows Release 350 项：348 通过、0 失败、2 项符号链接权限跳过。原有 119 个未跟踪文件与 2 个 raw 文件摘要一致，未将这些本地资料提交；output/ 不变。执行和证据见 docs/20261024-branch-merge-v1.md、docs/evidence/merge-20261024/。本次仅本地提交，未推送远端、不删除分支、不改既有 stash；真实窗口与真实 API 未重测。
+
+
+## 2026-10-24 合并及全功能修复推送
+
+用户明确要求“推送远端”，授权将本地双分支合并及本轮两处缺陷修复、3项永久回归、验收文档与独立证据提交到 origin/main。推送前 fetch 核对远端 main=8da5ba6，本地 d28f1d6 领先3个提交、无远端新增提交，无需再次合并。
+
+本轮按 source-hashes.json 重新验证209个 Code 文件与最终验收源码一致；353项中351通过、0失败、2符号链接权限跳过；真实AI5次与完整恢复10表/12文件通过。精确凭据清理检查通过。原有119个未跟踪文件与2个raw文件哈希一致，不纳入本轮提交；output与旧正式源码包保持不变。仅提交本轮已列明源码、文档和 evidence/integrated-audit-20261024 下非运行库文件。
+
+正常提交并快进推送 HEAD:main，不强推、不删除分支、不操作既有stash；推送后以 git ls-remote 回读远端 main 与本地 HEAD 一致核验。实际成功回执与提交号由本轮最终回复给出，不以预定推送代替成功结果。

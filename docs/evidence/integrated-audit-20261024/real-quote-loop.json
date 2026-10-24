@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "wholeSelectionExactlyPreserved": true,
+  "deduplicated": true,
+  "copiedBackToOriginal": true,
+  "undoReturnedToBaseline": true,
+  "baselineQuotes": 2
+}

@@ -1,0 +1,7 @@
+ui-data/
+**/data/
+**/sources/
+**/repeated-sources/
+**/isolated-data/
+**/staging/
+**/*.zip

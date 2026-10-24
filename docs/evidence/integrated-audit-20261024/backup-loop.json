@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "businessTablesCompared": 10,
+  "managedFilesCompared": 12,
+  "allRowsIdentical": true,
+  "allFileHashesIdentical": true,
+  "localThemePreserved": true
+}

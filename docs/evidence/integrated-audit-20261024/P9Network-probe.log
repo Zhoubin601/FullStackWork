@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "actualTcpFailure": true,
+  "failureCode": "Offline",
+  "realDeepSeekCalls": 0,
+  "realCredentialsUsed": false,
+  "localReadingStillAvailable": true,
+  "normalSessionCommitted": true,
+  "counts": {
+    "quotes": 0,
+    "sessions": 1,
+    "integrity": "ok"
+  }
+}

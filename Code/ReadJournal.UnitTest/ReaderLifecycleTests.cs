@@ -22,14 +22,15 @@ public sealed class ReaderLifecycleTests
         public ReaderSessionService Sessions { get; }
         public ReaderViewModel Vm { get; }
         public MainViewModel Main { get; }
-        public Fixture(ReaderSessionCheckpoints? faults = null, IReaderAlertService? alerts = null, IReaderFontCatalog? fonts = null)
+        public Fixture(ReaderSessionCheckpoints? faults = null, IReaderAlertService? alerts = null, IReaderFontCatalog? fonts = null,
+            Func<AvaloniaReaderLayoutService, IReaderLayoutService>? layoutFactory = null)
         {
             Db = new(new DataPaths(Path.Combine(Root, "data"))); Documents = new(Db, Db.Coordinator); Layouts = new(Documents);
             Sessions = new(Db, Db.Coordinator, Documents, new EbookProgressMaintenance(Db, Db.Coordinator), new ReaderClock(), faults ?? new ReaderSessionCheckpoints());
             Main = new MainViewModel(Mock.Of<IMenuNavigationService>());
             var confirmation = new Mock<IAlertService>(); confirmation.Setup(a => a.ConfirmAsync(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(true);
             var quotes = new ReaderQuoteService(Db, Db.Coordinator, Documents, Sessions, new ReadingService(), new ReaderQuoteCheckpoints());
-            Vm = new(Db, Db.Coordinator, Documents, Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), Main, quotes, confirmation.Object, fonts: fonts);
+            Vm = new(Db, Db.Coordinator, Documents, layoutFactory?.Invoke(Layouts) ?? Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), Main, quotes, confirmation.Object, fonts: fonts);
         }
         public async Task<int> Add(int number, int repeats = 2000)
         {
@@ -45,6 +46,48 @@ public sealed class ReaderLifecycleTests
         public void Dispose() { Layouts.Dispose(); Db.Dispose(); if (Directory.Exists(Root)) Directory.Delete(Root, true); }
     }
     [Fact]
+    public Task ViewportChangeDuringFirstLayoutStillPresentsAndStartsExactlyOneSession() => Ui(async () =>
+    {
+        var started = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        var creates = 0;
+        using var x = new Fixture(layoutFactory: inner =>
+        {
+            var layouts = new Mock<IReaderLayoutService>();
+            layouts.Setup(l => l.CreateAsync(It.IsAny<DocumentKey>(), It.IsAny<LayoutSettings>(), It.IsAny<ReaderPosition>(), It.IsAny<CancellationToken>()))
+                .Returns(async (DocumentKey document, LayoutSettings settings, ReaderPosition anchor, CancellationToken ct) =>
+                {
+                    if (++creates == 1) { started.TrySetResult(); await Task.Delay(Timeout.InfiniteTimeSpan, ct); }
+                    return await inner.CreateAsync(document, settings, anchor, ct);
+                });
+            layouts.Setup(l => l.LocateAsync(It.IsAny<LayoutHandle>(), It.IsAny<ReaderPosition>(), It.IsAny<CancellationToken>()))
+                .Returns((LayoutHandle handle, ReaderPosition position, CancellationToken ct) => inner.LocateAsync(handle, position, ct));
+            layouts.Setup(l => l.ReleaseAsync(It.IsAny<LayoutHandle>())).Returns((LayoutHandle handle) => inner.ReleaseAsync(handle));
+            layouts.Setup(l => l.ReleaseAllAsync()).Returns(() => inner.ReleaseAllAsync());
+            layouts.Setup(l => l.BuildIndexAsync(It.IsAny<LayoutHandle>(), It.IsAny<IProgress<LayoutIndexStatus>>(), It.IsAny<CancellationToken>()))
+                .Returns((LayoutHandle handle, IProgress<LayoutIndexStatus>? progress, CancellationToken ct) => inner.BuildIndexAsync(handle, progress, ct));
+            layouts.Setup(l => l.GetIndexStatusAsync(It.IsAny<LayoutHandle>(), It.IsAny<CancellationToken>()))
+                .Returns((LayoutHandle handle, CancellationToken ct) => inner.GetIndexStatusAsync(handle, ct));
+            return layouts.Object;
+        });
+        var id = await x.Add(1, 100);
+        x.Vm.SetParameter(new ReaderOpenRequest(id));
+        var opening = x.Vm.OnLoadedCommand.ExecuteAsync(null);
+        await started.Task.WaitAsync(TimeSpan.FromSeconds(10));
+        try
+        {
+            await x.Vm.SetViewportAsync(640, 320, 1.5);
+            await opening;
+            Assert.NotNull(x.Vm.Page);
+            Assert.Equal(ReaderPhase.Presenting, x.Vm.Phase);
+            await x.Vm.PagePresentedAsync(x.Vm.Page!.Ref.Layout);
+            Assert.Equal(ReaderPhase.Active, x.Vm.Phase);
+            await x.Vm.PagePresentedAsync(x.Vm.Page.Ref.Layout);
+            Assert.True(await x.Vm.CanLeaveAsync());
+            Assert.Single(await x.Sessions.GetForBookAsync(id, default));
+        }
+        finally { await x.Vm.CanLeaveAsync(); }
+    });
+    [Fact]
     public Task SystemFontChangeKeepsAnchorAndPersistsAcrossReaderSessions() => Ui(async () =>
     {
         var catalog = new SystemReaderFontCatalog(); Assert.NotEmpty(catalog.FontFamilies);
@@ -59,6 +102,38 @@ public sealed class ReaderLifecycleTests
         Assert.True(await x.Vm.CanLeaveAsync()); await x.Open(id);
         Assert.Equal(saved.FontFamily, x.Vm.FontFamily); Assert.Equal("28", x.Vm.FontSizeText); Assert.Equal(anchor, x.Vm.Position);
         Assert.True(await x.Vm.CanLeaveAsync()); Assert.Equal(2, (await x.Sessions.GetForBookAsync(id, default)).Count);
+    });
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public Task MissingDefaultOrSavedFontCanStillChangeTypographyWithoutOverwritingPreferencesOnOpen(bool hasSavedPreference) => Ui(async () =>
+    {
+        var fonts = new Mock<IReaderFontCatalog>();
+        fonts.SetupGet(c => c.FontFamilies).Returns(new[] { "Arial" });
+        using var x = new Fixture(fonts: fonts.Object);
+        var preferences = new ReaderPreferencesStorage(x.Db.Paths, new());
+        if (hasSavedPreference)
+            await preferences.SaveAsync(ReaderPreferencesStorage.Default with { FontFamily = "MissingFontFromAnotherComputer", Palette = "dark" }, default);
+        await x.Open(await x.Add(1, 100));
+        try
+        {
+            var anchor = x.Vm.Position;
+            Assert.Equal("Arial", x.Vm.FontFamily);
+            if (hasSavedPreference)
+            {
+                Assert.Equal("MissingFontFromAnotherComputer", (await preferences.GetAsync(default)).FontFamily);
+                Assert.Equal("dark", x.Vm.Palette);
+            }
+            else Assert.False(File.Exists(Path.Combine(x.Db.Paths.DirectoryPath, "reader-preferences.json")));
+            x.Vm.FontSizeText = "28";
+            await x.Vm.ApplyAppearanceCommand.ExecuteAsync(null);
+            Assert.Equal("", x.Vm.Error);
+            Assert.Equal("", x.Vm.Notice);
+            Assert.Equal(anchor, x.Vm.Position);
+            Assert.Equal("Arial", (await preferences.GetAsync(default)).FontFamily);
+            Assert.Equal(28, (await preferences.GetAsync(default)).FontSize);
+        }
+        finally { Assert.True(await x.Vm.CanLeaveAsync()); }
     });
     [Fact]
     public Task UnknownFontDoesNotChangeSavedLayoutAndResetRecovers() => Ui(async () =>

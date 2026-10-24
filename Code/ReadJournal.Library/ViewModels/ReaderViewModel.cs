@@ -98,14 +98,23 @@ public sealed partial class ReaderViewModel : ViewModelBase
             if (info.Item1 is not { Kind: BookKind.Ebook } book || info.Item2 is not { Status: 0 } file) throw new InvalidOperationException("原文缺失或不可读，请返回书库修复。");
             var key = new DocumentKey(file.FileId, file.SourceSha256, file.CanonicalSha256, file.ParserVersion);
             var identity = new ReaderOpenIdentity(book.Id, book.BookUid, key, epoch, Guid.NewGuid(), version);
-            var document = await _documents.OpenAsync(identity, ct); var appearance = await _preferences.GetAsync(ct);
+            var document = await _documents.OpenAsync(identity, ct); var savedAppearance = await _preferences.GetAsync(ct);
+            var appearance = AvailableAppearance(savedAppearance);
             var position = request.Target?.Start ?? (info.Item3 is { } saved ? ReaderContractValidator.ReadPosition(saved.LastPositionJson) : new(key, document.Chapters[0].Key, 0));
             var resolution = await _documents.ResolveAsync(position, null, ct);
             if (!resolution.IsExact) throw new InvalidOperationException(resolution.Reason ?? "正文位置已失效。");
             ct.ThrowIfCancellationRequested(); if (version != ParameterVersion) return;
             _identity = identity; Document = document; Title = document.Title; _appearance = appearance;
+            if (!appearance.FontFamily.Equals(savedAppearance.FontFamily, StringComparison.OrdinalIgnoreCase))
+                Notice = $"原字体未安装，已临时使用 {appearance.FontFamily}；点击应用排版后保存。";
             FontFamily = appearance.FontFamily; FontSizeText = appearance.FontSize.ToString(System.Globalization.CultureInfo.InvariantCulture); Palette = appearance.Palette;
-            _position = position; Selection = request.Target; await ReflowAsync(); ct.ThrowIfCancellationRequested(); Phase = ReaderPhase.Presenting;
+            _position = position; Selection = request.Target; Phase = ReaderPhase.Presenting;
+            await ReflowAsync(); ct.ThrowIfCancellationRequested();
+        }
+        catch (OperationCanceledException) when (!ct.IsCancellationRequested && version == ParameterVersion && Phase is ReaderPhase.Presenting or ReaderPhase.Active)
+        {
+            // A viewport change can supersede the first layout. Its replacement
+            // still owns presentation and must be allowed to begin the session.
         }
         catch { if (!ct.IsCancellationRequested && version == ParameterVersion) Phase = ReaderPhase.OpenFailed; throw; }
     }
@@ -215,7 +224,7 @@ public sealed partial class ReaderViewModel : ViewModelBase
         if (Phase is ReaderPhase.Closing or ReaderPhase.CloseFailed) return;
         if (!double.TryParse(FontSizeText, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var size)) throw new ArgumentException("字号请输入数字。");
         var appearance = _appearance with { FontFamily = InstalledFont(FontFamily.Trim()), FontSize = size, LineHeight = size * 1.55, Palette = Palette };
-        await _preferences.SaveAsync(appearance, _lifetime.Token); _appearance = appearance; FontFamily = appearance.FontFamily; Error = ""; if (_identity is not null) await ReflowAsync();
+        await _preferences.SaveAsync(appearance, _lifetime.Token); _appearance = appearance; FontFamily = appearance.FontFamily; Error = ""; Notice = ""; if (_identity is not null) await ReflowAsync();
     }
     public override async Task<bool> CanLeaveAsync()
     {

@@ -1,0 +1,14 @@
+{
+  "books\\managed\\7b94f131-21ab-4d89-8164-2e245134d978\\document-v1.json": "3a85ba02250c078d57d3351d8494b2550f27d3134737eb3b44361698ca445fe0",
+  "books\\managed\\7b94f131-21ab-4d89-8164-2e245134d978\\source.txt": "ba8ebde6e60eeb71c89553787f1068353d62f087d8c6f1aafa5d46b64c3d2e8f",
+  "books\\managed\\abc60e0b-9c3b-4383-b577-d8520f60cfcc\\document-v1.json": "0e5992768bc00d9b18c7257a6c57688f3d4fa5674144c71a9014f429243a073b",
+  "books\\managed\\abc60e0b-9c3b-4383-b577-d8520f60cfcc\\source.txt": "b82016062343d9a5fcdcfbbdccbda698baca1d854dc19273b56a8db011e0126a",
+  "books\\managed\\e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\\document-v1.json": "3114e61a5271ee705031b283a64ee407095198ddd86319e51989574759352351",
+  "books\\managed\\e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\\source.epub": "af1c83c7ea63637ca2a314ee64338a9d22ca3d8024d9aec25eaaaa040a31ae82",
+  "books\\managed\\e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\\chapters\\sp-9c9b173769a20a6d5e97255f.utf16": "3f9baf5b4db0f41f56e189b4dcedcf28461f805d11e0460a8d8cea8053809985",
+  "books\\managed\\e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\\chapters\\sp-fc7a78472029444a6d87f557.utf16": "bf07248597c531132aa800f926f02ea493e97de1a1620a515fce3c6745429333",
+  "books\\managed\\e5c1eba7-1f22-4ded-8cf3-f8435ffe5c90\\resources\\r-8cdb4291bcc22472f1032ee8.image": "7276159bac5e71ddb7a95a023b31b2e3cee90bf661d43eaa300303bfb9c7b4be",
+  "books\\managed\\abc60e0b-9c3b-4383-b577-d8520f60cfcc\\chapters\\ch-0001.utf16": "7aa03104e86e4316db2f68fe4495c37e5a3844bf628a840cc0525c11f0a3c3fb",
+  "books\\managed\\7b94f131-21ab-4d89-8164-2e245134d978\\chapters\\ch-0001.utf16": "455017d256d60411cc64dffb60e3035221bcc9fb2920905519d27be843da5785",
+  "books\\managed\\7b94f131-21ab-4d89-8164-2e245134d978\\chapters\\ch-0002.utf16": "8bfe37fa9f548cac2e5a2c396b75940ef56c2067328030ce1876c1883a03e305"
+}

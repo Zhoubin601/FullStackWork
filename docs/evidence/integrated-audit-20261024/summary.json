@@ -1,0 +1,51 @@
+{
+  "baseline": "d28f1d6022ac88cd6ffdee27d393e770cb7e1bd7",
+  "finalTests": {
+    "total": 353,
+    "passed": 351,
+    "failed": 0,
+    "skipped": 2
+  },
+  "fixedDefects": 2,
+  "productionChecks": 153,
+  "rawFilesPreserved": 2,
+  "originalUntrackedFilesPreserved": 119,
+  "mismatches": [],
+  "actualApplicationLogs": 8,
+  "applicationBindingErrors": 0,
+  "realAiCalls": 5,
+  "reportedInputTokens": 845,
+  "reportedOutputTokens": 652,
+  "realAiUndoLoop": {
+    "passed": true,
+    "wholeSelectionExactlyPreserved": true,
+    "deduplicated": true,
+    "copiedBackToOriginal": true,
+    "undoReturnedToBaseline": true,
+    "baselineQuotes": 2
+  },
+  "backupLoop": {
+    "passed": true,
+    "businessTablesCompared": 10,
+    "managedFilesCompared": 12,
+    "allRowsIdentical": true,
+    "allFileHashesIdentical": true,
+    "localThemePreserved": true
+  },
+  "credentialCleanup": {
+    "scannedFiles": 723,
+    "scannedArchiveMembers": 40624,
+    "exactCredentialMatches": 0,
+    "unreadableFiles": 0,
+    "encodings": [
+      "UTF-8",
+      "UTF-16LE"
+    ],
+    "passed": true,
+    "scope": "This audit evidence including runtime data/archives and Code sources; not the entire machine"
+  },
+  "rawAndOutputGitDiff": "",
+  "codeSourceFilesHashed": 209,
+  "committed": false,
+  "pushed": false
+}

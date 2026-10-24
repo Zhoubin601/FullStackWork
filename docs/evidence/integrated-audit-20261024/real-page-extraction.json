@@ -1,0 +1,11 @@
+{
+  "operation": "page-extraction",
+  "scope": "\u5f53\u524d\u9875",
+  "characters": 86,
+  "elapsedMs": 2223,
+  "inputTokens": 291,
+  "outputTokens": 140,
+  "passed": true,
+  "saved": 2,
+  "allOriginalQuotesExactlyMatchSource": true
+}
