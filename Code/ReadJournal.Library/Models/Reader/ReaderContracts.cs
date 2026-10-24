@@ -210,7 +210,7 @@ public sealed record AiAnalysisResult(
 public sealed record AiSettings(
     string HttpsEndpoint, string Model,
     int MaxInputUtf16Units, int MaxOutputTokens,
-    TimeSpan Timeout, bool HasAcknowledgedTextUpload, bool UseMock = true);
+    TimeSpan Timeout, bool HasAcknowledgedTextUpload);
 
 public sealed record BackupValidationResult(
     bool IsValid, int FormatVersion,

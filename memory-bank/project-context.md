@@ -177,3 +177,14 @@ P10补充生产布局UI Dispatcher心跳31样本，最大间隔53.209ms，小于
 ## 2026-10-24 第二轮 UI/UX 深度打磨与新分支交付（`feature/ui-ux-polish-v2`）
 
 基于远端最新 `origin/main`（`8da5ba6`）在独立分支 `feature/ui-ux-polish-v2` 完成第二轮 15 项 UI/UX 存量问题修复并推送远端：修复高 DPI 合成假粗体粘连（`Microsoft YaHei UI` 首选与小字号字重收敛）、深色模式徽章高对比度（`AppBadgeTextBrush` `#6EE7B7` / `AppBadgeAmberTextBrush` `#FBBF24`）、全套按钮 `:pointerover`/`:pressed`/`:disabled` 状态模板与品牌绿 `CheckBox`、全站 14 视图空 `Error`/`Status` 幽灵空行折叠、概览页与书籍详情页子模块空状态提示、阅读器目录拓宽（`188px` + 省略号 + ToolTip）与画布内边距、手动书摘隐藏无效「回到原文」按钮（`QuoteItem.CanOpenSource`）、设置页双列紧凑防首屏裁切及阅读记录弹窗自适应高度。152/152 项生产探针 `ReaderP10Probe` 与单元测试全绿通过，渲染证据已更新至 `docs/evidence/ui-refactor-20261024/`，`raw/` 与 `output/` 未改动。
+
+## 2026-10-24 字体与AI清理（优先于历史状态）
+
+本轮开始真实远端main与本地基线均82070fa，P10此前已在main（历史文档的未合main为当时状态）。新增系统字体搜索/预览/字号/默认恢复、缺失字体校验和Windows中文后备；生产移除Mock及模拟返回，旧UseMock字段兼容忽略，测试替身移到测试工程。工作区与206文件独立源码各339通过/0失败/0跳过，Linux X11虚拟桌面实际流程、153架构性能检查、14处进程中断与EPUB回归通过。
+
+用户要求完成后推送，本轮按feature/reader-fonts-live-ai交付实现与待补验记录。Windows真机未连接，真实DeepSeek目标被云环境代理CONNECT403阻止；本轮真实Provider调用0，不把旧Windows/P9结果视为新版本通过。密钥未落盘，不在此记录。详细结果docs/font-ai-acceptance-20261024.md；正式output/报告不变，候选源码包仅在工作区外用于独立验证。
+
+
+## 2026-10-24 双分支合并后的本地 main
+
+用户确认将 UI 优化 ca79d15 与字体/真实 AI c759bda 均合入 main，包含远端阅读器整段书摘更新 8da5ba6。冲突已整合，Windows Release 最终 348 通过、0 失败、2 项符号链接权限跳过；原有未跟踪资料及 raw/ 保持不变，旧正式交付未重打包。本次仅本地合并，尚未推送远端。真实窗口与真实 API 未重新验收。继续前读 docs/20261024-branch-merge-v1.md 并核对 Git 实际提交。

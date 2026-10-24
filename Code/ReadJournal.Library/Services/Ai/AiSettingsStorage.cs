@@ -33,8 +33,8 @@ public sealed class AiSettingsStorage(DataPaths paths) : IAiSettingsStorage
     {
         Validate(settings);
         // Keep old configuration readable, but require an explicit choice before
-        // sending to a different model. Mock remains available for offline QA.
-        if (!settings.UseMock && settings.Model is "deepseek-chat" or "deepseek-reasoner")
+        // sending to a different model.
+        if (settings.Model is "deepseek-chat" or "deepseek-reasoner")
             throw new AiException("ModelUpdateRequired", "旧模型已不在当前官方列表，请在设置中改用 deepseek-flash 或 deepseek-v4-pro 后保存。");
     }
     public async Task<AiSettings> GetAsync(CancellationToken ct)

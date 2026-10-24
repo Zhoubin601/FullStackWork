@@ -44,3 +44,14 @@ __pycache__/
 /docs/evidence/reader/P10/p7-compatibility/sources/
 /docs/evidence/reader/P10/p7-compatibility/repeated-sources/
 /docs/evidence/reader/P10/**/*.zip
+
+# Font/AI verification: keep evidence, exclude generated business data and synthetic archives.
+/docs/evidence/reader/font-ai-20261024/p7-compatibility/data/
+/docs/evidence/reader/font-ai-20261024/p7-compatibility/sources/
+/docs/evidence/reader/font-ai-20261024/p7-compatibility/repeated-sources/
+/docs/evidence/reader/font-ai-20261024/production/data/
+/docs/evidence/reader/font-ai-20261024/**/*.zip
+
+/docs/evidence/reader/font-ai-20261024/production-final/data/
+
+/docs/evidence/reader/font-ai-20261024/production-quiet/data/

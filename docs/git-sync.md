@@ -120,3 +120,8 @@ P5已推送af7ebb60bb65498628cd3a9631a82b92de7701c2。P6原子定位书摘/按�
 P6已推送并回读34f07e46c7ca56b159ea1e689604836fc1d1992a。P7锁定VersOne.Epub3.3.6/Unlicense与AngleSharp1.8.5/MIT，实现安全有界EPUB适配、spine/嵌套目录/稳定键、原生基本样式/图片页/亲和锚点/纯文本抽取，复用P5/P6会话与书摘闭环。工作区272项通过；独立186文件白名单源码再验。11个确定性支持/降级变体逐本完成会话/书摘/完整ZIP删除恢复回跳，15类异常均拒绝且来源不变；真实Linux窗口两次正常关闭、大图2400×1800缩放、偏移669/b-17图片续读、28字号书摘高亮通过。
 
 验收：docs/evidence/reader/P7/acceptance.md；契约边界：docs/reader-p7-protocol.md；逐本兼容表：docs/evidence/reader/P7/compatibility.json。真实书籍资料未提供（覆盖0），图片实测PNG，其他图像格式未逐类样本验收，Windows保留未测，不推断市场兼容率；无真实内容API。原始资料/正式交付/参考/冻结fixtures保持。最终提交后正常推送feature/reader-native并回读；P4/P5/P6此前均已按阶段推送，用户本轮授权到P7止，P8以后未开始。
+
+
+## 2026-10-24 UI 与字体/真实 AI 双分支本地合并
+
+用户确认将 feature/ui-ux-polish-v2=ca79d15 与 feature/reader-fonts-live-ai=c759bda 均合入 main。已 fetch 并再次核对 origin/main=8da5ba6，三个远端引用未变化。main 先快进远端及 UI 分支，再合并字体/真实 AI，逐项整合 10 个冲突文件，并将旧整段选区协议测试改接测试工程 HTTP Handler。最终 Windows Release 350 项：348 通过、0 失败、2 项符号链接权限跳过。原有 119 个未跟踪文件与 2 个 raw 文件摘要一致，未将这些本地资料提交；output/ 不变。执行和证据见 docs/20261024-branch-merge-v1.md、docs/evidence/merge-20261024/。本次仅本地提交，未推送远端、不删除分支、不改既有 stash；真实窗口与真实 API 未重测。

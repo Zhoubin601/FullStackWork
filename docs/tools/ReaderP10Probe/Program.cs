@@ -48,7 +48,7 @@ await session.Dispatch(async () =>
     Check("Both concrete parser singletons", parsers.Length == 2 && parsers.SequenceEqual(provider.GetServices<IBookParser>()));
     Check("Reader layout concrete/interface identity", ReferenceEquals(locator.ReaderLayoutService, provider.GetRequiredService<IReaderLayoutService>()));
     Check("Document concrete/interface identity", ReferenceEquals(provider.GetRequiredService<ReaderDocumentService>(), provider.GetRequiredService<IReaderDocumentService>()));
-    Check("Mock default and no session credential", (await provider.GetRequiredService<IAiSettingsStorage>().GetAsync(default)).UseMock && !await provider.GetRequiredService<ISecretStore>().HasApiKeyAsync(default));
+    Check("AI requires upload consent and no session credential", !(await provider.GetRequiredService<IAiSettingsStorage>().GetAsync(default)).HasAcknowledgedTextUpload && !await provider.GetRequiredService<ISecretStore>().HasApiKeyAsync(default));
     var root = provider.GetRequiredService<IRootNavigationService>();
     foreach (var field in typeof(RootNavigationConstant).GetFields(BindingFlags.Public | BindingFlags.Static))
     {

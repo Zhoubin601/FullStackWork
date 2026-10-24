@@ -46,8 +46,7 @@
       <Border Classes="card" Padding="18,14">
         <StackPanel Spacing="10">
           <TextBlock Classes="h2" Text="AI 阅读助手"/>
-          <TextBlock Text="默认本地模拟，不联网、不需要密钥。真实模式只发送确认范围内的正文，可能计费。密钥仅在本次应用会话内存中保留，退出后需重新输入，不写入备份。" TextWrapping="Wrap" Classes="muted"/>
-          <CheckBox Content="使用本地模拟（Mock）" IsChecked="{Binding UseMock}"/>
+          <TextBlock Text="仅在主动操作 AI 并确认后，才向 DeepSeek 发送所选范围内的正文，可能计费。本地阅读无需联网。密钥仅在本次应用会话内存中保留，退出后需重新输入，不写入备份。" TextWrapping="Wrap" Classes="muted"/>
 
           <Grid ColumnDefinitions="*,*">
             <StackPanel Grid.Column="0" Spacing="4" Margin="0,0,8,0">
@@ -55,7 +54,7 @@
               <TextBox Text="{Binding AiEndpoint}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Spacing="4" Margin="8,0,0,0">
-              <TextBlock Classes="h3" Text="模型（deepseek-chat / deepseek-reasoner）"/>
+              <TextBlock Classes="h3" Text="模型（deepseek-flash / deepseek-v4-pro）"/>
               <TextBox Text="{Binding AiModel}"/>
             </StackPanel>
           </Grid>
@@ -77,7 +76,7 @@
 
           <DockPanel>
             <Button DockPanel.Dock="Right" Classes="primary" Content="保存 AI 配置" Command="{Binding SaveAiSettingsCommand}" Margin="12,0,0,0"/>
-            <CheckBox Content="我了解真实模式会将确认范围正文发送至 DeepSeek" IsChecked="{Binding UploadAcknowledged}" VerticalAlignment="Center"/>
+            <CheckBox Content="我了解 AI 会将确认范围正文发送至 DeepSeek" IsChecked="{Binding UploadAcknowledged}" VerticalAlignment="Center"/>
           </DockPanel>
 
           <Border Classes="surface-muted" Padding="14,10" Margin="0,2,0,0">
@@ -87,7 +86,7 @@
                 <TextBlock Classes="h3" Text="会话 API 密钥（仅内存保存）" VerticalAlignment="Center"/>
               </DockPanel>
               <Grid ColumnDefinitions="*,Auto,Auto">
-                <TextBox Grid.Column="0" Name="ApiKeyBox" PasswordChar="●" Text="{Binding ApiKeyInput}" Watermark="输入会话 API Key（本地模拟无需填写）" Margin="0,0,10,0"/>
+                <TextBox Grid.Column="0" Name="ApiKeyBox" PasswordChar="●" Text="{Binding ApiKeyInput}" Watermark="输入本次应用会话的 API Key" Margin="0,0,10,0"/>
                 <Button Grid.Column="1" Classes="primary" Content="保存会话密钥" Command="{Binding SaveApiKeyCommand}" Margin="0,0,8,0"/>
                 <Button Grid.Column="2" Classes="danger" Content="删除会话密钥" Command="{Binding DeleteApiKeyCommand}"/>
               </Grid>

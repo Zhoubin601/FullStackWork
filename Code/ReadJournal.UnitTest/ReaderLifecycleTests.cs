@@ -22,14 +22,14 @@ public sealed class ReaderLifecycleTests
         public ReaderSessionService Sessions { get; }
         public ReaderViewModel Vm { get; }
         public MainViewModel Main { get; }
-        public Fixture(ReaderSessionCheckpoints? faults = null, IReaderAlertService? alerts = null)
+        public Fixture(ReaderSessionCheckpoints? faults = null, IReaderAlertService? alerts = null, IReaderFontCatalog? fonts = null)
         {
             Db = new(new DataPaths(Path.Combine(Root, "data"))); Documents = new(Db, Db.Coordinator); Layouts = new(Documents);
             Sessions = new(Db, Db.Coordinator, Documents, new EbookProgressMaintenance(Db, Db.Coordinator), new ReaderClock(), faults ?? new ReaderSessionCheckpoints());
             Main = new MainViewModel(Mock.Of<IMenuNavigationService>());
             var confirmation = new Mock<IAlertService>(); confirmation.Setup(a => a.ConfirmAsync(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(true);
             var quotes = new ReaderQuoteService(Db, Db.Coordinator, Documents, Sessions, new ReadingService(), new ReaderQuoteCheckpoints());
-            Vm = new(Db, Db.Coordinator, Documents, Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), Main, quotes, confirmation.Object);
+            Vm = new(Db, Db.Coordinator, Documents, Layouts, Sessions, new ReaderPreferencesStorage(Db.Paths, new()), Mock.Of<IReaderPlatformService>(), alerts ?? Mock.Of<IReaderAlertService>(), new ReaderClock(), Main, quotes, confirmation.Object, fonts: fonts);
         }
         public async Task<int> Add(int number, int repeats = 2000)
         {
@@ -44,6 +44,50 @@ public sealed class ReaderLifecycleTests
         }
         public void Dispose() { Layouts.Dispose(); Db.Dispose(); if (Directory.Exists(Root)) Directory.Delete(Root, true); }
     }
+    [Fact]
+    public Task SystemFontChangeKeepsAnchorAndPersistsAcrossReaderSessions() => Ui(async () =>
+    {
+        var catalog = new SystemReaderFontCatalog(); Assert.NotEmpty(catalog.FontFamilies);
+        using var x = new Fixture(fonts: catalog); var id = await x.Add(1, 100);
+        await x.Open(id); await x.Vm.NextCommand.ExecuteAsync(null); var anchor = x.Vm.Position;
+        var layout = x.Vm.Page!.Ref.Layout;
+        x.Vm.FontFamily = catalog.FontFamilies.Last(); x.Vm.FontSizeText = "28";
+        await x.Vm.ApplyAppearanceCommand.ExecuteAsync(null);
+        Assert.Equal("", x.Vm.Error); Assert.Equal(anchor, x.Vm.Position); Assert.NotEqual(layout, x.Vm.Page!.Ref.Layout);
+        var saved = await new ReaderPreferencesStorage(x.Db.Paths, new()).GetAsync(default);
+        Assert.Equal(x.Vm.FontFamily, saved.FontFamily); Assert.Equal(28, saved.FontSize);
+        Assert.True(await x.Vm.CanLeaveAsync()); await x.Open(id);
+        Assert.Equal(saved.FontFamily, x.Vm.FontFamily); Assert.Equal("28", x.Vm.FontSizeText); Assert.Equal(anchor, x.Vm.Position);
+        Assert.True(await x.Vm.CanLeaveAsync()); Assert.Equal(2, (await x.Sessions.GetForBookAsync(id, default)).Count);
+    });
+    [Fact]
+    public Task UnknownFontDoesNotChangeSavedLayoutAndResetRecovers() => Ui(async () =>
+    {
+        var catalog = new SystemReaderFontCatalog(); using var x = new Fixture(fonts: catalog);
+        await x.Open(await x.Add(1, 100)); var layout = x.Vm.Page!.Ref.Layout;
+        x.Vm.FontFamily = "NotInstalled-" + Guid.NewGuid();
+        await x.Vm.ApplyAppearanceCommand.ExecuteAsync(null);
+        Assert.Contains("未安装", x.Vm.Error); Assert.Equal(layout, x.Vm.Page!.Ref.Layout);
+        Assert.False(File.Exists(Path.Combine(x.Db.Paths.DirectoryPath, "reader-preferences.json")));
+        await x.Vm.SetViewportAsync(800, 460, 1); Assert.NotNull(x.Vm.Page);
+        await x.Vm.ResetTypographyCommand.ExecuteAsync(null);
+        Assert.Equal("", x.Vm.Error); Assert.Equal(catalog.FontFamilies.First(), x.Vm.FontFamily); Assert.Equal("22", x.Vm.FontSizeText);
+        Assert.True(await x.Vm.CanLeaveAsync());
+    });
+    [Fact]
+    public Task FontPreviewBindingStaysRenderableWhileSearchingAndUsesSelectedFont() => Ui(async () =>
+    {
+        using var x = new Fixture(fonts: new SystemReaderFontCatalog());
+        var preview = new Avalonia.Controls.TextBlock { Text = "中文 Reading" };
+        preview.Bind(Avalonia.Controls.TextBlock.FontFamilyProperty, new Avalonia.Data.Binding(nameof(ReaderViewModel.FontFamily))
+        { Source = x.Vm, Converter = new ReaderFontFamilyConverter() });
+        x.Vm.FontFamily = "#partial search"; Avalonia.Threading.Dispatcher.UIThread.RunJobs();
+        Assert.NotNull(preview.FontFamily);
+        x.Vm.FontFamily = x.Vm.FontFamilies.First(); Avalonia.Threading.Dispatcher.UIThread.RunJobs();
+        Assert.StartsWith(x.Vm.FontFamily, preview.FontFamily.Name);
+        preview.Measure(new Avalonia.Size(800, 100)); Assert.True(preview.DesiredSize.Width > 0);
+        await Task.CompletedTask;
+    });
     [Fact]
     public Task ActualRoutesKeepSingleReaderNodeAndCloseBeforeSwitchThenRestoreDetail() => Ui(async () =>
     {

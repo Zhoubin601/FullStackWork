@@ -67,6 +67,7 @@ public class ServiceLocator
         serviceCollection.AddSingleton<ReaderSessionCheckpoints>();
         serviceCollection.AddSingleton<IReaderSessionService, ReaderSessionService>();
         serviceCollection.AddSingleton<IReaderPreferencesStorage, ReaderPreferencesStorage>();
+        serviceCollection.AddSingleton<IReaderFontCatalog, SystemReaderFontCatalog>();
         serviceCollection.AddSingleton<IAiSettingsStorage, AiSettingsStorage>();
         serviceCollection.AddSingleton<ISecretStore, SessionSecretStore>();
         serviceCollection.AddSingleton<AiBatchCheckpoints>();

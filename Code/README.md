@@ -2,7 +2,7 @@
 
 离线桌面阅读应用，采用 .NET 8、Avalonia 11、CommunityToolkit.Mvvm 和 SQLite，保留UI/Library/UnitTest三工程、真实DI容器、ServiceLocator、ViewLocator与根/菜单/内容三层导航。
 
-当前源码包含2026-10-24的阅读器折叠面板、统一AI范围和选区整段书摘更新。本次在Linux运行自动化与实际X11窗口验收；既有P10的Windows150%结果属于此前版本，本次变更尚未在Windows复测。100%/200%及跨屏仍未验证。旧课程报告与旧源码ZIP属于历史交付，不代表当前源码。
+当前源码合并了2026-10-24的阅读器折叠面板、统一AI范围、选区整段书摘、UI优化和字体搜索预览，并移除了生产AI模拟模式。此前各分支的Linux与Windows验收均属于各自历史版本；本次合并的验证结果见仓库 docs/20261024-branch-merge-v1.md。100%/200%及跨屏仍未验证。旧课程报告与旧源码ZIP属于历史交付，不代表当前源码。
 
 ## 构建与启动
 
@@ -15,7 +15,7 @@ dotnet test ReadJournal.sln -c Release --no-build --no-restore
 dotnet run --project ReadJournal/ReadJournal.csproj -c Release --no-build
 ```
 
-Windows可用 build.ps1，Linux可用build.sh。首次还原需要NuGet来源或完整缓存；Linux运行另需图形桌面和Avalonia原生依赖。业务运行不需联网，只有用户主动确认的真实AI操作联网。离线Mock无需Key。旧SQLite原生包可能产生NETSDK1206旧Alpine RID提示；未据此声称支持Alpine或macOS。
+Windows可用 build.ps1，Linux可用build.sh。首次还原需要NuGet来源或完整缓存；Linux运行另需图形桌面和Avalonia原生依赖。业务运行不需联网，只有用户主动确认的真实AI操作联网。AI 没有本地模拟入口；离线时仍可阅读及保存手动书摘。旧SQLite原生包可能产生NETSDK1206旧Alpine RID提示；未据此声称支持Alpine或macOS。
 
 ## 功能与使用
 
@@ -31,9 +31,9 @@ Windows可用 build.ps1，Linux可用build.sh。首次还原需要NuGet来源或
 
 ## AI设置与数据保护
 
-默认Mock，真实模式需在设置页取消Mock、确认上传知情、保存配置，并在隐藏输入框保存会话Key；每次在阅读器再确认所选范围和可能费用。Key仅在进程内存，保存/错误/离开时输入框清空；退出后必须重新输入，不写普通配置、日志或备份。可随时删除。不要在聊天、源码或文件中保存Key。
+AI 仅调用真实 DeepSeek 服务。需在设置页确认上传知情、保存配置，并在隐藏输入框保存会话Key；每次在阅读器再确认所选范围和可能费用。Key仅在进程内存，保存/错误/离开时输入框清空；退出后必须重新输入，不写普通配置、日志或备份。可随时删除。不要在聊天、源码或文件中保存Key。
 
-2026-10-23官方配置依据使用 https://api.deepseek.com/chat/completions ，默认deepseek-flash，可选deepseek-v4-pro；非流式JSON，显式关闭thinking。旧deepseek-chat/deepseek-reasoner配置仍可读/Mock可用，真实发送前提示更新模型，不静默替换选择。模型与价格可能变化，日后使用前核验官方说明。
+2026-10-23官方配置依据使用 https://api.deepseek.com/chat/completions ，默认deepseek-flash，可选deepseek-v4-pro；非流式JSON，显式关闭thinking。旧deepseek-chat/deepseek-reasoner配置仍可读，发送前提示更新模型，不静默替换选择。模型与价格可能变化，日后使用前核验官方说明。
 
 默认输入24000 UTF16单元、输出2048 token、超时45秒；输入硬上限60000 UTF16单元，页范围最多200页/2048片段。输入上限按字符单元计算，与token或真实费用不同。显示供应商返回的usage；未提供则显示未提供，金额以供应商账单为准。超时/取消/错误不自动重发；本地保存重试不重新请求模型。
 
@@ -44,6 +44,12 @@ Windows可用 build.ps1，Linux可用build.sh。首次还原需要NuGet来源或
 设置页导出完整ZIP，包含业务数据、电子书原件、规范化正文和图片资源；旧JSON仅用于恢复手动书籍。恢复先完整校验并生成当前库自动备份，再整体替换业务数据与受管文件。本机主题、AI配置和会话Key不随业务恢复替换。请备份ZIP，不要仅复制正在写入的SQLite文件。
 
 同一数据目录只能由一个实例写入；崩溃遗留.lock文件本身不表示仍被占用。启动会恢复导入/删除/整体恢复操作日志并对账。遇到RecoveryRequired、损坏日志或Missing时保留operations/staging/trash/backups等材料；补回文件，或明确删除损坏条目后再从完整备份恢复。不得把缺文件库当作完整备份。来源/收件文件不随删除或恢复被移走。
+
+## 本轮字体与 AI 调整（2026-10-24）
+
+阅读器支持搜索全部本机已安装字体，下拉字体预览、中英混排预览、常用字号与恢复默认字体。缺失字体明确提示且不能覆盖已保存排版；切换字体保留正文锚点。输入的字体名在点击应用前不影响正文重排。生产 AI 已移除模拟入口与模拟 HTTP 返回，旧配置中的 UseMock 字段被忽略，保存后清理；无凭据或无上传确认会明确提示。自动测试的模拟 HTTP Handler 仅位于测试工程。
+
+字体与 AI 分支的合并前验收记录见仓库 docs/font-ai-acceptance-20261024.md；本次合并验证见 docs/20261024-branch-merge-v1.md。下文 P9/P10 数字为此前版本历史验收。
 
 ## 验证与已知边界
 

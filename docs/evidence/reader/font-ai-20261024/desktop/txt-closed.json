@@ -1,0 +1,138 @@
+{
+  "integrity": "ok",
+  "foreign_key_errors": [],
+  "tables": {
+    "Book": [
+      {
+        "Id": 1,
+        "Title": "Manual Acceptance",
+        "Author": "Synthetic Author",
+        "Category": "Acceptance",
+        "TotalPages": 100,
+        "Description": "",
+        "CreatedAt": 639284094171282431,
+        "UpdatedAt": 639284094171282431,
+        "Kind": 0,
+        "BookUid": "18669c75-3c56-4b6c-909b-c44b107944fc"
+      },
+      {
+        "Id": 2,
+        "Title": "font-story",
+        "Author": "",
+        "Category": "",
+        "TotalPages": 0,
+        "Description": "",
+        "CreatedAt": 639284094843687137,
+        "UpdatedAt": 639284094843687137,
+        "Kind": 1,
+        "BookUid": "c1a824ff-d926-4aa9-96d1-6cca02b26bb7"
+      }
+    ],
+    "ReadingRecord": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "ReadingDate": 639283968000000000,
+        "StartPage": 1,
+        "EndPage": 20,
+        "Minutes": 15
+      }
+    ],
+    "Quote": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "Text": "Read slowly, remember clearly.",
+        "Thoughts": "Synthetic acceptance note.",
+        "Page": 12,
+        "IsFavorite": 1,
+        "CreatedAt": 639284094607740375,
+        "UpdatedAt": 639284094607740375,
+        "Revision": 0
+      },
+      {
+        "Id": 2,
+        "BookId": 2,
+        "Text": "春天的河流缓缓流过。山间的风带来花香，书页在阳光",
+        "Thoughts": "",
+        "Page": null,
+        "IsFavorite": 0,
+        "CreatedAt": 639284096026867423,
+        "UpdatedAt": 639284096026867423,
+        "Revision": 0
+      }
+    ],
+    "ReadingPlan": [
+      {
+        "Id": 1,
+        "BookId": 1,
+        "StartDate": 639283968000000000,
+        "TargetDate": 639283968000000000
+      }
+    ],
+    "EbookFile": [
+      {
+        "BookId": 2,
+        "FileId": "6a1e787b-b850-4539-b605-df2c89984781",
+        "Format": 1,
+        "SourceRelativePath": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/source.txt",
+        "CanonicalRelativePath": "books/managed/6a1e787b-b850-4539-b605-df2c89984781/document-v1.json",
+        "SourceSha256": "107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38",
+        "CanonicalSha256": "94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55",
+        "SourceBytes": 12467,
+        "ParserVersion": 1,
+        "ImportedUtcTicks": 639284094843687150,
+        "Status": 0
+      }
+    ],
+    "EbookProgress": [
+      {
+        "BookId": 2,
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1}}",
+        "LastPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":473,\"NonTextBlockKey\":null}}",
+        "HasStarted": 1,
+        "CurrentPercent": 11.053984575835475,
+        "CompletedUtcTicks": null,
+        "CompletedOffsetMinutes": null,
+        "LastOpenedUtcTicks": 639284095849383215,
+        "LastSavedUtcTicks": 639284096040210526
+      }
+    ],
+    "EbookReadingSession": [
+      {
+        "SessionId": "c7939dc6-3fa6-4fbc-a2a6-6de91503a4ad",
+        "BookId": 2,
+        "BookUid": "c1a824ff-d926-4aa9-96d1-6cca02b26bb7",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 0.0,
+        "OpenedUtcTicks": 639284095015352340,
+        "ClosedUtcTicks": 639284095528506231,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 51315,
+        "CloseLocalDate": "2026-10-24",
+        "ClockAnomaly": 0
+      },
+      {
+        "SessionId": "adc5dc72-0148-46a6-bd12-0e5dacefd61d",
+        "BookId": 2,
+        "BookUid": "c1a824ff-d926-4aa9-96d1-6cca02b26bb7",
+        "DocumentKeyJson": "{\"ContractVersion\":1,\"Value\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1}}",
+        "StartPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":0,\"NonTextBlockKey\":null}}",
+        "EndPositionJson": "{\"ContractVersion\":1,\"Value\":{\"Document\":{\"FileId\":\"6a1e787b-b850-4539-b605-df2c89984781\",\"SourceSha256\":\"107a071ca56360c77ac82dc538e8f6324c268b52746a277648db474e02ad3a38\",\"CanonicalSha256\":\"94fb43e401636668a0f8501d3145166f42103ea76686bbfefca239a6df304c55\",\"ParserVersion\":1},\"ChapterKey\":\"ch-0001\",\"Utf16Offset\":473,\"NonTextBlockKey\":null}}",
+        "StartPercent": 0.0,
+        "EndPercent": 11.053984575835475,
+        "OpenedUtcTicks": 639284095849383215,
+        "ClosedUtcTicks": 639284096040210526,
+        "OpenedOffsetMinutes": 0,
+        "ClosedOffsetMinutes": 0,
+        "DurationMilliseconds": 19082,
+        "CloseLocalDate": "2026-10-24",
+        "ClockAnomaly": 0
+      }
+    ]
+  }
+}

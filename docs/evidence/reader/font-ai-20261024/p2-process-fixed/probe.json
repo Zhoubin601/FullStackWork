@@ -1,0 +1,223 @@
+{
+  "platform": "Unix 6.18.55.0",
+  "runtime": "8.0.30",
+  "schemaBefore": 1,
+  "legacyAllFieldsMatch": true,
+  "schemaAfter": 2,
+  "books": [
+    {
+      "Id": 11,
+      "BookUid": "8d6b8e3b-0282-45db-b469-b7f5d484c825",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u8FDB\u884C\u4E2D\u7684\u4E66"
+    },
+    {
+      "Id": 27,
+      "BookUid": "d3668e00-a41c-4746-b696-7e93558e1996",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u5DF2\u8BFB\u5B8C\u7684\u4E66"
+    },
+    {
+      "Id": 93,
+      "BookUid": "3b3a4550-6114-4c0d-a28e-e539155c0d78",
+      "Kind": 0,
+      "Title": "[\u5408\u6210]\u672A\u5F00\u59CB\u7684\u4E66"
+    }
+  ],
+  "quoteRevisions": [
+    {
+      "Id": 41,
+      "Revision": 0
+    },
+    {
+      "Id": 57,
+      "Revision": 0
+    }
+  ],
+  "schemaObjects": [
+    {
+      "type": "index",
+      "name": "IX_Book_BookUid",
+      "sql": "CREATE UNIQUE INDEX IX_Book_BookUid ON Book(BookUid)"
+    },
+    {
+      "type": "index",
+      "name": "IX_EbookSession_BookClosed",
+      "sql": "CREATE INDEX IX_EbookSession_BookClosed ON EbookReadingSession(BookId,ClosedUtcTicks)"
+    },
+    {
+      "type": "table",
+      "name": "AiGenerationBatch",
+      "sql": "CREATE TABLE AiGenerationBatch (BatchId TEXT PRIMARY KEY NOT NULL, BookId INTEGER NOT NULL REFERENCES Book(Id) ON DELETE CASCADE, BookUid TEXT NOT NULL, DocumentKeyJson TEXT NOT NULL, ScopeSha256 TEXT NOT NULL CHECK(length(ScopeSha256)=64), CreatedUtcTicks INTEGER NOT NULL, Status INTEGER NOT NULL CHECK(Status IN(0,1)), InsertedCount INTEGER NOT NULL CHECK(InsertedCount\u003E=0), DuplicateCount INTEGER NOT NULL CHECK(DuplicateCount\u003E=0), RejectedCount INTEGER NOT NULL CHECK(RejectedCount\u003E=0), InsertedQuoteIdsJson TEXT NOT NULL)"
+    },
+    {
+      "type": "table",
+      "name": "AiGenerationBatchItem",
+      "sql": "CREATE TABLE AiGenerationBatchItem (BatchId TEXT NOT NULL REFERENCES AiGenerationBatch(BatchId) ON DELETE CASCADE, QuoteId INTEGER NOT NULL REFERENCES Quote(Id) ON DELETE CASCADE, CreatedRevision INTEGER NOT NULL CHECK(CreatedRevision\u003E=0), CreatedContentHash TEXT NOT NULL CHECK(length(CreatedContentHash)=64), PRIMARY KEY(BatchId,QuoteId))"
+    },
+    {
+      "type": "table",
+      "name": "AppMetadata",
+      "sql": "CREATE TABLE AppMetadata (Key TEXT PRIMARY KEY NOT NULL, Value TEXT NOT NULL)"
+    },
+    {
+      "type": "table",
+      "name": "Book",
+      "sql": "CREATE TABLE \u0022Book\u0022 (\n\u0022Id\u0022 integer primary key autoincrement not null ,\n\u0022Title\u0022 varchar ,\n\u0022Author\u0022 varchar ,\n\u0022Category\u0022 varchar ,\n\u0022TotalPages\u0022 integer ,\n\u0022Description\u0022 varchar ,\n\u0022CreatedAt\u0022 bigint ,\n\u0022UpdatedAt\u0022 bigint , Kind INTEGER NOT NULL DEFAULT 0 CHECK(Kind IN (0,1)), BookUid TEXT NOT NULL DEFAULT \u0027\u0027)"
+    },
+    {
+      "type": "table",
+      "name": "EbookFile",
+      "sql": "CREATE TABLE EbookFile (BookId INTEGER PRIMARY KEY REFERENCES Book(Id) ON DELETE CASCADE, FileId TEXT NOT NULL UNIQUE, Format INTEGER NOT NULL CHECK(Format IN (1,2)), SourceRelativePath TEXT NOT NULL, CanonicalRelativePath TEXT NOT NULL, SourceSha256 TEXT NOT NULL UNIQUE CHECK(length(SourceSha256)=64), CanonicalSha256 TEXT NOT NULL CHECK(length(CanonicalSha256)=64), SourceBytes INTEGER NOT NULL CHECK(SourceBytes\u003E=0), ParserVersion INTEGER NOT NULL CHECK(ParserVersion\u003E0), ImportedUtcTicks INTEGER NOT NULL, Status INTEGER NOT NULL CHECK(Status IN(0,1,2)))"
+    },
+    {
+      "type": "table",
+      "name": "EbookProgress",
+      "sql": "CREATE TABLE EbookProgress (BookId INTEGER PRIMARY KEY REFERENCES Book(Id) ON DELETE CASCADE, DocumentKeyJson TEXT NOT NULL, LastPositionJson TEXT NOT NULL, HasStarted INTEGER NOT NULL CHECK(HasStarted IN(0,1)), CurrentPercent REAL NOT NULL DEFAULT 0 CHECK(CurrentPercent\u003E=0 AND CurrentPercent\u003C=100), CompletedUtcTicks INTEGER NULL, CompletedOffsetMinutes INTEGER NULL, LastOpenedUtcTicks INTEGER NOT NULL, LastSavedUtcTicks INTEGER NOT NULL, CHECK(CompletedUtcTicks IS NULL OR HasStarted=1), CHECK((CompletedUtcTicks IS NULL)=(CompletedOffsetMinutes IS NULL)), CHECK((CompletedUtcTicks IS NULL AND CompletedOffsetMinutes IS NULL) OR (CompletedUtcTicks IS NOT NULL AND CompletedOffsetMinutes BETWEEN -840 AND 840)))"
+    },
+    {
+      "type": "table",
+      "name": "EbookReadingSession",
+      "sql": "CREATE TABLE EbookReadingSession (SessionId TEXT PRIMARY KEY NOT NULL, BookId INTEGER NOT NULL REFERENCES Book(Id) ON DELETE CASCADE, BookUid TEXT NOT NULL, DocumentKeyJson TEXT NOT NULL, StartPositionJson TEXT NOT NULL, EndPositionJson TEXT NOT NULL, StartPercent REAL NOT NULL CHECK(StartPercent\u003E=0 AND StartPercent\u003C=100), EndPercent REAL NOT NULL CHECK(EndPercent\u003E=0 AND EndPercent\u003C=100), OpenedUtcTicks INTEGER NOT NULL, ClosedUtcTicks INTEGER NOT NULL, OpenedOffsetMinutes INTEGER NOT NULL CHECK(OpenedOffsetMinutes BETWEEN -840 AND 840), ClosedOffsetMinutes INTEGER NOT NULL CHECK(ClosedOffsetMinutes BETWEEN -840 AND 840), DurationMilliseconds INTEGER NOT NULL CHECK(DurationMilliseconds\u003E=0), CloseLocalDate TEXT NOT NULL, ClockAnomaly INTEGER NOT NULL CHECK(ClockAnomaly IN(0,1)))"
+    },
+    {
+      "type": "table",
+      "name": "Quote",
+      "sql": "CREATE TABLE Quote (Id INTEGER PRIMARY KEY AUTOINCREMENT, BookId INTEGER NOT NULL REFERENCES Book(Id) ON DELETE CASCADE, Text TEXT NOT NULL, Thoughts TEXT, Page INTEGER, IsFavorite INTEGER NOT NULL, CreatedAt BIGINT NOT NULL, UpdatedAt BIGINT NOT NULL, Revision INTEGER NOT NULL DEFAULT 0 CHECK(Revision\u003E=0))"
+    },
+    {
+      "type": "table",
+      "name": "QuoteOrigin",
+      "sql": "CREATE TABLE QuoteOrigin (QuoteId INTEGER PRIMARY KEY REFERENCES Quote(Id) ON DELETE CASCADE, Source INTEGER NOT NULL CHECK(Source IN(0,1,2)), OriginalText TEXT NOT NULL, DocumentKeyJson TEXT NULL, StartPositionJson TEXT NULL, EndPositionJson TEXT NULL, PrefixHash TEXT NULL, SuffixHash TEXT NULL, LocationStatus INTEGER NOT NULL CHECK(LocationStatus IN(0,1,2)), BatchId TEXT NULL REFERENCES AiGenerationBatch(BatchId) ON DELETE SET NULL, DedupeKey TEXT NULL UNIQUE, CHECK((DocumentKeyJson IS NULL AND StartPositionJson IS NULL AND EndPositionJson IS NULL AND DedupeKey IS NULL) OR (DocumentKeyJson IS NOT NULL AND StartPositionJson IS NOT NULL AND EndPositionJson IS NOT NULL AND DedupeKey IS NOT NULL)))"
+    },
+    {
+      "type": "table",
+      "name": "ReadingPlan",
+      "sql": "CREATE TABLE ReadingPlan (Id INTEGER PRIMARY KEY AUTOINCREMENT, BookId INTEGER NOT NULL REFERENCES Book(Id) ON DELETE CASCADE, StartDate BIGINT NOT NULL, TargetDate BIGINT NOT NULL)"
+    },
+    {
+      "type": "table",
+      "name": "ReadingRecord",
+      "sql": "CREATE TABLE ReadingRecord (Id INTEGER PRIMARY KEY AUTOINCREMENT, BookId INTEGER NOT NULL REFERENCES Book(Id) ON DELETE CASCADE, ReadingDate BIGINT NOT NULL, StartPage INTEGER NOT NULL CHECK(StartPage\u003E=1), EndPage INTEGER NOT NULL CHECK(EndPage\u003E=StartPage), Minutes INTEGER NOT NULL CHECK(Minutes\u003E0))"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_AiBatch_Receipt_Immutable",
+      "sql": "CREATE TRIGGER TR_AiBatch_Receipt_Immutable BEFORE UPDATE ON AiGenerationBatch WHEN NEW.BatchId\u003C\u003EOLD.BatchId OR NEW.BookId\u003C\u003EOLD.BookId OR NEW.BookUid\u003C\u003EOLD.BookUid OR NEW.DocumentKeyJson\u003C\u003EOLD.DocumentKeyJson OR NEW.ScopeSha256\u003C\u003EOLD.ScopeSha256 OR NEW.CreatedUtcTicks\u003C\u003EOLD.CreatedUtcTicks OR NEW.InsertedQuoteIdsJson\u003C\u003EOLD.InsertedQuoteIdsJson OR NEW.InsertedCount\u003C\u003EOLD.InsertedCount OR NEW.DuplicateCount\u003C\u003EOLD.DuplicateCount OR NEW.RejectedCount\u003C\u003EOLD.RejectedCount BEGIN SELECT RAISE(ABORT,\u0027immutable batch receipt\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_AiGenerationBatch_INSERT_Identity",
+      "sql": "CREATE TRIGGER TR_AiGenerationBatch_INSERT_Identity BEFORE INSERT ON AiGenerationBatch WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND BookUid=NEW.BookUid) BEGIN SELECT RAISE(ABORT,\u0027book identity mismatch\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_AiGenerationBatch_INSERT_Kind",
+      "sql": "CREATE TRIGGER TR_AiGenerationBatch_INSERT_Kind BEFORE INSERT ON AiGenerationBatch WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_AiGenerationBatch_UPDATE_Identity",
+      "sql": "CREATE TRIGGER TR_AiGenerationBatch_UPDATE_Identity BEFORE UPDATE ON AiGenerationBatch WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND BookUid=NEW.BookUid) BEGIN SELECT RAISE(ABORT,\u0027book identity mismatch\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_AiGenerationBatch_UPDATE_Kind",
+      "sql": "CREATE TRIGGER TR_AiGenerationBatch_UPDATE_Kind BEFORE UPDATE ON AiGenerationBatch WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_Book_INSERT_Identity",
+      "sql": "CREATE TRIGGER TR_Book_INSERT_Identity BEFORE INSERT ON Book WHEN length(NEW.BookUid)\u003C\u003E36 OR NEW.BookUid=\u002700000000-0000-0000-0000-000000000000\u0027 OR (NEW.Kind=0 AND NEW.TotalPages\u003C=0) OR (NEW.Kind=1 AND NEW.TotalPages\u003C\u003E0) BEGIN SELECT RAISE(ABORT,\u0027invalid book identity/kind/pages\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_Book_UPDATE_Identity",
+      "sql": "CREATE TRIGGER TR_Book_UPDATE_Identity BEFORE UPDATE ON Book WHEN length(NEW.BookUid)\u003C\u003E36 OR NEW.BookUid=\u002700000000-0000-0000-0000-000000000000\u0027 OR (NEW.Kind=0 AND NEW.TotalPages\u003C=0) OR (NEW.Kind=1 AND NEW.TotalPages\u003C\u003E0) BEGIN SELECT RAISE(ABORT,\u0027invalid book identity/kind/pages\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_Book_Update_Immutable",
+      "sql": "CREATE TRIGGER TR_Book_Update_Immutable BEFORE UPDATE ON Book WHEN NEW.Kind\u003C\u003EOLD.Kind OR NEW.BookUid\u003C\u003EOLD.BookUid BEGIN SELECT RAISE(ABORT,\u0027immutable book kind/uid\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookFile_INSERT_Kind",
+      "sql": "CREATE TRIGGER TR_EbookFile_INSERT_Kind BEFORE INSERT ON EbookFile WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookFile_UPDATE_Kind",
+      "sql": "CREATE TRIGGER TR_EbookFile_UPDATE_Kind BEFORE UPDATE ON EbookFile WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookProgress_INSERT_Kind",
+      "sql": "CREATE TRIGGER TR_EbookProgress_INSERT_Kind BEFORE INSERT ON EbookProgress WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookProgress_UPDATE_Kind",
+      "sql": "CREATE TRIGGER TR_EbookProgress_UPDATE_Kind BEFORE UPDATE ON EbookProgress WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookReadingSession_INSERT_Identity",
+      "sql": "CREATE TRIGGER TR_EbookReadingSession_INSERT_Identity BEFORE INSERT ON EbookReadingSession WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND BookUid=NEW.BookUid) BEGIN SELECT RAISE(ABORT,\u0027book identity mismatch\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookReadingSession_INSERT_Kind",
+      "sql": "CREATE TRIGGER TR_EbookReadingSession_INSERT_Kind BEFORE INSERT ON EbookReadingSession WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookReadingSession_UPDATE_Identity",
+      "sql": "CREATE TRIGGER TR_EbookReadingSession_UPDATE_Identity BEFORE UPDATE ON EbookReadingSession WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND BookUid=NEW.BookUid) BEGIN SELECT RAISE(ABORT,\u0027book identity mismatch\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_EbookReadingSession_UPDATE_Kind",
+      "sql": "CREATE TRIGGER TR_EbookReadingSession_UPDATE_Kind BEFORE UPDATE ON EbookReadingSession WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook requires ebook book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_Quote_INSERT_Page",
+      "sql": "CREATE TRIGGER TR_Quote_INSERT_Page BEFORE INSERT ON Quote WHEN NEW.Page IS NOT NULL AND EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook quote has no physical page\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_Quote_UPDATE_Page",
+      "sql": "CREATE TRIGGER TR_Quote_UPDATE_Page BEFORE UPDATE ON Quote WHEN NEW.Page IS NOT NULL AND EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=1) BEGIN SELECT RAISE(ABORT,\u0027ebook quote has no physical page\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_ReadingRecord_INSERT_Manual",
+      "sql": "CREATE TRIGGER TR_ReadingRecord_INSERT_Manual BEFORE INSERT ON ReadingRecord WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=0) BEGIN SELECT RAISE(ABORT,\u0027manual record requires manual book\u0027); END"
+    },
+    {
+      "type": "trigger",
+      "name": "TR_ReadingRecord_UPDATE_Manual",
+      "sql": "CREATE TRIGGER TR_ReadingRecord_UPDATE_Manual BEFORE UPDATE ON ReadingRecord WHEN NOT EXISTS(SELECT 1 FROM Book WHERE Id=NEW.BookId AND Kind=0) BEGIN SELECT RAISE(ABORT,\u0027manual record requires manual book\u0027); END"
+    }
+  ],
+  "integrity": "ok",
+  "foreignKeyViolations": 0,
+  "secondProcessWhileHeld": {
+    "ExitCode": 23,
+    "Output": "\u8BE5\u4E66\u5E93\u5DF2\u88AB\u53E6\u4E00\u5B9E\u4F8B\u6253\u5F00\uFF0C\u6216\u9501\u6587\u4EF6\u65E0\u6CD5\u8BBF\u95EE\u3002\u8BF7\u5173\u95ED\u53E6\u4E00\u5B9E\u4F8B\u540E\u91CD\u8BD5\u3002\n",
+    "Error": ""
+  },
+  "blockedProcessWriteCount": 0,
+  "secondProcessAfterRelease": {
+    "ExitCode": 0,
+    "Output": "lock-acquired-and-database-write-committed\n",
+    "Error": ""
+  },
+  "secondProcessAfterCrashWithStaleLockFile": {
+    "ExitCode": 0,
+    "Output": "lock-acquired-and-database-write-committed\n",
+    "Error": ""
+  },
+  "passed": true
+}

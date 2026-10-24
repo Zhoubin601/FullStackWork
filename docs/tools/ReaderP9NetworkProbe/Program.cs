@@ -24,7 +24,7 @@ var original = await documents.ExtractAsync(range, default);
 var scope = new AiScopeSnapshot(context, null, "网络失败探针选区", original, "");
 scope = scope with { ScopeSha256 = AiIntegrity.ScopeHash(scope) };
 var settings = new AiSettingsStorage(db.Paths);
-await settings.SaveAsync(AiSettingsStorage.Default with { UseMock = false, HasAcknowledgedTextUpload = true, Timeout = TimeSpan.FromSeconds(3) }, default);
+await settings.SaveAsync(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true, Timeout = TimeSpan.FromSeconds(3) }, default);
 var secrets = new SessionSecretStore(); await secrets.WriteApiKeyAsync("synthetic-network-probe-" + Guid.NewGuid().ToString("N"), default);
 // Exercise real sockets with a refused loopback proxy, without changing OS routing,
 // using a real key, or contacting DeepSeek. The API key is never sent over a socket.

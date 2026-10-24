@@ -82,10 +82,12 @@ public sealed class AiSelectionWorkflowTests
     }
 
     [Fact]
-    public async Task ActualMockHttpProtocolSupportsWholeSelectionWithoutAskingModelToCopyOriginal()
+    public async Task TestHttpProtocolSupportsWholeSelectionWithoutAskingModelToCopyOriginal()
     {
         await using var x = await AiTestFixture.Create();
-        using var client = new DeepSeekClient(x.Settings, x.Secrets);
+        await x.Settings.SaveAsync(AiSettingsStorage.Default with { HasAcknowledgedTextUpload = true }, default);
+        await x.Secrets.WriteApiKeyAsync("fictional-" + Guid.NewGuid().ToString("N"), default);
+        using var client = new DeepSeekClient(x.Settings, x.Secrets, new AiMockHandler());
         var service = new ReaderAiService(client, x.Settings, new AiQuoteVerifier(), x.Quotes, x.Sessions, x.Db.Coordinator, x.Documents);
         var scope = await x.Factory.SelectionAsync(x.Context, x.Range(0, AiTestFixture.Text.Length), default);
         Assert.Equal(AiScopeKind.Selection, scope.Kind);

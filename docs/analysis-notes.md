@@ -423,3 +423,12 @@ P10是发布门禁，必须区分历史验收、当前重验和未覆盖平台�
 3. **消除全站空字符串幽灵空行与补齐子模块空态（14 个视图）**：全站 `Error`、`OperationMessage`、`Status`、`Notice`、`BatchStatus`、`AiStatus` 绑定统一增加 `StringConverters.IsNotNullOrEmpty` 显隐转换，非空 `Error` 包裹 `Border.error-banner`；补齐 `OverviewView`（在读、近期记录、待完成计划）与 `BookDetailView`（阅读历史、关联计划、关联书摘）内部空状态提示；空列表时隐藏 `BookListView` 与 `BookDetailView` 的分页栏。
 4. **阅读器三栏与可折叠面板融合优化（`ReaderView.axaml`, `MainView.axaml`）**：融合 `8da5ba6` 的三面板独立折叠、`AiPageRangeInputs` 按需显隐与统一「AI 解读」按钮；将 `TocPanel` 宽度由 `164` 拓宽至 `188` 并为目录项增加 `TextTrimming="CharacterEllipsis"` 与 `ToolTip.Tip`；阅读画布外框 `Padding` 提升至 `8`；为 `AiResult` 增加 `Watermark` 占位提示。
 5. **书摘回跳按钮精准显隐、设置页首屏防裁切与记录弹窗优化（`QuoteItem.cs`, `QuoteListView.axaml`, `QuoteEditView.axaml`, `SettingsView.axaml`, `ReadingRecordEditView.axaml`, `AlertService.cs`）**：在 `QuoteItem` 新增 `CanOpenSource => Source != Reader.QuoteSource.Manual;`，手动书摘不再误显示无效的「回到原文」按钮；`QuoteEditView` 仅在 `OriginalText` 非空时展示来源原文区；`SettingsView` 将「外观主题」与「试用演示」并排为双列卡片并紧凑化内边距（严格保持 `Name="ApiKeyBox" PasswordChar="●"` 及 `Edit` 索引顺序），彻底消除 800px 窗口首屏底部按钮半截裁切；`AlertService.EditRecordAsync` 改为 `SizeToContent.Height` 自适应高度，消除弹窗底部大片空白。
+
+## 2026-10-24 字体与AI清理
+
+生产AI移除模拟而非取消实际AI功能；测试替身只在测试工程。系统字体由UI实现目录接口，Library不引入Avalonia。工作区与独立源码各339通过，Linux窗口及故障探针通过。当前代理CONNECT403且无Windows环境，真实API和Windows全流程未验，故保留待补状态并推送功能分支。详见font-ai-acceptance-20261024.md。
+
+
+## 2026-10-24 双分支合并判断
+
+以 UI 分支较新的界面结构为基础，嵌入字体分支的搜索/预览/重置控件，并使用该分支的真实 AI 服务与配置。AI 范围统一、选区整段保存、折叠重排保护保留；生产模拟入口移除。10 个冲突文件均逐项整合，自动合并的模型、ReaderViewModel 与测试也做源码核对。执行与实测结果集中记录于 docs/20261024-branch-merge-v1.md。

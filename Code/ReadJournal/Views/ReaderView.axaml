@@ -1,4 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:r="using:ReadJournal.Reader" x:Class="ReadJournal.Views.ReaderView">
+  <UserControl.Resources>
+    <r:ReaderFontFamilyConverter x:Key="ReaderFontFamilyConverter"/>
+  </UserControl.Resources>
   <UserControl.Styles>
     <Style Selector="ToggleButton.reader-panel">
       <Setter Property="MinHeight" Value="36"/>
@@ -58,19 +61,30 @@
     </StackPanel>
 
     <Border Name="AppearancePanel" Grid.Row="1" IsVisible="{Binding IsAppearanceExpanded}" Classes="card-compact" Padding="12,8" Margin="0,0,0,6">
-      <WrapPanel VerticalAlignment="Center">
-        <TextBlock Text="字体" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
-        <TextBox Text="{Binding FontFamily}" Width="165" Margin="0,0,10,0" ToolTip.Tip="输入正文字体名称"/>
-        <TextBlock Text="字号" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
-        <TextBox Text="{Binding FontSizeText}" Width="58" Margin="0,0,10,0" ToolTip.Tip="输入字号大小"/>
-        <TextBlock Text="纸张" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
-        <ComboBox SelectedItem="{Binding Palette}" Width="105" Margin="0,0,10,0" ToolTip.Tip="选择阅读纸张主题：paper（暖黄纸感）/ light（纯白）/ dark（深色夜间）">
-          <x:String>paper</x:String>
-          <x:String>light</x:String>
-          <x:String>dark</x:String>
-        </ComboBox>
-        <Button Classes="primary" Content="应用排版" Command="{Binding ApplyAppearanceCommand}" Margin="0,0,8,0"/>
-      </WrapPanel>
+      <StackPanel Spacing="6">
+        <WrapPanel VerticalAlignment="Center">
+          <TextBlock Text="字体" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+          <AutoCompleteBox Name="FontFamilyBox" ItemsSource="{Binding FontFamilies}" Text="{Binding FontFamily,Mode=TwoWay}" FilterMode="ContainsOrdinal" MinimumPrefixLength="0" Width="230" Margin="0,0,10,0" Watermark="搜索本机字体" ToolTip.Tip="输入名称搜索并选择本机已安装字体" AutomationProperties.Name="搜索本机字体">
+            <AutoCompleteBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding}" FontFamily="{Binding Converter={StaticResource ReaderFontFamilyConverter}}" Margin="2,4"/>
+              </DataTemplate>
+            </AutoCompleteBox.ItemTemplate>
+          </AutoCompleteBox>
+          <TextBlock Text="字号" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+          <AutoCompleteBox ItemsSource="{Binding SuggestedFontSizes}" Text="{Binding FontSizeText,Mode=TwoWay}" MinimumPrefixLength="0" Width="65" Margin="0,0,10,0" ToolTip.Tip="选择或输入字号大小" AutomationProperties.Name="正文字号"/>
+          <TextBlock Text="纸张" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
+          <ComboBox SelectedItem="{Binding Palette}" Width="105" Margin="0,0,10,0" ToolTip.Tip="选择阅读纸张主题：paper（暖黄纸感）/ light（纯白）/ dark（深色夜间）">
+            <x:String>paper</x:String>
+            <x:String>light</x:String>
+            <x:String>dark</x:String>
+          </ComboBox>
+          <Button Classes="primary" Content="应用排版" Command="{Binding ApplyAppearanceCommand}" Margin="0,0,8,0"/>
+          <Button Classes="secondary" Content="恢复默认字体" Command="{Binding ResetTypographyCommand}" Margin="0,0,8,0"/>
+        </WrapPanel>
+        <TextBlock Name="FontPreview" Text="春日读书，山河入卷。 Reading 123" FontFamily="{Binding FontFamily,Converter={StaticResource ReaderFontFamilyConverter}}" FontSize="20" TextTrimming="CharacterEllipsis"/>
+        <TextBlock Text="{Binding FontHint}" Classes="muted" TextWrapping="Wrap"/>
+      </StackPanel>
     </Border>
 
     <StackPanel Grid.Row="2" Spacing="4">

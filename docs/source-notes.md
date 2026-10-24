@@ -444,3 +444,14 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
   - 业务模型与弹窗服务：`Code/ReadJournal.Library/Models/QuoteItem.cs`（新增 `CanOpenSource`）、`Code/ReadJournal/Services/AlertService.cs`
   - 全部 14 个 AXAML 视图：`MainView.axaml`、`InitializationView.axaml`、`OverviewView.axaml`、`BookListView.axaml`、`BookDetailView.axaml`、`BookEditView.axaml`、`ReaderView.axaml`、`QuoteListView.axaml`、`QuoteEditView.axaml`、`ReadingPlanListView.axaml`、`ReadingPlanEditView.axaml`、`ReadingRecordEditView.axaml`、`StatisticsView.axaml`、`SettingsView.axaml`
   - 测试与探针验证：`Code/ReadJournal.UnitTest/*.cs`（全套单测与新增 `AiSelectionWorkflowTests.cs`）、`docs/tools/ReaderP10Probe/Program.cs` 及 `docs/evidence/ui-refactor-20261024/` 渲染截图证据。
+
+## 2026-10-24 字体与AI清理来源
+
+依据当前用户指令、Code/Reader相关实现、output/reader-plan-v2既有规划及docs/reader-p10-acceptance-20261023.md。原始规划raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md仅作已有需求依据，不修改。实测证据docs/evidence/reader/font-ai-20261024；本轮未增加外部业务资料。
+
+
+## 2026-10-24 双分支合并来源
+
+- 用户本轮明确确认：将 UI 优化和字体与真实 AI 两个分支均合入 main。
+- Git 实际来源：origin/main=8da5ba6、feature/ui-ux-polish-v2=ca79d15、origin/feature/reader-fonts-live-ai=c759bda；未引用外部调研资料，raw/ 仅做摘要比对。
+- 本轮执行与验证：docs/20261024-branch-merge-v1.md、docs/evidence/merge-20261024/；历史分支日志不能代替本轮结果。

@@ -1,0 +1,189 @@
+{"op": "double", "x": 800, "y": 122}
+{"op": "click", "x": 90, "y": 252}
+{"op": "capture", "name": "02-library"}
+{"op": "click", "x": 1512, "y": 126}
+{"op": "capture", "name": "03-manual-form"}
+{"op": "fill", "x": 700, "y": 233, "text": "Manual Acceptance"}
+{"op": "fill", "x": 700, "y": 316, "text": "Synthetic Author"}
+{"op": "fill", "x": 700, "y": 397, "text": "Acceptance"}
+{"op": "fill", "x": 700, "y": 479, "text": "0"}
+{"op": "click", "x": 601, "y": 705}
+{"op": "capture", "name": "04-invalid-pages"}
+{"op": "fill", "x": 700, "y": 479, "text": "100"}
+{"op": "click", "x": 601, "y": 705}
+{"op": "capture", "name": "05-manual-added"}
+{"op": "snapshot", "name": "manual-added"}
+{"op": "click", "x": 1511, "y": 396}
+{"op": "capture", "name": "06-manual-detail"}
+{"op": "click", "x": 390, "y": 358}
+{"op": "capture", "name": "07-reading-record-form"}
+{"op": "fill", "x": 690, "y": 543, "text": "20"}
+{"op": "fill", "x": 690, "y": 624, "text": "15"}
+{"op": "click", "x": 561, "y": 722}
+{"op": "click", "x": 500, "y": 357}
+{"op": "capture", "name": "08-quote-form"}
+{"op": "fill", "x": 750, "y": 476, "text": "Read slowly, remember clearly."}
+{"op": "fill", "x": 750, "y": 608, "text": "Synthetic acceptance note."}
+{"op": "fill", "x": 750, "y": 717, "text": "12"}
+{"op": "click", "x": 555, "y": 763}
+{"op": "click", "x": 595, "y": 855}
+{"op": "click", "x": 600, "y": 358}
+{"op": "capture", "name": "09-plan-form"}
+{"op": "click", "x": 596, "y": 489}
+{"op": "click", "x": 90, "y": 406}
+{"op": "capture", "name": "10-manual-statistics"}
+{"op": "snapshot", "name": "manual-complete"}
+{"op": "click", "x": 90, "y": 455}
+{"op": "capture", "name": "11-settings-no-mock"}
+{"op": "click", "x": 90, "y": 250}
+{"op": "click", "x": 566, "y": 183, "wait": 1}
+{"op": "capture", "name": "12-txt-imported"}
+{"op": "click", "x": 1506, "y": 396}
+{"op": "capture", "name": "13-txt-detail"}
+{"op": "click", "x": 304, "y": 357, "wait": 1}
+{"op": "capture", "name": "14-reader-font-controls"}
+{"op": "fill", "x": 370, "y": 184, "text": "Noto Serif CJK"}
+{"op": "capture", "name": "15-font-search"}
+{"op": "keys", "keys": "Down"}
+{"op": "capture", "name": "16-search-down"}
+{"op": "double", "x": 800, "y": 122}
+{"op": "click", "x": 90, "y": 250}
+{"op": "click", "x": 1505, "y": 396}
+{"op": "click", "x": 304, "y": 357, "wait": 1}
+{"op": "fill", "x": 370, "y": 169, "text": "Noto Serif CJK"}
+{"op": "capture", "name": "17-font-search-fixed"}
+{"op": "click", "x": 385, "y": 214}
+{"op": "fill", "x": 571, "y": 168, "text": "28"}
+{"op": "click", "x": 756, "y": 168}
+{"op": "capture", "name": "18-serif-applied"}
+{"op": "click", "x": 1517, "y": 954}
+{"op": "drag", "x1": 420, "y1": 366, "x2": 940, "y2": 366}
+{"op": "click", "x": 445, "y": 1005}
+{"op": "capture", "name": "19-txt-quote-selected"}
+{"op": "click", "x": 277, "y": 58}
+{"op": "snapshot", "name": "txt-closed"}
+{"op": "click", "x": 305, "y": 357}
+{"op": "capture", "name": "20-font-resumed"}
+{"op": "keys", "keys": "Escape"}
+{"op": "click", "x": 755, "y": 168, "wait": 2}
+{"op": "capture", "name": "21-serif-final"}
+{"op": "fill", "x": 370, "y": 169, "text": "Noto Serif CJK SC"}
+{"op": "keys", "keys": "Down Return"}
+{"op": "fill", "x": 572, "y": 168, "text": "28"}
+{"op": "keys", "keys": "Return Tab"}
+{"op": "click", "x": 755, "y": 168, "wait": 1}
+{"op": "capture", "name": "22-serif-28-confirmed"}
+{"op": "fill", "x": 368, "y": 169, "text": "NotInstalledFont"}
+{"op": "keys", "keys": "Tab"}
+{"op": "click", "x": 755, "y": 168}
+{"op": "capture", "name": "23-missing-font-rejected"}
+{"op": "click", "x": 865, "y": 168}
+{"op": "capture", "name": "24-reset-font"}
+{"op": "click", "x": 978, "y": 168}
+{"op": "capture", "name": "25-fullscreen"}
+{"op": "click", "x": 420, "y": 350}
+{"op": "keys", "keys": "F11"}
+{"op": "click", "x": 277, "y": 58}
+{"op": "click", "x": 90, "y": 302}
+{"op": "capture", "name": "26-quotes"}
+{"op": "double", "x": 800, "y": 122}
+{"op": "click", "x": 277, "y": 58}
+{"op": "click", "x": 90, "y": 302}
+{"op": "capture", "name": "27-quotes-list"}
+{"op": "click", "x": 90, "y": 455}
+{"op": "click", "x": 525, "y": 706}
+{"op": "click", "x": 573, "y": 761}
+{"op": "click", "x": 90, "y": 302}
+{"op": "click", "x": 308, "y": 451}
+{"op": "capture", "name": "28-quote-located"}
+{"op": "click", "x": 1351, "y": 489}
+{"op": "capture", "name": "29-ai-confirmation"}
+{"op": "click", "x": 1020, "y": 589}
+{"op": "capture", "name": "30-ai-missing-key-no-fake-result"}
+{"op": "click", "x": 300, "y": 371}
+{"op": "capture", "name": "31-chapter-jump"}
+{"op": "click", "x": 563, "y": 1005}
+{"op": "click", "x": 90, "y": 250}
+{"op": "click", "x": 437, "y": 182}
+{"op": "capture", "name": "32-file-picker"}
+{"op": "keys", "keys": "ctrl+l"}
+{"op": "type", "text": "/workspace/.readjournal-env/samples/image-styles.epub"}
+{"op": "keys", "keys": "Return", "wait": 1}
+{"op": "capture", "name": "33-epub-imported"}
+{"op": "click", "x": 1508, "y": 396}
+{"op": "click", "x": 306, "y": 357, "wait": 1}
+{"op": "capture", "name": "34-epub-reader"}
+{"op": "click", "x": 1517, "y": 954}
+{"op": "capture", "name": "35-epub-image"}
+{"op": "click", "x": 277, "y": 58}
+{"op": "snapshot", "name": "epub-closed"}
+{"op": "click", "x": 305, "y": 357}
+{"op": "capture", "name": "36-epub-image-resumed"}
+{"op": "click", "x": 90, "y": 405}
+{"op": "capture", "name": "37-combined-statistics"}
+{"op": "click", "x": 90, "y": 455}
+{"op": "click", "x": 1500, "y": 920, "button": 5}
+{"op": "click", "x": 1500, "y": 920, "button": 5}
+{"op": "click", "x": 1500, "y": 920, "button": 5}
+{"op": "click", "x": 1500, "y": 920, "button": 5}
+{"op": "capture", "name": "38-backup-settings"}
+{"op": "snapshot", "name": "before-backup"}
+{"op": "click", "x": 589, "y": 927}
+{"op": "capture", "name": "39-backup-picker"}
+{"op": "fill", "x": 750, "y": 149, "text": "/workspace/.readjournal-env/font-ui/backup.zip"}
+{"op": "keys", "keys": "Return", "wait": 1}
+{"op": "click", "x": 90, "y": 250}
+{"op": "capture", "name": "40-before-delete"}
+{"op": "click", "x": 1508, "y": 702}
+{"op": "click", "x": 711, "y": 357}
+{"op": "capture", "name": "41-delete-confirmation"}
+{"op": "click", "x": 1023, "y": 577}
+{"op": "snapshot", "name": "after-delete"}
+{"op": "click", "x": 90, "y": 455}
+{"op": "click", "x": 755, "y": 927}
+{"op": "keys", "keys": "ctrl+l"}
+{"op": "type", "text": "/workspace/.readjournal-env/font-ui/backup.zip"}
+{"op": "keys", "keys": "Return", "wait": 1}
+{"op": "capture", "name": "42-restore-confirmation"}
+{"op": "click", "x": 1020, "y": 589, "wait": 2}
+{"op": "snapshot", "name": "after-restore"}
+{"op": "capture", "name": "43-restore-complete"}
+{"op": "click", "x": 1500, "y": 200, "button": 4}
+{"op": "click", "x": 1500, "y": 200, "button": 4}
+{"op": "click", "x": 1500, "y": 200, "button": 4}
+{"op": "click", "x": 1500, "y": 200, "button": 4}
+{"op": "capture", "name": "44-theme-settings"}
+{"op": "click", "x": 605, "y": 225}
+{"op": "keys", "keys": "Down Return"}
+{"op": "click", "x": 751, "y": 230}
+{"op": "capture", "name": "45-dark-theme"}
+{"op": "click", "x": 605, "y": 225}
+{"op": "keys", "keys": "Up Return"}
+{"op": "click", "x": 751, "y": 230}
+{"op": "keys", "keys": "alt+F4"}
+{"op": "double", "x": 800, "y": 122}
+{"op": "click", "x": 90, "y": 250}
+{"op": "click", "x": 564, "y": 182, "wait": 1}
+{"op": "click", "x": 1506, "y": 396}
+{"op": "click", "x": 305, "y": 357}
+{"op": "click", "x": 1517, "y": 954}
+{"op": "capture", "name": "46-clean-app-large-image-page"}
+{"op": "click", "x": 90, "y": 250}
+{"op": "click", "x": 564, "y": 182, "wait": 1}
+{"op": "capture", "name": "47-large-image-library"}
+{"op": "click", "x": 1506, "y": 396}
+{"op": "click", "x": 305, "y": 357}
+{"op": "click", "x": 1517, "y": 954}
+{"op": "capture", "name": "48-large-image-reader"}
+{"op": "click", "x": 1517, "y": 954}
+{"op": "capture", "name": "49-large-image-visible"}
+{"op": "click", "x": 277, "y": 58}
+{"op": "snapshot", "name": "large-image-closed"}
+{"op": "click", "x": 305, "y": 357}
+{"op": "capture", "name": "50-large-image-resumed"}
+{"op": "fill", "x": 370, "y": 169, "text": "Noto Serif CJK SC"}
+{"op": "keys", "keys": "Down Return Tab"}
+{"op": "click", "x": 755, "y": 168}
+{"op": "capture", "name": "51-final-font-preview"}
+{"op": "click", "x": 277, "y": 58}
+{"op": "keys", "keys": "alt+F4"}
