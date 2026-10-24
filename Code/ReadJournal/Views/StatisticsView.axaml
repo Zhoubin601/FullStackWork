@@ -14,7 +14,9 @@
         </StackPanel>
       </DockPanel>
 
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
 
       <Border Classes="card" Padding="22,18">
         <StackPanel Spacing="6">
@@ -46,7 +48,7 @@
                   <Grid ColumnDefinitions="280,*" RowDefinitions="Auto,Auto">
                     <TextBlock Grid.RowSpan="2" Text="{Binding Label}" VerticalAlignment="Center" FontWeight="Medium" Margin="0,0,12,0"/>
                     <ProgressBar Grid.Column="1" Maximum="100" Value="{Binding BarValue}" Height="8" VerticalAlignment="Center"/>
-                    <ProgressBar Grid.Column="1" Grid.Row="1" Maximum="100" Value="{Binding DurationBarValue}" Height="8" Margin="0,6,0,0" Foreground="#D97706"/>
+                    <ProgressBar Grid.Column="1" Grid.Row="1" Maximum="100" Value="{Binding DurationBarValue}" Height="8" Margin="0,6,0,0" Foreground="{DynamicResource AppWarningBrush}"/>
                   </Grid>
                 </Border>
               </DataTemplate>

@@ -20,10 +20,12 @@
       </StackPanel>
     </Border>
 
-    <TextBlock Grid.Row="2" Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap" Margin="0,0,0,8"/>
+    <Border Grid.Row="2" Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,8">
+      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+    </Border>
 
     <ScrollViewer Grid.Row="3">
-      <StackPanel Spacing="2">
+      <StackPanel Spacing="2" Margin="0,0,6,0">
         <Border Classes="card" IsVisible="{Binding IsEmpty}" Padding="32,28" Margin="0,12">
           <StackPanel HorizontalAlignment="Center" Spacing="10">
             <PathIcon Data="{StaticResource IconPlans}" Width="28" Height="28" Foreground="{DynamicResource AppAccentBrush}" HorizontalAlignment="Center"/>

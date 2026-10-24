@@ -17,8 +17,8 @@
               <TextBlock Classes="badge-amber-text" Text="{Binding Progress.State}"/>
             </Border>
           </StackPanel>
-          <TextBlock Text="{Binding Book.Author}" Classes="muted"/>
-          <TextBlock Text="{Binding Book.Description}" TextWrapping="Wrap"/>
+          <TextBlock Text="{Binding Book.Author}" Classes="muted" IsVisible="{Binding Book.Author, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
+          <TextBlock Text="{Binding Book.Description}" TextWrapping="Wrap" IsVisible="{Binding Book.Description, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
 
           <Border Classes="surface-muted" Padding="14,12">
             <StackPanel Spacing="8">
@@ -38,14 +38,19 @@
             <Button Classes="danger" Content="删除书籍" Command="{Binding DeleteBookCommand}" Margin="0,0,0,8"/>
           </WrapPanel>
 
-          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+            <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          </Border>
         </StackPanel>
       </Border>
 
       <Border Classes="card">
         <StackPanel Spacing="12">
           <TextBlock Classes="h2" Text="阅读历史"/>
-          <ItemsControl ItemsSource="{Binding HistoryList}">
+          <Border Classes="surface-muted" Padding="14,10" IsVisible="{Binding !HasHistory}">
+            <TextBlock Text="暂无阅读历史活动。" Classes="muted"/>
+          </Border>
+          <ItemsControl ItemsSource="{Binding HistoryList}" IsVisible="{Binding HasHistory}">
             <ItemsControl.ItemTemplate>
               <DataTemplate>
                 <Border Classes="surface-muted" Padding="14,10" Margin="0,0,0,8">
@@ -58,7 +63,7 @@
               </DataTemplate>
             </ItemsControl.ItemTemplate>
           </ItemsControl>
-          <StackPanel Orientation="Horizontal" Spacing="10">
+          <StackPanel Orientation="Horizontal" Spacing="10" IsVisible="{Binding HasHistory}">
             <Button Classes="secondary" Content="上一页历史" Command="{Binding PreviousHistoryCommand}"/>
             <TextBlock Text="{Binding HistoryPageText}" VerticalAlignment="Center" FontWeight="Medium"/>
             <Button Classes="secondary" Content="下一页历史" Command="{Binding NextHistoryCommand}"/>
@@ -69,7 +74,10 @@
       <Border Classes="card">
         <StackPanel Spacing="10">
           <TextBlock Classes="h2" Text="关联计划"/>
-          <ItemsControl ItemsSource="{Binding PlansList}">
+          <Border Classes="surface-muted" Padding="14,10" IsVisible="{Binding !HasPlans}">
+            <TextBlock Text="本书暂未设定阅读计划。" Classes="muted"/>
+          </Border>
+          <ItemsControl ItemsSource="{Binding PlansList}" IsVisible="{Binding HasPlans}">
             <ItemsControl.ItemTemplate>
               <DataTemplate>
                 <Border Classes="surface-muted" Padding="14,10" Margin="0,0,0,8">
@@ -87,7 +95,10 @@
       <Border Classes="card">
         <StackPanel Spacing="10">
           <TextBlock Classes="h2" Text="关联书摘"/>
-          <ItemsControl ItemsSource="{Binding QuotesList}">
+          <Border Classes="surface-muted" Padding="14,10" IsVisible="{Binding !HasQuotes}">
+            <TextBlock Text="本书暂无关联书摘。" Classes="muted"/>
+          </Border>
+          <ItemsControl ItemsSource="{Binding QuotesList}" IsVisible="{Binding HasQuotes}">
             <ItemsControl.ItemTemplate>
               <DataTemplate>
                 <Border Classes="surface-muted" Padding="14,12" Margin="0,0,0,8">
@@ -99,6 +110,7 @@
                     </Button>
                     <Button Classes="secondary"
                             Content="回到原文"
+                            IsVisible="{Binding CanOpenSource}"
                             HorizontalAlignment="Left"
                             Command="{Binding $parent[UserControl].DataContext.OpenQuoteSourceCommand}"
                             CommandParameter="{Binding}"/>

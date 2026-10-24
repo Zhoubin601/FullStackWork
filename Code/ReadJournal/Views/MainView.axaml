@@ -43,7 +43,7 @@
 
     <Grid Grid.Column="1" RowDefinitions="Auto,*" Background="{DynamicResource AppBackgroundBrush}">
       <Border Background="{DynamicResource AppHeaderBgBrush}"
-              Padding="28,12"
+              Padding="28,10"
               BorderThickness="0,0,0,1"
               BorderBrush="{DynamicResource AppBorderBrush}"
               IsVisible="{Binding CanGoBack}">
@@ -61,7 +61,7 @@
           </StackPanel>
         </DockPanel>
       </Border>
-      <ContentControl Grid.Row="1" Content="{Binding Content}" Margin="28,22"/>
+      <ContentControl Grid.Row="1" Content="{Binding Content}" Margin="28,18"/>
     </Grid>
   </Grid>
 </UserControl>

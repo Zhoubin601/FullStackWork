@@ -12,6 +12,12 @@ public partial class OverviewViewModel : ViewModelBase
     [ObservableProperty] private IReadOnlyList<BookProgress> _readingBooks = [];
     [ObservableProperty] private IReadOnlyList<string> _recentRecords = [];
     [ObservableProperty] private IReadOnlyList<PlanItem> _pendingPlans = [];
+    public bool HasReadingBooks => ReadingBooks.Count > 0;
+    public bool HasRecentRecords => RecentRecords.Count > 0;
+    public bool HasPendingPlans => PendingPlans.Count > 0;
+    partial void OnReadingBooksChanged(IReadOnlyList<BookProgress> value) => OnPropertyChanged(nameof(HasReadingBooks));
+    partial void OnRecentRecordsChanged(IReadOnlyList<string> value) => OnPropertyChanged(nameof(HasRecentRecords));
+    partial void OnPendingPlansChanged(IReadOnlyList<PlanItem> value) => OnPropertyChanged(nameof(HasPendingPlans));
     public IAsyncRelayCommand OpenLibraryCommand { get; }
     public IAsyncRelayCommand<BookProgress> OpenBookCommand { get; }
     public OverviewViewModel(IReadingRecordStorage records, IBookStorage books, IStatisticsService statistics, IReadingPlanStorage plans, IMenuNavigationService menu, IContentNavigationService content)

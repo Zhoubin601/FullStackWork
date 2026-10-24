@@ -39,7 +39,9 @@
             <TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding Description,Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="96" Watermark="简要记录书籍梗概或阅读初衷"/>
           </StackPanel>
 
-          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+            <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          </Border>
           <TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/>
 
           <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,6,0,0">

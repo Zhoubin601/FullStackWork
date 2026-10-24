@@ -12,7 +12,9 @@
       <TextBlock Classes="h1" Text="阅记 · ReadJournal" HorizontalAlignment="Center"/>
       <TextBlock Classes="muted" Text="正在准备本地阅读空间与数据库环境" HorizontalAlignment="Center"/>
       <TextBlock Text="正在初始化…" IsVisible="{Binding IsBusy}" Classes="muted" HorizontalAlignment="Center"/>
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap" MaxWidth="380" HorizontalAlignment="Center"/>
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" MaxWidth="380" HorizontalAlignment="Center">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
       <Button Classes="primary" Content="重试初始化" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}" HorizontalAlignment="Center"/>
     </StackPanel>
   </Border>

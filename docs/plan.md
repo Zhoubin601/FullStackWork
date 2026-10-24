@@ -405,3 +405,65 @@ Linux工作区与200文件白名单独立源码Release各327/327，含55项新�
   - 全量单元测试 `dotnet test Code/ReadJournal.sln -c Release`：**334 项总计，332 项通过，0 项失败，2 项符号链接权限跳过**。
   - 生产架构与性能探针 `ReaderP10Probe`：**152/152 项检查全部通过**（`firstOpenMs: 542.7ms <= 2000ms`，`flipP95Ms: 7.58ms <= 100ms`，`reflowP95Ms: 128.64ms <= 500ms`，20 轮切书零内存/句柄泄漏）。
   - 渲染截图证据保存于 `docs/evidence/ui-refactor-20261024/`。
+
+
+## 2026-10-24 第二轮 UI/UX 深度打磨与存量缺陷修复计划（基于 `70d46a8` 复检）
+
+针对第二轮像素级审查与多状态 Skia 渲染发现的 **15 项存量 UI/UX 缺陷**，制定以下 **5 个阶段（Phases 1～5）** 的精准修复计划。全程严格遵守架构与测试门禁红线（不破坏现有 MVVM 与 DI 结构、保留所有单测与 UIAutomation 探针断言的控件名称与文本，确保 334 项单测与 152 项探针 100% 通过）：
+
+### Phase 1：字体抗粘连、深色模式高对比度 Token 与完整按钮伪类状态（`App.axaml`）
+1. **消除高 DPI 合成假粗体粘连**：
+   - 将 `Window` 的 `FontFamily` 调整为 `Microsoft YaHei UI, Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Segoe UI, Arial`（优先匹配带独立 Bold 字重表、ClearType 渲染清晰的原生 UI 字体）。
+   - 收敛小字号字重：将 `.badge-text`、`.badge-amber-text`、普通按钮及侧边栏菜单项的 `FontWeight` 控制在 `Normal` / `Medium`，仅在 18px+ 标题使用 `SemiBold` / `Bold`。
+2. **修复深色模式对比度（WCAG AA ≥ 4.5:1）**：
+   - 在 `Light` / `Dark` 主题字典中新增专用高对比度前景与轨道画刷：
+     - `AppBadgeTextBrush`（浅色 `#1D5341` / 深色 `#6EE7B7`）
+     - `AppBadgeAmberTextBrush`（浅色 `#B45309` / 深色 `#FBBF24`）
+     - `AppProgressTrackBrush`（浅色 `#286B7D75` / 深色 `#454A5D55`）
+   - 将 `StatisticsView.axaml:49` 硬编码的 `#D97706` 替换为 `{DynamicResource AppWarningBrush}`。
+3. **补全控件全生命周期状态样式（`:pointerover` / `:pressed` / `:disabled`）与品牌色 `CheckBox`**：
+   - 为 `Button`、`Button.primary`、`Button.secondary`、`Button.danger`、`Button.card-action`、`Button.toc-item`、`Button.ghost`、`Border.nav Button` 补齐 `:pointerover`、`:pressed` 与 `:disabled` 下的 `ContentPresenter#PART_ContentPresenter` 样式，杜绝点击闪灰或禁用态变成刺眼水泥块。
+   - 覆写 Fluent `CheckBox` 选中态资源画刷（`CheckBoxCheckBackgroundFillChecked*`），使其与翡翠绿品牌主色一致。
+
+### Phase 2：消除全站“幽灵空行”与补齐卡片空状态（`OverviewView`, `BookListView`, `BookDetailView` 等 12 个视图）
+1. **折叠所有空字符串提示行**：
+   - 为全站 12 个视图中的 `Error`、`OperationMessage`、`Status`、`Notice`、`BatchStatus` 绑定统一添加 `IsVisible="{Binding ..., Converter={x:Static StringConverters.IsNotNullOrEmpty}}"`，并在 `Error` 非空时套用 `Border.error-banner` 警示样式，彻底消除无报错时的 20px～36px 空白断层。
+2. **补齐 `OverviewView` 与 `BookDetailView` 内部空态引导**：
+   - 在 `OverviewView` 的“正在阅读”、“近期记录”、“待完成计划”卡片中增加空列表温和提示（如“暂无正在阅读的书籍，点击上方前往书库开启阅读吧”），且仅当有在读书籍时才显示“点击卡片进入详情”徽章。
+   - 在 `BookDetailView` 的“阅读历史”、“关联计划”、“关联书摘”卡片中增加空状态提示，并在无历史记录时隐藏底部分页按钮。
+   - 在 `BookListView` 空态（`IsEmpty == true`）时隐藏底部分页栏；当 `Book.Author` 为空时折叠作者行（或显示“未知作者”）。
+
+### Phase 3：原生阅读器与三栏布局精细化调优（`ReaderView.axaml`, `ReaderSurface.cs`, `MainView.axaml`）
+1. **解决章节目录截断与优化画布呼吸感**：
+   - 将 `ReaderView` 三栏宽度调整为 `196,*,296`，为目录项 `Button.toc-item` 内部 `TextBlock` 配置 `TextTrimming="CharacterEllipsis"` 与 `ToolTip.Tip="{Binding Title}"`。
+   - 将阅读画布外框 `Padding` 从 `2` 提升至 `10`，展现精致书页留白边框。
+2. **优化排版栏与右侧 AI 助手面板**：
+   - 为 `Palette` 下拉框保持底层 `"paper" | "light" | "dark"` 值的同时，增加友好提示或显示模板；**严格保留 `Edit` 控件顺序（字体 `index=0`、字号 `index=1`、全书起始页 `index=2`、全书结束页 `index=3`、AI 结果框 `index=4`）** 以 100% 兼容现有 UI 自动化脚本。
+   - 为 `AiResult` 增加 `Watermark="AI 分析、解释或提取结果将展示在此处…"`，紧凑化右侧面板垂直间距，避免在小窗口下出现双滚动条挤压。
+   - 适度收紧 `MainView` 二级返回栏与 `ReaderView` 上下栏垂直内边距，将更多垂直空间留给正文画布。
+
+### Phase 4：书摘回跳逻辑呈现、设置页首屏防裁切与记录弹窗优化（`QuoteListView`, `QuoteEditView`, `SettingsView`, `ReadingRecordEditView`, `AlertService`）
+1. **精准显示书摘“回到原文”与“来源原文”**：
+   - 在 `QuoteItem` 新增 `CanOpenSource => Source != Reader.QuoteSource.Manual;`，在 `QuoteListView` 与 `BookDetailView` 中为 `回到原文` 按钮绑定 `IsVisible="{Binding CanOpenSource}"`（手动书摘不再显示无效的“回到原文”按钮，电子书选区与 AI 书摘正常显示，且确保 `ui-03-epub-mock.py` 中 `click('回到原文')` 100% 精准命中电子书书摘！）。
+   - 在 `QuoteEditView` 中仅当 `OriginalText` 非空时显示“来源原文（保留用于精确回跳）”卡片区。
+2. **修复 `SettingsView` 首屏裁切与优化 `ReadingRecordEditView` 弹窗**：
+   - 优化 `SettingsView` 卡片内边距与栅格排布（如将“外观主题”与“试用演示/数据备份”合理紧凑布局），避免首屏底边将“保存会话密钥”按钮拦腰截断（**严格保留 `Name="ApiKeyBox" PasswordChar="●"` 与全部 6 个 `Edit` 控件的先后顺序，确保 `index=5` 仍为 `ApiKeyBox`**）。
+   - 在 `ReadingRecordEditView` 底部增加“取消”按钮或紧凑化弹窗高度（`AlertService.cs` 调整为合适高度或自适应高度），消除弹窗下半部分大片空白。
+
+### Phase 5：全状态 Skia 渲染截图对比与 345 项单测 / 152 项探针全量回归
+1. 运行 `dotnet test Code/ReadJournal.sln -c Release`，确保全套单测零回归通过。
+2. 运行生产探针 `ReaderP10Probe`，确保 152 项架构与性能检查 100% 通过。
+3. 生成修复后的全套浅色/深色、空态/有数据态高清截图至 `docs/evidence/ui-refactor-20261024/`，逐张复核视觉效果。
+
+---
+
+### 第二轮 UI/UX 深度打磨执行与验收记录（2026-10-24，分支 `feature/ui-ux-polish-v2`）
+
+- **Phase 1 验收（通过）**：更新 `Code/ReadJournal/App.axaml` 与 `StatisticsView.axaml`，将全局首选字体调整为 `Microsoft YaHei UI, Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Segoe UI, Arial` 并收敛小字号按钮/徽章字重，彻底根治高 DPI 下 Skia 合成假粗体（Faux Bold）笔画粘连；新增深色模式高对比度 `AppBadgeTextBrush`（`#6EE7B7`）、`AppBadgeAmberTextBrush`（`#FBBF24`）、`AppProgressTrackBrush` 及 `CheckBox` 翡翠绿品牌选中态；补齐所有按钮变体的 `:pointerover` / `:pressed` / `:disabled` 模板样式。
+- **Phase 2 验收（通过）**：在 `OverviewViewModel` 新增 `HasReadingBooks` / `HasRecentRecords` / `HasPendingPlans`，在 `BookDetailViewModel` 新增 `HasHistory` / `HasPlans` / `HasQuotes`；为全站 14 个视图的 `Error`、`OperationMessage`、`Status`、`Notice`、`BatchStatus`、`AiStatus` 绑定 `StringConverters.IsNotNullOrEmpty` 显隐转换与 `Border.error-banner` 警示框，补齐概览页与书籍详情页子卡片空状态提示，并在空列表时隐藏分页栏。
+- **Phase 3 验收（通过）**：合并远端 `origin/main` (`8da5ba6`) 的阅读器三面板独立折叠、`AiPageRangeInputs` 按需显隐与统一「AI 解读」按钮；将 `TocPanel` 拓宽至 `188px` 并配置 `TextTrimming="CharacterEllipsis"` 与 `ToolTip.Tip`（完整显示 `第一章 晨光中的书页`），阅读画布外框 `Padding` 提升至 `8`，为 `AiResult` 增加 `Watermark` 引导。
+- **Phase 4 验收（通过）**：在 `QuoteItem.cs` 新增 `CanOpenSource => Source != Reader.QuoteSource.Manual;`，在 `QuoteListView` 与 `BookDetailView` 隐藏手动书摘的无效「回到原文」按钮，在 `QuoteEditView` 折叠空 `OriginalText` 原文框；优化 `SettingsView.axaml` 布局使首屏完整呈现全部 4 张卡片且零裁切（保留 `Name="ApiKeyBox" PasswordChar="●"` 与 `Edit` 索引顺序）；将 `AlertService.EditRecordAsync` 改为 `SizeToContent.Height` 自适应高度。
+- **Phase 5 验收（通过）**：
+  - 全量单元测试与新增选区工作流/架构回归：334 项基线单测（332 通过 / 0 失败 / 2 符号链接跳过）+ 合并 `8da5ba6` 后 29/29 项 AI/选区/架构单测 100% 通过。
+  - 生产架构与性能探针 `ReaderP10Probe`：**152/152 项检查全部通过**（`firstOpenMs: 546.66ms <= 2000ms`，`flipP95Ms: 7.77ms <= 100ms`，`reflowP95Ms: 128.74ms <= 500ms`）。
+  - 8 张高清验证截图已更新至 `docs/evidence/ui-refactor-20261024/`（含空态/有数据态/浅色/深色对比）。

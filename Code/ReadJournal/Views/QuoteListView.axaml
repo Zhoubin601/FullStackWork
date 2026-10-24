@@ -21,13 +21,17 @@
       </WrapPanel>
     </Border>
 
-    <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,8">
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
-      <TextBlock Text="{Binding BatchStatus}" Classes="muted" TextWrapping="Wrap"/>
+    <StackPanel Grid.Row="2" Spacing="6">
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
+      <Border Classes="surface-muted" Padding="12,8" IsVisible="{Binding BatchStatus, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding BatchStatus}" Classes="muted" TextWrapping="Wrap"/>
+      </Border>
     </StackPanel>
 
     <ScrollViewer Grid.Row="3">
-      <StackPanel Spacing="2">
+      <StackPanel Spacing="2" Margin="0,0,6,0">
         <Border Classes="card" IsVisible="{Binding IsEmpty}" Padding="32,28" Margin="0,12">
           <StackPanel HorizontalAlignment="Center" Spacing="10">
             <PathIcon Data="{StaticResource IconQuotes}" Width="28" Height="28" Foreground="{DynamicResource AppAccentBrush}" HorizontalAlignment="Center"/>
@@ -47,10 +51,10 @@
                     <TextBlock Text="{Binding Location}" Classes="muted" VerticalAlignment="Center"/>
                   </WrapPanel>
                   <TextBlock Text="{Binding Quote}" Classes="h2" TextWrapping="Wrap"/>
-                  <TextBlock Text="{Binding Quote.Thoughts}" Classes="muted" TextWrapping="Wrap"/>
+                  <TextBlock Text="{Binding Quote.Thoughts}" Classes="muted" TextWrapping="Wrap" IsVisible="{Binding Quote.Thoughts, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
                   <WrapPanel Margin="0,4,0,0">
                     <Button Classes="danger" Content="撤销AI批次" IsVisible="{Binding HasAiBatch}" Command="{Binding $parent[UserControl].DataContext.UndoBatchCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
-                    <Button Classes="primary" Content="回到原文" Command="{Binding $parent[UserControl].DataContext.OpenSourceCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
+                    <Button Classes="primary" Content="回到原文" IsVisible="{Binding CanOpenSource}" Command="{Binding $parent[UserControl].DataContext.OpenSourceCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
                     <Button Classes="secondary" Content="编辑" Command="{Binding $parent[UserControl].DataContext.EditQuoteCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
                     <Button Classes="secondary" Content="切换收藏" Command="{Binding $parent[UserControl].DataContext.ToggleFavoriteCommand}" CommandParameter="{Binding}" Margin="0,0,8,6"/>
                     <Button Classes="danger" Content="删除" Command="{Binding $parent[UserControl].DataContext.DeleteQuoteCommand}" CommandParameter="{Binding}" Margin="0,0,0,6"/>

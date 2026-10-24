@@ -5,7 +5,7 @@
     </ia:EventTriggerBehavior>
   </i:Interaction.Behaviors>
   <ScrollViewer>
-    <StackPanel Spacing="16" MaxWidth="820" HorizontalAlignment="Left" Margin="0,0,0,16">
+    <StackPanel Spacing="12" MaxWidth="860" HorizontalAlignment="Left" Margin="0,0,6,14">
       <DockPanel>
         <Button DockPanel.Dock="Right" Classes="secondary" Content="刷新 / 重试" Command="{Binding OnLoadedCommand,FallbackValue={x:Null}}"/>
         <StackPanel Spacing="2">
@@ -14,85 +14,96 @@
         </StackPanel>
       </DockPanel>
 
-      <TextBlock Text="{Binding Status}" FontWeight="Medium" TextWrapping="Wrap"/>
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      <Border Classes="surface-muted" Padding="12,8" IsVisible="{Binding Status, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+        <TextBlock Text="{Binding Status}" FontWeight="Medium" TextWrapping="Wrap"/>
+      </Border>
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
       <TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/>
 
-      <Border Classes="card">
-        <StackPanel Spacing="12">
-          <TextBlock Classes="h2" Text="外观主题"/>
-          <StackPanel Orientation="Horizontal" Spacing="12">
-            <ComboBox Width="200" ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme,Mode=TwoWay}"/>
-            <Button Classes="primary" Content="应用主题" Command="{Binding ApplyThemeCommand}"/>
+      <Grid ColumnDefinitions="*,*">
+        <Border Grid.Column="0" Classes="card" Padding="18,14" Margin="0,0,6,0">
+          <StackPanel Spacing="10">
+            <TextBlock Classes="h2" Text="外观主题"/>
+            <TextBlock Classes="muted" Text="切换浅色纸感、深色护眼或跟随系统主题。"/>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <ComboBox Width="160" ItemsSource="{Binding Themes}" SelectedItem="{Binding SelectedTheme,Mode=TwoWay}"/>
+              <Button Classes="primary" Content="应用主题" Command="{Binding ApplyThemeCommand}"/>
+            </StackPanel>
           </StackPanel>
-        </StackPanel>
-      </Border>
+        </Border>
 
-      <Border Classes="card">
-        <StackPanel Spacing="12">
+        <Border Grid.Column="1" Classes="card" Padding="18,14" Margin="6,0,0,0">
+          <StackPanel Spacing="10">
+            <TextBlock Classes="h2" Text="试用演示"/>
+            <TextBlock Text="仅在空业务库可载入。所有书籍与摘录均为虚构演示资料。" Classes="muted" TextWrapping="Wrap"/>
+            <Button Classes="secondary" Content="载入虚构演示数据" Command="{Binding LoadDemoCommand}" HorizontalAlignment="Left"/>
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <Border Classes="card" Padding="18,14">
+        <StackPanel Spacing="10">
           <TextBlock Classes="h2" Text="AI 阅读助手"/>
           <TextBlock Text="默认本地模拟，不联网、不需要密钥。真实模式只发送确认范围内的正文，可能计费。密钥仅在本次应用会话内存中保留，退出后需重新输入，不写入备份。" TextWrapping="Wrap" Classes="muted"/>
           <CheckBox Content="使用本地模拟（Mock）" IsChecked="{Binding UseMock}"/>
 
           <Grid ColumnDefinitions="*,*">
-            <StackPanel Grid.Column="0" Spacing="6" Margin="0,0,8,0">
+            <StackPanel Grid.Column="0" Spacing="4" Margin="0,0,8,0">
               <TextBlock Classes="h3" Text="HTTPS 地址"/>
               <TextBox Text="{Binding AiEndpoint}"/>
             </StackPanel>
-            <StackPanel Grid.Column="1" Spacing="6" Margin="8,0,0,0">
+            <StackPanel Grid.Column="1" Spacing="4" Margin="8,0,0,0">
               <TextBlock Classes="h3" Text="模型（deepseek-chat / deepseek-reasoner）"/>
               <TextBox Text="{Binding AiModel}"/>
             </StackPanel>
           </Grid>
 
           <WrapPanel>
-            <StackPanel Width="180" Spacing="6" Margin="0,0,12,0">
+            <StackPanel Width="180" Spacing="4" Margin="0,0,12,0">
               <TextBlock Classes="h3" Text="输入字符上限"/>
               <TextBox Text="{Binding AiInputLimit}"/>
             </StackPanel>
-            <StackPanel Width="180" Spacing="6" Margin="0,0,12,0">
+            <StackPanel Width="180" Spacing="4" Margin="0,0,12,0">
               <TextBlock Classes="h3" Text="输出 token 上限"/>
               <TextBox Text="{Binding AiOutputLimit}"/>
             </StackPanel>
-            <StackPanel Width="180" Spacing="6">
+            <StackPanel Width="180" Spacing="4">
               <TextBlock Classes="h3" Text="超时秒数"/>
               <TextBox Text="{Binding AiTimeoutSeconds}"/>
             </StackPanel>
           </WrapPanel>
 
-          <CheckBox Content="我了解真实模式会将确认范围正文发送至 DeepSeek" IsChecked="{Binding UploadAcknowledged}"/>
-          <Button Classes="primary" Content="保存 AI 配置" Command="{Binding SaveAiSettingsCommand}" HorizontalAlignment="Left"/>
+          <DockPanel>
+            <Button DockPanel.Dock="Right" Classes="primary" Content="保存 AI 配置" Command="{Binding SaveAiSettingsCommand}" Margin="12,0,0,0"/>
+            <CheckBox Content="我了解真实模式会将确认范围正文发送至 DeepSeek" IsChecked="{Binding UploadAcknowledged}" VerticalAlignment="Center"/>
+          </DockPanel>
 
-          <Border Classes="surface-muted" Padding="14,12" Margin="0,4,0,0">
-            <StackPanel Spacing="10">
-              <TextBlock Classes="h3" Text="会话 API 密钥（仅内存保存）"/>
-              <TextBox Name="ApiKeyBox" PasswordChar="●" Text="{Binding ApiKeyInput}" Watermark="输入会话 API Key（本地模拟无需填写）"/>
-              <WrapPanel>
-                <Button Classes="primary" Content="保存会话密钥" Command="{Binding SaveApiKeyCommand}" Margin="0,0,10,0"/>
-                <Button Classes="danger" Content="删除会话密钥" Command="{Binding DeleteApiKeyCommand}"/>
-              </WrapPanel>
-              <TextBlock Text="{Binding CredentialStatus}" Classes="muted" TextWrapping="Wrap"/>
+          <Border Classes="surface-muted" Padding="14,10" Margin="0,2,0,0">
+            <StackPanel Spacing="8">
+              <DockPanel>
+                <TextBlock DockPanel.Dock="Right" Text="{Binding CredentialStatus}" Classes="muted" VerticalAlignment="Center"/>
+                <TextBlock Classes="h3" Text="会话 API 密钥（仅内存保存）" VerticalAlignment="Center"/>
+              </DockPanel>
+              <Grid ColumnDefinitions="*,Auto,Auto">
+                <TextBox Grid.Column="0" Name="ApiKeyBox" PasswordChar="●" Text="{Binding ApiKeyInput}" Watermark="输入会话 API Key（本地模拟无需填写）" Margin="0,0,10,0"/>
+                <Button Grid.Column="1" Classes="primary" Content="保存会话密钥" Command="{Binding SaveApiKeyCommand}" Margin="0,0,8,0"/>
+                <Button Grid.Column="2" Classes="danger" Content="删除会话密钥" Command="{Binding DeleteApiKeyCommand}"/>
+              </Grid>
             </StackPanel>
           </Border>
         </StackPanel>
       </Border>
 
-      <Border Classes="card">
-        <StackPanel Spacing="12">
+      <Border Classes="card" Padding="18,14">
+        <StackPanel Spacing="10">
           <TextBlock Classes="h2" Text="业务数据备份"/>
           <TextBlock Text="完整 ZIP 包含全部业务数据、电子书原文件、规范化正文和本地资源。恢复会整体替换当前书库，旧 JSON 仅用于恢复手动书籍；校验并生成完整自动备份后才替换。本机主题和密钥保留。" TextWrapping="Wrap" Classes="muted"/>
           <StackPanel Orientation="Horizontal" Spacing="12">
             <Button Classes="primary" Content="导出完整 ZIP 备份" Command="{Binding ExportCommand}"/>
             <Button Classes="secondary" Content="从 ZIP / 旧 JSON 恢复" Command="{Binding RestoreCommand}"/>
           </StackPanel>
-        </StackPanel>
-      </Border>
-
-      <Border Classes="card">
-        <StackPanel Spacing="12">
-          <TextBlock Classes="h2" Text="试用演示"/>
-          <TextBlock Text="仅在空业务库可载入。所有书籍、作者及摘录均为虚构演示资料。" Classes="muted" TextWrapping="Wrap"/>
-          <Button Classes="secondary" Content="载入虚构演示数据" Command="{Binding LoadDemoCommand}" HorizontalAlignment="Left"/>
         </StackPanel>
       </Border>
     </StackPanel>

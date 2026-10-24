@@ -39,7 +39,7 @@ public class AlertService : IAlertService, ReadJournal.Library.Services.Reader.I
     public async Task<LeaveDecision> ConfirmLeaveAsync() => await ChooseAsync("尚未保存", "当前修改尚未保存，请选择如何离开。", "取消离开", "放弃修改", "保存并离开") switch { "保存并离开" => LeaveDecision.Save, "放弃修改" => LeaveDecision.Discard, _ => LeaveDecision.Cancel };
     public async Task<bool> EditRecordAsync(ReadingRecordEditViewModel editor)
     {
-        var dialog = new Window { Title = "阅读记录", Width = 650, Height = 660, CanResize = false, WindowStartupLocation = WindowStartupLocation.CenterOwner, Content = editor };
+        var dialog = new Window { Title = "阅读记录", Width = 580, SizeToContent = SizeToContent.Height, CanResize = false, WindowStartupLocation = WindowStartupLocation.CenterOwner, Content = editor };
         var saved = false; var closing = false;
         void Saved(object? sender, EventArgs e) { saved = true; closing = true; dialog.Close(true); }
         editor.Saved += Saved;

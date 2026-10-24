@@ -4,17 +4,17 @@
       <ia:InvokeCommandAction Command="{Binding ReadingRecordEditViewModel.OnLoadedCommand,Source={StaticResource ServiceLocator}}"/>
     </ia:EventTriggerBehavior>
   </i:Interaction.Behaviors>
-  <ScrollViewer Margin="24">
-    <Border Classes="card" Padding="24,20">
+  <ScrollViewer Margin="18">
+    <Border Classes="card" Padding="22,18">
       <StackPanel Spacing="12" HorizontalAlignment="Stretch">
         <StackPanel Spacing="4">
           <TextBlock Classes="h1" Text="记录这一段阅读"/>
-          <TextBlock Text="{Binding Hint}" Classes="muted" TextWrapping="Wrap"/>
+          <TextBlock Text="{Binding Hint}" Classes="muted" TextWrapping="Wrap" IsVisible="{Binding Hint, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
         </StackPanel>
 
         <StackPanel Spacing="6">
           <TextBlock Classes="h3" Text="阅读日期 *"/>
-          <DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding ReadingDate,Mode=TwoWay}"/>
+          <DatePicker IsEnabled="{Binding !IsBusy}" SelectedDate="{Binding ReadingDate,Mode=TwoWay}" HorizontalAlignment="Stretch"/>
         </StackPanel>
 
         <Grid ColumnDefinitions="*,*">
@@ -33,10 +33,12 @@
           <TextBox IsEnabled="{Binding !IsBusy}" Text="{Binding Minutes,Mode=TwoWay}"/>
         </StackPanel>
 
-        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+        <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+        </Border>
         <TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/>
 
-        <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,8,0,0">
+        <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,6,0,0">
           <Button Classes="primary" IsEnabled="{Binding !IsBusy}" Content="保存阅读记录" Command="{Binding SaveCommand}"/>
           <Border Classes="badge-amber" IsVisible="{Binding IsDirty}" VerticalAlignment="Center">
             <TextBlock Classes="badge-amber-text" Text="有未保存修改"/>

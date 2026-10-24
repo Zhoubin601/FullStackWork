@@ -24,7 +24,7 @@
             </ComboBox>
           </StackPanel>
 
-          <Border Classes="surface-muted" Padding="14,10">
+          <Border Classes="surface-muted" Padding="14,10" IsVisible="{Binding OriginalText, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
             <StackPanel Spacing="6">
               <DockPanel>
                 <Button DockPanel.Dock="Right" Classes="secondary" Content="回到原文" Command="{Binding OpenOriginalCommand}"/>
@@ -55,7 +55,9 @@
             <CheckBox Grid.Column="1" IsEnabled="{Binding !IsBusy}" Content="加入收藏" IsChecked="{Binding IsFavorite,Mode=TwoWay}" VerticalAlignment="Bottom" Margin="18,0,0,6"/>
           </Grid>
 
-          <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+            <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+          </Border>
           <TextBlock Text="正在处理…" IsVisible="{Binding IsBusy}" Classes="muted"/>
 
           <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,6,0,0">

@@ -1,11 +1,12 @@
 <UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:r="using:ReadJournal.Reader" x:Class="ReadJournal.Views.ReaderView">
   <UserControl.Styles>
     <Style Selector="ToggleButton.reader-panel">
-      <Setter Property="MinHeight" Value="38"/>
-      <Setter Property="Padding" Value="14,8"/>
+      <Setter Property="MinHeight" Value="36"/>
+      <Setter Property="Padding" Value="14,7"/>
       <Setter Property="CornerRadius" Value="8"/>
       <Setter Property="BorderThickness" Value="1"/>
       <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="FontWeight" Value="Normal"/>
     </Style>
     <Style Selector="ToggleButton.reader-panel /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource AppSurfaceMutedBrush}"/>
@@ -19,14 +20,33 @@
     </Style>
     <Style Selector="ToggleButton.reader-panel:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource AppSurfaceHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppBorderBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource AppTextPrimaryBrush}"/>
     </Style>
     <Style Selector="ToggleButton.reader-panel:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppSurfaceHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentBrush}"/>
+    </Style>
+    <Style Selector="ToggleButton.reader-panel:checked:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource AppAccentHoverBrush}"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Opacity" Value="0.9"/>
     </Style>
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
-    <StackPanel Grid.Row="0" Spacing="8" Margin="0,0,0,8">
-      <TextBlock Text="{Binding Title}" Classes="h1" TextTrimming="CharacterEllipsis"/>
+    <StackPanel Grid.Row="0" Spacing="6" Margin="0,0,0,6">
+      <DockPanel>
+        <Border DockPanel.Dock="Right" Classes="badge" Margin="12,0,0,0">
+          <TextBlock Classes="badge-text" Text="原生排版阅读器"/>
+        </Border>
+        <TextBlock Text="{Binding Title}" Classes="h1" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+      </DockPanel>
       <WrapPanel>
         <ToggleButton Name="TocToggle" Classes="reader-panel" Content="章节目录" IsChecked="{Binding IsTocExpanded,Mode=TwoWay}" Margin="0,0,8,4" ToolTip.Tip="展开或收起章节目录" AutomationProperties.Name="展开或收起章节目录"/>
         <ToggleButton Name="AppearanceToggle" Classes="reader-panel" Content="排版设置" IsChecked="{Binding IsAppearanceExpanded,Mode=TwoWay}" Margin="0,0,8,4" ToolTip.Tip="展开或收起排版设置" AutomationProperties.Name="展开或收起排版设置"/>
@@ -37,14 +57,14 @@
       </WrapPanel>
     </StackPanel>
 
-    <Border Name="AppearancePanel" Grid.Row="1" IsVisible="{Binding IsAppearanceExpanded}" Classes="card-compact" Padding="14,10" Margin="0,0,0,8">
+    <Border Name="AppearancePanel" Grid.Row="1" IsVisible="{Binding IsAppearanceExpanded}" Classes="card-compact" Padding="12,8" Margin="0,0,0,6">
       <WrapPanel VerticalAlignment="Center">
         <TextBlock Text="字体" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
         <TextBox Text="{Binding FontFamily}" Width="165" Margin="0,0,10,0" ToolTip.Tip="输入正文字体名称"/>
         <TextBlock Text="字号" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
         <TextBox Text="{Binding FontSizeText}" Width="58" Margin="0,0,10,0" ToolTip.Tip="输入字号大小"/>
         <TextBlock Text="纸张" Classes="muted" VerticalAlignment="Center" Margin="0,0,6,0"/>
-        <ComboBox SelectedItem="{Binding Palette}" Width="100" Margin="0,0,10,0" ToolTip.Tip="选择阅读纸张主题 (paper/light/dark)">
+        <ComboBox SelectedItem="{Binding Palette}" Width="105" Margin="0,0,10,0" ToolTip.Tip="选择阅读纸张主题：paper（暖黄纸感）/ light（纯白）/ dark（深色夜间）">
           <x:String>paper</x:String>
           <x:String>light</x:String>
           <x:String>dark</x:String>
@@ -53,17 +73,21 @@
       </WrapPanel>
     </Border>
 
-    <StackPanel Grid.Row="2" Spacing="4" Margin="0,0,0,6">
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
-      <TextBlock Text="{Binding Notice}" Classes="muted" TextWrapping="Wrap"/>
-      <StackPanel Orientation="Horizontal" Spacing="8" IsVisible="{Binding IsCloseFailed}">
+    <StackPanel Grid.Row="2" Spacing="4">
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
+      <Border Classes="surface-muted" Padding="10,6" IsVisible="{Binding Notice, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding Notice}" Classes="muted" TextWrapping="Wrap"/>
+      </Border>
+      <StackPanel Orientation="Horizontal" Spacing="8" IsVisible="{Binding IsCloseFailed}" Margin="0,0,0,6">
         <Button Classes="primary" Content="重试保存并返回" Command="{Binding RetryCloseCommand}"/>
         <Button Classes="secondary" Content="继续阅读" Command="{Binding ContinueReadingCommand}"/>
       </StackPanel>
     </StackPanel>
 
-    <Grid Name="ReadingPanels" Grid.Row="3" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,8">
-      <Border Name="TocPanel" Grid.Column="0" Width="164" IsVisible="{Binding IsTocExpanded}" Classes="card-compact" Padding="8,10" Margin="0,0,10,0">
+    <Grid Name="ReadingPanels" Grid.Row="3" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,6">
+      <Border Name="TocPanel" Grid.Column="0" Width="188" IsVisible="{Binding IsTocExpanded}" Classes="card-compact" Padding="8,10" Margin="0,0,10,0">
         <DockPanel>
           <TextBlock DockPanel.Dock="Top" Text="章节目录" Classes="h3" Margin="6,0,6,8"/>
           <ScrollViewer>
@@ -71,10 +95,12 @@
               <ItemsControl.ItemTemplate>
                 <DataTemplate>
                   <Button Classes="toc-item"
-                          Content="{Binding Title}"
+                          ToolTip.Tip="{Binding Title}"
                           Command="{Binding $parent[UserControl].DataContext.GoToChapterCommand}"
                           CommandParameter="{Binding}"
-                          Margin="0,2"/>
+                          Margin="0,2">
+                    <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
+                  </Button>
                 </DataTemplate>
               </ItemsControl.ItemTemplate>
             </ItemsControl>
@@ -87,7 +113,7 @@
               BorderBrush="{DynamicResource AppBorderBrush}"
               BorderThickness="1"
               CornerRadius="10"
-              Padding="2"
+              Padding="8"
               ClipToBounds="True">
         <r:ReaderSurface Name="Surface"
                          Page="{Binding Page}"
@@ -96,10 +122,10 @@
                          MinHeight="120"/>
       </Border>
 
-      <Border Name="AiPanel" Grid.Column="2" Width="304" IsVisible="{Binding IsAiExpanded}" Classes="card-compact" Padding="14,12" Margin="10,0,0,0">
+      <Border Name="AiPanel" Grid.Column="2" Width="296" IsVisible="{Binding IsAiExpanded}" Classes="card-compact" Padding="12,10" Margin="10,0,0,0">
         <ScrollViewer>
-          <StackPanel Spacing="10">
-            <StackPanel Spacing="4">
+          <StackPanel Spacing="8" Margin="0,0,4,0">
+            <StackPanel Spacing="2">
               <TextBlock Text="AI 阅读助手" Classes="h2"/>
               <TextBlock Text="AI解读只显示结果；生成书摘会自动保存。" TextWrapping="Wrap" Classes="muted" FontSize="12"/>
             </StackPanel>
@@ -123,14 +149,15 @@
                     IsEnabled="{Binding CanRunAi}"
                     HorizontalAlignment="Stretch"/>
 
-            <TextBlock Text="{Binding AiStatus}" TextWrapping="Wrap" FontSize="13" FontWeight="Medium"/>
+            <TextBlock Text="{Binding AiStatus}" TextWrapping="Wrap" FontSize="12" FontWeight="Medium" IsVisible="{Binding AiStatus, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
 
             <TextBox Text="{Binding AiResult,Mode=OneWay}"
+                     Watermark="AI 分析、解释或提取结果将显示在此处…"
                      IsReadOnly="True"
                      AcceptsReturn="True"
                      TextWrapping="Wrap"
-                     MinHeight="110"
-                     MaxHeight="250"/>
+                     MinHeight="100"
+                     MaxHeight="220"/>
 
             <Button Classes="secondary"
                     Content="重试本地保存（不重新生成）"
@@ -148,7 +175,7 @@
       </Border>
     </Grid>
 
-    <Border Grid.Row="4" Classes="card-compact" Padding="12,8" Margin="0,0,0,8">
+    <Border Grid.Row="4" Classes="card-compact" Padding="12,6" Margin="0,0,0,6">
       <Grid ColumnDefinitions="Auto,*,Auto">
         <Button Classes="secondary" Content="← 上一页" Command="{Binding PreviousCommand}"/>
         <TextBlock Grid.Column="1" Text="{Binding IndexText}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>

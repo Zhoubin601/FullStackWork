@@ -18,6 +18,8 @@ public partial class BookDetailViewModel : ViewModelBase
     public IAsyncRelayCommand PreviousHistoryCommand { get; }
     public IAsyncRelayCommand NextHistoryCommand { get; }
     [ObservableProperty] private IReadOnlyList<ReadingHistoryItem> _historyList = [];
+    public bool HasHistory => HistoryList.Count > 0;
+    partial void OnHistoryListChanged(IReadOnlyList<ReadingHistoryItem> value) => OnPropertyChanged(nameof(HasHistory));
     public bool HasUnifiedHistory => _history is not null;
     public IAsyncRelayCommand<ReadingHistoryItem> DeleteHistoryCommand { get; }
     public IAsyncRelayCommand<ReadingHistoryItem> EditHistoryCommand { get; }
@@ -30,11 +32,15 @@ public partial class BookDetailViewModel : ViewModelBase
     partial void OnProgressChanged(BookProgress? value) { OnPropertyChanged(nameof(CanAddManualRecord)); OnPropertyChanged(nameof(IsEbook)); OnPropertyChanged(nameof(CanRead)); OpenReaderCommand?.NotifyCanExecuteChanged(); }
     private readonly IReadingPlanStorage _plans;
     [ObservableProperty] private IReadOnlyList<PlanItem> _plansList = [];
+    public bool HasPlans => PlansList.Count > 0;
+    partial void OnPlansListChanged(IReadOnlyList<PlanItem> value) => OnPropertyChanged(nameof(HasPlans));
     public IAsyncRelayCommand AddPlanCommand { get; }
     [ObservableProperty] private BookProgress? _progress;
     public Book? Book => Progress?.Book;
     [ObservableProperty] private IReadOnlyList<ReadingRecord> _recordsList = [];
     [ObservableProperty] private IReadOnlyList<QuoteItem> _quotesList = [];
+    public bool HasQuotes => QuotesList.Count > 0;
+    partial void OnQuotesListChanged(IReadOnlyList<QuoteItem> value) => OnPropertyChanged(nameof(HasQuotes));
     public IAsyncRelayCommand EditBookCommand { get; }
     public IAsyncRelayCommand DeleteBookCommand { get; }
     public IAsyncRelayCommand AddRecordCommand { get; }

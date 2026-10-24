@@ -414,3 +414,12 @@ P10是发布门禁，必须区分历史验收、当前重验和未覆盖平台�
 ## 2026-10-24 规划实施完成
 
 已按后续用户授权完成P0～P5：统一范围与解读入口、选区原文整段保存、三个独立折叠区域、结果分类及回归。范围类型纳入快照摘要；选区生成复用ExplainSelection的analysis响应，只由程序构造整段原文候选；不放宽原文及存储核验。最终工作区/独立源码各345通过，真实Linux窗口27项通过，Windows及真实API未复测。完整记录见`docs/reader-interaction-acceptance-20261024.md`。
+
+## 2026-10-24 第二轮 UI/UX 深度复检与 15 项存量问题修复记录（`feature/ui-ux-polish-v2`）
+
+基于 `70d46a8` 与远端 `8da5ba6` 的像素级渲染审查，定位并完成以下 **5 大类 15 项存量 UI/UX 缺陷**的修复：
+1. **高 DPI 合成假粗体粘连与按钮伪类状态缺失（`App.axaml`）**：将 `Window.FontFamily` 首选调整为 `Microsoft YaHei UI, Microsoft YaHei, PingFang SC, Noto Sans CJK SC, Segoe UI, Arial`，收敛 12px～14px 按钮与徽章字重至 `Normal`/`Medium`；补齐所有按钮子类（`.primary`、`.secondary`、`.danger`、`.card-action`、`.toc-item`、`Border.nav Button`、`ToggleButton.reader-panel`）的 `:pointerover`、`:pressed` 与 `:disabled` 模板样式；新增 `CheckBox` 翡翠绿品牌选中态资源。
+2. **深色模式低对比度与进度条硬编码（`App.axaml`, `StatisticsView.axaml`）**：新增 `AppBadgeTextBrush`（浅色 `#1D5341` / 深色 `#6EE7B7`）、`AppBadgeAmberTextBrush`（浅色 `#B45309` / 深色 `#FBBF24`）与 `AppProgressTrackBrush`，将 `StatisticsView` 硬编码 `#D97706` 替换为 `{DynamicResource AppWarningBrush}`，深色徽章对比度提升至 WCAG AA 标准以上。
+3. **消除全站空字符串幽灵空行与补齐子模块空态（14 个视图）**：全站 `Error`、`OperationMessage`、`Status`、`Notice`、`BatchStatus`、`AiStatus` 绑定统一增加 `StringConverters.IsNotNullOrEmpty` 显隐转换，非空 `Error` 包裹 `Border.error-banner`；补齐 `OverviewView`（在读、近期记录、待完成计划）与 `BookDetailView`（阅读历史、关联计划、关联书摘）内部空状态提示；空列表时隐藏 `BookListView` 与 `BookDetailView` 的分页栏。
+4. **阅读器三栏与可折叠面板融合优化（`ReaderView.axaml`, `MainView.axaml`）**：融合 `8da5ba6` 的三面板独立折叠、`AiPageRangeInputs` 按需显隐与统一「AI 解读」按钮；将 `TocPanel` 宽度由 `164` 拓宽至 `188` 并为目录项增加 `TextTrimming="CharacterEllipsis"` 与 `ToolTip.Tip`；阅读画布外框 `Padding` 提升至 `8`；为 `AiResult` 增加 `Watermark` 占位提示。
+5. **书摘回跳按钮精准显隐、设置页首屏防裁切与记录弹窗优化（`QuoteItem.cs`, `QuoteListView.axaml`, `QuoteEditView.axaml`, `SettingsView.axaml`, `ReadingRecordEditView.axaml`, `AlertService.cs`）**：在 `QuoteItem` 新增 `CanOpenSource => Source != Reader.QuoteSource.Manual;`，手动书摘不再误显示无效的「回到原文」按钮；`QuoteEditView` 仅在 `OriginalText` 非空时展示来源原文区；`SettingsView` 将「外观主题」与「试用演示」并排为双列卡片并紧凑化内边距（严格保持 `Name="ApiKeyBox" PasswordChar="●"` 及 `Edit` 索引顺序），彻底消除 800px 窗口首屏底部按钮半截裁切；`AlertService.EditRecordAsync` 改为 `SizeToContent.Height` 自适应高度，消除弹窗底部大片空白。

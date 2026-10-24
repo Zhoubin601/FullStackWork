@@ -32,13 +32,17 @@
       </WrapPanel>
     </Border>
 
-    <StackPanel Grid.Row="3" Spacing="4" Margin="0,0,0,8">
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
-      <TextBlock Text="{Binding OperationMessage}" Classes="muted" TextWrapping="Wrap" MaxHeight="100"/>
+    <StackPanel Grid.Row="3" Spacing="6">
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
+      <Border Classes="surface-muted" Padding="12,8" IsVisible="{Binding OperationMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Margin="0,0,0,6">
+        <TextBlock Text="{Binding OperationMessage}" Classes="muted" TextWrapping="Wrap" MaxHeight="100"/>
+      </Border>
     </StackPanel>
 
     <ScrollViewer Grid.Row="4">
-      <StackPanel Spacing="2">
+      <StackPanel Spacing="2" Margin="0,0,6,0">
         <Border Classes="card" IsVisible="{Binding IsEmpty}" Padding="32,28" Margin="0,12">
           <StackPanel HorizontalAlignment="Center" Spacing="10">
             <PathIcon Data="{StaticResource IconBooks}" Width="28" Height="28" Foreground="{DynamicResource AppAccentBrush}" HorizontalAlignment="Center"/>
@@ -61,7 +65,7 @@
                         <TextBlock Classes="badge-amber-text" Text="{Binding State}"/>
                       </Border>
                     </StackPanel>
-                    <TextBlock Text="{Binding Book.Author}" Classes="muted"/>
+                    <TextBlock Text="{Binding Book.Author}" Classes="muted" IsVisible="{Binding Book.Author, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"/>
                     <TextBlock Text="{Binding ProgressText}"/>
                     <ProgressBar Maximum="100" Value="{Binding Percent}" Height="6"/>
                   </StackPanel>
@@ -80,7 +84,7 @@
       </StackPanel>
     </ScrollViewer>
 
-    <Border Grid.Row="5" Classes="card-compact" Padding="14,8" Margin="0,10,0,0">
+    <Border Grid.Row="5" Classes="card-compact" Padding="14,8" Margin="0,10,0,0" IsVisible="{Binding !IsEmpty}">
       <StackPanel Orientation="Horizontal" Spacing="14" HorizontalAlignment="Center">
         <Button Classes="secondary" Content="上一页" Command="{Binding PreviousPageCommand}"/>
         <TextBlock Text="{Binding PageText}" FontWeight="Medium" VerticalAlignment="Center"/>

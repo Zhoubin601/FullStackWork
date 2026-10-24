@@ -173,3 +173,7 @@ P10补充生产布局UI Dispatcher心跳31样本，最大间隔53.209ms，小于
 ## 2026-10-24 阅读器交互与整段AI书摘更新
 
 基于main=70d46a8，按用户“执行完成后推送至远端”授权实施。选区生成保留完整冻结原文并由AI只写整体解读，一段一条；页/范围继续多候选。合并AI解读入口，页码框仅在范围模式显示；目录/AI/排版独立折叠，顶部保留全屏与取消，重排保留锚点/选区并清空页码。无schema变更，原批次/去重/回跳/撤销/本地重试保留，不自动处理历史碎片书摘。工作区和独立204文件白名单源码各345通过0失败0跳过；AI相关73通过；真实Linux X11/xdotool交互27项通过，选中68字符整段保存1条并撤销。无真实API/Windows复测，不能继承旧Windows结论。验收docs/reader-interaction-acceptance-20261024.md，规划docs/20261024-阅读器交互与AI书摘修改规划-v1.md，证据docs/evidence/reader-interaction-20261024/。原始资料/正式output不变；旧ZIP未覆盖，新C#已补入打包白名单；继续前fetch远端main确认实际提交。
+
+## 2026-10-24 第二轮 UI/UX 深度打磨与新分支交付（`feature/ui-ux-polish-v2`）
+
+基于远端最新 `origin/main`（`8da5ba6`）在独立分支 `feature/ui-ux-polish-v2` 完成第二轮 15 项 UI/UX 存量问题修复并推送远端：修复高 DPI 合成假粗体粘连（`Microsoft YaHei UI` 首选与小字号字重收敛）、深色模式徽章高对比度（`AppBadgeTextBrush` `#6EE7B7` / `AppBadgeAmberTextBrush` `#FBBF24`）、全套按钮 `:pointerover`/`:pressed`/`:disabled` 状态模板与品牌绿 `CheckBox`、全站 14 视图空 `Error`/`Status` 幽灵空行折叠、概览页与书籍详情页子模块空状态提示、阅读器目录拓宽（`188px` + 省略号 + ToolTip）与画布内边距、手动书摘隐藏无效「回到原文」按钮（`QuoteItem.CanOpenSource`）、设置页双列紧凑防首屏裁切及阅读记录弹窗自适应高度。152/152 项生产探针 `ReaderP10Probe` 与单元测试全绿通过，渲染证据已更新至 `docs/evidence/ui-refactor-20261024/`，`raw/` 与 `output/` 未改动。

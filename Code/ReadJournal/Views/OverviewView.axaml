@@ -14,7 +14,9 @@
         </StackPanel>
       </DockPanel>
 
-      <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      <Border Classes="error-banner" IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+        <TextBlock Text="{Binding Error}" Classes="danger-text" TextWrapping="Wrap"/>
+      </Border>
 
       <Border Classes="card" Padding="22,20">
         <DockPanel>
@@ -31,12 +33,15 @@
       <Border Classes="card">
         <StackPanel Spacing="12">
           <DockPanel>
-            <Border DockPanel.Dock="Right" Classes="badge">
+            <Border DockPanel.Dock="Right" Classes="badge" IsVisible="{Binding HasReadingBooks}">
               <TextBlock Classes="badge-text" Text="点击卡片进入详情"/>
             </Border>
             <TextBlock Classes="h2" Text="正在阅读" VerticalAlignment="Center"/>
           </DockPanel>
-          <ItemsControl ItemsSource="{Binding ReadingBooks}">
+          <Border Classes="surface-muted" Padding="16,14" IsVisible="{Binding !HasReadingBooks}">
+            <TextBlock Text="暂无正在阅读的书籍。点击上方「前往我的书库」添加或打开一本书吧。" Classes="muted" TextWrapping="Wrap"/>
+          </Border>
+          <ItemsControl ItemsSource="{Binding ReadingBooks}" IsVisible="{Binding HasReadingBooks}">
             <ItemsControl.ItemTemplate>
               <DataTemplate>
                 <Button Classes="card-action"
@@ -69,7 +74,10 @@
         <Border Grid.Column="0" Classes="card" Margin="0,0,8,0">
           <StackPanel Spacing="10">
             <TextBlock Classes="h2" Text="近期记录"/>
-            <ItemsControl ItemsSource="{Binding RecentRecords}">
+            <Border Classes="surface-muted" Padding="14,12" IsVisible="{Binding !HasRecentRecords}">
+              <TextBlock Text="暂无阅读记录。完成一次阅读会话或手动登记页数后将显示于此。" Classes="muted" TextWrapping="Wrap"/>
+            </Border>
+            <ItemsControl ItemsSource="{Binding RecentRecords}" IsVisible="{Binding HasRecentRecords}">
               <ItemsControl.ItemTemplate>
                 <DataTemplate>
                   <Border Classes="surface-muted" Padding="12,8" Margin="0,4">
@@ -84,7 +92,10 @@
         <Border Grid.Column="1" Classes="card" Margin="8,0,0,0">
           <StackPanel Spacing="10">
             <TextBlock Classes="h2" Text="待完成计划"/>
-            <ItemsControl ItemsSource="{Binding PendingPlans}">
+            <Border Classes="surface-muted" Padding="14,12" IsVisible="{Binding !HasPendingPlans}">
+              <TextBlock Text="暂无待完成的阅读计划。可在「阅读计划」或书籍详情页设定目标日期。" Classes="muted" TextWrapping="Wrap"/>
+            </Border>
+            <ItemsControl ItemsSource="{Binding PendingPlans}" IsVisible="{Binding HasPendingPlans}">
               <ItemsControl.ItemTemplate>
                 <DataTemplate>
                   <Border Classes="surface-muted" Padding="12,10" Margin="0,4">

@@ -434,3 +434,13 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
 - 原始依据仍为本轮聊天截图与反馈；本次仅用自建TXT和本地Mock验证，未获得真实会话凭据，不调用真实API。
 - 实测来源：`docs/evidence/reader-interaction-20261024/`，含工作区345/345、独立204文件源码345/345、AI相关73/73及27项原生X11交互检查。无跳过，不复用旧Windows结论。
 - 当前实现与边界：`docs/reader-interaction-acceptance-20261024.md`；新增可复现工具`docs/tools/ReaderInteractionProbe/`。raw/与既有output/保持，未覆盖正式ZIP。
+
+## 2026-10-24 第二轮 UI/UX 深度复检与存量缺陷修复来源（`feature/ui-ux-polish-v2`）
+
+- **仓库与分支基线**：合并远端最新 `origin/main`（`8da5ba6`：`fix(reader): preserve whole selection quotes and simplify reading panels`），在独立分支 `feature/ui-ux-polish-v2` 实施 Phase 1～5 深度打磨。
+- **技能库与规范依据**：`C:\Users\a3185\.gemini\config\skills\ui-ux-pro-max\SKILL.md` 及 `scripts/search.py`（Avalonia 11/12 样式覆写机制、Light/Dark 双主题对比度、高 DPI 字体抗粘连、空态与错误反馈规范）。
+- **本轮全量审查与修改的源码**：
+  - 全局样式与双主题字典：`Code/ReadJournal/App.axaml`
+  - 业务模型与弹窗服务：`Code/ReadJournal.Library/Models/QuoteItem.cs`（新增 `CanOpenSource`）、`Code/ReadJournal/Services/AlertService.cs`
+  - 全部 14 个 AXAML 视图：`MainView.axaml`、`InitializationView.axaml`、`OverviewView.axaml`、`BookListView.axaml`、`BookDetailView.axaml`、`BookEditView.axaml`、`ReaderView.axaml`、`QuoteListView.axaml`、`QuoteEditView.axaml`、`ReadingPlanListView.axaml`、`ReadingPlanEditView.axaml`、`ReadingRecordEditView.axaml`、`StatisticsView.axaml`、`SettingsView.axaml`
+  - 测试与探针验证：`Code/ReadJournal.UnitTest/*.cs`（全套单测与新增 `AiSelectionWorkflowTests.cs`）、`docs/tools/ReaderP10Probe/Program.cs` 及 `docs/evidence/ui-refactor-20261024/` 渲染截图证据。
