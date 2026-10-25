@@ -1,0 +1,10 @@
+# Working copies duplicate the formal deliveries in output/v2.
+/20261025-阅记-项目报告-v2.docx
+/20261025-阅记-项目报告-v2.pdf
+# Intermediate layout attempts; final render evidence is retained.
+/check-*.png
+/preview-*.png
+/pages-contact-*.jpg
+/pdf-first-pass.json
+/screenshots-contact.jpg
+/__pycache__/

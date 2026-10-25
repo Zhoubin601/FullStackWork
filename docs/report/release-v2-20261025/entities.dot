@@ -1,0 +1,45 @@
+digraph G{graph [bgcolor="transparent",fontname="Noto Sans CJK SC",pad="0.15",nodesep="0.3",ranksep="0.45"];node [shape=box,style="rounded,filled",fillcolor="#EDF4F0",color="#173D36",fontname="Noto Sans CJK SC",fontsize=13,margin="0.15,0.10"];edge [color="#5A6D65",fontname="Noto Sans CJK SC",fontsize=10,arrowsize=0.7];graph[ranksep="0.72"];node[fontsize=12];
+ book[label="Book
+PK Id / UNIQUE BookUid
+Kind / TotalPages / Title",fillcolor="#D6E7DE"];
+ rec[label="ReadingRecord
+PK Id / FK BookId
+StartPage / EndPage / Minutes"];
+ plan[label="ReadingPlan
+PK Id / FK BookId
+StartDate / TargetDate"];
+ file[label="EbookFile
+PK/FK BookId
+FileId / SourceSha256
+CanonicalSha256 / Status"];
+ prog[label="EbookProgress
+PK/FK BookId
+LastPositionJson / CurrentPercent
+CompletedUtcTicks"];
+ ses[label="EbookReadingSession
+PK SessionId / FK BookId
+BookUid / StartPositionJson
+EndPositionJson / DurationMilliseconds"];
+ quote[label="Quote
+PK Id / FK BookId
+Text / Thoughts / Revision
+IsFavorite / Page"];
+ batch[label="AiGenerationBatch
+PK BatchId / FK BookId
+BookUid / ScopeSha256
+InsertedQuoteIdsJson / Status"];
+ origin[label="QuoteOrigin
+PK/FK QuoteId
+FK? BatchId / UNIQUE? DedupeKey
+OriginalText / StartPositionJson"];
+ item[label="AiGenerationBatchItem
+PK (BatchId, QuoteId) / 双 FK
+CreatedRevision / CreatedContentHash"];
+ {rank=same;rec;plan;file;}{rank=same;prog;ses;}{rank=same;quote;batch;}{rank=same;origin;item;}
+ book->rec[label="1 : 0..*"];book->plan[label="1 : 0..*"];book->file[label="1 : 0..1"];
+ book->prog[label="1 : 0..1"];book->ses[label="1 : 0..*"];
+ book->quote[label="1 : 0..*"];book->batch[label="1 : 0..*"];
+ quote->origin[label="1 : 0..1"];quote->item[label="1 : 0..*"];
+ batch->item[label="1 : 0..*"];batch->origin[label="可空关联",style=dashed];
+ rec->prog[style=invis];file->ses[style=invis];prog->quote[style=invis];ses->batch[style=invis];
+}

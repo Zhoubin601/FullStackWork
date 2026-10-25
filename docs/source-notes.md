@@ -463,3 +463,10 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
 
 
 本轮实际结果：两处缺陷已复现修复，最终353项中351通过/0失败/2权限跳过；153生产检查、14原生实验、14处进程中断及26个EPUB变体通过，真实AI5次成功。来源为本轮 full-verified.trx、production-complete/probe.json、各实际窗口快照及 real-*.json；汇总见 docs/20261024-integrated-audit-v1.md。raw与原有未跟踪文件摘要一致，旧output不变。
+
+
+## 2026-10-25 最新项目报告 v2
+
+来源文件：raw/期末项目与报告要求.docx；raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md；用户保存的 output/v1/20261021-阅记-项目报告-v1.docx；Code/ 当前源码及 README；docs/20261024-integrated-audit-v1.md 和 docs/evidence/integrated-audit-20261024/。引用日期：2026-10-25。没有新增外部研究资料。
+
+原始指导书要求沿用指定章节、PDF 提交、源码无编译结果且小于10MB；封面姓名/学号/班级沿用用户 Word。209 个 Code 文件 SHA256 与最新 Windows 验收记录全部一致；本次复用已有证据，没有重新调用真实 AI 或冒充本轮 Windows 测试。

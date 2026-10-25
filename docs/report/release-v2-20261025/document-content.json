@@ -1,0 +1,191 @@
+{
+  "headings": [
+    [
+      "项目背景与意义",
+      1,
+      "ReportHeading1"
+    ],
+    [
+      "1  需求分析",
+      1,
+      "ReportHeading2"
+    ],
+    [
+      "1.1  功能需求",
+      2,
+      "ReportHeading3"
+    ],
+    [
+      "1.2  非功能需求",
+      2,
+      "ReportHeading4"
+    ],
+    [
+      "2  系统设计",
+      1,
+      "ReportHeading5"
+    ],
+    [
+      "2.1  架构设计",
+      2,
+      "ReportHeading6"
+    ],
+    [
+      "2.2  功能模块设计",
+      2,
+      "ReportHeading7"
+    ],
+    [
+      "2.3  数据/数据库设计",
+      2,
+      "ReportHeading8"
+    ],
+    [
+      "2.4  接口与类设计",
+      2,
+      "ReportHeading9"
+    ],
+    [
+      "2.5  技术选型说明",
+      2,
+      "ReportHeading10"
+    ],
+    [
+      "3  系统实现",
+      1,
+      "ReportHeading11"
+    ],
+    [
+      "3.1  关键模块的核心实现",
+      2,
+      "ReportHeading12"
+    ],
+    [
+      "3.2  核心功能与UI截图",
+      2,
+      "ReportHeading13"
+    ],
+    [
+      "3.3  难点和解决方案",
+      2,
+      "ReportHeading14"
+    ],
+    [
+      "4  系统测试",
+      1,
+      "ReportHeading15"
+    ],
+    [
+      "4.1  测试环境",
+      2,
+      "ReportHeading16"
+    ],
+    [
+      "4.2  测试用例",
+      2,
+      "ReportHeading17"
+    ],
+    [
+      "4.3  测试截图",
+      2,
+      "ReportHeading18"
+    ],
+    [
+      "5  总结与展望",
+      1,
+      "ReportHeading19"
+    ]
+  ],
+  "figures": [
+    {
+      "file": "docs/report/release-v2-20261025/architecture.png",
+      "caption": "图 1  三工程分层、平台接口与外部资源依赖"
+    },
+    {
+      "file": "docs/report/release-v2-20261025/entities.png",
+      "caption": "图 2  schema 2 的十张业务表及主要外键关系"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/04-overview.png",
+      "caption": "图 3  最新概览：阅读指标、在读书籍、计划与近期记录"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/19-scan-and-reset-complete.png",
+      "caption": "图 4  最新书库：手动与电子书共存，扫描入库与状态筛选"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/08-native-selection.png",
+      "caption": "图 5  原生阅读器：目录、字体排版、正文选择及书摘快捷键"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/06-all-panels-collapsed.png",
+      "caption": "图 6  目录、排版与 AI 面板收起后，正文填充可用区域"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/10-real-whole-selection.png",
+      "caption": "图 7  真实 DeepSeek：选区整体解读并将完整原文保存为一条书摘"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/13b-epub-image-actual.png",
+      "caption": "图 8  自建 EPUB 的 2400×1800 图片在原生阅读表面显示"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/16-settings-dark.png",
+      "caption": "图 9  深色设置页：主题、完整备份恢复与真实 AI 配置"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/17-restored-dark.png",
+      "caption": "图 10  完整 ZIP 恢复成功，恢复后的本机深色主题保持"
+    },
+    {
+      "file": "docs/evidence/integrated-audit-20261024/desktop/18-restored-reader-dark.png",
+      "caption": "图 11  恢复并重启后的 EPUB 仍可阅读，主题与原文能力保持"
+    }
+  ],
+  "tables": 15,
+  "code_excerpts": [
+    {
+      "path": "Code/ReadJournal/ServiceLocator.cs",
+      "start": 99,
+      "end": 112,
+      "sha256": "6ae9e14c866ac14de8a02ea6d1dc248eb8ad011391d149f599b1700369462b95"
+    },
+    {
+      "path": "Code/ReadJournal/Services/ContentNavigationService.cs",
+      "start": 40,
+      "end": 49,
+      "sha256": "c082135ed1043104da6ca8b7038844ec6eba88d5f98636f0386ee560fbd43117"
+    },
+    {
+      "path": "Code/ReadJournal.Library/Models/Reader/ReaderContracts.cs",
+      "start": 20,
+      "end": 30,
+      "sha256": "08c49487b8cc849a57243317c7935311eb3e932b61b85a1f19a498fe14eccd3a"
+    },
+    {
+      "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.cs",
+      "start": 121,
+      "end": 131,
+      "sha256": "ce16128488769ef237bfa003ff16f75ba124d934d33745ca6fd9f4756c76573e"
+    },
+    {
+      "path": "Code/ReadJournal.Library/Services/Ai/ReaderAiService.cs",
+      "start": 62,
+      "end": 69,
+      "sha256": "671f838f136bb0314739f4206b1c53aec07496c1ab0a3ba64d01c0fb21e81160"
+    },
+    {
+      "path": "Code/ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs",
+      "start": 21,
+      "end": 29,
+      "sha256": "56299c6b5218b12a0d53f0212cec069dad633d014d3434d3c6edc322c6551df0"
+    },
+    {
+      "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs",
+      "start": 57,
+      "end": 68,
+      "sha256": "80d1d00bb129d127cd5a7e1efc66e4668fdcc147158851faf9c5a95bbb9fe658"
+    }
+  ],
+  "source_docx_sha256": "09c3fc67acd40f3c7915a98f5950016b16b9d0c36f7068194c1ecf19dbb727bd"
+}

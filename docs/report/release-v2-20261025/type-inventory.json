@@ -1,0 +1,2004 @@
+{
+  "parser": "tree-sitter C#; UI/Library handwritten class/interface; partial deduplicated by project/kind/full name/generic arity; nested/default access included; records/structs/enums/tests/generated excluded",
+  "classes": 137,
+  "interfaces": 41,
+  "csharp_files": 134,
+  "view_files": 15,
+  "views": [
+    "Code/ReadJournal/Views/BookDetailView.axaml",
+    "Code/ReadJournal/Views/BookEditView.axaml",
+    "Code/ReadJournal/Views/BookListView.axaml",
+    "Code/ReadJournal/Views/InitializationView.axaml",
+    "Code/ReadJournal/Views/MainView.axaml",
+    "Code/ReadJournal/Views/MainWindow.axaml",
+    "Code/ReadJournal/Views/OverviewView.axaml",
+    "Code/ReadJournal/Views/QuoteEditView.axaml",
+    "Code/ReadJournal/Views/QuoteListView.axaml",
+    "Code/ReadJournal/Views/ReaderView.axaml",
+    "Code/ReadJournal/Views/ReadingPlanEditView.axaml",
+    "Code/ReadJournal/Views/ReadingPlanListView.axaml",
+    "Code/ReadJournal/Views/ReadingRecordEditView.axaml",
+    "Code/ReadJournal/Views/SettingsView.axaml",
+    "Code/ReadJournal/Views/StatisticsView.axaml"
+  ],
+  "types": [
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.App",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/App.axaml.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Program",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Program.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.AvaloniaReaderLayoutService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/AvaloniaReaderLayoutService.cs",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.NativeLayout",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/NativeTextLayout.cs",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.NativeTextDocument",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/NativeTextDocument.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.ReaderFontFamilyConverter",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/ReaderFontFamilyConverter.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.ReaderSurface",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/ReaderSurface.cs",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Reader.SystemReaderFontCatalog",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Reader/SystemReaderFontCatalog.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.ServiceLocator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/ServiceLocator.cs",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.AlertService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/AlertService.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.ContentNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/ContentNavigationService.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.DataSetInvalidationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/DataSetInvalidationService.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.FileService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/FileService.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.MenuNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/MenuNavigationService.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.ReaderPlatformService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/ReaderPlatformService.cs",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Services.RootNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Services/RootNavigationService.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.ViewLocator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/ViewLocator.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.BookDetailView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/BookDetailView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.BookEditView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/BookEditView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.BookListView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/BookListView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.InitializationView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/InitializationView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.MainView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/MainView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.MainWindow",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/MainWindow.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.OverviewView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/OverviewView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.QuoteEditView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/QuoteEditView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.QuoteListView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/QuoteListView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.ReaderView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/ReaderView.axaml.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.ReadingPlanEditView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/ReadingPlanEditView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.ReadingPlanListView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/ReadingPlanListView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.ReadingRecordEditView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/ReadingRecordEditView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.SettingsView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/SettingsView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal",
+      "kind": "class",
+      "name": "ReadJournal.Views.StatisticsView",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal/Views/StatisticsView.axaml.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.BackupDocument",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/BackupDocument.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Book",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Book.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.BookProgress",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/BookProgress.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.DayActivity",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/DayActivity.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.PageResult`1",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/PageResult.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.PlanItem",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/PlanItem.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Quote",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Quote.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.QuoteItem",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/QuoteItem.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.AiGenerationBatch",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.AiGenerationBatchItem",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.AppMetadata",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.EbookFile",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.EbookProgress",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.EbookReadingSession",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.Reader.QuoteOrigin",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/Reader/ReaderRows.cs",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.ReadingPlan",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/ReadingPlan.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.ReadingRecord",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/ReadingRecord.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Models.ReadingStatistics",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Models/ReadingStatistics.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiBatchCheckpoints",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiBatchCheckpoints.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiException",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiIntegrity.cs",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiIntegrity",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiIntegrity.cs",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiQuoteVerifier",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiSavePendingException",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/ReaderAiService.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiScopeFactory",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiScopeFactory.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.AiSettingsStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiSettingsStorage.cs",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.DeepSeekClient",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/DeepSeekClient.cs",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.ReaderAiService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/ReaderAiService.cs",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Ai.SessionSecretStore",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiSettingsStorage.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ApplicationDataCoordinator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ApplicationDataCoordinator.MaintenanceLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ApplicationDataCoordinator.OperationLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs",
+          "line": 129
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ApplicationDataCoordinator.Registration",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ApplicationDataCoordinator.cs",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.BackupDataStore",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.BackupDataStore.ForeignKeyError",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/BackupDataStore.cs",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.BackupJson",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/ManagedBookFiles.cs",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.BackupRuntime",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/BackupRuntime.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.BackupV2Validator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/BackupV2Validator.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.CompleteBackupArchive",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupArchive.cs",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.CompleteBackupService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupService.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.ImageResourceValidator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/ImageResourceValidator.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.ManagedBookFiles",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/ManagedBookFiles.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.ManagedBookInventory",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/ManagedBookInventory.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.PreparedBackup",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/CompleteBackupArchive.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.RecoveryCleanupException",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/RestoreRecoveryService.cs",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Backup.RestoreRecoveryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Backup/RestoreRecoveryService.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.BackupEntityValidator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/BackupEntityValidator.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.BackupService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/BackupService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.BackupV1Adapter",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/BackupV1Adapter.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.BookStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/BookStorage.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ContentNavigationConstant",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IContentNavigationService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DataPaths",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DataPaths.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DatabaseMigrationV2",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DatabaseMigrationV2.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DatabaseMigrationV2.ForeignKeyError",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DatabaseMigrationV2.cs",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DatabaseMigrationV2.LegacyId",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DatabaseMigrationV2.cs",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DatabaseService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DatabaseService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.DemoData",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/DemoData.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.FilePreferenceStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/FilePreferenceStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.MenuNavigationConstant",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IMenuNavigationService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.QuoteStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Ai/AiBatchStorage.cs",
+          "line": 8
+        },
+        {
+          "path": "Code/ReadJournal.Library/Services/QuoteStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.BookDeletionService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/BookDeletionService.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.BookFileOperations",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/BookFileOperations.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.EbookLibraryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/EbookLibraryService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.EbookProgressMaintenance",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/EbookProgressMaintenance.cs",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.EbookRuntime",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/EbookRuntime.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.EpubBookParser",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/EpubBookParser.cs",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderClock",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderContractValidator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderContractValidator.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderDocumentService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderDocumentService.cs",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderDocumentService.Entry",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderDocumentService.cs",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderPreferencesStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderPreferencesStorage.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderQuoteCheckpoints",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderQuoteService.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderQuoteNavigation",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderQuoteNavigation.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderQuoteService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderQuoteService.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderSessionCheckpoints",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderSessionService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderSessionService.ActionLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReaderSessionService.Entry",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderSessionService.cs",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReadingHistoryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReadingHistoryService.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReadingStateCalculator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReadingStateCalculator.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.ReadingStateQuery",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReadingStateQuery.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.Reader.TxtBookParser",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/TxtBookParser.cs",
+          "line": 10
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ReadingPlanConsistency",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ReadingPlanConsistency.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ReadingPlanStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ReadingPlanStorage.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ReadingRecordStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ReadingRecordStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.ReadingService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/ReadingService.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.RootNavigationConstant",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IRootNavigationService.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.Services.StatisticsService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/StatisticsService.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.BookDetailViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/BookDetailViewModel.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.BookEditViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/BookEditViewModel.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.BookListViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/BookListViewModel.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.EditViewModelBase",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/EditViewModelBase.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.InitializationViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/InitializationViewModel.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.MainViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/MainViewModel.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.MainWindowViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/MainWindowViewModel.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.MenuItem",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/MenuItem.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.OverviewViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/OverviewViewModel.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.QuoteEditViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/QuoteEditViewModel.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.QuoteListViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/QuoteListViewModel.cs",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.ReaderViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Ai.cs",
+          "line": 7
+        },
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Fonts.cs",
+          "line": 7
+        },
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.Panels.cs",
+          "line": 3
+        },
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReaderViewModel.cs",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.ReadingPlanEditViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReadingPlanEditViewModel.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.ReadingPlanListViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReadingPlanListViewModel.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.ReadingRecordEditViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ReadingRecordEditViewModel.cs",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.SettingsViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/SettingsViewModel.Ai.cs",
+          "line": 8
+        },
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/SettingsViewModel.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.StatisticsViewModel",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/StatisticsViewModel.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "class",
+      "name": "ReadJournal.Library.ViewModels.ViewModelBase",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/ViewModels/ViewModelBase.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IAlertService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IAlertService.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IBackupService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IBackupService.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IBookStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IBookStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IContentNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IContentNavigationService.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IDatabaseService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IDatabaseService.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IFileService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IFileService.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IMenuNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IMenuNavigationService.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IPreferenceStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IPreferenceStorage.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IQuoteStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IQuoteStorage.cs",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IReadingPlanStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IReadingPlanStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IReadingRecordStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IReadingRecordStorage.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IReadingService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IReadingService.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IRootNavigationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IRootNavigationService.cs",
+          "line": 2
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.IStatisticsService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/IStatisticsService.cs",
+          "line": 3
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IAiQuoteVerifier",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 167
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IAiSettingsStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 192
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IAppFileDialogService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IApplicationDataCoordinator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 133
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IBookParser",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.ICompleteBackupService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IDataMaintenanceLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IDataOperationLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IDataSetInvalidationService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 218
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IDeepSeekClient",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IEbookLibraryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IEbookProgressMaintenance",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/EbookProgressMaintenance.cs",
+          "line": 5
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IOperationRecoveryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderActionLease",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderAiService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 179
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderAlertService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderDocumentService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderFontCatalog",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderLayoutService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderPlatformService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderPreferencesStorage",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderQuoteService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderRegistration",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReaderSessionService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReadingHistoryService",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.IReadingStateCalculator",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "project": "ReadJournal.Library",
+      "kind": "interface",
+      "name": "ReadJournal.Library.Services.Reader.ISecretStore",
+      "declarations": [
+        {
+          "path": "Code/ReadJournal.Library/Services/Reader/ReaderInterfaces.cs",
+          "line": 198
+        }
+      ]
+    }
+  ]
+}

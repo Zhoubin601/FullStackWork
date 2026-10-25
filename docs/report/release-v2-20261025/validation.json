@@ -1,0 +1,232 @@
+{
+  "passed": true,
+  "commit": "ba08e195e0c58072e9a1c13b2c28c02315f7847d",
+  "pages": 29,
+  "headings": 19,
+  "native_tables": 15,
+  "figures": 11,
+  "code_excerpts": 7,
+  "svg_diagrams": 2,
+  "toc_pages_verified": {
+    "项目背景与意义": 3,
+    "1  需求分析": 3,
+    "1.1  功能需求": 3,
+    "1.2  非功能需求": 4,
+    "2  系统设计": 5,
+    "2.1  架构设计": 5,
+    "2.2  功能模块设计": 6,
+    "2.3  数据/数据库设计": 7,
+    "2.4  接口与类设计": 9,
+    "2.5  技术选型说明": 10,
+    "3  系统实现": 11,
+    "3.1  关键模块的核心实现": 11,
+    "3.2  核心功能与UI截图": 15,
+    "3.3  难点和解决方案": 22,
+    "4  系统测试": 23,
+    "4.1  测试环境": 23,
+    "4.2  测试用例": 24,
+    "4.3  测试截图": 27,
+    "5  总结与展望": 29
+  },
+  "toc_hyperlinks": 19,
+  "all_pages_rendered": true,
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 105,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 2,
+      "characters": 286,
+      "links": 19,
+      "image_instances": 0
+    },
+    {
+      "page": 3,
+      "characters": 917,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 4,
+      "characters": 951,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 5,
+      "characters": 919,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 6,
+      "characters": 944,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 7,
+      "characters": 1228,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 8,
+      "characters": 1025,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 9,
+      "characters": 1384,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 10,
+      "characters": 1013,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 11,
+      "characters": 2328,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 12,
+      "characters": 1548,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 13,
+      "characters": 1877,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 14,
+      "characters": 1778,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 15,
+      "characters": 380,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 16,
+      "characters": 298,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 17,
+      "characters": 293,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 18,
+      "characters": 314,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 19,
+      "characters": 358,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 20,
+      "characters": 349,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 21,
+      "characters": 298,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 22,
+      "characters": 767,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 23,
+      "characters": 898,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 24,
+      "characters": 927,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 25,
+      "characters": 916,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 26,
+      "characters": 882,
+      "links": 0,
+      "image_instances": 0
+    },
+    {
+      "page": 27,
+      "characters": 328,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 28,
+      "characters": 424,
+      "links": 0,
+      "image_instances": 1
+    },
+    {
+      "page": 29,
+      "characters": 1084,
+      "links": 0,
+      "image_instances": 0
+    }
+  ],
+  "out_of_page_text": [],
+  "protected_files_unchanged": 8,
+  "source_evidence_files_matched": 209,
+  "package_content_matched": 208,
+  "new_application_test_run": false,
+  "visual_review": "See all 29 pages and final-contact-1/2/3.jpg; detailed diagrams/code/tables also inspected.",
+  "deliveries": [
+    {
+      "path": "output/v2/20261025-阅记-项目报告-v2.docx",
+      "bytes": 2716427,
+      "sha256": "ef5e3ce6d030f90207f52a125f24d9019fe983e38939899f427e1d882b3a525b"
+    },
+    {
+      "path": "output/v2/20261025-阅记-项目报告-v2.pdf",
+      "bytes": 3275294,
+      "sha256": "af4c153ad70ad00f58102fa7d2242ce63d108eae8899ee726f8aa2aedaae9a56"
+    },
+    {
+      "path": "output/v2/20261025-阅记-源码-v2.zip",
+      "bytes": 344074,
+      "sha256": "4cccb06b32ed7fa2327d7f2e6197f21e9faeb3320d55051cf9f15682569053a5"
+    }
+  ]
+}

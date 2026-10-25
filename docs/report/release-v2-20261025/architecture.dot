@@ -1,0 +1,28 @@
+digraph G{graph [bgcolor="transparent",fontname="Noto Sans CJK SC",pad="0.15",nodesep="0.3",ranksep="0.45"];node [shape=box,style="rounded,filled",fillcolor="#EDF4F0",color="#173D36",fontname="Noto Sans CJK SC",fontsize=13,margin="0.15,0.10"];edge [color="#5A6D65",fontname="Noto Sans CJK SC",fontsize=10,arrowsize=0.7];
+ ui[label="ReadJournal · Avalonia 桌面层
+Views / ReaderSurface / 原生布局 / 字体与平台服务
+ServiceLocator 组装真实 DI · ViewLocator 缓存视图
+Root / Menu / Content 三层导航",fillcolor="#D6E7DE"];
+ subgraph cluster_lib{label="ReadJournal.Library · 不引用 Avalonia 控件";color="#90AA9D";style="rounded";
+ vm[label="ViewModels
+命令、页面状态与 Reader 生命周期"];
+ rules[label="Services / 接口
+进度、会话、AI 核验
+事务、备份与故障恢复"];
+ models[label="Models / Contracts
+BookUid / DocumentKey
+稳定正文位置 / 不可变快照"];
+ {rank=same;rules;models;}vm->rules;vm->models[style=dashed];models->rules[style=dashed,constraint=false];}
+ ui->vm[label="绑定命令 · 统一注参 · 构造注入"];
+ db[label="SQLite schema 2
+10 业务表 + 元数据表"];
+ fs[label="受管书库 / 日志
+原件、正文、图片、ZIP"];
+ ai[label="DeepSeek HTTPS
+用户确认正文范围"];
+ {rank=same;db;fs;ai;}rules->db;rules->fs;rules->ai;
+ tests[label="ReadJournal.UnitTest
+xUnit / Moq / Headless / 临时 SQLite",fillcolor="#FFFFFF"];
+ db->tests[style=invis];fs->tests[style=invis];ai->tests[style=invis];
+ tests->rules[style=dashed,constraint=false,label="验证规则与存储"];tests->vm[style=dashed,constraint=false];
+}
