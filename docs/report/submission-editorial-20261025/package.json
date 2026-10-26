@@ -1,0 +1,12 @@
+{
+  "Path": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\submission-editorial-20261025\\阅记-源码.zip",
+  "Bytes": 342012,
+  "Files": 208,
+  "Sha256": "118095ab068e02276fd341832fdb60b9fad254142b7c3e500617df2e6dba8432",
+  "changed_members": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "runtime_files_unchanged": true,
+  "reuse_independent_test": "351 passed / 0 failed / 2 skipped; prior independent build in this chat"
+}

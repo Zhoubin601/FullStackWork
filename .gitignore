@@ -55,3 +55,9 @@ __pycache__/
 /docs/evidence/reader/font-ai-20261024/production-final/data/
 
 /docs/evidence/reader/font-ai-20261024/production-quiet/data/
+
+# Runtime data from the old isolated Windows UI test is not source evidence.
+/docs/evidence/live-windows-test-20261022/data/
+
+# Large HTML previews are reproducible from the retained final document.
+/docs/report/readiness-20261025/*.html

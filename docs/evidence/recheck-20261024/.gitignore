@@ -1,0 +1,13 @@
+# Generated synthetic runtime data remain available locally for reproducibility.
+/samples/
+/ui-data/
+/p2-process/
+/p3-process/
+/p4-process/
+/network-process/
+/production-process/*
+!/production-process/probe.json
+/p7-compatibility/*
+!/p7-compatibility/compatibility.json
+*.zip
+__pycache__/

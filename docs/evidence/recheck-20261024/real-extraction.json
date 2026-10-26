@@ -1,0 +1,13 @@
+{
+  "operation": "extraction",
+  "success": true,
+  "mode": "real",
+  "characters": 77,
+  "elapsedMs": 2152,
+  "inputTokens": 238,
+  "outputTokens": 118,
+  "saved": 2,
+  "duplicates": 0,
+  "rejected": 0,
+  "allOriginalQuotesExactlyMatchSource": true
+}

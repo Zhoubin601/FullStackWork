@@ -1,0 +1,1134 @@
+{
+  "ReferenceRoot": "D:\\2026Autumn Semester File\\FullStack\\\u671F\u672B\u5927\u4F5C\u4E1A\\daily-poetry-a",
+  "Parser": "Roslyn C# syntax tree; class/interface only; all accessibilities",
+  "Exclusions": "UI/Library only; exclude tests, bin, obj, generated source",
+  "Deduplication": "Project \u002B kind \u002B namespace \u002B containing types \u002B name with generic arity",
+  "Summary": {
+    "Classes": 63,
+    "Interfaces": 10,
+    "ViewFiles": 9,
+    "MinimumClasses": 45,
+    "MinimumInterfaces": 7,
+    "CSharpFiles": 55
+  },
+  "SourceFiles": [
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/App.axaml.cs",
+      "Sha256": "39E5230A30F54F17F0A8FFF153D9BDA15ADF509A1B586B3EDCC9963EA2FAAA29"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Converters/ByteArrayToBitmapConverter.cs",
+      "Sha256": "B960ED60DD463BDC0CF7D0C0C151BD587FFCD2EF8952672390C8923E56110E53"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Converters/CountToBoolConverter.cs",
+      "Sha256": "6285472348DAAFE5F404DF8794BCAE02607F243DBA91E2D4A421B604B8D5188D"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Converters/NegativeConverter.cs",
+      "Sha256": "4DEF9692B7A0D2B7DDE3034BE0116965DDEAA4B25EADD7A5D8C344DFDAF81C8B"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Converters/PoetryToStringConverter.cs",
+      "Sha256": "0527FD64A378ECA171D8B45DF3A9562D0475AEEDCB75ACF78715E49B2313E156"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/DesignViewModels/ResultDesignViewModel.cs",
+      "Sha256": "0BF353A08E28A0CFC50A7619C58834801018300CD2C20217B9DEFBD809947050"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Program.cs",
+      "Sha256": "03727EC97B7A3CEA19926F75FDDCB033BEC4AF35743D5C7A8C0E45D6A08E09E2"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/ServiceLocator.cs",
+      "Sha256": "A5157035366A6EE5CD1DEECC0B089FC3FDFED4F557A58AF3FC187E52986C65F6"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Services/AlertService.cs",
+      "Sha256": "52DE72EA0C6ABC930C2EF6EC2F279ACD45144F16FF85EF889890633F86B27224"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Services/ContentNavigationService.cs",
+      "Sha256": "FF6481C83AE571DB84FBD9F73B9E7C3EEA325FC3FE6626BACC408E75F666ACD3"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Services/MenuNavigationService.cs",
+      "Sha256": "139DB7424ADB00F695EB494CC992EA93D4B7A55510C5CA07585A4AE5E7DBCB50"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Services/RootNavigationService.cs",
+      "Sha256": "7A368385A623E877D5C0C6A5B0D7F28F5D7255FFFFCC26D80C46209A4D7653B7"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/ViewLocator.cs",
+      "Sha256": "5CF0FCC16C7544DF15A7187EB866C2F89B808C288FDFBE43D2A8881AE424EFD0"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/DetailView.axaml.cs",
+      "Sha256": "7738E72C7D8A9F769E6C147806A35D7F6B1D7713FCA69FF635D1013C40BAC88B"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/FavoriteView.axaml.cs",
+      "Sha256": "F2CF53D86BC94C19F6BC4005E80879BA91818FB869AE69ADA8C302D00C2F2B9C"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/InitializationView.axaml.cs",
+      "Sha256": "10DC639F89F2298BF0DE931C0BB6353D76F789E30E0C0CD7721DD69BE5E97ED8"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/MainView.axaml.cs",
+      "Sha256": "D443959CDCD4A06B58A1E02721630FEF8D8C400E0AE3D9812CD79362AE0BD92C"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/MainWindow.axaml.cs",
+      "Sha256": "0B7CB915CB2AA813565C880357CE0267CB7890B4FE7B86C886CD2AF9B38F66E2"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/QueryView.axaml.cs",
+      "Sha256": "AF84FCBBDAF5AA80ABF8FD7D7052B081E211FF9BB242DD9AB98E9C4696B89DDD"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/ResultView.axaml.cs",
+      "Sha256": "74A6A8094B311D5705CEBFCA6AEB4EEEDA7840BD11DFAD3D5D5FD7E71C6FF936"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/TodayDetailView.axaml.cs",
+      "Sha256": "13CCED1A260573D6BF8B457BE5D963BD871D91D68FF33E50174BCC12AB4D542A"
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Path": "DailyPoetryA/Views/TodayView.axaml.cs",
+      "Sha256": "8AACF6B331931F396687EAEE9ADA9CF155FC02E31D8CD6411846C44F5A634D7B"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Helpers/ErrorMessageHelper.cs",
+      "Sha256": "176E39B0C3922F6C3F6A62BDC72CB88E5B13F55ADE7CCCFD6DA30FDCCDC70D07"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Helpers/PathHelper.cs",
+      "Sha256": "6FA01A14BAF02C8BD1601FFE3C5CFD557B5226148746E7587D8507CE1969CB9C"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Models/Favorite.cs",
+      "Sha256": "6AD2243E629E8277D55FEB60625A60967423387D3AB034773BEA80FEB6A3CEB1"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Models/Poetry.cs",
+      "Sha256": "4CF3C7CD9237CABC5CEEADA4ED5532E18AEFB3702E189E721684E195C286E5F3"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Models/PoetryQuery.cs",
+      "Sha256": "6B025D54442317C3ADB7F5A61896B511B0A2C1E10B4F9578518E606B769C401F"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Models/TodayImage.cs",
+      "Sha256": "2415B108FA206322F6B2F2CD18E26D0717F6D91646F3A15286A6B96AFF40ECCF"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Models/TodayPoetry.cs",
+      "Sha256": "999767FED66F2E48AE5F7E5822BB7C9621D21B5BA236C34C2D9F2A500866798A"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/BingImageService.cs",
+      "Sha256": "69822B53632B02C16EE15E724D69B0A50037FBCD050A2110031636A39E3EB343"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/FavoriteStorage.cs",
+      "Sha256": "9B5B2CD4A5BE616064A991E040F7A9FB4A92B054E9220CF164679F91881AC143"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/FilePreferenceStorage.cs",
+      "Sha256": "D1EFC59D54704985D28E2BB40BBC2CD21B9569900F169E78A12BE7414EA3534C"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IAlertService.cs",
+      "Sha256": "01A9C81D355936B183DC30C82A962F07CD89DB18F2B288AE7EB3E2EAD6524EEE"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IContentNavigationService.cs",
+      "Sha256": "E6430B92C16532614348E37E74ED8CE1824F2BB57267C8F66D08F29E7343EC79"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IFavoriteStorage.cs",
+      "Sha256": "BA4DB42E185694D1D3D064250812FF0CDF74C73ABA8DC22F67CAF3ECC4E0CC35"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IMenuNavigationService.cs",
+      "Sha256": "E94FD5801DAA402CAB67C26B8D80AA759C86EB299B29AC824E932E0F8BFFA949"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IPoetryStorage.cs",
+      "Sha256": "4148772B440057EC525E19BB19F99FFB16176C816C397F6D35970C86A5918F93"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IPreferenceStorage.cs",
+      "Sha256": "26D0C6B842DA1FBD2526870FD7B68AF7A1D3F52969A4E954F82760CB866874B5"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/IRootNavigationService.cs",
+      "Sha256": "D154E4BF1123C0AF8EB7458D9539FD375DB2206777EB1E1DA9D3CD718AFB6AB9"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/ITodayImageService.cs",
+      "Sha256": "197C45E089A4160F4682EE79600141BC9491E06F6C9DE99026EBC12857BC15B4"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/ITodayImageStorage.cs",
+      "Sha256": "43213948323D11F1D90498D859FFBE57D02365EE2E7856CBE2BA116EE5DA525B"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/ITodayPoetryService.cs",
+      "Sha256": "572924F8BEDFD3BBB93528D9A91CF61C3BD78FEF58A171DF12256CE898417AF8"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+      "Sha256": "5FEEAEC4759C7295909DA82773D58E5D0BC0CDB9981CD2E7B7FA4FE8A26A47EF"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/PoetryStorage.cs",
+      "Sha256": "D722AABD113B78D73E1010AFCEA6612F187898ECB08D5745204D8DD2819D0274"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/Services/TodayImageStorage.cs",
+      "Sha256": "345E64F43A34A1064A0097448DB5080DFAB842F9463BF123E747DFCBC0C650DC"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/DetailViewModel.cs",
+      "Sha256": "C27606C5FA509A5DAA5FC3ACF9D24E1B93CE3FF930B335B46D7068EB9AAB2E74"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/FavoriteViewModel.cs",
+      "Sha256": "AB88B10095641223C53012B3F21922133E3B3726AE4A493EB649CC4E49E35BCF"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/InitializationViewModel.cs",
+      "Sha256": "3BF949991060A62609784DC46D012DACA402373EB032481D0EA309BECC7E8423"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/MainViewModel.cs",
+      "Sha256": "C66F8182ECB0B3FB29F3A37FD368CD65E0D6B5945BB27A308770D40359053121"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/MainWindowViewModel.cs",
+      "Sha256": "FA466EC3A51962B5AF56EF675E7276E47F8EB6196115D5704297B635F9E04C4C"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+      "Sha256": "88F324B94A030A6F16D7413EA4E4EC7B0D0C10BD8A0FB69B61843A76D9D16D28"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/ResultViewModel.cs",
+      "Sha256": "A9A21DA7A39337B1A4DEE6BD50CAAB771D20462851D0CD654C46D70E51724AA9"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/TodayDetailViewModel.cs",
+      "Sha256": "6472B12D24649602908FCD1CE55148C4A502D60160461723C5D7967EA5207310"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/TodayViewModel.cs",
+      "Sha256": "DA3EE00C6B49718973A5B9BF32BABD0CB6AA0655477A00D3DD694DCC3EF20D89"
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Path": "DailyPoetryA.Library/ViewModels/ViewModelBase.cs",
+      "Sha256": "F49D382C31405E286ABCA6737313BEE7E9B7AC291CD4EDEF471C7BA524BC1552"
+    }
+  ],
+  "Types": [
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.App",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/App.axaml.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Converters.ByteArrayToBitmapConverter",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Converters/ByteArrayToBitmapConverter.cs",
+          "Line": 9
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Converters.CountToBoolConverter",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Converters/CountToBoolConverter.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Converters.NegativeConverter",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Converters/NegativeConverter.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Converters.PoetryToStringConverter",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Converters/PoetryToStringConverter.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.DesignViewModels.ResultDesignViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/DesignViewModels/ResultDesignViewModel.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Helpers.ErrorMessageHelper",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Helpers/ErrorMessageHelper.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Helpers.PathHelper",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Helpers/PathHelper.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Models.Favorite",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Models/Favorite.cs",
+          "Line": 6
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Models.Poetry",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Models/Poetry.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Models.PoetryQuery",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Models/PoetryQuery.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Models.TodayImage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Models/TodayImage.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Models.TodayPoetry",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Models/TodayPoetry.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.BingImageOfTheDay",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/BingImageService.cs",
+          "Line": 104
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.BingImageOfTheDayImage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/BingImageService.cs",
+          "Line": 108
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.BingImageService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/BingImageService.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.ContentNavigationConstant",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IContentNavigationService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.FavoriteStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/FavoriteStorage.cs",
+          "Line": 6
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.FavoriteStorageConstant",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/FavoriteStorage.cs",
+          "Line": 54
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.FavoriteStorageUpdatedEventArgs",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IFavoriteStorage.cs",
+          "Line": 19
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.FilePreferenceStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/FilePreferenceStorage.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.JinrishiciData",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+          "Line": 162
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.JinrishiciOrigin",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+          "Line": 155
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.JinrishiciSentence",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+          "Line": 167
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.JinrishiciService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.JinrishiciToken",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/JinrishiciService.cs",
+          "Line": 151
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.MenuNavigationConstant",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IMenuNavigationService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.PoetryStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/PoetryStorage.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.PoetryStorageConstant",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/PoetryStorage.cs",
+          "Line": 54
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.RootNavigationConstant",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IRootNavigationService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.TodayImageServiceCheckUpdateResult",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/ITodayImageService.cs",
+          "Line": 11
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.TodayImageStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/TodayImageStorage.cs",
+          "Line": 6
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.Services.TodayPoetrySources",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/ITodayPoetryService.cs",
+          "Line": 9
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.DetailViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/DetailViewModel.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.FavoriteViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/FavoriteViewModel.cs",
+          "Line": 9
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.FilterType",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+          "Line": 145
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.FilterViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+          "Line": 113
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.InitializationViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/InitializationViewModel.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.MainViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/MainViewModel.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.MainWindowViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/MainWindowViewModel.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.MenuItem",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/MainViewModel.cs",
+          "Line": 92
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.PoetryFavorite",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/FavoriteViewModel.cs",
+          "Line": 85
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.QueryViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/QueryViewModel.cs",
+          "Line": 11
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.ResultViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/ResultViewModel.cs",
+          "Line": 9
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.TodayDetailViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/TodayDetailViewModel.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.TodayViewModel",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/TodayViewModel.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Library.ViewModels.ViewModelBase",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/ViewModels/ViewModelBase.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Program",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Program.cs",
+          "Line": 8
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.ServiceLocator",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/ServiceLocator.cs",
+          "Line": 12
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Services.AlertService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Services/AlertService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Services.ContentNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Services/ContentNavigationService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Services.MenuNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Services/MenuNavigationService.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Services.RootNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Services/RootNavigationService.cs",
+          "Line": 6
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.ViewLocator",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/ViewLocator.cs",
+          "Line": 9
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.DetailView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/DetailView.axaml.cs",
+          "Line": 7
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.FavoriteView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/FavoriteView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.InitializationView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/InitializationView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.MainView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/MainView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.MainWindow",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/MainWindow.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.QueryView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/QueryView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.ResultView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/ResultView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.TodayDetailView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/TodayDetailView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA",
+      "Kind": "class",
+      "FullName": "DailyPoetryA.Views.TodayView",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA/Views/TodayView.axaml.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IAlertService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IAlertService.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IContentNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IContentNavigationService.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IFavoriteStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IFavoriteStorage.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IMenuNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IMenuNavigationService.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IPoetryStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IPoetryStorage.cs",
+          "Line": 6
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IPreferenceStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IPreferenceStorage.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.IRootNavigationService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/IRootNavigationService.cs",
+          "Line": 3
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.ITodayImageService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/ITodayImageService.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.ITodayImageStorage",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/ITodayImageStorage.cs",
+          "Line": 5
+        }
+      ]
+    },
+    {
+      "Project": "DailyPoetryA.Library",
+      "Kind": "interface",
+      "FullName": "DailyPoetryA.Library.Services.ITodayPoetryService",
+      "Declarations": [
+        {
+          "Path": "DailyPoetryA.Library/Services/ITodayPoetryService.cs",
+          "Line": 5
+        }
+      ]
+    }
+  ],
+  "Views": [
+    {
+      "Path": "DailyPoetryA/Views/DetailView.axaml",
+      "Sha256": "AB8DDAB1CDF26AB2DBA0BC145FACA3CD2B8A19AC633B13B97DFD0098A95E4A7C"
+    },
+    {
+      "Path": "DailyPoetryA/Views/FavoriteView.axaml",
+      "Sha256": "AA4964F855A03E2CBBBC8239F9ECEBB0AEAD2A5F3482190AFD93E8473FC4EB7F"
+    },
+    {
+      "Path": "DailyPoetryA/Views/InitializationView.axaml",
+      "Sha256": "A04F97C3C5765816D33F180555A6FBE5B5E1382E1DF5797FE51DC6A3039A3C99"
+    },
+    {
+      "Path": "DailyPoetryA/Views/MainView.axaml",
+      "Sha256": "B9FE02C74FAFC1AFA0EB5731E64725AF5E28EB4DB507DB956378D3CF5E6CA9B4"
+    },
+    {
+      "Path": "DailyPoetryA/Views/MainWindow.axaml",
+      "Sha256": "E523A555D445C5F0230237C5C764A6EAA3C498E5B229579291E570CD2AB636FF"
+    },
+    {
+      "Path": "DailyPoetryA/Views/QueryView.axaml",
+      "Sha256": "61E86EE268A9541BB59EC497D938E0A39A81C733EBC9AA6170FE2B79108F071E"
+    },
+    {
+      "Path": "DailyPoetryA/Views/ResultView.axaml",
+      "Sha256": "B86086150148A3D542A0B81A81AFE5B59FF24EEC635CBF2300A6CDAAB7E03919"
+    },
+    {
+      "Path": "DailyPoetryA/Views/TodayDetailView.axaml",
+      "Sha256": "475B9CF203117ECD1440B732DA4EF8DFE5D66498CF6A3ABB8B3FC0C1B0F628D3"
+    },
+    {
+      "Path": "DailyPoetryA/Views/TodayView.axaml",
+      "Sha256": "2C87DD750CA27206E5CE3462C86C6EB2C02DCCAF4214CBE2E3E30E4D9BB7971B"
+    }
+  ]
+}

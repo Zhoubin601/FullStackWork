@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-24",
+  "head": "82070fa86198f532102b3c490cf6be1d0d07eace",
+  "tests": {
+    "total": "334",
+    "executed": "332",
+    "passed": "332",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "skipped": [
+    "ReadJournal.UnitTest.TxtImportTests.SymbolicSourceAndBrokenInboxLinkAreRejectedWithoutBlockingValidInboxBook",
+    "ReadJournal.UnitTest.CompleteBackupTests.SymlinkInManagedContentOrDestinationIsRejected"
+  ],
+  "testGroups": {
+    "EpubImportTests": {
+      "Passed": 26
+    },
+    "ReaderStateTests": {
+      "Passed": 10
+    },
+    "EditingRegressionTests": {
+      "Passed": 20
+    },
+    "CompleteBackupTests": {
+      "Passed": 41,
+      "NotExecuted": 1
+    },
+    "AiHttpTests": {
+      "Passed": 32
+    },
+    "TxtImportTests": {
+      "Passed": 35,
+      "NotExecuted": 1
+    },
+    "DatabaseTests": {
+      "Passed": 3
+    },
+    "ReaderMigrationTests": {
+      "Passed": 6
+    },
+    "BackupUiIntegrationTests": {
+      "Passed": 4
+    },
+    "ArchitectureTests": {
+      "Passed": 10
+    },
+    "SettingsNavigationTests": {
+      "Passed": 4
+    },
+    "ExtendedBusinessTests": {
+      "Passed": 16
+    },
+    "EpubRenderingTests": {
+      "Passed": 3
+    },
+    "DeleteNavigationRaceTests": {
+      "Passed": 6
+    },
+    "AiWorkflowTests": {
+      "Passed": 25
+    },
+    "ReaderLifecycleTests": {
+      "Passed": 7
+    },
+    "PlanConsistencyRegressionTests": {
+      "Passed": 8
+    },
+    "AiViewModelTests": {
+      "Passed": 5
+    },
+    "ReadingBusinessTests": {
+      "Passed": 12
+    },
+    "ReaderDocumentContractTests": {
+      "Passed": 2
+    },
+    "ReaderSessionTests": {
+      "Passed": 11
+    },
+    "ReaderCoordinatorTests": {
+      "Passed": 4
+    },
+    "BusyLoadRegressionTests": {
+      "Passed": 2
+    },
+    "ReaderLocalWorkflowTests": {
+      "Passed": 8
+    },
+    "EbookDeletionTests": {
+      "Passed": 11
+    },
+    "ReaderBackupCoordinationTests": {
+      "Passed": 2
+    },
+    "ReaderLayoutContractTests": {
+      "Passed": 4
+    },
+    "ReaderBaselineFixtureTests": {
+      "Passed": 2
+    },
+    "RestoreConcurrencyTests": {
+      "Passed": 6
+    },
+    "NavigationRaceTests": {
+      "Passed": 2
+    },
+    "OverviewArchitectureTests": {
+      "Passed": 3
+    },
+    "EditingTests": {
+      "Passed": 2
+    }
+  },
+  "prototypeTests": 14,
+  "productionChecks": 152,
+  "performanceGoals": {
+    "firstOpenUnder2Seconds": true,
+    "flipP95Under100Ms": true,
+    "reflowP95Under500Ms": true,
+    "allReferencesReleased": true
+  },
+  "compatibility": {
+    "passed": true,
+    "syntheticSupported": 11,
+    "syntheticRejected": 15,
+    "realBooksProvided": 0,
+    "marketCompatibilityRate": "not measured",
+    "allFixturesDeterministic": true
+  },
+  "realApiCalls": 3,
+  "realApiUsage": {
+    "inputTokens": 665,
+    "outputTokens": 213
+  },
+  "realQuoteSaved": 2,
+  "realCleanup": {
+    "credentialDeleted": true,
+    "mockRestored": true,
+    "normalClose": true,
+    "exactCredentialScanFiles": 406,
+    "exactCredentialMatches": 0,
+    "encodingChecks": [
+      "UTF-8",
+      "UTF-16LE"
+    ],
+    "archivesDecompressed": true
+  },
+  "restartCleanup": {
+    "restartHasNoCredential": true,
+    "missingCredentialRejectedBeforeHttp": true,
+    "localReadingAndNavigationAvailable": true,
+    "normalClose": true,
+    "finalMock": true,
+    "integrity": "ok",
+    "foreignKeyErrors": 0,
+    "remainingQuotes": 3
+  },
+  "actualUiBackupRestore": {
+    "booksRestored": 3,
+    "ebooksRestored": 2,
+    "businessTablesExactlyMatchBackup": 10,
+    "fakeCredentialAbsentFromZipAndDataFiles": true,
+    "restoreRetainedSessionCredential": true,
+    "credentialDeleted": true,
+    "restartHasNoCredential": true,
+    "restoredQuoteReturnAndCopy": true,
+    "zipBytes": 96514,
+    "zipSha256": "6e676fe12bef6ad65acdc623e77df82a08403d9e1b8de4473ed2c73436c0f64d"
+  },
+  "sourceVerification": {
+    "head": "82070fa86198f532102b3c490cf6be1d0d07eace",
+    "originMain": "82070fa86198f532102b3c490cf6be1d0d07eace",
+    "fetchedMain": "82070fa86198f532102b3c490cf6be1d0d07eace",
+    "rawUnchanged": true,
+    "rawFiles": 2,
+    "sourceZipFiles": 202,
+    "sourceZipBytes": 321886,
+    "sourceZipSha256": "c3de04c9e383b28a69241b1edcda5dcea740f72851c9056f5622b714f4358587",
+    "sourceZipMatchesCurrentCode": true,
+    "mismatches": [],
+    "forbiddenEntries": [],
+    "under10MB": true,
+    "os": "Windows-11-10.0.26300-SP0"
+  },
+  "conclusion": "Passed within confirmed scope; permission-skipped cases and untested display/commercial EPUB coverage excluded",
+  "productionCodeChanged": false,
+  "testCounts": {
+    "total": 334,
+    "passed": 332,
+    "failed": 0,
+    "skipped": 2
+  }
+}

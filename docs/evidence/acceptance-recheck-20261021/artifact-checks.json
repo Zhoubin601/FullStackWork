@@ -1,0 +1,21 @@
+{
+  "raw_sha256": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+  "raw_matches_baseline": true,
+  "report_sha256": "09c3fc67acd40f3c7915a98f5950016b16b9d0c36f7068194c1ecf19dbb727bd",
+  "report_matches_release_validation": false,
+  "package_sha256": "be5d57de1e6001122a2299b9269e1aca0873bd9a134a53a4e83afbf2a0229187",
+  "package_matches_release_validation": true,
+  "package_bytes": 114395,
+  "package_files": 119,
+  "manifest_matches": true,
+  "code_differences": [],
+  "forbidden_entries": [],
+  "crc_error": null,
+  "pdf_in_output": [],
+  "report_paragraphs": 161,
+  "report_tables": 5,
+  "report_images": 23,
+  "svg_diagrams": 2,
+  "package_hash_in_report": true,
+  "pending_tokens": []
+}

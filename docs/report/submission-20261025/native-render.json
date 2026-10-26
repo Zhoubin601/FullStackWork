@@ -1,0 +1,107 @@
+{
+  "renderer": "Microsoft Word native COM",
+  "pdf": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\submission-20261025\\阅记-项目报告.pdf",
+  "headings": [
+    {
+      "page": 3,
+      "level": 1,
+      "title": "项目背景与意义"
+    },
+    {
+      "page": 3,
+      "level": 1,
+      "title": "1  需求分析"
+    },
+    {
+      "page": 3,
+      "level": 2,
+      "title": "1.1  功能需求"
+    },
+    {
+      "page": 4,
+      "level": 2,
+      "title": "1.2  非功能需求"
+    },
+    {
+      "page": 5,
+      "level": 1,
+      "title": "2  系统设计"
+    },
+    {
+      "page": 5,
+      "level": 2,
+      "title": "2.1  架构设计"
+    },
+    {
+      "page": 6,
+      "level": 2,
+      "title": "2.2  功能模块设计"
+    },
+    {
+      "page": 7,
+      "level": 2,
+      "title": "2.3  数据/数据库设计"
+    },
+    {
+      "page": 9,
+      "level": 2,
+      "title": "2.4  接口与类设计"
+    },
+    {
+      "page": 10,
+      "level": 2,
+      "title": "2.5  技术选型说明"
+    },
+    {
+      "page": 11,
+      "level": 1,
+      "title": "3  系统实现"
+    },
+    {
+      "page": 11,
+      "level": 2,
+      "title": "3.1  关键模块的核心实现"
+    },
+    {
+      "page": 15,
+      "level": 2,
+      "title": "3.2  核心功能与UI截图"
+    },
+    {
+      "page": 22,
+      "level": 2,
+      "title": "3.3  难点和解决方案"
+    },
+    {
+      "page": 23,
+      "level": 1,
+      "title": "4  系统测试"
+    },
+    {
+      "page": 23,
+      "level": 2,
+      "title": "4.1  测试环境"
+    },
+    {
+      "page": 24,
+      "level": 2,
+      "title": "4.2  测试用例"
+    },
+    {
+      "page": 27,
+      "level": 2,
+      "title": "4.3  测试截图"
+    },
+    {
+      "page": 29,
+      "level": 1,
+      "title": "5  总结与展望"
+    }
+  ],
+  "tocCount": 1,
+  "wordVersion": "16.0",
+  "tocText": [
+    "项目背景与意义\t3\r1  需求分析\t3\r1.1  功能需求\t3\r1.2  非功能需求\t4\r2  系统设计\t5\r2.1  架构设计\t5\r2.2  功能模块设计\t6\r2.3  数据/数据库设计\t7\r2.4  接口与类设计\t9\r2.5  技术选型说明\t10\r3  系统实现\t11\r3.1  关键模块的核心实现\t11\r3.2  核心功能与UI截图\t15\r3.3  难点和解决方案\t22\r4  系统测试\t23\r4.1  测试环境\t23\r4.2  测试用例\t24\r4.3  测试截图\t27\r5  总结与展望\t29\r"
+  ],
+  "pages": 29
+}

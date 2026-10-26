@@ -1,0 +1,12 @@
+{
+  "booksRestored": 3,
+  "ebooksRestored": 2,
+  "businessTablesExactlyMatchBackup": 10,
+  "fakeCredentialAbsentFromZipAndDataFiles": true,
+  "restoreRetainedSessionCredential": true,
+  "credentialDeleted": true,
+  "restartHasNoCredential": true,
+  "restoredQuoteReturnAndCopy": true,
+  "zipBytes": 96514,
+  "zipSha256": "6e676fe12bef6ad65acdc623e77df82a08403d9e1b8de4473ed2c73436c0f64d"
+}

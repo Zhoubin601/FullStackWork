@@ -1,0 +1,59 @@
+{
+  "AiGenerationBatch": [],
+  "AiGenerationBatchItem": [],
+  "AppMetadata": [
+    {
+      "Key": "LastRestoreId",
+      "Value": ""
+    }
+  ],
+  "Book": [
+    {
+      "Id": 1,
+      "Title": "20261024 合成手动书",
+      "Author": "合成作者",
+      "Category": "复验",
+      "TotalPages": 280,
+      "Description": "隔离功能验收",
+      "CreatedAt": 639284561771659231,
+      "UpdatedAt": 639284561771659231,
+      "Kind": 0,
+      "BookUid": "98f65db9-e90a-4dd3-a39a-165c2d2d7142"
+    }
+  ],
+  "EbookFile": [],
+  "EbookProgress": [],
+  "EbookReadingSession": [],
+  "Quote": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "本次复验使用的合成手动书摘。",
+      "Thoughts": "合成感想",
+      "Page": 15,
+      "IsFavorite": 1,
+      "CreatedAt": 639284561829616849,
+      "UpdatedAt": 639284561829616849,
+      "Revision": 0
+    }
+  ],
+  "QuoteOrigin": [],
+  "ReadingPlan": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639283968000000000,
+      "TargetDate": 639283968000000000
+    }
+  ],
+  "ReadingRecord": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "ReadingDate": 639283968000000000,
+      "StartPage": 1,
+      "EndPage": 35,
+      "Minutes": 40
+    }
+  ]
+}

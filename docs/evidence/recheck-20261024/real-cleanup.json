@@ -1,0 +1,12 @@
+{
+  "credentialDeleted": true,
+  "mockRestored": true,
+  "normalClose": true,
+  "exactCredentialScanFiles": 406,
+  "exactCredentialMatches": 0,
+  "encodingChecks": [
+    "UTF-8",
+    "UTF-16LE"
+  ],
+  "archivesDecompressed": true
+}

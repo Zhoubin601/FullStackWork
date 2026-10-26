@@ -1,0 +1,56 @@
+期末项目与报告要求
+期末项目要求
+功能与工作量要求
+期末项目需满足如下要求：
+功能有实际意义，逻辑需要自洽，不得出现类似“本地通讯录支持用户注册登录”这类逻辑不自洽的功能设计。
+页面数量不应少于 DailyPoetryA 的页面数量，接口和类的数量不应少于 DailyPoetryA 接口和类的 70%。
+项目代码以压缩包提交。压缩包中不应包括任何编译结果，只包括项目源码和资源文件。压缩包不超过 10MB。
+技术与架构要求
+本章节以 DailyPoetryA 为例，说明期末项目必须满足的技术和架构要求。注意期末项目只需要反映对应的思想，但无需采用一模一样的技术。
+MVVM 视图-视图模型分离（思想层）
+DailyPoetryA.Library/ 内严格按职责划分三层：Models/ 以纯数据载体为主（Poetry 是 [SQLite.Table("works")] 标注的 POCO），ViewModels/ 承载交互逻辑，Views/ 仅承载 XAML 与极薄 code-behind。
+统一导航参数注入入口（思想层）
+Library/ViewModels/ViewModelBase.cs 定义 virtual void SetParameter(object parameter)，被 DetailViewModel / QueryViewModel / ResultViewModel / TodayDetailViewModel 四个 ViewModel 按需 override。导航服务切换前调用该方法传入参数，ViewModel 不必感知导航来源。设计意图是把"谁传给我"和"我要做什么"在编译期解耦：导航层不依赖具体 ViewModel 类型，ViewModel 不依赖导航栈结构，新增页面只需覆写一个虚方法即可接入。
+IService 接口抽象与面向接口设计（接口层）
+业务侧以 IXxx 接口定义：IPoetryStorage / IFavoriteStorage / IPreferenceStorage / ITodayImageService / ITodayImageStorage / ITodayPoetryService / IAlertService，加上三套导航接口（IRootNavigationService / IMenuNavigationService / IContentNavigationService），共 7 服务 + 3 导航。映射关系通过 DailyPoetryA/ServiceLocator.cs 构造函数中的 Microsoft.Extensions.DependencyInjection.ServiceCollection 完成。ViewModel 通过构造函数注入（见 TodayViewModel 等）拿到接口引用，避免硬依赖实现类型，便于单元测试替换为 Mock，也便于替换底层（如把 Bing 接口换成 Unsplash）。
+自实现的轻量 ServiceLocator（接口层）
+项目在 DailyPoetryA/ServiceLocator.cs 中以 ServiceCollection 通过 IoC 容器集中组装。
+三层服务化的导航架构（服务化层）
+导航按 IService 拆为三层：IRootNavigationService（启动切换 Window）、IMenuNavigationService（侧边菜单切换主区）、IContentNavigationService（详情等内容页推入栈）。每个接口配 XxxNavigationConstant 常量类（RootNavigationConstant / MenuNavigationConstant / ContentNavigationConstant）统一目标字符串，避免散落的魔法字符串。返回栈由 MainViewModel.ContentStack / PushContent / GoBack 管理——栈结构封在 ViewModel 内而非接口中，体现"接口定义能力、ViewModel 维护状态"的边界划分：NavigationConstant 字符串常量归接口，栈操作归主 VM，职责清晰分离。
+ViewLocator（机制层）
+ViewLocator 以一种优雅的机制实现了 View 的自动渲染。该机制未必能够迁移到其他平台下，但每一种平台都存在类似的优雅极致。
+IO 副作用 Service 化与异步协作（机制层）
+文件 IO、网络 IO、UI 反馈全部封装为可注入 Service，把"取数据 / 持久化 / 通知用户"从 ViewModel 中剥离。同时使用异步操作避免 UI 卡死。
+Library/UI 双工程目录即抽象说明书（工程层）
+DailyPoetryA.Library/（业务核心：Models / Services / ViewModels）与 UI 壳（Views / NavigationConstant / AlertService / ServiceLocator）项目结构本身就是抽象分层。准确地说，Library 内的 IXxx 接口、ViewModelBase.SetParameter、各 Service 的方法签名与 Model 字段含义具备跨 UI 框架复用的潜质。、
+期末报告要求
+撰写要求
+期末报告需满足如下要求：
+使用如下模板编写期末报告。
+必须以 PDF 格式提交报告。
+报告模板
+
+全栈开发技术期末项目报告
+项目背景与意义
+需求分析
+1.1 功能需求
+1.2 非功能需求
+系统设计
+2.1 架构设计
+2.2 功能模块设计
+2.3 数据/数据库设计
+2.4 接口与类设计
+2.5 技术选型说明
+系统实现
+3.1 关键模块的核心实现
+3.2 核心功能与UI截图
+3.3 难点和解决方案
+系统测试
+4.1 测试环境
+4.2 测试用例
+4.3 测试截图
+总结与展望
+项目名称 | 
+姓名 | 
+学号 | 
+班级 | 

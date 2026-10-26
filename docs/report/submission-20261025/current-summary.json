@@ -1,0 +1,853 @@
+{
+  "source_sha256": "3d09d720babde7f0e24dfccf37ca0f9297f256ee0e44466e6cfc40515fb90523",
+  "paragraphs": 205,
+  "tables": 15,
+  "styles": [
+    [
+      "1",
+      "标题1"
+    ],
+    [
+      "11",
+      "标题 11"
+    ],
+    [
+      "21",
+      "标题 21"
+    ],
+    [
+      "31",
+      "标题 31"
+    ],
+    [
+      "TOC1",
+      "toc 1"
+    ],
+    [
+      "TOC2",
+      "toc 2"
+    ]
+  ],
+  "paragraph_texts": [
+    {
+      "i": 0,
+      "text": "全栈开发技术期末项目报告"
+    },
+    {
+      "i": 1,
+      "text": "阅记"
+    },
+    {
+      "i": 2,
+      "text": "原生电子书阅读器与 AI 阅读助手"
+    },
+    {
+      "i": 3,
+      "text": "项目名称：阅记原生电子书阅读器与 AI 阅读助手"
+    },
+    {
+      "i": 4,
+      "text": "姓名：周宇斌"
+    },
+    {
+      "i": 5,
+      "text": "学号：20246085"
+    },
+    {
+      "i": 6,
+      "text": "班级：软件2401"
+    },
+    {
+      "i": 7,
+      "text": "2026 年 10 月 25 日"
+    },
+    {
+      "i": 8,
+      "text": "目录"
+    },
+    {
+      "i": 9,
+      "text": ""
+    },
+    {
+      "i": 10,
+      "text": "项目背景与意义\t3"
+    },
+    {
+      "i": 11,
+      "text": "1  需求分析\t3"
+    },
+    {
+      "i": 12,
+      "text": "1.1  功能需求\t3"
+    },
+    {
+      "i": 13,
+      "text": "1.2  非功能需求\t4"
+    },
+    {
+      "i": 14,
+      "text": "2  系统设计\t5"
+    },
+    {
+      "i": 15,
+      "text": "2.1  架构设计\t5"
+    },
+    {
+      "i": 16,
+      "text": "2.2  功能模块设计\t6"
+    },
+    {
+      "i": 17,
+      "text": "2.3  数据/数据库设计\t7"
+    },
+    {
+      "i": 18,
+      "text": "2.4  接口与类设计\t9"
+    },
+    {
+      "i": 19,
+      "text": "2.5  技术选型说明\t10"
+    },
+    {
+      "i": 20,
+      "text": "3  系统实现\t11"
+    },
+    {
+      "i": 21,
+      "text": "3.1  关键模块的核心实现\t11"
+    },
+    {
+      "i": 22,
+      "text": "3.2  核心功能与UI截图\t15"
+    },
+    {
+      "i": 23,
+      "text": "3.3  难点和解决方案\t22"
+    },
+    {
+      "i": 24,
+      "text": "4  系统测试\t23"
+    },
+    {
+      "i": 25,
+      "text": "4.1  测试环境\t23"
+    },
+    {
+      "i": 26,
+      "text": "4.2  测试用例\t24"
+    },
+    {
+      "i": 27,
+      "text": "4.3  测试截图\t27"
+    },
+    {
+      "i": 28,
+      "text": "5  总结与展望\t29"
+    },
+    {
+      "i": 29,
+      "text": ""
+    },
+    {
+      "i": 30,
+      "text": "项目背景与意义"
+    },
+    {
+      "i": 31,
+      "text": "个人阅读中，书籍资料、阅读活动与摘录通常分散记录。阅记以本地桌面应用统一管理这些信息，使用户能够阅读电子书、追踪阅读活动、整理感想并恢复自己的数据。项目在原有阅读与书摘管理基础上，加入 TXT/EPUB 原生阅读器及 DeepSeek AI 阅读辅助，形成“导入—阅读—摘录—计划—统计—备份”的业务闭环。"
+    },
+    {
+      "i": 32,
+      "text": "系统同时服务两类阅读方式：纸质书等手动书籍以真实页码和分钟数记录活动；电子书以稳定正文位置、百分比和自动阅读会话记录活动。动态排版页号仅服务当前阅读界面，不作为纸质页数计入统计。AI 仅处理用户主动确认的正文范围，本地阅读和手动书摘不依赖网络。"
+    },
+    {
+      "i": 33,
+      "text": "本文对应 main 提交 ba08e19，编写日期为 2026 年 10 月 25 日。功能及截图依据 10 月 24 日最终 Windows 集成验收；该轮留存的 209 个源码文件摘要与当前 Code 全部一致。报告更新期间未重新运行 Windows 验收或发起真实 AI 请求。文中演示内容均为确定性自建样本，不作为真实阅读行为或用户资料。"
+    },
+    {
+      "i": 34,
+      "text": "1  需求分析"
+    },
+    {
+      "i": 35,
+      "text": "1.1  功能需求"
+    },
+    {
+      "i": 36,
+      "text": ""
+    },
+    {
+      "i": 37,
+      "text": "1.2  非功能需求"
+    },
+    {
+      "i": 38,
+      "text": "离线能力与可维护性"
+    },
+    {
+      "i": 39,
+      "text": "业务数据保存在当前用户本地应用数据目录。断网后可阅读已有书籍、保存手动书摘、查看计划与统计；只有用户主动确认的 AI 操作联网。首次依赖还原需要 NuGet 来源或完整缓存，不能把“日常阅读离线”理解为“首次构建无需联网”。工程保留 UI、Library 与 UnitTest 的职责划分，业务通过接口注入，以便替换平台能力和隔离测试。"
+    },
+    {
+      "i": 40,
+      "text": "一致性与可靠性"
+    },
+    {
+      "i": 41,
+      "text": "数据库访问串行，跨表写入采用事务；文件系统与数据库的组合操作采用 staging、trash 与持久化操作日志恢复。书籍使用不可变 BookUid，正文使用 DocumentKey 标识版本，维护操作更新 DataEpoch，防止旧页面或迟到响应写入新数据。恢复先完整校验并生成原库自动备份，成功后再替换数据。原始导入文件保持不变。"
+    },
+    {
+      "i": 42,
+      "text": "交互与响应"
+    },
+    {
+      "i": 43,
+      "text": "界面使用中文标签、六项侧边菜单、统一表单和浅深主题。文件选择使用系统原生对话框。正文重排保留稳定位置和仍有效的选区；耗时任务提供忙碌、错误和取消反馈。以异步命令与可取消后台索引减少界面阻塞；性能结论限于实际测试样本，具体采样口径见第 4 章。"
+    },
+    {
+      "i": 44,
+      "text": "AI 数据与费用边界"
+    },
+    {
+      "i": 45,
+      "text": "请求前需保存上传知情确认，并再次确认所选范围及可能费用。会话 Key 只在进程内存保存，不写普通配置、源码、日志或备份；退出后须重新输入。请求默认输入上限 24000 个 UTF-16 单元、输出 2048 token、超时 45 秒；输入硬上限 60000 个 UTF-16 单元，页范围最多 200 页和 2048 个片段。字符单元、token 和真实费用是不同概念，费用以供应商账单为准。"
+    },
+    {
+      "i": 46,
+      "text": ""
+    },
+    {
+      "i": 47,
+      "text": "2  系统设计"
+    },
+    {
+      "i": 48,
+      "text": "2.1  架构设计"
+    },
+    {
+      "i": 49,
+      "text": "解决方案包含 ReadJournal、ReadJournal.Library 和 ReadJournal.UnitTest 三个工程。ReadJournal 负责 Avalonia 视图、原生阅读表面、实际导航、布局及平台服务；Library 负责模型、业务规则、存储、阅读器生命周期、AI 工作流和备份协议，不引用 Avalonia 控件；UnitTest 使用 xUnit、Moq、Headless 视图与临时真实 SQLite 数据库验证规则和绑定。"
+    },
+    {
+      "i": 50,
+      "text": ""
+    },
+    {
+      "i": 51,
+      "text": "图 1  三工程分层、平台接口与外部资源依赖"
+    },
+    {
+      "i": 52,
+      "text": "ReaderSurface 与 AvaloniaReaderLayoutService 承担原生文本排版、绘制和选择命中测试，未引入 WebView 作为阅读方案。Library 使用正文位置、布局句柄和纯数据契约描述能力，具体排版由桌面层实现并经接口注入。实线表示主要运行依赖，虚线表示测试或数据契约协作。"
+    },
+    {
+      "i": 53,
+      "text": "课程架构要求与实际实现对应"
+    },
+    {
+      "i": 54,
+      "text": ""
+    },
+    {
+      "i": 55,
+      "text": "2.2  功能模块设计"
+    },
+    {
+      "i": 56,
+      "text": "概览、书库、书摘、计划、统计及设置构成六个菜单入口。书库进入书籍详情、编辑或 ReaderView；详情关联阅读历史、计划和书摘；书摘可回到电子书的原文位置。编辑未保存时统一提供保存、放弃、取消；活动阅读器正常离开前须结束会话。左上角返回仅在存在上一级内容时显示。"
+    },
+    {
+      "i": 57,
+      "text": "运行期导航通过 NavigateToAsync 等待 MainViewModel.RequestNavigationAsync。同书原文回跳在现有 Reader 实例内执行；跨书、返回、菜单及关窗经统一离开编排，先取消或结束关联动作，再提交会话和切换内容。提交失败保留重试或继续阅读入口，避免页面已离开而会话未保存。"
+    },
+    {
+      "i": 58,
+      "text": "2.3  数据/数据库设计"
+    },
+    {
+      "i": 59,
+      "text": "数据库 user_version 为 2。原有四张业务表保留，增加电子书文件、进度、会话、书摘来源及 AI 批次数据，共 10 张业务表；另有 AppMetadata 元数据表。图中仅展示业务关系及代表字段，完整约束以 DatabaseMigrationV2 的建表 SQL 为准。"
+    },
+    {
+      "i": 60,
+      "text": ""
+    },
+    {
+      "i": 61,
+      "text": "图 2  schema 2 的十张业务表及主要外键关系"
+    },
+    {
+      "i": 62,
+      "text": "实线外键默认 ON DELETE CASCADE；QuoteOrigin.BatchId 为可空关联，删除批次时 ON DELETE SET NULL。图中 0..1 表示可选的一对一扩展，0..* 表示可有多条子记录。AppMetadata 保存恢复事务标记，不参与业务实体关系图。"
+    },
+    {
+      "i": 63,
+      "text": "数据职责与关键约束"
+    },
+    {
+      "i": 64,
+      "text": ""
+    },
+    {
+      "i": 65,
+      "text": "手动进度取有效记录的最大结束页，累计页数对每条闭区间长度求和并包含重读；电子书只统计正文百分比及会话时长。总时长先累加毫秒再换算，避免逐会话取整误差。完成标记与回看进度分离，重置仅清除当前进度和完成标记，保留历史与书摘；多个历史计划可能同时被重置为未完成时，整次操作拒绝。"
+    },
+    {
+      "i": 66,
+      "text": "迁移在事务内为旧书生成 BookUid，新增 Kind、Quote.Revision、业务表、索引和触发器；检查 integrity_check 和 foreign_key_check 后才写 user_version=2。旧字段不清空。触发器保护书籍身份、书籍类型、电子书零物理页数及批次回执不可变性，服务层仍承担完整业务校验。"
+    },
+    {
+      "i": 67,
+      "text": "2.4  接口与类设计"
+    },
+    {
+      "i": 68,
+      "text": "本轮对当前 UI 与 Library 手写 C# 重新进行语法树清点：137 类、41 接口、134 个 C# 源文件、15 个 Views/*.axaml 视图文件。包含默认可见性和嵌套类型；partial 按工程、种类、命名空间、包含类型、名称与泛型参数个数去重；排除测试、生成文件、record、struct 和 enum。与旧报告相同统计目标，解析工具改用 tree-sitter C#；明细留存于本轮 type-inventory.json。"
+    },
+    {
+      "i": 69,
+      "text": "参考项目既有复核为 63 类、10 接口、9 视图，课程按 70% 向上取整要求至少 45 类、7 接口。本版数量满足要求。15 个视图文件包含窗口、初始化、容器和记录弹窗，不能全部视为独立业务页面；在原有 10 个业务页面基础上新增原生阅读页。生产探针检查的 36 个服务接口与此处全部 41 个接口是不同口径。"
+    },
+    {
+      "i": 70,
+      "text": ""
+    },
+    {
+      "i": 71,
+      "text": "ReaderOpenIdentity 同时携带 BookId、BookUid、DocumentKey、DataEpoch、ReaderInstanceId 和参数版本。整数 ID 可重用，不能单独作为异步写入依据；身份和租约均验证成功才允许提交。关键接口中的 CancellationToken 明确传播取消，数据契约使用 record 表示快照，但这些 record 不计入上述类数。"
+    },
+    {
+      "i": 72,
+      "text": "2.5  技术选型说明"
+    },
+    {
+      "i": 73,
+      "text": ""
+    },
+    {
+      "i": 74,
+      "text": "采用原生阅读方案便于复用 Avalonia 的文本测量、命中测试和主题体系，避免将业务坐标绑定到浏览器布局。代价是必须实现正文规范化、分页索引和稳定位置映射；因此首版限定为无 DRM 的流式 TXT/EPUB，不追求浏览器级 CSS 兼容。"
+    },
+    {
+      "i": 75,
+      "text": "依赖版本以工程文件和 packages.lock.json 为准，首次还原采用 --locked-mode。旧 SQLite 原生依赖可能产生 NETSDK1206 的旧 Alpine RID 提示；Windows 实测不据此推断 Alpine 或 macOS 支持。第三方依赖和许可元数据见配套源码 DEPENDENCIES.md、THIRD-PARTY-NOTICES.md；未声明许可的条目不能借用其他包结论。"
+    },
+    {
+      "i": 76,
+      "text": "3  系统实现"
+    },
+    {
+      "i": 77,
+      "text": "3.1  关键模块的核心实现"
+    },
+    {
+      "i": 78,
+      "text": "（1）真实容器、接口别名与导航"
+    },
+    {
+      "i": 79,
+      "text": "ServiceLocator 的构造函数集中登记服务与 ViewModel，全部按设计注册为单例。需要以多个接口共享同一实际对象时，先注册具体类型，再将接口映射到该具体实例；例如 FileService 同时提供普通文件服务与阅读器文件对话框能力。容器在注册结束后构建，属性从 IServiceProvider 解析。"
+    },
+    {
+      "i": 80,
+      "text": "代码 1  文件服务别名、容器构建与 VM 解析（实际节选）"
+    },
+    {
+      "i": 81,
+      "text": "    serviceCollection.AddSingleton<FileService>();\n    serviceCollection.AddSingleton<IFileService>(sp => sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IAppFileDialogService>(sp => sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IReaderPlatformService, ReaderPlatformService>();\n    serviceCollection.AddSingleton<IBackupService, BackupService>();\n    serviceCollection.AddSingleton<ReadingPlanListViewModel>();\n    serviceCollection.AddSingleton<ReadingPlanEditViewModel>();\n    serviceCollection.AddSingleton<StatisticsViewModel>();\n    serviceCollection.AddSingleton<SettingsViewModel>();\n    _serviceProvider = serviceCollection.BuildServiceProvider();\n}\npublic MainWindowViewModel MainWindowViewModel => _serviceProvider.GetService<MainWindowViewModel>()!;\npublic InitializationViewModel InitializationViewModel => _serviceProvider.GetService<InitializationViewModel>()!;\npublic MainViewModel MainViewModel => _serviceProvider.GetService<MainViewModel>()!;\n"
+    },
+    {
+      "i": 82,
+      "text": "源码：ReadJournal/ServiceLocator.cs，第 99—112 行。"
+    },
+    {
+      "i": 83,
+      "text": "内容导航首先校验目标和参数。ReaderOpenRequest 只能指向合法电子书及合法位置；运行期必须等待统一的异步离开编排，不能直接替换活动 Reader。相同书籍的原文回跳在现有会话中定位，避免创建第二条重复会话。"
+    },
+    {
+      "i": 84,
+      "text": "代码 2  同书原位定位与异步导航（实际节选）"
+    },
+    {
+      "i": 85,
+      "text": "public async Task<bool> NavigateToAsync(string view, object? parameter = null, CancellationToken ct = default)\n{\n    var target = Resolve(view, parameter); var main = ServiceLocator.Current.MainViewModel;\n    if (target is ReaderViewModel reader && ReferenceEquals(main.Content, reader) && reader.IsSameBook(parameter!))\n        return await main.RequestInPlaceAsync(() => reader.NavigateWithinBookAsync((ReaderOpenRequest)parameter!, ct), ct);\n    if (ReferenceEquals(main.Content, target) && target is EditViewModelBase) return true;\n    var accepted = await main.RequestNavigationAsync(() => NavigateTo(view, parameter), ct);\n    if (accepted && ReferenceEquals(main.Content, target) && !target.OnLoadedCommand.IsRunning) await target.OnLoadedCommand.ExecuteAsync(null);\n    return accepted;\n}\n"
+    },
+    {
+      "i": 86,
+      "text": "源码：ReadJournal/Services/ContentNavigationService.cs，第 40—49 行。"
+    },
+    {
+      "i": 87,
+      "text": "（2）稳定正文位置与首屏生命周期"
+    },
+    {
+      "i": 88,
+      "text": "正文先解析为带章节与块信息的规范化表示，位置由 DocumentKey、ChapterKey 和 UTF-16 偏移构成；图片等非文本内容额外使用 NonTextBlockKey。DocumentKey 包含 FileId、来源摘要、规范化正文摘要和 ParserVersion，防止旧书摘被错误定位到另一版正文。字体、字号和窗口变化只改变布局，不改变原文位置。"
+    },
+    {
+      "i": 89,
+      "text": "代码 3  文档身份与可持久化正文锚点（实际节选）"
+    },
+    {
+      "i": 90,
+      "text": "public sealed record DocumentKey(\nGuid FileId,\nstring SourceSha256,\nstring CanonicalSha256,\nint ParserVersion);\n\npublic sealed record ReaderPosition(\nDocumentKey Document,\nstring ChapterKey,\n[property: JsonRequired] int Utf16Offset,\nstring? NonTextBlockKey = null);\n"
+    },
+    {
+      "i": 91,
+      "text": "源码：ReadJournal.Library/Models/Reader/ReaderContracts.cs，第 20—30 行。"
+    },
+    {
+      "i": 92,
+      "text": "打开阅读器依次验证书籍与数据代际、打开正文、解析已存位置并进入 Presenting。只有当前布局真正绘制并回调 PagePresentedAsync 后才进入 Active 并启动会话，避免加载失败或未显示页面也计时。视口变化替换首轮重排时保持呈现状态，不误判为 OpenFailed；真正退出或打开异常仍按取消/失败处理。"
+    },
+    {
+      "i": 93,
+      "text": "代码 4  首屏绘制确认后启动会话（实际节选）"
+    },
+    {
+      "i": 94,
+      "text": "public Task PagePresentedAsync(LayoutId layout)\n{\n    if (Phase != ReaderPhase.Presenting || _layout?.Id != layout || _identity is null || _position is null) return Task.CompletedTask;\n    if (!_beginning.IsCompleted) return _beginning;\n    return _beginning = Observe(async () =>\n    {\n        var identity = _identity; var position = _position; var now = _clock.Now;\n        _context = await _sessions.BeginAsync(identity, position, now, _lifetime.Token);\n        _start = position; _opened = now; Phase = ReaderPhase.Active; StartIndex();\n    });\n}\n"
+    },
+    {
+      "i": 95,
+      "text": "源码：ReadJournal.Library/ViewModels/ReaderViewModel.cs，第 121—131 行。"
+    },
+    {
+      "i": 96,
+      "text": "会话时长按关闭时刻减打开时刻计算，不扣闲置；时钟倒退时记录异常并将时长限制为非负。正常返回、菜单切换、切书和关窗使用冻结关闭命令，在同一事务内写入 SessionId 主键会话及最后位置，重复关闭查询已提交回执而不重复计时。强制杀进程不会补造未提交会话，只保证最后一次成功提交的数据。"
+    },
+    {
+      "i": 97,
+      "text": "（3）冻结 AI 范围与整段书摘"
+    },
+    {
+      "i": 98,
+      "text": "用户先选择当前页、当前选区或页范围，再执行解读或生成书摘。提交时冻结原文快照、正文身份、布局和范围摘要；响应后再次验证当前上下文，已退出、重置或恢复的数据不会接收旧响应。只有页范围模式显示起止页；当前页模式始终处理整页，不因存在高亮而悄悄变成选区。"
+    },
+    {
+      "i": 99,
+      "text": "选区生成书摘要求同一章节内连续纯文本、不跨图片且最多 8000 个 UTF-16 单元，并同时满足设置的输入上限。程序保留完整圈选原文，AI 仅返回整体解读，因此一段选择生成一条书摘，不再逐句拆分。当前页和页范围则可返回多条原文候选。"
+    },
+    {
+      "i": 100,
+      "text": "代码 5  选区原文由程序保留，模型只提供整体解读"
+    },
+    {
+      "i": 101,
+      "text": "        if (selection)\n        {\n            if (string.IsNullOrWhiteSpace(response.Analysis) || response.Analysis.Length > 4000)\n                throw new AiException(\"InvalidAiResponse\", \"整段解读为空或超过4000字符，未保存书摘。\");\n            var span = scope.Original.Spans[0];\n            result = verifier.Verify(scope, [new(span.Text, response.Analysis, null, null)]);\n        }\n        else result = verifier.Verify(scope, response.Candidates);\n"
+    },
+    {
+      "i": 102,
+      "text": "源码：ReadJournal.Library/Services/Ai/ReaderAiService.cs，第 62—69 行。"
+    },
+    {
+      "i": 103,
+      "text": "AiQuoteVerifier 使用 Ordinal 逐字查找，在冻结 TextSpan 中确认候选完整、连续、位于字符簇边界且能够唯一定位；原句重复时须有真实紧邻上下文消歧。找不到、歧义、越界或跨不连续片段拼接的候选明确拒绝，不能由模型返回的坐标直接入库。"
+    },
+    {
+      "i": 104,
+      "text": "代码 6  精确匹配、字符簇边界与紧邻上下文检查"
+    },
+    {
+      "i": 105,
+      "text": "            var boundaries = StringInfo.ParseCombiningCharacters(span.Text).Append(span.Text.Length).ToHashSet();\n            var at = 0;\n            while (at <= span.Text.Length - candidate.OriginalText.Length)\n            {\n                var found = span.Text.IndexOf(candidate.OriginalText, at, StringComparison.Ordinal); if (found < 0) break;\n                var end = found + candidate.OriginalText.Length; at = found + 1;\n                if (!boundaries.Contains(found) || !boundaries.Contains(end)) continue;\n                exactOccurrences++;\n                if (!string.IsNullOrEmpty(candidate.PrefixHint) && !span.Text[..found].EndsWith(candidate.PrefixHint, StringComparison.Ordinal)) continue;\n"
+    },
+    {
+      "i": 106,
+      "text": "源码：ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs，第 21—29 行。"
+    },
+    {
+      "i": 107,
+      "text": "核验通过后，以事务保存 Quote、QuoteOrigin、批次项及不可变回执。去重键避免相同原文位置重复生成；本地保存失败仅重试已有批次，不重新请求模型。撤销只删除该批仍未改动、未收藏的新书摘，保留先前存在、用户编辑或收藏的内容。"
+    },
+    {
+      "i": 108,
+      "text": "（4）完整备份、操作日志与数据代际"
+    },
+    {
+      "i": 109,
+      "text": "旧 JSON 仅能描述手动业务数据，无法完整恢复电子书。当前完整 ZIP 包含业务快照、受管原件、规范化正文和图片资源清单；导出时在维护租约下检查数据库与受管文件，缺失文件库不能被当成完整备份。恢复入口仍接受旧 JSON，但会明确提示整体替换当前业务数据，包括电子书和会话。"
+    },
+    {
+      "i": 110,
+      "text": "代码 7  恢复前校验输入并生成、复核当前库自动备份"
+    },
+    {
+      "i": 111,
+      "text": "public async Task<RestoreResult> RestoreAsync(string path, CancellationToken ct)\n{\n    using var target = await Task.Run(() => _archive.Prepare(path, ct), ct); // Invalid input never changes the current data.\n    await _database.InitializeAsync();\n    await using var lease = await _coordinator.EnterMaintenanceAsync(MaintenanceKind.Restore, ct);\n    await EnsureNoPendingRecoveryAsync(lease);\n    var id = Guid.NewGuid(); var autoRelative = \"backups/auto-backup-\" + id.ToString(\"D\") + \".zip\";\n    var automaticPath = ManagedBookFiles.SafePath(_paths.DirectoryPath, autoRelative);\n    var old = _validator.Validate(await _database.ReadAsync(lease, BackupDataStore.Snapshot));\n    var automatic = await ExportUnderLeaseAsync(automaticPath, lease, ct);\n    using (var verified = await Task.Run(() => _archive.Prepare(automatic.Path, ct), ct))\n        if (BackupDataStore.Hash(verified.Data) != BackupDataStore.Hash(old)) throw new IOException(\"自动备份复核失败，原数据未改变。\");\n"
+    },
+    {
+      "i": 112,
+      "text": "源码：ReadJournal.Library/Services/Backup/CompleteBackupService.cs，第 57—68 行。"
+    },
+    {
+      "i": 113,
+      "text": "恢复先解压与校验目标，再写 Prepared 操作日志，将当前受管目录隔离到 trash、安装 staging 文件，并在 SQLite 事务内替换数据及写恢复标记。启动恢复根据持久化阶段与数据库标记判断回滚还是完成清理。导入和删除同样记录可恢复阶段；来源文件和收件文件不会随受管副本删除被移走。"
+    },
+    {
+      "i": 114,
+      "text": "维护操作阻止活动 Reader 与旧数据操作交错。替换成功更新 DataEpoch 并使旧页面和等待中的操作失效；无法完成对账时保留日志、staging、trash 和备份材料，显示 RecoveryRequired，避免通过静默清空掩盖不一致。"
+    },
+    {
+      "i": 115,
+      "text": "（5）字体与面板交互"
+    },
+    {
+      "i": 116,
+      "text": "字体目录枚举本机已安装字体，候选名称搜索、候选字体预览与中英混排预览共用有效字体选择。输入名称在点击应用前不会重排正文。默认或保存字体缺失时，仅在内存采用本机可用字体并提示，打开时不改写偏好；手动输入不存在的字体仍拒绝应用。"
+    },
+    {
+      "i": 117,
+      "text": "目录、排版与 AI 三面板独立收起，正文填充剩余空间；运行状态和取消入口在 AI 面板收起时仍可见。面板开关只在当前进程保留，重启恢复默认展开。F11 和按钮均可切换全屏，退出后恢复窗口状态；这些状态变化不替代正文锚点和会话状态。"
+    },
+    {
+      "i": 118,
+      "text": "3.2  核心功能与UI截图"
+    },
+    {
+      "i": 119,
+      "text": "本节截图均来自 2026 年 10 月 24 日最终 Windows 实际窗口验收，使用隔离测试库和自建资料；没有拼绘界面或将早期 Linux 窗口冒充新版。截图内数量仅表示该步骤的测试库状态，不作为系统规模或同一次统计快照混合计算。"
+    },
+    {
+      "i": 120,
+      "text": "（1）阅读概览与业务联动"
+    },
+    {
+      "i": 121,
+      "text": ""
+    },
+    {
+      "i": 122,
+      "text": "图 3  最新概览：阅读指标、在读书籍、计划与近期记录"
+    },
+    {
+      "i": 123,
+      "text": "概览通过业务接口汇总书籍、记录和计划。手动页数来源于合法闭区间记录，电子书自动会话只累加时长；在读状态与完成状态由统一规则计算。侧边菜单提供固定业务入口，模块首页不显示无效返回按钮。"
+    },
+    {
+      "i": 124,
+      "text": "此步骤实际录入手动书并建立记录、书摘和计划；后续导入电子书后，概览与统计继续按两类数据的不同口径联动。演示资料的书名含“合并验收”等标记，仅用于验证。"
+    },
+    {
+      "i": 125,
+      "text": "（2）书库、扫描与完成状态"
+    },
+    {
+      "i": 126,
+      "text": ""
+    },
+    {
+      "i": 127,
+      "text": "图 4  最新书库：手动与电子书共存，扫描入库与状态筛选"
+    },
+    {
+      "i": 128,
+      "text": "书库提供新增手动书、选择 TXT/EPUB、多次扫描收件区、搜索和状态筛选。导入时复制来源文件到受管目录，按来源 SHA256 去重。同一本书导入两次不会创建两册；扫描再次发现相同文件也不会重复入库。"
+    },
+    {
+      "i": 129,
+      "text": "图中 scan-audit 来源于运行期间放入的自建 TXT。阅读重置后回到首章偏移 0，保留既有历史和书摘；完成标记被清除，重新打开后仍正常激活。用户主动删除的书籍若来源仍在收件区，不会被自动扫描悄悄重建，可经文件选择器主动重导入。"
+    },
+    {
+      "i": 130,
+      "text": "（3）原生正文选择与书摘定位"
+    },
+    {
+      "i": 131,
+      "text": ""
+    },
+    {
+      "i": 132,
+      "text": "图 5  原生阅读器：目录、字体排版、正文选择及书摘快捷键"
+    },
+    {
+      "i": 133,
+      "text": "正文使用原生排版表面，不是网页截图。物理拖选可复制，Ctrl+S 将有效原文位置、原文内容和来源信息保存为书摘；同一位置再次保存可去重。书摘列表中的原文入口能恢复对应书籍、章节和位置，复制回跳高亮区得到的文字与原文逐字一致。"
+    },
+    {
+      "i": 134,
+      "text": "目录跳转、左右键或 PageUp/PageDown 翻页、字体/字号变化和窗口重排均通过正文锚点衔接。字体输入具有搜索和预览，只有点击应用才改变排版并持久化；不存在的字体会明确拒绝，不破坏原设置。"
+    },
+    {
+      "i": 135,
+      "text": "（4）面板收起与沉浸阅读"
+    },
+    {
+      "i": 136,
+      "text": ""
+    },
+    {
+      "i": 137,
+      "text": "图 6  目录、排版与 AI 面板收起后，正文填充可用区域"
+    },
+    {
+      "i": 138,
+      "text": "面板收起后，顶部开关和全屏入口仍可使用，正文选择及翻页继续有效。三个面板可分别恢复；界面尺寸变化会触发新布局，稳定正文位置保持不变。AI 任务运行时，即使助手面板被收起，顶部仍显示状态和取消入口。"
+    },
+    {
+      "i": 139,
+      "text": ""
+    },
+    {
+      "i": 140,
+      "text": "（5）真实 AI 与整段选区书摘"
+    },
+    {
+      "i": 141,
+      "text": ""
+    },
+    {
+      "i": 142,
+      "text": "图 7  真实 DeepSeek：选区整体解读并将完整原文保存为一条书摘"
+    },
+    {
+      "i": 143,
+      "text": "本次验收选中自建短文中的 9 字原文，真实服务返回整体解读后保存 1 条书摘，原文与所选内容精确一致。相同选区再次生成没有重复新增；原文回跳复制一致，撤销后回到生成前的 2 条书摘基线。"
+    },
+    {
+      "i": 144,
+      "text": "当前页和页范围可生成多条候选，每条均经连续原文核验；单独“AI 解读”仅显示结果，不写入书摘。生产版本已移除本地 AI 模拟入口，旧配置的 UseMock 字段会被忽略并在保存时清理；测试工程的模拟 Handler 仅供自动化使用。"
+    },
+    {
+      "i": 145,
+      "text": "截图展示成功路径，不表示每次模型输出都会通过校验；结果区区分部分成功、全部拒绝及无新增，用户仍须判断解读内容。"
+    },
+    {
+      "i": 146,
+      "text": "（6）EPUB 原生图片与稳定续读"
+    },
+    {
+      "i": 147,
+      "text": ""
+    },
+    {
+      "i": 148,
+      "text": "图 8  自建 EPUB 的 2400×1800 图片在原生阅读表面显示"
+    },
+    {
+      "i": 149,
+      "text": "EPUB 从内容结构与 XHTML 解析为章节、段落、标题、基础样式及本地图片块。受检图片按视口显示，非文本块不充当可引用原文，跨图片的内容不会被拼成一条“连续原句”。"
+    },
+    {
+      "i": 150,
+      "text": "本轮真实窗口关闭后检查到 NonTextBlockKey 非空，重启应用重新打开同一本书可恢复图片位置。图片锚点、普通文字锚点和动态页号各有职责，避免仅存页号导致字号变化后续读错位。支持/降级样本与异常拒绝样本的数量和范围在第 4 章列明。"
+    },
+    {
+      "i": 151,
+      "text": "截图中的颜色图块来自确定性自建 EPUB，用于验证大图显示和重启定位，不代表已覆盖商业出版物的复杂排版。"
+    },
+    {
+      "i": 152,
+      "text": "（7）主题、真实 AI 配置与备份入口"
+    },
+    {
+      "i": 153,
+      "text": ""
+    },
+    {
+      "i": 154,
+      "text": "图 9  深色设置页：主题、完整备份恢复与真实 AI 配置"
+    },
+    {
+      "i": 155,
+      "text": "设置页集中管理主题、导出/恢复、上传知情及真实 AI 配置。凭据在隐藏输入框中输入，保存、错误或离开后清空输入框；删除会话 Key 后再次调用会在 HTTP 前明确拒绝，但本地阅读与正常会话保存不受影响。"
+    },
+    {
+      "i": 156,
+      "text": "业务恢复不覆盖当前机器的主题、AI 配置和会话 Key。建议导出完整 ZIP，而不是直接复制正在写入的 SQLite 文件。旧 JSON 恢复兼容手动书籍，但不能承诺保留现有电子书资源；界面在操作前说明整体替换语义。"
+    },
+    {
+      "i": 157,
+      "text": "3.3  难点和解决方案"
+    },
+    {
+      "i": 158,
+      "text": ""
+    },
+    {
+      "i": 159,
+      "text": "AI 本地落库失败与远端生成失败分开处理：前者保留当前会话内有界待保存批次，以同一回执重试；后者明确显示错误，不自动重发。事务回滚和提交确认丢失均有回归，避免重复收费或重复插入。"
+    },
+    {
+      "i": 160,
+      "text": "已知能力边界包括复杂 CSS、固定版式、DRM、非 UTF-8 XML、SVG/公式/音视频等不支持或明确降级内容。长选区跨章节、跨图片或超过限额时要求缩小范围，不自动改写成不可验证的摘录。"
+    },
+    {
+      "i": 161,
+      "text": "4  系统测试"
+    },
+    {
+      "i": 162,
+      "text": "4.1  测试环境"
+    },
+    {
+      "i": 163,
+      "text": ""
+    },
+    {
+      "i": 164,
+      "text": "最终结果汇总"
+    },
+    {
+      "i": 165,
+      "text": ""
+    },
+    {
+      "i": 166,
+      "text": "TRX 的 UnitTestResult 实际包含 351 个 Passed 和 2 个 NotExecuted；两项跳过分别覆盖受管内容/目的地符号链接和符号链接来源/收件区异常链接。它们不计为通过。自动化、生产探针、原生实验和真实 API 属于不同检查集，不能相加当作同一测试总数。"
+    },
+    {
+      "i": 167,
+      "text": "4.2  测试用例"
+    },
+    {
+      "i": 168,
+      "text": "以下用例依据最终验收矩阵与原始证据整理。前置条件均为隔离库或指定夹具，结果对应已留存的 10 月 24 日运行，不表示报告生成时再次执行。"
+    },
+    {
+      "i": 169,
+      "text": ""
+    },
+    {
+      "i": 170,
+      "text": "来源：desktop/actions.jsonl、各阶段 JSON、最新实际窗口截图、full-verified.trx 及 p2-process/probe.json。正文显示正确但会话未激活曾被发现为真实缺陷，不能仅凭截图认定闭环通过；最终结果包含修复后的重新验证。"
+    },
+    {
+      "i": 171,
+      "text": "AI、恢复与故障用例"
+    },
+    {
+      "i": 172,
+      "text": ""
+    },
+    {
+      "i": 173,
+      "text": "五次真实请求的供应商 usage"
+    },
+    {
+      "i": 174,
+      "text": ""
+    },
+    {
+      "i": 175,
+      "text": "仅上传自建 9～86 字符正文/选区，费用以供应商账单为准。清理后对该轮证据、运行数据、源码及归档解压成员精确扫描：723 个文件、40624 个归档成员中，UTF-8/UTF-16LE 密钥匹配 0，无法读取文件 0；范围不等于整台机器。"
+    },
+    {
+      "i": 176,
+      "text": "性能测量与范围说明"
+    },
+    {
+      "i": 177,
+      "text": "最终生产探针在 Windows .NET 8.0.30、32 逻辑处理器环境运行。原生 ReaderViewModel/ReaderSurface 使用 Skia 离屏绘制，视口 760×440 DIP、输出 1140×660 像素；排版和绘制实现来自生产代码，但此采样不是物理显示缩放验收。"
+    },
+    {
+      "i": 178,
+      "text": ""
+    },
+    {
+      "i": 179,
+      "text": "冷导入与预热首绘不能相加后称为统一“首屏耗时”。P95 只描述这组有限样本，不能保证全部书籍、负载和字体组合。其他历史轮次的测量因环境负载不同而变化，本文不择取各轮最小数拼成一组结果。"
+    },
+    {
+      "i": 180,
+      "text": "源码与交付核对"
+    },
+    {
+      "i": 181,
+      "text": "本轮从当前 Code 的 delivery-files.txt 显式白名单新建配套源码 ZIP，共 208 个文件、344074 字节，小于 10000000 字节；逐文件 SHA256 与当前源码一致，无 bin/obj、运行数据或验收大样本。该核对只证明本次打包内容一致，未在本轮独立解包后重新还原、编译或运行；不把 P10 旧包的独立构建验收移用于新包。"
+    },
+    {
+      "i": 182,
+      "text": "新版报告和源码均对应 ba08e19；旧 output/v1 与 P10 源码包为历史交付，不代表当前系统。实际复现可按源码 README 的 locked-mode 还原、Release 构建和测试命令执行。"
+    },
+    {
+      "i": 183,
+      "text": "4.3  测试截图"
+    },
+    {
+      "i": 184,
+      "text": "测试截图与原始 JSON/TRX 相互印证：截图说明页面实际可达，数据快照、文件摘要及自动化日志验证持久化与失败路径。以下展示完整恢复后的真实窗口；更多逐步证据保存在仓库 integrated-audit-20261024 目录。"
+    },
+    {
+      "i": 185,
+      "text": ""
+    },
+    {
+      "i": 186,
+      "text": "图 10  完整 ZIP 恢复成功，恢复后的本机深色主题保持"
+    },
+    {
+      "i": 187,
+      "text": "验收先保存业务快照和 12 个受管文件摘要，导出完整 ZIP，删除 EPUB 及关联数据，再整体恢复、正常退出并重启。恢复前后 10 张业务表按记录内容逐项一致，12 个文件 SHA256 全部一致；截图仅展示成功提示，具体比对依据 backup-loop.json。"
+    },
+    {
+      "i": 188,
+      "text": "恢复后重新阅读与原文定位"
+    },
+    {
+      "i": 189,
+      "text": ""
+    },
+    {
+      "i": 190,
+      "text": "图 11  恢复并重启后的 EPUB 仍可阅读，主题与原文能力保持"
+    },
+    {
+      "i": 191,
+      "text": "恢复后再次打开 EPUB，正文、图片资源与书摘原文定位继续可用。与前述图片续读、原生选区复制及批次撤销结果共同验证从界面、数据库、受管文件到重启的闭环，而非只验证恢复接口返回成功。"
+    },
+    {
+      "i": 192,
+      "text": ""
+    },
+    {
+      "i": 193,
+      "text": "5  总结与展望"
+    },
+    {
+      "i": 194,
+      "text": "阅记已从阅读活动管理扩展为原生 TXT/EPUB 阅读与 AI 辅助应用，保留手动书籍、阅读记录、书摘收藏、计划和统计等原有功能。通过真实 DI、三层导航和 UI/Library 分层，将原生排版与平台操作连接到可测试的业务核心；通过稳定正文锚点、幂等会话、逐字原文核验和完整 ZIP 恢复，使新增阅读能力与原有数据闭环衔接。"
+    },
+    {
+      "i": 195,
+      "text": "最终 Windows 验收在已覆盖环境内取得 351 项自动化通过、0 失败，2 项权限跳过；153 项生产探针、原生实验、5 次真实 AI 调用和完整备份恢复提供补充证据。两处实际缺陷——缺失字体阻断排版和首屏重排使会话未激活——已修复并留有永久回归。测试结果支持当前样本范围内的结论，不能证明所有输入与设备均无缺陷。"
+    },
+    {
+      "i": 196,
+      "text": "后续优先补充 Windows 100%/200% 与跨屏实测、具备权限环境下的符号链接用例和授权商业 EPUB 样本，再逐步扩大复杂排版兼容及大书库压力测试。AI 方面继续改善解读可读性与拒绝原因提示，保持原文可验证、范围明确及本地保存重试不重复请求的边界。账号、同步与在线书源不在本版实现范围。"
+    },
+    {
+      "i": 197,
+      "text": "资料与可复核来源"
+    },
+    {
+      "i": 198,
+      "text": "课程要求：raw/期末项目与报告要求.docx，规定章节、PDF 提交及源码压缩包要求。"
+    },
+    {
+      "i": 199,
+      "text": "原始需求：raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md；实施细化依据 output/reader-plan-v2 三份已确认规划。"
+    },
+    {
+      "i": 200,
+      "text": "编辑底稿：output/v1/20261021-阅记-项目报告-v1.docx；身份信息及原有样式沿用，旧功能说明按当前代码更新。"
+    },
+    {
+      "i": 201,
+      "text": "实现依据：当前 Code/ 源码、工程文件、README 和锁定依赖；基线 ba08e195e0c58072e9a1c13b2c28c02315f7847d。"
+    },
+    {
+      "i": 202,
+      "text": "最新验收：docs/20261024-integrated-audit-v1.md；原始证据位于 docs/evidence/integrated-audit-20261024/。"
+    },
+    {
+      "i": 203,
+      "text": "本轮核对：docs/report/release-v2-20261025/ 下的 facts.json、type-inventory.json 和 validation.json。"
+    },
+    {
+      "i": 204,
+      "text": "本轮仅使用仓库原始资料、用户保存的 Word、当前源码和已有验收证据，引用日期为 2026-10-25；未新增外部调研结论。模型可用性与价格随供应商变化，使用前以实际服务说明及账单为准。"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "body_and_table_text_unchanged": false,
+  "media_unchanged": true,
+  "changed_docx_parts": [
+    "word/document.xml",
+    "word/footnotes.xml",
+    "word/endnotes.xml",
+    "word/settings.xml",
+    "docProps/app.xml",
+    "docProps/core.xml"
+  ],
+  "paragraph_diff": [
+    "--- \n",
+    "+++ \n",
+    "@@ -206,3 +206,3 @@\n",
+    " 数据安全与恢复 | 删除后四表全空；恢复后四表各1且逐字段一致；自动备份、完整性及外键核对正常。",
+    "-源码与报告配对 | 统一v1：Word、PDF及源码ZIP；源码119文件、114395字节，逐文件一致。",
+    "+源码与报告配对 | Word、PDF及源码ZIP；源码119文件、114395字节",
+    " 继续改进的边界 | 后续可增加更大数据集测量、更多系统/CPU组合及输入可用性验证；目前不宣称全部场景穷尽通过。"
+  ],
+  "current_test_counters": {
+    "total": "94",
+    "executed": "94",
+    "passed": "94",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "previous_clean_package_counters": {
+    "total": "94",
+    "executed": "94",
+    "passed": "94",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  }
+}

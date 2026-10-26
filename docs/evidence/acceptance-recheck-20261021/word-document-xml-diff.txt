@@ -1,0 +1,187 @@
+--- 
+
++++ 
+
+@@ -218,5 +218,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -331,5 +331,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -435,5 +435,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -539,5 +539,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -642,5 +642,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -746,5 +746,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -850,5 +850,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -954,5 +954,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1074,5 +1074,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1178,5 +1178,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1281,5 +1281,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1385,5 +1385,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1489,5 +1489,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1609,5 +1609,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1712,5 +1712,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1816,5 +1816,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -1920,5 +1920,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -2024,5 +2024,5 @@
+
+ <w:ind w:left="440"/>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -2127,5 +2127,5 @@
+
+ </w:tabs>
+ <w:rPr>
+-<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi" w:hint="eastAsia"/>
++<w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/>
+ <w:noProof/>
+ <w:color w:val="auto"/>
+@@ -13594,5 +13594,5 @@
+
+ <w:vAlign w:val="center"/>
+ </w:tcPr>
+-<w:p w14:paraId="5DEDC975" w14:textId="77777777" w:rsidR="001A30DA" w:rsidRPr="00AD5BB1" w:rsidRDefault="00DE5BF6">
++<w:p w14:paraId="5DEDC975" w14:textId="30A1091A" w:rsidR="001A30DA" w:rsidRPr="00AD5BB1" w:rsidRDefault="00DE5BF6">
+ <w:pPr>
+ <w:spacing w:before="40" w:after="40" w:line="269" w:lineRule="auto"/>
+@@ -13603,13 +13603,4 @@
+
+ </w:pPr>
+ <w:r>
+-<w:t>统一</w:t>
+-</w:r>
+-<w:r>
+-<w:t>v1</w:t>
+-</w:r>
+-<w:r>
+-<w:t>：</w:t>
+-</w:r>
+-<w:r>
+ <w:t>Word</w:t>
+ </w:r>
+@@ -13639,5 +13630,5 @@
+
+ </w:r>
+ <w:r>
+-<w:t>字节，逐文件一致。</w:t>
++<w:t>字节</w:t>
+ </w:r>
+ </w:p>

@@ -1,0 +1,9 @@
+{
+  "operation": "analysis",
+  "success": true,
+  "mode": "real",
+  "characters": 77,
+  "elapsedMs": 1791,
+  "inputTokens": 236,
+  "outputTokens": 53
+}

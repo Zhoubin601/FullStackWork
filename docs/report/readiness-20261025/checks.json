@@ -1,0 +1,205 @@
+{
+  "passed": true,
+  "current_deliveries_match_last_validated_hashes": true,
+  "package_bytes": 342012,
+  "package_members": 208,
+  "package_matches_Code": true,
+  "package_changes_from_independently_tested_package": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "all_other_members_match_independently_tested_baseline_zip": true,
+  "new_runtime_test_run": false,
+  "prior_test_results": {
+    "Passed": 351,
+    "NotExecuted": 2
+  },
+  "prior_test_date": "2026-10-25",
+  "prior_test_trx_hash_verified": true,
+  "inventories_source_hashes_verified": true,
+  "application": {
+    "Classes": 137,
+    "Interfaces": 41,
+    "ViewFiles": 15,
+    "MinimumClasses": 96,
+    "MinimumInterfaces": 29,
+    "CSharpFiles": 134
+  },
+  "reference": {
+    "Classes": 63,
+    "Interfaces": 10,
+    "ViewFiles": 9,
+    "MinimumClasses": 45,
+    "MinimumInterfaces": 7,
+    "CSharpFiles": 55
+  },
+  "minimum_classes": 45,
+  "minimum_interfaces": 7,
+  "pdf_pages": 28,
+  "toc_links_bookmarks": 19,
+  "tables": 13,
+  "images": 10,
+  "word_all_paragraphs_and_cells_present_in_pdf": true,
+  "embedded_fonts": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+SimSun": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+TimesNewRomanPSMT": true,
+    "/BCDIEE+Calibri": true,
+    "/BCDJEE+TimesNewRomanPSMT": true
+  },
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 117,
+      "images": 0
+    },
+    {
+      "page": 2,
+      "characters": 2573,
+      "images": 0
+    },
+    {
+      "page": 3,
+      "characters": 762,
+      "images": 0
+    },
+    {
+      "page": 4,
+      "characters": 970,
+      "images": 0
+    },
+    {
+      "page": 5,
+      "characters": 924,
+      "images": 0
+    },
+    {
+      "page": 6,
+      "characters": 963,
+      "images": 0
+    },
+    {
+      "page": 7,
+      "characters": 1232,
+      "images": 0
+    },
+    {
+      "page": 8,
+      "characters": 1048,
+      "images": 0
+    },
+    {
+      "page": 9,
+      "characters": 1286,
+      "images": 0
+    },
+    {
+      "page": 10,
+      "characters": 1035,
+      "images": 0
+    },
+    {
+      "page": 11,
+      "characters": 2357,
+      "images": 0
+    },
+    {
+      "page": 12,
+      "characters": 1580,
+      "images": 0
+    },
+    {
+      "page": 13,
+      "characters": 1903,
+      "images": 0
+    },
+    {
+      "page": 14,
+      "characters": 1796,
+      "images": 0
+    },
+    {
+      "page": 15,
+      "characters": 250,
+      "images": 1
+    },
+    {
+      "page": 16,
+      "characters": 271,
+      "images": 1
+    },
+    {
+      "page": 17,
+      "characters": 297,
+      "images": 1
+    },
+    {
+      "page": 18,
+      "characters": 329,
+      "images": 1
+    },
+    {
+      "page": 19,
+      "characters": 341,
+      "images": 1
+    },
+    {
+      "page": 20,
+      "characters": 328,
+      "images": 1
+    },
+    {
+      "page": 21,
+      "characters": 302,
+      "images": 1
+    },
+    {
+      "page": 22,
+      "characters": 785,
+      "images": 0
+    },
+    {
+      "page": 23,
+      "characters": 812,
+      "images": 0
+    },
+    {
+      "page": 24,
+      "characters": 824,
+      "images": 0
+    },
+    {
+      "page": 25,
+      "characters": 632,
+      "images": 0
+    },
+    {
+      "page": 26,
+      "characters": 595,
+      "images": 0
+    },
+    {
+      "page": 27,
+      "characters": 299,
+      "images": 1
+    },
+    {
+      "page": 28,
+      "characters": 622,
+      "images": 0
+    }
+  ],
+  "raw_and_deliveries_unchanged": true,
+  "input_hashes": {
+    "raw\\1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md": "62c53dcd213a9b645d2adc08c6f8aba7f5894fa011b6529a0dd3574464d9833d",
+    "raw\\期末项目与报告要求.docx": "352e94bc9126cc0ef9b5e9f0d293ad8b562bb07b7e17e85aacd7972f918d4d1d",
+    "output\\提交材料\\阅记-源码.zip": "118095ab068e02276fd341832fdb60b9fad254142b7c3e500617df2e6dba8432",
+    "output\\提交材料\\阅记-项目报告.docx": "1e11a4cb8f5a7260ca0f5b7a176391187707e57f2cdd4cc30612eab28c1e6f5f",
+    "output\\提交材料\\阅记-项目报告.pdf": "6c47d18e28512f2a0680c57311be15260a83bff2ba9e6b19f307decb07b893b4"
+  },
+  "visual_review_pending": false,
+  "visual_review_passed": true,
+  "visual_review_reused_for_identical_pdf": true,
+  "rechecked_after_cleanup_date": "2026-10-26"
+}

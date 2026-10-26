@@ -1,0 +1,9 @@
+{
+  "operation": "explanation",
+  "success": true,
+  "mode": "real",
+  "characters": 10,
+  "elapsedMs": 1663,
+  "inputTokens": 191,
+  "outputTokens": 42
+}

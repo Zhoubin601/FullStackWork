@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "pages": 29,
+  "headings": 19,
+  "toc_links": 19,
+  "toc_page_numbers_aligned": true,
+  "toc_child_indent_verified": true,
+  "pdf_bookmarks": 19,
+  "tables": 15,
+  "figures": 11,
+  "embedded_fonts": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+SimSun": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+TimesNewRomanPSMT": true,
+    "/BCDIEE+Calibri": true,
+    "/BCDJEE+TimesNewRomanPSMT": true
+  },
+  "out_of_page_characters": [],
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 105,
+      "images": 0
+    },
+    {
+      "page": 2,
+      "characters": 2529,
+      "images": 0
+    },
+    {
+      "page": 3,
+      "characters": 899,
+      "images": 0
+    },
+    {
+      "page": 4,
+      "characters": 942,
+      "images": 0
+    },
+    {
+      "page": 5,
+      "characters": 451,
+      "images": 0
+    },
+    {
+      "page": 6,
+      "characters": 932,
+      "images": 0
+    },
+    {
+      "page": 7,
+      "characters": 353,
+      "images": 0
+    },
+    {
+      "page": 8,
+      "characters": 1015,
+      "images": 0
+    },
+    {
+      "page": 9,
+      "characters": 1327,
+      "images": 0
+    },
+    {
+      "page": 10,
+      "characters": 1000,
+      "images": 0
+    },
+    {
+      "page": 11,
+      "characters": 2240,
+      "images": 0
+    },
+    {
+      "page": 12,
+      "characters": 1495,
+      "images": 0
+    },
+    {
+      "page": 13,
+      "characters": 1653,
+      "images": 0
+    },
+    {
+      "page": 14,
+      "characters": 1723,
+      "images": 0
+    },
+    {
+      "page": 15,
+      "characters": 375,
+      "images": 1
+    },
+    {
+      "page": 16,
+      "characters": 291,
+      "images": 1
+    },
+    {
+      "page": 17,
+      "characters": 286,
+      "images": 1
+    },
+    {
+      "page": 18,
+      "characters": 307,
+      "images": 1
+    },
+    {
+      "page": 19,
+      "characters": 351,
+      "images": 1
+    },
+    {
+      "page": 20,
+      "characters": 342,
+      "images": 1
+    },
+    {
+      "page": 21,
+      "characters": 291,
+      "images": 1
+    },
+    {
+      "page": 22,
+      "characters": 760,
+      "images": 0
+    },
+    {
+      "page": 23,
+      "characters": 972,
+      "images": 0
+    },
+    {
+      "page": 24,
+      "characters": 918,
+      "images": 0
+    },
+    {
+      "page": 25,
+      "characters": 898,
+      "images": 0
+    },
+    {
+      "page": 26,
+      "characters": 898,
+      "images": 0
+    },
+    {
+      "page": 27,
+      "characters": 320,
+      "images": 1
+    },
+    {
+      "page": 28,
+      "characters": 415,
+      "images": 1
+    },
+    {
+      "page": 29,
+      "characters": 1127,
+      "images": 0
+    }
+  ],
+  "original_files_unchanged": 5,
+  "runtime_code_matches_window_evidence": true,
+  "changed_source_documents": [
+    "Code/CHANGELOG.md",
+    "Code/README.md"
+  ],
+  "scale": {
+    "actual": {
+      "Classes": 137,
+      "Interfaces": 41,
+      "ViewFiles": 15,
+      "MinimumClasses": 96,
+      "MinimumInterfaces": 29,
+      "CSharpFiles": 134
+    },
+    "reference": {
+      "Classes": 63,
+      "Interfaces": 10,
+      "ViewFiles": 9,
+      "MinimumClasses": 45,
+      "MinimumInterfaces": 7,
+      "CSharpFiles": 55
+    },
+    "minimum": {
+      "Classes": 45,
+      "Interfaces": 7,
+      "ViewFiles": 9
+    }
+  },
+  "independent_test_results": {
+    "Passed": 351,
+    "NotExecuted": 2
+  },
+  "package": {
+    "Path": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\submission-20261025\\阅记-源码.zip",
+    "Bytes": 342333,
+    "Files": 208,
+    "Sha256": "0c220fc7117caa1d68e2e6737cda28743a675e09f01e74091b65d31e77859772",
+    "changes_from_window_evidence": [
+      "Code/CHANGELOG.md",
+      "Code/README.md"
+    ],
+    "runtime_source_unchanged": true
+  },
+  "svg_diagrams_preserved_without_external_dtd": 2,
+  "png_and_screenshot_bytes_preserved": true,
+  "project_version_markers_removed": true
+}

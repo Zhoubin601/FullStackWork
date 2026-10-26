@@ -1,0 +1,167 @@
+{
+  "passed": true,
+  "pages": 28,
+  "tables": 13,
+  "figures": 10,
+  "toc_and_bookmarks": 19,
+  "no_external_process_references": true,
+  "api_usage_and_cleanup_logs_removed": true,
+  "embedded_fonts": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+SimSun": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+TimesNewRomanPSMT": true,
+    "/BCDIEE+Calibri": true,
+    "/BCDJEE+TimesNewRomanPSMT": true
+  },
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 105,
+      "images": 0
+    },
+    {
+      "page": 2,
+      "characters": 2529,
+      "images": 0
+    },
+    {
+      "page": 3,
+      "characters": 733,
+      "images": 0
+    },
+    {
+      "page": 4,
+      "characters": 942,
+      "images": 0
+    },
+    {
+      "page": 5,
+      "characters": 451,
+      "images": 0
+    },
+    {
+      "page": 6,
+      "characters": 932,
+      "images": 0
+    },
+    {
+      "page": 7,
+      "characters": 353,
+      "images": 0
+    },
+    {
+      "page": 8,
+      "characters": 1015,
+      "images": 0
+    },
+    {
+      "page": 9,
+      "characters": 1258,
+      "images": 0
+    },
+    {
+      "page": 10,
+      "characters": 1003,
+      "images": 0
+    },
+    {
+      "page": 11,
+      "characters": 2240,
+      "images": 0
+    },
+    {
+      "page": 12,
+      "characters": 1495,
+      "images": 0
+    },
+    {
+      "page": 13,
+      "characters": 1653,
+      "images": 0
+    },
+    {
+      "page": 14,
+      "characters": 1723,
+      "images": 0
+    },
+    {
+      "page": 15,
+      "characters": 237,
+      "images": 1
+    },
+    {
+      "page": 16,
+      "characters": 260,
+      "images": 1
+    },
+    {
+      "page": 17,
+      "characters": 286,
+      "images": 1
+    },
+    {
+      "page": 18,
+      "characters": 307,
+      "images": 1
+    },
+    {
+      "page": 19,
+      "characters": 324,
+      "images": 1
+    },
+    {
+      "page": 20,
+      "characters": 316,
+      "images": 1
+    },
+    {
+      "page": 21,
+      "characters": 291,
+      "images": 1
+    },
+    {
+      "page": 22,
+      "characters": 759,
+      "images": 0
+    },
+    {
+      "page": 23,
+      "characters": 764,
+      "images": 0
+    },
+    {
+      "page": 24,
+      "characters": 782,
+      "images": 0
+    },
+    {
+      "page": 25,
+      "characters": 587,
+      "images": 0
+    },
+    {
+      "page": 26,
+      "characters": 558,
+      "images": 0
+    },
+    {
+      "page": 27,
+      "characters": 280,
+      "images": 1
+    },
+    {
+      "page": 28,
+      "characters": 604,
+      "images": 0
+    }
+  ],
+  "runtime_and_tests_unchanged": true,
+  "new_runtime_test_run": false,
+  "package": {
+    "members": 208,
+    "bytes": 342012,
+    "sha256": "118095ab068e02276fd341832fdb60b9fad254142b7c3e500617df2e6dba8432"
+  },
+  "protected_files_unchanged": true
+}

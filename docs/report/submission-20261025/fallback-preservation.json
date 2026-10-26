@@ -1,0 +1,6 @@
+{
+  "restored_original_raster": [
+    "word/media/image1.png"
+  ],
+  "reason": "Native Word rewrote the first SVG raster fallback during save; original pixels restored. SVG diagram, dimensions, layout and PDF unchanged."
+}

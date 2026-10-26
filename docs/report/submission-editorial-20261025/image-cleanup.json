@@ -1,0 +1,7 @@
+{
+  "removed": [
+    "Restore success screenshot with a developer-local docs/evidence path"
+  ],
+  "remaining_figures": 10,
+  "preserved_actual_screenshot_content": true
+}

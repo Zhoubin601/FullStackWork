@@ -1,0 +1,10 @@
+{
+  "restartHasNoCredential": true,
+  "missingCredentialRejectedBeforeHttp": true,
+  "localReadingAndNavigationAvailable": true,
+  "normalClose": true,
+  "finalMock": true,
+  "integrity": "ok",
+  "foreignKeyErrors": 0,
+  "remainingQuotes": 3
+}

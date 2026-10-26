@@ -1,0 +1,13 @@
+ M docs/analysis-notes.md
+ M docs/plan.md
+ M docs/questions.md
+ M docs/reader-execution.md
+ M docs/source-notes.md
+ M memory-bank/project-context.md
+?? docs/acceptance-recheck-20261021-plan.md
+?? docs/acceptance-recheck-20261021.md
+?? docs/evidence/acceptance-recheck-20261021/
+?? docs/evidence/live-windows-test-20261022/
+?? docs/evidence/local-windows-20261021/ui-live.log
+?? docs/live-test-20261022.md
+?? docs/reader-progress-20261023.md

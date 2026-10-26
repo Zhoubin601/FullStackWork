@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "source_pdf_sha256": "6c47d18e28512f2a0680c57311be15260a83bff2ba9e6b19f307decb07b893b4",
+  "pages_rendered_this_review": 28,
+  "contact_sheets_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "pages_reviewed_at_larger_size": [
+    2,
+    5,
+    11,
+    19,
+    23,
+    28
+  ],
+  "blocking_visual_issues": [],
+  "method": "Current PDF rendered with PyMuPDF; all pages seen in contact sheets and selected dense pages enlarged."
+}

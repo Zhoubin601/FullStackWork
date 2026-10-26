@@ -1,0 +1,12 @@
+{
+  "protected_files_verified": 213,
+  "all_cleanup_targets_moved": true,
+  "staged_files_scanned": 229,
+  "forbidden_files": [],
+  "credential_pattern_matches": [],
+  "runtime_tests_rerun": false,
+  "whitespace_check_exit_with_CRLF_allowed": 2,
+  "whitespace_diagnostics_are_historical_evidence": true,
+  "authored_source_and_indexes_whitespace_check_passed": true,
+  "evidence_whitespace_preserved": true
+}

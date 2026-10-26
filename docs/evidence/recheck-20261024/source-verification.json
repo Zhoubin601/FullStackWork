@@ -1,0 +1,15 @@
+{
+  "head": "82070fa86198f532102b3c490cf6be1d0d07eace",
+  "originMain": "82070fa86198f532102b3c490cf6be1d0d07eace",
+  "fetchedMain": "82070fa86198f532102b3c490cf6be1d0d07eace",
+  "rawUnchanged": true,
+  "rawFiles": 2,
+  "sourceZipFiles": 202,
+  "sourceZipBytes": 321886,
+  "sourceZipSha256": "c3de04c9e383b28a69241b1edcda5dcea740f72851c9056f5622b714f4358587",
+  "sourceZipMatchesCurrentCode": true,
+  "mismatches": [],
+  "forbiddenEntries": [],
+  "under10MB": true,
+  "os": "Windows-11-10.0.26300-SP0"
+}

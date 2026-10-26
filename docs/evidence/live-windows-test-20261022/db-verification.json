@@ -1,0 +1,46 @@
+{
+  "integrity_check": [
+    [
+      "ok"
+    ]
+  ],
+  "foreign_key_check": [],
+  "books": [
+    {
+      "Id": 1,
+      "Title": "全栈开发实战与架构精要",
+      "Author": "课程教学组",
+      "Category": "计算机技术",
+      "TotalPages": 280,
+      "Description": "2026秋季全栈大作业真机实测书籍样本。"
+    }
+  ],
+  "records": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartPage": 1,
+      "EndPage": 35,
+      "Minutes": 40,
+      "ReadingDate": 639282240000000000
+    }
+  ],
+  "quotes": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "Text": "软件设计的核心在于控制复杂度，抽象与分层是最好的武器。",
+      "Thoughts": "全栈开发中MVVM分层解耦的思想体现得淋漓尽致。",
+      "Page": 15,
+      "IsFavorite": 1
+    }
+  ],
+  "plans": [
+    {
+      "Id": 1,
+      "BookId": 1,
+      "StartDate": 639282240000000000,
+      "TargetDate": 639282240000000000
+    }
+  ]
+}
