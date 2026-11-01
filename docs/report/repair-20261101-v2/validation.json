@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "pages": 27,
+  "headings": 19,
+  "toc_links_and_bookmarks": 19,
+  "tables": 14,
+  "images": 10,
+  "application_screenshots_unchanged": 8,
+  "code_blocks": 7,
+  "code_tokens_unchanged": true,
+  "three_table_rows_9pt_and_zero_indent": true,
+  "all_paragraphs_match_pdf": true,
+  "fonts_embedded": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+MicrosoftYaHei-Bold": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+MicrosoftYaHei": true,
+    "/BCDIEE+MicrosoftYaHei": true,
+    "/BCDJEE+TimesNewRomanPSMT": true,
+    "/BCDKEE+SimSun": true,
+    "/BCDLEE+Calibri": true,
+    "/BCDMEE+MicrosoftYaHei-Bold": true,
+    "/BCDNEE+Consolas": true,
+    "/BCDOEE+TimesNewRomanPSMT": true
+  },
+  "protected_files_unchanged": true,
+  "source_zip_matches_Code": true,
+  "visual_review_required": false,
+  "docx_sha256": "7563abfa1941cedd8c336ad84eff4a04ccca97ae66027f4dbd690c25bfbca20c",
+  "pdf_sha256": "8b49f584655f3671c89853025b4364c18156ad12426a466136d3dbb8fb2d6c7e",
+  "visual_review_completed": true
+}

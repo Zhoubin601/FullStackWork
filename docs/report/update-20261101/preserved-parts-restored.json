@@ -1,0 +1,10 @@
+{
+  "restored_parts": [
+    "word/header1.xml",
+    "word/header3.xml",
+    "word/footer1.xml",
+    "word/header2.xml",
+    "word/footer2.xml"
+  ],
+  "reason": "retain unchanged header/footer XML after native field refresh"
+}

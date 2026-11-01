@@ -1,0 +1,10 @@
+# Keep reproducible visual QA and working documents out of future source pushes.
+/pages*/
+/guidance-page-*.png
+/baseline-cover-*.png
+/preview.html
+/packaged-render-attempt/
+/*.docx
+/*.pdf
+/baseline-inspection.json
+/guidance-inspection.json

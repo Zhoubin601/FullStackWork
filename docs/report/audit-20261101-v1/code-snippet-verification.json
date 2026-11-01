@@ -1,0 +1,58 @@
+[
+  {
+    "code": 1,
+    "file": "ReadJournal/ServiceLocator.cs",
+    "stated_start": 99,
+    "stated_end": 112,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 2,
+    "file": "ReadJournal/Services/ContentNavigationService.cs",
+    "stated_start": 40,
+    "stated_end": 49,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 3,
+    "file": "ReadJournal.Library/Models/Reader/ReaderContracts.cs",
+    "stated_start": 20,
+    "stated_end": 30,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 4,
+    "file": "ReadJournal.Library/ViewModels/ReaderViewModel.cs",
+    "stated_start": 121,
+    "stated_end": 131,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 5,
+    "file": "ReadJournal.Library/Services/Ai/ReaderAiService.cs",
+    "stated_start": 62,
+    "stated_end": 69,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 6,
+    "file": "ReadJournal.Library/Services/Ai/AiQuoteVerifier.cs",
+    "stated_start": 21,
+    "stated_end": 29,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  },
+  {
+    "code": 7,
+    "file": "ReadJournal.Library/Services/Backup/CompleteBackupService.cs",
+    "stated_start": 57,
+    "stated_end": 68,
+    "matches_reported_lines": true,
+    "found_in_current_source": true
+  }
+]

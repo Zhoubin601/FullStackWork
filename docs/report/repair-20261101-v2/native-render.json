@@ -1,0 +1,128 @@
+{
+  "headings": [
+    {
+      "page": 3,
+      "style": "标题 11",
+      "title": "项目背景与意义",
+      "level": 1
+    },
+    {
+      "page": 3,
+      "style": "标题 11",
+      "title": "1. 需求分析",
+      "level": 1
+    },
+    {
+      "page": 3,
+      "style": "标题 21",
+      "title": "1.1 功能需求",
+      "level": 2
+    },
+    {
+      "page": 4,
+      "style": "标题 21",
+      "title": "1.2 非功能需求",
+      "level": 2
+    },
+    {
+      "page": 5,
+      "style": "标题 11",
+      "title": "2. 系统设计",
+      "level": 1
+    },
+    {
+      "page": 5,
+      "style": "标题 21",
+      "title": "2.1 架构设计",
+      "level": 2
+    },
+    {
+      "page": 6,
+      "style": "标题 21",
+      "title": "2.2 功能模块设计",
+      "level": 2
+    },
+    {
+      "page": 7,
+      "style": "标题 21",
+      "title": "2.3 数据/数据库设计",
+      "level": 2
+    },
+    {
+      "page": 9,
+      "style": "标题 21",
+      "title": "2.4 接口与类设计",
+      "level": 2
+    },
+    {
+      "page": 10,
+      "style": "标题 21",
+      "title": "2.5 技术选型说明",
+      "level": 2
+    },
+    {
+      "page": 11,
+      "style": "标题 11",
+      "title": "3. 系统实现",
+      "level": 1
+    },
+    {
+      "page": 11,
+      "style": "标题 21",
+      "title": "3.1 关键模块的核心实现",
+      "level": 2
+    },
+    {
+      "page": 15,
+      "style": "标题 21",
+      "title": "3.2 核心功能与UI截图",
+      "level": 2
+    },
+    {
+      "page": 22,
+      "style": "标题 21",
+      "title": "3.3 难点和解决方案",
+      "level": 2
+    },
+    {
+      "page": 23,
+      "style": "标题 11",
+      "title": "4. 系统测试",
+      "level": 1
+    },
+    {
+      "page": 23,
+      "style": "标题 21",
+      "title": "4.1 测试环境",
+      "level": 2
+    },
+    {
+      "page": 24,
+      "style": "标题 21",
+      "title": "4.2 测试用例",
+      "level": 2
+    },
+    {
+      "page": 26,
+      "style": "标题 21",
+      "title": "4.3 测试截图",
+      "level": 2
+    },
+    {
+      "page": 27,
+      "style": "标题 11",
+      "title": "5. 总结与展望",
+      "level": 1
+    }
+  ],
+  "tocText": [
+    "项目背景与意义\t3\r1. 需求分析\t3\r1.1 功能需求\t3\r1.2 非功能需求\t4\r2. 系统设计\t5\r2.1 架构设计\t5\r2.2 功能模块设计\t6\r2.3 数据/数据库设计\t7\r2.4 接口与类设计\t9\r2.5 技术选型说明\t10\r3. 系统实现\t11\r3.1 关键模块的核心实现\t11\r3.2 核心功能与UI截图\t15\r3.3 难点和解决方案\t22\r4. 系统测试\t23\r4.1 测试环境\t23\r4.2 测试用例\t24\r4.3 测试截图\t26\r5. 总结与展望\t27\r"
+  ],
+  "pages": 27,
+  "tocCount": 1,
+  "wordVersion": "16.0",
+  "renderer": "Microsoft Word native COM",
+  "sourceUpdated": true,
+  "source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\repair-20261101-v2\\20261101-阅记-项目报告-v2.docx",
+  "pdf": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\repair-20261101-v2\\20261101-阅记-项目报告-v2.pdf"
+}

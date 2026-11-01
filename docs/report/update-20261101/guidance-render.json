@@ -1,0 +1,174 @@
+{
+  "sourceUpdated": false,
+  "tocCount": 0,
+  "headings": [
+    {
+      "style": "标题 1",
+      "title": "期末项目与报告要求",
+      "level": 1,
+      "page": 1
+    },
+    {
+      "style": "标题 2",
+      "title": "期末项目要求",
+      "level": 2,
+      "page": 1
+    },
+    {
+      "style": "标题 3",
+      "title": "功能与工作量要求",
+      "level": 3,
+      "page": 1
+    },
+    {
+      "style": "标题 3",
+      "title": "技术与架构要求",
+      "level": 3,
+      "page": 1
+    },
+    {
+      "style": "标题 2",
+      "title": "期末报告要求",
+      "level": 2,
+      "page": 3
+    },
+    {
+      "style": "标题 3",
+      "title": "撰写要求",
+      "level": 3,
+      "page": 3
+    },
+    {
+      "style": "标题 3",
+      "title": "报告模板",
+      "level": 3,
+      "page": 3
+    },
+    {
+      "style": "标题 1",
+      "title": "全栈开发技术期末项目报告",
+      "level": 1,
+      "page": 4
+    },
+    {
+      "style": "标题 2",
+      "title": "项目背景与意义",
+      "level": 2,
+      "page": 4
+    },
+    {
+      "style": "标题 2",
+      "title": "需求分析",
+      "level": 2,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "1.1 功能需求",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "1.2 非功能需求",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 2",
+      "title": "系统设计",
+      "level": 2,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "2.1 架构设计",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "2.2 功能模块设计",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "2.3 数据/数据库设计",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "2.4 接口与类设计",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "2.5 技术选型说明",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 2",
+      "title": "系统实现",
+      "level": 2,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "3.1 关键模块的核心实现",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "3.2 核心功能与UI截图",
+      "level": 3,
+      "page": 4
+    },
+    {
+      "style": "标题 3",
+      "title": "3.3 难点和解决方案",
+      "level": 3,
+      "page": 5
+    },
+    {
+      "style": "标题 2",
+      "title": "系统测试",
+      "level": 2,
+      "page": 5
+    },
+    {
+      "style": "标题 3",
+      "title": "4.1 测试环境",
+      "level": 3,
+      "page": 5
+    },
+    {
+      "style": "标题 3",
+      "title": "4.2 测试用例",
+      "level": 3,
+      "page": 5
+    },
+    {
+      "style": "标题 3",
+      "title": "4.3 测试截图",
+      "level": 3,
+      "page": 5
+    },
+    {
+      "style": "标题 2",
+      "title": "总结与展望",
+      "level": 2,
+      "page": 5
+    }
+  ],
+  "renderer": "Microsoft Word native COM",
+  "pages": 5,
+  "tocText": [],
+  "pdf": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\update-20261101\\guidance.pdf",
+  "source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\raw\\期末项目与报告要求.docx",
+  "wordVersion": "16.0"
+}

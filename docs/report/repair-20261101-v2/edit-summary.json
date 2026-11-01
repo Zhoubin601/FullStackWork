@@ -1,0 +1,135 @@
+{
+  "source": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\output\\提交材料\\20261101-阅记-项目报告-v1.docx",
+  "target": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\repair-20261101-v2\\20261101-阅记-项目报告-v2.docx",
+  "changes": [
+    {
+      "old": "个人阅读中，书籍资料、阅读活动与摘录通常分散记录。阅记以本地桌面应用统一管理这些信息，使用户能够阅读电子书、追踪阅读活动、整理感想并恢复自己的数据。项目在原有阅读与书摘管理基础上，加入 TXT/EPUB 原生阅读器及 DeepSeek AI 阅读辅助，形成“导入—阅读—摘录—计划—统计—备份”的业务闭环。",
+      "new": "个人阅读中，书籍资料、阅读活动与摘录通常分散记录。阅记以本地桌面应用统一管理这些信息，使用户能够阅读电子书、追踪阅读活动、整理感想并恢复自己的数据。项目在原有阅读与书摘管理基础上，加入 TXT/EPUB 原生阅读器及 DeepSeek AI 阅读辅助。用户可在同一应用中导入电子书、继续阅读、保存书摘、安排阅读计划和查看统计，并通过备份恢复书库。"
+    },
+    {
+      "old": "业务数据保存在当前用户本地应用数据目录。断网后可阅读已有书籍、保存手动书摘、查看计划与统计；只有用户主动确认的 AI 操作联网。首次依赖还原需要 NuGet 来源或完整缓存，不能把“日常阅读离线”理解为“首次构建无需联网”。工程保留 UI、Library 与 UnitTest 的职责划分，业务通过接口注入，以便替换平台能力和隔离测试。",
+      "new": "业务数据保存在当前用户本地应用数据目录。断网后可阅读已有书籍、保存手动书摘、查看计划与统计；只有用户主动确认的 AI 操作联网。首次构建仍需从 NuGet 还原依赖，或准备完整缓存。工程保留 UI、Library 与 UnitTest 的职责划分，业务通过接口注入，以便替换平台能力和隔离测试。"
+    },
+    {
+      "old": "依赖版本以工程文件和 packages.lock.json 为准，首次还原采用 --locked-mode。旧 SQLite 原生依赖可能产生 NETSDK1206 的旧 Alpine RID 提示；Windows 实测不据此推断 Alpine 或 macOS 支持。第三方依赖和许可元数据见配套源码 DEPENDENCIES.md、THIRD-PARTY-NOTICES.md；未声明许可的条目不能借用其他包结论。",
+      "new": "依赖版本以工程文件和 packages.lock.json 为准，首次还原采用 --locked-mode。旧 SQLite 原生依赖可能产生 NETSDK1206 的旧 Alpine RID 提示；当前验收覆盖 Windows，Alpine 与 macOS 尚未测试。第三方依赖及许可信息见配套源码 DEPENDENCIES.md、THIRD-PARTY-NOTICES.md，许可状态按各条目分别列明。"
+    },
+    {
+      "old": "正文使用原生排版表面，不是网页截图。物理拖选可复制，Ctrl+S 将有效原文位置、原文内容和来源信息保存为书摘；同一位置再次保存可去重。书摘列表中的原文入口能恢复对应书籍、章节和位置，复制回跳高亮区得到的文字与原文逐字一致。",
+      "new": "正文由原生 ReaderSurface 绘制，支持文字选择、复制和书摘定位。Ctrl+S 将有效原文位置、原文内容和来源信息保存为书摘，同一位置再次保存可去重。书摘列表中的原文入口能恢复对应书籍、章节和位置，复制回跳后高亮区得到的文字与原文逐字一致。"
+    },
+    {
+      "old": "阅记已从阅读活动管理扩展为原生 TXT/EPUB 阅读与 AI 辅助应用，保留手动书籍、阅读记录、书摘收藏、计划和统计等原有功能。通过真实 DI、三层导航和 UI/Library 分层，将原生排版与平台操作连接到可测试的业务核心；通过稳定正文锚点、幂等会话、逐字原文核验和完整 ZIP 恢复，使新增阅读能力与原有数据闭环衔接。",
+      "new": "阅记已从阅读活动管理扩展为原生 TXT/EPUB 阅读与 AI 辅助应用，保留手动书籍、阅读记录、书摘收藏、计划和统计等原有功能。DI、三层导航与 UI/Library 分层将原生排版、平台操作与业务逻辑衔接；阅读产生的会话时长和书摘可在原有记录、统计与备份功能中统一管理。"
+    },
+    {
+      "old": "系统实现的重点是保持数据语义与界面状态一致：手动页码和电子书百分比分开计算，阅读器通过稳定正文锚点适应重排；统一导航在切换页面前结束活动会话，事务与操作日志共同处理数据库和文件恢复。AI仅处理用户确认的范围，原文核验和本地重试降低了错误摘录及重复请求的风险。",
+      "new": "实现中主要处理了阅读位置、会话状态与持久化数据之间的一致性问题。手动页码与电子书百分比分开计算，稳定正文锚点使阅读位置能随重排恢复；统一导航在切换页面前结束活动会话，事务与操作日志共同处理数据库和文件恢复。AI 仅处理用户确认的范围，逐字核验原文，并通过本地保存重试减少错误摘录和重复请求。"
+    },
+    {
+      "old": "后续优先补充 Windows 100%/200% 与跨屏实测、具备权限环境下的符号链接用例和授权商业 EPUB 样本，再逐步扩大复杂排版兼容及大书库压力测试。AI 方面继续改善解读可读性与拒绝原因提示，保持原文可验证、范围明确及本地保存重试不重复请求的边界。账号、同步与在线书源不在当前实现范围。",
+      "new": "后续优先补充 Windows 100%/200% 与跨屏实测、具备权限环境下的符号链接用例和授权商业 EPUB 样本，再逐步扩大复杂排版兼容与大书库压力测试。AI 功能将继续改善解读的可读性和拒绝原因提示，保留原文核验、范围确认及本地保存重试机制。账号、同步与在线书源不在当前实现范围。"
+    },
+    {
+      "old": "AI 本地落库失败与远端生成失败分开处理：前者保留当前会话内有界待保存批次，以同一回执重试；后者明确显示错误，不自动重发。事务回滚和提交确认丢失均有回归，避免重复收费或重复插入。",
+      "new": "AI 本地落库失败与远端生成失败分别处理。前者保留当前会话内的待保存批次，可在本地重试；后者显示错误，不自动重发。事务回滚和提交确认丢失的情况均有回归覆盖，以验证重试时不会重复请求或重复插入。"
+    },
+    {
+      "old": "    serviceCollection.AddSingleton<FileService>();\n    serviceCollection.AddSingleton<IFileService>(sp => sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IAppFileDialogService>(sp => sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IReaderPlatformService, ReaderPlatformService>();\n    serviceCollection.AddSingleton<IBackupService, BackupService>();\n    serviceCollection.AddSingleton<ReadingPlanListViewModel>();\n    serviceCollection.AddSingleton<ReadingPlanEditViewModel>();\n    serviceCollection.AddSingleton<StatisticsViewModel>();\n    serviceCollection.AddSingleton<SettingsViewModel>();\n    _serviceProvider = serviceCollection.BuildServiceProvider();\n}\npublic MainWindowViewModel MainWindowViewModel => _serviceProvider.GetService<MainWindowViewModel>()!;\npublic InitializationViewModel InitializationViewModel => _serviceProvider.GetService<InitializationViewModel>()!;\npublic MainViewModel MainViewModel => _serviceProvider.GetService<MainViewModel>()!;\n",
+      "new": "    serviceCollection.AddSingleton<FileService>();\n    serviceCollection.AddSingleton<IFileService>(sp => sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IAppFileDialogService>(sp =>\n        sp.GetRequiredService<FileService>());\n    serviceCollection.AddSingleton<IReaderPlatformService, ReaderPlatformService>();\n    serviceCollection.AddSingleton<IBackupService, BackupService>();\n    serviceCollection.AddSingleton<ReadingPlanListViewModel>();\n    serviceCollection.AddSingleton<ReadingPlanEditViewModel>();\n    serviceCollection.AddSingleton<StatisticsViewModel>();\n    serviceCollection.AddSingleton<SettingsViewModel>();\n    _serviceProvider = serviceCollection.BuildServiceProvider();\n}\npublic MainWindowViewModel MainWindowViewModel =>\n    _serviceProvider.GetService<MainWindowViewModel>()!;\npublic InitializationViewModel InitializationViewModel =>\n    _serviceProvider.GetService<InitializationViewModel>()!;\npublic MainViewModel MainViewModel => _serviceProvider.GetService<MainViewModel>()!;"
+    },
+    {
+      "old": "public async Task<bool> NavigateToAsync(string view, object? parameter = null, CancellationToken ct = default)\n{\n    var target = Resolve(view, parameter); var main = ServiceLocator.Current.MainViewModel;\n    if (target is ReaderViewModel reader && ReferenceEquals(main.Content, reader) && reader.IsSameBook(parameter!))\n        return await main.RequestInPlaceAsync(() => reader.NavigateWithinBookAsync((ReaderOpenRequest)parameter!, ct), ct);\n    if (ReferenceEquals(main.Content, target) && target is EditViewModelBase) return true;\n    var accepted = await main.RequestNavigationAsync(() => NavigateTo(view, parameter), ct);\n    if (accepted && ReferenceEquals(main.Content, target) && !target.OnLoadedCommand.IsRunning) await target.OnLoadedCommand.ExecuteAsync(null);\n    return accepted;\n}\n",
+      "new": "public async Task<bool> NavigateToAsync(string view, object? parameter = null,\n    CancellationToken ct = default)\n{\n    var target = Resolve(view, parameter); var main = ServiceLocator.Current.MainViewModel;\n    if (target is ReaderViewModel reader && ReferenceEquals(main.Content, reader) &&\n        reader.IsSameBook(parameter!))\n        return await main.RequestInPlaceAsync(() =>\n            reader.NavigateWithinBookAsync((ReaderOpenRequest)parameter!, ct), ct);\n    if (ReferenceEquals(main.Content, target) && target is EditViewModelBase) return true;\n    var accepted = await main.RequestNavigationAsync(() => NavigateTo(view, parameter), ct);\n    if (accepted && ReferenceEquals(main.Content, target) && !target.OnLoadedCommand.IsRunning)\n        await target.OnLoadedCommand.ExecuteAsync(null);\n    return accepted;\n}"
+    },
+    {
+      "old": "public sealed record DocumentKey(\nGuid FileId,\nstring SourceSha256,\nstring CanonicalSha256,\nint ParserVersion);\n\npublic sealed record ReaderPosition(\nDocumentKey Document,\nstring ChapterKey,\n[property: JsonRequired] int Utf16Offset,\nstring? NonTextBlockKey = null);\n",
+      "new": "public sealed record DocumentKey(\nGuid FileId,\nstring SourceSha256,\nstring CanonicalSha256,\nint ParserVersion);\npublic sealed record ReaderPosition(\nDocumentKey Document,\nstring ChapterKey,\n[property: JsonRequired] int Utf16Offset,\nstring? NonTextBlockKey = null);"
+    },
+    {
+      "old": "public Task PagePresentedAsync(LayoutId layout)\n{\n    if (Phase != ReaderPhase.Presenting || _layout?.Id != layout || _identity is null || _position is null) return Task.CompletedTask;\n    if (!_beginning.IsCompleted) return _beginning;\n    return _beginning = Observe(async () =>\n    {\n        var identity = _identity; var position = _position; var now = _clock.Now;\n        _context = await _sessions.BeginAsync(identity, position, now, _lifetime.Token);\n        _start = position; _opened = now; Phase = ReaderPhase.Active; StartIndex();\n    });\n}\n",
+      "new": "public Task PagePresentedAsync(LayoutId layout)\n{\n    if (Phase != ReaderPhase.Presenting || _layout?.Id != layout || _identity is null ||\n        _position is null) return Task.CompletedTask;\n    if (!_beginning.IsCompleted) return _beginning;\n    return _beginning = Observe(async () =>\n    {\n        var identity = _identity; var position = _position; var now = _clock.Now;\n        _context = await _sessions.BeginAsync(identity, position, now, _lifetime.Token);\n        _start = position; _opened = now; Phase = ReaderPhase.Active; StartIndex();\n    });\n}"
+    },
+    {
+      "old": "        if (selection)\n        {\n            if (string.IsNullOrWhiteSpace(response.Analysis) || response.Analysis.Length > 4000)\n                throw new AiException(\"InvalidAiResponse\", \"整段解读为空或超过4000字符，未保存书摘。\");\n            var span = scope.Original.Spans[0];\n            result = verifier.Verify(scope, [new(span.Text, response.Analysis, null, null)]);\n        }\n        else result = verifier.Verify(scope, response.Candidates);\n",
+      "new": "if (selection)\n{\n    if (string.IsNullOrWhiteSpace(response.Analysis) || response.Analysis.Length > 4000)\n        throw new AiException(\"InvalidAiResponse\", \"整段解读为空或超过4000字符，未保存书摘。\");\n    var span = scope.Original.Spans[0];\n    result = verifier.Verify(scope, [new(span.Text, response.Analysis, null, null)]);\n}\nelse result = verifier.Verify(scope, response.Candidates);"
+    },
+    {
+      "old": "            var boundaries = StringInfo.ParseCombiningCharacters(span.Text).Append(span.Text.Length).ToHashSet();\n            var at = 0;\n            while (at <= span.Text.Length - candidate.OriginalText.Length)\n            {\n                var found = span.Text.IndexOf(candidate.OriginalText, at, StringComparison.Ordinal); if (found < 0) break;\n                var end = found + candidate.OriginalText.Length; at = found + 1;\n                if (!boundaries.Contains(found) || !boundaries.Contains(end)) continue;\n                exactOccurrences++;\n                if (!string.IsNullOrEmpty(candidate.PrefixHint) && !span.Text[..found].EndsWith(candidate.PrefixHint, StringComparison.Ordinal)) continue;\n",
+      "new": "var boundaries =\n    StringInfo.ParseCombiningCharacters(span.Text).Append(span.Text.Length).ToHashSet();\nvar at = 0;\nwhile (at <= span.Text.Length - candidate.OriginalText.Length)\n{\n    var found = span.Text.IndexOf(candidate.OriginalText, at, StringComparison.Ordinal);\n    if (found < 0) break;\n    var end = found + candidate.OriginalText.Length; at = found + 1;\n    if (!boundaries.Contains(found) || !boundaries.Contains(end)) continue;\n    exactOccurrences++;\n    if (!string.IsNullOrEmpty(candidate.PrefixHint) &&\n        !span.Text[..found].EndsWith(candidate.PrefixHint, StringComparison.Ordinal)) continue;"
+    },
+    {
+      "old": "public async Task<RestoreResult> RestoreAsync(string path, CancellationToken ct)\n{\n    using var target = await Task.Run(() => _archive.Prepare(path, ct), ct); // Invalid input never changes the current data.\n    await _database.InitializeAsync();\n    await using var lease = await _coordinator.EnterMaintenanceAsync(MaintenanceKind.Restore, ct);\n    await EnsureNoPendingRecoveryAsync(lease);\n    var id = Guid.NewGuid(); var autoRelative = \"backups/auto-backup-\" + id.ToString(\"D\") + \".zip\";\n    var automaticPath = ManagedBookFiles.SafePath(_paths.DirectoryPath, autoRelative);\n    var old = _validator.Validate(await _database.ReadAsync(lease, BackupDataStore.Snapshot));\n    var automatic = await ExportUnderLeaseAsync(automaticPath, lease, ct);\n    using (var verified = await Task.Run(() => _archive.Prepare(automatic.Path, ct), ct))\n        if (BackupDataStore.Hash(verified.Data) != BackupDataStore.Hash(old)) throw new IOException(\"自动备份复核失败，原数据未改变。\");\n",
+      "new": "public async Task<RestoreResult> RestoreAsync(string path, CancellationToken ct)\n{\n    using var target = await Task.Run(() => _archive.Prepare(path, ct), ct);\n        // Invalid input never changes the current data.\n    await _database.InitializeAsync();\n    await using var lease = await _coordinator.EnterMaintenanceAsync(MaintenanceKind.Restore,\n        ct);\n    await EnsureNoPendingRecoveryAsync(lease);\n    var id = Guid.NewGuid(); var autoRelative = \"backups/auto-backup-\" + id.ToString(\"D\") +\n        \".zip\";\n    var automaticPath = ManagedBookFiles.SafePath(_paths.DirectoryPath, autoRelative);\n    var old = _validator.Validate(await _database.ReadAsync(lease, BackupDataStore.Snapshot));\n    var automatic = await ExportUnderLeaseAsync(automaticPath, lease, ct);\n    using (var verified = await Task.Run(() => _archive.Prepare(automatic.Path, ct), ct))\n        if (BackupDataStore.Hash(verified.Data) != BackupDataStore.Hash(old)) throw new\n            IOException(\"自动备份复核失败，原数据未改变。\");"
+    },
+    {
+      "old": "实线外键默认 ON DELETE CASCADE；QuoteOrigin.BatchId 为可空关联，删除批次时 ON DELETE SET NULL。图中 0..1 表示可选的一对一扩展，0..* 表示可有多条子记录。AppMetadata 保存恢复事务标记，不参与业务实体关系图。",
+      "new": "图中 Book 主干基数为 1，支线标注子表的 0..1 或 0..*；仅列出关键字段，完整规则见下表。实际外键默认 ON DELETE CASCADE，QuoteOrigin.BatchId 为可空关联，删除批次时 ON DELETE SET NULL。AppMetadata 保存恢复事务标记，不参与业务实体关系图。"
+    }
+  ],
+  "fixed_rows": [
+    "测试日期",
+    "构建与运行",
+    "完整自动化回归"
+  ],
+  "code_formatting": [
+    {
+      "caption": "代码 1  文件服务别名、容器构建与 VM 解析（实际节选）",
+      "before_lines": 14,
+      "after_lines": 17,
+      "max_line_width_pt": 434.62060546875,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 2  同书原位定位与异步导航（实际节选）",
+      "before_lines": 10,
+      "after_lines": 14,
+      "max_line_width_pt": 443.96728515625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 3  文档身份与可持久化正文锚点（实际节选）",
+      "before_lines": 11,
+      "after_lines": 10,
+      "max_line_width_pt": 191.60693359375,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 4  首屏绘制确认后启动会话（实际节选）",
+      "before_lines": 11,
+      "after_lines": 12,
+      "max_line_width_pt": 411.25390625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 5  选区原文由程序保留，模型只提供整体解读",
+      "before_lines": 8,
+      "after_lines": 8,
+      "max_line_width_pt": 428.72705078125,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 6  精确匹配、字符簇边界与紧邻上下文检查",
+      "before_lines": 9,
+      "after_lines": 12,
+      "max_line_width_pt": 443.96728515625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 7  恢复前校验输入并生成、复核当前库自动备份",
+      "before_lines": 12,
+      "after_lines": 16,
+      "max_line_width_pt": 439.2939453125,
+      "tokens_unchanged": true
+    }
+  ],
+  "changed_package_parts": [
+    "word/media/image1.png",
+    "word/media/image2.svg",
+    "word/media/image3.png",
+    "word/media/image4.svg",
+    "word/document.xml",
+    "word/settings.xml"
+  ],
+  "kept_application_screenshots": 8
+}

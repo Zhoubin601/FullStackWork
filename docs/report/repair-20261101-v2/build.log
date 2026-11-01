@@ -1,0 +1,67 @@
+{
+  "target": "D:\\2026Autumn Semester File\\FullStack\\期末大作业\\docs\\report\\repair-20261101-v2\\20261101-阅记-项目报告-v2.docx",
+  "fixed_rows": [
+    "测试日期",
+    "构建与运行",
+    "完整自动化回归"
+  ],
+  "codes": [
+    {
+      "caption": "代码 1  文件服务别名、容器构建与 VM 解析（实际节选）",
+      "before_lines": 14,
+      "after_lines": 17,
+      "max_line_width_pt": 434.62060546875,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 2  同书原位定位与异步导航（实际节选）",
+      "before_lines": 10,
+      "after_lines": 14,
+      "max_line_width_pt": 443.96728515625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 3  文档身份与可持久化正文锚点（实际节选）",
+      "before_lines": 11,
+      "after_lines": 10,
+      "max_line_width_pt": 191.60693359375,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 4  首屏绘制确认后启动会话（实际节选）",
+      "before_lines": 11,
+      "after_lines": 12,
+      "max_line_width_pt": 411.25390625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 5  选区原文由程序保留，模型只提供整体解读",
+      "before_lines": 8,
+      "after_lines": 8,
+      "max_line_width_pt": 428.72705078125,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 6  精确匹配、字符簇边界与紧邻上下文检查",
+      "before_lines": 9,
+      "after_lines": 12,
+      "max_line_width_pt": 443.96728515625,
+      "tokens_unchanged": true
+    },
+    {
+      "caption": "代码 7  恢复前校验输入并生成、复核当前库自动备份",
+      "before_lines": 12,
+      "after_lines": 16,
+      "max_line_width_pt": 439.2939453125,
+      "tokens_unchanged": true
+    }
+  ],
+  "changed_parts": [
+    "word/media/image1.png",
+    "word/media/image2.svg",
+    "word/media/image3.png",
+    "word/media/image4.svg",
+    "word/document.xml",
+    "word/settings.xml"
+  ]
+}

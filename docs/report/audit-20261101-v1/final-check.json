@@ -1,0 +1,15 @@
+{
+  "protected_files_unchanged": {
+    "raw\\1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md": true,
+    "raw\\期末项目与报告要求.docx": true,
+    "output\\提交材料\\20261101-阅记-项目报告-v1.docx": true,
+    "output\\提交材料\\20261101-阅记-项目报告-v1.pdf": true,
+    "output\\提交材料\\阅记-源码.zip": true
+  },
+  "all_pdf_fonts_embedded": true,
+  "review_document_exists": true,
+  "visual_review_record_exists": true,
+  "report_edited": false,
+  "external_sources_used": false,
+  "intermediate_artifacts_retained_as_audit_evidence": true
+}

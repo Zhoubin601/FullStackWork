@@ -1,0 +1,9 @@
+{
+  "deliveries_exist_and_match_validated_hashes": true,
+  "raw_and_all_old_deliveries_unchanged": true,
+  "protected_original_files": 7,
+  "latest_indexes_point_to_v2": true,
+  "pages": 27,
+  "temporary_artifacts_in_output": false,
+  "no_user_files_removed": true
+}

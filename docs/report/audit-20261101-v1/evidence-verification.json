@@ -1,0 +1,124 @@
+{
+  "application": {
+    "summary": {
+      "Classes": 137,
+      "Interfaces": 41,
+      "ViewFiles": 15,
+      "MinimumClasses": 96,
+      "MinimumInterfaces": 29,
+      "CSharpFiles": 134
+    },
+    "changed_inventory_files": [],
+    "added_files": [],
+    "missing_files": []
+  },
+  "reference": {
+    "summary": {
+      "Classes": 63,
+      "Interfaces": 10,
+      "ViewFiles": 9,
+      "MinimumClasses": 45,
+      "MinimumInterfaces": 7,
+      "CSharpFiles": 55
+    },
+    "changed_inventory_files": [],
+    "added_files": [],
+    "missing_files": []
+  },
+  "package": {
+    "bytes": 342012,
+    "members": 208,
+    "corrupt_member": null,
+    "mismatched_members": [],
+    "forbidden_members": []
+  },
+  "recorded_tests": {
+    "outcomes": {
+      "Passed": 351,
+      "NotExecuted": 2
+    },
+    "times": [
+      {
+        "creation": "2026-11-01T10:40:15.7004976+08:00",
+        "queuing": "2026-11-01T10:40:15.7004979+08:00",
+        "start": "2026-11-01T10:40:06.8830957+08:00",
+        "finish": "2026-11-01T10:46:08.5340033+08:00"
+      }
+    ],
+    "new_test_run": false
+  },
+  "docx_pdf": {
+    "paragraphs_checked": 393,
+    "missing_paragraphs_after_removing_leader_dots": [],
+    "live_page_fields": [
+      "PAGE"
+    ]
+  },
+  "toc": {
+    "entries": 19,
+    "links": 19,
+    "heading_matches": true,
+    "link_destinations": [
+      3,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      11,
+      15,
+      22,
+      23,
+      23,
+      24,
+      27,
+      28
+    ],
+    "bookmark_destinations": [
+      3,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      11,
+      15,
+      22,
+      23,
+      23,
+      24,
+      27,
+      28
+    ]
+  },
+  "embedded_fonts": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+MicrosoftYaHei-Bold": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+MicrosoftYaHei": true,
+    "/BCDIEE+MicrosoftYaHei": true,
+    "/BCDJEE+TimesNewRomanPSMT": true,
+    "/BCDKEE+SimSun": true,
+    "/BCDLEE+Calibri": true,
+    "/BCDMEE+TimesNewRomanPSMT": true,
+    "/BCDNEE+MicrosoftYaHei-Bold": true
+  },
+  "editorial_scan": {},
+  "protected_hashes_unchanged": {
+    "raw\\1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md": true,
+    "raw\\期末项目与报告要求.docx": true,
+    "output\\提交材料\\20261101-阅记-项目报告-v1.docx": true,
+    "output\\提交材料\\20261101-阅记-项目报告-v1.pdf": true,
+    "output\\提交材料\\阅记-源码.zip": true
+  }
+}

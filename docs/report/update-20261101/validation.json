@@ -1,0 +1,207 @@
+{
+  "pages": 28,
+  "body_headings": 19,
+  "toc_links": 19,
+  "bookmarks": 19,
+  "tables": 14,
+  "images": 10,
+  "code_blocks": 7,
+  "all_original_media_unchanged": true,
+  "original_header_footer_numbering_unchanged": true,
+  "protected_original_files": 5,
+  "protected_original_files_unchanged": true,
+  "fonts_embedded": {
+    "/BCDEEE+Cambria": true,
+    "/BCDFEE+MicrosoftYaHei-Bold": true,
+    "/BCDGEE+TimesNewRomanPS-BoldMT": true,
+    "/BCDHEE+MicrosoftYaHei": true,
+    "/BCDIEE+MicrosoftYaHei": true,
+    "/BCDJEE+TimesNewRomanPSMT": true,
+    "/BCDKEE+SimSun": true,
+    "/BCDLEE+Calibri": true,
+    "/BCDMEE+TimesNewRomanPSMT": true,
+    "/BCDNEE+MicrosoftYaHei-Bold": true
+  },
+  "source_archive_matches_current_code": true,
+  "source_members": 208,
+  "test_counts": {
+    "Total": 353,
+    "Passed": 351,
+    "Failed": 0,
+    "Skipped": 2
+  },
+  "page_checks": [
+    {
+      "page": 1,
+      "characters": 85,
+      "images": 0,
+      "words": 17
+    },
+    {
+      "page": 2,
+      "characters": 2566,
+      "images": 0,
+      "words": 77
+    },
+    {
+      "page": 3,
+      "characters": 725,
+      "images": 0,
+      "words": 58
+    },
+    {
+      "page": 4,
+      "characters": 935,
+      "images": 0,
+      "words": 86
+    },
+    {
+      "page": 5,
+      "characters": 886,
+      "images": 0,
+      "words": 42
+    },
+    {
+      "page": 6,
+      "characters": 925,
+      "images": 0,
+      "words": 70
+    },
+    {
+      "page": 7,
+      "characters": 1172,
+      "images": 0,
+      "words": 44
+    },
+    {
+      "page": 8,
+      "characters": 1008,
+      "images": 0,
+      "words": 77
+    },
+    {
+      "page": 9,
+      "characters": 1247,
+      "images": 0,
+      "words": 92
+    },
+    {
+      "page": 10,
+      "characters": 990,
+      "images": 0,
+      "words": 99
+    },
+    {
+      "page": 11,
+      "characters": 2314,
+      "images": 0,
+      "words": 144
+    },
+    {
+      "page": 12,
+      "characters": 1536,
+      "images": 0,
+      "words": 141
+    },
+    {
+      "page": 13,
+      "characters": 1862,
+      "images": 0,
+      "words": 124
+    },
+    {
+      "page": 14,
+      "characters": 1761,
+      "images": 0,
+      "words": 137
+    },
+    {
+      "page": 15,
+      "characters": 265,
+      "images": 1,
+      "words": 20
+    },
+    {
+      "page": 16,
+      "characters": 260,
+      "images": 1,
+      "words": 20
+    },
+    {
+      "page": 17,
+      "characters": 285,
+      "images": 1,
+      "words": 20
+    },
+    {
+      "page": 18,
+      "characters": 309,
+      "images": 1,
+      "words": 37
+    },
+    {
+      "page": 19,
+      "characters": 323,
+      "images": 1,
+      "words": 21
+    },
+    {
+      "page": 20,
+      "characters": 317,
+      "images": 1,
+      "words": 29
+    },
+    {
+      "page": 21,
+      "characters": 290,
+      "images": 1,
+      "words": 34
+    },
+    {
+      "page": 22,
+      "characters": 750,
+      "images": 0,
+      "words": 55
+    },
+    {
+      "page": 23,
+      "characters": 800,
+      "images": 0,
+      "words": 96
+    },
+    {
+      "page": 24,
+      "characters": 765,
+      "images": 0,
+      "words": 81
+    },
+    {
+      "page": 25,
+      "characters": 575,
+      "images": 0,
+      "words": 64
+    },
+    {
+      "page": 26,
+      "characters": 567,
+      "images": 0,
+      "words": 57
+    },
+    {
+      "page": 27,
+      "characters": 296,
+      "images": 1,
+      "words": 20
+    },
+    {
+      "page": 28,
+      "characters": 619,
+      "images": 0,
+      "words": 38
+    }
+  ],
+  "docx_sha256": "939ec87327851c116fe17c5edbf9ff10ced078a7aa676b96243ca699fa9ef2cb",
+  "pdf_sha256": "150c5731950e16b96179cdcf9e8ff1fd3683ea7ed470091a6e8136ca37bb6372",
+  "visual_review_required": false,
+  "visual_review_completed": true
+}

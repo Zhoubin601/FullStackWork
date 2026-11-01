@@ -1,0 +1,8 @@
+# Retain scripts, vector diagram sources and verification summaries.
+# Working document copies, page renders and previews remain local.
+/pages/
+/contact-*.png
+/packaged-render/
+/preview.html
+/*.docx
+/*.pdf

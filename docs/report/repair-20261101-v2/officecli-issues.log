@@ -1,0 +1,456 @@
+Found 194 issue(s):
+
+Format Issues (103):
+  [F1] /body/p[@paraId=42B5683C]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F2] /body/p[@paraId=446C9A77]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F4] /body/p[@paraId=6AA6AD69]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F5] /body/p[@paraId=17579054]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F6] /body/p[@paraId=1548B1AC]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F7] /body/p[@paraId=20D4CE15]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F8] /body/p[@paraId=1EF2B0C1]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F9] /body/p[@paraId=5F73ADA2]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F10] /body/p[@paraId=73D911AA]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F11] /body/p[@paraId=6987A396]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F13] /body/p[@paraId=4102C0F7]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F15] /body/p[@paraId=41AD5A1F]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F16] /body/p[@paraId=326722B7]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F18] /body/p[@paraId=204360B8]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F19] /body/p[@paraId=53E225CB]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F20] /body/p[@paraId=55F04805]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F22] /body/p[@paraId=7CCDD292]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F23] /body/p[@paraId=7F14252B]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F25] /body/p[@paraId=7EF1F7E9]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F26] /body/p[@paraId=23C0B416]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F27] /body/p[@paraId=74B47059]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F28] /body/p[@paraId=4946F141]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F30] /body/p[@paraId=018F0984]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F32] /body/p[@paraId=14C7B2AE]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F33] /body/p[@paraId=4C1E806C]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F34] /body/p[@paraId=7078B99E]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F35] /body/p[@paraId=6275C9DF]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F36] /body/p[@paraId=5BCE6A5E]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F38] /body/p[@paraId=18D389BE]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F52] /body/p[@paraId=0657FF97]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F53] /body/p[@paraId=78F4F4DB]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F54] /body/p[@paraId=68626DD1]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F56] /body/p[@paraId=231BD94C]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F68] /body/p[@paraId=7E6C0170]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F69] /body/p[@paraId=108014CF]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F70] /body/p[@paraId=1CAB0B10]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F71] /body/p[@paraId=68D431B0]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F73] /body/p[@paraId=2F8314B7]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F74] /body/p[@paraId=52BE79E9]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F75] /body/p[@paraId=7057B9C8]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F76] /body/p[@paraId=707F1B33]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F78] /body/p[@paraId=574362F2]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F88] /body/p[@paraId=4F37BBA6]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F89] /body/p[@paraId=2826B210]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F90] /body/p[@paraId=6F89D2B9]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F91] /body/p[@paraId=1565E4EB]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F92] /body/p[@paraId=010BB975]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F93] /body/p[@paraId=39D665D1]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F95] /body/p[@paraId=710CD220]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F100] /body/p[@paraId=13E5FAB5]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F101] /body/p[@paraId=78CFA693]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F102] /body/p[@paraId=513657C7]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F104] /body/p[@paraId=2CD2493B]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F113] /body/p[@paraId=1A503168]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F114] /body/p[@paraId=11841583]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F115] /body/p[@paraId=1339F4F2]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F116] /body/p[@paraId=31769DCA]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F117] /body/p[@paraId=2E9018DD]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F119] /body/p[@paraId=69169EE3]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F134] /body/p[@paraId=23DA6B0B]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F135] /body/p[@paraId=0D495326]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F136] /body/p[@paraId=51079D97]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F137] /body/p[@paraId=2C3579F5]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F138] /body/p[@paraId=1A946627]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F139] /body/p[@paraId=4A1F97D8]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F140] /body/p[@paraId=6194130C]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F141] /body/p[@paraId=08AB9EF6]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F143] /body/p[@paraId=5A8615A7]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F144] /body/p[@paraId=5235120C]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F146] /body/p[@paraId=72CD5795]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F147] /body/p[@paraId=4AA5DB40]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F148] /body/p[@paraId=57D90449]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F150] /body/p[@paraId=7522BF67]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F151] /body/p[@paraId=5115BF23]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F152] /body/p[@paraId=4A529122]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F154] /body/p[@paraId=6E34CFC5]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F156] /body/p[@paraId=6517927D]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F158] /body/p[@paraId=5A791615]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F159] /body/p[@paraId=7251094E]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F160] /body/p[@paraId=29DEE1D5]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F161] /body/p[@paraId=668A82D1]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F163] /body/p[@paraId=1B280865]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F164] /body/p[@paraId=69D6C13D]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F165] /body/p[@paraId=6EC023FD]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F166] /body/p[@paraId=5C319127]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F168] /body/p[@paraId=2DF921E9]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F169] /body/p[@paraId=4996B0ED]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F171] /body/p[@paraId=6090DED8]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F172] /body/p[@paraId=30C1EEF1]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F174] /body/p[@paraId=704A18B9]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F176] /body/p[@paraId=334BAB40]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F177] /body/p[@paraId=7E4CA38B]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F179] /body/p[@paraId=4A817591]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F182] /body/p[@paraId=33ACDD6D]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F183] /body/p[@paraId=09B75E71]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F185] /body/p[@paraId=095BCEEF]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F186] /body/p[@paraId=70412E70]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F187] /body/p[@paraId=38020BAA]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F189] /body/p[@paraId=37F96714]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F191] /body/p[@paraId=7F92A142]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F192] /body/p[@paraId=37415F15]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F193] /body/p[@paraId=6F7F7A02]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+  [F194] /body/p[@paraId=61E97714]: Body paragraph missing first-line indent
+       Suggestion: Set first-line indent to 2 characters
+
+Structure Issues (15):
+  [S3] /body/p[@paraId=038D39E0]: Empty paragraph
+  [S12] /body/p[@paraId=552B3ED3]: Empty paragraph
+  [S17] /body/p[@paraId=74E62C0A]: Empty paragraph
+  [S24] /body/p[@paraId=0EEB964E]: Empty paragraph
+  [S29] /body/p[@paraId=0BCE39E0]: Empty paragraph
+  [S31] /body/p[@paraId=145B7C99]: Empty paragraph
+  [S155] /body/p[@paraId=5C73E4A6]: Empty paragraph
+  [S170] /body/p[@paraId=2FC62BF3]: Empty paragraph
+  [S173] /body/p[@paraId=77A78299]: Empty paragraph
+  [S175] /body/p[@paraId=0461B439]: Empty paragraph
+  [S178] /body/p[@paraId=166F4D21]: Empty paragraph
+  [S180] /body/p[@paraId=6A056327]: Empty paragraph
+  [S181] /body/p[@paraId=64B342BB]: Empty paragraph
+  [S184] /body/p[@paraId=5CFA4CA9]: Empty paragraph
+  [S190] /body/p[@paraId=16141474]: Empty paragraph
+
+Content Issues (76):
+  [C14] /body/p[@paraId=3707CF6D]/r[2]: Consecutive spaces
+       Context: " 1  "
+       Suggestion: Merge into a single space
+  [C21] /body/p[@paraId=0E3AB210]/r[2]: Consecutive spaces
+       Context: " 2  schema 2 "
+       Suggestion: Merge into a single space
+  [C37] /body/p[@paraId=5BCE6A5E]/r[2]: Consecutive spaces
+       Context: " 1  "
+       Suggestion: Merge into a single space
+  [C39] /body/p[@paraId=18D389BE]/r[1]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<FileService>();"
+       Suggestion: Merge into a single space
+  [C40] /body/p[@paraId=18D389BE]/r[2]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<IFileService>(sp => sp.GetRequiredService<FileService>());"
+       Suggestion: Merge into a single space
+  [C41] /body/p[@paraId=18D389BE]/r[3]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<IAppFileDialogService>(sp =>"
+       Suggestion: Merge into a single space
+  [C42] /body/p[@paraId=18D389BE]/r[4]: Consecutive spaces
+       Context: "        sp.GetRequiredService<FileService>());"
+       Suggestion: Merge into a single space
+  [C43] /body/p[@paraId=18D389BE]/r[5]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<IReaderPlatformService, ReaderPlatformService>();"
+       Suggestion: Merge into a single space
+  [C44] /body/p[@paraId=18D389BE]/r[6]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<IBackupService, BackupService>();"
+       Suggestion: Merge into a single space
+  [C45] /body/p[@paraId=18D389BE]/r[7]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<ReadingPlanListViewModel>();"
+       Suggestion: Merge into a single space
+  [C46] /body/p[@paraId=18D389BE]/r[8]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<ReadingPlanEditViewModel>();"
+       Suggestion: Merge into a single space
+  [C47] /body/p[@paraId=18D389BE]/r[9]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<StatisticsViewModel>();"
+       Suggestion: Merge into a single space
+  [C48] /body/p[@paraId=18D389BE]/r[10]: Consecutive spaces
+       Context: "    serviceCollection.AddSingleton<SettingsViewModel>();"
+       Suggestion: Merge into a single space
+  [C49] /body/p[@paraId=18D389BE]/r[11]: Consecutive spaces
+       Context: "    _serviceProvider = serviceCollection.BuildServiceProvider();"
+       Suggestion: Merge into a single space
+  [C50] /body/p[@paraId=18D389BE]/r[14]: Consecutive spaces
+       Context: "    _serviceProvider.GetService<MainWindowViewModel>()!;"
+       Suggestion: Merge into a single space
+  [C51] /body/p[@paraId=18D389BE]/r[16]: Consecutive spaces
+       Context: "    _serviceProvider.GetService<InitializationViewModel>()!;"
+       Suggestion: Merge into a single space
+  [C55] /body/p[@paraId=68626DD1]/r[2]: Consecutive spaces
+       Context: " 2  "
+       Suggestion: Merge into a single space
+  [C57] /body/p[@paraId=231BD94C]/r[2]: Consecutive spaces
+       Context: "    CancellationToken ct = default)"
+       Suggestion: Merge into a single space
+  [C58] /body/p[@paraId=231BD94C]/r[4]: Consecutive spaces
+       Context: "    var target = Resolve(view, parameter); var main = ServiceLocator.Current.MainViewModel;"
+       Suggestion: Merge into a single space
+  [C59] /body/p[@paraId=231BD94C]/r[5]: Consecutive spaces
+       Context: "    if (target is ReaderViewModel reader && ReferenceEquals(main.Content, reader) &&"
+       Suggestion: Merge into a single space
+  [C60] /body/p[@paraId=231BD94C]/r[6]: Consecutive spaces
+       Context: "        reader.IsSameBook(parameter!))"
+       Suggestion: Merge into a single space
+  [C61] /body/p[@paraId=231BD94C]/r[7]: Consecutive spaces
+       Context: "        return await main.RequestInPlaceAsync(() =>"
+       Suggestion: Merge into a single space
+  [C62] /body/p[@paraId=231BD94C]/r[8]: Consecutive spaces
+       Context: "            reader.NavigateWithinBookAsync((ReaderOpenRequest)parameter!, ct), ct);"
+       Suggestion: Merge into a single space
+  [C63] /body/p[@paraId=231BD94C]/r[9]: Consecutive spaces
+       Context: "    if (ReferenceEquals(main.Content, target) && target is EditViewModelBase) return true;"
+       Suggestion: Merge into a single space
+  [C64] /body/p[@paraId=231BD94C]/r[10]: Consecutive spaces
+       Context: "    var accepted = await main.RequestNavigationAsync(() => NavigateTo(view, parameter), ct);"
+       Suggestion: Merge into a single space
+  [C65] /body/p[@paraId=231BD94C]/r[11]: Consecutive spaces
+       Context: "    if (accepted && ReferenceEquals(main.Content, target) && !target.OnLoadedCommand.IsRunning)"
+       Suggestion: Merge into a single space
+  [C66] /body/p[@paraId=231BD94C]/r[12]: Consecutive spaces
+       Context: "        await target.OnLoadedCommand.ExecuteAsync(null);"
+       Suggestion: Merge into a single space
+  [C67] /body/p[@paraId=231BD94C]/r[13]: Consecutive spaces
+       Context: "    return accepted;"
+       Suggestion: Merge into a single space
+  [C72] /body/p[@paraId=68D431B0]/r[2]: Consecutive spaces
+       Context: " 3  "
+       Suggestion: Merge into a single space
+  [C77] /body/p[@paraId=707F1B33]/r[2]: Consecutive spaces
+       Context: " 4  "
+       Suggestion: Merge into a single space
+  [C79] /body/p[@paraId=574362F2]/r[3]: Consecutive spaces
+       Context: "    if (Phase != ReaderPhase.Presenting || _layout?.Id != layout || _identity is null ||"
+       Suggestion: Merge into a single space
+  [C80] /body/p[@paraId=574362F2]/r[4]: Consecutive spaces
+       Context: "        _position is null) return Task.CompletedTask;"
+       Suggestion: Merge into a single space
+  [C81] /body/p[@paraId=574362F2]/r[5]: Consecutive spaces
+       Context: "    if (!_beginning.IsCompleted) return _beginning;"
+       Suggestion: Merge into a single space
+  [C82] /body/p[@paraId=574362F2]/r[6]: Consecutive spaces
+       Context: "    return _beginning = Observe(async () =>"
+       Suggestion: Merge into a single space
+  [C83] /body/p[@paraId=574362F2]/r[7]: Consecutive spaces
+       Context: "    {"
+       Suggestion: Merge into a single space
+  [C84] /body/p[@paraId=574362F2]/r[8]: Consecutive spaces
+       Context: "        var identity = _identity; var position = _position; var now = _clock.Now;"
+       Suggestion: Merge into a single space
+  [C85] /body/p[@paraId=574362F2]/r[9]: Consecutive spaces
+       Context: "        _context = await _sessions.BeginAsync(identity, position, now, _lifetime.Token);"
+       Suggestion: Merge into a single space
+  [C86] /body/p[@paraId=574362F2]/r[10]: Consecutive spaces
+       Context: "        _start = position; _opened = now; Phase = ReaderPhase.Active; StartIndex();"
+       Suggestion: Merge into a single space
+  [C87] /body/p[@paraId=574362F2]/r[11]: Consecutive spaces
+       Context: "    });"
+       Suggestion: Merge into a single space
+  [C94] /body/p[@paraId=39D665D1]/r[2]: Consecutive spaces
+       Context: " 5  "
+       Suggestion: Merge into a single space
+  [C96] /body/p[@paraId=710CD220]/r[3]: Consecutive spaces
+       Context: "    if (string.IsNullOrWhiteSpace(response.Analysis) || response.Analysis.Length > 4000)"
+       Suggestion: Merge into a single space
+  [C97] /body/p[@paraId=710CD220]/r[4]: Consecutive spaces
+       Context: "        throw new AiException("InvalidAiResponse", ""
+       Suggestion: Merge into a single space
+  [C98] /body/p[@paraId=710CD220]/r[9]: Consecutive spaces
+       Context: "    var span = scope.Original.Spans[0];"
+       Suggestion: Merge into a single space
+  [C99] /body/p[@paraId=710CD220]/r[10]: Consecutive spaces
+       Context: "    result = verifier.Verify(scope, [new(span.Text, response.Analysis, null, null)]);"
+       Suggestion: Merge into a single space
+  [C103] /body/p[@paraId=513657C7]/r[2]: Consecutive spaces
+       Context: " 6  "
+       Suggestion: Merge into a single space
+  [C105] /body/p[@paraId=2CD2493B]/r[2]: Consecutive spaces
+       Context: "    StringInfo.ParseCombiningCharacters(span.Text).Append(span.Text.Length).ToHashSet();"
+       Suggestion: Merge into a single space
+  [C106] /body/p[@paraId=2CD2493B]/r[6]: Consecutive spaces
+       Context: "    var found = span.Text.IndexOf(candidate.OriginalText, at, StringComparison.Ordinal);"
+       Suggestion: Merge into a single space
+  [C107] /body/p[@paraId=2CD2493B]/r[7]: Consecutive spaces
+       Context: "    if (found < 0) break;"
+       Suggestion: Merge into a single space
+  [C108] /body/p[@paraId=2CD2493B]/r[8]: Consecutive spaces
+       Context: "    var end = found + candidate.OriginalText.Length; at = found + 1;"
+       Suggestion: Merge into a single space
+  [C109] /body/p[@paraId=2CD2493B]/r[9]: Consecutive spaces
+       Context: "    if (!boundaries.Contains(found) || !boundaries.Contains(end)) continue;"
+       Suggestion: Merge into a single space
+  [C110] /body/p[@paraId=2CD2493B]/r[10]: Consecutive spaces
+       Context: "    exactOccurrences++;"
+       Suggestion: Merge into a single space
+  [C111] /body/p[@paraId=2CD2493B]/r[11]: Consecutive spaces
+       Context: "    if (!string.IsNullOrEmpty(candidate.PrefixHint) &&"
+       Suggestion: Merge into a single space
+  [C112] /body/p[@paraId=2CD2493B]/r[12]: Consecutive spaces
+       Context: "        !span.Text[..found].EndsWith(candidate.PrefixHint, StringComparison.Ordinal)) continue;"
+       Suggestion: Merge into a single space
+  [C118] /body/p[@paraId=2E9018DD]/r[2]: Consecutive spaces
+       Context: " 7  "
+       Suggestion: Merge into a single space
+  [C120] /body/p[@paraId=69169EE3]/r[3]: Consecutive spaces
+       Context: "    using var target = await Task.Run(() => _archive.Prepare(path, ct), ct);"
+       Suggestion: Merge into a single space
+  [C121] /body/p[@paraId=69169EE3]/r[4]: Consecutive spaces
+       Context: "        // Invalid input never changes the current data."
+       Suggestion: Merge into a single space
+  [C122] /body/p[@paraId=69169EE3]/r[5]: Consecutive spaces
+       Context: "    await _database.InitializeAsync();"
+       Suggestion: Merge into a single space
+  [C123] /body/p[@paraId=69169EE3]/r[6]: Consecutive spaces
+       Context: "    await using var lease = await _coordinator.EnterMaintenanceAsync(MaintenanceKind.Restore,"
+       Suggestion: Merge into a single space
+  [C124] /body/p[@paraId=69169EE3]/r[7]: Consecutive spaces
+       Context: "        ct);"
+       Suggestion: Merge into a single space
+  [C125] /body/p[@paraId=69169EE3]/r[8]: Consecutive spaces
+       Context: "    await EnsureNoPendingRecoveryAsync(lease);"
+       Suggestion: Merge into a single space
+  [C126] /body/p[@paraId=69169EE3]/r[9]: Consecutive spaces
+       Context: "    var id = Guid.NewGuid(); var autoRelative = "backups/auto-backup-" + id.ToString("D") +"
+       Suggestion: Merge into a single space
+  [C127] /body/p[@paraId=69169EE3]/r[10]: Consecutive spaces
+       Context: "        ".zip";"
+       Suggestion: Merge into a single space
+  [C128] /body/p[@paraId=69169EE3]/r[11]: Consecutive spaces
+       Context: "    var automaticPath = ManagedBookFiles.SafePath(_paths.DirectoryPath, autoRelative);"
+       Suggestion: Merge into a single space
+  [C129] /body/p[@paraId=69169EE3]/r[12]: Consecutive spaces
+       Context: "    var old = _validator.Validate(await _database.ReadAsync(lease, BackupDataStore.Snapshot));"
+       Suggestion: Merge into a single space
+  [C130] /body/p[@paraId=69169EE3]/r[13]: Consecutive spaces
+       Context: "    var automatic = await ExportUnderLeaseAsync(automaticPath, lease, ct);"
+       Suggestion: Merge into a single space
+  [C131] /body/p[@paraId=69169EE3]/r[14]: Consecutive spaces
+       Context: "    using (var verified = await Task.Run(() => _archive.Prepare(automatic.Path, ct), ct))"
+       Suggestion: Merge into a single space
+  [C132] /body/p[@paraId=69169EE3]/r[15]: Consecutive spaces
+       Context: "        if (BackupDataStore.Hash(verified.Data) != BackupDataStore.Hash(old)) throw new"
+       Suggestion: Merge into a single space
+  [C133] /body/p[@paraId=69169EE3]/r[16]: Consecutive spaces
+       Context: "            IOException(""
+       Suggestion: Merge into a single space
+  [C142] /body/p[@paraId=3B021901]/r[2]: Consecutive spaces
+       Context: " 3  "
+       Suggestion: Merge into a single space
+  [C145] /body/p[@paraId=4298965D]/r[2]: Consecutive spaces
+       Context: " 4  "
+       Suggestion: Merge into a single space
+  [C149] /body/p[@paraId=27D6C3D0]/r[2]: Consecutive spaces
+       Context: " 5  "
+       Suggestion: Merge into a single space
+  [C153] /body/p[@paraId=19F885E1]/r[2]: Consecutive spaces
+       Context: " 6  "
+       Suggestion: Merge into a single space
+  [C157] /body/p[@paraId=5BD37695]/r[2]: Consecutive spaces
+       Context: " 7  "
+       Suggestion: Merge into a single space
+  [C162] /body/p[@paraId=4CB371F8]/r[2]: Consecutive spaces
+       Context: " 8  "
+       Suggestion: Merge into a single space
+  [C167] /body/p[@paraId=61D11AAC]/r[2]: Consecutive spaces
+       Context: " 9  "
+       Suggestion: Merge into a single space
+  [C188] /body/p[@paraId=593A9881]/r[2]: Consecutive spaces
+       Context: " 10  "
+       Suggestion: Merge into a single space

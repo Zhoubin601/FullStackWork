@@ -1,0 +1,6 @@
+# Reproducible page renders and large extraction caches remain local.
+/pages/
+/contact-*.png
+/figure1-detail.png
+/docx-structure.json
+/pdf-pages.json
