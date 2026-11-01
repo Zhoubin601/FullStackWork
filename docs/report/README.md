@@ -1,24 +1,37 @@
-# 项目报告与提交材料
+# 项目报告与交付记录索引
 
-更新：2026-11-01（远端提交前核对）。当前提交目录已统一命名，只保留：
+## 1. 当前正式交付入口（`output/提交材料/`）
 
-- `output/提交材料/阅记-项目报告.docx`：内容与已验证的27页v2一致，SHA256为7563abfa1941cedd8c336ad84eff4a04ccca97ae66027f4dbd690c25bfbca20c。
-- `output/提交材料/阅记-源码.zip`：208文件、342012字节，无编译产物，逐成员与Code一致。
+根据课程原始要求 [`raw/期末项目与报告要求.docx`](../../raw/期末项目与报告要求.docx)，期末作业最终必须提交 **PDF 格式项目报告** 与 **项目源码压缩包（ZIP，不超过 10MB，不含编译结果）**。
 
-PDF及带日期版本文件当前已不在提交目录。本次按当前文件状态同步Git，不恢复已移除文件；课程仍要求以PDF提交报告。后续编辑以当前“阅记-项目报告.docx”为底稿。下文为修复过程与历史验证说明，不代表其中历史输出路径仍存在。
+当前唯一正式交付目录为 [`output/提交材料/`](../../output/提交材料/)：
 
-v2统一原第23页3行表格的字体、字号及缩进，重绘两幅设计图，7段代码改为8.5pt等宽并优化断行，测试用例与性能测量合并以减少大块留白，修订少量模板化措辞。课程章节、封面字段、8张原始应用截图、原代码内容及测试事实保留。
+| 文件角色 | 文件路径 | 页数 / 文件数 | 字节大小 | SHA256 | 提交属性说明 |
+| --- | --- | --- | ---: | --- | --- |
+| **当前正式项目报告（PDF）** | [`output/提交材料/阅记-项目报告.pdf`](../../output/提交材料/阅记-项目报告.pdf) | **27 页**（含 19 个章节标题与目录项、19 个超链接、19 个 PDF 书签、14 表、10 图、7 段代码） | `2,199,879` 字节（约 2.10 MB） | `0605288c6a50ab1e5ff19fb276624b06154e954426c96e1d3a751de6d2ff6841` | **唯一正式报告提交版本**（课程指导书明确要求以 PDF 格式提交报告） |
+| **当前正式源码压缩包（ZIP）** | [`output/提交材料/阅记-源码.zip`](../../output/提交材料/阅记-源码.zip) | **208 个源码与资源文件** | `342,012` 字节（约 334.00 KB，`< 10MB`） | `118095ab068e02276fd341832fdb60b9fad254142b7c3e500617df2e6dba8432` | **唯一正式源码提交版本**（与 [`Code/delivery-files.txt`](../../Code/delivery-files.txt) 及 [`Code/`](../../Code/) 逐字节一致） |
+| **报告可编辑源文件（DOCX）** | [`output/提交材料/阅记-项目报告.docx`](../../output/提交材料/阅记-项目报告.docx) | **27 页** | `2,447,721` 字节（约 2.33 MB） | `7563abfa1941cedd8c336ad84eff4a04ccca97ae66027f4dbd690c25bfbca20c` | **仅作为可编辑源文件保留**，供后续编辑或重新导出 PDF 使用，不替代正式 PDF 提交件 |
 
-全部27页已重新渲染并逐张查看；19项目录/链接/书签目标一致，Word/PDF文字对应、字体嵌入及officecli结构校验通过。最新测试沿用2026-11-01主线351通过、0失败、2权限跳过；历史界面及性能结果仍按10月24—25日验收陈述，本轮未重跑应用功能或调用真实AI。
+---
 
-本轮过程：`repair-20261101-v2/`；完成说明：`../20261101-report-repair-results-v2.md`。v1更新过程保留在`update-20261101/`，独立问题记录为`../20261101-v1-report-audit.md`。原始资料和全部旧交付摘要保持，源码ZIP不重打包。继续编辑以当前提交目录的Word为底稿。
+## 2. 报告规模、源码对应与测试核验摘要
 
-旧版复检：`../submission-readiness-20261025.md`；证据与可复用检查脚本：`readiness-20261025/check.py`、`checks.json`、`visual-review.json`。该脚本仍核查原有未覆盖文件；重新渲染后需要再次查看页面，不能把旧人工查看记录算作新检查。
+- **项目正式名称**：阅记原生电子书阅读器与 AI 阅读助手（ReadJournal）
+- **代码与视图规模**：生产代码（`ReadJournal` + `ReadJournal.Library`）共 **137 个类、41 个接口、134 个 C# 源文件、15 个 AXAML 视图文件（含 11 个业务视图）**；课程参考项目 `DailyPoetryA` 为 63 个类、10 个接口、9 个视图（70% 门槛为 45 个类、7 个接口、9 个视图）。
+- **数据库结构**：SQLite `user_version = 2`，共 **10 张业务表**（`Book`、`ReadingRecord`、`Quote`、`ReadingPlan`、`EbookFile`、`EbookProgress`、`EbookReadingSession`、`QuoteOrigin`、`AiGenerationBatch`、`AiGenerationBatchItem`）及 `AppMetadata` 元数据表。
+- **构建与测试结果（2026-11-01）**：工作区 `Code/` 与 [`output/提交材料/阅记-源码.zip`](../../output/提交材料/阅记-源码.zip) 独立解包目录均通过 `dotnet restore --locked-mode`、`dotnet build -c Release --no-restore` 与 `dotnet test -c Release --no-build --no-restore`，共 **353 项自动化测试：351 项通过、0 项失败、2 项 Windows 符号链接测试因缺少符号链接权限跳过（不计入通过数）**。
 
-源码包独立构建测试原件保留在 `submission-20261025/`：`independent-submission.trx`、还原/构建/测试日志、`test-summary.json`、源文件统计及原始测试ZIP。2026-10-25结果为351通过、0失败、2项权限跳过；本轮清理不重跑功能测试。
+---
 
-`submission-editorial-20261025/`保存内容清理的脚本和元数据；当前成品已统一放入output，重复副本、旧备份及渲染缓存已清理。历史脚本依赖的旧Word底稿已按用户要求删除，不应直接运行历史发布脚本覆盖当前报告。继续修改时以当前正式Word为底稿。
+## 3. 历史版本与过程记录存放位置（非正式提交入口）
 
-其余release/word/revision目录及顶层历史脚本是历史过程，非当前交付。其原有验证结论只适用于对应历史版本；旧报告和重复页面图已清理，图稿及生成源保留。完整删除清单见 `../cleanup-20261026.json`，执行说明见 `../cleanup-push-20261026-plan.md`。
+`docs/report/` 及其子目录下的所有文件均为**历史过程记录、排版脚本与阶段性核验归档**，**不属于最终正式提交内容**，不得作为正式提交件使用：
 
-原始依据：`raw/期末项目与报告要求.docx`及总体规划。正式提交PDF与ZIP；本人复核封面身份和平台额外命名要求。
+- [`docs/final-submission-audit.md`](../final-submission-audit.md)：最终交付审查与仓库清理完整报告
+- [`docs/delivery-checklist.md`](../delivery-checklist.md)：最终交付核对清单
+- [`docs/20261101-report-repair-results-v2.md`](../20261101-report-repair-results-v2.md) 与 [`docs/report/repair-20261101-v2/`](repair-20261101-v2/)：2026-11-01 报告版式修复、SVG 图件重绘与校验脚本归档
+- [`docs/20261101-v1-report-audit.md`](../20261101-v1-report-audit.md) 与 [`docs/report/audit-20261101-v1/`](audit-20261101-v1/)：2026-11-01 历史版本独立复检记录
+- [`docs/report/update-20261101/`](update-20261101/)：2026-11-01 封面模板对齐与 Word 原生导出脚本（`render-native.ps1`）
+- [`docs/submission-readiness-20261025.md`](../submission-readiness-20261025.md)、[`docs/report/readiness-20261025/`](readiness-20261025/)、[`docs/report/submission-editorial-20261025/`](submission-editorial-20261025/)、[`docs/report/submission-20261025/`](submission-20261025/)：2026-10-25 阶段性整理与归档材料（含历史快照备份）
+- [`docs/cleanup-results-20261026.md`](../cleanup-results-20261026.md)：2026-10-26 历史过期文件清理记录
+- [`docs/report/release-v1/`](release-v1/)、[`docs/report/release-v2-20261025/`](release-v2-20261025/)、[`docs/report/revision-v2/`](revision-v2/)、[`docs/report/word-v2/`](word-v2/)、[`docs/report/word-v3/`](word-v3/)：早期阶段性脚本与历史验证记录归档
