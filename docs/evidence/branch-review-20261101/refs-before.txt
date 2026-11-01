@@ -1,0 +1,9 @@
+main 0159d2c16f3971ab24025b04d37f200006536180
+origin 0159d2c16f3971ab24025b04d37f200006536180
+origin/codex/reader-p10 82070fa86198f532102b3c490cf6be1d0d07eace
+origin/codex/reader-p9 9f6ae53097feefdfef44cfd160672193678aa726
+origin/feature/reader-ai-p8 4baef83a52f1149363b617b899808f17be159970
+origin/feature/reader-fonts-live-ai c759bdaec23ef209a7c408b4d2a80b6f26a3787f
+origin/feature/reader-native e50612ba60f7823efc7d65f95266c8c6ec4547c3
+origin/feature/ui-ux-polish-v2 ca79d1584cd9368a8f56346f2e9d0f56ea6bcb8b
+origin/main 0159d2c16f3971ab24025b04d37f200006536180

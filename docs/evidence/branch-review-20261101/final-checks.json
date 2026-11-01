@@ -1,0 +1,10 @@
+{
+  "Baseline": "0159d2c16f3971ab24025b04d37f200006536180",
+  "Total": 353,
+  "Passed": 351,
+  "Failed": 0,
+  "Skipped": 2,
+  "ProtectedFiles": 5,
+  "ProtectedUnchanged": true,
+  "ProductionSourceChanged": false
+}

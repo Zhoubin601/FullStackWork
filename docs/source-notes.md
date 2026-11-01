@@ -491,6 +491,10 @@ P9推送9f6ae53已回读；用户最新明确跳过缩放补验，保留100%/200
 原始来源：raw/期末项目与报告要求.docx（重新直接读取全文）、raw/1-阅记-原生电子书阅读器与AI阅读助手-总体规划-v1.md；当前对象output/提交材料/三文件、Code及daily-poetry-a源码。历史原件：docs/report/submission-20261025的独立构建日志、TRX及源文件统计；docs/report/submission-editorial-20261025的目录与成品摘要。本轮新检查docs/report/readiness-20261025/；结论docs/submission-readiness-20261025.md。无外部资料，引用日期2026-10-25。未重跑功能测试、未调用真实AI；新ZIP逐成员对应既有独立测试源码。raw和三成品复检前后摘要一致。
 
 
+## 2026-11-01 双分支复核来源
+
+来源名称：当前项目 Git 历史、源码及既有合并验收记录。链接或文件名：origin/main（0159d2c）、origin/feature/ui-ux-polish-v2（ca79d15）、origin/feature/reader-fonts-live-ai（c759bda）、Code/、docs/20261024-branch-merge-v1.md。引用日期：2026-11-01。用户授权检查、合并及推送；fetch 后两分支均已被 main 包含，实际复验见 docs/20261101-branch-review-v1.md。raw/ 与 output/ 仅比较摘要，无外部研究资料。
+
 ## 2026-10-26 全部推送与清理来源
 
 用户明确授权“全部推送，并清理过期的文件”。依据当前目录、Git状态及readiness-20261025既有原始验证记录；raw课程指导书与总体规划保持原样，无外部研究资料。实际清单docs/cleanup-20261026.json，结果docs/cleanup-results-20261026.md。过期文件在删除被策略拒绝后移至仓库外本地归档；不把归档、运行数据库或凭据纳入提交。213项保护摘要不变，清理后复检通过，无新功能测试。
